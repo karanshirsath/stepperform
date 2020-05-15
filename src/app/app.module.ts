@@ -18,7 +18,7 @@ import { StepperComponent } from './stepper/stepper.component';
 @NgModule({
   declarations: [
     AppComponent,
-    StepperComponent
+    StepperComponent,
   ],
   imports: [
     BrowserModule,
