@@ -7,13 +7,15 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class StepperComponent implements OnInit {
   isLinear = false;
-  firstFormGroup: FormGroup;
+  personalInformation: FormGroup;
   secondFormGroup: FormGroup;
   constructor(private _formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {this.firstFormGroup = this._formBuilder.group({
+  ngOnInit(): void {this.personalInformation = this._formBuilder.group({
     first: ['', Validators.required],
     last: ['', Validators.required],
+    gender: ['', Validators.required],
+    birth: ['', Validators.required],
     email: ['', Validators.required],
     SSN: ['', Validators.required]
   });

@@ -1,49 +1,55 @@
 <mat-horizontal-stepper labelPosition="bottom" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
+    <mat-step [stepControl]="personalInformation">
       <mat-card>
-        <form [formGroup]="firstFormGroup">
+        <form [formGroup]="personalInformation">
         <ng-template matStepLabel>Tell us about you</ng-template>
         
         <mat-form-field>
           <mat-label>First</mat-label>
           <input matInput placeholder="First name" formControlName="first" required>
+          <mat-error *ngIf="personalInformation.controls.first.errors?.required">Please enter the first name</mat-error>
         </mat-form-field><br/>
         <mat-form-field>
-          <mat-label>Middle</mat-label>
-          <input matInput placeholder="Middle name" >
+          <mat-label>Middle (optional)</mat-label>
+          <input matInput placeholder="Middle name (optional)" formControlName="middle">
         </mat-form-field><br/>
         <mat-form-field>
           <mat-label>last</mat-label>
           <input matInput placeholder=" Last name" formControlName="last" required>
+          <mat-error *ngIf="personalInformation.controls.last.errors?.required">Please enter the last name</mat-error>
         </mat-form-field><br/>
         <mat-form-field>
           <mat-label>Select Gender</mat-label>
-          <mat-select>
+          <mat-select formControlName="gender">
             <mat-option value="Male">Male</mat-option>
             <mat-option value="Female">Female</mat-option>
             <mat-option value="Other">Other</mat-option>
           </mat-select>
+          <mat-error *ngIf="personalInformation.controls.gender.errors?.required">Please select the gender</mat-error>
         </mat-form-field><br/>
         <mat-form-field>
           <mat-label>Birth date</mat-label>
-          <input matInput [matDatepicker]="picker">
+          <input matInput [matDatepicker]="picker" formControlName="birth">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="personalInformation.controls.birth.errors?.required">Please select the birth date</mat-error>
         </mat-form-field><br/>
         <mat-form-field>
           <mat-label>SSN</mat-label>
           <input matInput  formControlName="SSN" required>
+          <mat-error *ngIf="personalInformation.controls.SSN.errors?.required">Please select the birth date</mat-error>
         </mat-form-field><br/>
         <mat-form-field>
           <mat-label>Email Id</mat-label>
           <input matInput placeholder="karan@gmail.com" formControlName="email" required>
+          <mat-error *ngIf="personalInformation.controls.email.errors?.required">Please enter the email id</mat-error>
         </mat-form-field><br/>
   
   
   
   
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext [disabled]="!personalInformation.valid">Next</button>
         </div>
       </form>
     </mat-card>
