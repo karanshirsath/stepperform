@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { StepperComponent } from './stepper/stepper.component';
+import { TabComponent } from './tab/tab.component';
 
 
 const routes: Routes = [
-  { path: 'form', component: StepperComponent },
+  { path: 'form', component: TabComponent },
 { path: '**', redirectTo: '/form', pathMatch: 'full' }
 ];
 

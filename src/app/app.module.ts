@@ -14,11 +14,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { StepperComponent } from './stepper/stepper.component';
+import { TabComponent } from './tab/tab.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
     AppComponent,
     StepperComponent,
+    TabComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { StepperComponent } from './stepper/stepper.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTabsModule
 
   ],
   providers: [],
