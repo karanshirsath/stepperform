@@ -16,6 +16,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatDatepickerModule,
     MatNativeDateModule,
     MatGridListModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCheckboxModule
 
   ],
   providers: [],

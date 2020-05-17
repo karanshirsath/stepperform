@@ -2,23 +2,23 @@
     <mat-step [stepControl]="personalInformation">
       <mat-card>
         <form [formGroup]="personalInformation">
-        <ng-template matStepLabel>Tell us about you</ng-template>
+        <ng-template matStepLabel>Enter your personal information</ng-template>
         
-        <mat-form-field>
+        <mat-form-field appearance="fill">
           <mat-label>First</mat-label>
           <input matInput placeholder="First name" formControlName="first" required>
           <mat-error *ngIf="personalInformation.controls.first.errors?.required">Please enter the first name</mat-error>
         </mat-form-field><br/>
-        <mat-form-field>
+        <mat-form-field appearance="fill">
           <mat-label>Middle (optional)</mat-label>
           <input matInput placeholder="Middle name (optional)" formControlName="middle">
         </mat-form-field><br/>
-        <mat-form-field>
+        <mat-form-field appearance="fill">
           <mat-label>last</mat-label>
           <input matInput placeholder=" Last name" formControlName="last" required>
           <mat-error *ngIf="personalInformation.controls.last.errors?.required">Please enter the last name</mat-error>
         </mat-form-field><br/>
-        <mat-form-field>
+        <mat-form-field appearance="fill">
           <mat-label>Select Gender</mat-label>
           <mat-select formControlName="gender">
             <mat-option value="Male">Male</mat-option>
@@ -27,19 +27,19 @@
           </mat-select>
           <mat-error *ngIf="personalInformation.controls.gender.errors?.required">Please select the gender</mat-error>
         </mat-form-field><br/>
-        <mat-form-field>
+        <mat-form-field appearance="fill">
           <mat-label>Birth date</mat-label>
           <input matInput [matDatepicker]="picker" formControlName="birth">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
           <mat-error *ngIf="personalInformation.controls.birth.errors?.required">Please select the birth date</mat-error>
         </mat-form-field><br/>
-        <mat-form-field>
+        <mat-form-field appearance="fill">
           <mat-label>SSN</mat-label>
           <input matInput  formControlName="SSN" required>
-          <mat-error *ngIf="personalInformation.controls.SSN.errors?.required">Please select the birth date</mat-error>
+          <mat-error *ngIf="personalInformation.controls.SSN.errors?.required">Please select the SSN</mat-error>
         </mat-form-field><br/>
-        <mat-form-field>
+        <mat-form-field appearance="fill">
           <mat-label>Email Id</mat-label>
           <input matInput placeholder="karan@gmail.com" formControlName="email" required>
           <mat-error *ngIf="personalInformation.controls.email.errors?.required">Please enter the email id</mat-error>
@@ -49,29 +49,45 @@
   
   
         <div>
-          <button mat-button matStepperNext [disabled]="!personalInformation.valid">Next</button>
+          <button mat-raised-button  matStepperNext [disabled]="!personalInformation.valid">Next</button>
         </div>
       </form>
     </mat-card>
       
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" optional>
-      <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Fill out your address</ng-template>
-        <mat-form-field>
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                 required>
-        </mat-form-field>
+    <mat-step [stepControl]="addressForm" >
+      <form [formGroup]="addressForm">
+        <ng-template matStepLabel>Enter your address details</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Mailing address</mat-label>
+          <input matInput formControlName="mailingAddress" placeholder="Ex. 1 Main St, New York, NY" required>
+          <mat-error *ngIf="addressForm.controls.mailingAddress.errors?.required">Please enter the mailing address</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+          <mat-label>city</mat-label>
+          <input matInput formControlName="city" placeholder="pune" required>
+          <mat-error *ngIf="addressForm.controls.city.errors?.required">Please enter the city</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+          <mat-label>state</mat-label>
+          <input matInput formControlName="state" placeholder="Maharastra" required>
+          <mat-error *ngIf="addressForm.controls.state.errors?.required">Please enter the state</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+          <mat-label>Phone no</mat-label>
+          <input matInput formControlName="phoneNo" placeholder="7507820170" required>
+          <mat-error *ngIf="addressForm.controls.phoneNo.errors?.required">Please enter the phone no</mat-error>
+        </mat-form-field><br>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext [disabled]="!addressForm.valid">Next</button>
         </div>
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
+      <ng-template matStepLabel>Confirmation</ng-template>
+      <mat-checkbox (change)="checked($event)">I agree to the Terms and Conditions"</mat-checkbox><br><br>
+      <button mat-button color="primary" (click)="onSubmit()" [disabled]="!status">Submit </button><br><br>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
