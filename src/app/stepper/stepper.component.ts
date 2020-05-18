@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { CommonDataService } from '../common-data.service';
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
@@ -10,7 +11,7 @@ export class StepperComponent implements OnInit {
   status= false;
   personalInformation: FormGroup;
   addressForm: FormGroup;
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder, private _commonData:CommonDataService) { }
 
   ngOnInit(): void {this.personalInformation = this._formBuilder.group({
     first: ['', [Validators.required,Validators.pattern(/^[A-z][A-z]+$/)]],
@@ -37,6 +38,8 @@ this.status=event.checked
   onSubmit(){
     console.log(this.personalInformation.value);
     console.log(this.addressForm.value);
+    this._commonData.formData.next(this.personalInformation.value)
+    
     
     
   }
