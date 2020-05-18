@@ -1,4 +1,4 @@
-<mat-horizontal-stepper labelPosition="bottom" #stepper>
+<mat-horizontal-stepper labelPosition="bottom" #stepper linear>
     <mat-step [stepControl]="personalInformation">
       <mat-card>
         <form [formGroup]="personalInformation">
@@ -8,6 +8,7 @@
           <mat-label>First</mat-label>
           <input matInput placeholder="First name" formControlName="first" required>
           <mat-error *ngIf="personalInformation.controls.first.errors?.required">Please enter the first name</mat-error>
+          <mat-error *ngIf="personalInformation.controls.first.errors?.pattern">Please enter the Valid first name</mat-error>
         </mat-form-field><br/>
         <mat-form-field appearance="fill">
           <mat-label>Middle (optional)</mat-label>
@@ -17,6 +18,7 @@
           <mat-label>last</mat-label>
           <input matInput placeholder=" Last name" formControlName="last" required>
           <mat-error *ngIf="personalInformation.controls.last.errors?.required">Please enter the last name</mat-error>
+          <mat-error *ngIf="personalInformation.controls.last.errors?.pattern">Please enter the Valid last name</mat-error>
         </mat-form-field><br/>
         <mat-form-field appearance="fill">
           <mat-label>Select Gender</mat-label>
@@ -43,13 +45,14 @@
           <mat-label>Email Id</mat-label>
           <input matInput placeholder="karan@gmail.com" formControlName="email" required>
           <mat-error *ngIf="personalInformation.controls.email.errors?.required">Please enter the email id</mat-error>
+          <mat-error *ngIf="personalInformation.controls.email.errors?.pattern">Please enter the Valid emailId</mat-error>
         </mat-form-field><br/>
   
   
   
   
         <div>
-          <button mat-raised-button  matStepperNext [disabled]="!personalInformation.valid">Next</button>
+          <button mat-raised-button  matStepperNext>Next</button>
         </div>
       </form>
     </mat-card>
@@ -77,10 +80,12 @@
           <mat-label>Phone no</mat-label>
           <input matInput formControlName="phoneNo" placeholder="7507820170" required>
           <mat-error *ngIf="addressForm.controls.phoneNo.errors?.required">Please enter the phone no</mat-error>
+          <mat-error *ngIf="addressForm.controls.phoneNo.errors?.minlength ">Please enter the Valid phone no</mat-error>
+          <mat-error *ngIf="addressForm.controls.phoneNo.errors?.maxlength ">Please enter the Valid phone no</mat-error>
         </mat-form-field><br>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext [disabled]="!addressForm.valid">Next</button>
+          <button mat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>

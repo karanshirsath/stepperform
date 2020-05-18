@@ -6,26 +6,26 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./stepper.component.css']
 })
 export class StepperComponent implements OnInit {
-  isLinear = false;
+  isLinear = true;
   status= false;
   personalInformation: FormGroup;
   addressForm: FormGroup;
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {this.personalInformation = this._formBuilder.group({
-    first: ['', Validators.required],
+    first: ['', [Validators.required,Validators.pattern(/^[A-z][A-z]+$/)]],
     middle: ['', ],
-    last: ['', Validators.required],
+    last: ['', [Validators.required,Validators.pattern(/^[A-z][A-z]+$/)]],
     gender: ['', Validators.required],
     birth: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', [Validators.required,Validators.pattern(/^[A-z][A-z0-9]+(@)[A-z]+(.com)$/)]],
     SSN: ['', Validators.required]
   });
   this.addressForm = this._formBuilder.group({
     mailingAddress: ['', Validators.required],
     city: ['', Validators.required],
     state: ['', Validators.required],
-    phoneNo: ['', Validators.required],
+    phoneNo: ['', [Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
     
   });
   
