@@ -19,6 +19,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { PolicyDetailsComponent } from './components/Policy Details/policy-details/policy-details.component';
 import { LoginComponent } from './components/login/login.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { LoginComponent } from './components/login/login.component';
     MatNativeDateModule,
     MatGridListModule,
     MatTabsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDividerModule
 
   ],
   providers: [],
