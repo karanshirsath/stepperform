@@ -18,6 +18,7 @@ import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { PolicyDetailsComponent } from './components/Policy Details/policy-details/policy-details.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PolicyDetailsComponent } from './components/Policy Details/policy-detai
     StepperComponent,
     TabComponent,
     PolicyDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

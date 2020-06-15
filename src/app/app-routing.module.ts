@@ -7,7 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   { path: 'form', component: TabComponent },
   { path: 'signIn', component: LoginComponent },
-{ path: '**', redirectTo: '/form', pathMatch: 'full' }
+{ path: '**', redirectTo: '/signIn', pathMatch: 'full' }
 ];
 
 @NgModule({
