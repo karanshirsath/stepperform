@@ -43,5 +43,8 @@ this.status=event.checked
     
     
   }
-
+  courseReg(data) {
+    console.log(data,"stepper");
+    
+  }
 }
