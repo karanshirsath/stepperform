@@ -1,0 +1,37 @@
+import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { StepperComponent } from 'src/app/stepper/stepper.component';
+
+@Component({
+  selector: 'app-policy-details',
+  templateUrl: './policy-details.component.html',
+  styleUrls: ['./policy-details.component.css']
+})
+export class PolicyDetailsComponent implements OnInit {
+
+  @Output() OnRegister = new EventEmitter()
+  @Output() OnToggle = new EventEmitter()
+  registerForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      policyDate: ['', Validators.required],
+      policyLength: ['', Validators.required],
+      check1: ['', Validators.requiredTrue],
+      check2: ['', Validators.requiredTrue]
+    });
+  }
+  submit=()=>{
+    console.log(this.registerForm.value, "policy details");
+    this.OnRegister.emit(this.registerForm.value);
+  }
+  change=()=>{
+    if(this.registerForm.valid){
+      this.OnToggle.emit(true)
+    }else{
+      this.OnToggle.emit(false)
+    }
+  }
+}
