@@ -2,12 +2,12 @@
 <form [formGroup]="registerForm">
 <div>
     Start Date
-    <input class="text-right" type="date" name="date" id="date" formControlName="policyDate">
+    <input class="text-right" type="date" name="date" id="date" formControlName="policyDate" (change)="change()">
 </div>
 <hr>
 <div>
     Policy length
-    <select formControlName="policyLength">
+    <select formControlName="policyLength"(change)="change()">
         <option value="1">1 Month</option>
         <option value="3">3 Months</option>
         <option value="6">6 Months</option>
@@ -16,10 +16,10 @@
 </div>
 <hr>
 <div>
-    <input type="checkbox" formControlName="check1"> I have read and accepted <span class="text-primary">"Personal Data Protection Information"</span>
+    <input type="checkbox" formControlName="check1" (change)="change()"> I have read and accepted <span class="text-primary">"Personal Data Protection Information"</span>
 </div>
 <div>
-<input type="checkbox" formControlName="check2"> I have read the <span class="text-primary">"Motor Insurance Third Party Liability Insurance Document"</span>
+<input type="checkbox" formControlName="check2" (change)="change()"> I have read the <span class="text-primary">"Motor Insurance Third Party Liability Insurance Document"</span>
 </div>
 </form>
-<button class="btn btn-primary" (click)="submit()" mat-raised-button  matStepperNext>Calculate</button>
+<button class="btn btn-primary" (click)="submit()" mat-raised-button  matStepperNext [disabled]="!registerForm.valid">Calculate</button>

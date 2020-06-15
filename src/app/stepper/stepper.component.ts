@@ -11,6 +11,8 @@ export class StepperComponent implements OnInit {
   status= false;
   personalInformation: FormGroup;
   addressForm: FormGroup;
+  toggle=false
+
   constructor(private _formBuilder: FormBuilder, private _commonData:CommonDataService) { }
 
   ngOnInit(): void {this.personalInformation = this._formBuilder.group({
@@ -22,6 +24,8 @@ export class StepperComponent implements OnInit {
     email: ['', [Validators.required,Validators.pattern(/^[A-z][A-z0-9]+(@)[A-z]+(.com)$/)]],
     SSN: ['', Validators.required]
   });
+  
+  
   this.addressForm = this._formBuilder.group({
     mailingAddress: ['', Validators.required],
     city: ['', Validators.required],
@@ -45,6 +49,5 @@ this.status=event.checked
   }
   courseReg(data) {
     console.log(data,"stepper");
-    
   }
 }
