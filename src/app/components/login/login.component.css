@@ -1,0 +1,9 @@
+.monospace {
+    font-family: "Lucida Console", Courier, monospace;
+    font-weight: bold;
+    color: midnightblue;
+  }
+  .btn{
+    border-radius: 15px;
+
+  }
