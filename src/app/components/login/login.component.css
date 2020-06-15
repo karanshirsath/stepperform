@@ -1,4 +1,4 @@
-.monospace {
+/* .monospace {
     font-family: "Lucida Console", Courier, monospace;
     font-weight: bold;
     color: midnightblue;
@@ -19,4 +19,40 @@
 .example-full-width{
   width: 100%;
   position:center;
+} */
+.login-card-description{
+  font-family: "Lucida Console", Courier, monospace;
+    font-weight: bold;
+    color: midnightblue;
+    font-size: 20px;
+}
+.login-btn {
+  padding: 10px 20px 10px;
+  background-color:rgb(9, 113, 231);
+  border-radius: 20px;
+  font-size: 15px;
+  /* font-weight: bold; */
+  line-height: 20px;
+  color: #fff;
+  margin-bottom: 24px; 
+}
+.hr-text{
+  position: relative;
+  border: none;
+  height: 1px;
+  background: #999;
+}
+.redirect-btn{
+  padding: 10px 20px 10px;
+  background-color:rgb(8, 30, 66);
+  border-radius: 20px;
+  font-size: 15px;
+  /* font-weight: bold; */
+  line-height: 20px;
+  color: #fff;
+  margin-bottom: 24px; 
+
+}
+.login-card-footer-text{
+  color:gray;
 }
