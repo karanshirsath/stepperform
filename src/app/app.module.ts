@@ -17,12 +17,14 @@ import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { AdditionalCoversComponent } from './additional-covers/additional-covers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StepperComponent,
     TabComponent,
+    AdditionalCoversComponent,
   ],
   imports: [
     BrowserModule,
