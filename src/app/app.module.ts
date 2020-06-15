@@ -19,6 +19,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { PolicyDetailsComponent } from './components/Policy Details/policy-details/policy-details.component';
 import { LoginComponent } from './components/login/login.component';
+import { VInfoComponent } from './components/v-info/v-info.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { LoginComponent } from './components/login/login.component';
     StepperComponent,
     TabComponent,
     PolicyDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    VInfoComponent
+    
   ],
   imports: [
     BrowserModule,
