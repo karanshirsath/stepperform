@@ -8,7 +8,7 @@
 
   }
   .example-card{
-   width: fit-content;
+   width: 100%;
     
     
   }
@@ -16,3 +16,7 @@
     max-width:100 px;
 
   }
+.example-full-width{
+  width: 100%;
+  position:center;
+}
