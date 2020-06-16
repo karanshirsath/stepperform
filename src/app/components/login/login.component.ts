@@ -19,4 +19,8 @@ password: string;
       alert("Invalid credentials");
     }
   }
+
+  redirect(){
+    this.router.navigate(["form"]);
+  }
   }
