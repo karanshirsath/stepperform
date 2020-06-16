@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { TabComponent } from './tab/tab.component';
 import { LoginComponent } from './components/login/login.component';
 import { Tab2Component } from './components/tab2/tab2.component';
+import { TabsComponent } from './components/tabs/tabs.component';
 //import { VInfoComponent } from './v-info.component';
 
 
 const routes: Routes = [
   { path: 'form', component: Tab2Component },
   { path: 'signIn', component: LoginComponent },
+  { path: 'tab2', component: TabsComponent},
 
 { path: '**', redirectTo: '/signIn', pathMatch: 'full' }
 ];
