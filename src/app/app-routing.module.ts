@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TabComponent } from './tab/tab.component';
 import { LoginComponent } from './components/login/login.component';
+//import { VInfoComponent } from './v-info.component';
 
 
 const routes: Routes = [

@@ -18,6 +18,8 @@ import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LoginComponent } from './components/login/login.component';
+import { VInfoComponent } from './components/v-info/v-info.component';
+
 import {MatDividerModule} from '@angular/material/divider';
 import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
 
@@ -27,7 +29,9 @@ import { PolicyDetailsComponent } from './components/policy-details/policy-detai
     StepperComponent,
     TabComponent,
     PolicyDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    VInfoComponent
+    
   ],
   imports: [
     BrowserModule,
