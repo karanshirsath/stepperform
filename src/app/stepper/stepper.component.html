@@ -1,10 +1,16 @@
 <mat-horizontal-stepper labelPosition="bottom" #stepper linear>
-    
+
   <mat-step completed={{toggle}}>
     <ng-template matStepLabel>Policy Details</ng-template>
     <app-policy-details (OnRegister)="courseReg($event)" (OnToggle)="toggle=$event"></app-policy-details>
+  </mat-step>
+    
+  <mat-step completed={{toggle}}>
+    <ng-template matStepLabel>Vehicle </ng-template>
+    <app-v-info (OnRegister)="courseReg($event)" (OnToggle)="toggle=$event"></app-v-info>
     {{toggle}}
   </mat-step>
+  
   
   
   <mat-step [stepControl]="personalInformation">
