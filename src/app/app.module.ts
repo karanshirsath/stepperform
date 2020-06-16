@@ -24,6 +24,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
 import { Tab2Component } from './components/tab2/tab2.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { CdkStepper } from '@angular/cdk/stepper';
+import { InsuringPartyComponent } from './components/insuring-party/insuring-party.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
     LoginComponent,
     VInfoComponent,
     Tab2Component,
-    TabsComponent
+    TabsComponent,
+    InsuringPartyComponent
     
   ],
   imports: [
@@ -56,7 +59,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
     MatDividerModule
 
   ],
-  providers: [],
+  providers: [CdkStepper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
