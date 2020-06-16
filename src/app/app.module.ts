@@ -22,6 +22,8 @@ import { VInfoComponent } from './components/v-info/v-info.component';
 
 import {MatDividerModule} from '@angular/material/divider';
 import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
+import { Tab2Component } from './components/tab2/tab2.component';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { PolicyDetailsComponent } from './components/policy-details/policy-detai
     TabComponent,
     PolicyDetailsComponent,
     LoginComponent,
-    VInfoComponent
+    VInfoComponent,
+    Tab2Component,
+    TabsComponent
     
   ],
   imports: [
