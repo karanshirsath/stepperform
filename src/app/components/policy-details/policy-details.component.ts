@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { StepperComponent } from 'src/app/stepper/stepper.component';
 
 @Component({
   selector: 'app-policy-details',

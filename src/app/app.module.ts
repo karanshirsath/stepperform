@@ -18,7 +18,9 @@ import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AdditionalCoversComponent } from './additional-covers/additional-covers.component';
-import { PolicyDetailsComponent } from './components/Policy Details/policy-details/policy-details.component';
+import { LoginComponent } from './components/login/login.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { PolicyDetailsComponent } from './components/Policy Details/policy-detai
     TabComponent,
     AdditionalCoversComponent,
     PolicyDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { PolicyDetailsComponent } from './components/Policy Details/policy-detai
     MatNativeDateModule,
     MatGridListModule,
     MatTabsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDividerModule
 
   ],
   providers: [],
