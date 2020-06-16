@@ -16,10 +16,10 @@ export class VInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.vehicleInfoForm=this.formBuilder.group({
-      registrationNumber:['',Validators.required],
-      certificateNumber:['',Validators.required]
-      //purpose:['',Validators.required],
-      //ysNo:['',Validators.required]
+      registrationNumber:['',Validators.required,Validators.min(8),Validators.max(8)],
+      certificateNumber:['',Validators.required,Validators.min(9),Validators.max(9)],
+      purpose:['',Validators.required],
+      ysNo:['',Validators.required]
     });}
     submit=() => {
       console.log(this.vehicleInfoForm.value,"vehicle Info");
