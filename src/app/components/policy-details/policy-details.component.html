@@ -23,17 +23,25 @@
     </div>
 </div>
 <hr>
-<div class="card">
+<!-- <div class="card">
     <div class="card-body">
         <input type="checkbox" formControlName="check1" (change)="change()"> I have read and accepted <span class="text-primary">"Personal Data Protection Information"</span>
     </div>
 </div>
 <br>
-<div class="card">
+<div class="card ">
     <div class="card-body">
         <input type="checkbox" formControlName="check2" (change)="change()"> I have read the <span class="text-primary">"Motor Insurance Third Party Liability Insurance Document"</span>
     </div>
+</div> -->
+<div class=" border shadow p-3 mb-3 bg-white rounded">
+    <input type="checkbox" formControlName="check1" (change)="change()"> I have read and accepted <span class="text-primary">"Personal Data Protection Information"</span>
+
+</div>
+<div class="border shadow p-3 mb-3 bg-white rounded">
+    <input type="checkbox" formControlName="check2" (change)="change()"> I have read the <span class="text-primary">"Motor Insurance Third Party Liability Insurance Document"</span>
+
 </div>
 <br>
 </form>
-<button class="btn btn-primary" (click)="submit()" mat-raised-button  matStepperNext [disabled]="!registerForm.valid">Calculate</button>
+<button class="btn btn-primary rounded-pill" (click)="submit()" mat-raised-button  matStepperNext [disabled]="!registerForm.valid">Calculate</button>

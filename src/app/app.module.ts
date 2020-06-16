@@ -17,9 +17,9 @@ import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { PolicyDetailsComponent } from './components/Policy Details/policy-details/policy-details.component';
 import { LoginComponent } from './components/login/login.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
 
 @NgModule({
   declarations: [
