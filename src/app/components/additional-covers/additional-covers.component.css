@@ -10,6 +10,7 @@
     font-family:   'Ubuntu', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
  
 }
+
 .thirdparty{
     background-color: rgb(12, 44, 70); 
     height:80px;
@@ -17,7 +18,7 @@
 }
 .policy h1{
     color:white;
-    margin-left:100px ;
+    margin-left:1px ;
     margin-top: -1px;
  
 }

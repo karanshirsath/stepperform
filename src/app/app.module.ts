@@ -17,9 +17,15 @@ import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+<<<<<<< HEAD
 import { AdditionalCoversComponent } from './components/additional-covers/additional-covers.component';
+=======
+
+>>>>>>> ba28e1bbd7fd2191882fc62c681aec6172f95f20
 import { LoginComponent } from './components/login/login.component';
 import { VInfoComponent } from './components/v-info/v-info.component';
+
+
 
 import {MatDividerModule} from '@angular/material/divider';
 import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
@@ -27,6 +33,7 @@ import { Tab2Component } from './components/tab2/tab2.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { CdkStepper } from '@angular/cdk/stepper';
 import { InsuringPartyComponent } from './components/insuring-party/insuring-party.component';
+import { DeliveryComponent } from './components/delivery/delivery.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +46,8 @@ import { InsuringPartyComponent } from './components/insuring-party/insuring-par
     VInfoComponent,
     Tab2Component,
     TabsComponent,
-    InsuringPartyComponent
+    InsuringPartyComponent,
+    DeliveryComponent
     
   ],
   imports: [

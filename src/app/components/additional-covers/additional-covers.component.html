@@ -7,8 +7,8 @@
                 <div class="row">
                     <div class="col-8  policy">
                        
-                        <img width="30px" height="20px" [src]='tickimage'>
-                        <h1> Motor Third Party Liability Policy</h1>
+                        <h1><img width="50px" height="50px" [src]='imageUrl' >
+                        Motor Third Party Liability Policy</h1>
                     </div>
                     <div class="col-4 bgn ">
                         <div>
@@ -25,8 +25,8 @@
         <div class="card shadow p-3 mb-5 bg-white rounded firstcard">
             <div class="card-body ">
                 <div class="radio">
-                    <label for="additionalCovers"><input type="radio" formControlName="additionalcover"
-                            id="additionalCovers" name="additionalCovers">
+                    <label for="none"><input type="radio" formControlName="none"
+                            id="none" name="none">
                         <b> None</b></label>
                 </div>
                 <div class=" discription">Description of additional cover here</div>
@@ -121,7 +121,7 @@
 
         </div>
         
-        <button class="btn btn-primary nextbutton"> Next</button>
+        <button class="btn btn-primary nextbutton" (click)="submit()"> Next</button>
 
     </div>
 

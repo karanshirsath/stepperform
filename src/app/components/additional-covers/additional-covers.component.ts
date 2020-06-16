@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-additional-covers',
@@ -6,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./additional-covers.component.css']
 })
 export class AdditionalCoversComponent implements OnInit {
-  imageUrl="./assets/additionalcovercar.jpg ";;
+  imageUrl="./assets/additionalcar.png ";;
   tickimage="./assets/tick.jpg";
-  constructor() { }
+  registerForm: FormGroup;
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.registerForm = this.formBuilder.group({
+      none: ['', Validators.requiredTrue],
+      premium: ['', Validators.requiredTrue],
+      vip: ['', Validators.requiredTrue],
+    });
+ }
+  submit=()=>{
+    console.log(this.registerForm.value, "policy details");
   }
 
  
