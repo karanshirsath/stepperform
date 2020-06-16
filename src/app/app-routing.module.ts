@@ -9,6 +9,7 @@ import { Tab2Component } from './components/tab2/tab2.component';
 const routes: Routes = [
   { path: 'form', component: Tab2Component },
   { path: 'signIn', component: LoginComponent },
+  { path: 'tab2', component: Tab2Component },
 
 { path: '**', redirectTo: '/signIn', pathMatch: 'full' }
 ];
