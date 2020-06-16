@@ -12,13 +12,13 @@ export class VInfoComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
  vehicleInfoForm:FormGroup;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder) { } 
 
   ngOnInit(): void {
     this.vehicleInfoForm=this.formBuilder.group({
       registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],
       certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],
-      purpose:[''],
+      purpose:['',Validators.required],
       ysNo:['']
     })}
     submit=() => {

@@ -17,12 +17,18 @@ import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { MatDividerModule} from '@angular/material/divider'
+
 import { LoginComponent } from './components/login/login.component';
 import { VInfoComponent } from './components/v-info/v-info.component';
-import {PolicyDetailsComponent} from './components/policy-details/policy-details.component';
 
 
+
+import {MatDividerModule} from '@angular/material/divider';
+import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
+import { Tab2Component } from './components/tab2/tab2.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { CdkStepper } from '@angular/cdk/stepper';
+import { InsuringPartyComponent } from './components/insuring-party/insuring-party.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,10 @@ import {PolicyDetailsComponent} from './components/policy-details/policy-details
     TabComponent,
     PolicyDetailsComponent,
     LoginComponent,
-    VInfoComponent
+    VInfoComponent,
+    Tab2Component,
+    TabsComponent,
+    InsuringPartyComponent
     
   ],
   imports: [
@@ -53,7 +62,7 @@ import {PolicyDetailsComponent} from './components/policy-details/policy-details
     MatDividerModule
 
   ],
-  providers: [],
+  providers: [CdkStepper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
