@@ -3,7 +3,6 @@
   <mat-step completed={{toggle}}>
     <ng-template matStepLabel>Policy Details</ng-template>
     <app-policy-details (OnRegister)="courseReg($event)" (OnToggle)="toggle=$event"></app-policy-details>
-    {{toggle}}
   </mat-step>
     
   <mat-step completed={{toggle}}>
