@@ -26,6 +26,7 @@ import { Tab2Component } from './components/tab2/tab2.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { CdkStepper } from '@angular/cdk/stepper';
 import { InsuringPartyComponent } from './components/insuring-party/insuring-party.component';
+import { DeliveryComponent } from './components/delivery/delivery.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { InsuringPartyComponent } from './components/insuring-party/insuring-par
     VInfoComponent,
     Tab2Component,
     TabsComponent,
-    InsuringPartyComponent
+    InsuringPartyComponent,
+    DeliveryComponent
     
   ],
   imports: [
