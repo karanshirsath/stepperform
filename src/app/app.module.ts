@@ -34,6 +34,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { CdkStepper } from '@angular/cdk/stepper';
 import { InsuringPartyComponent } from './components/insuring-party/insuring-party.component';
 import { DeliveryComponent } from './components/delivery/delivery.component';
+import { MTPLCalculatorComponent } from './components/mtpl-calculator/mtpl-calculator.component';
+import { MTPLPolicyComponent } from './components/mtpl-policy/mtpl-policy.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { DeliveryComponent } from './components/delivery/delivery.component';
     Tab2Component,
     TabsComponent,
     InsuringPartyComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    MTPLCalculatorComponent,
+    MTPLPolicyComponent
     
   ],
   imports: [

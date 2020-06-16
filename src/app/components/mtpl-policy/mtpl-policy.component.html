@@ -1,0 +1,12 @@
+<mat-horizontal-stepper labelPosition="bottom" #stepper linear>
+    <mat-step >
+        <ng-template matStepLabel>Policy Details</ng-template>
+        <app-policy-details  ></app-policy-details>
+      </mat-step>
+        
+      <mat-step >
+        <ng-template matStepLabel>Vehicle </ng-template>
+        <app-v-info ></app-v-info>
+       
+      </mat-step>
+</mat-horizontal-stepper>
