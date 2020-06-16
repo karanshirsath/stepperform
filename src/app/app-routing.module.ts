@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: 'form', component: Tab2Component },
   { path: 'signIn', component: LoginComponent },
   { path: 'tab2', component: TabsComponent},
+  { path: 'tab', component: TabComponent},
+
 
 { path: '**', redirectTo: '/signIn', pathMatch: 'full' }
 ];
