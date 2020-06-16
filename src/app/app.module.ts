@@ -18,13 +18,10 @@ import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LoginComponent } from './components/login/login.component';
-<<<<<<< HEAD
 import { VInfoComponent } from './components/v-info/v-info.component';
 
-=======
 import {MatDividerModule} from '@angular/material/divider';
 import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
->>>>>>> 0ac8768e338eea407b1e422f0cfccfbb77a44182
 
 @NgModule({
   declarations: [
