@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./additional-covers.component.css']
 })
 export class AdditionalCoversComponent implements OnInit {
-  imageUrl="./assets/additionalcovercar.jpg "
+  imageUrl="./assets/additionalcovercar.jpg ";;
+  tickimage="./assets/tick.jpg";
   constructor() { }
 
   ngOnInit(): void {

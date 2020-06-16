@@ -1,5 +1,5 @@
 .container{
-    background-color: violet;
+   
     padding-top: 50px;
     width: 2000px;
 }
@@ -26,7 +26,7 @@ margin-right: -20px;
 margin-top: -1px;
 text-align: right;
 color:white;
-   background-color: lightcoral;
+ 
 
 }
 
@@ -81,7 +81,7 @@ color:white;
  .thirdcard{
            
             width:2000px;
-            height:550px;
+            height:500px;
             margin-left: 25px;
             margin-right: 25px;
             margin-top: -30px;
@@ -89,7 +89,6 @@ color:white;
  .textcolor{
     
     color:rgb(12, 44, 70);
-    background-color: lightcoral;
     margin-top: -20px;
     padding-left: 15px;
     
