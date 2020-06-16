@@ -1,17 +1,30 @@
 <h1 class="display-1">Vehicle Information</h1>
-<form [formGroup]="vehicleInfoForm" >
-    <div class="card" >
-        <div class="card-body" >
-            Vehicle Registration Number  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" placeholder="XX0000XX" formControlName="registrationNumber" (change)="change()"> 
+<form [formGroup]="vehicleInfoForm">
+    <div class="form-row">
+        <div class="col-9">
+            Vehicle Registration Number 
+        </div>
+        <div class="col-3">
+            <input class="form-control" type="text" placeholder="XX0000XX" formControlName="registrationNumber" (change)="change()">
+        </div>  
+    </div>
+    <hr>
+    
+    
+    <div class="form-row">
+        <div class="col-9">
+            Vehicle Certificate Number <br>
+            <a href=""><u>Where can I find this number?</u></a>
+        </div>
+        <div class="col-3">
+            <input class="form-control" type="text" placeholder="000000000"  formControlName="certificateNumber" (change)="change()"> 
         </div>
     </div>
-    <div class="card">
-        <div class="card-body">
-            Vehicle Certificate Number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" placeholder="000000000"  formControlName="certificateNumber" (change)="change()"> 
-        </div>
-    </div><br>
+    <hr>
+    
+
     <div class="form-row">
-        <div class="col-9" >
+        <div class="col-9">
             What purpose does this vehicle serve?
         </div>
         <div class="col-3">
@@ -19,11 +32,14 @@
                 <option value="personal">Personal Use</option>
                 <option value="public">Public Use</option>
                 
-            </select>
+            </select>    
         </div>
-    </div><br>
+    </div>
+    <hr>
+
+
     <div class="form-row">
-        <div class="col-9" >
+        <div class="col-9">
             Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?
         </div>
         <div class="col-3">
@@ -31,12 +47,10 @@
             <input type="radio" name="optradio">No
         </div>
     </div>
+    <hr>
 
-    
-    
-    
 
 </form><br>
 
-<button class="btn btn-primary" (click)="submit()" mat-raised-button  matStepperNext [disabled]="!vehicleInfoForm.valid">Next</button>
+<button class="btn btn-primary rounded-pill" (click)="submit()" mat-raised-button  matStepperNext [disabled]="!vehicleInfoForm.valid">Next</button>
 
