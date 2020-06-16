@@ -1,11 +1,28 @@
 <mat-horizontal-stepper labelPosition="bottom" #stepper linear>
-    <mat-step >
-        <ng-template matStepLabel>Policy Details</ng-template>
-        <app-policy-details ></app-policy-details>
-      </mat-step>
+  
         
       <mat-step >
         <ng-template matStepLabel>Vehicle </ng-template>
         <app-v-info ></app-v-info>
+      </mat-step>
+      <mat-step >
+        <ng-template matStepLabel>Insuring Party</ng-template>
+        <app-policy-details ></app-policy-details>
+      </mat-step>
+      <mat-step >
+        <ng-template matStepLabel>Policy Details</ng-template>
+        <app-policy-details ></app-policy-details>
+      </mat-step>
+      <mat-step >
+        <ng-template matStepLabel>Installments</ng-template>
+        <app-policy-details ></app-policy-details>
+      </mat-step>
+      <mat-step >
+        <ng-template matStepLabel>Covers</ng-template>
+        <app-policy-details ></app-policy-details>
+      </mat-step>
+      <mat-step >
+        <ng-template matStepLabel>Summary</ng-template>
+        <app-policy-details ></app-policy-details>
       </mat-step>
 </mat-horizontal-stepper>
