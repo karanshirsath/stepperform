@@ -1,20 +1,21 @@
 <h1 class="font-weight-bold">Policy Details</h1>
 <form [formGroup]="registerForm">
 <div class="form-row">
-    <div class="col-9 pt-2">
+    <div class="col-auto mr-auto pt-2">
         Start Date
     </div>
-    <div class="col-3">
+    <div class="col-md-3 col-auto col-7">
         <input class="form-control" type="date" formControlName="policyDate" (change)="change()">
     </div>  
 </div>
 <hr>
 <div class="form-row">
-    <div class="col-9 pt-2">
+    <div class="col-auto mr-auto pt-2">
         Policy length
     </div>
-    <div class="col-3">
+    <div class="col-md-3 col-auto col-7">
         <select formControlName="policyLength" class="form-control" (change)="change()">
+            <option selected disabled value="">--SELECT--</option>
             <option value="1">1 Month</option>
             <option value="3">3 Months</option>
             <option value="6">6 Months</option>
