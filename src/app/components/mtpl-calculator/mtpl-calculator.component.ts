@@ -19,11 +19,11 @@ export class MTPLCalculatorComponent implements OnInit {
   installments
   covers
   summary
-  toggle1=true
-  toggle2=true
-  toggle3=true
-  toggle4=true
-  toggle5=true
+  toggle1=false
+  toggle2=false
+  toggle3=false
+  toggle4=false
+  toggle5=false
   toggle6=true
 
   
