@@ -1,8 +1,8 @@
 <div class="container col-auto col-lg-8 col-md-10 ">
-    <form [formGroup]="registerForm">
     <h1 class="heading "><b>Additional covers</b></h1><br>
     <div class="row ">
-        <div class="card shadow p-3 mb-5 rounded thirdparty overflowAuto h-100">
+
+        <div class="card shadow p-3 mb-5 rounded thirdparty">
             <div class="card-body">
                 <div class="row">
                     <div class=" col-lg-7 col-md-8 col-auto col-7 policy">
@@ -24,8 +24,8 @@
     <div class="row">
         <div class="card shadow p-3 mb-5 bg-white rounded firstcard overflowAuto h-100">
             <div class="card-body ">
-                  <label for="cover"><input type="radio" formControlName="cover"
-                            id="cover" name="cover" (click)="change()">
+                  <label for="none"><input type="radio" formControlName="cover"
+                            id="none" name="cover" (click)="change()">
                         <b> None</b></label>
                  
                 <div class=" discription">Description of additional cover here</div>
@@ -39,7 +39,7 @@
                 <div class="row ">
                     <div class="col-lg-7 col-md-8 col-auto col-7">
                        
-                            <label for="cover"><input type="radio" formControlName="cover" id="cover"
+                            <label for="premium"><input type="radio" formControlName="cover" id="premium"
                                     name="cover" (click)="change()">
                                 <b> Premium</b></label>
                                
@@ -74,7 +74,7 @@
                 <div class="row">
                     <div class=" col-lg-7 col-md-8 col-auto col-7">
                         
-                            <label for="cover"><input type="radio" formControlName="cover" id="cover" name="cover" (click)="change()"><b> VIP</b></label>
+                            <label for="vip"><input type="radio" formControlName="cover" id="vip" name="cover" (click)="change()"><b> VIP</b></label>
                 
                         <div class=" discription">Description of additional cover here</div><br><br>
                      </div>
@@ -122,10 +122,9 @@
 
         </div>
         
-        <button class="btn btn-primary nextbutton"  (click)="next()"> Next</button>
+        <button class="btn btn-primary nextbutton" [disabled]="!additionalcoverForm.valid" (click)="next()"> Next</button>
 
     </div>
-</form>
 </div>
 
 
