@@ -1,8 +1,8 @@
 <div class="container col-auto col-lg-8 col-md-10 ">
+    <form [formGroup]="registerForm">
     <h1 class="heading "><b>Additional covers</b></h1><br>
     <div class="row ">
-
-        <div class="card shadow p-3 mb-5 rounded thirdparty">
+        <div class="card shadow p-3 mb-5 rounded thirdparty overflowAuto h-100">
             <div class="card-body">
                 <div class="row">
                     <div class=" col-lg-7 col-md-8 col-auto col-7 policy">
@@ -24,8 +24,8 @@
     <div class="row">
         <div class="card shadow p-3 mb-5 bg-white rounded firstcard overflowAuto h-100">
             <div class="card-body ">
-                  <label for="cover"><input type="radio" formControlName="cover"
-                            id="cover" name="cover" (change)="change()">
+                  <label for="none"><input type="radio" formControlName="cover" value="none"
+                            id="none" name="cover" (change)="change()">
                         <b> None</b></label>
                  
                 <div class=" discription">Description of additional cover here</div>
@@ -39,7 +39,7 @@
                 <div class="row ">
                     <div class="col-lg-7 col-md-8 col-auto col-7">
                        
-                            <label for="cover"><input type="radio" formControlName="cover" id="cover"
+                            <label for="premium"><input type="radio" formControlName="cover" id="premium" value="premium"
                                     name="cover" (change)="change()">
                                 <b> Premium</b></label>
                       
@@ -73,7 +73,7 @@
                 <div class="row">
                     <div class=" col-lg-7 col-md-8 col-auto col-7">
                         
-                            <label for="cover"><input type="radio" formControlName="cover" id="cover" name="cover" (change)="change()"><b> VIP</b></label>
+                            <label for="vip"><input type="radio" formControlName="cover" id="vip" name="cover" value="vip" (change)="change()"><b> VIP</b></label>
                 
                         <div class=" discription">Description of additional cover here</div><br><br>
                      </div>
@@ -120,9 +120,10 @@
 
         </div>
         
-        <button class="btn btn-primary nextbutton" [disabled]="registerForm.invalid" (click)="submit()"> Next</button>
+        <button class="btn btn-primary nextbutton" [disabled]="registerForm.invalid" matStepperNext (click)="submit()"> Next</button>
 
     </div>
+</form>
 </div>
 
 

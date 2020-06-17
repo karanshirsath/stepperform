@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -9,12 +9,13 @@ import { Router } from '@angular/router';
 })
 export class InstallmentComponent implements OnInit {
   installmentForm: FormGroup;
-  
+  @Output() OnRegister = new EventEmitter()
+  @Output() OnToggle = new EventEmitter()
   constructor(private formBuilder: FormBuilder,private router: Router) { }
 
   ngOnInit()  {
     this.installmentForm=this.formBuilder.group({
-      term: ['',Validators.requiredTrue]
+      term: ['',Validators.required]
       
     });
     
@@ -22,6 +23,18 @@ export class InstallmentComponent implements OnInit {
   submitInstalmentForm(){
     
     this.router.navigate(['/']);
+  }
+  submit=()=>{
+    console.log(this.installmentForm.value, "policy details");
+    this.OnRegister.emit(this.installmentForm.value);
+  }
+  change=()=>{
+    if(this.installmentForm.valid){
+      this.OnToggle.emit(true)
+      this.OnRegister.emit(this.installmentForm.value);
+    }else{
+      this.OnToggle.emit(false)
+    }
   }
   
 }
