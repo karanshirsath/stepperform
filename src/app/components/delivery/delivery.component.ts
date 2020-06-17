@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-delivery',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./delivery.component.css']
 })
 export class DeliveryComponent implements OnInit {
+
+  detailsForm: FormGroup;
 
   cities:String[] = ["New Delhi","Mumbai", "Chennai", "Bangalore", "Kolkata", "Mysore", "Pune", "Jaipur"];
 
@@ -21,9 +24,24 @@ export class DeliveryComponent implements OnInit {
     this.submitted = false;
   }
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() {
+    this.detailsForm = this.formBuilder.group({
+      fullName: ['', Validators.required],
+      city: this.formBuilder.group({
+        cityName: ['', Validators.required],
+        pinCode: ['', Validators.required]
+      }),
+      street: ['',Validators.required],
+      number: ['', Validators.required],
+      block: ['', Validators.required],
+      entrance: ['', Validators.required],
+      appt: ['', Validators.required],
+      contactNumber: ['', Validators.required],
+      businessType: ['', Validators.required],
+      notes: ['']
+    });
+  };
 
 }
