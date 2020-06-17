@@ -18,20 +18,21 @@
     height:100px;
     width:2000px;
 }
-.policy h1{
+.policy {
     color:white;
     margin-left:-1px ;
-    margin-top: -1px;
+    margin-top: -5px;
     background-color: khaki;
+    font-size: 20px;
  
 }
-.bgn h1 {
+.bgn  {
 margin-right: -180px;
-margin-top: -1px;
+margin-top: -5px;
 text-align: right;
 color:white;
 background-color: khaki;
- 
+font-size: 20px;
 
 }
 
@@ -76,12 +77,12 @@ background-color: khaki;
 
     color:rgb(8, 56, 95);
 }
-.bgnpremium h1{
+.bgnpremium {
     margin-right: -180px;
     margin-top: -1px;
     text-align: right;
     color:rgb(8, 56, 95);
-
+    font-size: 20px;
     
 }
  .thirdcard{
