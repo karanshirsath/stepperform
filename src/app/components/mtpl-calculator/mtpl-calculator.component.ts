@@ -12,6 +12,7 @@ export class MTPLCalculatorComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   vehicle
   insuringParty
   policyDetails
@@ -19,24 +20,30 @@ export class MTPLCalculatorComponent implements OnInit {
   covers
   summary
   toggle1=false
-  toggle2=true
-  toggle3=true
+  toggle2=false
+  toggle3=false
   toggle4=true
   toggle5=true
   toggle6=true
 
-  policyDetailsData=(data)=>{
-    this.policyDetails=data
-    console.log(this.policyDetails);
-    
-  }
+  
   vehicleData=(data)=>{
     this.vehicle=data
     console.log(this.vehicle);
-    
   }
+
+  insuringPartyData=(data)=>{
+    this.insuringParty=data
+    console.log(this.insuringParty);
+  }
+
+  policyDetailsData=(data)=>{
+    this.policyDetails=data
+    console.log(this.policyDetails);
+  }
+
+
   change=(data)=>{
     console.log(data);
-    
   }
 }

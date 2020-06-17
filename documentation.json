@@ -1,0 +1,1710 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [
+        {
+            "name": "CommonDataService",
+            "id": "injectable-CommonDataService-d75da2bb34e96fb370adddcbce6627ec",
+            "file": "src/app/common-data.service.ts",
+            "properties": [
+                {
+                    "name": "formData",
+                    "defaultValue": "new Subject<any>()",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methods": [],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { Subject } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class CommonDataService {\r\n\r\n  constructor() { }\r\n  formData=new Subject<any>();\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 7
+            },
+            "type": "injectable"
+        }
+    ],
+    "classes": [
+        {
+            "name": "AppPage",
+            "id": "class-AppPage-b0dda38f970a6690b77b35dfb293b3ac",
+            "file": "e2e/src/app.po.ts",
+            "type": "class",
+            "sourceCode": "import { browser, by, element } from 'protractor';\r\n\r\nexport class AppPage {\r\n  navigateTo(): Promise<unknown> {\r\n    return browser.get(browser.baseUrl) as Promise<unknown>;\r\n  }\r\n\r\n  getTitleText(): Promise<string> {\r\n    return element(by.css('app-root .content span')).getText() as Promise<string>;\r\n  }\r\n}\r\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getTitleText",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<string>",
+                    "typeParameters": [],
+                    "line": 8
+                },
+                {
+                    "name": "navigateTo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<unknown>",
+                    "typeParameters": [],
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AdditionalCoversComponent",
+            "id": "component-AdditionalCoversComponent-0bf4f44c64226f53b836f1811d57b608",
+            "file": "src/app/components/additional-covers/additional-covers.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-additional-covers",
+            "styleUrls": [
+                "./additional-covers.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./additional-covers.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "imageUrl",
+                    "defaultValue": "\"./assets/additionalcar.png \"",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "registerForm",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "submit",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "tickimage",
+                    "defaultValue": "\"./assets/tick.jpg\"",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-additional-covers',\r\n  templateUrl: './additional-covers.component.html',\r\n  styleUrls: ['./additional-covers.component.css']\r\n})\r\nexport class AdditionalCoversComponent implements OnInit {\r\n  imageUrl=\"./assets/additionalcar.png \";;\r\n  tickimage=\"./assets/tick.jpg\";\r\n  registerForm: FormGroup;\r\n  constructor(private formBuilder: FormBuilder) { }\r\n\r\n  ngOnInit(): void {\r\n    this.registerForm = this.formBuilder.group({\r\n      none: ['', Validators.requiredTrue],\r\n      premium: ['', Validators.requiredTrue],\r\n      vip: ['', Validators.requiredTrue],\r\n    });\r\n }\r\n  submit=()=>{\r\n    console.log(this.registerForm.value, \"policy details\");\r\n  }\r\n\r\n \r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".container{\r\n   \r\n    padding-top: 50px;\r\n    width: 2000px;\r\n}\r\n.heading{\r\n    text-align: left;\r\n    margin-left:20px ;\r\n    color: rgb(12, 44, 70); \r\n    font-family:   'Ubuntu', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;\r\n \r\n}\r\n\r\n.thirdparty{\r\n    background-color: rgb(12, 44, 70); \r\n    height:80px;\r\n    width:2000px;\r\n}\r\n.policy h1{\r\n    color:white;\r\n    margin-left:1px ;\r\n    margin-top: -1px;\r\n \r\n}\r\n.bgn h1 {\r\nmargin-right: -20px;\r\nmargin-top: -1px;\r\ntext-align: right;\r\ncolor:white;\r\n \r\n\r\n}\r\n\r\n/* 'Times New Roman',Lucida Grande , Arial, Tahomasans-serifTrebuchet MS' */\r\n\r\n.firstcard{\r\n   width:2000px;\r\n    height:90px;\r\n    margin-left: 25px;\r\n    margin-right: 25px;\r\n    margin-top: -30px;\r\n    \r\n    }\r\n.card-body{\r\n    padding-top: 2px;\r\n}    \r\n.discription{\r\n        color:rgb(12, 44, 70);\r\n        padding-left: 15px;\r\n        margin-top: -5px;\r\n}\r\n.secondcard{\r\n       \r\n    width:2000px;\r\n    height:110px;\r\n    margin-left: 25px;\r\n    margin-right: 25px;\r\n    margin-top: -30px;\r\n    \r\n        }\r\n\r\n.valuebutton{\r\n            width:80px;\r\n           height:20px;\r\n           padding-top: 1px;\r\n}\r\n.afterpremium{\r\n    padding-left: 15px;\r\n    margin-top: -5px;\r\n}\r\n.afterpremium span{\r\n\r\n    color:rgb(12, 44, 70);\r\n}\r\n.bgnpremium h1{\r\n    margin-right: -20px;\r\n    margin-top: -1px;\r\n    text-align: right;\r\n    color:rgb(12, 44, 70);\r\n    \r\n}\r\n .thirdcard{\r\n           \r\n            width:2000px;\r\n            height:500px;\r\n            margin-left: 25px;\r\n            margin-right: 25px;\r\n            margin-top: -30px;\r\n }\r\n .textcolor{\r\n    \r\n    color:rgb(12, 44, 70);\r\n    margin-top: -20px;\r\n    padding-left: 15px;\r\n    \r\n}\r\n\r\n\r\n\r\n/* .radio input:checked + .circle:after{\r\n    \r\n    position: absolute;\r\n    cursor: pointer;\r\n    font-family:sans-serif;\r\n    font-size: 22px;\r\n    user-select:none;\r\n    padding-left:30px;\r\n    border-radius:50%;\r\n    top:50%;\r\n    left:50%;\r\n.radio.circle{\r\n    display:inline-block;\r\n    width: 250px;\r\n    background-color: orangered;\r\n    position: absolute;\r\n    left: 0;\r\n    color: rgb(218, 29, 92);\r\n    size:250px;\r\n} */\r\n.radio{\r\n    size: 50px;\r\n    position: relative;\r\n    color: rgb(15, 12, 56);\r\n}\r\n.radio input{\r\n   color: tomato;\r\n} \r\n/* .radio.circle{\r\n    width:100%;\r\n    height:100%;\r\n    border-radius: 50%;\r\n    border:2px solid #ccc;\r\n    display: block;\r\n\r\n}\r\n\r\n.radio span:after{\r\n    content:\"\";\r\n    width:calc(100% - 8px);\r\n    position: absolute;\r\n    top:50%;\r\n    left:50%;\r\n    height:calc(100% - 8px);\r\n    border-radius: 50%;\r\n    border:2px solid #ccc;\r\n    background-color: lightseagreen;\r\n    border-radius: 50%;;\r\n\r\n} */\r\n\r\n\r\n.radio input + lable::after{\r\n   \r\n   border-color: magenta;\r\n\r\n}\r\n.radio input:checked + lable::after{\r\n   \r\n   background:  magenta;\r\n \r\n }\r\n .nextbutton{\r\n    border-radius: 24px;\r\n    height:30px;\r\n    width:120px;\r\n    margin-left: 25px;\r\n    margin-top: -30px;\r\n }\r\n ",
+                    "styleUrl": "./additional-covers.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder"
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container\">\r\n    <h1 class=\"heading\"><b>Additional covers</b></h1><br>\r\n    <div class=\"row\">\r\n\r\n        <div class=\"card shadow p-3 mb-5  rounded thirdparty\">\r\n            <div class=\"card-body\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-8  policy\">\r\n                       \r\n                        <h1><img width=\"50px\" height=\"50px\" [src]='imageUrl' >\r\n                        Motor Third Party Liability Policy</h1>\r\n                    </div>\r\n                    <div class=\"col-4 bgn \">\r\n                        <div>\r\n                            <h1>382,00BGN<br>\r\n                                <h6>Four payments</h6>\r\n                            </h1>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"card shadow p-3 mb-5 bg-white rounded firstcard\">\r\n            <div class=\"card-body \">\r\n                <div class=\"radio\">\r\n                    <label for=\"none\"><input type=\"radio\" formControlName=\"none\"\r\n                            id=\"none\" name=\"none\">\r\n                        <b> None</b></label>\r\n                </div>\r\n                <div class=\" discription\">Description of additional cover here</div>\r\n\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"card shadow p-3 mb-5 bg-white rounded secondcard\">\r\n            <div class=\"card-body\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-8 \">\r\n                        <div class=\"radio\">\r\n                            <label for=\"premium\"><input type=\"radio\" formControlName=\"premium\" id=\"premium\"\r\n                                    name=\"premium\">\r\n                                <b> Premium</b></label>\r\n                        </div>\r\n                        <div class=\"afterpremium\">\r\n                            <button class=\"btn btn-success valuebutton\">\r\n                                <h6>Best Value</h6>\r\n                            </button>\r\n                            <span> Description of additional cover here</span>\r\n                            <br><a href=\"www.google.com\"><u>See what's more</u></a>\r\n                        </div>\r\n\r\n                    </div>\r\n\r\n                    <div class=\"col-4 bgnpremium\">\r\n                        \r\n                            <h1>+25,00BGN<br>\r\n                                <h5>for 12 months</h5>\r\n                            </h1>\r\n                       \r\n                    </div>\r\n                </div>\r\n\r\n\r\n                \r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"card shadow p-3 mb-5 bg-white rounded thirdcard\">\r\n            <div class=\"card-body \">\r\n                <div class=\"row\">\r\n                    <div class=\"col-8\">\r\n                        <div class=\"radio\">\r\n                            <label for=\"vip\"><input type=\"radio\" formControlName=\"vip\" id=\"vip\" name=\"vip\"><b> VIP</b></label>\r\n                        </div>\r\n                        <div class=\" discription\">Description of additional cover here</div><br><br>\r\n                     </div>\r\n                     <div class=\"col-4 bgnpremium\">\r\n                        <h1>+80,00BGN<br>\r\n                                <h5>for 12 months</h5>\r\n                        </h1>\r\n                    </div>\r\n                </div>\r\n               \r\n                <div class=\"textcolor\" > \r\n                    <p ><b>\r\n                            Services provded under the \"PREMIUM\" clause, but with higher\r\n                            limits when transporting vehicles</b></p>\r\n                            <img width=\"30px\" height=\"20px\" [src]='tickimage'>\r\n                           <span >In case of an insurance event(no limit in the number of transports and up to 900 km\r\n                        mileage)\r\n                    </span><br>\r\n                    <img width=\"30px\" height=\"20px\" [src]='tickimage'>\r\n                    <span>Technical failure(no mileage limit and up to 2 transports) </span><br>\r\n                    <img width=\"30px\" height=\"20px\" [src]='tickimage'>\r\n                    <span>Wrong fuet(disposable)</span><br><br>\r\n                  \r\n                    <p ><b>And more:</b></p>\r\n                    <img width=\"30px\" height=\"20px\" [src]='tickimage'>\r\n                    <span>Stay in the parking lot of the damaged car </span><br>\r\n                    <img width=\"30px\" height=\"20px\" [src]='tickimage'>\r\n                    <span>Overview in a hotel of the driver of the vehicle </span><br>\r\n                    <img width=\"30px\" height=\"20px\" [src]='tickimage'>\r\n                    <span>Transportation of persons traveling in vehicles, in case the vehicle has suffered damage\r\n                    </span><br>\r\n                    <img width=\"30px\" height=\"20px\" [src]='tickimage'>\r\n                    <span>Medical transportation in case of an accident</span><br>\r\n                    <img width=\"30px\" height=\"20px\" [src]='tickimage'>\r\n                    <span>Costs of examinations, medical examinations and manipulations in case of bodily injuries to\r\n                        the driver and / or persons traveling in the vehicle as a result of the accident</span><br>\r\n                    <img width=\"30px\" height=\"20px\" [src]='tickimage'>\r\n                    <span>In case of damages covered by Casco + insurance - up to 2 vehicle inspections at the\r\n                        address\r\n                        indicated by the client</span><br>\r\n                    <br><a href=\"www.google.com\"><u>Hide what's included</u></a>\r\n                </div> \r\n            </div>\r\n\r\n        </div>\r\n        \r\n        <button class=\"btn btn-primary nextbutton\" (click)=\"submit()\"> Next</button>\r\n\r\n    </div>\r\n\r\n</div>\r\n\r\n\r\n "
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-4c124a2d2bee653624738464f0627795",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'stepperForm'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent {\r\n  title = 'stepperForm';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<router-outlet></router-outlet>\r\n"
+        },
+        {
+            "name": "DeliveryComponent",
+            "id": "component-DeliveryComponent-861b47a4adb7a6763bacd5af6a8d2a89",
+            "file": "src/app/components/delivery/delivery.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-delivery",
+            "styleUrls": [
+                "./delivery.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./delivery.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "cities",
+                    "defaultValue": "[\"New Delhi\",\"Mumbai\", \"Chennai\", \"Bangalore\", \"Kolkata\", \"Mysore\", \"Pune\", \"Jaipur\"]",
+                    "type": "String[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "codes",
+                    "defaultValue": "[55, 86, 33, 49, 91]",
+                    "type": "number[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "submitted",
+                    "defaultValue": "false",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26
+                },
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16
+                },
+                {
+                    "name": "toggle1",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-delivery',\n  templateUrl: './delivery.component.html',\n  styleUrls: ['./delivery.component.css']\n})\nexport class DeliveryComponent implements OnInit {\n\n  cities:String[] = [\"New Delhi\",\"Mumbai\", \"Chennai\", \"Bangalore\", \"Kolkata\", \"Mysore\", \"Pune\", \"Jaipur\"];\n\n  codes:number[] = [55, 86, 33, 49, 91];\n\n  submitted:boolean = false;\n\n  toggle() {\n    this.submitted = true;\n  }\n\n  toggle1() {\n    this.submitted = false;\n  }\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".container {\r\n    padding-bottom: 200px;\r\n}\r\n\r\n.display-1 {\r\n    font-size: 45px;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.address {\r\n    font-size: large;\r\n}\r\n\r\n.input-1 {\r\n    padding-left: 10px;\r\n}\r\n\r\n.radio-1 {\r\n    height: 25px;\r\n    width: 25px;\r\n}\r\n\r\n.input-1_radio-1 {\r\n    padding-left: 10px;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.input-1_input-1 {\r\n    padding-left: 36px;\r\n}\r\n\r\n.form-1 {\r\n    padding-left: 15px;\r\n    border-radius: 10px;\r\n    background-color: #F0F8FF;\r\n}\r\n\r\n.form-1_row-1 {\r\n    padding-top: 30px;\r\n}\r\n.form-1_row-2 {\r\n    padding-left: 20px;\r\n    font-size: medium;\r\n}\r\n\r\n.form-1_row-3 {\r\n    color: rgb(12, 44, 70);\r\n    height: 40px;\r\n    font-size: large;\r\n    border-radius: 10px;\r\n}\r\n\r\n.form-1_row-4 {\r\n    padding-right: 15px;\r\n\r\n}\r\n\r\n.form-1_row-5 {\r\n    padding-top: 30px;\r\n    padding-bottom: 30px;\r\n}\r\n\r\n.details {\r\n    font-size: 30px;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.details_row-1 {\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.details_row-2 {\r\n    padding-left: 10px;\r\n    padding-top: 30px;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.details_row-3 {\r\n    font-size: large;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.details_row-4 {\r\n    resize: none;\r\n    border-radius: 10px;\r\n    font-size: medium;\r\n}\r\n\r\n.delivery-1 {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n    padding-top: 20px;\r\n}\r\n\r\n.delivery-1_row-1 {\r\n    border: gainsboro solid 1px;\r\n    border-radius: 10px;\r\n    font-size: large;\r\n}\r\n\r\n.delivery-1_row-2 {\r\n    padding-top: 30px;\r\n    padding-left: 30px;\r\n}\r\n\r\n.btn {\r\n    font-size: large;\r\n    width: 80px;\r\n    border-radius: 15px;\r\n}",
+                    "styleUrl": "./delivery.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 22
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">\r\n    <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>\r\n    <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>\r\n    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>\r\n    <title>Delivery</title>\r\n</head>\r\n<body>\r\n    <div class=\"container\">\r\n        <!-- Heading -->\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-10 col-sm-offset-1\">\r\n                <h1 class=\"display-1\">Delivery Address</h1>\r\n            </div>\r\n        </div><br><br>\r\n        <!-- Heading -->\r\n\r\n        <!-- Address -->\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-10 col-sm-offset-1 address\">\r\n                <div class=\"shadow-lg p-3 mb-5 bg-white rounded\">\r\n                    <div class=\"input-1\">\r\n                        <input (click)=\"toggle1()\" type=\"radio\" class=\"radio-1\" name=\"address\">\r\n                        <span class=\"input-1_radio-1\"><b>11, Race Course Road</b></span><br>\r\n                        <span class=\"input-1_input-1\">New Delhi, India</span><br>\r\n                        <span class=\"input-1_input-1\">110002</span>\r\n                    </div>                    \r\n                </div>\r\n            </div>\r\n        </div><br>\r\n        <!-- Address -->\r\n        \r\n        <!-- Others -->\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-10 col-sm-offset-1 address\">\r\n                <div class=\"shadow-lg p-3 mb-5 bg-white rounded\">\r\n                    <div class=\"input-1\">\r\n                        <input (click)=\"toggle()\" type=\"radio\" style=\"height: 25px; width: 25px;\" name=\"address\">\r\n                        <span class=\"input-1_radio-1\"><b>Others</b></span>\r\n                    </div>                    \r\n                </div>\r\n            </div>\r\n        </div><br>\r\n        <!-- Others -->\r\n\r\n        <!-- Form -->\r\n        <div class=\"row\" *ngIf=\"submitted\">\r\n            <div class=\"col-sm-10 col-sm-offset-1\">\r\n                <div class=\"form-1\">\r\n                    <div class=\"row form-1_row-1\">\r\n                        <div class=\"col-sm-3 form-1_row-2\">\r\n                            <span>Full Name</span>\r\n                        </div>\r\n                        <div class=\"col-sm-6 col-sm-offset-2\">\r\n                            <form class=\"form\">\r\n                                <div class=\"form-group\">\r\n                                    <input type=\"text\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"form-1_row-4\"><hr></div>\r\n                    <div class=\"row form-1_row-1\">\r\n                        <div class=\"col-sm-3 form-1_row-2\">\r\n                            <span>City</span>\r\n                        </div>\r\n                        <div class=\"col-sm-4 col-sm-offset-2\">\r\n                            <form class=\"form\">\r\n                                <div class=\"form-group\">\r\n                                    <select name=\"city\" id=\"city\" class=\"form-control form-1_row-3\">\r\n                                        <option *ngFor=\"let city of cities\">{{city}}</option>\r\n                                    </select>\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                        <div class=\"col-sm-2\">\r\n                            <form class=\"form\">\r\n                                <div class=\"form-group\">\r\n                                    <input [disabled]=\"true\" type=\"text\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"form-1_row-4\"><hr></div>\r\n                    <div class=\"row form-1_row-1\">\r\n                        <div class=\"col-sm-3 form-1_row-2\">\r\n                            <span>Street & Number</span>\r\n                        </div>\r\n                        <div class=\"col-sm-4 col-sm-offset-2\">\r\n                            <form class=\"form\">\r\n                                <div class=\"form-group\">\r\n                                    <input type=\"text\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                        <div class=\"col-sm-2\">\r\n                            <form class=\"form\">\r\n                                <div class=\"form-group\">\r\n                                    <input type=\"text\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"form-1_row-4\"><hr></div>\r\n                    <div class=\"row form-1_row-5\">\r\n                        <div class=\"col-sm-4 form-1_row-2\">\r\n                            <span>Block, Entrance & Appartment</span>\r\n                        </div>\r\n                        <div class=\"col-sm-2 col-sm-offset-1\">\r\n                            <form class=\"form\">\r\n                                <div class=\"form-group\">\r\n                                    <input type=\"text\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                        <div class=\"col-sm-2\">\r\n                            <form class=\"form\">\r\n                                <div class=\"form-group\">\r\n                                    <input type=\"text\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                        <div class=\"col-sm-2\">\r\n                            <form class=\"form\">\r\n                                <div class=\"form-group\">\r\n                                    <input type=\"text\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                    </div>\r\n                </div>               \r\n            </div>\r\n        </div><br><br>\r\n        <!-- Form -->\r\n\r\n        <!-- Additional Details -->\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-10 col-sm-offset-1\">\r\n                <h1 class=\"display-1 details\">Additonal Details</h1>\r\n            </div>\r\n        </div><br><br>\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-10 col-sm-offset-1\">\r\n                <div class=\"row details_row-1\">\r\n                    <div class=\"col-sm-4\" style=\"font-size: medium;\">\r\n                        Contact Number\r\n                    </div>\r\n                    <div class=\"col-sm-5 col-sm-offset-3\">\r\n                        <input type=\"number\" class=\"form-control form-1_row-3\">\r\n                    </div>\r\n                </div>\r\n                <hr>\r\n                <div class=\"details_row-2\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-sm-6\">\r\n                            <span style=\"font-size: medium;\">Type of Business</span>\r\n                            <p style=\"font-size: small;\">For Business address your package will be delivered only during\r\n                                <br>normal work days from 9:00 to 17:00\r\n                            </p>\r\n                        </div>\r\n                        <div class=\"col-sm-6 details_row-3\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-6\">\r\n                                    <input type=\"radio\" name=\"typeOfBusiness\" class=\"radio-1\">&nbsp;Home\r\n                                </div>\r\n                                <div class=\"col-sm-6\">\r\n                                    <input type=\"radio\" name=\"typeOfBusiness\" class=\"radio-1\">&nbsp;Business\r\n                                </div>\r\n                            </div>                            \r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <hr>\r\n                <div class=\"row details_row-1\">\r\n                    <div class=\"col-sm-4\" style=\"font-size: medium;\">\r\n                        Additional Notes\r\n                    </div>\r\n                    <div class=\"col-sm-7 col-sm-offset-1\">\r\n                        <textarea name=\"notes\" id=\"notes\" cols=\"30\" rows=\"5\" class=\"form-control details_row-4\"></textarea>\r\n                    </div>\r\n                    <div class=\"col-sm-12\" style=\"text-align: right; font-size: small;\">Optional</div>\r\n                </div>\r\n            </div>            \r\n        </div>\r\n        <!-- Additional Details -->\r\n        <div class=\"delivery-1\">\r\n            <div class=\"row\">\r\n                <div class=\"col-sm-10 col-sm-offset-1 delivery-1_row-1\">\r\n                    <div class=\"delivery-1_row-2\">\r\n                        <b style=\"color: grey;\">Estimated delivery in your area is 2 days</b>\r\n                        <br>\r\n                        <p><a href=\"\">More info here</a></p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div><br><br>\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-10 col-sm-offset-1\">\r\n                <button type=\"submit\" class=\"btn btn-primary rounded-pill\"  matStepperNext>Next</button>\r\n            </div>\r\n        </div>        \r\n    </div>\r\n</body>\r\n</html>"
+        },
+        {
+            "name": "InsuringPartyComponent",
+            "id": "component-InsuringPartyComponent-ec748c157627da20f35392b58ef5fb39",
+            "file": "src/app/components/insuring-party/insuring-party.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-insuring-party",
+            "styleUrls": [
+                "./insuring-party.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./insuring-party.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "insuringParty",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "next",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-insuring-party',\r\n  templateUrl: './insuring-party.component.html',\r\n  styleUrls: ['./insuring-party.component.css']\r\n})\r\nexport class InsuringPartyComponent implements OnInit {\r\n  insuringParty: FormGroup;\r\n  constructor(private router: Router, private fb: FormBuilder) { }\r\n\r\n  ngOnInit(): void {\r\n    this.insuringParty = this.fb.group({\r\n      egn: ['', Validators.required],\r\n      address: ['', Validators.required],\r\n      email: ['', Validators.required]\r\n    });\r\n  }\r\n  next() {\r\n    this.router.navigate(['/policy_details']);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/*  */",
+                    "styleUrl": "./insuring-party.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router"
+                    },
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder"
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"row\">\r\n    <div class=\"col-md-10 offset-1\">\r\n        <div class=\"container-fluid\">\r\n            <div class=\"card mx-auto\" style=\"border:  none; \">\r\n                <div class=\"card-body\">\r\n                    <h1 style=\"color:#003768;\">Insuring Party</h1>\r\n                    <form [formGroup]=\"insuringParty\" class=\"form form-group\">\r\n                        <table class=\"table\" style=\"margin-left: auto; margin-right: auto; border-top: none;\">\r\n                            <tr>\r\n                                <td style=\"text-align: left;\"><label for=\"egn\">Enter your EGN/EIK/LNCH</label></td>\r\n                                <td style=\"text-align: right;\"><input type=\"text\" formControlName=\"egn\"/></td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td style=\"text-align: left;\"><label for=\"address\">Place of Permanent Residence</label></td>\r\n                                <td style=\"text-align: right;\">\r\n                                    <select formControlName=\"address\">\r\n                                        <option>...</option>\r\n                                        <option>...</option>\r\n                                    </select>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td style=\"text-align: left;\"><label for=\"email\">Email</label></td>\r\n                                <td style=\"text-align: right;\"><input type=\"email\" formControlName=\"email\"/></td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td style=\"text-align: left;\"><button type=\"button\" class=\"btn btn-primary\" style=\"margin-right: 0;\" (click)=\"next()\" [disabled]=\"insuringParty.invalid\">Next</button></td>\r\n                                <td></td>\r\n                            </tr>\r\n                        </table>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "LoginComponent",
+            "id": "component-LoginComponent-f8085368c771ac895c7cfb1476ac2aa1",
+            "file": "src/app/components/login/login.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-login",
+            "styleUrls": [
+                "./login.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./login.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "email",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "login",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13
+                },
+                {
+                    "name": "redirect",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport {Router} from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.css']\r\n})\r\nexport class LoginComponent implements OnInit {\r\n  constructor(private router: Router) { }\r\nemail: string;\r\npassword: string;\r\n  ngOnInit() {\r\n  }\r\n  login() : void {\r\n    if(this.email == 'admin' && this.password == 'admin'){\r\n     this.router.navigate([\"form\"]);\r\n    }else {\r\n      alert(\"Invalid credentials\");\r\n    }\r\n  }\r\n\r\n  redirect(){\r\n    this.router.navigate([\"tab\"]);\r\n  }\r\n  }\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/* .monospace {\r\n    font-family: \"Lucida Console\", Courier, monospace;\r\n    font-weight: bold;\r\n    color: midnightblue;\r\n  }\r\n  .btn{\r\n    border-radius: 15px;\r\n\r\n  }\r\n  .example-card{\r\n   width: 100%;\r\n    \r\n    \r\n  }\r\n  .images{\r\n    max-width:100 px;\r\n\r\n  }\r\n.example-full-width{\r\n  width: 100%;\r\n  position:center;\r\n} */\r\n.login-card-description{\r\n  font-family: \"Lucida Console\", Courier, monospace;\r\n    font-weight: bold;\r\n    color: midnightblue;\r\n    font-size: 20px;\r\n}\r\n.login-btn {\r\n  padding: 10px 20px 10px;\r\n  background-color:rgb(9, 113, 231);\r\n  border-radius: 20px;\r\n  font-size: 15px;\r\n  /* font-weight: bold; */\r\n  line-height: 20px;\r\n  color: #fff;\r\n  margin-bottom: 24px; \r\n}\r\n.hr-text{\r\n  position: relative;\r\n  border: none;\r\n  height: 1px;\r\n  background: #999;\r\n}\r\n.redirect-btn{\r\n  padding: 10px 20px 10px;\r\n  background-color:rgb(8, 30, 66);\r\n  border-radius: 20px;\r\n  font-size: 15px;\r\n  /* font-weight: bold; */\r\n  line-height: 20px;\r\n  color: #fff;\r\n  margin-bottom: 24px; \r\n\r\n}\r\n.login-card-footer-text{\r\n  color:gray;\r\n}",
+                    "styleUrl": "./login.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router"
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<!-- \r\n<div class=\"container\"> \r\n  <mat-grid-list cols=\"2\" rowHeight=\"1:1\">\r\n    <mat-grid-tile>\r\n      <div class=\"images\"> \r\n        <img src=\"../../../assets/WhatsApp Image 2020-06-15 at 7.54.49 PM.jpeg\"/>\r\n      </div>\r\n    </mat-grid-tile>\r\n    <mat-grid-tile>  \r\n\r\n      <mat-card class=\"example-card\">\r\n        <img src=\"../../../assets/logo.jpeg\"/>\r\n          \r\n            <mat-card-title class=\"monospace\">Sign In</mat-card-title>\r\n         \r\n          \r\n          <div class=\"text-primary\">Forget Password?</div>\r\n          \r\n          <mat-card-content>\r\n            <form class=\"example-form\">\r\n              <table class=\"example-full-width\" cellspacing=\"0\">\r\n                <tr>\r\n                  <td>\r\n                  <mat-label > Email</mat-label><br>\r\n                    <mat-form-field class=\"example-full-width\" appearance=\"outline\">\r\n                    <input matInput placeholder=\"Enter your email\"  [(ngModel)]=\"email\" name=\"email\" required>\r\n                    </mat-form-field>\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                    \r\n                <td>\r\n                  <mat-label > Password</mat-label><br>\r\n                  <mat-form-field class=\"example-full-width\" appearance=\"outline\">\r\n                  <input matInput placeholder=\"Password\" [(ngModel)]=\"password\"type=\"password\" name=\"password\" required>\r\n                </mat-form-field></td>\r\n              </tr></table>\r\n            </form>\r\n          </mat-card-content>\r\n          <mat-card-actions>\r\n            &nbsp;&nbsp;&nbsp;<button mat-raised-button (click)=\"login()\" class=\"btn btn-primary btn\">Login</button>\r\n          </mat-card-actions>\r\n          <mat-divider></mat-divider>\r\n          <mat-card-actions>\r\n            &nbsp;&nbsp;&nbsp;<button mat-raised-button (click)=\"redirect()\" class=\"btn btn-primary\">Continue as as guest</button>\r\n          </mat-card-actions>\r\n        </mat-card>\r\n      </mat-grid-tile>\r\n    \r\n  </mat-grid-list>\r\n  \r\n  \r\n\r\n</div> -->\r\n<main class=\"d-flex align-items-center min-vh-100 py-3 py-md-0\">\r\n  <div class=\"container\">\r\n    <div class=\"card login-card\">\r\n      <div class=\"row no-gutters\">\r\n        <div class=\"col-md-5\">\r\n          <img src=\"../../../assets/cardimg.jpeg\" alt=\"login\" class=\"login-card-img\">\r\n        </div>\r\n        <div class=\"col-md-7\">\r\n          <div class=\"card-body\">\r\n            <div class=\"brand-wrapper\">\r\n              <img src=\"../../../assets/logo.jpeg\" alt=\"logo\" class=\"logo\">\r\n            </div>\r\n            <p class=\"login-card-description\">Sign In</p>\r\n            <a href=\"#!\" class=\"forgot-password-link\">Forgot password?</a>\r\n            <form action=\"#!\">\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"email\" class=\"sr-only\">Email</label>\r\n                  <input type=\"email\" name=\"email\" id=\"email\" class=\"form-control\" [(ngModel)]=\"email\" placeholder=\"Email address\">\r\n                </div>\r\n                <div class=\"form-group mb-4\">\r\n                  <label for=\"password\" class=\"sr-only\">Password</label>\r\n                  <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" [(ngModel)]=\"password\" placeholder=\"***********\">\r\n                </div>\r\n                <input name=\"login\" id=\"login\" class=\"btn  login-btn \" type=\"button\" (click)=\"login()\" value=\"Login\">\r\n    \r\n                  <hr data-content=\"OR\" class=\"hr-text\">\r\n                  <input name=\"redirect\" id=\"redirect\" class=\"btn redirect-btn btn-block\" type=\"button\" (click)=\"redirect()\" value=\"Continue as a Guest\">\r\n              \r\n              </form>\r\n             \r\n              <p class=\"login-card-footer-text\">You can create your account at the end of the process <a href=\"#!\" class=\"text-reset\">Register here</a></p>\r\n              \r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- <div class=\"card login-card\">\r\n      <img src=\"assets/images/login.jpg\" alt=\"login\" class=\"login-card-img\">\r\n      <div class=\"card-body\">\r\n        <h2 class=\"login-card-title\">Login</h2>\r\n        <p class=\"login-card-description\">Sign in to your account to continue.</p>\r\n        <form action=\"#!\">\r\n          <div class=\"form-group\">\r\n            <label for=\"email\" class=\"sr-only\">Email</label>\r\n            <input type=\"email\" name=\"email\" id=\"email\" class=\"form-control\" placeholder=\"Email\">\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"password\" class=\"sr-only\">Password</label>\r\n            <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" placeholder=\"Password\">\r\n          </div>\r\n          <div class=\"form-prompt-wrapper\">\r\n            <div class=\"custom-control custom-checkbox login-card-check-box\">\r\n              <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck1\">\r\n              <label class=\"custom-control-label\" for=\"customCheck1\">Remember me</label>\r\n            </div>              \r\n            <a href=\"#!\" class=\"text-reset\">Forgot password?</a>\r\n          </div>\r\n          <input name=\"login\" id=\"login\" class=\"btn btn-block login-btn mb-4\" type=\"button\" value=\"Login\">\r\n        </form>\r\n        <p class=\"login-card-footer-text\">Don't have an account? <a href=\"#!\" class=\"text-reset\">Register here</a></p>\r\n      </div>\r\n    </div> -->\r\n  </div>\r\n</main>"
+        },
+        {
+            "name": "MTPLCalculatorComponent",
+            "id": "component-MTPLCalculatorComponent-e6350f4b47fc37c1d06d3b7bfd57a634",
+            "file": "src/app/components/mtpl-calculator/mtpl-calculator.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-mtpl-calculator",
+            "styleUrls": [
+                "./mtpl-calculator.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./mtpl-calculator.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-mtpl-calculator',\r\n  templateUrl: './mtpl-calculator.component.html',\r\n  styleUrls: ['./mtpl-calculator.component.css']\r\n})\r\nexport class MTPLCalculatorComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./mtpl-calculator.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-horizontal-stepper labelPosition=\"bottom\" #stepper linear>\r\n  \r\n        \r\n      <mat-step >\r\n        <ng-template matStepLabel>Vehicle </ng-template>\r\n        <app-v-info ></app-v-info>\r\n      </mat-step>\r\n      <mat-step >\r\n        <ng-template matStepLabel>Insuring Party</ng-template>\r\n        <app-insuring-party></app-insuring-party>\r\n      </mat-step>\r\n      <mat-step >\r\n        <ng-template matStepLabel>Policy Details</ng-template>\r\n        <app-policy-details ></app-policy-details>\r\n      </mat-step>\r\n      <mat-step >\r\n        <ng-template matStepLabel>Installments</ng-template>\r\n        Installments\r\n      </mat-step>\r\n      <mat-step >\r\n        <ng-template matStepLabel>Covers</ng-template>\r\n        <app-additional-covers></app-additional-covers>\r\n      </mat-step>\r\n      <mat-step >\r\n        <ng-template matStepLabel>Summary</ng-template>\r\n        Summary\r\n      </mat-step>\r\n</mat-horizontal-stepper>\r\n"
+        },
+        {
+            "name": "MTPLPolicyComponent",
+            "id": "component-MTPLPolicyComponent-9d7609974e4d75a5b5c1d71bf3f40b51",
+            "file": "src/app/components/mtpl-policy/mtpl-policy.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-mtpl-policy",
+            "styleUrls": [
+                "./mtpl-policy.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./mtpl-policy.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-mtpl-policy',\r\n  templateUrl: './mtpl-policy.component.html',\r\n  styleUrls: ['./mtpl-policy.component.css']\r\n})\r\nexport class MTPLPolicyComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./mtpl-policy.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-horizontal-stepper labelPosition=\"bottom\" #stepper linear>\r\n  <mat-step>\r\n    <ng-template matStepLabel>Personal details</ng-template>\r\n    <app-personal></app-personal>\r\n  </mat-step>  \r\n  \r\n  <mat-step>\r\n    <ng-template matStepLabel>Contact details</ng-template>\r\n  </mat-step> \r\n  \r\n  <mat-step>\r\n    <ng-template matStepLabel>Vehicle Owner</ng-template>\r\n  </mat-step>  \r\n\r\n  <mat-step>\r\n    <ng-template matStepLabel>Delivery</ng-template>\r\n    <app-delivery></app-delivery>\r\n  </mat-step>  \r\n\r\n  <mat-step>\r\n    <ng-template matStepLabel>Summary</ng-template>\r\n  </mat-step>  \r\n\r\n  <mat-step>\r\n    <ng-template matStepLabel>Payment</ng-template>\r\n  </mat-step> \r\n\r\n  <!-- <mat-step >\r\n        <ng-template matStepLabel>Policy Details</ng-template>\r\n        <app-policy-details  ></app-policy-details>\r\n      </mat-step>\r\n        \r\n      <mat-step >\r\n        <ng-template matStepLabel>Vehicle </ng-template>\r\n        <app-v-info ></app-v-info>\r\n       \r\n      </mat-step> -->\r\n</mat-horizontal-stepper>\r\n"
+        },
+        {
+            "name": "PersonalComponent",
+            "id": "component-PersonalComponent-948a0c193120760cb6b323538ebaac24",
+            "file": "src/app/components/personal/personal.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-personal",
+            "styleUrls": [
+                "./personal.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./personal.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "citizens",
+                    "defaultValue": "['Indian','American','African']",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "personalForm",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18
+                },
+                {
+                    "name": "success",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport {FormBuilder,FormGroup,Validators} from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-personal',\r\n  templateUrl: './personal.component.html',\r\n  styleUrls: ['./personal.component.css']\r\n})\r\nexport class PersonalComponent implements OnInit {\r\n\r\n  personalForm:FormGroup;\r\n  citizens=['Indian','American','African'];\r\n  constructor(private formBuilder:FormBuilder) { }\r\n  success(){\r\n    console.log(this.personalForm.value);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.personalForm=this.formBuilder.group({\r\n      lnch:['',Validators.required],\r\n      fullname:this.formBuilder.group({\r\n        firstname:['',Validators.required],\r\n        lastname:['',Validators.required],\r\n        surname:[]\r\n      }),\r\n      fullnameeng:this.formBuilder.group({\r\n        firstnameeng:['',Validators.required],\r\n        lastnameeng:['',Validators.required],\r\n        surnameeng:[]\r\n      }),\r\n      citizen:['',Validators.required],\r\n      birth:['',Validators.required]\r\n    });\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".form-control{\r\n    width:180px\r\n}\r\n\r\n.container{\r\n    margin: 200px;\r\n}\r\n\r\nh1{\r\n    margin-left: 1px;\r\n    margin-bottom: 20px;\r\n    color: darkblue;\r\n}\r\nlabel{\r\n    color: darkgray;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n}\r\n.col-sm-4{\r\n    padding-left: 205px;\r\n   \r\n}\r\nhr{\r\n    width:50%;\r\n    text-align:left;\r\n    margin-left:0;\r\n}\r\n.panel{\r\n    border-color:yellow;\r\n    width: 555px;\r\n}\r\n.error{\r\n    color: red;\r\n}\r\n.btn{\r\n    border-radius: 50px;\r\n    min-width: 100px;\r\n  }\r\n@media screen and (max-width: 800px) {\r\n    .col-sm-4{\r\n        padding-left:13px;\r\n\r\n    }\r\n    .panel{\r\n        width: 177px;;\r\n    }\r\n}",
+                    "styleUrl": "./personal.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder"
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container\">\r\n    <h1>Personal Details</h1>\r\n    <form [formGroup]=\"personalForm\"  (ngSubmit)=\"success()\">\r\n      <div class=\"form-group row\">\r\n        <label for=\"lnch\" class=\"col-sm-2 col-form-label\">LNCH</label>\r\n        <div class=\"col-sm-4\">\r\n        <input type=\"text\" class=\"form-control\" id=\"lnch\" placeholder=\"Enter LNCH\" formControlName=\"lnch\"  name=\"lnch\">\r\n        <div *ngIf=\"personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)\" class=\"error\">Please enter the LNCH no</div>\r\n    </div>\r\n      </div>\r\n      <hr>\r\n     <div formGroupName=\"fullname\">\r\n        <label class=\"\">Full Name</label><br>\r\n      <div class=\"form-group row\">\r\n        \r\n        <div class=\"col-sm-2\">\r\n        <input type=\"text\" class=\"form-control\" id=\"firstname\" placeholder=\"Enter firstname\" formControlName=\"firstname\"  name=\"firstname\">\r\n        <div *ngIf=\"personalForm.get('fullname').get('firstname').hasError('required') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\" class=\"error\">Please enter your first name</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n        <input type=\"text\" class=\"form-control\" id=\"lastname\" placeholder=\"Enter lastname\" formControlName=\"lastname\"  name=\"lastname\">\r\n        <div *ngIf=\"personalForm.get('fullname').get('lastname').hasError('required') &&(personalForm.get('fullname').get('lastname').dirty || personalForm.get('fullname').get('lastname').touched)\" class=\"error\">Please enter your lastname</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n        <input type=\"text\" class=\"form-control\" id=\"surname\" placeholder=\"Enter surname\" formControlName=\"surname\"  name=\"suname\">\r\n        </div>\r\n      </div>\r\n     </div>\r\n     <hr>\r\n     <div formGroupName=\"fullnameeng\">\r\n        <label>Full Name in English</label><br>\r\n        <div class=\"form-group row\">\r\n            <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"firstnameeng\" placeholder=\"Enter firstname\" formControlName=\"firstnameeng\"  name=\"firstnameeng\">\r\n          <div *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\" class=\"error\">Please enter your first name</div>\r\n          </div>\r\n          <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"lastnameeng\" placeholder=\"Enter lastname\" formControlName=\"lastnameeng\"  name=\"lastnameeng\">\r\n          <div *ngIf=\"personalForm.get('fullnameeng').get('lastnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('lastnameeng').dirty || personalForm.get('fullnameeng').get('lastnameeng').touched)\" class=\"error\">Please enter your lastname</div>\r\n          </div>\r\n          <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"surnameeng\" placeholder=\"Enter surname\" formControlName=\"surnameeng\"  name=\"sunameeng\">\r\n        </div>\r\n        </div>\r\n       </div>\r\n       <div class=\"panel panel-default\">\r\n        <div class=\"panel-body\">Please compare data in latin with data in vehicle registration certificate\r\n            or identity document.Data will be used for printout of Green Card Certificate.\r\n        </div>\r\n      </div>\r\n       <div class=\"form-group row\">\r\n        <label for=\"citizen\" class=\"col-sm-2 col-form-label\">Citizenship</label>\r\n        <div class=\"col-sm-4\">\r\n        <select class=\"form-control\" id=\"citizen\" formControlName=\"citizen\" name=\"citizen\">\r\n          <option *ngFor=\"let c of citizens\" [value]=\"c\">{{c}}</option>\r\n        </select>\r\n        <div *ngIf=\"personalForm.controls.citizen.hasError('required') &&(personalForm.controls.citizen.dirty || personalForm.controls.citizen.touched)\" class=\"error\">Please select your Citizenship</div>\r\n        </div>\r\n      </div>\r\n      <hr>\r\n      <div class=\"form-group row\">\r\n        <label for=\"birth\" class=\"col-sm-2 col-form-label\">Birth Date</label>\r\n        <div class=\"col-sm-4\">\r\n        <input type=\"date\" class=\"form-control\"  id=\"birth\" placeholder=\"Enter Birth date\" formControlName=\"birth\"  name=\"birth\">\r\n        <div *ngIf=\"personalForm.controls.birth.hasError('required') &&(personalForm.controls.birth.dirty || personalForm.controls.birth.touched)\" class=\"error\">Please select your birth date </div>\r\n        </div>\r\n    </div>\r\n      <hr>\r\n      <button type=\"button\" class=\"btn btn-primary btn-lg\" [disabled]=\"!personalForm.valid\">Next</button>\r\n    </form>\r\n  </div>"
+        },
+        {
+            "name": "PolicyDetailsComponent",
+            "id": "component-PolicyDetailsComponent-d898dc7febecfc87d5570ee00bbc0e93",
+            "file": "src/app/components/policy-details/policy-details.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-policy-details",
+            "styleUrls": [
+                "./policy-details.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./policy-details.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "OnRegister",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 11,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "OnToggle",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 12,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "change",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "registerForm",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "submit",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-policy-details',\r\n  templateUrl: './policy-details.component.html',\r\n  styleUrls: ['./policy-details.component.css']\r\n})\r\nexport class PolicyDetailsComponent implements OnInit {\r\n\r\n  @Output() OnRegister = new EventEmitter()\r\n  @Output() OnToggle = new EventEmitter()\r\n  registerForm: FormGroup;\r\n\r\n  constructor(private formBuilder: FormBuilder) { }\r\n\r\n  ngOnInit() {\r\n    this.registerForm = this.formBuilder.group({\r\n      policyDate: ['', Validators.required],\r\n      policyLength: ['', Validators.required],\r\n      check1: ['', Validators.requiredTrue],\r\n      check2: ['', Validators.requiredTrue]\r\n    });\r\n  }\r\n  submit=()=>{\r\n    console.log(this.registerForm.value, \"policy details\");\r\n    this.OnRegister.emit(this.registerForm.value);\r\n  }\r\n  change=()=>{\r\n    if(this.registerForm.valid){\r\n      this.OnToggle.emit(true)\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./policy-details.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder"
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h1 class=\"font-weight-bold\">Policy Details</h1>\r\n<form [formGroup]=\"registerForm\">\r\n<div class=\"form-row\">\r\n    <div class=\"col-auto mr-auto pt-2\">\r\n        Start Date\r\n    </div>\r\n    <div class=\"col-md-3 col-auto col-7\">\r\n        <input class=\"form-control\" type=\"date\" formControlName=\"policyDate\" (change)=\"change()\">\r\n    </div>  \r\n</div>\r\n<hr>\r\n<div class=\"form-row\">\r\n    <div class=\"col-auto mr-auto pt-2\">\r\n        Policy length\r\n    </div>\r\n    <div class=\"col-md-3 col-auto col-7\">\r\n        <select formControlName=\"policyLength\" class=\"form-control\" (change)=\"change()\">\r\n            <option selected disabled value=\"\">--SELECT--</option>\r\n            <option value=\"1\">1 Month</option>\r\n            <option value=\"3\">3 Months</option>\r\n            <option value=\"6\">6 Months</option>\r\n            <option value=\"12\">12 Months</option>\r\n        </select>\r\n    </div>\r\n</div>\r\n<hr>\r\n\r\n<div class=\" border shadow p-3 mb-3 bg-white rounded\">\r\n    <input type=\"checkbox\" formControlName=\"check1\" (change)=\"change()\"> I have read and accepted <span class=\"text-primary\">\"Personal Data Protection Information\"</span>\r\n\r\n</div>\r\n<div class=\"border shadow p-3 mb-3 bg-white rounded\">\r\n    <input type=\"checkbox\" formControlName=\"check2\" (change)=\"change()\"> I have read the <span class=\"text-primary\">\"Motor Insurance Third Party Liability Insurance Document\"</span>\r\n\r\n</div>\r\n<br>\r\n</form>\r\n<button class=\"btn btn-primary rounded-pill\" (click)=\"submit()\" mat-raised-button  matStepperNext [disabled]=\"!registerForm.valid\">Calculate</button>\r\n"
+        },
+        {
+            "name": "StepperComponent",
+            "id": "component-StepperComponent-1e4416abe4208e496daed3a4d2a50542",
+            "file": "src/app/stepper/stepper.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-stepper",
+            "styleUrls": [
+                "./stepper.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./stepper.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "addressForm",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "isLinear",
+                    "defaultValue": "true",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "personalInformation",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "status",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "toggle",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "checked",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "courseReg",
+                    "args": [
+                        {
+                            "name": "data",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "jsdoctags": [
+                        {
+                            "name": "data",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport {FormBuilder, FormGroup, Validators} from '@angular/forms';\r\nimport { CommonDataService } from '../common-data.service';\r\n@Component({\r\n  selector: 'app-stepper',\r\n  templateUrl: './stepper.component.html',\r\n  styleUrls: ['./stepper.component.css']\r\n})\r\nexport class StepperComponent implements OnInit {\r\n  isLinear = true;\r\n  status= false;\r\n  personalInformation: FormGroup;\r\n  addressForm: FormGroup;\r\n  toggle=false\r\n\r\n  constructor(private _formBuilder: FormBuilder, private _commonData:CommonDataService) { }\r\n\r\n  ngOnInit(): void {this.personalInformation = this._formBuilder.group({\r\n    first: ['', [Validators.required,Validators.pattern(/^[A-z][A-z]+$/)]],\r\n    middle: ['', ],\r\n    last: ['', [Validators.required,Validators.pattern(/^[A-z][A-z]+$/)]],\r\n    gender: ['', Validators.required],\r\n    birth: ['', Validators.required],\r\n    email: ['', [Validators.required,Validators.pattern(/^[A-z][A-z0-9]+(@)[A-z]+(.com)$/)]],\r\n    SSN: ['', Validators.required]\r\n  });\r\n  \r\n  \r\n  this.addressForm = this._formBuilder.group({\r\n    mailingAddress: ['', Validators.required],\r\n    city: ['', Validators.required],\r\n    state: ['', Validators.required],\r\n    phoneNo: ['', [Validators.required,Validators.minLength(10),Validators.maxLength(10)]],\r\n    \r\n  });\r\n  \r\n  }\r\n  checked(event){\r\nthis.status=event.checked\r\n\r\n  }\r\n  onSubmit(){\r\n    console.log(this.personalInformation.value);\r\n    console.log(this.addressForm.value);\r\n    this._commonData.formData.next(this.personalInformation.value)\r\n    \r\n    \r\n    \r\n  }\r\n  courseReg(data) {\r\n    console.log(data,\"stepper\");\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".mat-form-field {\r\n    margin-left: 8px;\r\n  }\r\n",
+                    "styleUrl": "./stepper.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "_formBuilder",
+                        "type": "FormBuilder"
+                    },
+                    {
+                        "name": "_commonData",
+                        "type": "CommonDataService"
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "_formBuilder",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "_commonData",
+                        "type": "CommonDataService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-horizontal-stepper labelPosition=\"bottom\" #stepper linear>\r\n\r\n  <mat-step completed={{toggle}}>\r\n    <ng-template matStepLabel>Policy Details</ng-template>\r\n    <app-policy-details (OnRegister)=\"courseReg($event)\" (OnToggle)=\"toggle=$event\"></app-policy-details>\r\n  </mat-step>\r\n    \r\n  <mat-step completed={{toggle}}>\r\n    <ng-template matStepLabel>Vehicle </ng-template>\r\n    <app-v-info (OnRegister)=\"courseReg($event)\" (OnToggle)=\"toggle=$event\"></app-v-info>\r\n    {{toggle}}\r\n  </mat-step>\r\n  \r\n  \r\n  \r\n  <mat-step [stepControl]=\"personalInformation\">\r\n      <mat-card>\r\n        <form [formGroup]=\"personalInformation\">\r\n        <ng-template matStepLabel>Enter your personal information</ng-template>\r\n        \r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>First</mat-label>\r\n          <input matInput placeholder=\"First name\" formControlName=\"first\" required>\r\n          <mat-error *ngIf=\"personalInformation.controls.first.errors?.required\">Please enter the first name</mat-error>\r\n          <mat-error *ngIf=\"personalInformation.controls.first.errors?.pattern\">Please enter the Valid first name</mat-error>\r\n        </mat-form-field><br/>\r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>Middle (optional)</mat-label>\r\n          <input matInput placeholder=\"Middle name (optional)\" formControlName=\"middle\">\r\n        </mat-form-field><br/>\r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>last</mat-label>\r\n          <input matInput placeholder=\" Last name\" formControlName=\"last\" required>\r\n          <mat-error *ngIf=\"personalInformation.controls.last.errors?.required\">Please enter the last name</mat-error>\r\n          <mat-error *ngIf=\"personalInformation.controls.last.errors?.pattern\">Please enter the Valid last name</mat-error>\r\n        </mat-form-field><br/>\r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>Select Gender</mat-label>\r\n          <mat-select formControlName=\"gender\">\r\n            <mat-option value=\"Male\">Male</mat-option>\r\n            <mat-option value=\"Female\">Female</mat-option>\r\n            <mat-option value=\"Other\">Other</mat-option>\r\n          </mat-select>\r\n          <mat-error *ngIf=\"personalInformation.controls.gender.errors?.required\">Please select the gender</mat-error>\r\n        </mat-form-field><br/>\r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>Birth date</mat-label>\r\n          <input matInput [matDatepicker]=\"picker\" formControlName=\"birth\">\r\n          <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n          <mat-datepicker #picker></mat-datepicker>\r\n          <mat-error *ngIf=\"personalInformation.controls.birth.errors?.required\">Please select the birth date</mat-error>\r\n        </mat-form-field><br/>\r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>SSN</mat-label>\r\n          <input matInput  formControlName=\"SSN\" required>\r\n          <mat-error *ngIf=\"personalInformation.controls.SSN.errors?.required\">Please select the SSN</mat-error>\r\n        </mat-form-field><br/>\r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>Email Id</mat-label>\r\n          <input matInput placeholder=\"karan@gmail.com\" formControlName=\"email\" required>\r\n          <mat-error *ngIf=\"personalInformation.controls.email.errors?.required\">Please enter the email id</mat-error>\r\n          <mat-error *ngIf=\"personalInformation.controls.email.errors?.pattern\">Please enter the Valid emailId</mat-error>\r\n        </mat-form-field><br/>\r\n  \r\n  \r\n  \r\n  \r\n        <div>\r\n          <button mat-raised-button  matStepperNext>Next</button>\r\n        </div>\r\n      </form>\r\n    </mat-card>\r\n      \r\n    </mat-step>\r\n    <mat-step [stepControl]=\"addressForm\" >\r\n      <form [formGroup]=\"addressForm\">\r\n        <ng-template matStepLabel>Enter your address details</ng-template>\r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>Mailing address</mat-label>\r\n          <input matInput formControlName=\"mailingAddress\" placeholder=\"Ex. 1 Main St, New York, NY\" required>\r\n          <mat-error *ngIf=\"addressForm.controls.mailingAddress.errors?.required\">Please enter the mailing address</mat-error>\r\n        </mat-form-field><br>\r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>city</mat-label>\r\n          <input matInput formControlName=\"city\" placeholder=\"pune\" required>\r\n          <mat-error *ngIf=\"addressForm.controls.city.errors?.required\">Please enter the city</mat-error>\r\n        </mat-form-field><br>\r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>state</mat-label>\r\n          <input matInput formControlName=\"state\" placeholder=\"Maharastra\" required>\r\n          <mat-error *ngIf=\"addressForm.controls.state.errors?.required\">Please enter the state</mat-error>\r\n        </mat-form-field><br>\r\n        <mat-form-field appearance=\"fill\">\r\n          <mat-label>Phone no</mat-label>\r\n          <input matInput formControlName=\"phoneNo\" placeholder=\"7507820170\" required>\r\n          <mat-error *ngIf=\"addressForm.controls.phoneNo.errors?.required\">Please enter the phone no</mat-error>\r\n          <mat-error *ngIf=\"addressForm.controls.phoneNo.errors?.minlength \">Please enter the Valid phone no</mat-error>\r\n          <mat-error *ngIf=\"addressForm.controls.phoneNo.errors?.maxlength \">Please enter the Valid phone no</mat-error>\r\n        </mat-form-field><br>\r\n        <div>\r\n          <button mat-button matStepperPrevious>Back</button>\r\n          <button mat-button matStepperNext>Next</button>\r\n        </div>\r\n      </form>\r\n    </mat-step>\r\n    <mat-step>\r\n      <ng-template matStepLabel>Confirmation</ng-template>\r\n      <mat-checkbox (change)=\"checked($event)\">I agree to the Terms and Conditions\"</mat-checkbox><br><br>\r\n      <button mat-button color=\"primary\" (click)=\"onSubmit()\" [disabled]=\"!status\">Submit </button><br><br>\r\n      <div>\r\n        <button mat-button matStepperPrevious>Back</button>\r\n        <button mat-button (click)=\"stepper.reset()\">Reset</button>\r\n      </div>\r\n    </mat-step>\r\n  </mat-horizontal-stepper>"
+        },
+        {
+            "name": "Tab2Component",
+            "id": "component-Tab2Component-f10c6f41298d7edab351bcbfd1a49654",
+            "file": "src/app/components/tab2/tab2.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tab2",
+            "styleUrls": [
+                "./tab2.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tab2.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "navigate",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-tab2',\r\n  templateUrl: './tab2.component.html',\r\n  styleUrls: ['./tab2.component.css']\r\n})\r\nexport class Tab2Component implements OnInit {\r\n\r\n  constructor(private router: Router) { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n  navigate(){\r\n    this.router.navigate([\"tab2\"]);\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "html, body {\r\n    width: 100%;\r\n  }\r\n  \r\n  h1 {\r\n    font-size: 26px;\r\n    padding: 40px 0 100px 20%;\r\n    margin-bottom: 50px;\r\n    margin-left: 200px;\r\n  }\r\n  \r\n  label, p, a, h1, div {\r\n    font-family: Roboto, sans-serif;\r\n  }\r\n  \r\n  .tab-wrap {\r\n    width: 70%;\r\n    margin-left: 15%;\r\n    position: relative;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    top: -106px;\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"] {\r\n    position: absolute;\r\n    z-index: -1;\r\n    display: none;\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:checked + .tab-label-content label {\r\n    color:rgb(34, 34, 185);\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:checked + .tab-label-content .tab-content {\r\n    display: block;\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(1):checked ~ .slide {\r\n    left: calc((100% / 6) * 0);\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(2):checked ~ .slide {\r\n    left: calc((100% / 6) * 1);\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(3):checked ~ .slide {\r\n    left: calc((100% / 6) * 2);\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(4):checked ~ .slide {\r\n    left: calc((100% / 6) * 3);\r\n  }\r\n\r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(5):checked ~ .slide {\r\n    left: calc((100% / 6) * 4);\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(6):checked ~ .slide {\r\n    left: calc((100% / 6) * 5);\r\n  }\r\n  input[type=\"radio\"][name=\"tabs\"]:first-of-type:checked ~ .slide {\r\n    left: 0;\r\n  }\r\n  \r\n  label {\r\n    cursor: pointer;\r\n    color:rgb(102, 102, 110);\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    display: -webkit-inline-box;\r\n    display: -ms-inline-flexbox;\r\n    display: inline-flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    text-align: center;\r\n    height: 56px;\r\n    -webkit-transition: color 0.2s ease;\r\n    transition: color 0.2s ease;\r\n    width: 100%;\r\n   \r\n  }\r\n  \r\n  .slide {\r\n    background:#00bcd4;\r\n    width: calc(100% /6);\r\n    height: 4px;\r\n    position: absolute;\r\n    left: 0;\r\n    top: calc(100% - 4px);\r\n    -webkit-transition: left 0.3s ease-out;\r\n    transition: left 0.3s ease-out;\r\n  }\r\n  \r\n  .tab-label-content {\r\n    width: 100%;\r\n  }\r\n  \r\n  .tab-label-content .tab-content {\r\n    position: absolute;\r\n    top: 100px;\r\n    left: 16px;\r\n    line-height: 130%;\r\n    display: none;\r\n  }\r\n  \r\n  @media screen and (max-width: 800px) {\r\n    h1 {\r\n      padding: 40px 0 90px 10%;\r\n    }\r\n    .tab-wrap {\r\n      width: 80%;\r\n      margin-left: 10%;\r\n      top: -106px;\r\n    }\r\n  }\r\n\r\n  ",
+                    "styleUrl": "./tab2.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router"
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h1>MTPL Calculator</h1>\r\n<div class=\"tab-wrap\">\r\n  \r\n    <input type=\"radio\" name=\"tabs\" id=\"tab1\" checked>\r\n    <div class=\"tab-label-content\" id=\"tab1-content\">\r\n      <label for=\"tab1\">Vehicle</label>\r\n      \r\n        \r\n\r\n      <div class=\"tab-content\">\r\n        <!-- TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue. Nam finibus urna eget nisl aliquam, in dictum ligula feugiat. Donec mollis ligula purus, et interdum velit bibendum eget. Aliquam magna diam, tristique eu libero nec, sagittis finibus sapien. Cras a ex ultricies, faucibus elit sagittis, maximus nisi. Donec quis arcu sapien. Aenean risus nibh, varius sed porttitor a, ornare nec leo. Sed vitae lacus in ipsum varius sagittis. Ut in quam cursus, ullamcorper sapien posuere, laoreet elit. Suspendisse interdum, risus ut ultricies scelerisque, nibh est commodo leo, sed tristique nisl odio et turpis. Fusce pellentesque nunc nec arcu feugiat accumsan. Praesent mauris sem, eleifend sit amet tortor in, cursus vehicula arcu. Curabitur convallis sit amet nunc ac feugiat. Sed at risus id diam porta pretium id vel felis. Donec nec dui id nisl hendrerit laoreet eu id odio. -->\r\n        <app-v-info></app-v-info>\r\n      </div>\r\n    </div>\r\n     \r\n    <input type=\"radio\" name=\"tabs\" id=\"tab2\">\r\n    <div class=\"tab-label-content\" id=\"tab2-content\">\r\n      <label for=\"tab2\">Insuring Party</label>\r\n      <div class=\"tab-content\">\r\n        <!-- TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie. -->\r\n        <app-insuring-party></app-insuring-party>\r\n      </div>\r\n    </div>\r\n    \r\n    <input type=\"radio\" name=\"tabs\" id=\"tab3\">\r\n    <div class=\"tab-label-content\" id=\"tab3-content\">\r\n      <label for=\"tab3\">Policy Details</label>\r\n      <div class=\"tab-content\">\r\n        <!-- TAB 3 - Donec vulputate ante ac ligula vestibulum, id mollis diam commodo. Integer at consequat magna. Sed elit sem, dictum nec porttitor ac, ultrices id enim. Morbi semper eros a enim malesuada, eu finibus erat dictum. Ut vitae orci a odio sagittis malesuada. Cras volutpat vel lorem in tempor. Duis ultricies lectus sit amet tellus vehicula faucibus. Etiam sed leo ac erat tempor feugiat at quis ipsum. Mauris pellentesque nisl lorem, ac finibus sapien sagittis vel. Donec et lobortis est. Vestibulum dignissim ligula nec erat interdum, quis sollicitudin metus pretium. Vestibulum quis dui sapien. Proin commodo justo ac orci elementum molestie. Aliquam mattis orci vitae volutpat commodo. -->\r\n        <app-policy-details></app-policy-details>\r\n      </div>\r\n    </div>\r\n  \r\n     <input type=\"radio\" name=\"tabs\" id=\"tab4\">\r\n     <div class=\"tab-label-content\" id=\"tab4-content\">\r\n      <label for=\"tab4\">Instalments</label>\r\n      <div class=\"tab-content\">TAB 4 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie.</div>\r\n    </div>\r\n\r\n    <input type=\"radio\" name=\"tabs\" id=\"tab5\">\r\n     <div class=\"tab-label-content\" id=\"tab5-content\">\r\n      <label for=\"tab5\">Covers</label>\r\n      <div class=\"tab-content\">TAB 5 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie.</div>\r\n    </div>\r\n\r\n    <input type=\"radio\" name=\"tabs\" id=\"tab6\">\r\n     <div class=\"tab-label-content\" id=\"tab6-content\">\r\n      <label for=\"tab6\">Summary</label>\r\n      <div class=\"tab-content\">\r\n        <input name=\"navigate\" id=\"navigate\" class=\"btn btn-primary\" type=\"button\" (click)=\"navigate()\" value=\"next\">\r\n        \r\n        TAB 6 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie.</div>\r\n  \r\n    </div>\r\n    \r\n    <div class=\"slide\"></div>\r\n  \r\n</div>\r\n\r\n\r\n"
+        },
+        {
+            "name": "TabComponent",
+            "id": "component-TabComponent-fd50d34c8314bcbbf20d28454ae8e8c6",
+            "file": "src/app/tab/tab.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tab",
+            "styleUrls": [
+                "./tab.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tab.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-tab',\r\n  templateUrl: './tab.component.html',\r\n  styleUrls: ['./tab.component.css']\r\n})\r\nexport class TabComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./tab.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-tab-group>\r\n    <mat-tab label=\"MTPL Calculator\">\r\n        <app-mtpl-calculator></app-mtpl-calculator>\r\n    </mat-tab>\r\n    <mat-tab label=\"Purchase MTPL Policy\"> \r\n        <app-mtpl-policy></app-mtpl-policy>\r\n    </mat-tab>\r\n    \r\n</mat-tab-group>\r\n"
+        },
+        {
+            "name": "TabsComponent",
+            "id": "component-TabsComponent-09af06cfdc0391013e3d950d3a571d0c",
+            "file": "src/app/components/tabs/tabs.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tabs",
+            "styleUrls": [
+                "./tabs.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tabs.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-tabs',\r\n  templateUrl: './tabs.component.html',\r\n  styleUrls: ['./tabs.component.css']\r\n})\r\nexport class TabsComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "html, body {\r\n    width: 100%;\r\n  }\r\n  \r\n  h1 {\r\n    font-size: 26px;\r\n    padding: 40px 0 100px 20%;\r\n    margin-bottom: 50px;\r\n    margin-left: 200px;\r\n  }\r\n  \r\n  label, p, a, h1, div {\r\n    font-family: Roboto, sans-serif;\r\n  }\r\n  \r\n  .tab-wrap {\r\n    width: 70%;\r\n    margin-left: 15%;\r\n    position: relative;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    top: -106px;\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"] {\r\n    position: absolute;\r\n    z-index: -1;\r\n    display: none;\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:checked + .tab-label-content label {\r\n    color:rgb(34, 34, 185);\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:checked + .tab-label-content .tab-content {\r\n    display: block;\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(1):checked ~ .slide {\r\n    left: calc((100% / 6) * 0);\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(2):checked ~ .slide {\r\n    left: calc((100% / 6) * 1);\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(3):checked ~ .slide {\r\n    left: calc((100% / 6) * 2);\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(4):checked ~ .slide {\r\n    left: calc((100% / 6) * 3);\r\n  }\r\n\r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(5):checked ~ .slide {\r\n    left: calc((100% / 6) * 4);\r\n  }\r\n  \r\n  input[type=\"radio\"][name=\"tabs\"]:nth-of-type(6):checked ~ .slide {\r\n    left: calc((100% / 6) * 5);\r\n  }\r\n  input[type=\"radio\"][name=\"tabs\"]:first-of-type:checked ~ .slide {\r\n    left: 0;\r\n  }\r\n  \r\n  label {\r\n    cursor: pointer;\r\n    color:rgb(102, 102, 110);\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    display: -webkit-inline-box;\r\n    display: -ms-inline-flexbox;\r\n    display: inline-flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    text-align: center;\r\n    height: 56px;\r\n    -webkit-transition: color 0.2s ease;\r\n    transition: color 0.2s ease;\r\n    width: 100%;\r\n  }\r\n  \r\n  .slide {\r\n    background:#00bcd4;\r\n    width: calc(100% /6);\r\n    height: 4px;\r\n    position: absolute;\r\n    left: 0;\r\n    top: calc(100% - 4px);\r\n    -webkit-transition: left 0.3s ease-out;\r\n    transition: left 0.3s ease-out;\r\n  }\r\n  \r\n  .tab-label-content {\r\n    width: 100%;\r\n  }\r\n  \r\n  .tab-label-content .tab-content {\r\n    position: absolute;\r\n    top: 100px;\r\n    left: 16px;\r\n    line-height: 130%;\r\n    display: none;\r\n  }\r\n  \r\n  @media screen and (max-width: 800px) {\r\n    h1 {\r\n      padding: 40px 0 90px 10%;\r\n    }\r\n    .tab-wrap {\r\n      width: 80%;\r\n      margin-left: 10%;\r\n      top: -106px;\r\n    }\r\n  }\r\n\r\n  ",
+                    "styleUrl": "./tabs.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h1>Purchase MTPL Policy</h1>\r\n<div class=\"tab-wrap\">\r\n  \r\n    <input type=\"radio\" name=\"tabs\" id=\"tab1\" checked>\r\n    <div class=\"tab-label-content\" id=\"tab1-content\">\r\n      <label for=\"tab1\">Personal Details</label>\r\n      <div class=\"tab-content\">TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue. Nam finibus urna eget nisl aliquam, in dictum ligula feugiat. Donec mollis ligula purus, et interdum velit bibendum eget. Aliquam magna diam, tristique eu libero nec, sagittis finibus sapien. Cras a ex ultricies, faucibus elit sagittis, maximus nisi. Donec quis arcu sapien. Aenean risus nibh, varius sed porttitor a, ornare nec leo. Sed vitae lacus in ipsum varius sagittis. Ut in quam cursus, ullamcorper sapien posuere, laoreet elit. Suspendisse interdum, risus ut ultricies scelerisque, nibh est commodo leo, sed tristique nisl odio et turpis. Fusce pellentesque nunc nec arcu feugiat accumsan. Praesent mauris sem, eleifend sit amet tortor in, cursus vehicula arcu. Curabitur convallis sit amet nunc ac feugiat. Sed at risus id diam porta pretium id vel felis. Donec nec dui id nisl hendrerit laoreet eu id odio.</div>\r\n    </div>\r\n     \r\n    <input type=\"radio\" name=\"tabs\" id=\"tab2\">\r\n    <div class=\"tab-label-content\" id=\"tab2-content\">\r\n      <label for=\"tab2\" class=\"head\">Contact details</label>\r\n      <div class=\"tab-content\">TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie.</div>\r\n    </div>\r\n    \r\n    <input type=\"radio\" name=\"tabs\" id=\"tab3\">\r\n    <div class=\"tab-label-content\" id=\"tab3-content\">\r\n      <label for=\"tab3\" class=\"head\">Vehicle Owner</label>\r\n      <div class=\"tab-content\">TAB 3 - Donec vulputate ante ac ligula vestibulum, id mollis diam commodo. Integer at consequat magna. Sed elit sem, dictum nec porttitor ac, ultrices id enim. Morbi semper eros a enim malesuada, eu finibus erat dictum. Ut vitae orci a odio sagittis malesuada. Cras volutpat vel lorem in tempor. Duis ultricies lectus sit amet tellus vehicula faucibus. Etiam sed leo ac erat tempor feugiat at quis ipsum. Mauris pellentesque nisl lorem, ac finibus sapien sagittis vel. Donec et lobortis est. Vestibulum dignissim ligula nec erat interdum, quis sollicitudin metus pretium. Vestibulum quis dui sapien. Proin commodo justo ac orci elementum molestie. Aliquam mattis orci vitae volutpat commodo.</div>\r\n    </div>\r\n  \r\n     <input type=\"radio\" name=\"tabs\" id=\"tab4\">\r\n     <div class=\"tab-label-content\" id=\"tab4-content\">\r\n      <label for=\"tab4\" class=\"head\">Delivery</label>\r\n      <div class=\"tab-content\">\r\n        <app-delivery></app-delivery>\r\n      </div>\r\n    </div>\r\n\r\n    <input type=\"radio\" name=\"tabs\" id=\"tab5\">\r\n     <div class=\"tab-label-content\" id=\"tab5-content\">\r\n      <label for=\"tab5\" class=\"head2\">Summary</label>\r\n      <div class=\"tab-content\">TAB 5 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie.</div>\r\n    </div>\r\n\r\n    <input type=\"radio\" name=\"tabs\" id=\"tab6\">\r\n     <div class=\"tab-label-content\" id=\"tab6-content\">\r\n      <label for=\"tab6\" class=\"head\">Payment</label>\r\n      <div class=\"tab-content\">TAB 6 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie.</div>\r\n    </div>\r\n    \r\n    <div class=\"slide\"></div>\r\n  \r\n</div>\r\n\r\n\r\n"
+        },
+        {
+            "name": "VInfoComponent",
+            "id": "component-VInfoComponent-2e8ec81c8ff5e5da33aff8f5dfad624b",
+            "file": "src/app/components/v-info/v-info.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-v-info",
+            "styleUrls": [
+                "./v-info.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./v-info.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "OnRegister",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 12,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "OnToggle",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "change",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "submit",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "vehicleInfoForm",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Output,EventEmitter,ViewChild } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport {StepperComponent} from 'src/app/stepper/stepper.component'\r\n\r\n\r\n@Component({\r\n  selector: 'app-v-info',\r\n  templateUrl: './v-info.component.html',\r\n  styleUrls: ['./v-info.component.css']\r\n})\r\nexport class VInfoComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n vehicleInfoForm:FormGroup;\r\n  constructor(private formBuilder:FormBuilder) { } \r\n\r\n  ngOnInit(): void {\r\n    this.vehicleInfoForm=this.formBuilder.group({\r\n      registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],\r\n      certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],\r\n      purpose:['',Validators.required],\r\n      ysNo:['']\r\n    })}\r\n    submit=() => {\r\n      console.log(this.vehicleInfoForm.value,\"vehicle Info\");\r\n      this.OnRegister.emit(this.vehicleInfoForm.value);\r\n\r\n    }\r\n    change=()=>{\r\n      if(this.vehicleInfoForm.valid){\r\n        this.OnToggle.emit(true)\r\n      }else{\r\n        this.OnToggle.emit(false)\r\n      }\r\n    }\r\n  }\r\n\r\n\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "form { \r\n    margin: 0  auto; \r\n    widows: 500px;;\r\n    }",
+                    "styleUrl": "./v-info.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder"
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h1 class=\"display-1\">Vehicle Information</h1>\r\n<form [formGroup]=\"vehicleInfoForm\">\r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Vehicle Registration Number \r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"XX0000XX\" formControlName=\"registrationNumber\" (change)=\"change()\">\r\n        </div>  \r\n    </div>\r\n    <hr>\r\n    \r\n    \r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Vehicle Certificate Number <br>\r\n            <a href=\"\"><u>Where can I find this number?</u></a>\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"000000000\"  formControlName=\"certificateNumber\" (change)=\"change()\"> \r\n        </div>\r\n    </div>\r\n    <hr>\r\n    \r\n\r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            What purpose does this vehicle serve?\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <select formControlName=\"purpose\" class=\"form-control\" (change)=\"change()\">\r\n                <option value=\"personal\">Personal Use</option>\r\n                <option value=\"public\">Public Use</option>\r\n                \r\n            </select>    \r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n\r\n    <div class=\"form-row\" >\r\n        <div class=\"col-9\" >\r\n            Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input type=\"radio\" name=\"optradio\" >Yes &nbsp;&nbsp;\r\n            <input type=\"radio\" name=\"optradio\">No\r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n\r\n</form><br>\r\n\r\n<button class=\"btn btn-primary rounded-pill\" (click)=\"submit()\" mat-raised-button  matStepperNext [disabled]=\"!vehicleInfoForm.valid\">Next</button>\r\n\r\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AdditionalCoversComponent"
+                        },
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "DeliveryComponent"
+                        },
+                        {
+                            "name": "InsuringPartyComponent"
+                        },
+                        {
+                            "name": "LoginComponent"
+                        },
+                        {
+                            "name": "MTPLCalculatorComponent"
+                        },
+                        {
+                            "name": "MTPLPolicyComponent"
+                        },
+                        {
+                            "name": "PersonalComponent"
+                        },
+                        {
+                            "name": "PolicyDetailsComponent"
+                        },
+                        {
+                            "name": "StepperComponent"
+                        },
+                        {
+                            "name": "Tab2Component"
+                        },
+                        {
+                            "name": "TabComponent"
+                        },
+                        {
+                            "name": "TabsComponent"
+                        },
+                        {
+                            "name": "VInfoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "type": "literal type"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "form",
+                        "component": "Tab2Component"
+                    },
+                    {
+                        "path": "signIn",
+                        "component": "LoginComponent"
+                    },
+                    {
+                        "path": "tab2",
+                        "component": "TabsComponent"
+                    },
+                    {
+                        "path": "tab",
+                        "component": "TabComponent"
+                    },
+                    {
+                        "path": "**",
+                        "redirectTo": "/signIn",
+                        "pathMatch": "full"
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "e2e/src/app.po.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AppPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/common-data.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "CommonDataService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/additional-covers/additional-covers.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AdditionalCoversComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/delivery/delivery.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DeliveryComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/insuring-party/insuring-party.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InsuringPartyComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/login/login.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoginComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/mtpl-calculator/mtpl-calculator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MTPLCalculatorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/mtpl-policy/mtpl-policy.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MTPLPolicyComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/personal/personal.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PersonalComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/policy-details/policy-details.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PolicyDetailsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/tab2/tab2.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Tab2Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/tabs/tabs.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TabsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/v-info/v-info.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "VInfoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/stepper/stepper.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StepperComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tab/tab.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TabComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -29,6 +29,7 @@ export class PolicyDetailsComponent implements OnInit {
   change=()=>{
     if(this.registerForm.valid){
       this.OnToggle.emit(true)
+      this.OnRegister.emit(this.registerForm.value);
     }else{
       this.OnToggle.emit(false)
     }

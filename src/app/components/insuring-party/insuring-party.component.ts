@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./insuring-party.component.css']
 })
 export class InsuringPartyComponent implements OnInit {
+  @Output() OnRegister= new EventEmitter()
+  @Output() OnToggle=new EventEmitter()
   insuringParty: FormGroup;
   constructor(private router: Router, private fb: FormBuilder) { }
 
@@ -15,10 +17,24 @@ export class InsuringPartyComponent implements OnInit {
     this.insuringParty = this.fb.group({
       egn: ['', Validators.required],
       address: ['', Validators.required],
-      email: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]]
     });
   }
-  next() {
-    this.router.navigate(['/policy_details']);
+  // next() {
+  //   this.router.navigate(['/policy_details']);
+  // }
+  submit=() => {
+    console.log(this.insuringParty.value,"insuring party");
+    this.OnRegister.emit(this.insuringParty.value);
+
+  }
+  change=()=>{
+    
+    if(this.insuringParty.valid){
+      this.OnToggle.emit(true)
+      this.OnRegister.emit(this.insuringParty.value);
+    }else{
+      this.OnToggle.emit(false)
+    }
   }
 }

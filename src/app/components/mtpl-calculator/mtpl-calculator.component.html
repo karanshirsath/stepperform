@@ -7,7 +7,7 @@
 
       <mat-step completed={{toggle2}}>
         <ng-template matStepLabel>Insuring Party</ng-template>
-        <app-insuring-party></app-insuring-party>
+        <app-insuring-party (OnRegister)="insuringPartyData($event)" (OnToggle)="toggle2=$event"></app-insuring-party>
       </mat-step>
 
       <mat-step completed={{toggle3}}>
