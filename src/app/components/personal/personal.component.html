@@ -1,12 +1,14 @@
-<div class="container">
+
+
+<div class="container col-12">
     <h1>Personal Details</h1>
     <form [formGroup]="personalForm"  (ngSubmit)="success()">
-      <div class="form-group row">
+      <div class="form-group row ">
         <label for="lnch" class="col-sm-2 col-form-label">LNCH</label>
         <div class="col-sm-4">
-        <input type="text" class="form-control" id="lnch" placeholder="Enter LNCH" formControlName="lnch"  name="lnch">
-        <div *ngIf="personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)" class="error">Please enter the LNCH no</div>
-    </div>
+          <input type="text" class="form-control" id="lnch" placeholder="Enter LNCH" formControlName="lnch"  name="lnch">
+          <div *ngIf="personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)" class="error">Please enter the LNCH no</div>
+        </div>
       </div>
       <hr>
      <div formGroupName="fullname">
