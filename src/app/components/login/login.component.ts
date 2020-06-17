@@ -14,7 +14,7 @@ password: string;
   }
   login() : void {
     if(this.email == 'admin' && this.password == 'admin'){
-     this.router.navigate(["form"]);
+     this.router.navigate(["tab"]);
     }else {
       alert("Invalid credentials");
     }
