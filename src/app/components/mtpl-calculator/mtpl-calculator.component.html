@@ -1,4 +1,4 @@
-<mat-horizontal-stepper labelPosition="bottom" #stepper linear>
+<mat-horizontal-stepper  (selectionChange)="change($event)" labelPosition="bottom" #stepper linear>
   
       <mat-step completed={{toggle1}}>
         <ng-template matStepLabel>Vehicle </ng-template>
@@ -7,7 +7,7 @@
 
       <mat-step completed={{toggle2}}>
         <ng-template matStepLabel>Insuring Party</ng-template>
-        <app-insuring-party></app-insuring-party>
+        <app-insuring-party (OnRegister)="insuringPartyData($event)" (OnToggle)="toggle2=$event"></app-insuring-party>
       </mat-step>
 
       <mat-step completed={{toggle3}}>
@@ -17,12 +17,12 @@
 
       <mat-step completed={{toggle4}}>
         <ng-template matStepLabel>Installments</ng-template>
-        Installments
+        <app-installment (OnRegister)="installmentsData($event)" (OnToggle)="toggle4=$event"></app-installment>
       </mat-step>
 
       <mat-step completed={{toggle5}}>
         <ng-template matStepLabel>Covers</ng-template>
-        <app-additional-covers></app-additional-covers>
+        <app-additional-covers (OnRegister)="coversData($event)" (OnToggle)="toggle5=$event"></app-additional-covers>
       </mat-step>
 
       <mat-step completed={{toggle6}}>

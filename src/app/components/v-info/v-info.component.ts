@@ -1,5 +1,6 @@
-import { Component, OnInit, Output,EventEmitter,ViewChild } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class VInfoComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
  vehicleInfoForm:FormGroup;
-  constructor(private formBuilder:FormBuilder) { } 
+  constructor(private router: Router, private formBuilder:FormBuilder) { } 
 
   ngOnInit(): void {
     this.vehicleInfoForm=this.formBuilder.group({
@@ -21,15 +22,21 @@ export class VInfoComponent implements OnInit {
       yesNo:['',Validators.required]
     })}
     submit=() => {
+      //this.router.navigate(['./insuring-party.component']);
       console.log(this.vehicleInfoForm.value,"vehicle Info");
+      // this.OnToggle.emit(true)
       this.OnRegister.emit(this.vehicleInfoForm.value);
+      // setTimeout(this.OnToggle.emit(true),)
 
     }
     change=()=>{
+      
       if(this.vehicleInfoForm.valid){
         this.OnToggle.emit(true)
+        this.OnRegister.emit(this.vehicleInfoForm.value);
       }else{
         this.OnToggle.emit(false)
+        // this.OnRegister.emit(this.vehicleInfoForm.value);
       }
     }
   }

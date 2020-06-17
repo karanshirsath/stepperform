@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-additional-covers',
@@ -7,21 +9,33 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./additional-covers.component.css']
 })
 export class AdditionalCoversComponent implements OnInit {
-  imageUrl="./assets/additionalcar.png ";;
+  imageUrl="./assets/carlogo.jpeg ";;
   tickimage="./assets/tick.jpg";
-  registerForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  additionalcoverForm: FormGroup;
+  @Output() OnRegister = new EventEmitter()
+  @Output() OnToggle = new EventEmitter()
+  constructor(private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      none: ['', Validators.requiredTrue],
-      premium: ['', Validators.requiredTrue],
-      vip: ['', Validators.requiredTrue],
+    this.additionalcoverForm = this.formBuilder.group({
+      cover: ['', Validators.required],
+
     });
  }
-  submit=()=>{
-    console.log(this.registerForm.value, "policy details");
+  
+  change=()=>{
+    if(this.additionalcoverForm.valid){
+      this.OnToggle.emit(true);
+      this.OnRegister.emit(this.additionalcoverForm.value);
+    }else{
+      this.OnToggle.emit(false)
+    }
+  }
+  next=()=>{
+    console.log(this.additionalcoverForm.value, "additional covers");
+    this.router.navigate(['/']);
+    this.OnRegister.emit(this.additionalcoverForm.value);
   }
 
- 
+
 }

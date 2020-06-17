@@ -1,36 +1,39 @@
-<div class="row">
-    <div class="col-md-10 offset-1">
-        <div class="container-fluid">
-            <div class="card mx-auto" style="border:  none; ">
-                <div class="card-body">
-                    <h1 style="color:#003768;">Insuring Party</h1>
-                    <form [formGroup]="insuringParty" class="form form-group">
-                        <table class="table" style="margin-left: auto; margin-right: auto; border-top: none;">
-                            <tr>
-                                <td style="text-align: left;"><label for="egn">Enter your EGN/EIK/LNCH</label></td>
-                                <td style="text-align: right;"><input type="text" formControlName="egn"/></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;"><label for="address">Place of Permanent Residence</label></td>
-                                <td style="text-align: right;">
-                                    <select formControlName="address">
-                                        <option>...</option>
-                                        <option>...</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;"><label for="email">Email</label></td>
-                                <td style="text-align: right;"><input type="email" formControlName="email"/></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;"><button type="button" class="btn btn-primary badge-pill pl-4 pr-4 pt-2 pb-2" style="margin-right: 0;" (click)="next()" [disabled]="insuringParty.invalid">Next</button></td>
-                                <td></td>
-                            </tr>
-                        </table>
-                    </form>
-                </div>
-            </div>
+<div class="col-12">
+<h1 class="display-1 ">Insuring Party</h1>
+<form [formGroup]="insuringParty">
+    <div class="form-row">
+        <div class="col-8">
+            Enter your EGN/EIK/LNCH
+        </div>
+        <div class="col-4">
+            <input class="form-control" type="text" formControlName="egn" (change)="change()">
+        </div>  
+    </div>
+    <hr>
+    
+    <div class="form-row">
+        <div class="col-8">
+            Place of Permanent Residence?
+        </div>
+        <div class="col-4">
+            <select formControlName="address" class="form-control" (change)="change()">
+                <option value="delhi">Delhi</option>
+                <option value="mumbai">Mumbai</option>
+                
+            </select>    
         </div>
     </div>
+
+    <hr>
+    <div class="form-row">
+        <div class="col-8">
+            Email
+        </div>
+        <div class="col-4">
+            <input class="form-control" type="email"  formControlName="email" (change)="change()"> 
+        </div>
+    </div>
+    <hr>
+    <button type="button" class="btn btn-primary badge-pill pl-4 pr-4 pt-2 pb-2" style="margin-right: 0;" (click)="submit()" matStepperNext [disabled]="insuringParty.invalid">Next</button>
+</form>
 </div>
