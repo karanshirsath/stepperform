@@ -20,7 +20,7 @@
     <div class="row">
         <div class="card shadow p-3 mb-5 bg-white rounded firstcard overflowAuto h-100">
             <div class="card-body ">
-                <label><input type="radio" formControlName="cover" value="none" name="cover" (click)="change()">
+                <label><input type="radio" formControlName="cover" value="none" name="cover" (change)="change()">
                     <b> None</b></label>
                 <div class=" discription">Description of additional cover here</div>
             </div>
@@ -31,7 +31,7 @@
             <div class="card-body">
                 <div class="row ">
                     <div class="col-lg-7 col-md-8 col-auto col-7">
-                        <label><input type="radio" formControlName="cover" value="premium" name="cover"(click)="change()">
+                        <label><input type="radio" formControlName="cover" value="premium" name="cover" (change)="change()">
                             <b> Premium</b></label>
                         <div class="afterpremium">
                             <button class="btn btn-success valuebutton"><h6>Best Value</h6></button>
@@ -51,7 +51,7 @@
             <div class="card-body ">
                 <div class="row">
                     <div class=" col-lg-7 col-md-8 col-auto col-7">
-                        <label ><input type="radio" formControlName="cover" value="vip" name="cover" (click)="change()">
+                        <label ><input type="radio" formControlName="cover" value="vip" name="cover" (change)="change()">
                             <b> VIP</b></label>
                         <div class=" discription">Description of additional cover here</div><br><br>
                     </div>
@@ -95,7 +95,7 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-primary nextbutton" [disabled]="!additionalcoverForm.valid"> Next</button>
+    <button type="submit" class="btn btn-primary nextbutton" [disabled]="!additionalcoverForm.valid" matStepperNext> Next</button>
     </form>
 
 </div>
