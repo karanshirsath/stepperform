@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-between  col-lg-9 col-md-12 mx-auto">
+            <h4 class="p-2 label_prop">Proposal</h4>
+            <div class="p-2"><button class="btn btn-outline-primary email_btn_prop">Send to email</button></div>
+        </div>
+       <br/>
+
+       <div class="card  col-lg-9 col-md-12 mx-auto" style="border: none;"> 
+        <div class="card-body card_bg">
+        <div class="row">
+        <div class="col-md-1">
+            <div><i class="fa fa-car fa-2x" style="color:white"></i></div>
+        </div>
+           <div class="col-lg-4 col-md-4 col-sm-12">
+               <p class="card-text" style="color: white;">Motor Third Party Liability Policy</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-auto">
+                <p class="card-text" style="color: white;font-weight:600;">324,00 BGN</p>
+            </div>
+        </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-auto">
+            <p  class="card-text" style="color:white;font-weight: 100;">four payments</p>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-8 col-md-12 mx-auto">
+            <div class="card" style="border:none">
+                <div class="card-body  border-bottom">
+                    <p><i class="fa fa-check" style="color:green"></i>premium indicated are final and include contribution to the Gaurantee  and insurance fund, stickers and 2% tax on insurance payment.</p>
+                <p><i class="fa fa-check" style="color:green"></i>The insurance payment is calculated with included- 5% discount for insurance with  Casco I.</p>
+            <p><i class="fa fa-check" style="color:green"></i>Annual Technical Inspection Voucher </p>
+                </div>
+            </div>
+            <br/>
+
+            <form [formGroup]="summaryForm">
+
+            <div class="card" style="border:none">
+                <div class="card-body border-bottom">
+                    <label class="label_prop">Instalments</label>&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="edit_prop">Edit</a>
+                    <div class="row">
+
+                <div class="col-md-3">                    
+                    <div class="form-group">
+                    <label class="font_color sub_label_prop">First Instalment</label>
+                    <input type="text" class="form-control" id="firstInstalment"  value={{first}}>
+                    </div>
+                    <span *ngIf="summaryForm.controls.firstInstalment.errors" style="color: red;">Required</span>
+                </div>
+
+                <div class="col-md-3">
+                <div class="form-group">
+                <label class="font_color sub_label_prop">Second Instalment</label>
+                <input type="text" class="form-control input_prop" formControlName="secondInstalment" [value]="secondI">
+                </div>
+                <span *ngIf="summaryForm.controls.secondInstalment.errors" style="color: red;">Required</span>
+                </div>
+
+                <div class="col-md-3">
+                <div class="form-group">
+                <label class="font_color sub_label_prop"> Third Instalment</label>
+                <input type="text" class="form-control" formControlName="thirdInstalment" [value]="third">
+                </div>
+                <span *ngIf="summaryForm.controls.thirdInstalment.errors" style="color: red;">Required</span>
+                </div>
+
+                <div class="col-md-3">
+                <div class="form-group">
+                <label class="font_color sub_label_prop ">Fourth Instalment</label>
+                <input type="text"  class="form-control" formControlName="fourthInstalment" [value]="fourth">
+                </div>
+                <span *ngIf="summaryForm.controls.fourthInstalment.errors" style="color: red;">Required</span>
+                </div>
+
+            </div>
+
+                </div>
+            </div>
+            <br/>
+
+            <div class="card" style="border:none">
+                <div class="card-body  border-bottom">
+                    <label class="label_prop">Additional Cover</label>&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="edit_prop">Edit</a>
+                    <div class="form-group">
+                    <input type="text" formControlName="additionalCover" class="form-control label_prop" [value]="">
+                </div>
+                <span *ngIf="summaryForm.controls.additionalCover.errors" style="color: red;">Required</span>
+                </div>
+            </div>
+            <br/>
+
+            <div class="card" style="border:none">
+                <div class="card-body  border-bottom">
+                    <label class="label_prop">Policy Dates</label>&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="edit_prop">Edit</a>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                           <label class="font_color sub_label_prop">Start Date</label>
+                            <input type="text" class="form-control" formControlName="startDate" [value]="">
+                            </div>
+                            <span *ngIf="summaryForm.controls.startDate.errors" style="color: red;">Required</span>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">End Date</label>
+                        <input type="text" class="form-control" formControlName="endDate" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.endDate.errors" style="color: red;">Required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+            <div class="card" style="border:none">
+                <div class="card-body  border-bottom">
+                    <label class="label_prop">Vehicle</label>
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Vehicle Registration Number</label>
+                        <input type="text" class="form-control" formControlName="vehicleRegistration" [value]="" >
+                        </div>
+                        <span *ngIf="summaryForm.controls.vehicleRegistration.errors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Vehicle Purpose</label>
+                        <input type="text" class="form-control" formControlName="vehiclePurpose" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.vehiclePurpose.errors" style="color: red;">Required</span>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Vehicle Certification Number</label>
+                        <input type="text" class="form-control" formControlName="certificationNumber" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.certificationNumber.errors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Driven outside bulgaria for more than 60 days</label>
+                        <input type="text" class="form-control" formControlName="days" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.days.errors" style="color: red;">Required</span>
+                        </div>
+                        <div class="card border-warning">
+                            <div class="card-body font_color">
+                                <i class="fa fa-pencil-square-o fa-2x" style="color: orange;margin-left:-29px"></i>
+                                Casco has an active policy for the same vehicle with different data.The change in the data will be reflacted in an. The ann will be sent to you by courier/ email or will be  provided for signing by e-signature.
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <br/>
+
+            <div class="card" style="border:none">
+                <div class="card-body border-bottom">
+                    <label class="label_prop">Insuring Party</label>&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="edit_prop">Edit</a>
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">ENG/ELK/LNCH Number</label>
+                        <input type="text" class="form-control" formControlName="number" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.number.errors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Full Name</label>
+                        <input type="text" class="form-control" formControlName="fullName" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.fullName.errors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Phone Number</label>
+                        <input type="text" class="form-control" formControlName="phoneNumber" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.phoneNumber.errors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Email</label>
+                        <input type="text" class="form-control" formControlName="email" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.email.errors" style="color: red;">Required</span>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">City and zipcode</label>
+                        <input type="text" class="form-control" formControlName="cityZipcode" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.cityZipcode.errors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Street & Number</label>
+                        <input type="text" class="form-control" formControlName="streetNumber" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.streetNumberors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Apartment</label>
+                        <input type="number" class="form-control" formControlName="apartment" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.apartment.errors" style="color: red;">Required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+            <div class="card" style="border:none">
+                <div class="card-body border-bottom">
+                    <label class="label_prop">Vehicle Owner</label>&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="edit_prop">Edit</a>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label class="font_color sub_label_prop">EGN/ELK/LNCH Number</label>
+                            <input type="text" class="form-control" formControlName="egnnumber" [value]="">
+                            </div>
+                            <span *ngIf="summaryForm.controls.egnnumber.errors" style="color: red;">Required</span>
+                            <div class="form-group">
+                            <label class="font_color sub_label_prop">Full Name</label>
+                            <input type="text" class="form-control" formControlName="fullnamevehicleowner" [value]="">
+                            </div>
+                            <span *ngIf="summaryForm.controls.fullnamevehicleowner.errors" style="color: red;">Required</span>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label class="font_color sub_label_prop">city & zipcode</label>
+                            <input type="text" class="form-control" formControlName="cityZipcodevehicleOwner" [value]="">
+                            </div>
+                            <span *ngIf="summaryForm.controls.cityZipcodevehicleOwner.errors" style="color: red;">Required</span>
+                            <div class="form-group">
+                            <label class="font_color sub_label_prop">street & Number</label>
+                            <input type="text" class="form-control" formControlName="streetNumbervehicleowner" [value]="">
+                            </div>
+                            <span *ngIf="summaryForm.controls.streetNumbervehicleowner.errors" style="color: red;">Required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+            <div class="card" style="border:none">
+                <div class="card-body border-bottom">
+                    <label class="label_prop">Delivery</label>&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="edit_prop">Edit</a>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Full Name</label>
+                        <input type="text" class="form-control" formControlName="fullNameDelivery" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.fullNameDelivery.errors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Phone Number</label>
+                        <input type="text" class="form-control" formControlName="phoneNumDelivery" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.phoneNumDelivery.errors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Address Type</label>
+                        <input type="text" class="form-control" formControlName="addressType" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.addressType.errors" style="color: red;">Required</span>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">City and zipcode</label>
+                        <input type="text" class="form-control" formControlName="cityZipcodeDelivery" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.cityZipcodeDelivery.errors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Street & Number</label>
+                        <input type="text" class="form-control" formControlName="streetNumberDelivery" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.streetNumberDelivery.errors" style="color: red;">Required</span>
+                      
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Block</label>
+                        <input type="number" class="form-control" formControlName="block" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.block.errors" style="color: red;">Required</span>
+                        <div class="form-group">
+                        <label class="font_color sub_label_prop">Apartment</label>
+                        <input type="number" class="form-control" formControlName="apartmentDelivery" [value]="">
+                        </div>
+                        <span *ngIf="summaryForm.controls.apartmentDelivery.errors" style="color: red;">Required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+        
+            <div class="card" style="border:none">
+                <div class="card-body">
+                    <div class="form-group form-check">
+                    <input type="checkbox" class="font_color form-check-input" formControlName="AgreeToAll">
+                    <div>  Agree to all</div>
+                </div>
+                <span *ngIf="summaryForm.controls.AgreeToAll.errors" style="color: red;">Required</span>
+            </div>
+            </div><br/>
+            <div class="card" style="box-shadow:2px 2px 2px gray;">
+                <div class="card-body">
+                    <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" formControlName="receiveNewsletter" style="color: rgb(0, 53, 103)" > 
+                    <div>I agree to receive DZI newsletter</div>
+                </div>
+                <span *ngIf="summaryForm.controls.receiveNewsletter.errors" style="color: red;">Required</span>
+            </div>
+            </div><br/>
+            <div class="card" style="box-shadow: 2px 2px 2px gray;">
+                <div class="card-body">
+                    <div class="form-group form-check">
+                    <input type="checkbox" style="color: rgb(0, 53, 103);" class="form-check-input" formControlName="generalTerms"> 
+                   <div>I agree to the <a href="#" style="color:dodgerblue ;">general terms and conditions</a></div>
+                   <span *ngIf="summaryForm.controls.generalTerms.errors" style="color:red">required</span>
+                </div>
+            </div>
+            </div>
+        </form><br/><br/>
+
+            <button class="btn btn-primary" [disabled]="!summaryForm.valid" style="border-radius: 3rem;">Continue to payment</button>
+        </div>
+        
+    </div>
+</body>
+</html>

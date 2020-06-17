@@ -17,12 +17,12 @@
 
       <mat-step completed={{toggle4}}>
         <ng-template matStepLabel>Installments</ng-template>
-        Installments
+        <app-installment (OnRegister)="installmentsData($event)" (OnToggle)="toggle4=$event"></app-installment>
       </mat-step>
 
       <mat-step completed={{toggle5}}>
         <ng-template matStepLabel>Covers</ng-template>
-        <app-additional-covers></app-additional-covers>
+        <app-additional-covers (OnRegister)="coversData($event)" (OnToggle)="toggle5=$event"></app-additional-covers>
       </mat-step>
 
       <mat-step completed={{toggle6}}>

@@ -1,0 +1,41 @@
+.edit_prop{
+    color: dodgerblue;
+}
+
+.email_btn_prop{
+    border-radius: 3rem;
+}
+
+.label_prop{
+    color: rgb(0, 53, 103);
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.sub_label_prop{
+    font-size: small;
+}
+h6{
+    color: rgb(0, 53, 103); 
+}
+p{
+    color: rgb(80, 108, 134); 
+
+}
+input{
+    color: rgb(0, 53, 103); 
+    border:none;
+    outline: no;
+}
+
+.card_bg{
+    background-color: 	rgb(0, 53, 103);
+    border-radius: 0.5rem;
+}
+
+.shadow{
+    box-shadow: darkgray;
+}
+
+.font_color{
+    color:rgb(0, 53, 103);
+}

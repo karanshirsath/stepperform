@@ -38,6 +38,9 @@ import { MTPLCalculatorComponent } from '../src/app/components/mtpl-calculator/m
 import { MTPLPolicyComponent } from '../src/app/components/mtpl-policy/mtpl-policy.component';
 import { PersonalComponent } from '../src/app/components/personal/personal.component';
 import { PaymentComponent } from '../src/app/components/payment/payment.component';
+import { InstallmentComponent } from '../src/app/components/installment/installment.component';
+import { ProposalComponent } from '../src/app/components/proposal/proposal.component';
+
 import { APP_BASE_HREF } from "@angular/common";
 setCompodocJson(docJson);
 
@@ -58,7 +61,9 @@ addDecorator(
             MTPLCalculatorComponent,
             MTPLPolicyComponent,
             PersonalComponent,
-            PaymentComponent
+            PaymentComponent,
+            InstallmentComponent,
+            ProposalComponent        
           ],
           imports: [
             BrowserModule,
