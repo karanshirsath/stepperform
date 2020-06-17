@@ -19,9 +19,9 @@ export class MTPLCalculatorComponent implements OnInit {
   installments
   covers
   summary
-  toggle1=false
-  toggle2=false
-  toggle3=false
+  toggle1=true
+  toggle2=true
+  toggle3=true
   toggle4=true
   toggle5=true
   toggle6=true
@@ -42,6 +42,15 @@ export class MTPLCalculatorComponent implements OnInit {
     console.log(this.policyDetails);
   }
 
+  installmentsData=(data)=>{
+    this.installments=data
+    console.log(this.installments);
+  }
+
+  coversData=(data)=>{
+    this.covers=data
+    console.log(this.covers);
+  }
 
   change=(data)=>{
     console.log(data);

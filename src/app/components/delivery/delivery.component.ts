@@ -29,19 +29,20 @@ export class DeliveryComponent implements OnInit {
   ngOnInit() {
     this.detailsForm = this.formBuilder.group({
       fullName: ['', Validators.required],
-      city: this.formBuilder.group({
-        cityName: ['', Validators.required],
-        pinCode: ['', Validators.required]
-      }),
+      city: ['', Validators.required],
       street: ['',Validators.required],
       number: ['', Validators.required],
       block: ['', Validators.required],
       entrance: ['', Validators.required],
       appt: ['', Validators.required],
-      contactNumber: ['', Validators.required],
-      businessType: ['', Validators.required],
-      notes: ['']
+      contact: ['', Validators.required],
+      business: ['', Validators.required],
+      notes: ['', Validators.required]
     });
   };
+
+  register(){
+    console.log(this.detailsForm.value);
+  }
 
 }

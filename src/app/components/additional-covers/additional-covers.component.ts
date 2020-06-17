@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -14,12 +14,12 @@ export class AdditionalCoversComponent implements OnInit {
   additionalcoverForm: FormGroup;
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
-  constructor(private router: Router,private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.additionalcoverForm = this.formBuilder.group({
       cover: ['', Validators.required],
-  
+
     });
  }
   
@@ -32,9 +32,10 @@ export class AdditionalCoversComponent implements OnInit {
     }
   }
   next=()=>{
+    console.log(this.additionalcoverForm.value, "insuring party");
     this.router.navigate(['/']);
     this.OnRegister.emit(this.additionalcoverForm.value);
   }
 
- 
+
 }
