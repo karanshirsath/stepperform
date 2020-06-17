@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 
 @Component({
@@ -7,12 +7,26 @@ import {FormBuilder,FormGroup,Validators} from '@angular/forms';
   styleUrls: ['./personal.component.css']
 })
 export class PersonalComponent implements OnInit {
-
+  @Output() OnRegister= new EventEmitter()
+  @Output() OnToggle=new EventEmitter()
   personalForm:FormGroup;
   citizens=['Indian','American','African'];
   constructor(private formBuilder:FormBuilder) { }
   success(){
-    console.log(this.personalForm.value);
+    //console.log(this.personalForm.value);
+    //console.log(this.personalForm.value,"vehicle Info");
+    // this.OnToggle.emit(true)
+    this.OnRegister.emit(this.personalForm.value);
+  }
+  change=()=>{
+      
+    if(this.personalForm.valid){
+      this.OnToggle.emit(true)
+      this.OnRegister.emit(this.personalForm.value);
+    }else{
+      this.OnToggle.emit(false)
+      // this.OnRegister.emit(this.personalForm.value);
+    }
   }
 
   ngOnInit(): void {
