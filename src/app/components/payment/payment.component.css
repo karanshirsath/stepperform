@@ -37,11 +37,10 @@ input[type="checkbox" i]{
 }
 .user-key{
     width: 40px;
-    position: relative;
-    top: 60px;
+    position: absolute;
     z-index: 1;
-    left: inherit;
-    right: 20px;
+    top: 15px;
+    left: -17px;
 }
 .text-color{
     color: #003564
