@@ -49,108 +49,143 @@
         <!-- Form -->
         <div class="row" *ngIf="submitted">
             <div class="col-sm-10 col-sm-offset-1">
-                <form [formGroup]="detailsForm" (ngSubmit)="register()">
-                    <!-- Personal Details -->
-                    <div class="form-1">
-                        <div class="row form-1_row-1 form-group">
-                            <div class="col-sm-4 form-1_row-2">
-                                <label>Full Name</label>
-                            </div>
-                            <div class="col-sm-6 col-sm-offset-2">
-                                <input type="text" formControlName="fullName" class="form-control form-1_row-3">
-                            </div>
+                <div class="form-1">
+                    <div class="row form-1_row-1">
+                        <div class="col-sm-3 form-1_row-2">
+                            <span>Full Name</span>
                         </div>
-                        <div class="form-1_row-4"><hr></div>
-                        <div class="row form-1_row-1 form-group">
-                            <div class="col-sm-4 form-1_row-2">
-                                <label>City</label>
-                            </div>
-                            <div class="col-sm-4 col-sm-offset-2">
-                                <select name="city" id="city" formControlName="city" class="form-control form-1_row-3">
-                                    <option *ngFor="let city of cities">{{city}}</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-2">
-                                <input [disabled]="true" type="text" class="form-control form-1_row-3">
-                            </div>
-                        </div>
-                        <div class="form-1_row-4"><hr></div>
-                        <div class="row form-1_row-1 form-group">
-                            <div class="col-sm-4 form-1_row-2">
-                                <label>Street & Number</label>
-                            </div>
-                            <div class="col-sm-4 col-sm-offset-2">
-                                <input type="text" formControlName="street" class="form-control form-1_row-3" >
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" formControlName="number" class="form-control form-1_row-3">
-                            </div>
-                        </div>
-                        <div class="form-1_row-4"><hr></div>
-                        <div class="row form-1_row-5 form-group">
-                            <div class="col-sm-4 form-1_row-2">
-                                <label>Block, Entrance & Appartment</label>
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" formControlName="block" class="form-control form-1_row-3">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" formControlName="entrance" class="form-control form-1_row-3">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" formControlName="appt" class="form-control form-1_row-3">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Personal Details -->
-                    <br><br>
-                    <!-- Additional Details -->
-                    <h1 class="display-1 details">Additional Details</h1><br><br>
-                    <div class="row details_row-1 form-group">
-                        <div class="col-sm-4" style="font-size: medium;">
-                            Contact Number
-                        </div>
-                        <div class="col-sm-5 col-sm-offset-3">
-                            <input type="number" class="form-control form-1_row-3">
-                        </div>
-                    </div><hr>
-                    <div class="details_row-2">
-                        <div class="row form-group">
-                            <div class="col-sm-6">
-                                <span style="font-size: medium;">Type of Business</span>
-                                <p style="font-size: small;">For Business address your package will be delivered only during
-                                <br>normal work days from 9:00 to 17:00
-                                </p>
-                            </div>
-                            <div class="col-sm-6 details_row-3">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <input type="radio" formControlName="business" value="home" name="typeOfBusiness" class="radio-1">&nbsp;Home
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="radio" formControlName="business" value="business" name="typeOfBusiness" class="radio-1">&nbsp;Business
-                                    </div>
+                        <div class="col-sm-6 col-sm-offset-2">
+                            <form class="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-1_row-3">
                                 </div>
-                            </div>
+                            </form>
                         </div>
-                    </div><hr>
-                    <!-- Additional Details -->
-                    <!-- Notes -->
-                    <div class="row details_row-1 form-group">
-                        <div class="col-sm-4" style="font-size: medium;">
-                            Additional Notes
-                        </div>
-                        <div class="col-sm-7 col-sm-offset-1">
-                            <textarea name="notes" id="notes" formControlName="notes" cols="30" rows="5" class="form-control details_row-4"></textarea>
-                        </div>
-                        <div class="col-sm-12" style="text-align: right; font-size: small;">Optional</div>
                     </div>
-                    <!-- Notes -->
-                </form>
+                    <div class="form-1_row-4"><hr></div>
+                    <div class="row form-1_row-1">
+                        <div class="col-sm-3 form-1_row-2">
+                            <span>City</span>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <form class="form">
+                                <div class="form-group">
+                                    <select name="city" id="city" class="form-control form-1_row-3">
+                                        <option *ngFor="let city of cities">{{city}}</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <form class="form">
+                                <div class="form-group">
+                                    <input [disabled]="true" type="text" class="form-control form-1_row-3">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="form-1_row-4"><hr></div>
+                    <div class="row form-1_row-1">
+                        <div class="col-sm-3 form-1_row-2">
+                            <span>Street & Number</span>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <form class="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-1_row-3">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <form class="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-1_row-3">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="form-1_row-4"><hr></div>
+                    <div class="row form-1_row-5">
+                        <div class="col-sm-4 form-1_row-2">
+                            <span>Block, Entrance & Appartment</span>
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-1">
+                            <form class="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-1_row-3">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <form class="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-1_row-3">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <form class="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-1_row-3">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>               
             </div>
         </div><br><br>
         <!-- Form -->
-        
+
+        <!-- Additional Details -->
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <h1 class="display-1 details">Additonal Details</h1>
+            </div>
+        </div><br><br>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="row details_row-1">
+                    <div class="col-sm-4" style="font-size: medium;">
+                        Contact Number
+                    </div>
+                    <div class="col-sm-5 col-sm-offset-3">
+                        <input type="number" class="form-control form-1_row-3">
+                    </div>
+                </div>
+                <hr>
+                <div class="details_row-2">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <span style="font-size: medium;">Type of Business</span>
+                            <p style="font-size: small;">For Business address your package will be delivered only during
+                                <br>normal work days from 9:00 to 17:00
+                            </p>
+                        </div>
+                        <div class="col-sm-6 details_row-3">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="radio" name="typeOfBusiness" class="radio-1">&nbsp;Home
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="radio" name="typeOfBusiness" class="radio-1">&nbsp;Business
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row details_row-1">
+                    <div class="col-sm-4" style="font-size: medium;">
+                        Additional Notes
+                    </div>
+                    <div class="col-sm-7 col-sm-offset-1">
+                        <textarea name="notes" id="notes" cols="30" rows="5" class="form-control details_row-4"></textarea>
+                    </div>
+                    <div class="col-sm-12" style="text-align: right; font-size: small;">Optional</div>
+                </div>
+            </div>            
+        </div>
+        <!-- Additional Details -->
         <div class="delivery-1">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1 delivery-1_row-1">
