@@ -11,5 +11,27 @@ export class MTPLCalculatorComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  vehicle
+  insuringParty
+  policyDetails
+  installments
+  covers
+  summary
+  toggle1=false
+  toggle2=false
+  toggle3=false
+  toggle4=false
+  toggle5=false
+  toggle6=false
 
+  policyDetailsData=(data)=>{
+    this.policyDetails=data
+    console.log(this.policyDetails);
+    
+  }
+  vehicleData=(data)=>{
+    this.vehicle=data
+    console.log(this.vehicle);
+    
+  }
 }
