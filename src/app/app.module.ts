@@ -33,6 +33,7 @@ import { InsuringPartyComponent } from './components/insuring-party/insuring-par
 import { DeliveryComponent } from './components/delivery/delivery.component';
 import { MTPLCalculatorComponent } from './components/mtpl-calculator/mtpl-calculator.component';
 import { MTPLPolicyComponent } from './components/mtpl-policy/mtpl-policy.component';
+import { PersonalComponent } from './components/personal/personal.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MTPLPolicyComponent } from './components/mtpl-policy/mtpl-policy.compon
     InsuringPartyComponent,
     DeliveryComponent,
     MTPLCalculatorComponent,
-    MTPLPolicyComponent
+    MTPLPolicyComponent,
+    PersonalComponent
     
   ],
   imports: [
