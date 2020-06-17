@@ -1,4 +1,4 @@
-<div class="container col-auto ">
+<div class="container col-auto col-lg-8 col-md-10 ">
     <h1 class="heading "><b>Additional covers</b></h1><br>
     <div class="row ">
 
@@ -24,8 +24,8 @@
     <div class="row">
         <div class="card shadow p-3 mb-5 bg-white rounded firstcard overflowAuto h-100">
             <div class="card-body ">
-                  <label for="none"><input type="radio" formControlName="none"
-                            id="none" name="none">
+                  <label for="cover"><input type="radio" formControlName="cover"
+                            id="cover" name="cover" (change)="change()">
                         <b> None</b></label>
                  
                 <div class=" discription">Description of additional cover here</div>
@@ -39,8 +39,8 @@
                 <div class="row ">
                     <div class="col-lg-7 col-md-8 col-auto col-7">
                        
-                            <label for="premium"><input type="radio" formControlName="premium" id="premium"
-                                    name="premium">
+                            <label for="cover"><input type="radio" formControlName="cover" id="cover"
+                                    name="cover" (change)="change()">
                                 <b> Premium</b></label>
                       
                         <div class="afterpremium">
@@ -73,7 +73,7 @@
                 <div class="row">
                     <div class=" col-lg-7 col-md-8 col-auto col-7">
                         
-                            <label for="vip"><input type="radio" formControlName="vip" id="vip" name="vip"><b> VIP</b></label>
+                            <label for="cover"><input type="radio" formControlName="cover" id="cover" name="cover" (change)="change()"><b> VIP</b></label>
                 
                         <div class=" discription">Description of additional cover here</div><br><br>
                      </div>
@@ -120,7 +120,7 @@
 
         </div>
         
-        <button class="btn btn-primary nextbutton" (click)="submit()"> Next</button>
+        <button class="btn btn-primary nextbutton" [disabled]="registerForm.valid" (click)="next()"> Next</button>
 
     </div>
 </div>
