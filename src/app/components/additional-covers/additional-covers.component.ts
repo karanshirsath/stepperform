@@ -7,7 +7,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./additional-covers.component.css']
 })
 export class AdditionalCoversComponent implements OnInit {
-  imageUrl="./assets/additionalcar.png ";;
+  imageUrl="./assets/carlogo.jpeg ";;
   tickimage="./assets/tick.jpg";
   registerForm: FormGroup;
   constructor(private formBuilder: FormBuilder) { }
