@@ -131,27 +131,31 @@
                     <div class="row">
                         <div class="col-md-6">
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Vehicle Registration Number</label>
-                        <input type="text" class="form-control" formControlName="vehicleRegistration" [value]="" >
+                        <label class="font_color sub_label_prop">Vehicle Registration Number</label><br>
+                        <!-- <input type="text" class="form-control" formControlName="vehicleRegistration" [value]="" > -->
+                       {{mtplCalculatorData["vehicleData"].registrationNumber}}
                         </div>
-                        <span *ngIf="summaryForm.controls.vehicleRegistration.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.vehicleRegistration.errors" style="color: red;">Required</span> -->
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Vehicle Purpose</label>
-                        <input type="text" class="form-control" formControlName="vehiclePurpose" [value]="">
+                        <label class="font_color sub_label_prop">Vehicle Purpose</label><br>
+                        <!-- <input type="text" class="form-control" formControlName="vehiclePurpose" [value]=""> -->
+                        {{mtplCalculatorData["vehicleData"].purpose}}
                         </div>
-                        <span *ngIf="summaryForm.controls.vehiclePurpose.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.vehiclePurpose.errors" style="color: red;">Required</span> -->
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Vehicle Certification Number</label>
-                        <input type="text" class="form-control" formControlName="certificationNumber" [value]="">
+                        <label class="font_color sub_label_prop">Vehicle Certification Number</label><br>
+                        <!-- <input type="text" class="form-control" formControlName="certificationNumber" [value]=""> -->
+                        {{mtplCalculatorData["vehicleData"].certificateNumber}}
                         </div>
-                        <span *ngIf="summaryForm.controls.certificationNumber.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.certificationNumber.errors" style="color: red;">Required</span> -->
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Driven outside bulgaria for more than 60 days</label>
-                        <input type="text" class="form-control" formControlName="days" [value]="">
+                        <label class="font_color sub_label_prop">Driven outside bulgaria for more than 60 days</label><br>
+                        <!-- <input type="text" class="form-control" formControlName="days" [value]=""> -->
+                        {{mtplCalculatorData["vehicleData"].yesNo}}
                         </div>
-                        <span *ngIf="summaryForm.controls.days.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.days.errors" style="color: red;">Required</span> -->
                         </div>
                         <div class="card border-warning">
                             <div class="card-body font_color">
@@ -175,10 +179,11 @@
                     <div class="row">
                         <div class="col-md-6">
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">ENG/ELK/LNCH Number</label>
-                        <input type="text" class="form-control" formControlName="number" [value]="">
+                        <label class="font_color sub_label_prop">ENG/ELK/LNCH Number</label><br>
+                        <!-- <input type="text" class="form-control" formControlName="number" [value]=""> -->
+                        {{mtplCalculatorData["insuringPartyData"].egn}}
                         </div>
-                        <span *ngIf="summaryForm.controls.number.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.number.errors" style="color: red;">Required</span> -->
                         <div class="form-group">
                         <label class="font_color sub_label_prop">Full Name</label>
                         <input type="text" class="form-control" formControlName="fullName" [value]="">
@@ -190,8 +195,9 @@
                         </div>
                         <span *ngIf="summaryForm.controls.phoneNumber.errors" style="color: red;">Required</span>
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Email</label>
-                        <input type="text" class="form-control" formControlName="email" [value]="">
+                        <label class="font_color sub_label_prop">Email</label><br>
+                        {{mtplCalculatorData["insuringPartyData"].email}}
+                        <!-- <input type="text" class="form-control" formControlName="email" [value]=""> -->
                         </div>
                         <span *ngIf="summaryForm.controls.email.errors" style="color: red;">Required</span>
                         </div>

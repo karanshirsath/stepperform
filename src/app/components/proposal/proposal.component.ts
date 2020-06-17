@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonDataService } from 'src/app/common-data.service';
 
 @Component({
   selector: 'app-proposal',
@@ -14,11 +15,18 @@ export class ProposalComponent implements OnInit {
   third:string='';
   fourth:string='abcd';
   sdate:string='04-03-54';
-  
+  mtplCalculatorData;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private _dataService:CommonDataService) { }
 
   ngOnInit(): void {
+    this._dataService.formData.subscribe(data=>{
+      this.mtplCalculatorData=data;
+      console.log(this.mtplCalculatorData);
+     
+      
+      
+    })
     
     this.summaryForm=this.fb.group({
       firstInstalment:[this.first,Validators.required],
