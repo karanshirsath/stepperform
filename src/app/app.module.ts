@@ -17,6 +17,7 @@ import { StepperComponent } from './stepper/stepper.component';
 import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { AdditionalCoversComponent } from './components/additional-covers/additional-covers.component';
 
 import { LoginComponent } from './components/login/login.component';
 import { VInfoComponent } from './components/v-info/v-info.component';
@@ -30,19 +31,24 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { CdkStepper } from '@angular/cdk/stepper';
 import { InsuringPartyComponent } from './components/insuring-party/insuring-party.component';
 import { DeliveryComponent } from './components/delivery/delivery.component';
+import { MTPLCalculatorComponent } from './components/mtpl-calculator/mtpl-calculator.component';
+import { MTPLPolicyComponent } from './components/mtpl-policy/mtpl-policy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StepperComponent,
     TabComponent,
+    AdditionalCoversComponent,
     PolicyDetailsComponent,
     LoginComponent,
     VInfoComponent,
     Tab2Component,
     TabsComponent,
     InsuringPartyComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    MTPLCalculatorComponent,
+    MTPLPolicyComponent
     
   ],
   imports: [

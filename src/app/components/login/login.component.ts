@@ -21,6 +21,6 @@ password: string;
   }
 
   redirect(){
-    this.router.navigate(["form"]);
+    this.router.navigate(["tab"]);
   }
   }

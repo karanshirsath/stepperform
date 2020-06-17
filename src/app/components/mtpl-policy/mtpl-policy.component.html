@@ -1,0 +1,37 @@
+<mat-horizontal-stepper labelPosition="bottom" #stepper linear>
+  <mat-step>
+    <ng-template matStepLabel>Personal details</ng-template>
+  </mat-step>  
+  
+  <mat-step>
+    <ng-template matStepLabel>Contact details</ng-template>
+  </mat-step> 
+  
+  <mat-step>
+    <ng-template matStepLabel>Vehicle Owner</ng-template>
+  </mat-step>  
+
+  <mat-step>
+    <ng-template matStepLabel>Delivery</ng-template>
+    <app-delivery></app-delivery>
+  </mat-step>  
+
+  <mat-step>
+    <ng-template matStepLabel>Summary</ng-template>
+  </mat-step>  
+
+  <mat-step>
+    <ng-template matStepLabel>Payment</ng-template>
+  </mat-step> 
+
+  <!-- <mat-step >
+        <ng-template matStepLabel>Policy Details</ng-template>
+        <app-policy-details  ></app-policy-details>
+      </mat-step>
+        
+      <mat-step >
+        <ng-template matStepLabel>Vehicle </ng-template>
+        <app-v-info ></app-v-info>
+       
+      </mat-step> -->
+</mat-horizontal-stepper>
