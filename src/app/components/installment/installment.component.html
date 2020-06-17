@@ -5,7 +5,7 @@
             <div class="card mx-auto" style="border:  none; ">
                 <div class="card-body">
                     <h1 class="font-weight-bold">Instalment options</h1><br/>
-                    <form [formGroup]="installmentForm" (submit)="submitInstalmentForm()">
+                    <form [formGroup]="installmentForm" (submit)="submit()">
                         <div class="form-check" >
                             <div class="form-row">
                                 <div class="col-md-5">
@@ -13,7 +13,7 @@
                                         <div class="row">
                                             <div class="col-auto mr-auto pt-1">
                                                 <label class="form-check-label" style="font-weight: bold;">
-                                                    <input class="form-check-input" type="radio" name="term">Single payment</label>
+                                                    <input class="form-check-input" type="radio" name="term" formControlName="term" value="siglePayment" (change)="change()">Single payment</label>
                                                     <div><button class="btn btn-success mon">Best Value</button></div>
                                             </div>   
                                             <div class="col-md-5 col-auto col-7">
@@ -36,7 +36,7 @@
                                         <div class="row">
                                             <div class="col-auto mr-auto pt-1">
                                                 <label class="form-check-label" style="font-weight: bold;">
-                                                <input class="form-check-input" type="radio" name="term">Two payments</label>
+                                                <input class="form-check-input" type="radio" name="term" formControlName="term" value="twoPayment" (change)="change()">Two payments</label>
                                                 <div class="mon">Every 6 months</div>
                                             </div>
                                             <div class="col-md-4 col-auto col-7">
@@ -73,7 +73,7 @@
                                         <div class="row">
                                             <div class="col-auto mr-auto pt-1">
                                                 <label class="form-check-label" style="font-weight: bold;">
-                                                <input class="form-check-input" type="radio" name="term">Four payments</label>
+                                                <input class="form-check-input" type="radio" name="term" formControlName="term" value="fourPayment"  (change)="change()">Four payments</label>
                                                 <div class="mon">Every 4 months</div>
                                             </div>
                                             <div class="col-md-4 col-auto col-7">
@@ -132,8 +132,7 @@
                             
                         </div>
                         <hr  class="hrline">
-                        <button class="btn btn-primary rounded-pill" type="submit">  Next  </button>
-                        
+                        <button class="btn btn-primary rounded-pill" matStepperNext type="submit" [disabled]="installmentForm.invalid">  Next  </button>
                     </form>
                 </div>
             </div>
