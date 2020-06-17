@@ -17,7 +17,7 @@ export class InsuringPartyComponent implements OnInit {
     this.insuringParty = this.fb.group({
       egn: ['', Validators.required],
       address: ['', Validators.required],
-      email: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]]
     });
   }
   // next() {
