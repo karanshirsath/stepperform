@@ -34,6 +34,7 @@ import { DeliveryComponent } from './components/delivery/delivery.component';
 import { MTPLCalculatorComponent } from './components/mtpl-calculator/mtpl-calculator.component';
 import { MTPLPolicyComponent } from './components/mtpl-policy/mtpl-policy.component';
 import { PersonalComponent } from './components/personal/personal.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -50,8 +51,8 @@ import { PersonalComponent } from './components/personal/personal.component';
     DeliveryComponent,
     MTPLCalculatorComponent,
     MTPLPolicyComponent,
-    PersonalComponent
-    
+    PersonalComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
