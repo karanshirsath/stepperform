@@ -1,8 +1,8 @@
 <div class="container col-auto col-lg-8 col-md-10 ">
+    <form [formGroup]="registerForm">
     <h1 class="heading "><b>Additional covers</b></h1><br>
     <div class="row ">
-
-        <div class="card shadow p-3 mb-5 rounded thirdparty">
+        <div class="card shadow p-3 mb-5 rounded thirdparty overflowAuto h-100">
             <div class="card-body">
                 <div class="row">
                     <div class=" col-lg-7 col-md-8 col-auto col-7 policy">
@@ -123,6 +123,7 @@
         <button class="btn btn-primary nextbutton" [disabled]="registerForm.invalid" (click)="submit()"> Next</button>
 
     </div>
+</form>
 </div>
 
 
