@@ -49,89 +49,57 @@
         <!-- Form -->
         <div class="row" *ngIf="submitted">
             <div class="col-sm-10 col-sm-offset-1">
-                <div class="form-1">
-                    <div class="row form-1_row-1">
-                        <div class="col-sm-3 form-1_row-2">
-                            <span>Full Name</span>
+                <form [formGroup]="detailsForm" class="form-1" (ngSubmit)="true">
+                    <div class="row form-1_row-1 form-group">
+                        <div class="col-sm-4 form-1_row-2">
+                            <label>Full Name</label>
                         </div>
                         <div class="col-sm-6 col-sm-offset-2">
-                            <form class="form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-1_row-3">
-                                </div>
-                            </form>
+                            <input type="text" formControlName="fullName" class="form-control form-1_row-3">
                         </div>
                     </div>
                     <div class="form-1_row-4"><hr></div>
-                    <div class="row form-1_row-1">
-                        <div class="col-sm-3 form-1_row-2">
-                            <span>City</span>
-                        </div>
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <form class="form">
-                                <div class="form-group">
-                                    <select name="city" id="city" class="form-control form-1_row-3">
-                                        <option *ngFor="let city of cities">{{city}}</option>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-sm-2">
-                            <form class="form">
-                                <div class="form-group">
-                                    <input [disabled]="true" type="text" class="form-control form-1_row-3">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="form-1_row-4"><hr></div>
-                    <div class="row form-1_row-1">
-                        <div class="col-sm-3 form-1_row-2">
-                            <span>Street & Number</span>
-                        </div>
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <form class="form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-1_row-3">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-sm-2">
-                            <form class="form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-1_row-3">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="form-1_row-4"><hr></div>
-                    <div class="row form-1_row-5">
+                    <div class="row form-1_row-1 form-group">
                         <div class="col-sm-4 form-1_row-2">
-                            <span>Block, Entrance & Appartment</span>
+                            <label>City</label>
                         </div>
-                        <div class="col-sm-2 col-sm-offset-1">
-                            <form class="form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-1_row-3">
-                                </div>
-                            </form>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <select name="city" id="city" formControlName="city" class="form-control form-1_row-3">
+                                <option *ngFor="let city of cities">{{city}}</option>
+                            </select>
                         </div>
                         <div class="col-sm-2">
-                            <form class="form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-1_row-3">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-sm-2">
-                            <form class="form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-1_row-3">
-                                </div>
-                            </form>
+                            <input [disabled]="true" type="text" class="form-control form-1_row-3">
                         </div>
                     </div>
-                </div>               
+                    <div class="form-1_row-4"><hr></div>
+                    <div class="row form-1_row-1 form-group">
+                        <div class="col-sm-4 form-1_row-2">
+                            <label>Street & Number</label>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <input type="text" formControlName="street" class="form-control form-1_row-3" >
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control form-1_row-3">
+                        </div>
+                    </div>
+                    <div class="form-1_row-4"><hr></div>
+                    <div class="row form-1_row-5 form-group">
+                        <div class="col-sm-4 form-1_row-2">
+                            <label>Block, Entrance & Appartment</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" formControlName="block" class="form-control form-1_row-3">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" formControlName="entrance" class="form-control form-1_row-3">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="text" formControlName="appt" class="form-control form-1_row-3">
+                        </div>
+                    </div>
+                </form>
             </div>
         </div><br><br>
         <!-- Form -->
