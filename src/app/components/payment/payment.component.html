@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="row pb-4">
+        <div class="col-md-9 col-12 m-auto">
+            <h2 class="heading">Select payment option</h2>
+            <div class="card bg-dark-blue">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2 col-3 motor-img">
+                            <img src="../../assets/motor_policy.PNG">
+                        </div>
+                        <div class="col-md-10 col-9">
+                            <div class="row">
+                                <div class="col-md-9 col-12">
+                                    <span class="middle-heading">Motor Third party Liability Policy</span>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <div>
+                                        <div><strong>324,00BGN</strong></div>
+                                        <div>four payments</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row pt-3">
+                    <div class="col-md-5">
+                        <label class="text-color">Select payment method</label>
+                    </div>
+                    
+                    <div class="col-md-7 radio-container">
+                        <div class="row justify-content-around">
+                            <div class="col-md-5 radio p-0">
+                                <label class="radio-inner">
+                                    <div class="radio-action"><input type="radio" name="optradio" checked></div>
+                                    <div class="text-center">
+                                        <div class="radio-img"><img src="../../assets/credit-card.PNG"></div>
+                                        <div class="text-color">Credit/debit card</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-md-5 radio p-0">
+                                <label class="radio-inner">
+                                    <div class="radio-action"><input type="radio" name="optradio"></div>
+                                    <div class="text-center">
+                                        <div class="radio-img"><img src="../../assets/e-pay.PNG"></div>
+                                        <div class="text-color">ePay</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-12 p-0">
+                        <img class="user-key" src="../../assets/user-key.png">
+                        <div class="card border-warning mb-4">
+                            <div class="card-body">
+                                <p class="card-text pl-3 text-color">
+                                    If you are not the card holder, you will be asked to sign the policy with 
+                                    e-Signature. If you don't own an e-Signature, please pay with your own card
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col shadow-lg p-3 mb-5 bg-white rounded d-flex align-items-baseline">
+                        <input type="checkbox" ngModel #chkEnable>
+                        <label class="text-color">I declare I am owner of the card for this payment</label><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    <button class="btn btn-info px-5 buy-btn" [disabled]="!chkEnable.checked">Buy Policy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

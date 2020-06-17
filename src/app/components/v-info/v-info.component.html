@@ -43,8 +43,13 @@
             Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?
         </div>
         <div class="col-3">
+<<<<<<< HEAD
             <input type="radio" id="yes" name="ysNo"  formControlName="ysNo" value="Yes">Yes &nbsp;&nbsp;
             <input type="radio" id="No" name="ysNo" formControlName="ysNo" value="No">No
+=======
+            <input type="radio" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes">Yes &nbsp;&nbsp;
+            <input type="radio" name="yesNo" (change)="change()" formControlName="yesNo" value="No">No
+>>>>>>> 18788b13abe0e2e1819d4481aada771a41c62e35
         </div>
     </div>
     <hr>
@@ -54,3 +59,4 @@
 
 <button class="btn btn-primary rounded-pill" (click)="submit()" mat-raised-button  matStepperNext [disabled]="!vehicleInfoForm.valid">Next</button>
 
+<!-- {{vehicleInfoForm.value | json}} -->

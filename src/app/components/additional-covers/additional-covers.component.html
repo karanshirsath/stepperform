@@ -1,12 +1,14 @@
-<div class="container">
+
+<div class="container col-12">
+    
+    <form [formGroup]="registerForm">
     <h1 class="heading"><b>Additional covers</b></h1><br>
     <div class="row">
 
-        <div class="card shadow p-3 mb-5  rounded thirdparty">
+        <div class="card shadow p-3 mb-5  rounded thirdparty overflowAuto h-100">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-8  policy">
-                       
+                   <div class="col-8  policy">   
                         <h1><img width="50px" height="50px" [src]='imageUrl' >
                         Motor Third Party Liability Policy</h1>
                     </div>
@@ -22,7 +24,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="card shadow p-3 mb-5 bg-white rounded firstcard">
+        <div class="card shadow p-3 mb-5 bg-white rounded firstcard overflowAuto h-100">
             <div class="card-body ">
                 <div class="radio">
                     <label for="none"><input type="radio" formControlName="none"
@@ -35,10 +37,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="card shadow p-3 mb-5 bg-white rounded secondcard">
+        <div class="card shadow p-3 mb-5 bg-white rounded secondcard overflowAuto h-100">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-8 ">
+                    <div class="col-8">
                         <div class="radio">
                             <label for="premium"><input type="radio" formControlName="premium" id="premium"
                                     name="premium">
@@ -55,7 +57,6 @@
                     </div>
 
                     <div class="col-4 bgnpremium">
-                        
                             <h1>+25,00BGN<br>
                                 <h5>for 12 months</h5>
                             </h1>
@@ -69,7 +70,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="card shadow p-3 mb-5 bg-white rounded thirdcard">
+        <div class="card shadow p-3 mb-5 bg-white rounded thirdcard overflowAuto h-100">
             <div class="card-body ">
                 <div class="row">
                     <div class="col-8">
@@ -124,7 +125,7 @@
         <button class="btn btn-primary nextbutton" (click)="submit()"> Next</button>
 
     </div>
-
+</form>
 </div>
 
 

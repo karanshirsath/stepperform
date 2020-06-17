@@ -1,6 +1,5 @@
 import { Component, OnInit, Output,EventEmitter,ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {StepperComponent} from 'src/app/stepper/stepper.component'
 import { Router } from '@angular/router';
 
 
@@ -20,7 +19,7 @@ export class VInfoComponent implements OnInit {
       registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],
       certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],
       purpose:['',Validators.required],
-      ysNo:['',Validators.required]
+      yesNo:['',Validators.required]
     })}
     submit=() => {
       //this.router.navigate(['./insuring-party.component']);

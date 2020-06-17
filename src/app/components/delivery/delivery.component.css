@@ -1,1 +1,110 @@
+.container {
+    padding-bottom: 200px;
+}
 
+.display-1 {
+    font-size: 45px;
+    color: rgb(12, 44, 70);
+}
+
+.address {
+    font-size: large;
+}
+
+.input-1 {
+    padding-left: 10px;
+}
+
+.radio-1 {
+    height: 25px;
+    width: 25px;
+}
+
+.input-1_radio-1 {
+    padding-left: 10px;
+    color: rgb(12, 44, 70);
+}
+
+.input-1_input-1 {
+    padding-left: 36px;
+}
+
+.form-1 {
+    padding-left: 15px;
+    border-radius: 10px;
+    background-color: #F0F8FF;
+}
+
+.form-1_row-1 {
+    padding-top: 30px;
+}
+.form-1_row-2 {
+    padding-left: 20px;
+    font-size: medium;
+}
+
+.form-1_row-3 {
+    color: rgb(12, 44, 70);
+    height: 40px;
+    font-size: large;
+    border-radius: 10px;
+}
+
+.form-1_row-4 {
+    padding-right: 15px;
+
+}
+
+.form-1_row-5 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.details {
+    font-size: 30px;
+    color: rgb(12, 44, 70);
+}
+
+.details_row-1 {
+    padding-bottom: 10px;
+}
+
+.details_row-2 {
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.details_row-3 {
+    font-size: large;
+    color: rgb(12, 44, 70);
+}
+
+.details_row-4 {
+    resize: none;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+.delivery-1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.delivery-1_row-1 {
+    border: gainsboro solid 1px;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.delivery-1_row-2 {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.btn {
+    font-size: large;
+    width: 80px;
+    border-radius: 15px;
+}
