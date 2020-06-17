@@ -1,0 +1,60 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { BrowserModule } from "@angular/platform-browser";
+import { LoginComponent } from '../app/components/login/login.component';
+import { HttpClientModule } from "@angular/common/http";
+import { moduleMetadata } from "@storybook/angular";
+
+<Meta title="MDX/Login" decorators={[
+    moduleMetadata({
+        imports:[
+            HttpClientModule,
+            BrowserModule
+        ],
+        declarations: [
+            LoginComponent
+        ],
+        providers: [ { provide: APP_BASE_HREF, useValue: "/" } ]
+    }),
+]} parameters={{
+    component: LoginComponent
+}}/>
+
+# Login Component 
+
+A login component has been created which allows the users to login by providing their credentials.
+This file contains the complete documentation of the login component. All the stories have been rendered 
+in the mobile format by default.
+
+## MDX
+
+Stotybook Docs allows you to mix stories and documentation in 
+[MDX Format](https://mdxjs.com/)
+
+MDX Combines Marksown and JSX.
+
+## ComponentMeta SB5 Equivalent
+
+This is roughly equivalent to SB5's `storiesOf` :
+
+```
+storiesOf('MDX|Login',module)
+    .addParameter({component: LogInComponent})
+
+```
+
+## Stories
+
+### Default
+
+This is the default story. In this story the users can take a look at the overall
+appearance of the login component.
+
+<Preview>
+  <Story name="Default">{{
+    component: LogInComponent,
+    props:{
+      
+    },
+    }}    
+  </Story>
+</Preview>
