@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,17 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./additional-covers.component.css']
 })
 export class AdditionalCoversComponent implements OnInit {
+  @Output() OnRegister = new EventEmitter()
+  @Output() OnToggle = new EventEmitter()
   imageUrl="./assets/carlogo.jpeg ";;
   tickimage="./assets/tick.jpg";
   additionalcoverForm: FormGroup;
-  @Output() OnRegister = new EventEmitter()
-  @Output() OnToggle = new EventEmitter()
-  constructor(private router: Router, private formBuilder: FormBuilder) { }
+
+  constructor( private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.additionalcoverForm = this.formBuilder.group({
       cover: ['', Validators.required],
-
     });
  }
   
@@ -33,9 +32,7 @@ export class AdditionalCoversComponent implements OnInit {
   }
   next=()=>{
     console.log(this.additionalcoverForm.value, "additional covers");
-    this.router.navigate(['/']);
     this.OnRegister.emit(this.additionalcoverForm.value);
   }
-
 
 }
