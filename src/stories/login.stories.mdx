@@ -12,7 +12,8 @@ import { moduleMetadata } from "@storybook/angular";
         ],
         declarations: [
             LoginComponent
-        ]
+        ],
+        provider: [{}]
     }),
 ]} parameters={{
     component: LoginComponent
@@ -37,7 +38,7 @@ This is roughly equivalent to SB5's `storiesOf` :
 
 ```
 storiesOf('MDX|Login',module)
-    .addParameter({component: LogInComponent})
+    .addParameter({component: LoginComponent})
 
 ```
 
@@ -50,7 +51,7 @@ appearance of the login component.
 
 <Preview>
   <Story name="Default">{{
-    component: LogInComponent,
+    component: LoginComponent,
     props:{
       
     },
