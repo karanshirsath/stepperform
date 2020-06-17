@@ -68,13 +68,13 @@
                 </div>
                 <div class="row">
                     <div class="col shadow-lg p-3 mb-5 bg-white rounded d-flex align-items-baseline">
-                        <input type="checkbox" value="">
-                        <label class="text-color">  I declare I am owner of the card for this payment</label><br>
+                        <input type="checkbox" ngModel #chkEnable>
+                        <label class="text-color">I declare I am owner of the card for this payment</label><br>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                    <button class="btn btn-info px-5 buy-btn">Buy Policy</button>
+                    <button class="btn btn-info px-5 buy-btn" [disabled]="!chkEnable.checked">Buy Policy</button>
                     </div>
                 </div>
             </div>
