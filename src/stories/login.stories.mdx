@@ -6,13 +6,10 @@ import { moduleMetadata } from "@storybook/angular";
 
 <Meta title="MDX/Login" decorators={[
     moduleMetadata({
-        imports:[
-            HttpClientModule,
-            BrowserModule
-        ],
         declarations: [
             LoginComponent
-        ]
+        ],
+        provider: [{}]
     }),
 ]} parameters={{
     component: LoginComponent
@@ -37,7 +34,7 @@ This is roughly equivalent to SB5's `storiesOf` :
 
 ```
 storiesOf('MDX|Login',module)
-    .addParameter({component: LogInComponent})
+    .addParameter({component: LoginComponent})
 
 ```
 
