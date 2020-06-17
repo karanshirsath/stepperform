@@ -1,8 +1,8 @@
 <div class="container col-auto col-lg-8 col-md-10 ">
-    <form [formGroup]="registerForm">
     <h1 class="heading "><b>Additional covers</b></h1><br>
     <div class="row ">
-        <div class="card shadow p-3 mb-5 rounded thirdparty overflowAuto h-100">
+
+        <div class="card shadow p-3 mb-5 rounded thirdparty">
             <div class="card-body">
                 <div class="row">
                     <div class=" col-lg-7 col-md-8 col-auto col-7 policy">
@@ -24,8 +24,8 @@
     <div class="row">
         <div class="card shadow p-3 mb-5 bg-white rounded firstcard overflowAuto h-100">
             <div class="card-body ">
-                  <label for="none"><input type="radio" formControlName="cover" value="none"
-                            id="none" name="cover" (change)="change()">
+                  <label for="none"><input type="radio" formControlName="cover"
+                            id="none" name="cover" (click)="change()">
                         <b> None</b></label>
                  
                 <div class=" discription">Description of additional cover here</div>
@@ -39,11 +39,12 @@
                 <div class="row ">
                     <div class="col-lg-7 col-md-8 col-auto col-7">
                        
-                            <label for="premium"><input type="radio" formControlName="cover" id="premium" value="premium"
-                                    name="cover" (change)="change()">
+                            <label for="premium"><input type="radio" formControlName="cover" id="premium"
+                                    name="cover" (click)="change()">
                                 <b> Premium</b></label>
-                      
-                        <div class="afterpremium">
+                               
+                    
+                           <div class="afterpremium">
                             <button class="btn btn-success valuebutton">
                                 <h6>Best Value</h6>
                             </button>
@@ -73,7 +74,7 @@
                 <div class="row">
                     <div class=" col-lg-7 col-md-8 col-auto col-7">
                         
-                            <label for="vip"><input type="radio" formControlName="cover" id="vip" name="cover" value="vip" (change)="change()"><b> VIP</b></label>
+                            <label for="vip"><input type="radio" formControlName="cover" id="vip" name="cover" (click)="change()"><b> VIP</b></label>
                 
                         <div class=" discription">Description of additional cover here</div><br><br>
                      </div>
@@ -88,29 +89,30 @@
                     <p ><b>
                             Services provded under the "PREMIUM" clause, but with higher
                             limits when transporting vehicles</b></p>
-                            <img width="30px" height="20px" [src]='tickimage'>
+                            <div>
+                            <img width="30px" height="20px" src="./assets/tick.jpg">
                            <span >In case of an insurance event(no limit in the number of transports and up to 900 km
                         mileage)
-                    </span><br>
-                    <img width="30px" height="20px" [src]='tickimage'>
+                    </span><br></div>
+                    <img width="30px" height="20px" src="./assets/tick.jpg">
                     <span>Technical failure(no mileage limit and up to 2 transports) </span><br>
-                    <img width="30px" height="20px" [src]='tickimage'>
+                    <img width="30px" height="20px" src="./assets/tick.jpg">
                     <span>Wrong fuet(disposable)</span><br><br>
                   
                     <p ><b>And more:</b></p>
-                    <img width="30px" height="20px" [src]='tickimage'>
-                    <span>Stay in the parking lot of the damaged car </span><br>
-                    <img width="30px" height="20px" [src]='tickimage'>
+                    <span><img width="30px" height="20px" src="./assets/tick.jpg">
+                    Stay in the parking lot of the damaged car </span><br>
+                    <img width="30px" height="20px" src="./assets/tick.jpg" class="visible">
                     <span>Overview in a hotel of the driver of the vehicle </span><br>
-                    <img width="30px" height="20px" [src]='tickimage'>
+                    <img width="30px" height="20px" src="./assets/tick.jpg">
                     <span>Transportation of persons traveling in vehicles, in case the vehicle has suffered damage
                     </span><br>
-                    <img width="30px" height="20px" [src]='tickimage'>
+                    <img width="30px" height="20px" src="./assets/tick.jpg">
                     <span>Medical transportation in case of an accident</span><br>
-                    <img width="30px" height="20px" [src]='tickimage'>
+                    <img width="30px" height="20px" src="./assets/tick.jpg">
                     <span>Costs of examinations, medical examinations and manipulations in case of bodily injuries to
                         the driver and / or persons traveling in the vehicle as a result of the accident</span><br>
-                    <img width="30px" height="20px" [src]='tickimage'>
+                    <img width="30px" height="20px" src="./assets/tick.jpg">
                     <span>In case of damages covered by Casco + insurance - up to 2 vehicle inspections at the
                         address
                         indicated by the client</span><br>
@@ -120,10 +122,9 @@
 
         </div>
         
-        <button class="btn btn-primary nextbutton" [disabled]="registerForm.invalid" matStepperNext (click)="submit()"> Next</button>
+        <button class="btn btn-primary nextbutton"  (click)="next()"> Next</button>
 
     </div>
-</form>
 </div>
 
 
