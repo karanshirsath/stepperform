@@ -16,8 +16,8 @@
       </mat-step>
 
       <mat-step completed={{toggle4}}>
-        <ng-template matStepLabel (OnRegister)="installmentsData($event)" (OnToggle)="toggle4=$event">Installments</ng-template>
-        Installments
+        <ng-template matStepLabel>Installments</ng-template>
+        <app-installment (OnRegister)="installmentsData($event)" (OnToggle)="toggle4=$event"></app-installment>
       </mat-step>
 
       <mat-step completed={{toggle5}}>
