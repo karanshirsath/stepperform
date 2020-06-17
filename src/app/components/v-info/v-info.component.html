@@ -1,4 +1,4 @@
-<h1 class="display-1">Vehicle Information</h1>
+<h1 class="display-1" style="color:darkblue; font-size: 200%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><b>Vehicle Information</b></h1>
 <form [formGroup]="vehicleInfoForm">
     <div class="form-row">
         <div class="col-9">
@@ -43,8 +43,8 @@
             Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?
         </div>
         <div class="col-3">
-            <input type="radio" name="optradio" >Yes &nbsp;&nbsp;
-            <input type="radio" name="optradio">No
+            <input type="radio" id="yes" name="ysNo"  formControlName="ysNo" value="Yes">Yes &nbsp;&nbsp;
+            <input type="radio" id="No" name="ysNo" formControlName="ysNo" value="No">No
         </div>
     </div>
     <hr>
