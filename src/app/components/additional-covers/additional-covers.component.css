@@ -172,3 +172,7 @@ background-color: khaki;
     margin-top: -30px;
  }
  
+ .overflowAuto {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
