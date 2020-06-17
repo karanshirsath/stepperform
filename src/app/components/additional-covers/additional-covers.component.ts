@@ -32,7 +32,7 @@ export class AdditionalCoversComponent implements OnInit {
     }
   }
   next=()=>{
-    console.log(this.additionalcoverForm.value, "insuring party");
+    console.log(this.additionalcoverForm.value, "additional covers");
     this.router.navigate(['/']);
     this.OnRegister.emit(this.additionalcoverForm.value);
   }
