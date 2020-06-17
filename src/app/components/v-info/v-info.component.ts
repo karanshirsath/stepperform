@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,EventEmitter,ViewChild } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
@@ -22,14 +22,19 @@ export class VInfoComponent implements OnInit {
     })}
     submit=() => {
       console.log(this.vehicleInfoForm.value,"vehicle Info");
+      // this.OnToggle.emit(true)
       this.OnRegister.emit(this.vehicleInfoForm.value);
+      // setTimeout(this.OnToggle.emit(true),)
 
     }
     change=()=>{
+      
       if(this.vehicleInfoForm.valid){
         this.OnToggle.emit(true)
+        this.OnRegister.emit(this.vehicleInfoForm.value);
       }else{
         this.OnToggle.emit(false)
+        // this.OnRegister.emit(this.vehicleInfoForm.value);
       }
     }
   }

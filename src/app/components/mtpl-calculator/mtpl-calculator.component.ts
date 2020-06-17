@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { StepperSelectionEvent } from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-mtpl-calculator',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mtpl-calculator.component.css']
 })
 export class MTPLCalculatorComponent implements OnInit {
-
+  @Output() selectionChange: EventEmitter<StepperSelectionEvent>
   constructor() { }
 
   ngOnInit(): void {
@@ -32,6 +33,10 @@ export class MTPLCalculatorComponent implements OnInit {
   vehicleData=(data)=>{
     this.vehicle=data
     console.log(this.vehicle);
+    
+  }
+  change=(data)=>{
+    console.log(data);
     
   }
 }
