@@ -35,6 +35,7 @@ import { InstallmentComponent } from './components/installment/installment.compo
 import { ProposalComponent } from './components/proposal/proposal.component';
 import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.
     VInfoComponent,
     Tab2Component,
     TabsComponent,
+    VehicleOwnerComponent,
     InsuringPartyComponent,
     DeliveryComponent,
     MTPLCalculatorComponent,
@@ -54,7 +56,6 @@ import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.
     PaymentComponent,
     InstallmentComponent,
     ProposalComponent,
-    VehicleOwnerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,52 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { MTPLPolicyComponent } from '../app/components/mtpl-policy/mtpl-policy.component';
+import { moduleMetadata } from "@storybook/angular";
+
+<Meta title="MDX/MTPL Policy Component" decorators={[
+    moduleMetadata({
+        declarations: [
+            MTPLPolicyComponent
+        ],
+        provider: [{}]
+    }),
+]} parameters={{
+    component: MTPLPolicyComponent
+}}/>
+
+# MTPL Policy Component 
+
+This is the MTPL policy component.
+
+## MDX
+
+Stotybook Docs allows you to mix stories and documentation in 
+[MDX Format](https://mdxjs.com/)
+
+MDX Combines Marksown and JSX.
+
+## ComponentMeta SB5 Equivalent
+
+This is roughly equivalent to SB5's `storiesOf` :
+
+```
+storiesOf('MDX|Login',module)
+    .addParameter({component: LoginComponent})
+
+```
+
+## Stories
+
+### Default
+
+This is the default story. In this story the users can take a look at the overall
+appearance of the login component.
+
+<Preview>
+  <Story name="Default">{{
+    component: MTPLPolicyComponent,
+    props:{
+      
+    },
+    }}    
+  </Story>
+</Preview>

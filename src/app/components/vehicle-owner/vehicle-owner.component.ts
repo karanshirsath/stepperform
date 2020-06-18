@@ -1,63 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-
-import { FormBuilder,FormGroup,FormControl,Validators } from '@angular/forms';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-vehicle-owner',
-  templateUrl: './vehicle-owner.component.html',
-  styleUrls: ['./vehicle-owner.component.css']
-})
-export class VehicleOwnerComponent implements OnInit {
-  
-  Details:FormGroup;
-  citizens=['Indian','American','African'];
-  constructor(private formBuilder: FormBuilder) { }
+    selector: 'app-vehicle-owner',
+    templateUrl: './vehicle-owner.component.html',
+    styleUrls: ['./vehicle-owner.component.css']
+  })
 
-    success(){
-      console.log(this.Details.value);
+  export class VehicleOwnerComponent implements OnInit {
+
+    constructor() { }
+
+    ngOnInit() {
+        
     }
-   
 
-  ngOnInit(): void {
-    this.Details = this.formBuilder.group({
-      Number: ['', Validators.required],
-      fullname:this.formBuilder.group({
-        firstname:['',Validators.required],
-        lastname:['',Validators.required],
-        surname:[]
-      }),
-      fullnameeng:this.formBuilder.group({
-        firstnameeng:['',Validators.required],
-        lastnameeng:['',Validators.required],
-        surnameeng:[]
-      }),
-      citizen:['',Validators.required],
-      birth:['',Validators.required],
-      city:['',Validators.required],
-      street:['',Validators.required],
-      No:['',Validators.required]
-    });
   }
-  
-  private selectedLink: string="Yes";        
-  
-  setradio(e: string): void   
-  {  
-  
-    this.selectedLink = e;  
-          
-  }  
-  
-    isSelected(name: string): boolean   
-  {  
-  
-        if (!this.selectedLink) { 
-            return false;  
-  }  
-  
-        return (this.selectedLink === name);  
-    }  
- 
- 
-
-}

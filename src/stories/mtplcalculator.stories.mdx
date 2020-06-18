@@ -1,21 +1,21 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import { VehicleOwnerComponent } from '../app/components/vehicle-owner/vehicle-owner.component';
+import { MTPLCalculatorComponent } from '../app/components/mtpl-calculator/mtpl-calculator.component';
 import { moduleMetadata } from "@storybook/angular";
 
-<Meta title="MDX/Vehicle Owner Component" decorators={[
+<Meta title="MDX/MTPL Calculator Component" decorators={[
     moduleMetadata({
         declarations: [
-            VehicleOwnerComponent
+            MTPLCalculatorComponent
         ],
         provider: [{}]
     }),
 ]} parameters={{
-    component: VehicleOwnerComponent
+    component: MTPLCalculatorComponent
 }}/>
 
-# Vehicle Owner Component 
+# MTPL Calulator Component 
 
-This is the delivery component.
+This is the MTPL calculator component.
 
 ## MDX
 
@@ -43,7 +43,7 @@ appearance of the login component.
 
 <Preview>
   <Story name="Default">{{
-    component: VehicleOwnerComponent,
+    component: MTPLCalculatorComponent,
     props:{
       
     },
