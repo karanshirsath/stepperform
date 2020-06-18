@@ -9,7 +9,7 @@ defaultData={
 coversData: {cover: ""},
 installmentsData: {term: ""},
 insuringPartyData: {egn: "", address: "mumbai", email: ""},
-policyDetailsData: {policyDate: "", policyLength: "", check1: true, check2: true},
+policyDetailsData: {policyDate: "", policyLength: "", check1: false, check2: false},
 vehicleData: {registrationNumber: "", certificateNumber: "", purpose: "", yesNo: ""},
 
 }
