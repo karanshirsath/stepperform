@@ -36,7 +36,10 @@ export class VehicleOwnerComponent implements OnInit {
       birth: ['', Validators.required],
       city: ['', Validators.required],
       street: ['', Validators.required],
-      No: ['', Validators.required]
+      No: ['', Validators.required],
+      block:[''],
+      entrance:[''],
+      appartment:[''],
     });
   }
 

@@ -13,7 +13,7 @@ export class MTPLPolicyComponent implements OnInit {
   ngOnInit(): void {
   }
   toggle1=false
-  toggle2=true
+  toggle2=false
   toggle3=false
   toggle4=true
   toggle5=true
@@ -28,22 +28,23 @@ formData
   personalData=(data)=>{
     this.personalInformation=data
     console.log(this.personalInformation);
-    
+  }
+
+  contactDetailsData=(data)=>{
+    this.contactInformation=data
+    console.log(this.contactInformation);
   }
 
   vehicleOwnerData=(data)=>{
-    
-    
     this.vehicleOwnerInformation=data
     console.log(this.vehicleOwnerInformation);
-    
   }
   
   deliveryData=(data)=>{
     this.deliveryInformation=data;
     this.formData={
       personalInformation:this.personalInformation,
-      contactInformation:"",
+      contactInformation:this.contactInformation,
       vehicleOwnerInformation:this.vehicleOwnerInformation,
       deliveryInformation:this.deliveryInformation
     
