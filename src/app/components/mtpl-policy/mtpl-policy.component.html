@@ -15,7 +15,7 @@
 
   <mat-step completed={{toggle4}}>
     <ng-template matStepLabel>Delivery</ng-template>
-    <app-delivery></app-delivery>
+    <app-delivery (OnRegister)="deliveryData($event)" (OnToggle)="toggle4=$event"></app-delivery>
   </mat-step>  
 
   <mat-step completed={{toggle5}}>

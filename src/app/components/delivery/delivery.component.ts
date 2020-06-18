@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./delivery.component.css']
 })
 export class DeliveryComponent implements OnInit {
+  @Output() OnRegister= new EventEmitter()
+  @Output() OnToggle=new EventEmitter()
 
   detailsForm: FormGroup;
 
@@ -16,6 +18,15 @@ export class DeliveryComponent implements OnInit {
 
   submitted:boolean = false;
 
+  change=()=>{
+    if(this.detailsForm.valid){
+      this.OnToggle.emit(true)
+      this.OnRegister.emit(this.detailsForm.value);
+    }else{
+      this.OnToggle.emit(false)
+      // this.OnRegister.emit(this.personalForm.value);
+    }
+  }
   toggle() {
     this.submitted = true;
   }
@@ -43,7 +54,7 @@ export class DeliveryComponent implements OnInit {
   };
 
   register(){
-    console.log(this.detailsForm.value);
+    this.OnRegister.emit(this.detailsForm.value);
   }
   get formControls(){
     return this.detailsForm.controls

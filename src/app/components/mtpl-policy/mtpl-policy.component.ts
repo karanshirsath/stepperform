@@ -19,6 +19,8 @@ export class MTPLPolicyComponent implements OnInit {
   toggle6=true
   personalInformation
   vehicleOwner
+  deliveryInformation
+
   personalData=(data)=>{
     this.personalInformation=data
     console.log(this.personalInformation);
@@ -31,5 +33,8 @@ export class MTPLPolicyComponent implements OnInit {
     
   }
   
+  deliveryData=(data)=>{
+    this.deliveryInformation=data
+  }
 
 }

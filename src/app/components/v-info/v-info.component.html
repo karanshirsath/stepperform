@@ -6,11 +6,12 @@
         </div>
         <div class="col-3">
             <input class="form-control" type="text" placeholder="XX0000XX" formControlName="registrationNumber" (change)="change()">
+            <div class="error" *ngIf="formsControl.registrationNumber.touched && formsControl.registrationNumber.errors">
+                <div *ngIf="formsControl.registrationNumber.errors.required">Vehicle Registartion Number is required </div>
+                <div *ngIf="formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength">Vehicle Registartion Number Should be 8 characters </div>
+            </div>  
         </div> 
-        <div class="error" *ngIf="formsControl.registrationNumber.touched && formsControl.registrationNumber.errors">
-            <div *ngIf="formsControl.registrationNumber.errors.required">Vehicle Registartion Number is required </div>
-            <div *ngIf="formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength">Vehicle Registartion Number Should be 8 characters </div>
-        </div>  
+        
     </div>
     <hr>
     
@@ -22,11 +23,12 @@
         </div>
         <div class="col-3">
             <input class="form-control" type="text" placeholder="000000000"  formControlName="certificateNumber" (change)="change()"> 
+            <div class="error" *ngIf="formsControl.certificateNumber.touched && formsControl.certificateNumber.errors">
+                <div *ngIf="formsControl.certificateNumber.errors.required">Vehicle Certificate Number is required </div>
+                <div *ngIf="formsControl.certificateNumber.errors.minlength || formsControl.certificateNumber.errors.maxlength">Vehicle Certificate Number Should be 9 characters </div>
+            </div>
         </div>
-        <div class="error" *ngIf="formsControl.certificateNumber.touched && formsControl.certificateNumber.errors">
-            <div *ngIf="formsControl.certificateNumber.errors.required">Vehicle Certificate Number is required </div>
-            <div *ngIf="formsControl.certificateNumber.errors.minlength || formsControl.certificateNumber.errors.maxlength">Vehicle Certificate Number Should be 9 characters </div>
-        </div>
+       
     </div>
     <hr>
     
@@ -40,12 +42,13 @@
                 <option value="personal">Personal Use</option>
                 <option value="public">Public Use</option>
                 
-            </select>    
+            </select>   
+            <div class="error" *ngIf="formsControl.purpose.touched && formsControl.purpose.errors">
+                <div *ngIf="formsControl.purpose.errors.required">Please select what purpose does this vehicle serve </div>
+               
+            </div> 
         </div>
-        <div class="error" *ngIf="formsControl.purpose.touched && formsControl.purpose.errors">
-            <div *ngIf="formsControl.purpose.errors.required">Please select what purpose does this vehicle serve </div>
-           
-        </div>
+        
     </div>
     <hr>
 
