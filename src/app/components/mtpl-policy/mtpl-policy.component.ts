@@ -14,22 +14,30 @@ export class MTPLPolicyComponent implements OnInit {
   }
   toggle1=false
   toggle2=true
-  toggle3=true
+  toggle3=false
   toggle4=true
   toggle5=true
   toggle6=true
   personalInformation
   contactInformation
   vehicleOwnerInformation
+  vehicleOwner
   deliveryInformation
 formData
 
 
   personalData=(data)=>{
     this.personalInformation=data
-    console.log(data);
+    console.log(this.personalInformation);
     
   }
+
+  vehicleOwnerData=(data)=>{
+    this.vehicleOwner=data
+    console.log(this.vehicleOwner);
+    
+  }
+  
   deliveryData=(data)=>{
     this.deliveryInformation=data;
     this.formData={
