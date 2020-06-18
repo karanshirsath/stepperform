@@ -30,6 +30,7 @@ export class DeliveryComponent implements OnInit {
     this.detailsForm = this.formBuilder.group({
       fullName: ['', Validators.required],
       city: ['', Validators.required],
+      pincode: ['', Validators.required],
       street: ['',Validators.required],
       number: ['', Validators.required],
       block: ['', Validators.required],
