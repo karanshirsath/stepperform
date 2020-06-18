@@ -21,14 +21,14 @@
 .policy {
     color:white;
     margin-left:-1px ;
-    margin-top: -5px;
+    margin-top: -50px;
     font-size: 20px;
  
 }
 .bgn  {
-margin-right: -180px;
-margin-top: -5px;
-text-align: right;
+
+margin-top: -1px;
+
 color:white;
 font-size: 20px;
 
@@ -112,3 +112,4 @@ font-size: 20px;
     overflow-x: hidden;
     overflow-y: auto;
   }
+ 
