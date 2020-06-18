@@ -1,15 +1,14 @@
 //login component story
 import { BrowserModule } from "@angular/platform-browser";
-import { LoginComponent } from "../app/components/login/login.component";
+
 import { HttpClientModule } from "@angular/common/http";
+import { LoginComponent } from "../app/components/login/login.component";
 import { moduleMetadata } from "@storybook/angular";
-import { AppRoutingModule } from "../app/app-routing.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-
-
 import { APP_BASE_HREF } from "@angular/common";
 import { action } from '@storybook/addon-actions';
 import { linkTo } from "@storybook/addon-links";
+
 
 
 //@ts-ignore
@@ -21,7 +20,6 @@ export default {
     moduleMetadata({
       imports: [
                 HttpClientModule,
-                AppRoutingModule,
                 ReactiveFormsModule,
                 FormsModule,
                 BrowserModule

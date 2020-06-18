@@ -40,7 +40,7 @@ import { PersonalComponent } from '../src/app/components/personal/personal.compo
 import { PaymentComponent } from '../src/app/components/payment/payment.component';
 import { InstallmentComponent } from '../src/app/components/installment/installment.component';
 import { ProposalComponent } from '../src/app/components/proposal/proposal.component';
-
+import { VehicleOwnerComponent } from '../src/app/components/vehicle-owner/vehicle-owner.component';
 import { APP_BASE_HREF } from "@angular/common";
 setCompodocJson(docJson);
 
@@ -55,6 +55,7 @@ addDecorator(
             LoginComponent,
             VInfoComponent,
             Tab2Component,
+            VehicleOwnerComponent,
             TabsComponent,
             InsuringPartyComponent,
             DeliveryComponent,

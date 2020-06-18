@@ -1,0 +1,52 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { InstallmentComponent } from '../app/components/installment/installment.component';
+import { moduleMetadata } from "@storybook/angular";
+
+<Meta title="MDX/Installment Component" decorators={[
+    moduleMetadata({
+        declarations: [
+            InstallmentComponent
+        ],
+        provider: [{}]
+    }),
+]} parameters={{
+    component: InstallmentComponent
+}}/>
+
+# Installment Component 
+
+This is the installment component.
+
+## MDX
+
+Stotybook Docs allows you to mix stories and documentation in 
+[MDX Format](https://mdxjs.com/)
+
+MDX Combines Marksown and JSX.
+
+## ComponentMeta SB5 Equivalent
+
+This is roughly equivalent to SB5's `storiesOf` :
+
+```
+storiesOf('MDX|Login',module)
+    .addParameter({component: LoginComponent})
+
+```
+
+## Stories
+
+### Default
+
+This is the default story. In this story the users can take a look at the overall
+appearance of the login component.
+
+<Preview>
+  <Story name="Default">{{
+    component: InstallmentComponent,
+    props:{
+      
+    },
+    }}    
+  </Story>
+</Preview>

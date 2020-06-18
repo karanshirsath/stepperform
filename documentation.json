@@ -4,26 +4,34 @@
     "injectables": [
         {
             "name": "CommonDataService",
-            "id": "injectable-CommonDataService-9763c9a3360c2087c0e53b6542dc9aa3",
+            "id": "injectable-CommonDataService-9020e5936af8e08822bebdd67f95f334",
             "file": "src/app/common-data.service.ts",
             "properties": [
                 {
+                    "name": "defaultData",
+                    "defaultValue": "{\r\ncoversData: {cover: \"\"},\r\ninstallmentsData: {term: \"\"},\r\ninsuringPartyData: {egn: \"\", address: \"mumbai\", email: \"\"},\r\npolicyDetailsData: {policyDate: \"\", policyLength: \"\", check1: false, check2: false},\r\nvehicleData: {registrationNumber: \"\", certificateNumber: \"\", purpose: \"\", yesNo: \"\"},\r\n\r\n}",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
                     "name": "formData",
-                    "defaultValue": "new BehaviorSubject<any>(\"\")",
+                    "defaultValue": "new BehaviorSubject<any>(this.defaultData)",
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 17
                 }
             ],
             "methods": [],
             "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { Subject, BehaviorSubject } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class CommonDataService {\r\n\r\n  constructor() { }\r\n  formData=new BehaviorSubject<any>(\"\");\r\n\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { Subject, BehaviorSubject } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class CommonDataService {\r\ndefaultData={\r\ncoversData: {cover: \"\"},\r\ninstallmentsData: {term: \"\"},\r\ninsuringPartyData: {egn: \"\", address: \"mumbai\", email: \"\"},\r\npolicyDetailsData: {policyDate: \"\", policyLength: \"\", check1: false, check2: false},\r\nvehicleData: {registrationNumber: \"\", certificateNumber: \"\", purpose: \"\", yesNo: \"\"},\r\n\r\n}\r\n  constructor() { }\r\n  formData=new BehaviorSubject<any>(this.defaultData);\r\n\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 7
+                "line": 15
             },
             "type": "injectable"
         }
@@ -156,7 +164,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".container{\r\n   \r\n    padding-top: 50px;\r\n    width: 2000px;\r\n   \r\n      \r\n}\r\n.heading{\r\n    text-align: left;\r\n    margin-left:20px ;\r\n    color: rgbrgb(8, 56, 95); \r\n    font-family:   'Ubuntu', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;\r\n \r\n}\r\n\r\n.thirdparty{\r\n    background-color: rgb(8, 56, 95); \r\n    height:100px;\r\n    width:2000px;\r\n}\r\n.policy {\r\n    color:white;\r\n    margin-left:-1px ;\r\n    margin-top: -5px;\r\n    font-size: 20px;\r\n \r\n}\r\n.bgn  {\r\nmargin-right: -180px;\r\nmargin-top: -5px;\r\ntext-align: right;\r\ncolor:white;\r\nfont-size: 20px;\r\n\r\n}\r\n\r\n/* 'Times New Roman',Lucida Grande , Arial, Tahomasans-serifTrebuchet MS' */\r\n\r\n.firstcard{\r\n   width:2000px;\r\n    height:90px;\r\n    margin-left: 25px;\r\n    margin-right: 25px;\r\n    margin-top: -30px;\r\n    \r\n    }\r\n.card-body{\r\n    padding-top: 2px;\r\n}    \r\n.discription{\r\n        color:rgb(8, 56, 95);\r\n        padding-left: 15px;\r\n        margin-top: -5px;\r\n}\r\n.secondcard{\r\n       \r\n    width:2000px;\r\n    height:110px;\r\n    margin-left: 25px;\r\n    margin-right: 25px;\r\n    margin-top: -30px;\r\n    \r\n        }\r\n\r\n.valuebutton{\r\n            width:80px;\r\n           height:20px;\r\n           padding-top: 1px;\r\n}\r\n.afterpremium{\r\n    padding-left: 15px;\r\n    margin-top: -5px;\r\n}\r\n.afterpremium span{\r\n\r\n    color:rgb(8, 56, 95);\r\n}\r\n.bgnpremium {\r\n    margin-right: -180px;\r\n    margin-top: -1px;\r\n    text-align: right;\r\n    color:rgb(8, 56, 95);\r\n    font-size: 20px;\r\n    \r\n}\r\n .thirdcard{\r\n           \r\n            width:2000px;\r\n            height:550px;\r\n            margin-left: 25px;\r\n            margin-right: 25px;\r\n            margin-top: -30px;\r\n }\r\n .textcolor{\r\n    \r\n    color:rgb(8, 56, 95);\r\n    margin-top: -20px;\r\n    padding-left: 15px;\r\n    \r\n}\r\n\r\n .nextbutton{\r\n    border-radius: 24px;\r\n    height:30px;\r\n    width:120px;\r\n    margin-left: 25px;\r\n    margin-top: -30px;\r\n   \r\n }\r\n \r\n .overflowAuto {\r\n    overflow-x: hidden;\r\n    overflow-y: auto;\r\n  }",
+                    "data": ".container{\r\n   \r\n    padding-top: 50px;\r\n    width: 2000px;\r\n   \r\n      \r\n}\r\n.heading{\r\n    text-align: left;\r\n    margin-left:20px ;\r\n    color: rgbrgb(8, 56, 95); \r\n    font-family:   'Ubuntu', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;\r\n \r\n}\r\n\r\n.thirdparty{\r\n    background-color: rgb(8, 56, 95); \r\n    height:130px;\r\n    width:2000px;\r\n}\r\n.policy {\r\n    color:white;\r\n    margin-left:-1px ;\r\n    margin-top: -50px;\r\n    font-size: 20px;\r\n \r\n}\r\n.bgn  {\r\n\r\nmargin-top: -1px;\r\n\r\ncolor:white;\r\nfont-size: 20px;\r\n\r\n}\r\n\r\n/* 'Times New Roman',Lucida Grande , Arial, Tahomasans-serifTrebuchet MS' */\r\n\r\n.firstcard{\r\n   width:2000px;\r\n    height:90px;\r\n    margin-left: 25px;\r\n    margin-right: 25px;\r\n    margin-top: -30px;\r\n    \r\n    }\r\n.card-body{\r\n    padding-top: 2px;\r\n}    \r\n.discription{\r\n        color:rgb(8, 56, 95);\r\n        padding-left: 15px;\r\n        margin-top: -5px;\r\n}\r\n.secondcard{\r\n       \r\n    width:2000px;\r\n    height:110px;\r\n    margin-left: 25px;\r\n    margin-right: 25px;\r\n    margin-top: -30px;\r\n    \r\n        }\r\n\r\n.valuebutton{\r\n            width:80px;\r\n           height:20px;\r\n           padding-top: 1px;\r\n}\r\n.afterpremium{\r\n    padding-left: 15px;\r\n    margin-top: -5px;\r\n}\r\n.afterpremium span{\r\n\r\n    color:rgb(8, 56, 95);\r\n}\r\n.bgnpremium {\r\n    margin-right: -180px;\r\n    margin-top: -1px;\r\n    text-align: right;\r\n    color:rgb(8, 56, 95);\r\n    font-size: 20px;\r\n    \r\n}\r\n .thirdcard{\r\n           \r\n            width:2000px;\r\n            height:550px;\r\n            margin-left: 25px;\r\n            margin-right: 25px;\r\n            margin-top: -30px;\r\n }\r\n .textcolor{\r\n    \r\n    color:rgb(8, 56, 95);\r\n    margin-top: -20px;\r\n    padding-left: 15px;\r\n    \r\n}\r\n\r\n .nextbutton{\r\n    border-radius: 24px;\r\n    height:30px;\r\n    width:120px;\r\n    margin-left: 25px;\r\n    margin-top: -30px;\r\n   \r\n }\r\n \r\n .overflowAuto {\r\n    overflow-x: hidden;\r\n    overflow-y: auto;\r\n  }\r\n ",
                     "styleUrl": "./additional-covers.component.css"
                 }
             ],
@@ -184,7 +192,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container col-auto col-lg-8 col-md-10 \">\r\n    <h1 class=\"heading \"><b>Additional covers</b></h1><br>\r\n    <form [formGroup]=\"additionalcoverForm\" (submit)=\"next()\">\r\n    <div class=\"row \">\r\n        <div class=\"card shadow p-3 mb-5 rounded thirdparty\">\r\n            <div class=\"card-body\">\r\n                <div class=\"row\">\r\n                    <div class=\" col-lg-7 col-md-8 col-auto col-7 policy\">\r\n                        <img width=\"30px\" height=\"40px\" [src]='imageUrl'>\r\n                        Motor Third Party Liability Policy\r\n                    </div>\r\n                    <div class=\"col-lg-5 col-md-4 col-auto col-5 bgn \">\r\n                        382,00BGN<br>\r\n                        <h6>Four payments</h6>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"card shadow p-3 mb-5 bg-white rounded firstcard overflowAuto h-100\">\r\n            <div class=\"card-body \">\r\n                <label><input type=\"radio\" formControlName=\"cover\" value=\"none\" name=\"cover\" (change)=\"change()\">\r\n                    <b> None</b></label>\r\n                <div class=\" discription\">Description of additional cover here</div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"card shadow p-3 mb-5 bg-white rounded secondcard overflowAuto h-100\">\r\n            <div class=\"card-body\">\r\n                <div class=\"row \">\r\n                    <div class=\"col-lg-7 col-md-8 col-auto col-7\">\r\n                        <label><input type=\"radio\" formControlName=\"cover\" value=\"premium\" name=\"cover\" (change)=\"change()\">\r\n                            <b> Premium</b></label>\r\n                        <div class=\"afterpremium\">\r\n                            <button class=\"btn btn-success valuebutton\"><h6>Best Value</h6></button>\r\n                            <span> Description of additional cover here</span>\r\n                            <br><a href=\"www.google.com\"><u>See what's more</u></a>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"col-lg-5 col-md-4 col-auto col-5 bgnpremium\">\r\n                        +25,00BGN<br><h5>for 12 months</h5>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"card shadow p-3 mb-5 bg-white rounded thirdcard overflowAuto h-100\">\r\n            <div class=\"card-body \">\r\n                <div class=\"row\">\r\n                    <div class=\" col-lg-7 col-md-8 col-auto col-7\">\r\n                        <label ><input type=\"radio\" formControlName=\"cover\" value=\"vip\" name=\"cover\" (change)=\"change()\">\r\n                            <b> VIP</b></label>\r\n                        <div class=\" discription\">Description of additional cover here</div><br><br>\r\n                    </div>\r\n                    <div class=\" col-lg-5 col-md-4 col-auto col-5 bgnpremium\">\r\n                        +80,00BGN<br><h5>for 12 months</h5>\r\n\r\n                    </div>\r\n                </div>\r\n                <div class=\"textcolor\">\r\n                    <p><b>Services provded under the \"PREMIUM\" clause, but with higher\r\n                            limits when transporting vehicles</b></p>\r\n                    <div>\r\n                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                        <span>In case of an insurance event(no limit in the number of transports and up to 900 km\r\n                            mileage)\r\n                        </span><br></div>\r\n                    <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                    <span>Technical failure(no mileage limit and up to 2 transports) </span><br>\r\n                    <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                    <span>Wrong fuet(disposable)</span><br><br>\r\n\r\n                    <p><b>And more:</b></p>\r\n                    <span><img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                        Stay in the parking lot of the damaged car </span><br>\r\n                    <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\" class=\"visible\">\r\n                    <span>Overview in a hotel of the driver of the vehicle </span><br>\r\n                    <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                    <span>Transportation of persons traveling in vehicles, in case the vehicle has suffered damage\r\n                    </span><br>\r\n                    <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                    <span>Medical transportation in case of an accident</span><br>\r\n                    <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                    <span>Costs of examinations, medical examinations and manipulations in case of bodily injuries to\r\n                        the driver and / or persons traveling in the vehicle as a result of the accident</span><br>\r\n                    <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                    <span>In case of damages covered by Casco + insurance - up to 2 vehicle inspections at the\r\n                        address\r\n                        indicated by the client</span><br>\r\n                    <br><a href=\"www.google.com\"><u>Hide what's included</u></a>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <button type=\"submit\" class=\"btn btn-primary nextbutton\" [disabled]=\"!additionalcoverForm.valid\" matStepperNext> Next</button>\r\n    </form>\r\n\r\n</div>"
+            "templateData": "<div class=\"container col-auto col-lg-8 col-md-10 \">\r\n    <h1 class=\"heading \"><b>Additional covers</b></h1><br>\r\n    <form [formGroup]=\"additionalcoverForm\" (submit)=\"next()\">\r\n        <div class=\"row \">\r\n            <div class=\"card shadow p-3 mb-5 rounded thirdparty\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row\">\r\n                         <div class=\" col-lg-7 col-md-8 col-0 col-7 \">\r\n                            <img width=\"60px\" height=\"60px\" src=\"../../assets/motor_policy.PNG\"></div>\r\n                        <div class=\"col-md-10 col-9 pr-0  m-auto\">\r\n                            <div class=\"row policy\" style=\"color:white ;\">\r\n                                <div class=\"col-md-10 col-12  \" >\r\n                                    <span class=\"middle-heading\">Motor Third party Liability Policy</span>\r\n                                </div>\r\n                                <div class=\"  col-md-2 col-12 bgn\">\r\n                                    <div>\r\n                                        <div><strong>324,00BGN</strong></div>\r\n                                        <h6>Four payments</h6>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n                \r\n                        <!-- <div class=\"col-lg-7 col-md-8 col-4 col-7 policy\">\r\n                         <span>Motor Third Party Liability Policy</span></div>\r\n                        \r\n                        <div class=\"col-lg-5 col-md-4 col-auto col-5 bgn \">\r\n                            382,00BGN<br>\r\n                            <h6>Four payments</h6>\r\n                        </div> -->\r\n                   \r\n        <div class=\"row\">\r\n            <div class=\"card shadow p-3 mb-5 bg-white rounded firstcard overflowAuto h-100\">\r\n                <div class=\"card-body \">\r\n                    <label><input type=\"radio\" formControlName=\"cover\" value=\"none\" name=\"cover\" (change)=\"change()\">\r\n                        <b> None</b></label>\r\n                    <div class=\" discription\">Description of additional cover here</div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"card shadow p-3 mb-5 bg-white rounded secondcard overflowAuto h-100\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row \">\r\n                        <div class=\"col-lg-7 col-md-8 col-auto col-7\">\r\n                            <label><input type=\"radio\" formControlName=\"cover\" value=\"premium\" name=\"cover\"\r\n                                    (change)=\"change()\">\r\n                                <b> Premium</b></label>\r\n                            <div class=\"afterpremium\">\r\n                                <button class=\"btn btn-success valuebutton\">\r\n                                    <h6>Best Value</h6>\r\n                                </button>\r\n                                <span> Description of additional cover here</span>\r\n                                <br><a href=\"www.google.com\"><u>See what's more</u></a>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-lg-5 col-md-4 col-auto col-5 bgnpremium\">\r\n                            +25,00BGN<br>\r\n                            <h5>for 12 months</h5>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"card shadow p-3 mb-5 bg-white rounded thirdcard overflowAuto h-100\">\r\n                <div class=\"card-body \">\r\n                    <div class=\"row\">\r\n                        <div class=\" col-lg-7 col-md-8 col-auto col-7\">\r\n                            <label><input type=\"radio\" formControlName=\"cover\" value=\"vip\" name=\"cover\"\r\n                                    (change)=\"change()\">\r\n                                <b> VIP</b></label>\r\n                            <div class=\" discription\">Description of additional cover here</div><br><br>\r\n                        </div>\r\n                        <div class=\" col-lg-5 col-md-4 col-auto col-5 bgnpremium\">\r\n                            +80,00BGN<br>\r\n                            <h5>for 12 months</h5>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"textcolor\">\r\n                        <p><b>Services provded under the \"PREMIUM\" clause, but with higher\r\n                                limits when transporting vehicles</b></p>\r\n\r\n                        <div class=\"form-row\">\r\n                            <div class=\"col-0 image\">\r\n                                <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                            <span class=\"col-10\"> In case of an insurance event(no limit in the number of transports\r\n                                and up to 900 km\r\n                                mileage)</span>\r\n                        </div>\r\n                        <div class=\"form-row\">\r\n                            <div class=\"col-0 off-set-0\">\r\n                                <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                            <span class=\"col-10 wid\">Technical failure(no mileage limit and up to 2 transports)\r\n                            </span><br>\r\n                        </div>\r\n                        <div class=\"form-row\">\r\n                            <div class=\"col-0 off-set-0\">\r\n                                <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                            <span class=\"col-10 wid\">Wrong fuet(disposable)\r\n                            </span><br>\r\n                        </div><br>\r\n\r\n                        <p><b>And more:</b></p>\r\n                        <div class=\"form-row\">\r\n                            <div class=\"col-0 off-set-0\">\r\n                                <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                            </div>\r\n                            <span class=\"col-10 wid\">\r\n                                Stay in the parking lot of the damaged car </span><br>\r\n                        </div>\r\n                        <div class=\"form-row\">\r\n                            <div class=\"col-0 off-set-0\">\r\n                                <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                            </div>\r\n                            <span class=\"col-10 wid\">Overview in a hotel of the driver of the vehicle </span><br>\r\n                        </div>\r\n                        <div class=\"form-row\">\r\n                            <div class=\"col-0 off-set-0\">\r\n                                <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                            <span class=\"col-10 wid\">Transportation of persons traveling in vehicles, in case the\r\n                                vehicle\r\n                                has suffered damage\r\n                            </span><br>\r\n                        </div>\r\n                        <div class=\"form-row\">\r\n                            <div class=\"col-0 off-set-0\">\r\n                                <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                            <span class=\"col-10 wid\">Medical transportation in case of an accident</span><br>\r\n                        </div>\r\n                        <div class=\"form-row\">\r\n                            <div class=\"col-0 off-set-0\">\r\n                                <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                            <span class=\"col-10 wid\">Costs of examinations, medical examinations and manipulations in\r\n                                case of bodily\r\n                                injuries to the driver and / or persons traveling in the vehicle as a result of the\r\n                                accident</span><br> \r\n                            </div>\r\n                            <div class=\"form-row\">\r\n                                <div class=\"col-0 off-set-0\">\r\n                                    <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                                </div>\r\n                                <span class=\"col-10 wid\">In case of damages covered by Casco + insurance - up to 2\r\n                                    vehicle inspections at\r\n                                    the address indicated by the client</span><br>\r\n                            </div>\r\n                            <br><a href=\"www.google.com\"><u>Hide what's included</u></a>\r\n                        </div>  \r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-primary nextbutton\" [disabled]=\"!additionalcoverForm.valid\"\r\n                matStepperNext>\r\n                Next</button>\r\n    </form>\r\n\r\n</div>"
         },
         {
             "name": "AppComponent",
@@ -231,11 +239,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<!-- <router-outlet></router-outlet> -->\r\n<app-delivery></app-delivery>\r\n"
+            "templateData": "<router-outlet></router-outlet>\r\n<!-- <app-delivery></app-delivery> -->\r\n"
         },
         {
             "name": "DeliveryComponent",
-            "id": "component-DeliveryComponent-7104733c157e49d2f0506315bebb5183",
+            "id": "component-DeliveryComponent-d6100dffe5c72012fbed58cbb1650277",
             "file": "src/app/components/delivery/delivery.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -252,15 +260,36 @@
             ],
             "viewProviders": [],
             "inputsClass": [],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "OnRegister",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 10,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "OnToggle",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 11,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [
+                {
+                    "name": "change",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
                 {
                     "name": "cities",
                     "defaultValue": "[\"New Delhi\",\"Mumbai\", \"Chennai\", \"Bangalore\", \"Kolkata\", \"Mysore\", \"Pune\", \"Jaipur\"]",
                     "type": "String[]",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 15
                 },
                 {
                     "name": "codes",
@@ -268,14 +297,14 @@
                     "type": "number[]",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 17
                 },
                 {
                     "name": "detailsForm",
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 13
                 },
                 {
                     "name": "submitted",
@@ -283,7 +312,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 19
                 }
             ],
             "methodsClass": [
@@ -293,7 +322,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29
+                    "line": 40
                 },
                 {
                     "name": "register",
@@ -301,7 +330,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45
+                    "line": 56
                 },
                 {
                     "name": "toggle",
@@ -309,7 +338,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19
+                    "line": 30
                 },
                 {
                     "name": "toggle1",
@@ -317,7 +346,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23
+                    "line": 34
                 }
             ],
             "hostBindings": [],
@@ -325,11 +354,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-delivery',\r\n  templateUrl: './delivery.component.html',\r\n  styleUrls: ['./delivery.component.css']\r\n})\r\nexport class DeliveryComponent implements OnInit {\r\n\r\n  detailsForm: FormGroup;\r\n\r\n  cities:String[] = [\"New Delhi\",\"Mumbai\", \"Chennai\", \"Bangalore\", \"Kolkata\", \"Mysore\", \"Pune\", \"Jaipur\"];\r\n\r\n  codes:number[] = [55, 86, 33, 49, 91];\r\n\r\n  submitted:boolean = false;\r\n\r\n  toggle() {\r\n    this.submitted = true;\r\n  }\r\n\r\n  toggle1() {\r\n    this.submitted = false;\r\n  }\r\n\r\n  constructor(private formBuilder: FormBuilder) { }\r\n\r\n  ngOnInit() {\r\n    this.detailsForm = this.formBuilder.group({\r\n      fullName: ['', Validators.required],\r\n      city: ['', Validators.required],\r\n      pincode: ['', Validators.required],\r\n      street: ['',Validators.required],\r\n      number: ['', Validators.required],\r\n      block: ['', Validators.required],\r\n      entrance: ['', Validators.required],\r\n      appt: ['', Validators.required],\r\n      contact: ['', Validators.required],\r\n      business: ['', Validators.required],\r\n      notes: ['']\r\n    });\r\n  };\r\n\r\n  register(){\r\n    console.log(this.detailsForm.value);\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, Output, EventEmitter } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-delivery',\r\n  templateUrl: './delivery.component.html',\r\n  styleUrls: ['./delivery.component.css']\r\n})\r\nexport class DeliveryComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n\r\n  detailsForm: FormGroup;\r\n\r\n  cities:String[] = [\"New Delhi\",\"Mumbai\", \"Chennai\", \"Bangalore\", \"Kolkata\", \"Mysore\", \"Pune\", \"Jaipur\"];\r\n\r\n  codes:number[] = [55, 86, 33, 49, 91];\r\n\r\n  submitted:boolean = false;\r\n\r\n  change=()=>{\r\n    if(this.detailsForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.detailsForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n      // this.OnRegister.emit(this.personalForm.value);\r\n    }\r\n  }\r\n  toggle() {\r\n    this.submitted = true;\r\n  }\r\n\r\n  toggle1() {\r\n    this.submitted = false;\r\n  }\r\n\r\n  constructor(private formBuilder: FormBuilder) { }\r\n\r\n  ngOnInit() {\r\n    this.detailsForm = this.formBuilder.group({\r\n      fullName: ['', Validators.compose([Validators.required,Validators.minLength(3)])],\r\n      city: ['New Delhi', Validators.required],\r\n      pincode: ['', Validators.compose([Validators.required,Validators.maxLength(6)])],\r\n      street: ['',Validators.compose([Validators.required,Validators.minLength(3)])],\r\n      number: ['', Validators.required],\r\n      block: ['', Validators.required],\r\n      entrance: ['', Validators.required],\r\n      appt: ['', Validators.required],\r\n      contact: ['', Validators.compose([Validators.required,Validators.max(9999999999)])],\r\n      business: ['', Validators.required],\r\n      notes: ['']\r\n    });\r\n  };\r\n\r\n  register(){\r\n    this.OnRegister.emit(this.detailsForm.value);\r\n  }\r\n  get formControls(){\r\n    return this.detailsForm.controls\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".container {\r\n    padding-bottom: 200px;\r\n}\r\n\r\n.display-1 {\r\n    font-size: 45px;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.address {\r\n    font-size: large;\r\n}\r\n\r\n.input-1 {\r\n    padding-left: 10px;\r\n}\r\n\r\n.radio-1 {\r\n    height: 25px;\r\n    width: 25px;\r\n}\r\n\r\n.input-1_radio-1 {\r\n    padding-left: 10px;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.input-1_input-1 {\r\n    padding-left: 36px;\r\n}\r\n\r\n.form-1 {\r\n    padding-left: 15px;\r\n    border-radius: 10px;\r\n    background-color: #F0F8FF;\r\n}\r\n\r\n.form-1_row-1 {\r\n    padding-top: 30px;\r\n}\r\n.form-1_row-2 {\r\n    padding-left: 20px;\r\n    font-size: medium;\r\n}\r\n\r\n.form-1_row-3 {\r\n    color: rgb(12, 44, 70);\r\n    height: 40px;\r\n    font-size: large;\r\n    border-radius: 10px;\r\n}\r\n\r\n.form-1_row-4 {\r\n    padding-right: 15px;\r\n\r\n}\r\n\r\n.form-1_row-5 {\r\n    padding-top: 30px;\r\n    padding-bottom: 30px;\r\n}\r\n\r\n.details {\r\n    font-size: 30px;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.details_row-1 {\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.details_row-2 {\r\n    padding-left: 10px;\r\n    padding-top: 30px;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.details_row-3 {\r\n    font-size: large;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.details_row-4 {\r\n    resize: none;\r\n    border-radius: 10px;\r\n    font-size: medium;\r\n}\r\n\r\n.delivery-1 {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n    padding-top: 20px;\r\n}\r\n\r\n.delivery-1_row-1 {\r\n    border: gainsboro solid 1px;\r\n    border-radius: 10px;\r\n    font-size: large;\r\n}\r\n\r\n.delivery-1_row-2 {\r\n    padding-top: 30px;\r\n    padding-left: 30px;\r\n}\r\n\r\n.btn {\r\n    font-size: large;\r\n    width: 80px;\r\n    border-radius: 15px;\r\n}",
+                    "data": ".container {\r\n    padding-bottom: 200px;\r\n}\r\n\r\n.display-1 {\r\n    font-size: 45px;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.address {\r\n    font-size: large;\r\n}\r\n\r\n.input-1 {\r\n    padding-left: 10px;\r\n}\r\n\r\n.radio-1 {\r\n    height: 25px;\r\n    width: 25px;\r\n}\r\n\r\n.input-1_radio-1 {\r\n    padding-left: 10px;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.input-1_input-1 {\r\n    padding-left: 36px;\r\n}\r\n\r\n.form-1 {\r\n    padding-left: 15px;\r\n    border-radius: 10px;\r\n    background-color: #F0F8FF;\r\n}\r\n\r\n.form-1_row-1 {\r\n    padding-top: 30px;\r\n}\r\n.form-1_row-2 {\r\n    padding-left: 20px;\r\n    font-size: medium;\r\n}\r\n\r\n.form-1_row-3 {\r\n    color: rgb(12, 44, 70);\r\n    height: 40px;\r\n    font-size: large;\r\n    border-radius: 10px;\r\n}\r\n\r\n.form-1_row-4 {\r\n    padding-right: 15px;\r\n\r\n}\r\n\r\n.form-1_row-5 {\r\n    padding-top: 30px;\r\n    padding-bottom: 30px;\r\n}\r\n\r\n.details {\r\n    font-size: 30px;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.details_row-1 {\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.details_row-2 {\r\n    padding-left: 10px;\r\n    padding-top: 30px;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.details_row-3 {\r\n    font-size: large;\r\n    color: rgb(12, 44, 70);\r\n}\r\n\r\n.details_row-4 {\r\n    resize: none;\r\n    border-radius: 10px;\r\n    font-size: medium;\r\n}\r\n\r\n.delivery-1 {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n    padding-top: 20px;\r\n}\r\n\r\n.delivery-1_row-1 {\r\n    border: gainsboro solid 1px;\r\n    border-radius: 10px;\r\n    font-size: large;\r\n}\r\n\r\n.delivery-1_row-2 {\r\n    padding-top: 30px;\r\n    padding-left: 30px;\r\n}\r\n\r\n.btn {\r\n    font-size: large;\r\n    width: 80px;\r\n    border-radius: 15px;\r\n}\r\n",
                     "styleUrl": "./delivery.component.css"
                 }
             ],
@@ -343,7 +372,7 @@
                         "type": "FormBuilder"
                     }
                 ],
-                "line": 25,
+                "line": 36,
                 "jsdoctags": [
                     {
                         "name": "formBuilder",
@@ -357,11 +386,22 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">\r\n    <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>\r\n    <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>\r\n    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>\r\n    <title>Delivery</title>\r\n</head>\r\n<body>\r\n    <div class=\"container\">\r\n        <!-- Heading -->\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-10 col-sm-offset-1\">\r\n                <h1 class=\"display-1\">Delivery Address</h1>\r\n            </div>\r\n        </div><br><br>\r\n        <!-- Heading -->\r\n\r\n        <!-- Form -->\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-10 col-sm-offset-1\">\r\n                <form [formGroup]=\"detailsForm\" (ngSubmit)=\"register()\">\r\n                    <!-- Form -->\r\n                    <div>\r\n                        <div class=\"form-1\">\r\n                            <div class=\"row form-group form-1_row-1\">\r\n                                <div class=\"col-sm-4 form-1_row-2\">\r\n                                    <label>Full Name</label>\r\n                                </div>\r\n                                <div class=\"col-sm-6 col-sm-offset-2\">\r\n                                    <input type=\"text\" formControlName=\"fullName\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-1_row-4\"><hr></div>\r\n                            <div class=\"row form-group form-1_row-1\">\r\n                                <div class=\"col-sm-4 form-1_row-2\">\r\n                                    <label>City</label>\r\n                                </div>\r\n                                <div class=\"col-sm-4 col-sm-offset-2\">\r\n                                    <select name=\"city\" id=\"city\"  formControlName=\"city\" class=\"form-control form-1_row-3\">\r\n                                        <option *ngFor=\"let city of cities\">{{city}}</option>\r\n                                    </select>\r\n                                </div>\r\n                                <div class=\"col-sm-2\">\r\n                                    <input formControlName=\"pincode\" type=\"text\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-1_row-4\"><hr></div>\r\n                            <div class=\"row form-group form-1_row-1\">\r\n                                <div class=\"col-sm-4 form-1_row-2\">\r\n                                    <label>Street & Number</label>\r\n                                </div>\r\n                                <div class=\"col-sm-4 col-sm-offset-2\">\r\n                                    <input type=\"text\" formControlName=\"street\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                                <div class=\"col-sm-2\">\r\n                                    <input type=\"text\" formControlName=\"number\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-1_row-4\"><hr></div>\r\n                            <div class=\"row form-group form-1_row-5\">\r\n                                <div class=\"col-sm-4 form-1_row-2\">\r\n                                    <label>Block, Entrance & Appartment</label>\r\n                                </div>\r\n                                <div class=\"col-sm-2 col-sm-offset-1\">\r\n                                    <input type=\"text\" formControlName=\"block\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                                <div class=\"col-sm-2\">\r\n                                    <input type=\"text\" formControlName=\"entrance\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                                <div class=\"col-sm-2\">\r\n                                    <input type=\"text\" formControlName=\"appt\" class=\"form-control form-1_row-3\">\r\n                                </div>\r\n                            </div>\r\n                        </div><br>\r\n                        <!-- Form -->\r\n                        <!-- Additional Details -->\r\n                        <h1 class=\"display-1 details\">Additonal Details</h1>\r\n                        <br><br>\r\n                        <div class=\"row form-group details_row-1\">\r\n                            <div class=\"col-sm-4\" style=\"font-size: medium;\">\r\n                                Contact Number\r\n                            </div>\r\n                            <div class=\"col-sm-5 col-sm-offset-3\">\r\n                                <input type=\"number\" formControlName=\"contact\" class=\"form-control form-1_row-3\">\r\n                            </div>\r\n                        </div>\r\n                        <hr>\r\n                        <div class=\"details_row-2\">\r\n                            <div class=\"row form-group\">\r\n                                <div class=\"col-sm-6\">\r\n                                    <span style=\"font-size: medium;\">Type of Business</span>\r\n                                    <p style=\"font-size: small;\">For Business address your package will be delivered only during\r\n                                        <br>normal work days from 9:00 to 17:00\r\n                                    </p>\r\n                                </div>\r\n                                <div class=\"col-sm-6 details_row-3\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-sm-6\">\r\n                                            <input type=\"radio\" formControlName=\"business\" value=\"Home\" class=\"radio-1\">&nbsp;Home\r\n                                        </div>\r\n                                        <div class=\"col-sm-6\">\r\n                                            <input type=\"radio\" formControlName=\"business\" value=\"Business\" class=\"radio-1\">&nbsp;Business\r\n                                        </div>\r\n                                    </div>                            \r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <hr>\r\n                        <div class=\"row form-group details_row-1\">\r\n                            <div class=\"col-sm-4\" style=\"font-size: medium;\">\r\n                                Additional Notes\r\n                            </div>\r\n                            <div class=\"col-sm-7 col-sm-offset-1\">\r\n                                <textarea name=\"notes\" id=\"notes\" cols=\"30\" rows=\"5\" formControlName=\"notes\" class=\"form-control details_row-4\"></textarea>\r\n                            </div>\r\n                            <div class=\"col-sm-11\" style=\"text-align: right; font-size: small;\">Optional</div>\r\n                        </div>\r\n                        <!-- Additional Details -->\r\n                    </div>                    \r\n                    <!-- Delivery Estimate -->\r\n                    <div class=\"delivery-1\">\r\n                        <div class=\"delivery-1_row-1\">\r\n                            <div class=\"delivery-1_row-2\">\r\n                                <b style=\"color: grey;\">Estimated delivery in your area is 2 days</b>\r\n                                <br>\r\n                                <p><a href=\"\">More info here</a></p>\r\n                            </div>\r\n                        </div>\r\n                    </div><br><br>\r\n                    <!-- Delivery Estimate -->\r\n                    <!-- Button -->\r\n                    <button type=\"submit\" class=\"btn btn-primary rounded-pill\">Next</button>\r\n                    <!-- Button -->\r\n                </form>               \r\n            </div>\r\n        </div><br><br>\r\n        <!-- Form -->        \r\n    </div>\r\n</body>\r\n</html>"
+            "accessors": {
+                "formControls": {
+                    "name": "formControls",
+                    "getSignature": {
+                        "name": "formControls",
+                        "type": "",
+                        "returnType": "",
+                        "line": 59
+                    }
+                }
+            },
+            "templateData": "<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">\r\n    <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>\r\n    <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>\r\n    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>\r\n    <title>Delivery</title>\r\n</head>\r\n<body>\r\n    <div class=\"container\">\r\n        <!-- Heading -->\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-10 col-sm-offset-1\">\r\n                <h1 class=\"display-1\">Delivery Address</h1>\r\n            </div>\r\n        </div><br><br>\r\n        <!-- Heading -->\r\n\r\n        <!-- Form -->\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-10 col-sm-offset-1\">\r\n                <form [formGroup]=\"detailsForm\" (ngSubmit)=\"register()\">\r\n                    <!-- Form -->\r\n                    <div>\r\n                        <div class=\"form-1\">\r\n                            <div class=\"row form-group form-1_row-1\">\r\n                                <div class=\"col-sm-4 form-1_row-2\">\r\n                                    <label>Full Name</label>\r\n                                </div>\r\n                                <div class=\"col-sm-6 col-sm-offset-2\">\r\n                                    <input type=\"text\" formControlName=\"fullName\" class=\"form-control form-1_row-3\" (change)=\"change()\">\r\n                                    <div class=\"error\" *ngIf=\"formControls.fullName.touched && formControls.fullName.errors\">\r\n                                        <div *ngIf=\"formControls.fullName.errors.required\">Full Name is required</div>\r\n                                        <div *ngIf=\"formControls.fullName.errors.minlength\">Full Name should be atleast 3 characters</div>\r\n                                    </div>\r\n                                </div>\r\n                               \r\n                            </div>\r\n                            <div class=\"form-1_row-4\"><hr></div>\r\n                            <div class=\"row form-group form-1_row-1\">\r\n                                <div class=\"col-sm-4 form-1_row-2\">\r\n                                    <label>City & Pincode</label>\r\n                                </div>\r\n                                <div class=\"col-sm-4 col-sm-offset-2\">\r\n                                    <select name=\"city\" id=\"city\"  formControlName=\"city\" class=\"form-control form-1_row-3\" (change)=\"change()\">\r\n                                        <option value=\"{{city}}\" *ngFor=\"let city of cities\">{{city}}</option>\r\n                                    </select>\r\n                                    <div class=\"error\" *ngIf=\"formControls.city.touched && formControls.city.errors\">\r\n                                        <div *ngIf=\"formControls.city.errors.required\">City is required</div>\r\n                                       \r\n                                    </div>\r\n                                </div>\r\n                                \r\n                                <div class=\"col-sm-2\">\r\n                                    <input formControlName=\"pincode\" type=\"text\"  class=\"form-control form-1_row-3\" (change)=\"change()\">\r\n                                    <div class=\"error\" *ngIf=\"formControls.pincode.touched && formControls.pincode.errors\">\r\n                                        <div *ngIf=\"formControls.pincode.errors.required\">Pincode is required</div>\r\n                                        <div *ngIf=\"formControls.pincode.errors.maxlength\">Only  6 characters are allowed</div>\r\n                                       \r\n                                    </div>\r\n                                </div>\r\n                                \r\n                            </div>\r\n                            <div class=\"form-1_row-4\"><hr></div>\r\n                            <div class=\"row form-group form-1_row-1\">\r\n                                <div class=\"col-sm-4 form-1_row-2\">\r\n                                    <label>Street & Number</label>\r\n                                </div>\r\n                                <div class=\"col-sm-4 col-sm-offset-2\">\r\n                                    <input type=\"text\" formControlName=\"street\" class=\"form-control form-1_row-3\" (change)=\"change()\">\r\n                                    <div class=\"error\" *ngIf=\"formControls.street.touched && formControls.street.errors\">\r\n                                        <div *ngIf=\"formControls.street.errors.required\">Street is required</div>\r\n                                        <div *ngIf=\"formControls.street.errors.minlength\">Street should be atleast 3 characters</div>\r\n                                       \r\n                                    </div>\r\n                                </div>\r\n                                \r\n                                <div class=\"col-sm-2\">\r\n                                    <input type=\"text\" formControlName=\"number\" class=\"form-control form-1_row-3\" (change)=\"change()\"> \r\n                                    <div class=\"error\" *ngIf=\"formControls.number.touched && formControls.number.errors\">\r\n                                        <div *ngIf=\"formControls.number.errors.required\">Number is required</div>\r\n                                                                          \r\n                                    </div>\r\n                                </div>\r\n                                \r\n                            </div>\r\n                            <div class=\"form-1_row-4\"><hr></div>\r\n                            <div class=\"row form-group form-1_row-5\">\r\n                                <div class=\"col-sm-4 form-1_row-2\">\r\n                                    <label>Block, Entrance & Appartment</label>\r\n                                </div>\r\n                                <div class=\"col-sm-2 col-sm-offset-1\">\r\n                                    <input type=\"text\" formControlName=\"block\" class=\"form-control form-1_row-3\" (change)=\"change()\">\r\n                                    <div class=\"error\" *ngIf=\"formControls.block.touched && formControls.block.errors\">\r\n                                        <div *ngIf=\"formControls.block.errors.required\">Block is required</div>\r\n                                    </div>\r\n                                </div>\r\n                                \r\n                                <div class=\"col-sm-2\">\r\n                                    <input type=\"text\" formControlName=\"entrance\" class=\"form-control form-1_row-3\" (change)=\"change()\">\r\n                                    <div class=\"error\" *ngIf=\"formControls.entrance.touched && formControls.entrance.errors\">\r\n                                        <div *ngIf=\"formControls.entrance.errors.required\">Entrance is required</div>\r\n                                    </div>\r\n                                </div>\r\n                                \r\n                                <div class=\"col-sm-2\">\r\n                                    <input type=\"text\" formControlName=\"appt\" class=\"form-control form-1_row-3\" (change)=\"change()\">\r\n                                    <div class=\"error\" *ngIf=\"formControls.appt.touched && formControls.appt.errors\">\r\n                                        <div *ngIf=\"formControls.appt.errors.required\">Appartment is required</div>\r\n                                    </div>\r\n                                </div>\r\n                                \r\n                            </div>\r\n                        </div><br>\r\n                        <!-- Form -->\r\n                        <!-- Additional Details -->\r\n                        <h1 class=\"display-1 details\">Additonal Details</h1>\r\n                        <br><br>\r\n                        <div class=\"row form-group details_row-1\">\r\n                            <div class=\"col-sm-4\" style=\"font-size: medium;\">\r\n                                Contact Number\r\n                            </div>\r\n                            <div class=\"col-sm-5 col-sm-offset-3\">\r\n                                <input type=\"number\" formControlName=\"contact\" class=\"form-control form-1_row-3\" (change)=\"change()\">\r\n                                <div class=\"error\" *ngIf=\"formControls.contact.touched && formControls.contact.errors\">\r\n                                    <div *ngIf=\"formControls.contact.errors.required\">Contact Number is required</div>\r\n                                    <div *ngIf=\"formControls.contact.errors.max\">Maximum 10 charaters  are allowed</div>\r\n                                </div>\r\n                            </div>\r\n                            \r\n                        </div>\r\n                        <hr>\r\n                        <div class=\"details_row-2\">\r\n                            <div class=\"row form-group\">\r\n                                <div class=\"col-sm-6\">\r\n                                    <span style=\"font-size: medium;\">Type of Business</span>\r\n                                    <p style=\"font-size: small;\">For Business address your package will be delivered only during\r\n                                        <br>normal work days from 9:00 to 17:00\r\n                                    </p>\r\n                                </div>\r\n                                <div class=\"col-sm-6 details_row-3\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-sm-6\">\r\n                                            <input type=\"radio\" formControlName=\"business\" value=\"Home\" class=\"radio-1\" (change)=\"change()\">&nbsp;Home\r\n                                        </div>\r\n                                        <div class=\"col-sm-6\">\r\n                                            <input type=\"radio\" formControlName=\"business\" value=\"Business\" class=\"radio-1\" (change)=\"change()\">&nbsp;Business\r\n                                        </div>\r\n                                        <div class=\"error\" *ngIf=\"formControls.business.touched && formControls.business.errors\">\r\n                                            <div *ngIf=\"formControls.business.errors.required\">Type of buisness is required</div>\r\n                                        </div>\r\n                                    </div>                            \r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <hr>\r\n                        <div class=\"row form-group details_row-1\">\r\n                            <div class=\"col-sm-4\" style=\"font-size: medium;\">\r\n                                Additional Notes\r\n                            </div>\r\n                            <div class=\"col-sm-7 col-sm-offset-1\">\r\n                                <textarea name=\"notes\" id=\"notes\" cols=\"30\" rows=\"5\" formControlName=\"notes\" class=\"form-control details_row-4\" (change)=\"change()\"></textarea>\r\n                            </div>\r\n                            <div class=\"col-sm-11\" style=\"text-align: right; font-size: small;\">Optional</div>\r\n                        </div>\r\n                        <!-- Additional Details -->\r\n                    </div>                    \r\n                    <!-- Delivery Estimate -->\r\n                    <div class=\"delivery-1\">\r\n                        <div class=\"delivery-1_row-1\">\r\n                            <div class=\"delivery-1_row-2\">\r\n                                <b style=\"color: grey;\">Estimated delivery in your area is 2 days</b>\r\n                                <br>\r\n                                <p><a href=\"\">More info here</a></p>\r\n                            </div>\r\n                        </div>\r\n                    </div><br><br>\r\n                    <!-- Delivery Estimate -->\r\n                    <!-- Button -->\r\n                    <button type=\"submit\" class=\"btn btn-primary rounded-pill\" mat-raised-button [disabled]=\"detailsForm.invalid\">Next</button>\r\n                    <!-- Button -->\r\n                </form>               \r\n            </div>\r\n        </div><br><br>\r\n        <!-- Form -->        \r\n    </div>\r\n</body>\r\n</html>"
         },
         {
             "name": "InstallmentComponent",
-            "id": "component-InstallmentComponent-a4ec5eb2c66b113c90e3e4380d2ce268",
+            "id": "component-InstallmentComponent-74827b4ec5d36eed02ccd4a26ddb6e7d",
             "file": "src/app/components/installment/installment.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -440,11 +480,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output, EventEmitter } from '@angular/core';\r\nimport { FormGroup, FormBuilder,Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-installment',\r\n  templateUrl: './installment.component.html',\r\n  styleUrls: ['./installment.component.css']\r\n})\r\nexport class InstallmentComponent implements OnInit {\r\n  installmentForm: FormGroup;\r\n  @Output() OnRegister = new EventEmitter()\r\n  @Output() OnToggle = new EventEmitter()\r\n  constructor(private formBuilder: FormBuilder,private router: Router) { }\r\n\r\n  ngOnInit()  {\r\n    this.installmentForm=this.formBuilder.group({\r\n      term: ['',Validators.required]\r\n      \r\n    });\r\n    \r\n  }\r\n  submitInstalmentForm(){\r\n    \r\n    this.router.navigate(['/']);\r\n  }\r\n  submit=()=>{\r\n    console.log(this.installmentForm.value, \"policy details\");\r\n    this.OnRegister.emit(this.installmentForm.value);\r\n  }\r\n  change=()=>{\r\n    if(this.installmentForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.installmentForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n  \r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, Output, EventEmitter } from '@angular/core';\r\nimport { FormGroup, FormBuilder,Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-installment',\r\n  templateUrl: './installment.component.html',\r\n  styleUrls: ['./installment.component.css']\r\n})\r\nexport class InstallmentComponent implements OnInit {\r\n  installmentForm: FormGroup;\r\n  @Output() OnRegister = new EventEmitter()\r\n  @Output() OnToggle = new EventEmitter()\r\n  constructor(private formBuilder: FormBuilder,private router: Router) { }\r\n\r\n  ngOnInit()  {\r\n    this.installmentForm=this.formBuilder.group({\r\n      term: ['',Validators.required]\r\n      \r\n    });\r\n    \r\n  }\r\n  submitInstalmentForm(){\r\n    \r\n    this.router.navigate(['/']);\r\n  }\r\n  submit=()=>{\r\n    console.log(this.installmentForm.value, \"policy details\");\r\n    this.OnRegister.emit(this.installmentForm.value);\r\n  }\r\n  change=()=>{\r\n    if(this.installmentForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.installmentForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n\r\n  get formControl(){\r\n    return this.installmentForm.controls\r\n  }\r\n  \r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".container{\r\n    margin: 0px;\r\n    padding-top: 50px;\r\n    width: 2000px;\r\n}\r\n\r\n\r\n.card-body{\r\n    color:rgb(4, 58, 102);\r\n    padding-top: 50px;\r\n    width: 2000px;\r\n    \r\n}\r\n.bgn{\r\n    color:rgb(4, 58, 102);\r\n    text-align: right;\r\n    font-size: 20px;\r\n}\r\n.row{\r\n    padding-left: 20px;\r\n}\r\n\r\n.num{\r\n    color:rgb(4, 58, 102);\r\n    text-align: end;\r\n    font-size: 30px;\r\n    font-weight: bold;\r\n}\r\n.mon{\r\n    text-align: left;\r\n}\r\n\r\n.border{\r\n      padding: 0%;\r\n      width: 800px;\r\n      height: auto;\r\n}\r\n.viewins{\r\n    display:none;\r\n}\r\n.firstcard{\r\n    width:800px;\r\n     height: auto;\r\n    min-width:100px; \r\n }\r\n .secondcard{\r\n       \r\n    width:800px;\r\n    height: auto;\r\n   \r\n    \r\n }\r\n .thirdcard{\r\n           \r\n    width:800px;\r\n    height:auto;\r\n   \r\n}\r\n.content{\r\n    height:auto;\r\n    width:1000px;\r\n}\r\n\r\n.hrline{\r\n    width:800px;\r\n    margin-left: 30px;\r\n}\r\n.wid{\r\n    padding-top: 2%;\r\n}\r\n\r\n@media screen and (max-width: 800px) {\r\n    .firstcard,.secondcard,.thirdcard,.content,.hrline{\r\n        width: 350px;\r\n        \r\n    }\r\n    .num{\r\n        font-size: 20px;\r\n        padding-left: 10%;\r\n        text-align: left;\r\n    }.bgn{\r\n        font-size: 12px;\r\n        padding-left: 10%;\r\n        text-align: left;\r\n    }\r\n    .col-md-5 col-auto col-7{\r\n        padding-left: 0%;\r\n    }\r\n    .viewins{\r\n        display:block;\r\n    }\r\n    .viewhide{\r\n        display:none;\r\n    }\r\n    h1{\r\n        font-size: 150%;\r\n    }\r\n    .wid{\r\n        width:80%;\r\n        padding-top: 2%;\r\n    }\r\n  }",
+                    "data": "/*.container{\r\n    margin: 0px;\r\n    padding-top: 50px;\r\n    width: 2000px;\r\n}*/\r\n\r\n.overflowAuto {\r\n    overflow-x: hidden;\r\n    overflow-y: auto;\r\n  }\r\n.card-body{\r\n    color:rgb(4, 58, 102);\r\n    padding-top: 50px;\r\n    /* width: 2000px; */\r\n    \r\n}\r\n.bgn{\r\n    color:rgb(4, 58, 102);\r\n    text-align: right;\r\n    font-size: 20px;\r\n}\r\n.row{\r\n    padding-left: 20px;\r\n}\r\n\r\n.num{\r\n    color:rgb(4, 58, 102);\r\n    text-align: end;\r\n    font-size: 30px;\r\n    font-weight: bold;\r\n}\r\n.mon{\r\n    text-align: left;\r\n}\r\n\r\n.border{\r\n      padding: 0%;\r\n      /*width: 800px;*/\r\n      height: auto;\r\n}\r\n.viewins{\r\n    display:none;\r\n}\r\n.firstcard{\r\n    /*width:800px;*/\r\n     height: auto;\r\n    /*min-width:100px;*/ \r\n }\r\n .secondcard{\r\n       \r\n    /*width:800px;*/\r\n    height: auto;\r\n   \r\n    \r\n }\r\n .thirdcard{\r\n           \r\n    /*width:800px;*/\r\n    height:auto;\r\n   \r\n}\r\n.content{\r\n    height:auto;\r\n    /*width:1000px;*/\r\n}\r\n\r\n.hrline{\r\n    /*width:800px;*/\r\n    margin-left: 30px;\r\n}\r\n.wid{\r\n    padding-top: 2%;\r\n}\r\n\r\n@media screen and (max-width: 800px) {\r\n    /*.firstcard,.secondcard,.thirdcard,.content,.hrline{\r\n        width: 350px;\r\n        \r\n    }*/\r\n    .num{\r\n        font-size: 20px;\r\n        padding-left: 10%;\r\n        text-align: left;\r\n    }.bgn{\r\n        font-size: 12px;\r\n        padding-left: 10%;\r\n        text-align: left;\r\n    }\r\n    .col-md-5 col-auto col-7{\r\n        padding-left: 0%;\r\n    }\r\n    .viewins{\r\n        display:block;\r\n    }\r\n    .viewhide{\r\n        display:none;\r\n    }\r\n    h1{\r\n        font-size: 150%;\r\n    }s\r\n    .wid{\r\n        /*width:80%;*/\r\n        padding-top: 2%;\r\n    }\r\n  }",
                     "styleUrl": "./installment.component.css"
                 }
             ],
@@ -483,11 +523,22 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n<div class=\"row\">\r\n    <div class=\"col-md-8 offset-3\">\r\n        <div class=\"container-fluid\">\r\n            <div class=\"card mx-auto\" style=\"border:  none; \">\r\n                <div class=\"card-body\">\r\n                    <h1 class=\"font-weight-bold\">Instalment options</h1><br/>\r\n                    <form [formGroup]=\"installmentForm\" (submit)=\"submit()\">\r\n                        <div class=\"form-check\" >\r\n                            <div class=\"form-row\">\r\n                                <div class=\"col-md-5\">\r\n                                    <div class=\"border shadow p-3 mb-3 bg-white rounded firstcard\">\r\n                                        <div class=\"row\">\r\n                                            <div class=\"col-auto mr-auto pt-1\">\r\n                                                <label class=\"form-check-label\" style=\"font-weight: bold;\">\r\n                                                    <input class=\"form-check-input\" type=\"radio\" name=\"term\" formControlName=\"term\" value=\"siglePayment\" (change)=\"change()\">Single payment</label>\r\n                                                    <div><button class=\"btn btn-success mon\">Best Value</button></div>\r\n                                            </div>   \r\n                                            <div class=\"col-md-5 col-auto col-7\">\r\n                                                <div class=\"num \" >285,00 BGN</div>\r\n                                                    <div class=\"bgn\" style=\"color: green;\">\r\n                                                        You save 39.00 BGN\r\n                                                    \r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>            \r\n                            </div>\r\n                        </div>\r\n    \r\n                        <div class=\"form-check\">\r\n                            <div class=\"form-row\">\r\n                                <div class=\"col-md-5\">\r\n                                    <div class=\"border shadow p-3 mb-3 bg-white rounded secondcard\">\r\n                                        <div class=\"row\">\r\n                                            <div class=\"col-auto mr-auto pt-1\">\r\n                                                <label class=\"form-check-label\" style=\"font-weight: bold;\">\r\n                                                <input class=\"form-check-input\" type=\"radio\" name=\"term\" formControlName=\"term\" value=\"twoPayment\" (change)=\"change()\">Two payments</label>\r\n                                                <div class=\"mon\">Every 6 months</div>\r\n                                            </div>\r\n                                            <div class=\"col-md-4 col-auto col-7\">\r\n                                                <div class=\"num\">302,00 BGN</div>\r\n                                                <div class=\"bgn\">\r\n                                                    You save 22.00 BGN\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                        <hr>\r\n                                        <div class=\"viewins\">\r\n                                            <a href=\"#\">View Instalments</a>\r\n                                        </div>\r\n                                        <div class=\"row viewhide\">\r\n                                            <div class=\"col-auto mr-auto pt-2\">\r\n                                                    First Instalment\r\n                                                    <div style=\"font-weight: bold;\">170.27 BGN</div>\r\n                                            </div>\r\n                                            <div class=\"col-auto mr-auto pt-2 col-sm offset-1\">\r\n                                                    Second Instalment\r\n                                                    <div style=\"font-weight: bold;\">132.40 BGN</div>\r\n                                            </div>\r\n                                            \r\n                                        </div>\r\n                                        \r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-check\" >\r\n                            <div class=\"form-row\">\r\n                                <div class=\"col-md-5\">\r\n                                    <div class=\"border shadow p-3 mb-3 bg-white rounded thirdcard\">\r\n                                        <div class=\"row\">\r\n                                            <div class=\"col-auto mr-auto pt-1\">\r\n                                                <label class=\"form-check-label\" style=\"font-weight: bold;\">\r\n                                                <input class=\"form-check-input\" type=\"radio\" name=\"term\" formControlName=\"term\" value=\"fourPayment\"  (change)=\"change()\">Four payments</label>\r\n                                                <div class=\"mon\">Every 4 months</div>\r\n                                            </div>\r\n                                            <div class=\"col-md-4 col-auto col-7\">\r\n                                                <div class=\"num\">324,00 BGN</div>\r\n                                            </div>\r\n                                        </div>\r\n                                        <hr>\r\n                                        <div class=\"viewins\">\r\n                                            <a href=\"#\">View Instalments</a>\r\n                                        </div>\r\n                                        <div class=\"row viewhide\">\r\n                                            <div class=\"col-auto mr-auto pt-2\">\r\n                                                    First Instalment\r\n                                                    <div style=\"font-weight: bold;\">170.27 BGN</div>\r\n                                            </div>\r\n                                            <div class=\"col-auto mr-auto pt-2\">\r\n                                                    Second Instalment\r\n                                                    <div style=\"font-weight: bold;\">132.40 BGN</div>\r\n                                            </div>\r\n                                            <div class=\"col-auto mr-auto pt-2\">\r\n                                                Third Instalment\r\n                                                <div style=\"font-weight: bold;\">132.40 BGN</div>\r\n                                            </div>\r\n                                            <div class=\"col-auto mr-auto pt-2\">\r\n                                                Fourth Instalment\r\n                                                <div style=\"font-weight: bold;\">132.40 BGN</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <hr class=\"hrline\">\r\n                        <div class=\"form-row content\">\r\n                            <div class=\"col-auto\"><img style=\"float: left;\" src=\"assets/tick.jpeg\" />\r\n                            </div>\r\n                            <div class=\"col-md-9 wid\">\r\n                               \r\n                                Premiums indicated are final and include Contribution to the Guarantee and Inurance Fund, sticker and 2% tax on insurance premiums.\r\n                                \r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-row content\">\r\n                            <div class=\"col-auto\"><img  src=\"assets/tick.jpeg\"  /></div>\r\n                            <div class=\"col-md-9 wid\">\r\n                            \r\n                            The insurance premium is calculated with included - 5% Discount for insurance with \"Casco+\"\r\n                            \r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-row content\">\r\n                            <div class=\"col-auto\"><img  src=\"assets/tick.jpeg\"  /></div>\r\n                            <div class=\"col-md-7 wid\">\r\n                            Annual Technical Inspection Voucher\r\n                            </div>\r\n                            \r\n                        </div>\r\n                        <hr  class=\"hrline\">\r\n                        <button class=\"btn btn-primary rounded-pill\" matStepperNext type=\"submit\" [disabled]=\"installmentForm.invalid\">  Next  </button>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+            "accessors": {
+                "formControl": {
+                    "name": "formControl",
+                    "getSignature": {
+                        "name": "formControl",
+                        "type": "",
+                        "returnType": "",
+                        "line": 40
+                    }
+                }
+            },
+            "templateData": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n<div class=\"container\">\r\n    <!--<div class=\"col-md-8 offset-3\">-->\r\n        <div class=\"container-fluid\">\r\n            <div class=\"card overflowAuto h-100\" style=\"border:  none; \">\r\n                <div class=\"card-body\">\r\n                    <h1 class=\"font-weight-bold\">Instalment options</h1><br/>\r\n                    <form [formGroup]=\"installmentForm\" (submit)=\"submit()\">\r\n                        <div class=\"form-check\" style=\"padding-left: 0px !important; \">\r\n                            <!--<div class=\"form-row\">-->\r\n                                <div>\r\n                                \r\n                                    <div class=\"border shadow p-3 mb-3 bg-white rounded firstcard\">\r\n                                        <div class=\"row\">\r\n                                            <div class=\"col-auto mr-auto pt-1\">\r\n                                                <label class=\"form-check-label\" style=\"font-weight: bold;\">\r\n                                                    <input class=\"form-check-input\" type=\"radio\" name=\"term\" formControlName=\"term\" value=\"siglePayment\" (change)=\"change()\">Single payment</label>\r\n                                                    <div><button class=\"btn btn-success mon\">Best Value</button></div>\r\n                                            </div>   \r\n                                            <div class=\"col-md-4 col-auto col-5\">\r\n                                                <div class=\"num \" >285,00 BGN</div>\r\n                                                    <div class=\"bgn\" style=\"color: green;\">\r\n                                                        You save 39.00 BGN\r\n                                                    \r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                            \r\n                            </div>\r\n                        </div>\r\n    \r\n                        <div class=\"form-check\" style=\"padding-left: 0px !important; \">\r\n                            <!--<div class=\"form-row\">-->\r\n                            <div>\r\n                                \r\n                                    <div class=\"border shadow p-3 mb-3 bg-white rounded secondcard\">\r\n                                        <div class=\"row\">\r\n                                            <div class=\"col-auto mr-auto pt-1\">\r\n                                                <label class=\"form-check-label\" style=\"font-weight: bold;\">\r\n                                                <input class=\"form-check-input\" type=\"radio\" name=\"term\" formControlName=\"term\" value=\"twoPayment\" (change)=\"change()\">Two payments</label>\r\n                                                <div class=\"mon\">Every 6 months</div>\r\n                                            </div>\r\n                                            <div class=\"col-md-4 col-auto col-5\">\r\n                                                <div class=\"num\">302,00 BGN</div>\r\n                                                <div class=\"bgn\">\r\n                                                    You save 22.00 BGN\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                        <hr>\r\n                                        <div class=\"viewins\">\r\n                                            <a href=\"#\">View Instalments</a>\r\n                                        </div>\r\n                                        <div class=\"row viewhide\">\r\n                                            <div class=\"col-auto mr-auto pt-2\">\r\n                                                    First Instalment\r\n                                                    <div style=\"font-weight: bold;\">170.27 BGN</div>\r\n                                            </div>\r\n                                            <div class=\"col-auto mr-auto pt-2 col-sm offset-1\">\r\n                                                    Second Instalment\r\n                                                    <div style=\"font-weight: bold;\">132.40 BGN</div>\r\n                                            </div>\r\n                                            \r\n                                        </div>\r\n                                        \r\n                                    </div>\r\n                                \r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-check\" style=\"padding-left: 0px !important; \" >\r\n                            <!--<div class=\"form-row\">-->\r\n                            <div>\r\n                                \r\n                                    <div class=\"border shadow p-3 mb-3 bg-white rounded thirdcard\">\r\n                                        <div class=\"row\">\r\n                                            <div class=\"col-auto mr-auto pt-1\">\r\n                                                <label class=\"form-check-label\" style=\"font-weight: bold;\">\r\n                                                <input class=\"form-check-input\" type=\"radio\" name=\"term\" formControlName=\"term\" value=\"fourPayment\"  (change)=\"change()\">Four payments</label>\r\n                                                <div class=\"mon\">Every 4 months</div>\r\n                                            </div>\r\n                                            <div class=\"col-md-4 col-auto col-5\">\r\n                                                <div class=\"num\">324,00 BGN</div>\r\n                                            </div>\r\n                                        </div>\r\n                                        <hr>\r\n                                        <div class=\"viewins\">\r\n                                            <a href=\"#\">View Instalments</a>\r\n                                        </div>\r\n                                        <div class=\"row viewhide\">\r\n                                            <div class=\"col-auto mr-auto pt-2\">\r\n                                                    First Instalment\r\n                                                    <div style=\"font-weight: bold;\">170.27 BGN</div>\r\n                                            </div>\r\n                                            <div class=\"col-auto mr-auto pt-2\">\r\n                                                    Second Instalment\r\n                                                    <div style=\"font-weight: bold;\">132.40 BGN</div>\r\n                                            </div>\r\n                                            <div class=\"col-auto mr-auto pt-2\">\r\n                                                Third Instalment\r\n                                                <div style=\"font-weight: bold;\">132.40 BGN</div>\r\n                                            </div>\r\n                                            <div class=\"col-auto mr-auto pt-2\">\r\n                                                Fourth Instalment\r\n                                                <div style=\"font-weight: bold;\">132.40 BGN</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                \r\n                            </div>\r\n                        </div>\r\n                        <hr class=\"hrline\">\r\n                        <div class=\"form-row content\">\r\n                            <div class=\"col-auto\"><img style=\"float: left;\" src=\"assets/tick.jpeg\" />\r\n                            </div>\r\n                            <div class=\"col-md-9 wid\">\r\n                               \r\n                                Premiums indicated are final and include Contribution to the Guarantee and Inurance Fund, sticker and 2% tax on insurance premiums.\r\n                                \r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-row content\">\r\n                            <div class=\"col-auto\"><img  src=\"assets/tick.jpeg\"  /></div>\r\n                            <div class=\"col-md-9 wid\">\r\n                            \r\n                            The insurance premium is calculated with included - 5% Discount for insurance with \"Casco+\"\r\n                            \r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-row content\">\r\n                            <div class=\"col-auto\"><img  src=\"assets/tick.jpeg\"  /></div>\r\n                            <div class=\"col-md-7 wid\">\r\n                            Annual Technical Inspection Voucher\r\n                            </div>\r\n                            \r\n                        </div>\r\n                        <hr  class=\"hrline\">\r\n                        <button class=\"btn btn-primary rounded-pill\" matStepperNext type=\"submit\" [disabled]=\"installmentForm.invalid\">  Next  </button>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    \r\n</div>\r\n"
         },
         {
             "name": "InsuringPartyComponent",
-            "id": "component-InsuringPartyComponent-4c72134a7872b4fe945bd42bffa32a70",
+            "id": "component-InsuringPartyComponent-8598390187a09d988cf9d8188b1908ad",
             "file": "src/app/components/insuring-party/insuring-party.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -525,7 +576,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 31
+                    "line": 32
                 },
                 {
                     "name": "insuringParty",
@@ -540,7 +591,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 26
+                    "line": 27
                 }
             ],
             "methodsClass": [
@@ -558,7 +609,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, EventEmitter, Output } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-insuring-party',\r\n  templateUrl: './insuring-party.component.html',\r\n  styleUrls: ['./insuring-party.component.css']\r\n})\r\nexport class InsuringPartyComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  insuringParty: FormGroup;\r\n  constructor(private router: Router, private fb: FormBuilder) { }\r\n\r\n  ngOnInit(): void {\r\n    this.insuringParty = this.fb.group({\r\n      egn: ['', Validators.required],\r\n      address: ['', Validators.required],\r\n      email: ['', [Validators.required, Validators.email]]\r\n    });\r\n  }\r\n  // next() {\r\n  //   this.router.navigate(['/policy_details']);\r\n  // }\r\n  submit=() => {\r\n    console.log(this.insuringParty.value,\"insuring party\");\r\n    this.OnRegister.emit(this.insuringParty.value);\r\n\r\n  }\r\n  change=()=>{\r\n    \r\n    if(this.insuringParty.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.insuringParty.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, EventEmitter, Output } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-insuring-party',\r\n  templateUrl: './insuring-party.component.html',\r\n  styleUrls: ['./insuring-party.component.css']\r\n})\r\nexport class InsuringPartyComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  insuringParty: FormGroup;\r\n  constructor(private router: Router, private fb: FormBuilder) { }\r\n\r\n  ngOnInit(): void {\r\n    this.insuringParty = this.fb.group({\r\n      egn: ['', Validators.required],\r\n      address: ['', Validators.required],\r\n      email: ['', Validators.compose([Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\\\.[a-z]{2,4}$')])]\r\n\r\n    });\r\n  }\r\n  // next() {\r\n  //   this.router.navigate(['/policy_details']);\r\n  // }\r\n  submit=() => {\r\n    console.log(this.insuringParty.value,\"insuring party\");\r\n    this.OnRegister.emit(this.insuringParty.value);\r\n\r\n  }\r\n  change=()=>{\r\n    \r\n    if(this.insuringParty.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.insuringParty.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n  get formsControl(){\r\n    return this.insuringParty.controls\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -601,7 +652,18 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"col-12\">\r\n<h1 class=\"display-1 \">Insuring Party</h1>\r\n<form [formGroup]=\"insuringParty\">\r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            Enter your EGN/EIK/LNCH\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <input class=\"form-control\" type=\"text\" formControlName=\"egn\" (change)=\"change()\">\r\n        </div>  \r\n    </div>\r\n    <hr>\r\n    \r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            Place of Permanent Residence?\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <select formControlName=\"address\" class=\"form-control\" (change)=\"change()\">\r\n                <option value=\"delhi\">Delhi</option>\r\n                <option value=\"mumbai\">Mumbai</option>\r\n                \r\n            </select>    \r\n        </div>\r\n    </div>\r\n\r\n    <hr>\r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            Email\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <input class=\"form-control\" type=\"email\"  formControlName=\"email\" (change)=\"change()\"> \r\n        </div>\r\n    </div>\r\n    <hr>\r\n    <button type=\"button\" class=\"btn btn-primary badge-pill pl-4 pr-4 pt-2 pb-2\" style=\"margin-right: 0;\" (click)=\"submit()\" matStepperNext [disabled]=\"insuringParty.invalid\">Next</button>\r\n</form>\r\n</div>\r\n"
+            "accessors": {
+                "formsControl": {
+                    "name": "formsControl",
+                    "getSignature": {
+                        "name": "formsControl",
+                        "type": "",
+                        "returnType": "",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<div class=\"col-12\">\r\n<h1 class=\"display-1 \">Insuring Party</h1>\r\n<form [formGroup]=\"insuringParty\">\r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            Enter your EGN/EIK/LNCH\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <input class=\"form-control\" type=\"text\" formControlName=\"egn\" (change)=\"change()\">\r\n            <div class=\"error\" *ngIf=\"formsControl.egn.touched && formsControl.egn.errors\">\r\n                <div *ngIf=\"formsControl.egn.errors.required\">EGN/EIK/LNCH is required </div>\r\n                \r\n            </div>\r\n        </div>\r\n         \r\n    </div>\r\n    <hr>\r\n    \r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            Place of Permanent Residence?\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <select formControlName=\"address\" class=\"form-control\" (change)=\"change()\">\r\n                <option value=\"delhi\">Delhi</option>\r\n                <option value=\"mumbai\">Mumbai</option>\r\n                \r\n            </select>  \r\n            <div class=\"error\" *ngIf=\"formsControl.address.touched && formsControl.address.errors\">\r\n                <div *ngIf=\"formsControl.address.errors.required\">Place of Permanent Residence is required </div>\r\n              \r\n            </div>  \r\n        </div>\r\n        \r\n    </div>\r\n\r\n    <hr>\r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            Email\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <input class=\"form-control\" type=\"email\"  formControlName=\"email\" (change)=\"change()\"> \r\n            <div class=\"error\" *ngIf=\"formsControl.email.touched && formsControl.email.errors\">\r\n                <div *ngIf=\"formsControl.email.errors.required\">Email is required </div>\r\n                <div *ngIf=\"formsControl.email.errors.pattern\">Please enter a valid email </div>\r\n            </div>\r\n        </div>\r\n       \r\n    </div>\r\n    <hr>\r\n    <button type=\"button\" class=\"btn btn-primary badge-pill pl-4 pr-4 pt-2 pb-2\" style=\"margin-right: 0;\" (click)=\"submit()\" matStepperNext [disabled]=\"insuringParty.invalid\">Next</button>\r\n</form>\r\n</div>\r\n"
         },
         {
             "name": "LoginComponent",
@@ -924,11 +986,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-horizontal-stepper  (selectionChange)=\"change($event)\" labelPosition=\"bottom\" #stepper linear>\r\n  \r\n      <mat-step completed={{toggle1}}>\r\n        <ng-template matStepLabel>Vehicle </ng-template>\r\n        <app-v-info (OnRegister)=\"vehicleData($event)\" (OnToggle)=\"toggle1=$event\"></app-v-info>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle2}}>\r\n        <ng-template matStepLabel>Insuring Party</ng-template>\r\n        <app-insuring-party (OnRegister)=\"insuringPartyData($event)\" (OnToggle)=\"toggle2=$event\"></app-insuring-party>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle3}}>\r\n        <ng-template matStepLabel>Policy Details</ng-template>\r\n        <app-policy-details (OnRegister)=\"policyDetailsData($event)\" (OnToggle)=\"toggle3=$event\"></app-policy-details>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle4}}>\r\n        <ng-template matStepLabel>Installments</ng-template>\r\n        <app-installment (OnRegister)=\"installmentsData($event)\" (OnToggle)=\"toggle4=$event\"></app-installment>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle5}}>\r\n        <ng-template matStepLabel>Covers</ng-template>\r\n        <app-additional-covers (OnRegister)=\"coversData($event)\" (OnToggle)=\"toggle5=$event\"></app-additional-covers>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle6}}>\r\n        <ng-template matStepLabel>Summary</ng-template>\r\n        Summary\r\n      </mat-step>\r\n\r\n</mat-horizontal-stepper>\r\n"
+            "templateData": "<mat-horizontal-stepper  (selectionChange)=\"change($event)\" labelPosition=\"bottom\" #stepper linear>\r\n  \r\n      <mat-step completed={{toggle1}}>\r\n        <ng-template matStepLabel>Vehicle </ng-template>\r\n        <app-v-info (OnRegister)=\"vehicleData($event)\" (OnToggle)=\"toggle1=$event\"></app-v-info>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle2}}>\r\n        <ng-template matStepLabel>Insuring Party</ng-template>\r\n        <app-insuring-party (OnRegister)=\"insuringPartyData($event)\" (OnToggle)=\"toggle2=$event\"></app-insuring-party>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle3}}>\r\n        <ng-template matStepLabel>Policy Details</ng-template>\r\n        <app-policy-details (OnRegister)=\"policyDetailsData($event)\" (OnToggle)=\"toggle3=$event\"></app-policy-details>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle4}}>\r\n        <ng-template matStepLabel>Installments</ng-template>\r\n        <app-installment (OnRegister)=\"installmentsData($event)\" (OnToggle)=\"toggle4=$event\"></app-installment>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle5}}>\r\n        <ng-template matStepLabel>Covers</ng-template>\r\n        <app-additional-covers (OnRegister)=\"coversData($event)\" (OnToggle)=\"toggle5=$event\"></app-additional-covers>\r\n      </mat-step>\r\n\r\n      <!-- <mat-step completed={{toggle6}}>\r\n        <ng-template matStepLabel>Summary</ng-template>\r\n        Summary\r\n      </mat-step> -->\r\n\r\n</mat-horizontal-stepper>\r\n"
         },
         {
             "name": "MTPLPolicyComponent",
-            "id": "component-MTPLPolicyComponent-40187375f502768ca3bca01928180199",
+            "id": "component-MTPLPolicyComponent-f796363dfbddd8fb555816548288f904",
             "file": "src/app/components/mtpl-policy/mtpl-policy.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -948,12 +1010,27 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "deliveryData",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "deliveryInformation",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
                     "name": "personalData",
                     "defaultValue": "() => {...}",
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 23
                 },
                 {
                     "name": "personalInformation",
@@ -1026,7 +1103,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-mtpl-policy',\r\n  templateUrl: './mtpl-policy.component.html',\r\n  styleUrls: ['./mtpl-policy.component.css']\r\n})\r\nexport class MTPLPolicyComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n  toggle1=false\r\n  toggle2=true\r\n  toggle3=true\r\n  toggle4=true\r\n  toggle5=true\r\n  toggle6=true\r\n  personalInformation\r\n\r\n  personalData=(data)=>{\r\n    this.personalInformation=data\r\n    console.log(data);\r\n    \r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-mtpl-policy',\r\n  templateUrl: './mtpl-policy.component.html',\r\n  styleUrls: ['./mtpl-policy.component.css']\r\n})\r\nexport class MTPLPolicyComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n  toggle1=false\r\n  toggle2=true\r\n  toggle3=true\r\n  toggle4=true\r\n  toggle5=true\r\n  toggle6=true\r\n  personalInformation\r\n  deliveryInformation\r\n\r\n  personalData=(data)=>{\r\n    this.personalInformation=data\r\n    console.log(data);\r\n    \r\n  }\r\n  deliveryData=(data)=>{\r\n    this.deliveryInformation=data\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1044,7 +1121,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-horizontal-stepper labelPosition=\"bottom\" #stepper linear>\r\n  <mat-step completed={{toggle1}}>\r\n    <ng-template matStepLabel>Personal details</ng-template>\r\n    <app-personal (OnRegister)=\"personalData($event)\" (OnToggle)=\"toggle1=$event\"></app-personal>\r\n  </mat-step>  \r\n  \r\n  <mat-step completed={{toggle1}}>\r\n    <ng-template matStepLabel>Contact details</ng-template>\r\n  </mat-step> \r\n  \r\n  <mat-step completed={{toggle2}}>\r\n    <ng-template matStepLabel>Vehicle Owner</ng-template>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle3}}>\r\n    <ng-template matStepLabel>Delivery</ng-template>\r\n    <app-delivery></app-delivery>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle4}}>\r\n    <ng-template matStepLabel>Summary</ng-template>\r\n    <app-proposal></app-proposal>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle5}}>\r\n    <ng-template matStepLabel>Payment</ng-template>\r\n    <app-payment></app-payment>\r\n  </mat-step> \r\n\r\n  <!-- <mat-step >\r\n        <ng-template matStepLabel>Policy Details</ng-template>\r\n        <app-policy-details  ></app-policy-details>\r\n      </mat-step>\r\n        \r\n      <mat-step >\r\n        <ng-template matStepLabel>Vehicle </ng-template>\r\n        <app-v-info ></app-v-info>\r\n       \r\n      </mat-step> -->\r\n</mat-horizontal-stepper>\r\n"
+            "templateData": "<mat-horizontal-stepper labelPosition=\"bottom\" #stepper linear>\r\n  <mat-step completed={{toggle1}}>\r\n    <ng-template matStepLabel>Personal details</ng-template>\r\n    <app-personal (OnRegister)=\"personalData($event)\" (OnToggle)=\"toggle1=$event\"></app-personal>\r\n  </mat-step>  \r\n  \r\n  <mat-step completed={{toggle2}}>\r\n    <ng-template matStepLabel>Contact details</ng-template>\r\n  </mat-step> \r\n  \r\n  <mat-step completed={{toggle2}}>\r\n    <ng-template matStepLabel>Vehicle Owner</ng-template>\r\n    <app-vehicle-owner></app-vehicle-owner>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle4}}>\r\n    <ng-template matStepLabel>Delivery</ng-template>\r\n    <app-delivery (OnRegister)=\"deliveryData($event)\" (OnToggle)=\"toggle4=$event\"></app-delivery>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle5}}>\r\n    <ng-template matStepLabel>Summary</ng-template>\r\n    <app-proposal></app-proposal>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle6}}>\r\n    <ng-template matStepLabel>Payment</ng-template>\r\n    <app-payment></app-payment>\r\n  </mat-step> \r\n\r\n  <!-- <mat-step >\r\n        <ng-template matStepLabel>Policy Details</ng-template>\r\n        <app-policy-details  ></app-policy-details>\r\n      </mat-step>\r\n        \r\n      <mat-step >\r\n        <ng-template matStepLabel>Vehicle </ng-template>\r\n        <app-v-info ></app-v-info>\r\n       \r\n      </mat-step> -->\r\n</mat-horizontal-stepper>\r\n"
         },
         {
             "name": "PaymentComponent",
@@ -1219,7 +1296,7 @@
         },
         {
             "name": "PolicyDetailsComponent",
-            "id": "component-PolicyDetailsComponent-c18dd3064f0eb59a47f4fcc9ecadd761",
+            "id": "component-PolicyDetailsComponent-cdd90523b6855e968faac3c16a2337e4",
             "file": "src/app/components/policy-details/policy-details.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1290,7 +1367,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, EventEmitter, Output } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-policy-details',\r\n  templateUrl: './policy-details.component.html',\r\n  styleUrls: ['./policy-details.component.css']\r\n})\r\nexport class PolicyDetailsComponent implements OnInit {\r\n\r\n  @Output() OnRegister = new EventEmitter()\r\n  @Output() OnToggle = new EventEmitter()\r\n  registerForm: FormGroup;\r\n\r\n  constructor(private formBuilder: FormBuilder) { }\r\n\r\n  ngOnInit() {\r\n    this.registerForm = this.formBuilder.group({\r\n      policyDate: ['', Validators.required],\r\n      policyLength: ['', Validators.required],\r\n      check1: ['', Validators.requiredTrue],\r\n      check2: ['', Validators.requiredTrue]\r\n    });\r\n  }\r\n  submit=()=>{\r\n    console.log(this.registerForm.value, \"policy details\");\r\n    this.OnRegister.emit(this.registerForm.value);\r\n  }\r\n  change=()=>{\r\n    if(this.registerForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.registerForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, EventEmitter, Output } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-policy-details',\r\n  templateUrl: './policy-details.component.html',\r\n  styleUrls: ['./policy-details.component.css']\r\n})\r\nexport class PolicyDetailsComponent implements OnInit {\r\n\r\n  @Output() OnRegister = new EventEmitter()\r\n  @Output() OnToggle = new EventEmitter()\r\n  registerForm: FormGroup;\r\n\r\n  constructor(private formBuilder: FormBuilder) { }\r\n\r\n  ngOnInit() {\r\n    this.registerForm = this.formBuilder.group({\r\n      policyDate: ['', Validators.required],\r\n      policyLength: ['', Validators.required],\r\n      check1: ['', Validators.requiredTrue],\r\n      check2: ['', Validators.requiredTrue]\r\n    });\r\n  }\r\n  submit=()=>{\r\n    console.log(this.registerForm.value, \"policy details\");\r\n    this.OnRegister.emit(this.registerForm.value);\r\n  }\r\n  change=()=>{\r\n    if(this.registerForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.registerForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n  get formControls(){\r\n    return this.registerForm.controls\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1322,7 +1399,18 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<h1 class=\"font-weight-bold\">Policy Details</h1>\r\n<form [formGroup]=\"registerForm\">\r\n<div class=\"form-row\">\r\n    <div class=\"col-auto mr-auto pt-2\">\r\n        Start Date\r\n    </div>\r\n    <div class=\"col-md-3 col-auto col-7\">\r\n        <input class=\"form-control\" type=\"date\" formControlName=\"policyDate\" (change)=\"change()\">\r\n    </div>  \r\n</div>\r\n<hr>\r\n<div class=\"form-row\">\r\n    <div class=\"col-auto mr-auto pt-2\">\r\n        Policy length\r\n    </div>\r\n    <div class=\"col-md-3 col-auto col-7\">\r\n        <select formControlName=\"policyLength\" class=\"form-control\" (change)=\"change()\">\r\n            <option selected disabled value=\"\">--SELECT--</option>\r\n            <option value=\"1\">1 Month</option>\r\n            <option value=\"3\">3 Months</option>\r\n            <option value=\"6\">6 Months</option>\r\n            <option value=\"12\">12 Months</option>\r\n        </select>\r\n    </div>\r\n</div>\r\n<hr>\r\n\r\n<div class=\" border shadow p-3 mb-3 bg-white rounded\">\r\n    <input type=\"checkbox\" formControlName=\"check1\" (change)=\"change()\"> I have read and accepted <span class=\"text-primary\">\"Personal Data Protection Information\"</span>\r\n\r\n</div>\r\n<div class=\"border shadow p-3 mb-3 bg-white rounded\">\r\n    <input type=\"checkbox\" formControlName=\"check2\" (change)=\"change()\"> I have read the <span class=\"text-primary\">\"Motor Insurance Third Party Liability Insurance Document\"</span>\r\n\r\n</div>\r\n<br>\r\n</form>\r\n<button class=\"btn btn-primary rounded-pill\" (click)=\"submit()\"  matStepperNext [disabled]=\"!registerForm.valid\">Calculate</button>\r\n"
+            "accessors": {
+                "formControls": {
+                    "name": "formControls",
+                    "getSignature": {
+                        "name": "formControls",
+                        "type": "",
+                        "returnType": "",
+                        "line": 37
+                    }
+                }
+            },
+            "templateData": "<h1 class=\"font-weight-bold\">Policy Details</h1>\r\n<form [formGroup]=\"registerForm\">\r\n<div class=\"form-row\">\r\n    <div class=\"col-auto mr-auto pt-2\">\r\n        Start Date\r\n    </div>\r\n    <div class=\"col-md-4 col-auto col-7\">\r\n        <input class=\"form-control\" type=\"date\" formControlName=\"policyDate\" (change)=\"change()\">\r\n        <div class=\"error\" *ngIf=\"formControls.policyDate.touched && formControls.policyDate.errors\">\r\n            <div *ngIf=\"formControls.policyDate.errors.required\">Start Date is required</div>\r\n        </div>\r\n    </div>  \r\n</div>\r\n<hr>\r\n<div class=\"form-row\">\r\n    <div class=\"col-auto mr-auto pt-2\">\r\n        Policy length\r\n    </div>\r\n    <div class=\"col-md-4 col-auto col-7\">\r\n        <select formControlName=\"policyLength\" class=\"form-control\" (change)=\"change()\">\r\n            <option selected disabled value=\"\">--SELECT--</option>\r\n            <option value=\"1\">1 Month</option>\r\n            <option value=\"3\">3 Months</option>\r\n            <option value=\"6\">6 Months</option>\r\n            <option value=\"12\">12 Months</option>\r\n        </select>\r\n        <div class=\"error\" *ngIf=\"formControls.policyLength.touched && formControls.policyLength.errors\">\r\n            <div *ngIf=\"formControls.policyLength.errors.required\">Policy Length is required</div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<hr>\r\n\r\n<div class=\" border shadow p-3 mb-3 bg-white rounded\">\r\n    <input type=\"checkbox\" formControlName=\"check1\" (change)=\"change()\"> I have read and accepted <span class=\"text-primary\">\"Personal Data Protection Information\"</span>\r\n\r\n</div>\r\n<div class=\"error\" *ngIf=\"formControls.check1.touched && formControls.check1.errors\">\r\n    <div *ngIf=\"formControls.check1.invalid\">Please read and accept </div>\r\n</div>\r\n<div class=\"border shadow p-3 mb-3 bg-white rounded\">\r\n    <input type=\"checkbox\" formControlName=\"check2\" (change)=\"change()\"> I have read the <span class=\"text-primary\">\"Motor Insurance Third Party Liability Insurance Document\"</span>\r\n\r\n</div>\r\n<div class=\"error\" *ngIf=\"formControls.check2.touched && formControls.check2.errors\">\r\n    <div *ngIf=\"formControls.check2.invalid\">Please read and accept </div>\r\n</div>\r\n<br>\r\n</form>\r\n<button class=\"btn btn-primary rounded-pill\" (click)=\"submit()\"  matStepperNext [disabled]=\"!registerForm.valid\">Calculate</button>\r\n"
         },
         {
             "name": "ProposalComponent",
@@ -1712,7 +1800,7 @@
         },
         {
             "name": "TabComponent",
-            "id": "component-TabComponent-fd50d34c8314bcbbf20d28454ae8e8c6",
+            "id": "component-TabComponent-6f9aff96ea816d4405ab6629aa78336b",
             "file": "src/app/tab/tab.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1730,7 +1818,16 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "activeTab",
+                    "defaultValue": "0",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -1746,7 +1843,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-tab',\r\n  templateUrl: './tab.component.html',\r\n  styleUrls: ['./tab.component.css']\r\n})\r\nexport class TabComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-tab',\r\n  templateUrl: './tab.component.html',\r\n  styleUrls: ['./tab.component.css']\r\n})\r\nexport class TabComponent implements OnInit {\r\n  activeTab = 0;\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1759,12 +1856,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 8
+                "line": 9
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-tab-group mat-align-tabs=\"center\">\r\n    <mat-tab label=\"MTPL Calculator\">\r\n        <app-mtpl-calculator></app-mtpl-calculator>\r\n    </mat-tab>\r\n    <mat-tab label=\"Purchase MTPL Policy\"> \r\n        <app-mtpl-policy></app-mtpl-policy>\r\n    </mat-tab>\r\n    \r\n</mat-tab-group>\r\n"
+            "templateData": "<mat-tab-group mat-align-tabs=\"center\" [(selectedIndex)]=\"activeTab\">\r\n    <mat-tab label=\"MTPL Calculator\">\r\n        <app-mtpl-calculator></app-mtpl-calculator>\r\n    </mat-tab>\r\n    <mat-tab label=\"Purchase MTPL Policy\"> \r\n        <app-mtpl-policy></app-mtpl-policy>\r\n    </mat-tab>\r\n    \r\n</mat-tab-group>\r\n"
         },
         {
             "name": "TabsComponent",
@@ -1823,8 +1920,157 @@
             "templateData": "<h1>Purchase MTPL Policy</h1>\r\n<div class=\"tab-wrap\">\r\n  \r\n    <input type=\"radio\" name=\"tabs\" id=\"tab1\" checked>\r\n    <div class=\"tab-label-content\" id=\"tab1-content\">\r\n      <label for=\"tab1\">Personal Details</label>\r\n      <div class=\"tab-content\">TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue. Nam finibus urna eget nisl aliquam, in dictum ligula feugiat. Donec mollis ligula purus, et interdum velit bibendum eget. Aliquam magna diam, tristique eu libero nec, sagittis finibus sapien. Cras a ex ultricies, faucibus elit sagittis, maximus nisi. Donec quis arcu sapien. Aenean risus nibh, varius sed porttitor a, ornare nec leo. Sed vitae lacus in ipsum varius sagittis. Ut in quam cursus, ullamcorper sapien posuere, laoreet elit. Suspendisse interdum, risus ut ultricies scelerisque, nibh est commodo leo, sed tristique nisl odio et turpis. Fusce pellentesque nunc nec arcu feugiat accumsan. Praesent mauris sem, eleifend sit amet tortor in, cursus vehicula arcu. Curabitur convallis sit amet nunc ac feugiat. Sed at risus id diam porta pretium id vel felis. Donec nec dui id nisl hendrerit laoreet eu id odio.</div>\r\n    </div>\r\n     \r\n    <input type=\"radio\" name=\"tabs\" id=\"tab2\">\r\n    <div class=\"tab-label-content\" id=\"tab2-content\">\r\n      <label for=\"tab2\" class=\"head\">Contact details</label>\r\n      <div class=\"tab-content\">TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie.</div>\r\n    </div>\r\n    \r\n    <input type=\"radio\" name=\"tabs\" id=\"tab3\">\r\n    <div class=\"tab-label-content\" id=\"tab3-content\">\r\n      <label for=\"tab3\" class=\"head\">Vehicle Owner</label>\r\n      <div class=\"tab-content\">TAB 3 - Donec vulputate ante ac ligula vestibulum, id mollis diam commodo. Integer at consequat magna. Sed elit sem, dictum nec porttitor ac, ultrices id enim. Morbi semper eros a enim malesuada, eu finibus erat dictum. Ut vitae orci a odio sagittis malesuada. Cras volutpat vel lorem in tempor. Duis ultricies lectus sit amet tellus vehicula faucibus. Etiam sed leo ac erat tempor feugiat at quis ipsum. Mauris pellentesque nisl lorem, ac finibus sapien sagittis vel. Donec et lobortis est. Vestibulum dignissim ligula nec erat interdum, quis sollicitudin metus pretium. Vestibulum quis dui sapien. Proin commodo justo ac orci elementum molestie. Aliquam mattis orci vitae volutpat commodo.</div>\r\n    </div>\r\n  \r\n     <input type=\"radio\" name=\"tabs\" id=\"tab4\">\r\n     <div class=\"tab-label-content\" id=\"tab4-content\">\r\n      <label for=\"tab4\" class=\"head\">Delivery</label>\r\n      <div class=\"tab-content\">\r\n        <app-delivery></app-delivery>\r\n      </div>\r\n    </div>\r\n\r\n    <input type=\"radio\" name=\"tabs\" id=\"tab5\">\r\n     <div class=\"tab-label-content\" id=\"tab5-content\">\r\n      <label for=\"tab5\" class=\"head2\">Summary</label>\r\n      <div class=\"tab-content\">TAB 5 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie.</div>\r\n    </div>\r\n\r\n    <input type=\"radio\" name=\"tabs\" id=\"tab6\">\r\n     <div class=\"tab-label-content\" id=\"tab6-content\">\r\n      <label for=\"tab6\" class=\"head\">Payment</label>\r\n      <div class=\"tab-content\">TAB 6 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie.</div>\r\n    </div>\r\n    \r\n    <div class=\"slide\"></div>\r\n  \r\n</div>\r\n\r\n\r\n"
         },
         {
+            "name": "VehicleOwnerComponent",
+            "id": "component-VehicleOwnerComponent-1ae80e799b6870390e03bbde240b3cff",
+            "file": "src/app/components/vehicle-owner/vehicle-owner.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-vehicle-owner",
+            "styleUrls": [
+                "./vehicle-owner.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./vehicle-owner.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "citizens",
+                    "defaultValue": "['Indian','American','African']",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "Details",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "selectedLink",
+                    "defaultValue": "\"Yes\"",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 42,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "isSelected",
+                    "args": [
+                        {
+                            "name": "name",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 51,
+                    "jsdoctags": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21
+                },
+                {
+                    "name": "setradio",
+                    "args": [
+                        {
+                            "name": "e",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 44,
+                    "jsdoctags": [
+                        {
+                            "name": "e",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "success",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\nimport { FormBuilder,FormGroup,FormControl,Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-vehicle-owner',\r\n  templateUrl: './vehicle-owner.component.html',\r\n  styleUrls: ['./vehicle-owner.component.css']\r\n})\r\nexport class VehicleOwnerComponent implements OnInit {\r\n  \r\n  Details:FormGroup;\r\n  citizens=['Indian','American','African'];\r\n  constructor(private formBuilder: FormBuilder) { }\r\n\r\n    success(){\r\n      console.log(this.Details.value);\r\n    }\r\n   \r\n\r\n  ngOnInit(): void {\r\n    this.Details = this.formBuilder.group({\r\n      Number: ['', Validators.required],\r\n      fullname:this.formBuilder.group({\r\n        firstname:['',Validators.required],\r\n        lastname:['',Validators.required],\r\n        surname:[]\r\n      }),\r\n      fullnameeng:this.formBuilder.group({\r\n        firstnameeng:['',Validators.required],\r\n        lastnameeng:['',Validators.required],\r\n        surnameeng:[]\r\n      }),\r\n      citizen:['',Validators.required],\r\n      birth:['',Validators.required],\r\n      city:['',Validators.required],\r\n      street:['',Validators.required],\r\n      No:['',Validators.required]\r\n    });\r\n  }\r\n  \r\n  private selectedLink: string=\"Yes\";        \r\n  \r\n  setradio(e: string): void   \r\n  {  \r\n  \r\n    this.selectedLink = e;  \r\n          \r\n  }  \r\n  \r\n    isSelected(name: string): boolean   \r\n  {  \r\n  \r\n        if (!this.selectedLink) { \r\n            return false;  \r\n  }  \r\n  \r\n        return (this.selectedLink === name);  \r\n    }  \r\n \r\n \r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n.form-control{\r\n    width:180px\r\n}\r\n\r\n\r\nh1{\r\n    margin-left: 1px;\r\n    margin-bottom: 20px;\r\n    color: darkblue;\r\n}\r\nlabel{\r\n    color: darkgray;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n}\r\n.col-sm-4{\r\n    padding-left: 205px;\r\n   \r\n}\r\nhr{\r\n    width:50%;\r\n    text-align:left;\r\n    margin-left:0;\r\n}\r\n.panel{\r\n    border-color:yellow;\r\n    width: 555px;\r\n}\r\n.error{\r\n    color: red;\r\n}\r\n.btn{\r\n    border-radius: 50px;\r\n    min-width: 100px;\r\n  }\r\n@media screen and (max-width: 800px) {\r\n    .col-sm-4{\r\n        padding-left:13px;\r\n        \r\n\r\n    }\r\n    .panel{\r\n        width: 177px;;\r\n    }\r\n\r\n}\r\n\r\n.col-sm-2\r\n{\r\n   width:200px; \r\n}\r\n\r\n",
+                    "styleUrl": "./vehicle-owner.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder"
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h1>Vehicle Owner</h1>\r\n\r\n<div class=\"container\"> \r\n    <div class=\"row\">\r\n    <label>Are u the owner of the vehicle</label>\r\n   \r\n      <label class=\"radio-inline\">\r\n        <input  type=\"radio\"  name=\"gender\" id=\"Radios1\" value=\"Yes\" (click)=\"setradio('Yes')\" [checked]=\"true\" ngModel>\r\n        Yes\r\n      </label>\r\n\r\n      <label class=\"radio-inline\">\r\n        <input  type=\"radio\" name=\"gender\" id=\"Radios2\" value=\"No\" (click)=\"setradio('No')\" ngModel>\r\n        No\r\n      </label>\r\n    </div>\r\n</div> \r\n<div *ngIf=\"isSelected('Yes')\">  \r\n    <button type=\"button\" class=\"btn btn-primary\">Next</button>\r\n</div>\r\n\r\n<div *ngIf=\"isSelected('No')\">\r\n    <form [formGroup]=\"Details\" (ngSubmit)=\"success()\">\r\n    <h2>Vehicle Owner Details</h2>\r\n\r\n    <div class=\"form-group row\">\r\n        <label for=\"lnch\" class=\"col-sm-2 col-form-label\">Enter your Number</label>\r\n        <div class=\"col-sm-4\">\r\n        <input type=\"text\" class=\"form-control\" id=\"Number\" placeholder=\"Enter your Number\" formControlName=\"Number\"  name=\"Number\">\r\n        <div *ngIf=\"Details.controls.Number.hasError('required') &&(Details.controls.Number.dirty || Details.controls.Number.touched)\" class=\"error\">Please enter the number</div>\r\n        </div>\r\n    </div>\r\n    <hr>\r\n    <div formGroupName=\"fullname\">\r\n        <label class=\"\">Full Name</label><br>\r\n      <div class=\"form-group row\">\r\n        \r\n        <div class=\"col-sm-2\">\r\n        <input type=\"text\" class=\"form-control\" id=\"firstname\" placeholder=\"Enter firstname\" formControlName=\"firstname\"  name=\"firstname\">\r\n        <div *ngIf=\"Details.get('fullname').get('firstname').hasError('required') &&(Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)\" class=\"error\">Please enter your first name</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n        <input type=\"text\" class=\"form-control\" id=\"lastname\" placeholder=\"Enter lastname\" formControlName=\"lastname\"  name=\"lastname\">\r\n        <div *ngIf=\"Details.get('fullname').get('lastname').hasError('required') &&(Details.get('fullname').get('lastname').dirty || Details.get('fullname').get('lastname').touched)\" class=\"error\">Please enter your lastname</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n        <input type=\"text\" class=\"form-control\" id=\"surname\" placeholder=\"Enter surname\" formControlName=\"surname\"  name=\"suname\">\r\n        </div>\r\n      </div>\r\n     </div>\r\n     <hr>\r\n     <div formGroupName=\"fullnameeng\">\r\n        <label>Full Name in English</label><br>\r\n        <div class=\"form-group row\">\r\n            <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"firstnameeng\" placeholder=\"Enter firstname\" formControlName=\"firstnameeng\"  name=\"firstnameeng\">\r\n          <div *ngIf=\"Details.get('fullnameeng').get('firstnameeng').hasError('required') &&(Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)\" class=\"error\">Please enter your first name</div>\r\n          </div>\r\n          <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"lastnameeng\" placeholder=\"Enter lastname\" formControlName=\"lastnameeng\"  name=\"lastnameeng\">\r\n          <div *ngIf=\"Details.get('fullnameeng').get('lastnameeng').hasError('required') &&(Details.get('fullnameeng').get('lastnameeng').dirty || Details.get('fullnameeng').get('lastnameeng').touched)\" class=\"error\">Please enter your lastname</div>\r\n          </div>\r\n          <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"surnameeng\" placeholder=\"Enter surname\" formControlName=\"surnameeng\"  name=\"sunameeng\">\r\n        </div>\r\n        </div>\r\n       </div>\r\n    \r\n       <div class=\"panel panel-default\">\r\n        <div class=\"panel-body\">Please compare data in latin with data in vehicle registration certificate\r\n            or identity document.Data will be used for printout of Green Card Certificate.\r\n        </div>\r\n      </div>\r\n\r\n    <div class=\"form-group row\">\r\n        <label for=\"citizen\" class=\"col-sm-2 col-form-label\">Citizenship</label>\r\n        <div class=\"col-sm-4\">\r\n        <select class=\"form-control\" id=\"citizen\" formControlName=\"citizen\" name=\"citizen\">\r\n          <option *ngFor=\"let c of citizens\" [value]=\"c\">{{c}}</option>\r\n        </select>\r\n        <div *ngIf=\"Details.controls.citizen.hasError('required') &&(Details.controls.citizen.dirty || Details.controls.citizen.touched)\" class=\"error\">Please select your Citizenship</div>\r\n        </div>\r\n      </div>\r\n    <hr>\r\n    <div class=\"form-group row\">\r\n        <label for=\"birth\" class=\"col-sm-2 col-form-label\">Birth Date</label>\r\n        <div class=\"col-sm-4\">\r\n        <input type=\"date\" class=\"form-control\"  id=\"birth\" placeholder=\"Enter Birth date\" formControlName=\"birth\"  name=\"birth\">\r\n        <div *ngIf=\"Details.controls.birth.hasError('required') &&(Details.controls.birth.dirty || Details.controls.birth.touched)\" class=\"error\">Please select your birth date </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"h-divider\">\r\n    </div>\r\n\r\n    <h2>\r\n        Contact Information\r\n    </h2>\r\n    \r\n\r\n    <div class=\"form-group row\">\r\n        <div class=\"col-lg-2\">\r\n            <label for=\"city\" class=\"col-sm-2 col-form-label\">City</label>\r\n        </div>\r\n       \r\n        <div class=\"col-sm-2\">\r\n            <select class=\"form-control\" id=\"sel1\" formControlName=\"city\"  name=\"city\">\r\n                <option value=\"Hyd\">Hyderabad</option>\r\n                <option value=\"Mum\">Mumbai</option>\r\n                <option value=\"Pune\">Pune</option>\r\n                <option value=\"Chenai\">Chennai</option>\r\n                <option value=\"Banglore\">Banglore</option>\r\n                <option value=\"Goa\">Goa</option>\r\n                <option value=\"Maharashtra\">Maharashtra</option>\r\n                \r\n            </select>\r\n            <div *ngIf=\"Details.controls.city.hasError('required') &&(Details.controls.city.dirty || Details.controls.city.touched)\" class=\"error\">Please select your City</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n            <div class=\"form-group\">\r\n                <input type=\"text\" class=\"form-control\" placeholder=\"1000\">\r\n            </div>\r\n       </div>\r\n    </div>\r\n    \r\n\r\n    <div class=\"form-group row\">\r\n        <div class=\"col-lg-2\">\r\n            <label for=\"s&n\" class=\"col-sm-2 col-form-label\">Street & Number </label>\r\n        </div>\r\n        \r\n        <div class=\"col-sm-2\">\r\n            <input type=\"text\" class=\"form-control\"  formControlName=\"street\">\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n            <input type=\"text\" class=\"form-control\" formControlName=\"No\">\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"form-group row\">\r\n        <div class=\"col-lg-2\">\r\n        <label for=\"be&a\">Block Entrance&Apartment </label>\r\n        </div>\r\n        <div class=\"col-xs-1\">\r\n            \r\n            <input type=\"text\" class=\"form-control\" style=\"width:120px\">\r\n\r\n        </div>\r\n        <div class=\"col-xs-1\">\r\n            <input type=\"text\" class=\"form-control\" style=\"width:120px\">\r\n        </div>\r\n        <div class=\"col-xs-1\">\r\n            <input type=\"text\" class=\"form-control\" style=\"width:120px\">\r\n        </div>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!Details.valid\">Next</button>\r\n    </form>\r\n   \r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+        },
+        {
             "name": "VInfoComponent",
-            "id": "component-VInfoComponent-603f770694ce8f0fa4bfbf9fd67c16c6",
+            "id": "component-VInfoComponent-0d8b6b20c1d99cc7a2425f6a1408ce8f",
             "file": "src/app/components/v-info/v-info.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1895,7 +2141,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output,EventEmitter } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\n\r\n\r\n@Component({\r\n  selector: 'app-v-info',\r\n  templateUrl: './v-info.component.html',\r\n  styleUrls: ['./v-info.component.css']\r\n})\r\nexport class VInfoComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n vehicleInfoForm:FormGroup;\r\n  constructor(private router: Router, private formBuilder:FormBuilder) { } \r\n\r\n  ngOnInit(): void {\r\n    this.vehicleInfoForm=this.formBuilder.group({\r\n      registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],\r\n      certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],\r\n      purpose:['',Validators.required],\r\n      yesNo:['',Validators.required]\r\n    })}\r\n    submit=() => {\r\n      //this.router.navigate(['./insuring-party.component']);\r\n      console.log(this.vehicleInfoForm.value,\"vehicle Info\");\r\n      // this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      // setTimeout(this.OnToggle.emit(true),)\r\n\r\n    }\r\n    change=()=>{\r\n      \r\n      if(this.vehicleInfoForm.valid){\r\n        this.OnToggle.emit(true)\r\n        this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }else{\r\n        this.OnToggle.emit(false)\r\n        // this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }\r\n    }\r\n  }\r\n\r\n\r\n",
+            "sourceCode": "import { Component, OnInit, Output,EventEmitter } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\n\r\n\r\n@Component({\r\n  selector: 'app-v-info',\r\n  templateUrl: './v-info.component.html',\r\n  styleUrls: ['./v-info.component.css']\r\n})\r\nexport class VInfoComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n vehicleInfoForm:FormGroup;\r\n  constructor(private router: Router, private formBuilder:FormBuilder) { } \r\n\r\n  ngOnInit(): void {\r\n    this.vehicleInfoForm=this.formBuilder.group({\r\n      registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],\r\n      certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],\r\n      purpose:['',Validators.required],\r\n      yesNo:['Yes',Validators.required]\r\n    })}\r\n    submit=() => {\r\n      //this.router.navigate(['./insuring-party.component']);\r\n      console.log(this.vehicleInfoForm.value,\"vehicle Info\");\r\n      // this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      // setTimeout(this.OnToggle.emit(true),)\r\n\r\n    }\r\n    change=()=>{\r\n      \r\n      if(this.vehicleInfoForm.valid){\r\n        this.OnToggle.emit(true)\r\n        this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }else{\r\n        this.OnToggle.emit(false)\r\n        // this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }\r\n    }\r\n\r\n    get formsControl(){\r\n      return this.vehicleInfoForm.controls;\r\n    }\r\n  }\r\n\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1938,7 +2184,18 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<h1 class=\"display-1\" style=\"color:darkblue; font-size: 200%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;\"><b>Vehicle Information</b></h1>\r\n<form [formGroup]=\"vehicleInfoForm\">\r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Vehicle Registration Number \r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"XX0000XX\" formControlName=\"registrationNumber\" (change)=\"change()\">\r\n        </div>  \r\n    </div>\r\n    <hr>\r\n    \r\n    \r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Vehicle Certificate Number <br>\r\n            <a href=\"\"><u>Where can I find this number?</u></a>\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"000000000\"  formControlName=\"certificateNumber\" (change)=\"change()\"> \r\n        </div>\r\n    </div>\r\n    <hr>\r\n    \r\n\r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            What purpose does this vehicle serve?\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <select formControlName=\"purpose\" class=\"form-control\" (change)=\"change()\">\r\n                <option value=\"personal\">Personal Use</option>\r\n                <option value=\"public\">Public Use</option>\r\n                \r\n            </select>    \r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n\r\n    <div class=\"form-row\" >\r\n        <div class=\"col-9\" >\r\n            Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input type=\"radio\" name=\"yesNo\" (change)=\"change()\" formControlName=\"yesNo\" value=\"Yes\">Yes &nbsp;&nbsp;\r\n            <input type=\"radio\" name=\"yesNo\" (change)=\"change()\" formControlName=\"yesNo\" value=\"No\">No\r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n\r\n</form><br>\r\n\r\n<button class=\"btn btn-primary rounded-pill\" (click)=\"submit()\" mat-raised-button  matStepperNext [disabled]=\"!vehicleInfoForm.valid\">Next</button>\r\n\r\n<!-- {{vehicleInfoForm.value | json}} -->"
+            "accessors": {
+                "formsControl": {
+                    "name": "formsControl",
+                    "getSignature": {
+                        "name": "formsControl",
+                        "type": "",
+                        "returnType": "",
+                        "line": 43
+                    }
+                }
+            },
+            "templateData": "<h1 class=\"display-1\" style=\"color:darkblue; font-size: 200%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;\"><b>Vehicle Information</b></h1>\r\n<form [formGroup]=\"vehicleInfoForm\">\r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Vehicle Registration Number \r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"XX0000XX\" formControlName=\"registrationNumber\" (change)=\"change()\">\r\n            <div class=\"error\" *ngIf=\"formsControl.registrationNumber.touched && formsControl.registrationNumber.errors\">\r\n                <div *ngIf=\"formsControl.registrationNumber.errors.required\">Vehicle Registartion Number is required </div>\r\n                <div *ngIf=\"formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength\">Vehicle Registartion Number Should be 8 characters </div>\r\n            </div>  \r\n        </div> \r\n        \r\n    </div>\r\n    <hr>\r\n    \r\n    \r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Vehicle Certificate Number <br>\r\n            <a href=\"\"><u>Where can I find this number?</u></a>\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"000000000\"  formControlName=\"certificateNumber\" (change)=\"change()\"> \r\n            <div class=\"error\" *ngIf=\"formsControl.certificateNumber.touched && formsControl.certificateNumber.errors\">\r\n                <div *ngIf=\"formsControl.certificateNumber.errors.required\">Vehicle Certificate Number is required </div>\r\n                <div *ngIf=\"formsControl.certificateNumber.errors.minlength || formsControl.certificateNumber.errors.maxlength\">Vehicle Certificate Number Should be 9 characters </div>\r\n            </div>\r\n        </div>\r\n       \r\n    </div>\r\n    <hr>\r\n    \r\n\r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            What purpose does this vehicle serve?\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <select formControlName=\"purpose\" class=\"form-control\" (change)=\"change()\">\r\n                <option value=\"personal\">Personal Use</option>\r\n                <option value=\"public\">Public Use</option>\r\n                \r\n            </select>   \r\n            <div class=\"error\" *ngIf=\"formsControl.purpose.touched && formsControl.purpose.errors\">\r\n                <div *ngIf=\"formsControl.purpose.errors.required\">Please select what purpose does this vehicle serve </div>\r\n               \r\n            </div> \r\n        </div>\r\n        \r\n    </div>\r\n    <hr>\r\n\r\n\r\n    <div class=\"form-row\" >\r\n        <div class=\"col-9\" >\r\n            Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input type=\"radio\" name=\"yesNo\" (change)=\"change()\" formControlName=\"yesNo\" value=\"Yes\">Yes &nbsp;&nbsp;\r\n            <input type=\"radio\" name=\"yesNo\" (change)=\"change()\" formControlName=\"yesNo\" value=\"No\">No\r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n\r\n</form><br>\r\n\r\n<button class=\"btn btn-primary rounded-pill\" (click)=\"submit()\" mat-raised-button  matStepperNext [disabled]=\"!vehicleInfoForm.valid\">Next</button>\r\n\r\n<!-- {{vehicleInfoForm.value | json}} -->"
         }
     ],
     "modules": [
@@ -2002,6 +2259,9 @@
                         },
                         {
                             "name": "VInfoComponent"
+                        },
+                        {
+                            "name": "VehicleOwnerComponent"
                         }
                     ]
                 },
@@ -2075,6 +2335,14 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/delivery.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DeliveryComponent,\r\n  props: {\r\n    \r\n  }\r\n})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/login.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n  component: LoginComponent,\r\n  props: {\r\n    \r\n  }\r\n})"
@@ -2122,6 +2390,16 @@
                     "subtype": "variable",
                     "file": "src/test.ts",
                     "type": "literal type"
+                }
+            ],
+            "src/stories/delivery.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/delivery.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DeliveryComponent,\r\n  props: {\r\n    \r\n  }\r\n})"
                 }
             ],
             "src/stories/login.stories.ts": [
@@ -2223,7 +2501,7 @@
                 "linktype": "injectable",
                 "name": "CommonDataService",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2241,7 +2519,7 @@
                 "linktype": "component",
                 "name": "DeliveryComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
@@ -2286,7 +2564,7 @@
                 "linktype": "component",
                 "name": "MTPLPolicyComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
@@ -2353,6 +2631,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/vehicle-owner/vehicle-owner.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "VehicleOwnerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/stepper/stepper.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2367,7 +2654,7 @@
                 "linktype": "component",
                 "name": "TabComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2386,6 +2673,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/delivery.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
