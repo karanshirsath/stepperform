@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonDataService } from 'src/app/common-data.service';
 
 @Component({
   selector: 'app-mtpl-policy',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MTPLPolicyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _commonData:CommonDataService) { }
 
   ngOnInit(): void {
   }
@@ -18,7 +19,11 @@ export class MTPLPolicyComponent implements OnInit {
   toggle5=true
   toggle6=true
   personalInformation
+  contactInformation
+  vehicleOwnerInformation
   deliveryInformation
+formData
+
 
   personalData=(data)=>{
     this.personalInformation=data
@@ -26,7 +31,15 @@ export class MTPLPolicyComponent implements OnInit {
     
   }
   deliveryData=(data)=>{
-    this.deliveryInformation=data
+    this.deliveryInformation=data;
+    this.formData={
+      personalInformation:this.personalInformation,
+      contactInformation:"",
+      vehicleOwnerInformation:"",
+      deliveryInformation:this.deliveryInformation
+    
+      }
+    this._commonData.policyData.next(this.formData)
   }
 
 }

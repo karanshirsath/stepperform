@@ -264,43 +264,50 @@
                     <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Full Name</label>
-                        <input type="text" class="form-control" formControlName="fullNameDelivery" [value]="">
+                        <label class="font_color sub_label_prop">Full Name</label><br>
+                        {{mtplPolicyData["deliveryInformation"].fullName}}
+                        <!-- <input type="text" class="form-control" formControlName="fullNameDelivery" [value]=""> -->
                         </div>
-                        <span *ngIf="summaryForm.controls.fullNameDelivery.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.fullNameDelivery.errors" style="color: red;">Required</span> -->
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Phone Number</label>
-                        <input type="text" class="form-control" formControlName="phoneNumDelivery" [value]="">
+                        <label class="font_color sub_label_prop">Phone Number</label><br>
+                        <!-- <input type="text" class="form-control" formControlName="phoneNumDelivery" [value]=""> -->
+                        {{mtplPolicyData["deliveryInformation"].contact}}
                         </div>
-                        <span *ngIf="summaryForm.controls.phoneNumDelivery.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.phoneNumDelivery.errors" style="color: red;">Required</span> -->
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Address Type</label>
-                        <input type="text" class="form-control" formControlName="addressType" [value]="">
+                        <label class="font_color sub_label_prop">Address Type</label><br>
+                        {{mtplPolicyData["deliveryInformation"].business}}
+                        <!-- <input type="text" class="form-control" formControlName="addressType" [value]=""> -->
                         </div>
-                        <span *ngIf="summaryForm.controls.addressType.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.addressType.errors" style="color: red;">Required</span> -->
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">City and zipcode</label>
-                        <input type="text" class="form-control" formControlName="cityZipcodeDelivery" [value]="">
+                        <label class="font_color sub_label_prop">City and zipcode</label><br>
+                        <!-- <input type="text" class="form-control" formControlName="cityZipcodeDelivery" [value]=""> -->
+                        {{mtplPolicyData["deliveryInformation"].city}} and {{mtplPolicyData["deliveryInformation"].pincode}}
                         </div>
-                        <span *ngIf="summaryForm.controls.cityZipcodeDelivery.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.cityZipcodeDelivery.errors" style="color: red;">Required</span> -->
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Street & Number</label>
-                        <input type="text" class="form-control" formControlName="streetNumberDelivery" [value]="">
+                        <label class="font_color sub_label_prop">Street & Number</label><br>
+                        <!-- <input type="text" class="form-control" formControlName="streetNumberDelivery" [value]=""> -->
+                        {{mtplPolicyData["deliveryInformation"].street}} and {{mtplPolicyData["deliveryInformation"].number}}
                         </div>
-                        <span *ngIf="summaryForm.controls.streetNumberDelivery.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.streetNumberDelivery.errors" style="color: red;">Required</span> -->
                       
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Block</label>
-                        <input type="number" class="form-control" formControlName="block" [value]="">
+                        <label class="font_color sub_label_prop">Block</label><br>
+                        <!-- <input type="number" class="form-control" formControlName="block" [value]=""> -->
+                        {{mtplPolicyData["deliveryInformation"].block}}
                         </div>
-                        <span *ngIf="summaryForm.controls.block.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.block.errors" style="color: red;">Required</span> -->
                         <div class="form-group">
-                        <label class="font_color sub_label_prop">Apartment</label>
-                        <input type="number" class="form-control" formControlName="apartmentDelivery" [value]="">
+                        <label class="font_color sub_label_prop">Apartment</label><br>
+                        <!-- <input type="number" class="form-control" formControlName="apartmentDelivery" [value]=""> -->
+                        {{mtplPolicyData["deliveryInformation"].appt}}
                         </div>
-                        <span *ngIf="summaryForm.controls.apartmentDelivery.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.apartmentDelivery.errors" style="color: red;">Required</span> -->
                         </div>
                     </div>
                 </div>

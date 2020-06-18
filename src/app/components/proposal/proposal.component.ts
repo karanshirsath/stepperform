@@ -16,6 +16,7 @@ export class ProposalComponent implements OnInit {
   fourth:string='abcd';
   sdate:string='04-03-54';
   mtplCalculatorData;
+  mtplPolicyData;
 
   constructor(private fb: FormBuilder,private _dataService:CommonDataService) { }
 
@@ -23,10 +24,12 @@ export class ProposalComponent implements OnInit {
     this._dataService.formData.subscribe(data=>{
       this.mtplCalculatorData=data;
       console.log(this.mtplCalculatorData);
-     
-      
-      
-    })
+     })
+     this._dataService.policyData.subscribe(data=>{
+       console.log(data);
+       
+       this.mtplPolicyData=data;
+     })
     
     this.summaryForm=this.fb.group({
       firstInstalment:[this.first,Validators.required],
