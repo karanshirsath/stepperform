@@ -4,8 +4,11 @@
     <div class="col-auto mr-auto pt-2">
         Start Date
     </div>
-    <div class="col-md-3 col-auto col-7">
+    <div class="col-md-4 col-auto col-7">
         <input class="form-control" type="date" formControlName="policyDate" (change)="change()">
+        <div class="error" *ngIf="formControls.policyDate.touched && formControls.policyDate.errors">
+            <div *ngIf="formControls.policyDate.errors.required">Start Date is required</div>
+        </div>
     </div>  
 </div>
 <hr>
@@ -13,7 +16,7 @@
     <div class="col-auto mr-auto pt-2">
         Policy length
     </div>
-    <div class="col-md-3 col-auto col-7">
+    <div class="col-md-4 col-auto col-7">
         <select formControlName="policyLength" class="form-control" (change)="change()">
             <option selected disabled value="">--SELECT--</option>
             <option value="1">1 Month</option>
@@ -21,6 +24,9 @@
             <option value="6">6 Months</option>
             <option value="12">12 Months</option>
         </select>
+        <div class="error" *ngIf="formControls.policyLength.touched && formControls.policyLength.errors">
+            <div *ngIf="formControls.policyLength.errors.required">Policy Length is required</div>
+        </div>
     </div>
 </div>
 <hr>
@@ -29,9 +35,15 @@
     <input type="checkbox" formControlName="check1" (change)="change()"> I have read and accepted <span class="text-primary">"Personal Data Protection Information"</span>
 
 </div>
+<div class="error" *ngIf="formControls.check1.touched && formControls.check1.errors">
+    <div *ngIf="formControls.check1.invalid">Please read and accept </div>
+</div>
 <div class="border shadow p-3 mb-3 bg-white rounded">
     <input type="checkbox" formControlName="check2" (change)="change()"> I have read the <span class="text-primary">"Motor Insurance Third Party Liability Insurance Document"</span>
 
+</div>
+<div class="error" *ngIf="formControls.check2.touched && formControls.check2.errors">
+    <div *ngIf="formControls.check2.invalid">Please read and accept </div>
 </div>
 <br>
 </form>

@@ -36,5 +36,9 @@ export class InstallmentComponent implements OnInit {
       this.OnToggle.emit(false)
     }
   }
+
+  get formControl(){
+    return this.installmentForm.controls
+  }
   
 }
