@@ -35,7 +35,8 @@ fullname: {firstname: "", lastname: "", surname: ""},
 fullnameeng: {firstnameeng: "", lastnameeng: "", surnameeng: ""},
 lnch: ""},
 
-vehicleOwnerInformation: ""
+vehicleOwnerInformation: {fullname: {firstname: "", lastname: "", surname: ""},
+lnch: ""}
 }
   constructor() { }
   formData=new BehaviorSubject<any>(this.defaultData);

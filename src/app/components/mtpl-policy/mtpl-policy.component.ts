@@ -21,7 +21,6 @@ export class MTPLPolicyComponent implements OnInit {
   personalInformation
   contactInformation
   vehicleOwnerInformation
-  vehicleOwner
   deliveryInformation
 formData
 
@@ -33,8 +32,10 @@ formData
   }
 
   vehicleOwnerData=(data)=>{
-    this.vehicleOwner=data
-    console.log(this.vehicleOwner);
+    
+    
+    this.vehicleOwnerInformation=data
+    console.log(this.vehicleOwnerInformation);
     
   }
   
@@ -43,7 +44,7 @@ formData
     this.formData={
       personalInformation:this.personalInformation,
       contactInformation:"",
-      vehicleOwnerInformation:"",
+      vehicleOwnerInformation:this.vehicleOwnerInformation,
       deliveryInformation:this.deliveryInformation
     
       }
