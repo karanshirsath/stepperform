@@ -15,20 +15,20 @@
 
 .thirdparty{
     background-color: rgb(8, 56, 95); 
-    height:100px;
+    height:130px;
     width:2000px;
 }
 .policy {
     color:white;
     margin-left:-1px ;
-    margin-top: -5px;
+    margin-top: -50px;
     font-size: 20px;
  
 }
 .bgn  {
-margin-right: -180px;
-margin-top: -5px;
-text-align: right;
+
+margin-top: -1px;
+
 color:white;
 font-size: 20px;
 
@@ -112,3 +112,4 @@ font-size: 20px;
     overflow-x: hidden;
     overflow-y: auto;
   }
+ 
