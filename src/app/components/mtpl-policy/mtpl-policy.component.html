@@ -4,26 +4,26 @@
     <app-personal (OnRegister)="personalData($event)" (OnToggle)="toggle1=$event"></app-personal>
   </mat-step>  
   
-  <mat-step completed={{toggle1}}>
+  <mat-step completed={{toggle2}}>
     <ng-template matStepLabel>Contact details</ng-template>
   </mat-step> 
   
-  <mat-step completed={{toggle2}}>
+  <mat-step completed={{toggle3}}>
     <ng-template matStepLabel>Vehicle Owner</ng-template>
-    <app-vehicle-owner></app-vehicle-owner>
+    <app-vehicle-owner (OnRegister)="vehicleOwnerData($event)" (OnToggle)="toggle3=$event"></app-vehicle-owner>
   </mat-step>  
 
-  <mat-step completed={{toggle3}}>
+  <mat-step completed={{toggle4}}>
     <ng-template matStepLabel>Delivery</ng-template>
     <app-delivery></app-delivery>
   </mat-step>  
 
-  <mat-step completed={{toggle4}}>
+  <mat-step completed={{toggle5}}>
     <ng-template matStepLabel>Summary</ng-template>
     <app-proposal></app-proposal>
   </mat-step>  
 
-  <mat-step completed={{toggle5}}>
+  <mat-step completed={{toggle6}}>
     <ng-template matStepLabel>Payment</ng-template>
     <app-payment></app-payment>
   </mat-step> 
