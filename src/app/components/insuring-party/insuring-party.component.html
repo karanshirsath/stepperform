@@ -7,6 +7,10 @@
         </div>
         <div class="col-4">
             <input class="form-control" type="text" formControlName="egn" (change)="change()">
+        </div>
+        <div class="error" *ngIf="formsControl.egn.touched && formsControl.egn.errors">
+            <div *ngIf="formsControl.egn.errors.required">EGN/EIK/LNCH is required </div>
+            
         </div>  
     </div>
     <hr>
@@ -22,6 +26,10 @@
                 
             </select>    
         </div>
+        <div class="error" *ngIf="formsControl.address.touched && formsControl.address.errors">
+            <div *ngIf="formsControl.address.errors.required">Place of Permanent Residence is required </div>
+          
+        </div>
     </div>
 
     <hr>
@@ -31,6 +39,10 @@
         </div>
         <div class="col-4">
             <input class="form-control" type="email"  formControlName="email" (change)="change()"> 
+        </div>
+        <div class="error" *ngIf="formsControl.email.touched && formsControl.email.errors">
+            <div *ngIf="formsControl.email.errors.required">Email is required </div>
+            <div *ngIf="formsControl.email.errors.pattern">Please enter a valid email </div>
         </div>
     </div>
     <hr>

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab.component.css']
 })
 export class TabComponent implements OnInit {
-
+  activeTab = 0;
   constructor() { }
 
   ngOnInit(): void {

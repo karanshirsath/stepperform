@@ -17,7 +17,8 @@ export class InsuringPartyComponent implements OnInit {
     this.insuringParty = this.fb.group({
       egn: ['', Validators.required],
       address: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]]
+      email: ['', Validators.compose([Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])]
+
     });
   }
   // next() {
@@ -36,5 +37,8 @@ export class InsuringPartyComponent implements OnInit {
     }else{
       this.OnToggle.emit(false)
     }
+  }
+  get formsControl(){
+    return this.insuringParty.controls
   }
 }

@@ -31,21 +31,37 @@
                                 </div>
                                 <div class="col-sm-6 col-sm-offset-2">
                                     <input type="text" formControlName="fullName" class="form-control form-1_row-3">
+                                    <div class="error" *ngIf="formControls.fullName.touched && formControls.fullName.errors">
+                                        <div *ngIf="formControls.fullName.errors.required">Full Name is required</div>
+                                        <div *ngIf="formControls.fullName.errors.minlength">Full Name should be atleast 3 characters</div>
+                                    </div>
                                 </div>
+                               
                             </div>
                             <div class="form-1_row-4"><hr></div>
                             <div class="row form-group form-1_row-1">
                                 <div class="col-sm-4 form-1_row-2">
-                                    <label>City</label>
+                                    <label>City & Pincode</label>
                                 </div>
                                 <div class="col-sm-4 col-sm-offset-2">
                                     <select name="city" id="city"  formControlName="city" class="form-control form-1_row-3">
-                                        <option *ngFor="let city of cities">{{city}}</option>
+                                        <option value="{{city}}" *ngFor="let city of cities">{{city}}</option>
                                     </select>
+                                    <div class="error" *ngIf="formControls.city.touched && formControls.city.errors">
+                                        <div *ngIf="formControls.city.errors.required">City is required</div>
+                                       
+                                    </div>
                                 </div>
+                                
                                 <div class="col-sm-2">
-                                    <input formControlName="pincode" type="text" class="form-control form-1_row-3">
+                                    <input formControlName="pincode" type="text"  class="form-control form-1_row-3">
+                                    <div class="error" *ngIf="formControls.pincode.touched && formControls.pincode.errors">
+                                        <div *ngIf="formControls.pincode.errors.required">Pincode is required</div>
+                                        <div *ngIf="formControls.pincode.errors.maxlength">Only  6 characters are allowed</div>
+                                       
+                                    </div>
                                 </div>
+                                
                             </div>
                             <div class="form-1_row-4"><hr></div>
                             <div class="row form-group form-1_row-1">
@@ -54,10 +70,21 @@
                                 </div>
                                 <div class="col-sm-4 col-sm-offset-2">
                                     <input type="text" formControlName="street" class="form-control form-1_row-3">
+                                    <div class="error" *ngIf="formControls.street.touched && formControls.street.errors">
+                                        <div *ngIf="formControls.street.errors.required">Street is required</div>
+                                        <div *ngIf="formControls.street.errors.minlength">Street should be atleast 3 characters</div>
+                                       
+                                    </div>
                                 </div>
+                                
                                 <div class="col-sm-2">
                                     <input type="text" formControlName="number" class="form-control form-1_row-3">
+                                    <div class="error" *ngIf="formControls.number.touched && formControls.number.errors">
+                                        <div *ngIf="formControls.number.errors.required">Number is required</div>
+                                                                          
+                                    </div>
                                 </div>
+                                
                             </div>
                             <div class="form-1_row-4"><hr></div>
                             <div class="row form-group form-1_row-5">
@@ -66,13 +93,25 @@
                                 </div>
                                 <div class="col-sm-2 col-sm-offset-1">
                                     <input type="text" formControlName="block" class="form-control form-1_row-3">
+                                    <div class="error" *ngIf="formControls.block.touched && formControls.block.errors">
+                                        <div *ngIf="formControls.block.errors.required">Block is required</div>
+                                    </div>
                                 </div>
+                                
                                 <div class="col-sm-2">
                                     <input type="text" formControlName="entrance" class="form-control form-1_row-3">
+                                    <div class="error" *ngIf="formControls.entrance.touched && formControls.entrance.errors">
+                                        <div *ngIf="formControls.entrance.errors.required">Entrance is required</div>
+                                    </div>
                                 </div>
+                                
                                 <div class="col-sm-2">
                                     <input type="text" formControlName="appt" class="form-control form-1_row-3">
+                                    <div class="error" *ngIf="formControls.appt.touched && formControls.appt.errors">
+                                        <div *ngIf="formControls.appt.errors.required">Appartment is required</div>
+                                    </div>
                                 </div>
+                                
                             </div>
                         </div><br>
                         <!-- Form -->
@@ -85,7 +124,12 @@
                             </div>
                             <div class="col-sm-5 col-sm-offset-3">
                                 <input type="number" formControlName="contact" class="form-control form-1_row-3">
+                                <div class="error" *ngIf="formControls.contact.touched && formControls.contact.errors">
+                                    <div *ngIf="formControls.contact.errors.required">Contact Number is required</div>
+                                    <div *ngIf="formControls.contact.errors.max">Maximum 10 charaters  are allowed</div>
+                                </div>
                             </div>
+                            
                         </div>
                         <hr>
                         <div class="details_row-2">
@@ -103,6 +147,9 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <input type="radio" formControlName="business" value="Business" class="radio-1">&nbsp;Business
+                                        </div>
+                                        <div class="error" *ngIf="formControls.business.touched && formControls.business.errors">
+                                            <div *ngIf="formControls.business.errors.required">Type of buisness is required</div>
                                         </div>
                                     </div>                            
                                 </div>
@@ -132,7 +179,7 @@
                     </div><br><br>
                     <!-- Delivery Estimate -->
                     <!-- Button -->
-                    <button type="submit" class="btn btn-primary rounded-pill">Next</button>
+                    <button type="submit" class="btn btn-primary rounded-pill" mat-raised-button  matStepperNext [disabled]="detailsForm.invalid">Next</button>
                     <!-- Button -->
                 </form>               
             </div>

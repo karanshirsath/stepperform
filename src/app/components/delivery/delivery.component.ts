@@ -28,15 +28,15 @@ export class DeliveryComponent implements OnInit {
 
   ngOnInit() {
     this.detailsForm = this.formBuilder.group({
-      fullName: ['', Validators.required],
-      city: ['', Validators.required],
-      pincode: ['', Validators.required],
-      street: ['',Validators.required],
+      fullName: ['', Validators.compose([Validators.required,Validators.minLength(3)])],
+      city: ['New Delhi', Validators.required],
+      pincode: ['', Validators.compose([Validators.required,Validators.maxLength(6)])],
+      street: ['',Validators.compose([Validators.required,Validators.minLength(3)])],
       number: ['', Validators.required],
       block: ['', Validators.required],
       entrance: ['', Validators.required],
       appt: ['', Validators.required],
-      contact: ['', Validators.required],
+      contact: ['', Validators.compose([Validators.required,Validators.max(9999999999)])],
       business: ['', Validators.required],
       notes: ['']
     });
@@ -45,5 +45,7 @@ export class DeliveryComponent implements OnInit {
   register(){
     console.log(this.detailsForm.value);
   }
-
+  get formControls(){
+    return this.detailsForm.controls
+  }
 }

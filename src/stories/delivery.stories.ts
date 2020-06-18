@@ -1,12 +1,10 @@
 //login component story
 import { BrowserModule } from "@angular/platform-browser";
-import { LoginComponent } from "../app/components/login/login.component";
+import {DeliveryComponent} from '../app/components/delivery/delivery.component';
 import { HttpClientModule } from "@angular/common/http";
 import { moduleMetadata } from "@storybook/angular";
 import { AppRoutingModule } from "../app/app-routing.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-
-
 import { APP_BASE_HREF } from "@angular/common";
 import { action } from '@storybook/addon-actions';
 import { linkTo } from "@storybook/addon-links";
@@ -16,7 +14,7 @@ import { linkTo } from "@storybook/addon-links";
 import * as markdown from "./notes/log-in.readme.md";
 
 export default {
-  title: 'Login Component',
+  title: 'Delivery Component',
   decorators: [
     moduleMetadata({
       imports: [
@@ -27,19 +25,19 @@ export default {
                 BrowserModule
               ],
               declarations: [                
-                LoginComponent,                
+                DeliveryComponent,                
               ],
               providers: [ { provide: APP_BASE_HREF, useValue: "/" }]
     })
   ],
   parameters: {
-    component: LoginComponent,
+    component: DeliveryComponent,
   },
   providers: [ { provide: APP_BASE_HREF, useValue: "/" } ]
 };
 
 export const Default = () => ({
-  component: LoginComponent,
+  component: DeliveryComponent,
   props: {
     
   }
