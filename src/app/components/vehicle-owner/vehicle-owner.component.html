@@ -3,30 +3,29 @@
 <div class="container"> 
     <div class="row">
     <label>Are u the owner of the vehicle</label>
-   
       <label class="radio-inline">
-        <input  type="radio"  name="gender" id="Radios1" value="Yes" (click)="setradio('Yes')" [checked]="true" ngModel>
+        <input type="radio" name="gender" id="Radios1" value="Yes" (click)="setradio('Yes')" (change)="toggle(true)">
         Yes
       </label>
-
+      
       <label class="radio-inline">
-        <input  type="radio" name="gender" id="Radios2" value="No" (click)="setradio('No')" ngModel>
+        <input type="radio" name="gender" id="Radios2" value="No" (click)="setradio('No')" (change)="toggle(false)">
         No
       </label>
     </div>
 </div> 
 <div *ngIf="isSelected('Yes')">  
-    <button type="button" class="btn btn-primary">Next</button>
+    <button type="button" class="btn btn-primary" [disabled]="!button" matStepperNext>Next</button>
 </div>
 
 <div *ngIf="isSelected('No')">
-    <form [formGroup]="Details" (ngSubmit)="success()">
+    <form [formGroup]="Details" (ngSubmit)="submit()">
     <h2>Vehicle Owner Details</h2>
 
     <div class="form-group row">
         <label for="lnch" class="col-sm-2 col-form-label">Enter your Number</label>
         <div class="col-sm-4">
-        <input type="text" class="form-control" id="Number" placeholder="Enter your Number" formControlName="Number"  name="Number">
+        <input type="text" class="form-control" id="Number" placeholder="Enter your Number" formControlName="Number"  name="Number" (change)="change()">
         <div *ngIf="Details.controls.Number.hasError('required') &&(Details.controls.Number.dirty || Details.controls.Number.touched)" class="error">Please enter the number</div>
         </div>
     </div>
@@ -36,15 +35,15 @@
       <div class="form-group row">
         
         <div class="col-sm-2">
-        <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" formControlName="firstname"  name="firstname">
+        <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" formControlName="firstname"  name="firstname" (change)="change()">
         <div *ngIf="Details.get('fullname').get('firstname').hasError('required') &&(Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)" class="error">Please enter your first name</div>
         </div>
         <div class="col-sm-2">
-        <input type="text" class="form-control" id="lastname" placeholder="Enter lastname" formControlName="lastname"  name="lastname">
+        <input type="text" class="form-control" id="lastname" placeholder="Enter lastname" formControlName="lastname"  name="lastname" (change)="change()">
         <div *ngIf="Details.get('fullname').get('lastname').hasError('required') &&(Details.get('fullname').get('lastname').dirty || Details.get('fullname').get('lastname').touched)" class="error">Please enter your lastname</div>
         </div>
         <div class="col-sm-2">
-        <input type="text" class="form-control" id="surname" placeholder="Enter surname" formControlName="surname"  name="suname">
+        <input type="text" class="form-control" id="surname" placeholder="Enter surname" formControlName="surname"  name="suname" (change)="change()">
         </div>
       </div>
      </div>
@@ -53,15 +52,15 @@
         <label>Full Name in English</label><br>
         <div class="form-group row">
             <div class="col-sm-2">
-          <input type="text" class="form-control" id="firstnameeng" placeholder="Enter firstname" formControlName="firstnameeng"  name="firstnameeng">
+          <input type="text" class="form-control" id="firstnameeng" placeholder="Enter firstname" formControlName="firstnameeng"  name="firstnameeng" (change)="change()">
           <div *ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('required') &&(Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)" class="error">Please enter your first name</div>
           </div>
           <div class="col-sm-2">
-          <input type="text" class="form-control" id="lastnameeng" placeholder="Enter lastname" formControlName="lastnameeng"  name="lastnameeng">
+          <input type="text" class="form-control" id="lastnameeng" placeholder="Enter lastname" formControlName="lastnameeng"  name="lastnameeng" (change)="change()">
           <div *ngIf="Details.get('fullnameeng').get('lastnameeng').hasError('required') &&(Details.get('fullnameeng').get('lastnameeng').dirty || Details.get('fullnameeng').get('lastnameeng').touched)" class="error">Please enter your lastname</div>
           </div>
           <div class="col-sm-2">
-          <input type="text" class="form-control" id="surnameeng" placeholder="Enter surname" formControlName="surnameeng"  name="sunameeng">
+          <input type="text" class="form-control" id="surnameeng" placeholder="Enter surname" formControlName="surnameeng"  name="sunameeng" (change)="change()">
         </div>
         </div>
        </div>
@@ -75,7 +74,7 @@
     <div class="form-group row">
         <label for="citizen" class="col-sm-2 col-form-label">Citizenship</label>
         <div class="col-sm-4">
-        <select class="form-control" id="citizen" formControlName="citizen" name="citizen">
+        <select class="form-control" id="citizen" formControlName="citizen" name="citizen" (change)="change()">
           <option *ngFor="let c of citizens" [value]="c">{{c}}</option>
         </select>
         <div *ngIf="Details.controls.citizen.hasError('required') &&(Details.controls.citizen.dirty || Details.controls.citizen.touched)" class="error">Please select your Citizenship</div>
@@ -85,7 +84,7 @@
     <div class="form-group row">
         <label for="birth" class="col-sm-2 col-form-label">Birth Date</label>
         <div class="col-sm-4">
-        <input type="date" class="form-control"  id="birth" placeholder="Enter Birth date" formControlName="birth"  name="birth">
+        <input type="date" class="form-control"  id="birth" placeholder="Enter Birth date" formControlName="birth"  name="birth" (change)="change()">
         <div *ngIf="Details.controls.birth.hasError('required') &&(Details.controls.birth.dirty || Details.controls.birth.touched)" class="error">Please select your birth date </div>
         </div>
     </div>
@@ -103,7 +102,7 @@
         </div>
        
         <div class="col-sm-2">
-            <select class="form-control" id="sel1" formControlName="city"  name="city">
+            <select class="form-control" id="sel1" formControlName="city"  name="city" (change)="change()">
                 <option value="Hyd">Hyderabad</option>
                 <option value="Mum">Mumbai</option>
                 <option value="Pune">Pune</option>
@@ -117,7 +116,7 @@
         </div>
         <div class="col-sm-2">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="1000">
+                <input type="text" class="form-control" placeholder="1000" (change)="change()">
             </div>
        </div>
     </div>
@@ -129,10 +128,10 @@
         </div>
         
         <div class="col-sm-2">
-            <input type="text" class="form-control"  formControlName="street">
+            <input type="text" class="form-control"  formControlName="street" (change)="change()">
         </div>
         <div class="col-sm-2">
-            <input type="text" class="form-control" formControlName="No">
+            <input type="text" class="form-control" formControlName="No" (change)="change()">
         </div>
 
     </div>
@@ -142,18 +141,18 @@
         </div>
         <div class="col-xs-1">
             
-            <input type="text" class="form-control" style="width:120px">
+            <input type="text" class="form-control" style="width:120px" (change)="change()">
 
         </div>
         <div class="col-xs-1">
-            <input type="text" class="form-control" style="width:120px">
+            <input type="text" class="form-control" style="width:120px" (change)="change()">
         </div>
         <div class="col-xs-1">
-            <input type="text" class="form-control" style="width:120px">
+            <input type="text" class="form-control" style="width:120px" (change)="change()">
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-lg" [disabled]="!Details.valid">Next</button>
+    <button type="submit" class="btn btn-primary btn-lg" [disabled]="!Details.valid" matStepperNext>Next</button>
     </form>
    
 </div>

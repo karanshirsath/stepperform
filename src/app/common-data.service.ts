@@ -13,7 +13,32 @@ policyDetailsData: {policyDate: "", policyLength: "", check1: false, check2: fal
 vehicleData: {registrationNumber: "", certificateNumber: "", purpose: "", yesNo: ""},
 
 }
+defaultData2={
+  contactInformation: "",
+deliveryInformation:{
+appt: "",
+block: "",
+business: "",
+city: "",
+contact: null,
+entrance: "",
+fullName: "",
+notes: "",
+number: "",
+pincode: "",
+street: "",
+},
+personalInformation:{
+birth: "",
+citizen: "",
+fullname: {firstname: "", lastname: "", surname: ""},
+fullnameeng: {firstnameeng: "", lastnameeng: "", surnameeng: ""},
+lnch: ""},
+
+vehicleOwnerInformation: ""
+}
   constructor() { }
   formData=new BehaviorSubject<any>(this.defaultData);
+  policyData=new BehaviorSubject<any>(this.defaultData2);
 
 }
