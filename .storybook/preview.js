@@ -72,6 +72,7 @@ addDecorator(
             MatStepperModule,
             ReactiveFormsModule,
             FormsModule,
+            MatStepperModule,
             MatFormFieldModule,
             MatInputModule,
             MatCardModule,
