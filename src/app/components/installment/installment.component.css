@@ -1,14 +1,17 @@
-.container{
+/*.container{
     margin: 0px;
     padding-top: 50px;
     width: 2000px;
-}
+}*/
 
-
+.overflowAuto {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 .card-body{
     color:rgb(4, 58, 102);
     padding-top: 50px;
-    width: 2000px;
+    /* width: 2000px; */
     
 }
 .bgn{
@@ -32,37 +35,37 @@
 
 .border{
       padding: 0%;
-      width: 800px;
+      /*width: 800px;*/
       height: auto;
 }
 .viewins{
     display:none;
 }
 .firstcard{
-    width:800px;
+    /*width:800px;*/
      height: auto;
-    min-width:100px; 
+    /*min-width:100px;*/ 
  }
  .secondcard{
        
-    width:800px;
+    /*width:800px;*/
     height: auto;
    
     
  }
  .thirdcard{
            
-    width:800px;
+    /*width:800px;*/
     height:auto;
    
 }
 .content{
     height:auto;
-    width:1000px;
+    /*width:1000px;*/
 }
 
 .hrline{
-    width:800px;
+    /*width:800px;*/
     margin-left: 30px;
 }
 .wid{
@@ -70,10 +73,10 @@
 }
 
 @media screen and (max-width: 800px) {
-    .firstcard,.secondcard,.thirdcard,.content,.hrline{
+    /*.firstcard,.secondcard,.thirdcard,.content,.hrline{
         width: 350px;
         
-    }
+    }*/
     .num{
         font-size: 20px;
         padding-left: 10%;
@@ -94,9 +97,9 @@
     }
     h1{
         font-size: 150%;
-    }
+    }s
     .wid{
-        width:80%;
+        /*width:80%;*/
         padding-top: 2%;
     }
   }
