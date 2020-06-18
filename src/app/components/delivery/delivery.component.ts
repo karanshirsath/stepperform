@@ -37,7 +37,7 @@ export class DeliveryComponent implements OnInit {
       appt: ['', Validators.required],
       contact: ['', Validators.required],
       business: ['', Validators.required],
-      notes: ['', Validators.required]
+      notes: ['']
     });
   };
 
