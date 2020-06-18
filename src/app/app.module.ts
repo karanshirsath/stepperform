@@ -38,7 +38,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { InstallmentComponent } from './components/installment/installment.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
 import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
