@@ -18,11 +18,15 @@ export class MTPLPolicyComponent implements OnInit {
   toggle5=true
   toggle6=true
   personalInformation
+  deliveryInformation
 
   personalData=(data)=>{
     this.personalInformation=data
     console.log(data);
     
+  }
+  deliveryData=(data)=>{
+    this.deliveryInformation=data
   }
 
 }

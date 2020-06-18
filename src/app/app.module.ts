@@ -33,6 +33,7 @@ import { PersonalComponent } from './components/personal/personal.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { InstallmentComponent } from './components/installment/installment.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
+import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ProposalComponent } from './components/proposal/proposal.component';
     PersonalComponent,
     PaymentComponent,
     InstallmentComponent,
-    ProposalComponent
+    ProposalComponent,
+    VehicleOwnerComponent
   ],
   imports: [
     BrowserModule,
