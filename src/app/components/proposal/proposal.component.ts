@@ -36,6 +36,8 @@ export class ProposalComponent implements OnInit {
          var obj={    fullname: {firstname: this.mtplPolicyData["personalInformation"].fullname.firstname,
           lastname: this.mtplPolicyData["personalInformation"].fullname.lastname, 
           surname: this.mtplPolicyData["personalInformation"].fullname.surname},
+          city: this.mtplPolicyData["contactInformation"].city,
+          street:this.mtplPolicyData["contactInformation"].street,
      
        lnch: this.mtplPolicyData["personalInformation"].lnch
      

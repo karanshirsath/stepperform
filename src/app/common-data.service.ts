@@ -13,7 +13,16 @@ policyDetailsData: {policyDate: "", policyLength: "", check1: false, check2: fal
 vehicleData: {registrationNumber: "", certificateNumber: "", purpose: "", yesNo: ""},
 }
 defaultData2={
-  contactInformation: "",
+  contactInformation: {
+    No: "",
+appartment: "",
+block: "",
+city: "",
+entrance: "",
+phone: "",
+pincode: "",
+street: "",
+  },
 deliveryInformation:{
 appt: "",
 block: "",
