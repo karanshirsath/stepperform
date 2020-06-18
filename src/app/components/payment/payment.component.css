@@ -45,3 +45,8 @@ input[type="checkbox" i]{
 .text-color{
     color: #003564
 }
+@media all and (max-width: 767px) {
+    .text-small{
+        font-size:11px;
+    }
+}

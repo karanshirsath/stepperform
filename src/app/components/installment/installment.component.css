@@ -11,7 +11,7 @@
 .card-body{
     color:rgb(4, 58, 102);
     padding-top: 50px;
-    /* width: 2000px; */
+    /* width: 2000px;*/ 
     
 }
 .bgn{
@@ -19,7 +19,7 @@
     text-align: right;
     font-size: 20px;
 }
-.row{
+.cardrow{
     padding-left: 20px;
 }
 
@@ -44,7 +44,7 @@
 .firstcard{
     /*width:800px;*/
      height: auto;
-    /*min-width:100px;*/ 
+    /*min-width:100px;*/
  }
  .secondcard{
        
@@ -92,14 +92,22 @@
     .viewins{
         display:block;
     }
-    .viewhide{
+    .viewhide, .cardhr{
         display:none;
     }
     h1{
         font-size: 150%;
-    }s
+    }
     .wid{
         /*width:80%;*/
         padding-top: 2%;
     }
+
+    .imgsz{
+        width: auto;
+    }
   }
+
+
+  
+
