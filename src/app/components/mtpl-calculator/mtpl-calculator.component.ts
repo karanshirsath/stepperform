@@ -9,6 +9,7 @@ import { CommonDataService } from 'src/app/common-data.service';
 })
 export class MTPLCalculatorComponent implements OnInit {
   @Output() selectionChange: EventEmitter<StepperSelectionEvent>
+  @Output() NextTabSwitch = new EventEmitter()
   constructor(private _commonData:CommonDataService) { }
 
   ngOnInit(): void {
@@ -65,6 +66,10 @@ export class MTPLCalculatorComponent implements OnInit {
   //    }) 
   }
 
+
+  nextTab=(data)=>{
+    this.NextTabSwitch.emit(data)
+  }
   change=(data)=>{
     console.log(data);
   }

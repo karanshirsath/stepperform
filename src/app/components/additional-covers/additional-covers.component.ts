@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AdditionalCoversComponent implements OnInit {
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
+  @Output() NextTab = new EventEmitter()
   imageUrl="./assets/carlogo.jpeg ";;
   tickimage="./assets/tick.jpg";
   additionalcoverForm: FormGroup;
@@ -33,6 +34,7 @@ export class AdditionalCoversComponent implements OnInit {
   next=()=>{
     console.log(this.additionalcoverForm.value, "additional covers");
     this.OnRegister.emit(this.additionalcoverForm.value);
+    this.NextTab.emit(1)
   }
 
 }

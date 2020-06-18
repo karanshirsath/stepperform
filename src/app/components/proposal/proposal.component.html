@@ -230,27 +230,31 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                            <label class="font_color sub_label_prop">EGN/ELK/LNCH Number</label>
-                            <input type="text" class="form-control" formControlName="egnnumber" [value]="">
+                            <label class="font_color sub_label_prop">EGN/ELK/LNCH Number</label><br>
+                            <!-- <input type="text" class="form-control" formControlName="egnnumber" [value]=""> -->
+                            {{mtplPolicyData["vehicleOwnerInformation"].lnch}}
                             </div>
-                            <span *ngIf="summaryForm.controls.egnnumber.errors" style="color: red;">Required</span>
+                            <!-- <span *ngIf="summaryForm.controls.egnnumber.errors" style="color: red;">Required</span> -->
                             <div class="form-group">
-                            <label class="font_color sub_label_prop">Full Name</label>
-                            <input type="text" class="form-control" formControlName="fullnamevehicleowner" [value]="">
+                            <label class="font_color sub_label_prop">Full Name</label><br>
+                            <!-- <input type="text" class="form-control" formControlName="fullnamevehicleowner" [value]=""> -->
+                            {{mtplPolicyData["vehicleOwnerInformation"].fullname.firstname}}
                             </div>
-                            <span *ngIf="summaryForm.controls.fullnamevehicleowner.errors" style="color: red;">Required</span>
+                            <!-- <span *ngIf="summaryForm.controls.fullnamevehicleowner.errors" style="color: red;">Required</span> -->
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                            <label class="font_color sub_label_prop">city & zipcode</label>
-                            <input type="text" class="form-control" formControlName="cityZipcodevehicleOwner" [value]="">
+                            <label class="font_color sub_label_prop">city & zipcode</label><br>
+                            <!-- <input type="text" class="form-control" formControlName="cityZipcodevehicleOwner" [value]=""> -->
+                            <!-- {{mtplCalculatorData["vehicleOwnerInformation"].city}}       -->
                             </div>
-                            <span *ngIf="summaryForm.controls.cityZipcodevehicleOwner.errors" style="color: red;">Required</span>
+                            <!-- <span *ngIf="summaryForm.controls.cityZipcodevehicleOwner.errors" style="color: red;">Required</span> -->
                             <div class="form-group">
-                            <label class="font_color sub_label_prop">street & Number</label>
-                            <input type="text" class="form-control" formControlName="streetNumbervehicleowner" [value]="">
+                            <label class="font_color sub_label_prop">street & Number</label><br>
+                            <!-- <input type="text" class="form-control" formControlName="streetNumbervehicleowner" [value]=""> -->
+                            <!-- {{mtplCalculatorData["vehicleOwnerInformation"].street}}      {{mtplCalculatorData["vehicleOwnerInformation"].No}} -->
                             </div>
-                            <span *ngIf="summaryForm.controls.streetNumbervehicleowner.errors" style="color: red;">Required</span>
+                            <!-- <span *ngIf="summaryForm.controls.streetNumbervehicleowner.errors" style="color: red;">Required</span> -->
                         </div>
                     </div>
                 </div>

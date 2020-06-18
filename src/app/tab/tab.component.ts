@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabComponent implements OnInit {
   activeTab = 0;
+  policyTabToggle=true
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeTab=(data)=>{
+    this.policyTabToggle=false
+    this.activeTab=data
   }
 
 }
