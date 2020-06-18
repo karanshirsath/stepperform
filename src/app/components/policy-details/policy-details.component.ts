@@ -34,4 +34,7 @@ export class PolicyDetailsComponent implements OnInit {
       this.OnToggle.emit(false)
     }
   }
+  get formControls(){
+    return this.registerForm.controls
+  }
 }
