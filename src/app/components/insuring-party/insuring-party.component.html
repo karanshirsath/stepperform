@@ -1,54 +1,50 @@
 <div class="col-12">
-<h1 class="display-1 ">Insuring Party</h1>
-<form [formGroup]="insuringParty">
-    <div class="form-row">
-        <div class="col-8">
-            Enter your EGN/EIK/LNCH
-        </div>
-        <div class="col-4">
-            <input class="form-control" type="text" formControlName="egn" (change)="change()">
-            <div class="error" *ngIf="formsControl.egn.touched && formsControl.egn.errors">
-                <div *ngIf="formsControl.egn.errors.required">EGN/EIK/LNCH is required </div>
-                
+    <h1 class="display-1 ">Insuring Party</h1>
+    <form [formGroup]="insuringParty">
+        <div class="form-row">
+            <div class="col-8">
+                Enter your EGN/EIK/LNCH
+            </div>
+            <div class="col-4">
+                <input class="form-control" type="text" formControlName="egn" (change)="change()">
+                <div class="error" *ngIf="formsControl.egn.touched && formsControl.egn.errors">
+                    <div *ngIf="formsControl.egn.errors.required">EGN/EIK/LNCH is required </div>
+                </div>
             </div>
         </div>
-         
-    </div>
-    <hr>
-    
-    <div class="form-row">
-        <div class="col-8">
-            Place of Permanent Residence?
-        </div>
-        <div class="col-4">
-            <select formControlName="address" class="form-control" (change)="change()">
-                <option value="delhi">Delhi</option>
-                <option value="mumbai">Mumbai</option>
-                
-            </select>  
-            <div class="error" *ngIf="formsControl.address.touched && formsControl.address.errors">
-                <div *ngIf="formsControl.address.errors.required">Place of Permanent Residence is required </div>
-              
-            </div>  
-        </div>
-        
-    </div>
+        <hr>
 
-    <hr>
-    <div class="form-row">
-        <div class="col-8">
-            Email
-        </div>
-        <div class="col-4">
-            <input class="form-control" type="email"  formControlName="email" (change)="change()"> 
-            <div class="error" *ngIf="formsControl.email.touched && formsControl.email.errors">
-                <div *ngIf="formsControl.email.errors.required">Email is required </div>
-                <div *ngIf="formsControl.email.errors.pattern">Please enter a valid email </div>
+        <div class="form-row">
+            <div class="col-8">
+                Place of Permanent Residence?
+            </div>
+            <div class="col-4">
+                <select formControlName="address" class="form-control" (change)="change()">
+                    <option selected disabled value="">--SELECT--</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                </select>
+                <div class="error" *ngIf="formsControl.address.touched && formsControl.address.errors">
+                    <div *ngIf="formsControl.address.errors.required">Place of Permanent Residence is required </div>
+                </div>
             </div>
         </div>
-       
-    </div>
-    <hr>
-    <button type="button" class="btn btn-primary badge-pill pl-4 pr-4 pt-2 pb-2" style="margin-right: 0;" (click)="submit()" matStepperNext [disabled]="insuringParty.invalid">Next</button>
-</form>
+
+        <hr>
+        <div class="form-row">
+            <div class="col-8">
+                Email
+            </div>
+            <div class="col-4">
+                <input class="form-control" type="email" formControlName="email" (change)="change()">
+                <div class="error" *ngIf="formsControl.email.touched && formsControl.email.errors">
+                    <div *ngIf="formsControl.email.errors.required">Email is required </div>
+                    <div *ngIf="formsControl.email.errors.pattern">Please enter a valid email </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <button type="button" class="btn btn-primary badge-pill pl-4 pr-4 pt-2 pb-2" style="margin-right: 0;"
+            (click)="submit()" matStepperNext [disabled]="insuringParty.invalid">Next</button>
+    </form>
 </div>
