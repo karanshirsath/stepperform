@@ -1,6 +1,6 @@
 <div class="container col-12">
   <h1>Personal Details</h1>
-  <form [formGroup]="personalForm" (ngSubmit)="success()">
+  <form [formGroup]="personalForm" >
     <div class="form-group row ">
       <label for="lnch" class="col-sm-2 col-form-label">LNCH</label>
       <div class="col-sm-4">
@@ -122,6 +122,6 @@
     </div>
     <hr>
     <button type="button" class="btn btn-primary btn-lg" mat-raised-button matStepperNext
-      [disabled]="!personalForm.valid">Next</button>
+      [disabled]="!personalForm.valid" (click)="success()">Next</button>
   </form>
 </div>

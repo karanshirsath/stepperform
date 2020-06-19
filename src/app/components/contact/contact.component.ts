@@ -17,12 +17,12 @@ export class ContactComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       city: ['', Validators.required],
       pincode: ['', Validators.required],
-      street: ['', Validators.required],
-      No: ['', Validators.required],
+      street: [''],
+      No: [''],
       block:[''],
       entrance:[''],
       appartment:[''],
-      phone:['',[Validators.required,Validators.pattern("[0-9]{10}")]]
+      phone:['',[Validators.required,Validators.pattern("^[0-9]+$"),Validators.minLength(8),Validators.maxLength(9)]]
     });
   }
   submit=()=>{
