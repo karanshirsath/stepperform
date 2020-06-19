@@ -1,37 +1,45 @@
-<h1 class="display-1" style="color:darkblue; font-size: 200%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><b>Vehicle Information</b></h1>
+<h1 class="display-1"
+    style="color:darkblue; font-size: 200%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+    <b>Vehicle Information</b></h1>
 <form [formGroup]="vehicleInfoForm">
     <div class="form-row">
         <div class="col-9">
-            Vehicle Registration Number 
+            Vehicle Registration Number
         </div>
         <div class="col-3">
-            <input class="form-control" type="text" placeholder="XX0000XX" formControlName="registrationNumber" (change)="change()">
-            <div class="error" *ngIf="formsControl.registrationNumber.touched && formsControl.registrationNumber.errors">
-                <div *ngIf="formsControl.registrationNumber.errors.required">Vehicle Registartion Number is required </div>
-                <div *ngIf="formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength">Vehicle Registartion Number Should be 8 characters </div>
-            </div>  
-        </div> 
-        
+            <input class="form-control" type="text" placeholder="XX0000XX" formControlName="registrationNumber"
+                (change)="change()">
+            <div class="error"
+                *ngIf="formsControl.registrationNumber.touched && formsControl.registrationNumber.errors">
+                <div *ngIf="formsControl.registrationNumber.errors.required">Vehicle Registartion Number is required
+                </div>
+                <div
+                    *ngIf="formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength">
+                    Vehicle Registartion Number Should be 8 characters </div>
+            </div>
+        </div>
+
     </div>
     <hr>
-    
-    
+
     <div class="form-row">
         <div class="col-9">
             Vehicle Certificate Number <br>
             <a href=""><u>Where can I find this number?</u></a>
         </div>
         <div class="col-3">
-            <input class="form-control" type="text" placeholder="000000000"  formControlName="certificateNumber" (change)="change()"> 
+            <input class="form-control" type="text" placeholder="000000000" formControlName="certificateNumber"
+                (change)="change()">
             <div class="error" *ngIf="formsControl.certificateNumber.touched && formsControl.certificateNumber.errors">
-                <div *ngIf="formsControl.certificateNumber.errors.required">Vehicle Certificate Number is required </div>
-                <div *ngIf="formsControl.certificateNumber.errors.minlength || formsControl.certificateNumber.errors.maxlength">Vehicle Certificate Number Should be 9 characters </div>
+                <div *ngIf="formsControl.certificateNumber.errors.required">Vehicle Certificate Number is required
+                </div>
+                <div
+                    *ngIf="formsControl.certificateNumber.errors.minlength || formsControl.certificateNumber.errors.maxlength">
+                    Vehicle Certificate Number Should be 9 characters </div>
             </div>
         </div>
-       
     </div>
     <hr>
-    
 
     <div class="form-row">
         <div class="col-8">
@@ -39,22 +47,20 @@
         </div>
         <div class="col-4">
             <select formControlName="purpose" class="form-control" (change)="change()">
+                <option selected disabled value="">--SELECT--</option>
                 <option value="personal">Personal Use</option>
                 <option value="public">Public Use</option>
-                
-            </select>   
+            </select>
             <div class="error" *ngIf="formsControl.purpose.touched && formsControl.purpose.errors">
-                <div *ngIf="formsControl.purpose.errors.required">Please select what purpose does this vehicle serve </div>
-               
-            </div> 
+                <div *ngIf="formsControl.purpose.errors.required">Please select what purpose does this vehicle serve
+                </div>
+            </div>
         </div>
-        
     </div>
     <hr>
 
-
-    <div class="form-row" >
-        <div class="col-9" >
+    <div class="form-row">
+        <div class="col-9">
             Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?
         </div>
         <div class="col-3">
@@ -64,9 +70,9 @@
     </div>
     <hr>
 
-
 </form><br>
 
-<button class="btn btn-primary rounded-pill" (click)="submit()" matStepperNext [disabled]="!vehicleInfoForm.valid">Next</button>
+<button class="btn btn-primary rounded-pill" (click)="submit()" matStepperNext
+    [disabled]="!vehicleInfoForm.valid">Next</button>
 
 <!-- {{vehicleInfoForm.value | json}} -->

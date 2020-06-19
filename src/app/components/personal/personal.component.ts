@@ -33,16 +33,16 @@ export class PersonalComponent implements OnInit {
 
   ngOnInit(): void {
     this.personalForm=this.formBuilder.group({
-      lnch:['',Validators.required],
+      lnch:['',[Validators.required,Validators.pattern("^[0-9]{10}$")]],
       fullname:this.formBuilder.group({
-        firstname:['',Validators.required],
-        lastname:['',Validators.required],
-        surname:[]
+        firstname:['',[Validators.required,Validators.pattern("^[a-zA-Z]*$"),Validators.maxLength(20)]],
+        lastname:['',Validators.pattern("^[a-zA-Z]*$")],
+        surname:['',[Validators.required,Validators.pattern("^[a-zA-Z]*$"),Validators.maxLength(20)]]
       }),
       fullnameeng:this.formBuilder.group({
-        firstnameeng:['',Validators.required],
-        lastnameeng:['',Validators.required],
-        surnameeng:[]
+        firstnameeng:['',[Validators.required,Validators.pattern("^[a-zA-Z]*$"),Validators.maxLength(20)]],
+        lastnameeng:['',Validators.pattern("^[a-zA-Z]*$")],
+        surnameeng:['',[Validators.required,Validators.pattern("^[a-zA-Z]*$"),Validators.maxLength(20)]]
       }),
       citizen:['',Validators.required],
       birth:['',Validators.required]
