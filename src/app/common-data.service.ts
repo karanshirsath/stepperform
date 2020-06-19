@@ -11,10 +11,18 @@ installmentsData: {term: ""},
 insuringPartyData: {egn: "", address: "mumbai", email: ""},
 policyDetailsData: {policyDate: "", policyLength: "", check1: false, check2: false},
 vehicleData: {registrationNumber: "", certificateNumber: "", purpose: "", yesNo: ""},
-
 }
 defaultData2={
-  contactInformation: "",
+  contactInformation: {
+    No: "",
+appartment: "",
+block: "",
+city: "",
+entrance: "",
+phone: "",
+pincode: "",
+street: "",
+  },
 deliveryInformation:{
 appt: "",
 block: "",
@@ -35,7 +43,8 @@ fullname: {firstname: "", lastname: "", surname: ""},
 fullnameeng: {firstnameeng: "", lastnameeng: "", surnameeng: ""},
 lnch: ""},
 
-vehicleOwnerInformation: ""
+vehicleOwnerInformation: {fullname: {firstname: "", lastname: "", surname: ""},
+lnch: ""}
 }
   constructor() { }
   formData=new BehaviorSubject<any>(this.defaultData);

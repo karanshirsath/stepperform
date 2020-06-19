@@ -25,8 +25,8 @@
     <div class="form-group row">
         <label for="lnch" class="col-sm-2 col-form-label">Enter your Number</label>
         <div class="col-sm-4">
-        <input type="text" class="form-control" id="Number" placeholder="Enter your Number" formControlName="Number"  name="Number" (change)="change()">
-        <div *ngIf="Details.controls.Number.hasError('required') &&(Details.controls.Number.dirty || Details.controls.Number.touched)" class="error">Please enter the number</div>
+        <input type="text" class="form-control" id="lnch" placeholder="Enter your Number" formControlName="lnch"  name="lnch" (change)="change()">
+        <div *ngIf="Details.controls.lnch.hasError('required') &&(Details.controls.lnch.dirty || Details.controls.lnch.touched)" class="error">Please enter the number</div>
         </div>
     </div>
     <hr>
@@ -141,14 +141,14 @@
         </div>
         <div class="col-xs-1">
             
-            <input type="text" class="form-control" style="width:120px" (change)="change()">
+            <input type="text" class="form-control" style="width:120px" (change)="change()" formControlName="block">
 
         </div>
         <div class="col-xs-1">
-            <input type="text" class="form-control" style="width:120px" (change)="change()">
+            <input type="text" class="form-control" style="width:120px" (change)="change()" formControlName="entrance">
         </div>
         <div class="col-xs-1">
-            <input type="text" class="form-control" style="width:120px" (change)="change()">
+            <input type="text" class="form-control" style="width:120px" (change)="change()" formControlName="appartment">
         </div>
     </div>
 

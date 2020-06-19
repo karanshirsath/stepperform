@@ -21,7 +21,7 @@ export class VehicleOwnerComponent implements OnInit {
 
   ngOnInit(): void {
     this.Details = this.formBuilder.group({
-      Number: ['', Validators.required],
+      lnch: ['', Validators.required],
       fullname: this.formBuilder.group({
         firstname: ['', Validators.required],
         lastname: ['', Validators.required],
@@ -36,7 +36,10 @@ export class VehicleOwnerComponent implements OnInit {
       birth: ['', Validators.required],
       city: ['', Validators.required],
       street: ['', Validators.required],
-      No: ['', Validators.required]
+      No: ['', Validators.required],
+      block:[''],
+      entrance:[''],
+      appartment:[''],
     });
   }
 

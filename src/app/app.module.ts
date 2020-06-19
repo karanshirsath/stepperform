@@ -34,6 +34,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { InstallmentComponent } from './components/installment/installment.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
 import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.
     PaymentComponent,
     InstallmentComponent,
     ProposalComponent,
-    VehicleOwnerComponent
+    VehicleOwnerComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
