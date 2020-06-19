@@ -1,73 +1,91 @@
 <div class="container overflowAuto h-100" style="margin-left: auto !important;">
-    <div class="container">
-      <h1>Contact Details</h1><br>
-      <form [formGroup]="registerForm" (submit)="submit()">
-        <div class="row">
-              <div class="col-md-4">
-                <label for="city">City</label>
-              </div>
-              <div class="col-md-4">    
-                <select id="city"  name="city" class="form-control" style="resize: vertical !important;"  formControlName="city" (change)="change()">
-                  <option value="" disabled selected hidden>Select</option>
-                  <option value="SofiaCity">Sofia City</option>
-                  <option value="techCity">Tech City</option>
-                  <option value="electronicCity">Electronic City</option>
-                </select>
-              </div>
-            <div class="col-md-4">  
-              <input type="text" id="num" name="num"  placeholder="Pin Code" class="form-control"  (change)="change()"
-                formControlName="pincode">
-            </div>
+  <div class="container">
+    <h1>Contact Details</h1><br>
+    <form [formGroup]="registerForm" (submit)="submit()">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="city">City</label>
         </div>
-        <hr class="border" /><br>
-        <div class=" row">
-            <div class="col-md-4">
-              <label for="street">Street and Number</label>
-            </div>
-            <div class="col-md-4">
-                <input type="text" id="street" name="streetName" class="form-control " placeholder="Street Name" (change)="change()"
-                  formControlName="street">
-            </div>
-             
-            <div class="col-md-4">
-              <input type="text" id="streetNumber" name="streetNumber" placeholder="Street  number" class="form-control" size="10" (change)="change()"
-                formControlName="No"><br>
-            </div>
+        <div class="col-md-4">
+          <select id="city" name="city" class="form-control" formControlName="city" (change)="change()">
+            <option selected disabled value="">--SELECT--</option>
+            <option value="SofiaCity">Sofia City</option>
+            <option value="techCity">Tech City</option>
+            <option value="electronicCity">Electronic City</option>
+          </select>
+          <div
+            *ngIf="registerForm.controls.city.hasError('required') &&(registerForm.controls.city.dirty || registerForm.controls.city.touched)"
+            class="error">This field is mandatory</div>
         </div>
-        <hr class="border" /><br>
-        <div class="row">
-            <div class="col-md-3">
-                <label for="block">Block,Entrance and Apartment</label>
-            </div>
-            <div class="col-md-3 offset-md-1 ">
-              <input type="text" id="block" class="form-control " placeholder="Block" name="blockName" (change)="change()"
-                formControlName="block">
-            </div>
-            
-            <label for="entranceName"></label>
-            <div class="col-md-3">
-                <input type="text" class="form-control" id="entranceName" placeholder="Entrance" name="entranceName" (change)="change()"
-                formControlName="entrance">
-            </div>
-            <!-- </div> -->
-            
-            <label for="appartmentName"></label>
-            <div class="col-md-2">
-              <input type="text" class="form-control" id="appartmentName" placeholder="Appartment" name="appartmentName" (change)="change()"
-                formControlName="appartment"><br>
-            </div>
+
+        <div class="col-md-4">
+          <input type="text" id="num" name="num" placeholder="Pin Code" class="form-control" (change)="change()"
+            formControlName="pincode">
+          <div
+            *ngIf="registerForm.controls.pincode.hasError('required') &&(registerForm.controls.pincode.dirty || registerForm.controls.pincode.touched)"
+            class="error">This field is mandatory</div>
+
         </div>
-        <hr class="border" ><br>
-        <div class = "row">
-            <div class="col-md-4">  
-              <label for="phoneNo">Phone Number</label>  
-            </div>
-            <div class="col-md-4">
-                <input type="text" class="form-control" id="phoneNo" placeholder="Phone Number" (change)="change()"
-                formControlName="phone"><br>
-            </div>
+      </div>
+      <hr class="border" /><br>
+      <div class=" row">
+        <div class="col-md-4">
+          <label for="street">Street and Number</label>
         </div>
-      </form>
-      <button class="btn btn-primary rounded-pill" type="submit" matStepperNext [disabled]="!registerForm.valid">Next</button>
+        <div class="col-md-4">
+          <input type="text" id="street" name="streetName" class="form-control " placeholder="Street Name"
+            (change)="change()" formControlName="street">
+        </div>
+
+        <div class="col-md-4">
+          <input type="text" id="streetNumber" name="streetNumber" placeholder="Street  number" class="form-control"
+            size="10" (change)="change()" formControlName="No"><br>
+        </div>
+      </div>
+      <hr class="border" /><br>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="block">Block,Entrance and Apartment</label>
+        </div>
+        <div class="col-md-3 offset-md-1 ">
+          <input type="text" id="block" class="form-control " placeholder="Block" name="blockName" (change)="change()"
+            formControlName="block">
+        </div>
+
+        <label for="entranceName"></label>
+        <div class="col-md-3">
+          <input type="text" class="form-control" id="entranceName" placeholder="Entrance" name="entranceName"
+            (change)="change()" formControlName="entrance">
+        </div>
+        <!-- </div> -->
+
+        <label for="appartmentName"></label>
+        <div class="col-md-2">
+          <input type="text" class="form-control" id="appartmentName" placeholder="Appartment" name="appartmentName"
+            (change)="change()" formControlName="appartment"><br>
+        </div>
+      </div>
+      <hr class="border"><br>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="phoneNo">Phone Number</label>
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="phoneNo" placeholder="Phone Number" (change)="change()"
+            formControlName="phone"><br>
+          <div
+            *ngIf="registerForm.controls.phone.hasError('required') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
+            class="error">This field is mandatory</div>
+          <div
+            *ngIf="registerForm.controls.phone.hasError('pattern') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
+            class="error">Only numbers allowed</div>
+          <div
+            *ngIf="(!registerForm.controls.phone.hasError('pattern') && (registerForm.controls.phone.hasError('minlength') || registerForm.controls.phone.hasError('maxlength'))) &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
+            class="error">Enter valid phone number</div>
+        </div>
+      </div>
+    </form>
+    <button class="btn btn-primary rounded-pill" type="submit" matStepperNext
+      [disabled]="!registerForm.valid">Next</button>
   </div>
 </div>

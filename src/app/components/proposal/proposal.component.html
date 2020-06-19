@@ -48,7 +48,7 @@
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Instalments</label>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="edit_prop">Edit</a>
+                    <button (click)=" moveToCalculator(3)">Edit</button>
                     <div class="row">
 
                 <div class="col-md-3">                    
@@ -92,7 +92,7 @@
             <div class="card" style="border:none">
                 <div class="card-body  border-bottom">
                     <label class="label_prop">Additional Cover</label>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="edit_prop">Edit</a>
+                    <button (click)=" moveToCalculator(4)">Edit</button>
                     <div class="form-group">
                     <!-- <input type="text" formControlName="additionalCover" class="form-control label_prop" [value]=""> -->
                     {{mtplCalculatorData["coversData"].cover}}
@@ -130,6 +130,7 @@
             <div class="card" style="border:none">
                 <div class="card-body  border-bottom">
                     <label class="label_prop">Vehicle</label>
+                    <button (click)=" moveToCalculator(0)">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                         <div class="form-group">
@@ -177,7 +178,7 @@
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Insuring Party</label>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="edit_prop">Edit</a>
+                    <button (click)=" moveToCalculator(1)">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                         <div class="form-group">
@@ -233,7 +234,7 @@
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Vehicle Owner</label>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="edit_prop">Edit</a>
+                    <button (click)="edit(2)" class="edit_prop">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -271,7 +272,7 @@
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Delivery</label>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="edit_prop">Edit</a>
+                    <button (click)="edit(3)" class="edit_prop">Edit</button>
                     <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">

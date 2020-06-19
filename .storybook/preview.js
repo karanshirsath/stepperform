@@ -39,7 +39,16 @@ import { ProposalComponent } from '../src/app/components/proposal/proposal.compo
 import { ContactComponent } from '../src/app/components/contact/contact.component';
 import { VehicleOwnerComponent } from '../src/app/components/vehicle-owner/vehicle-owner.component';
 import { APP_BASE_HREF } from "@angular/common";
+import { addParameters } from '@storybook/client-api';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 setCompodocJson(docJson);
+
+addParameters({
+  viewport: {
+    viewports: INITIAL_VIEWPORTS, // newViewports would be an ViewportMap. (see below for examples)
+    defaultViewport: 'ipad10p',
+  },
+});
 
 addDecorator(
     moduleMetadata({

@@ -66,6 +66,9 @@ export class VehicleOwnerComponent implements OnInit {
     console.log(this.Details.value, "vehicle owner");
     this.OnRegister.emit(this.Details.value);
   }
+  gaTrigger=()=>{
+    this.GAService.event('Next Button clicked','Vehicle Owner','Next')
+  }
   change=()=>{
     if(this.Details.valid){
       this.OnToggle.emit(true)
