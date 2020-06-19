@@ -18,6 +18,8 @@ export class PersonalComponent implements OnInit {
     //console.log(this.personalForm.value);
     //console.log(this.personalForm.value,"vehicle Info");
     // this.OnToggle.emit(true)
+    console.log(23123124);
+    
     this.OnRegister.emit(this.personalForm.value);
   }
   change=()=>{
