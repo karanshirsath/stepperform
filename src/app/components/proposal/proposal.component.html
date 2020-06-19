@@ -94,9 +94,10 @@
                     <label class="label_prop">Additional Cover</label>&nbsp;&nbsp;&nbsp;
                     <a href="#" class="edit_prop">Edit</a>
                     <div class="form-group">
-                    <input type="text" formControlName="additionalCover" class="form-control label_prop" [value]="">
+                    <!-- <input type="text" formControlName="additionalCover" class="form-control label_prop" [value]=""> -->
+                    {{mtplCalculatorData["coversData"].cover}}
                 </div>
-                <span *ngIf="summaryForm.controls.additionalCover.errors" style="color: red;">Required</span>
+                <!-- <span *ngIf="summaryForm.controls.additionalCover.errors" style="color: red;">Required</span> -->
                 </div>
             </div>
             <br/>
@@ -108,10 +109,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                           <label class="font_color sub_label_prop">Start Date</label>
-                            <input type="text" class="form-control" formControlName="startDate" [value]="">
+                           <label class="font_color sub_label_prop">Start Date</label><br>
+                            <!-- <input type="text" class="form-control" formControlName="startDate" [value]=""> -->
+                            {{mtplCalculatorData["policyDetailsData"].policyDate}}
                             </div>
-                            <span *ngIf="summaryForm.controls.startDate.errors" style="color: red;">Required</span>
+                            <!-- <span *ngIf="summaryForm.controls.startDate.errors" style="color: red;">Required</span> -->
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
@@ -201,7 +203,7 @@
                         {{mtplCalculatorData["insuringPartyData"].email}}
                         <!-- <input type="text" class="form-control" formControlName="email" [value]=""> -->
                         </div>
-                        <span *ngIf="summaryForm.controls.email.errors" style="color: red;">Required</span>
+                        <!-- <span *ngIf="summaryForm.controls.email.errors" style="color: red;">Required</span> -->
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
