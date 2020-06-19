@@ -1,7 +1,7 @@
 import { moduleMetadata, addDecorator } from '@storybook/angular';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 import docJson from '../documentation.json';
-
+import { ChangeDetectorRef, ElementRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../src/app/app-routing.module';
 import { AppComponent } from '../src/app/app.component';
@@ -21,12 +21,8 @@ import { TabComponent } from '../src/app/tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AdditionalCoversComponent } from '../src/app/components/additional-covers/additional-covers.component';
-
 import { LoginComponent } from '../src/app/components/login/login.component';
 import { VInfoComponent } from '../src/app/components/v-info/v-info.component';
-
-
-
 import {MatDividerModule} from '@angular/material/divider';
 import { PolicyDetailsComponent } from '../src/app/components/policy-details/policy-details.component';
 import { Tab2Component } from '../src/app/components/tab2/tab2.component';
@@ -40,7 +36,8 @@ import { PersonalComponent } from '../src/app/components/personal/personal.compo
 import { PaymentComponent } from '../src/app/components/payment/payment.component';
 import { InstallmentComponent } from '../src/app/components/installment/installment.component';
 import { ProposalComponent } from '../src/app/components/proposal/proposal.component';
-
+import { ContactComponent } from '../src/app/components/contact/contact.component';
+import { VehicleOwnerComponent } from '../src/app/components/vehicle-owner/vehicle-owner.component';
 import { APP_BASE_HREF } from "@angular/common";
 setCompodocJson(docJson);
 
@@ -57,6 +54,8 @@ addDecorator(
             Tab2Component,
             TabsComponent,
             InsuringPartyComponent,
+            ContactComponent,
+            VehicleOwnerComponent,
             DeliveryComponent,
             MTPLCalculatorComponent,
             MTPLPolicyComponent,
@@ -85,6 +84,8 @@ addDecorator(
             MatDividerModule
         
           ],
-          providers: [CdkStepper,{ provide: APP_BASE_HREF, useValue: "/" }],
+          providers: [CdkStepper,{ provide: APP_BASE_HREF, useValue: "/" },
+        { provide: ChangeDetectorRef },
+        { provide: ElementRef }],
     })
 )
