@@ -40,15 +40,15 @@ export class DeliveryComponent implements OnInit {
 
   ngOnInit() {
     this.detailsForm = this.formBuilder.group({
-      fullName: ['', Validators.compose([Validators.required,Validators.minLength(3)])],
-      city: ['New Delhi', Validators.required],
+      fullName: ['', Validators.compose([Validators.required,Validators.pattern("^[a-zA-Z ]+")])],
+      city: ['', Validators.required],
       pincode: ['', Validators.compose([Validators.required,Validators.maxLength(6)])],
-      street: ['',Validators.compose([Validators.required,Validators.minLength(3)])],
-      number: ['', Validators.required],
-      block: ['', Validators.required],
-      entrance: ['', Validators.required],
-      appt: ['', Validators.required],
-      contact: ['', Validators.compose([Validators.required,Validators.max(9999999999)])],
+      street: [''],
+      number: [''],
+      block: [''],
+      entrance: [''],
+      appt: [''],
+      contact: ['', Validators.compose([Validators.required,Validators.max(999999999),Validators.min(10000000)])],
       business: ['', Validators.required],
       notes: ['']
     });
