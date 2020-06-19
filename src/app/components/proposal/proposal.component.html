@@ -333,7 +333,7 @@
                     <input type="checkbox" class="font_color form-check-input" formControlName="AgreeToAll">
                     <div>  Agree to all</div>
                 </div>
-                <span *ngIf="summaryForm.controls.AgreeToAll.errors" style="color: red;">Required</span>
+                <span *ngIf="summaryForm.controls.AgreeToAll.errors && summaryForm.controls.AgreeToAll.touched" style="color: red;">Required</span>
             </div>
             </div><br/>
             <div class="card" style="box-shadow:2px 2px 2px gray;">
@@ -342,7 +342,7 @@
                     <input type="checkbox" class="form-check-input" formControlName="receiveNewsletter" style="color: rgb(0, 53, 103)" > 
                     <div>I agree to receive DZI newsletter</div>
                 </div>
-                <span *ngIf="summaryForm.controls.receiveNewsletter.errors" style="color: red;">Required</span>
+                <span *ngIf="summaryForm.controls.receiveNewsletter.errors && summaryForm.controls.receiveNewsletter.touched" style="color: red;">Required</span>
             </div>
             </div><br/>
             <div class="card" style="box-shadow: 2px 2px 2px gray;">
@@ -350,13 +350,13 @@
                     <div class="form-group form-check">
                     <input type="checkbox" style="color: rgb(0, 53, 103);" class="form-check-input" formControlName="generalTerms"> 
                    <div>I agree to the <a href="#" style="color:dodgerblue ;">general terms and conditions</a></div>
-                   <span *ngIf="summaryForm.controls.generalTerms.errors" style="color:red">required</span>
+                   <span *ngIf="summaryForm.controls.generalTerms.errors && summaryForm.controls.generalTerms.touched" style="color:red">required</span>
                 </div>
             </div>
             </div>
         </form><br/><br/>
 
-            <button class="btn btn-primary" style="border-radius: 3rem;" matStepperNext>Continue to payment</button>
+            <button class="btn btn-primary" style="border-radius: 3rem;" matStepperNext [disabled]="summaryForm.invalid">Continue to payment</button>
         </div>
         
     </div>
