@@ -5,9 +5,9 @@
         Start Date
     </div>
     <div class="col-md-4 col-auto col-7">
-        <input class="form-control" type="date" formControlName="policyDate" (change)="change()">
+        <input class="form-control" type="date" formControlName="policyDate" (change)="change()" [min]="mindate">
         <div class="error" *ngIf="formControls.policyDate.touched && formControls.policyDate.errors">
-            <div *ngIf="formControls.policyDate.errors.required">Start Date is required</div>
+            <div *ngIf="formControls.policyDate.errors.required">This field is mandatory</div>
         </div>
     </div>  
 </div>
