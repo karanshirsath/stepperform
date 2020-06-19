@@ -1,7 +1,7 @@
 <div class="container overflowAuto h-100" style="margin-left: auto !important;">
     <div class="container">
       <h1>Contact Details</h1><br>
-      <form [formGroup]="registerForm" (submit)="submit()">
+      <form [formGroup]="registerForm" >
         <div class="row">
               <div class="col-md-4">
                 <label for="city">City</label>
@@ -68,6 +68,6 @@
             </div>
         </div>
       </form>
-      <button class="btn btn-primary rounded-pill" type="submit" matStepperNext [disabled]="!registerForm.valid">Next</button>
+      <button class="btn btn-primary rounded-pill" type="submit"  (click)="submit()" matStepperNext [disabled]="!registerForm.valid">Next</button>
   </div>
 </div>
