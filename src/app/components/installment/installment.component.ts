@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 @Component({
   selector: 'app-installment',
@@ -11,7 +12,7 @@ export class InstallmentComponent implements OnInit {
   installmentForm: FormGroup;
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
-  constructor(private formBuilder: FormBuilder,private router: Router) { }
+  constructor(private formBuilder: FormBuilder,private router: Router, private GAService: GoogleAnalyticsService) { }
 
   ngOnInit()  {
     this.installmentForm=this.formBuilder.group({
@@ -25,6 +26,7 @@ export class InstallmentComponent implements OnInit {
     this.router.navigate(['/']);
   }
   submit=()=>{
+    this.GAService.event('Next Button clicked','Installment','Next')
     console.log(this.installmentForm.value, "policy details");
     this.OnRegister.emit(this.installmentForm.value);
   }

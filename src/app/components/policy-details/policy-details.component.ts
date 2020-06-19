@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 @Component({
   selector: 'app-policy-details',
@@ -12,7 +13,7 @@ export class PolicyDetailsComponent implements OnInit {
   @Output() OnToggle = new EventEmitter()
   registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -23,6 +24,7 @@ export class PolicyDetailsComponent implements OnInit {
     });
   }
   submit=()=>{
+    this.GAService.event('Calculate Button clicked','Policy Details','Calculate')
     console.log(this.registerForm.value, "policy details");
     this.OnRegister.emit(this.registerForm.value);
   }

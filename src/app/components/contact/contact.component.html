@@ -1,51 +1,73 @@
-<div class="container">
-  <h1>Contact Details</h1><br>
-  <form [formGroup]="registerForm" (submit)="submit()">
-    <div class="row">
-      <div class="col-md-4">
-
-      </div>
-
-      <label for="city">City</label>
-      <select id="city" style="margin-left: 17em;" name="city" class="tab" formControlName="city" (change)="change()">
-        <option value="select">Select</option>
-        <option value="SofiaCity">Sofia City</option>
-        <option value="techCity">Tech City</option>
-        <option value="electronicCity">Electronic City</option>
-      </select>
-
-      <input type="text" id="num" name="num" style="margin-left: 7em;" placeholder="Pin Code" class="tab" size="10" (change)="change()"
-        formControlName="pincode">
-
-    </div>
-    <hr class="border" /><br>
-
-    <label for="street">Street and Number</label>
-    <input type="text" id="street" name="streetName" class="tab" style="margin-left: 9em;" placeholder="Street Name" (change)="change()"
-      formControlName="street">
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="streetNumber" name="streetNumber" placeholder="Street  number" class="tab" size="10" (change)="change()"
-      formControlName="No"><br>
-    <hr class="border" /><br>
-
-    <label for="block">Block,Entrance and Apartment</label>
-    <input type="text" id="block" class="tab" style="margin-left: 3em;" placeholder="Block" name="blockName" (change)="change()"
-      formControlName="block">
-
-    <label for="entranceName"></label>&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" class="tab" id="entranceName" placeholder="Entrance" name="entranceName" (change)="change()"
-      formControlName="entrance">
-    <label for="appartmentName"></label>&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" class="tab" id="appartmentName" placeholder="Appartment" name="appartmentName" (change)="change()"
-      formControlName="appartment"><br>
-
-    <hr class="border" /><br>
-    <label for="phoneNo">Phone Number</label>
-    <input type="text" class="tab" style="margin-left: 11em;" id="phoneNo" placeholder="Phone Number" (change)="change()"
-      formControlName="phone"><br>
-
-
-
-  </form>
-  <button class="btn btn-primary rounded-pill" type="submit" matStepperNext [disabled]="!registerForm.valid">Next</button>
+<div class="container overflowAuto h-100" style="margin-left: auto !important;">
+    <div class="container">
+      <h1>Contact Details</h1><br>
+      <form [formGroup]="registerForm" (submit)="submit()">
+        <div class="row">
+              <div class="col-md-4">
+                <label for="city">City</label>
+              </div>
+              <div class="col-md-4">    
+                <select id="city"  name="city" class="form-control"  formControlName="city" (change)="change()">
+                  <option value="select">Select</option>
+                  <option value="SofiaCity">Sofia City</option>
+                  <option value="techCity">Tech City</option>
+                  <option value="electronicCity">Electronic City</option>
+                </select>
+              </div>
+            <div class="col-md-4">  
+              <input type="text" id="num" name="num"  placeholder="Pin Code" class="form-control"  (change)="change()"
+                formControlName="pincode">
+            </div>
+        </div>
+        <hr class="border" /><br>
+        <div class=" row">
+            <div class="col-md-4">
+              <label for="street">Street and Number</label>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="street" name="streetName" class="form-control " placeholder="Street Name" (change)="change()"
+                  formControlName="street">
+            </div>
+             
+            <div class="col-md-4">
+              <input type="text" id="streetNumber" name="streetNumber" placeholder="Street  number" class="form-control" size="10" (change)="change()"
+                formControlName="No"><br>
+            </div>
+        </div>
+        <hr class="border" /><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="block">Block,Entrance and Apartment</label>
+            </div>
+            <div class="col-md-3 offset-md-1 ">
+              <input type="text" id="block" class="form-control " placeholder="Block" name="blockName" (change)="change()"
+                formControlName="block">
+            </div>
+            
+            <label for="entranceName"></label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="entranceName" placeholder="Entrance" name="entranceName" (change)="change()"
+                formControlName="entrance">
+            </div>
+            <!-- </div> -->
+            
+            <label for="appartmentName"></label>
+            <div class="col-md-2">
+              <input type="text" class="form-control" id="appartmentName" placeholder="Appartment" name="appartmentName" (change)="change()"
+                formControlName="appartment"><br>
+            </div>
+        </div>
+        <hr class="border" ><br>
+        <div class = "row">
+            <div class="col-md-4">  
+              <label for="phoneNo">Phone Number</label>  
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="phoneNo" placeholder="Phone Number" (change)="change()"
+                formControlName="phone"><br>
+            </div>
+        </div>
+      </form>
+      <button class="btn btn-primary rounded-pill" type="submit" matStepperNext [disabled]="!registerForm.valid">Next</button>
+  </div>
 </div>

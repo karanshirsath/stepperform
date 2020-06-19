@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 @Component({
   selector: 'app-personal',
@@ -11,8 +12,9 @@ export class PersonalComponent implements OnInit {
   @Output() OnToggle=new EventEmitter()
   personalForm:FormGroup;
   citizens=['Indian','American','African'];
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private GAService: GoogleAnalyticsService) { }
   success(){
+    this.GAService.event('Next Button clicked','Personal Details','Next')
     //console.log(this.personalForm.value);
     //console.log(this.personalForm.value,"vehicle Info");
     // this.OnToggle.emit(true)
@@ -31,16 +33,16 @@ export class PersonalComponent implements OnInit {
 
   ngOnInit(): void {
     this.personalForm=this.formBuilder.group({
-      lnch:['',Validators.required],
+      lnch:['',[Validators.required,Validators.pattern("^[0-9]{10}$")]],
       fullname:this.formBuilder.group({
-        firstname:['',Validators.required],
-        lastname:['',Validators.required],
-        surname:[]
+        firstname:['',[Validators.required,Validators.pattern("^[a-zA-Z]*$"),Validators.maxLength(20)]],
+        lastname:['',Validators.pattern("^[a-zA-Z]*$")],
+        surname:['',[Validators.required,Validators.pattern("^[a-zA-Z]*$"),Validators.maxLength(20)]]
       }),
       fullnameeng:this.formBuilder.group({
-        firstnameeng:['',Validators.required],
-        lastnameeng:['',Validators.required],
-        surnameeng:[]
+        firstnameeng:['',[Validators.required,Validators.pattern("^[a-zA-Z]*$"),Validators.maxLength(20)]],
+        lastnameeng:['',Validators.pattern("^[a-zA-Z]*$")],
+        surnameeng:['',[Validators.required,Validators.pattern("^[a-zA-Z]*$"),Validators.maxLength(20)]]
       }),
       citizen:['',Validators.required],
       birth:['',Validators.required]

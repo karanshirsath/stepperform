@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class AdditionalCoversComponent implements OnInit {
   tickimage="./assets/tick.jpg";
   additionalcoverForm: FormGroup;
 
-  constructor( private formBuilder: FormBuilder) { }
+  constructor( private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
 
   ngOnInit(): void {
     this.additionalcoverForm = this.formBuilder.group({
@@ -32,6 +33,7 @@ export class AdditionalCoversComponent implements OnInit {
     }
   }
   next=()=>{
+    this.GAService.event('Next Button clicked','Additional Covers','Next')
     console.log(this.additionalcoverForm.value, "additional covers");
     this.OnRegister.emit(this.additionalcoverForm.value);
     this.NextTab.emit(1)

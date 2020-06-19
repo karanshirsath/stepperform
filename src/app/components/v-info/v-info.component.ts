@@ -1,6 +1,7 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class VInfoComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
  vehicleInfoForm:FormGroup;
-  constructor(private router: Router, private formBuilder:FormBuilder) { } 
+  constructor(private router: Router, private formBuilder:FormBuilder, private GAService : GoogleAnalyticsService ) { } 
 
   ngOnInit(): void {
     this.vehicleInfoForm=this.formBuilder.group({
@@ -22,6 +23,7 @@ export class VInfoComponent implements OnInit {
       yesNo:['Yes',Validators.required]
     })}
     submit=() => {
+      this.GAService.event('Next Button clicked','Vehicle Infomation','Next')
       //this.router.navigate(['./insuring-party.component']);
       console.log(this.vehicleInfoForm.value,"vehicle Info");
       // this.OnToggle.emit(true)
