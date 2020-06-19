@@ -80,7 +80,7 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
     NgxGoogleAnalyticsRouterModule
   ],
-  providers: [CdkStepper],
+  providers: [CdkStepper,MTPLCalculatorComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

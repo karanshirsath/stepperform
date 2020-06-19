@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonDataService } from 'src/app/common-data.service';
 
@@ -17,6 +17,11 @@ export class ProposalComponent implements OnInit {
   sdate:string='04-03-54';
   mtplCalculatorData;
   mtplPolicyData;
+  @Output() changeStep = new EventEmitter()
+  @Output() moveTab = new EventEmitter()
+  moveToCalculator=(index)=>{
+    this.moveTab.emit(index)
+    }
 
     
   constructor(private fb: FormBuilder,private _dataService:CommonDataService) { }
@@ -86,6 +91,12 @@ export class ProposalComponent implements OnInit {
       receiveNewsletter:[false,Validators.requiredTrue],
       generalTerms:[false,Validators.requiredTrue]
     })
+  }
+
+  edit=(index)=>{
+    console.log("inside edit",index);
+    
+    this.changeStep.emit(index)
   }
 
   

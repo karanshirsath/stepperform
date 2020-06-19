@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, Input } from '@angular/core';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { CommonDataService } from 'src/app/common-data.service';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-mtpl-calculator',
@@ -10,6 +11,8 @@ import { CommonDataService } from 'src/app/common-data.service';
 export class MTPLCalculatorComponent implements OnInit {
   @Output() selectionChange: EventEmitter<StepperSelectionEvent>
   @Output() NextTabSwitch = new EventEmitter()
+
+  @ViewChild('stepper1') stepper1: MatStepper;
   constructor(private _commonData:CommonDataService) { }
 
   ngOnInit(): void {
@@ -29,6 +32,11 @@ export class MTPLCalculatorComponent implements OnInit {
   toggle6=true
   mtplCalculaterData
 
+  move=(index)=> {
+    console.log("calculators");
+    
+    this.stepper1.selectedIndex = index;
+  }
 
   vehicleData=(data)=>{
     this.vehicle=data
