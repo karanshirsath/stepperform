@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +11,7 @@ export class ContactComponent implements OnInit {
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
   registerForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -25,6 +26,7 @@ export class ContactComponent implements OnInit {
     });
   }
   submit=()=>{
+    this.GAService.event('Next Button clicked','Contact Details','Next')
     console.log(this.registerForm.value, "policy details");
     this.OnRegister.emit(this.registerForm.value);
   }

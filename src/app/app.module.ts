@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import{MatStepperModule} from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { MatCardModule} from '@angular/material/card';
@@ -18,12 +18,8 @@ import { TabComponent } from './tab/tab.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AdditionalCoversComponent } from './components/additional-covers/additional-covers.component';
-
 import { LoginComponent } from './components/login/login.component';
 import { VInfoComponent } from './components/v-info/v-info.component';
-
-
-
 import {MatDividerModule} from '@angular/material/divider';
 import { PolicyDetailsComponent } from './components/policy-details/policy-details.component';
 import { Tab2Component } from './components/tab2/tab2.component';
@@ -39,6 +35,7 @@ import { InstallmentComponent } from './components/installment/installment.compo
 import { ProposalComponent } from './components/proposal/proposal.component';
 import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
 @NgModule({
   declarations: [
@@ -69,6 +66,7 @@ import { ContactComponent } from './components/contact/contact.component';
     MatStepperModule,
     ReactiveFormsModule,
     FormsModule,
+    MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
@@ -78,8 +76,9 @@ import { ContactComponent } from './components/contact/contact.component';
     MatGridListModule,
     MatTabsModule,
     MatCheckboxModule,
-    MatDividerModule
-
+    MatDividerModule,
+    NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
+    NgxGoogleAnalyticsRouterModule
   ],
   providers: [CdkStepper],
   bootstrap: [AppComponent]
