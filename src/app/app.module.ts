@@ -35,6 +35,7 @@ import { InstallmentComponent } from './components/installment/installment.compo
 import { ProposalComponent } from './components/proposal/proposal.component';
 import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
 @NgModule({
   declarations: [
@@ -75,8 +76,9 @@ import { ContactComponent } from './components/contact/contact.component';
     MatGridListModule,
     MatTabsModule,
     MatCheckboxModule,
-    MatDividerModule
-
+    MatDividerModule,
+    NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
+    NgxGoogleAnalyticsRouterModule
   ],
   providers: [CdkStepper],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 @Component({
   selector: 'app-vehicle-owner',
@@ -12,7 +13,7 @@ export class VehicleOwnerComponent implements OnInit {
   @Output() OnToggle = new EventEmitter()
   Details: FormGroup;
   citizens = ['Indian', 'American', 'African'];
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
 
   // success() {
   //   console.log(this.Details.value);
@@ -61,6 +62,7 @@ export class VehicleOwnerComponent implements OnInit {
   }
 
   submit=()=>{
+    this.GAService.event('Next Button clicked','Vehicle Owner','Next')
     console.log(this.Details.value, "vehicle owner");
     this.OnRegister.emit(this.Details.value);
   }

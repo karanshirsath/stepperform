@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 @Component({
   selector: 'app-delivery',
@@ -35,7 +36,7 @@ export class DeliveryComponent implements OnInit {
     this.submitted = false;
   }
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
 
   ngOnInit() {
     this.detailsForm = this.formBuilder.group({
@@ -54,6 +55,7 @@ export class DeliveryComponent implements OnInit {
   };
 
   register(){
+    this.GAService.event('Next Button clicked','Delivery','Next')
     this.OnRegister.emit(this.detailsForm.value);
   }
   get formControls(){

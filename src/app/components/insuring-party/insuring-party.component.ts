@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 @Component({
   selector: 'app-insuring-party',
@@ -11,7 +12,7 @@ export class InsuringPartyComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
   insuringParty: FormGroup;
-  constructor(private router: Router, private fb: FormBuilder) { }
+  constructor(private router: Router, private fb: FormBuilder, private GAService: GoogleAnalyticsService) { }
 
   ngOnInit(): void {
     this.insuringParty = this.fb.group({
@@ -25,6 +26,7 @@ export class InsuringPartyComponent implements OnInit {
   //   this.router.navigate(['/policy_details']);
   // }
   submit=() => {
+    this.GAService.event('Next Button clicked','Insuring Party','Next')
     console.log(this.insuringParty.value,"insuring party");
     this.OnRegister.emit(this.insuringParty.value);
 
