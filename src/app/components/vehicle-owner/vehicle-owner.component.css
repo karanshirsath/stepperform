@@ -1,7 +1,6 @@
-
-.form-control{
+/* .form-control{
     width:180px
-}
+} */
 
 
 h1{
@@ -13,18 +12,18 @@ label{
     color: darkgray;
     font-family: Arial, Helvetica, sans-serif;
 }
-.col-sm-4{
+/* .col-sm-4{
     padding-left: 205px;
    
-}
+} */
 hr{
-    width:50%;
+    /* width:50%; */
     text-align:left;
     margin-left:0;
 }
 .panel{
     border-color:yellow;
-    width: 555px;
+    /* width: 555px; */
 }
 .error{
     color: red;
@@ -45,8 +44,10 @@ hr{
 
 }
 
-.col-sm-2
-{
-   width:200px; 
+.user-key{
+    width: 40px;
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: -17px;
 }
-
