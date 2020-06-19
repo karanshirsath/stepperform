@@ -22,7 +22,7 @@
 
       <mat-step completed={{toggle5}}>
         <ng-template matStepLabel>Covers</ng-template>
-        <app-additional-covers (OnRegister)="coversData($event)" (OnToggle)="toggle5=$event"></app-additional-covers>
+        <app-additional-covers (OnRegister)="coversData($event)" (OnToggle)="toggle5=$event" (NextTab)="nextTab($event)"></app-additional-covers>
       </mat-step>
 
       <!-- <mat-step completed={{toggle6}}>

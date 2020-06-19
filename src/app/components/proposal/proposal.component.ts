@@ -18,6 +18,7 @@ export class ProposalComponent implements OnInit {
   mtplCalculatorData;
   mtplPolicyData;
 
+    
   constructor(private fb: FormBuilder,private _dataService:CommonDataService) { }
 
   ngOnInit(): void {
@@ -29,6 +30,26 @@ export class ProposalComponent implements OnInit {
        console.log(data);
        
        this.mtplPolicyData=data;
+       console.log(this.mtplPolicyData["vehicleOwnerInformation"]);
+       
+       if(this.mtplPolicyData["vehicleOwnerInformation"]=="Yes"){
+         var obj={    fullname: {firstname: this.mtplPolicyData["personalInformation"].fullname.firstname,
+          lastname: this.mtplPolicyData["personalInformation"].fullname.lastname, 
+          surname: this.mtplPolicyData["personalInformation"].fullname.surname},
+          city: this.mtplPolicyData["contactInformation"].city,
+          street:this.mtplPolicyData["contactInformation"].street,
+     
+       lnch: this.mtplPolicyData["personalInformation"].lnch
+     
+            
+         }
+         this.mtplPolicyData["vehicleOwnerInformation"]=obj
+         
+         
+         
+       }
+       
+
      })
     
     this.summaryForm=this.fb.group({
