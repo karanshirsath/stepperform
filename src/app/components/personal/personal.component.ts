@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 @Component({
   selector: 'app-personal',
@@ -11,8 +12,9 @@ export class PersonalComponent implements OnInit {
   @Output() OnToggle=new EventEmitter()
   personalForm:FormGroup;
   citizens=['Indian','American','African'];
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private GAService: GoogleAnalyticsService) { }
   success(){
+    this.GAService.event('Next Button clicked','Personal Details','Next')
     //console.log(this.personalForm.value);
     //console.log(this.personalForm.value,"vehicle Info");
     // this.OnToggle.emit(true)
