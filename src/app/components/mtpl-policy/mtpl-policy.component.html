@@ -1,4 +1,4 @@
-<mat-horizontal-stepper labelPosition="bottom" #stepper >
+<mat-horizontal-stepper labelPosition="bottom" #stepper  linear>
   <mat-step completed={{toggle1}}>
     <ng-template matStepLabel>Personal details</ng-template>
     <app-personal (OnRegister)="personalData($event)" (OnToggle)="toggle1=$event"></app-personal>
@@ -20,8 +20,8 @@
   </mat-step>  
 
   <mat-step completed={{toggle5}}>
-    <ng-template matStepLabel>Summary</ng-template>
-    <app-proposal></app-proposal>
+    <ng-template matStepLabel >Summary</ng-template>
+    <app-proposal (changeStep)="move($event)" (moveTab)="switch($event)"></app-proposal>
   </mat-step>  
 
   <mat-step completed={{toggle6}}>
@@ -39,4 +39,6 @@
         <app-v-info ></app-v-info>
        
       </mat-step> -->
+   
 </mat-horizontal-stepper>
+

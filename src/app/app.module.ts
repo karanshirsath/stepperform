@@ -78,7 +78,7 @@ import { ContactComponent } from './components/contact/contact.component';
     MatDividerModule
 
   ],
-  providers: [CdkStepper],
+  providers: [CdkStepper,MTPLCalculatorComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
