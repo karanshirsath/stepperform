@@ -41,6 +41,7 @@ import { VehicleOwnerComponent } from '../src/app/components/vehicle-owner/vehic
 import { APP_BASE_HREF } from "@angular/common";
 import { addParameters } from '@storybook/client-api';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { withKnobs } from '@storybook/addon-knobs';
 setCompodocJson(docJson);
 
 addParameters({
@@ -95,6 +96,7 @@ addDecorator(
           ],
           providers: [CdkStepper,{ provide: APP_BASE_HREF, useValue: "/" },
         { provide: ChangeDetectorRef },
-        { provide: ElementRef }],
-    })
+        { provide: ElementRef }]
+    }),
+    withKnobs
 )

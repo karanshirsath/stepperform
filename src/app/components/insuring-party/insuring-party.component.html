@@ -3,10 +3,11 @@
     <form [formGroup]="insuringParty">
         <div class="form-row">
             <div class="col-8">
+                EGN/EIK/LNCH<br>
                 <a href=""><u>Who's data should I fill in?</u></a>
             </div>
             <div class="col-4">
-                <input class="form-control" type="text" formControlName="egn" (change)="change()">
+                <input class="form-control" type="text" formControlName="egn" (change)="change()" value={{egn}}>
                 <div class="error" *ngIf="formsControl.egn.touched && formsControl.egn.errors">
                     <div *ngIf="formsControl.egn.errors.required">EGN/EIK/LNCH is required </div>
                     <a href=""><u>Where can I find this number?</u></a>

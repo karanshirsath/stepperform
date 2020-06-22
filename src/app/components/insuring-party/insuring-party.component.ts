@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
@@ -11,6 +11,7 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class InsuringPartyComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
+  @Input() egn: string;
   insuringParty: FormGroup;
   constructor(private router: Router, private fb: FormBuilder, private GAService: GoogleAnalyticsService) { }
 

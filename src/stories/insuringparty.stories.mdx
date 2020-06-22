@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { InsuringPartyComponent } from '../app/components/insuring-party/insuring-party.component';
 import { moduleMetadata } from "@storybook/angular";
+import { text } from '@storybook/addon-knobs';
 
 <Meta title="MDX/Insuring Party Component" decorators={[
     moduleMetadata({
@@ -46,6 +47,16 @@ appearance of the login component.
     component: InsuringPartyComponent,
     props:{
       
+    },
+    }}    
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Knob">{{
+    component: InsuringPartyComponent,
+    props:{
+      egn: text('egn','123456'),
     },
     }}    
   </Story>
