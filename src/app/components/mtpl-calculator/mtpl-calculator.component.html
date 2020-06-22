@@ -1,4 +1,5 @@
-<mat-horizontal-stepper  (selectionChange)="change($event)" labelPosition="bottom" #stepper1 linear  >
+<div class="container">
+<mat-horizontal-stepper  (selectionChange)="change($event)" labelPosition="bottom" #stepper1   >
   
       <mat-step completed={{toggle1}}>
         <ng-template matStepLabel>Vehicle </ng-template>
@@ -31,3 +32,4 @@
       </mat-step> -->
 
 </mat-horizontal-stepper>
+</div>
