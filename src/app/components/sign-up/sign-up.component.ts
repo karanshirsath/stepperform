@@ -17,7 +17,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
     this.signUpForm=this.fb.group({
       fullName:['',[Validators.required]],
-      email:['',[Validators.required,Validators.pattern(/^[A-z]+[0-9]+(@)[a-z]+(.com)$/)]],
+      email:['',[Validators.required,Validators.pattern(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/)]],
       password:['',[Validators.required]],
       confirmPassword:['',[Validators.required]],
       phoneNo:['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]]
@@ -32,8 +32,6 @@ export class SignUpComponent implements OnInit {
     else{
       alert('password should be same')
     }
-   
-    
   }
 
 }
