@@ -9,38 +9,34 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
   styleUrls: ['./insuring-party.component.css']
 })
 export class InsuringPartyComponent implements OnInit {
-  @Output() OnRegister= new EventEmitter()
-  @Output() OnToggle=new EventEmitter()
+  @Output() OnRegister = new EventEmitter()
+  @Output() OnToggle = new EventEmitter()
   insuringParty: FormGroup;
   constructor(private router: Router, private fb: FormBuilder, private GAService: GoogleAnalyticsService) { }
 
   ngOnInit(): void {
     this.insuringParty = this.fb.group({
-      egn: ['', Validators.required],
+      egn: ['', [Validators.required, Validators.pattern("^[0-9]{10}$")]],
       address: ['', Validators.required],
-      email: ['', Validators.compose([Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])]
-
+      email: ['', Validators.compose([Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])]
     });
   }
-  // next() {
-  //   this.router.navigate(['/policy_details']);
-  // }
-  submit=() => {
-    this.GAService.event('Next Button clicked','Insuring Party','Next')
-    console.log(this.insuringParty.value,"insuring party");
-    this.OnRegister.emit(this.insuringParty.value);
 
+  submit = () => {
+    this.GAService.event('Next Button clicked', 'Insuring Party', 'Next')
+    console.log(this.insuringParty.value, "insuring party");
+    this.OnRegister.emit(this.insuringParty.value);
   }
-  change=()=>{
-    
-    if(this.insuringParty.valid){
+  change = () => {
+
+    if (this.insuringParty.valid) {
       this.OnToggle.emit(true)
       this.OnRegister.emit(this.insuringParty.value);
-    }else{
+    } else {
       this.OnToggle.emit(false)
     }
   }
-  get formsControl(){
+  get formsControl() {
     return this.insuringParty.controls
   }
 }
