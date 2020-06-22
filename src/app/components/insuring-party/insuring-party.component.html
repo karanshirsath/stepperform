@@ -3,12 +3,13 @@
     <form [formGroup]="insuringParty">
         <div class="form-row">
             <div class="col-8">
-                Enter your EGN/EIK/LNCH
+                <a href=""><u>Who's data should I fill in?</u></a>
             </div>
             <div class="col-4">
                 <input class="form-control" type="text" formControlName="egn" (change)="change()">
                 <div class="error" *ngIf="formsControl.egn.touched && formsControl.egn.errors">
                     <div *ngIf="formsControl.egn.errors.required">EGN/EIK/LNCH is required </div>
+                    <a href=""><u>Where can I find this number?</u></a>
                 </div>
             </div>
         </div>
