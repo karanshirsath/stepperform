@@ -18,6 +18,7 @@
                 </div>
                 <div id='emailError' *ngIf='signUpForm.controls.email.touched'>
                     <span class="text-danger" *ngIf='signUpForm.controls.email.errors?.required'>Required</span>
+                    <span class="text-danger" *ngIf='signUpForm.controls.email.errors?.pattern'>enter valid email Id</span>
                 </div>
                 <div class="form-group">
                     <label for="password">Password:</label>
@@ -41,6 +42,7 @@
                 </div>
                 <div id='phoneNoError' *ngIf='signUpForm.controls.phoneNo.touched'>
                     <span class="text-danger" *ngIf='signUpForm.controls.phoneNo.errors?.required'>Required</span>
+                    <span class="text-danger" *ngIf='signUpForm.controls.phoneNo.errors?.minlength || signUpForm.controls.phoneNo.errors?.maxlength'>Enter valid phone No</span>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-block btn-primary" (click)='register()'>Register</button>
