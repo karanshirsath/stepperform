@@ -1,5 +1,6 @@
+<div class="container" style="color:rgb(8, 56, 95);">
 <h1 class="display-1"
-    style="color:darkblue; font-size: 200%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+    style="color:rgb(8, 56, 95); font-size: 200%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
     <b>Vehicle Information</b></h1>
 <form [formGroup]="vehicleInfoForm">
     <div class="form-row">
@@ -74,5 +75,5 @@
 
 <button class="btn btn-primary rounded-pill" (click)="submit()" matStepperNext
     [disabled]="!vehicleInfoForm.valid">Next</button>
-
+</div>
 <!-- {{vehicleInfoForm.value | json}} -->
