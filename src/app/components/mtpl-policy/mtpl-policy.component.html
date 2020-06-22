@@ -1,4 +1,4 @@
-<mat-horizontal-stepper labelPosition="bottom" #stepper  linear>
+<mat-horizontal-stepper labelPosition="bottom" #stepper linear>
   <mat-step completed={{toggle1}}>
     <ng-template matStepLabel>Personal details</ng-template>
     <app-personal (OnRegister)="personalData($event)" (OnToggle)="toggle1=$event"></app-personal>

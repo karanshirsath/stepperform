@@ -1,4 +1,4 @@
-hello {{activeTab}} <button (click)="policyTabToggle=!policyTabToggle">toggle</button>
+<button (click)="policyTabToggle=!policyTabToggle">toggle</button>
 <mat-tab-group mat-align-tabs="center" [(selectedIndex)]="activeTab">
     <mat-tab label="MTPL Calculator">
         <app-mtpl-calculator (NextTabSwitch)="changeTab($event)"></app-mtpl-calculator>
