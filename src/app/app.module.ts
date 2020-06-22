@@ -36,6 +36,7 @@ import { ProposalComponent } from './components/proposal/proposal.component';
 import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
     InstallmentComponent,
     ProposalComponent,
     VehicleOwnerComponent,
-    ContactComponent
+    ContactComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
