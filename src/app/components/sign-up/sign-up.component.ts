@@ -33,7 +33,12 @@ export class SignUpComponent implements OnInit {
     //   alert('password should be same')
     // }
     console.log(this.signUpForm.value);
-    this.router.navigate(["/signIn"]);
+    alert("You are registered Succussfully")
+    // this.router.navigate(["/signIn"])
+    
+    setTimeout(()=>{
+      this.router.navigate(["/signIn"])
+    })
   }
 
   
