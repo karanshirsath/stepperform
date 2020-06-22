@@ -3,11 +3,12 @@
     <form [formGroup]="insuringParty">
         <div class="form-row">
             <div class="col-8">
-                Enter your EGN/EIK/LNCH
+                EGN/EIK/LNCH<br>
+                <a href=""><u>Who's data should I fill in?</u></a>
             </div>
             <div class="col-4">
                 <input class="form-control" type="text" formControlName="egn" (change)="change()"
-                    placeholder="Enter your EGN/EIK/LNCH">
+                    placeholder="Enter your EGN/EIK/LNCH" value={{egn}}>
                 <div *ngIf="insuringParty.controls.egn.hasError('required') &&(insuringParty.controls.egn.dirty || insuringParty.controls.egn.touched)"
                     class="error">This field is mandatory</div>
                 <div *ngIf="insuringParty.controls.egn.hasError('pattern') &&(insuringParty.controls.egn.dirty || insuringParty.controls.egn.touched)"
