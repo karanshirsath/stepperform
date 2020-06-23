@@ -2,4 +2,22 @@ form {
     margin: 0  auto; 
     widows: 500px;;
     }
-    
+@media screen and (max-width: 800px){
+        .line{
+            display : none;
+        }
+       
+        
+}
+@media screen and (max-width: 450px){
+    .btn{
+        width: 250px;
+        margin: auto;
+        display: block;
+     
+        
+    }
+}
+
+
+  
