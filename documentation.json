@@ -2709,7 +2709,7 @@
         },
         {
             "name": "VInfoComponent",
-            "id": "component-VInfoComponent-d17cceb2d742278a5ce40e68ccd037a5",
+            "id": "component-VInfoComponent-3efa9b549565ddebec17c80b844f4a42",
             "file": "src/app/components/v-info/v-info.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2732,8 +2732,18 @@
                     "type": "string"
                 },
                 {
+                    "name": "purpose",
+                    "line": 17,
+                    "type": "string"
+                },
+                {
                     "name": "registrationNumber",
                     "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "yesNo",
+                    "line": 18,
                     "type": "string"
                 }
             ],
@@ -2758,7 +2768,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 36
+                    "line": 39
                 },
                 {
                     "name": "submit",
@@ -2766,14 +2776,14 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 30
                 },
                 {
                     "name": "vehicleInfoForm",
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 19
                 }
             ],
             "methodsClass": [
@@ -2783,7 +2793,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20
+                    "line": 22
                 }
             ],
             "hostBindings": [],
@@ -2791,7 +2801,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n\r\n@Component({\r\n  selector: 'app-v-info',\r\n  templateUrl: './v-info.component.html',\r\n  styleUrls: ['./v-info.component.css']\r\n})\r\nexport class VInfoComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  @Input() registrationNumber:string;\r\n  @Input() certificateNumber:string;\r\n vehicleInfoForm:FormGroup;\r\n  constructor(private router: Router, private formBuilder:FormBuilder, private GAService : GoogleAnalyticsService ) { } \r\n\r\n  ngOnInit(): void {\r\n    this.vehicleInfoForm=this.formBuilder.group({\r\n      registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],\r\n      certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],\r\n      purpose:['',Validators.required],\r\n      yesNo:['Yes',Validators.required]\r\n    })}\r\n    submit=() => {\r\n      this.GAService.event('Next Button clicked','Vehicle Infomation','Next')\r\n      //this.router.navigate(['./insuring-party.component']);\r\n      console.log(this.vehicleInfoForm.value,\"vehicle Info\");\r\n      // this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      // setTimeout(this.OnToggle.emit(true),)\r\n\r\n    }\r\n    change=()=>{\r\n      \r\n      if(this.vehicleInfoForm.valid){\r\n        this.OnToggle.emit(true)\r\n        this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }else{\r\n        this.OnToggle.emit(false)\r\n        // this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }\r\n    }\r\n\r\n    get formsControl(){\r\n      return this.vehicleInfoForm.controls;\r\n    }\r\n  }\r\n\r\n\r\n",
+            "sourceCode": "import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n\r\n@Component({\r\n  selector: 'app-v-info',\r\n  templateUrl: './v-info.component.html',\r\n  styleUrls: ['./v-info.component.css']\r\n})\r\nexport class VInfoComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  @Input() registrationNumber:string;\r\n  @Input() certificateNumber:string;\r\n  @Input() purpose:string;\r\n  @Input() yesNo:string;\r\n vehicleInfoForm:FormGroup;\r\n  constructor(private router: Router, private formBuilder:FormBuilder, private GAService : GoogleAnalyticsService ) { } \r\n\r\n  ngOnInit(): void {\r\n    this.vehicleInfoForm=this.formBuilder.group({\r\n      registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],\r\n      certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],\r\n      purpose:['',Validators.required],\r\n      yesNo:['Yes',Validators.required]\r\n    })\r\n  }\r\n    submit=() => {\r\n      this.GAService.event('Next Button clicked','Vehicle Infomation','Next')\r\n      //this.router.navigate(['./insuring-party.component']);\r\n      console.log(this.vehicleInfoForm.value,\"vehicle Info\");\r\n      // this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      // setTimeout(this.OnToggle.emit(true),)\r\n\r\n    }\r\n    change=()=>{\r\n      \r\n      if(this.vehicleInfoForm.valid){\r\n        this.OnToggle.emit(true)\r\n        this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }else{\r\n        this.OnToggle.emit(false)\r\n        // this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }\r\n    }\r\n\r\n    get formsControl(){\r\n      return this.vehicleInfoForm.controls;\r\n    }\r\n  }\r\n\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2817,7 +2827,7 @@
                         "type": "GoogleAnalyticsService"
                     }
                 ],
-                "line": 17,
+                "line": 19,
                 "jsdoctags": [
                     {
                         "name": "router",
@@ -2852,7 +2862,7 @@
                         "name": "formsControl",
                         "type": "",
                         "returnType": "",
-                        "line": 47
+                        "line": 50
                     }
                 }
             },
@@ -3351,7 +3361,7 @@
                 "linktype": "component",
                 "name": "VInfoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {

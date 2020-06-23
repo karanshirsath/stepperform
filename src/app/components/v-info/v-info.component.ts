@@ -14,6 +14,8 @@ export class VInfoComponent implements OnInit {
   @Output() OnToggle=new EventEmitter()
   @Input() registrationNumber:string;
   @Input() certificateNumber:string;
+  @Input() purpose:string;
+  @Input() yesNo:string;
  vehicleInfoForm:FormGroup;
   constructor(private router: Router, private formBuilder:FormBuilder, private GAService : GoogleAnalyticsService ) { } 
 
@@ -23,7 +25,8 @@ export class VInfoComponent implements OnInit {
       certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],
       purpose:['',Validators.required],
       yesNo:['Yes',Validators.required]
-    })}
+    })
+  }
     submit=() => {
       this.GAService.event('Next Button clicked','Vehicle Infomation','Next')
       //this.router.navigate(['./insuring-party.component']);

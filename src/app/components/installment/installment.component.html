@@ -4,9 +4,39 @@
                     <form [formGroup]="installmentForm" (submit)="submit()">
                         <!--<div class="form-check" style="padding-left: 0px !important; ">
                             <div class="form-row">-->
+                                <div>
+                                    <div class="border shadow p-3 mb-3 bg-white rounded firstcard" *ngFor="let element of serviceData">
+                                        <div class="row cardrow">
+                                            <div class="col-auto mr-auto pt-1">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="radio" name="term" formControlName="term"  value={{element.title}} (change)="change()"><h3 class="sub-head">{{element.title}}</h3></label>
+                                                    <div><button class="btn btn-success mon">{{element.subtitle}}</button></div>
+                                            </div>   
+                                            <div class="col-sm-6 col-auto col-8">
+                                                <div class="num">{{element.amount}}<span class="nearelm"> BGN</span></div>
+                                                
+                                                    <div class="bgn" style="color: green;font-weight: bold;">
+                                                        You save {{element.saving}} BGN
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="element.installmentsCount>1">
+                                            <hr class="cardhr">
+                                        <div class="viewins">
+                                            <a href="#">View Instalments</a>
+                                        </div>
+                                        <div class="row viewhide">
+                                            <div class="col-auto mr-auto pt-2 col-sm offset-1" *ngFor="let installments of element.installments;let indexOfElement=index;" >
+                                                {{indexOfElement + 1 | ordinal}} Installment
+                                                <div style="font-weight: bold;">{{installments}} BGN</div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 
-                                
-                                    <div class="border shadow p-3 mb-3 bg-white rounded firstcard">
+                                    <!-- <div class="border shadow p-3 mb-3 bg-white rounded firstcard">
                                         <div class="row cardrow">
                                             <div class="col-auto mr-auto pt-1">
                                                 <label class="form-check-label">
@@ -22,7 +52,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                             
                             
                         <!--</div>
@@ -30,7 +60,7 @@
                         <div class="form-check" style="padding-left: 0px !important; ">
                             <div class="form-row">-->
                             
-                                
+<!--                                 
                                     <div class="border shadow p-3 mb-3 bg-white rounded secondcard">
                                         <div class="row cardrow">
                                             <div class="col-auto mr-auto pt-1">
@@ -61,7 +91,7 @@
                                             
                                         </div>
                                         
-                                    </div>
+                                    </div> -->
                                 
                            
                         <!--</div>
@@ -69,7 +99,7 @@
                             <div class="form-row">-->
                             
                                 
-                                    <div class="border shadow p-3 mb-3 bg-white rounded thirdcard">
+                                    <!-- <div class="border shadow p-3 mb-3 bg-white rounded thirdcard">
                                         <div class="row cardrow ">
                                             <div class="col-auto mr-auto pt-1">
                                                 <label class="form-check-label" style="font-weight: bold;">
@@ -102,7 +132,7 @@
                                                 <div style="font-weight: bold;">132.40 BGN</div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 
                             
                         <!--</div>-->

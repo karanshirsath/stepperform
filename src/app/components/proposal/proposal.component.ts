@@ -17,6 +17,7 @@ export class ProposalComponent implements OnInit {
   sdate:string='04-03-54';
   mtplCalculatorData;
   mtplPolicyData;
+  installmentData
   @Output() changeStep = new EventEmitter()
   @Output() moveTab = new EventEmitter()
   moveToCalculator=(index)=>{
@@ -29,7 +30,9 @@ export class ProposalComponent implements OnInit {
   ngOnInit(): void {
     this._dataService.formData.subscribe(data=>{
       this.mtplCalculatorData=data;
-      console.log(this.mtplCalculatorData);
+      this.installmentData=data["installmentsData"].installments
+      console.log(this.installmentData);
+      
      })
      this._dataService.policyData.subscribe(data=>{
        console.log(data);
@@ -56,6 +59,11 @@ export class ProposalComponent implements OnInit {
        
 
      })
+//      this._dataService.installmentData.subscribe(data=>{
+// this.installmentData=data
+// console.log(data);
+
+//      })
     
     this.summaryForm=this.fb.group({
       firstInstalment:[this.first],
