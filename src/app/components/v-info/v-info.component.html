@@ -9,7 +9,7 @@
         <div class="  col-sm-4 col-md-4 col-lg-4">
             <input class="form-control" id="registrationNumber" type="text" placeholder="XX0000XX" formControlName="registrationNumber"
                 (change)="change()" value={{registrationNumber}}>
-            <div class="error">
+            <div class="error"
                 *ngIf="formsControl.registrationNumber.touched && formsControl.registrationNumber.errors">
                 <div *ngIf="formsControl.registrationNumber.errors.required">Vehicle Registartion Number is required
                 </div>
