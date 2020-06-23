@@ -4,35 +4,46 @@
     width: 2000px;
 }*/
 
-.overflowAuto {
+/*.overflowAuto {
     overflow-x: hidden;
     overflow-y: auto;
-  }
-.card-body{
-    color:rgb(4, 58, 102);
-    padding-top: 50px;
-    /* width: 2000px;*/ 
-    
+  }*/
+.heading{
+    color: darkblue;
+    font-family: 'Trebuchet MS',Arial,sans-serif;
+    font-weight: bold;
+} 
+.sub-head{
+    font-weight:bold;
 }
 .bgn{
     color:rgb(4, 58, 102);
     text-align: right;
-    font-size: 20px;
+    font-size: 15px;
+    padding-top: 5%;
 }
 .cardrow{
     padding-left: 20px;
+    color: darkblue;
 }
-
+.nearelm{
+    font-size: 20px;
+}
 .num{
     color:rgb(4, 58, 102);
     text-align: end;
     font-size: 30px;
     font-weight: bold;
+    padding-top: 2%;
 }
 .mon{
     text-align: left;
+    font-size: 15px;
 }
-
+.viewhide{
+    padding-left: 2%;
+    color: darkblue;
+}
 .border{
       padding: 0%;
       /*width: 800px;*/
@@ -61,6 +72,8 @@
 }
 .content{
     height:auto;
+    width: auto;
+    color: darkblue;
     /*width:1000px;*/
 }
 
@@ -70,6 +83,8 @@
 }
 .wid{
     padding-top: 2%;
+    
+    font-size: 20px;
 }
 
 @media screen and (max-width: 800px) {
@@ -81,16 +96,25 @@
         font-size: 20px;
         padding-left: 10%;
         text-align: left;
-    }.bgn{
+        padding-left: 0%;
+        padding-top: 5%;
+    }
+    .nearelm{
+        font-size: 13px;
+    }
+    .bgn{
         font-size: 12px;
         padding-left: 10%;
         text-align: left;
+        padding-left: 0%;
     }
     .col-md-5 col-auto col-7{
         padding-left: 0%;
     }
     .viewins{
         display:block;
+        padding-left: 7%;
+        padding-top: 5%;
     }
     .viewhide, .cardhr{
         display:none;
@@ -101,10 +125,13 @@
     .wid{
         /*width:80%;*/
         padding-top: 2%;
+        font-size: 15px;
+        width: auto;
     }
 
+    
     .imgsz{
-        width: auto;
+        width: 10%;
     }
   }
 

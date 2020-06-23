@@ -1493,7 +1493,7 @@
         },
         {
             "name": "PersonalComponent",
-            "id": "component-PersonalComponent-28fb3f5b62c76fae62f8580f5d52125c",
+            "id": "component-PersonalComponent-b378b738e974425510e742e2f4371fd9",
             "file": "src/app/components/personal/personal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1509,7 +1509,53 @@
                 "./personal.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "citizen",
+                    "line": 21,
+                    "type": "String"
+                },
+                {
+                    "name": "dob",
+                    "line": 22,
+                    "type": "Date"
+                },
+                {
+                    "name": "firstname",
+                    "line": 14,
+                    "type": "String"
+                },
+                {
+                    "name": "firstnameeng",
+                    "line": 18,
+                    "type": "String"
+                },
+                {
+                    "name": "lastname",
+                    "line": 15,
+                    "type": "String"
+                },
+                {
+                    "name": "lastnameeng",
+                    "line": 19,
+                    "type": "String"
+                },
+                {
+                    "name": "lnch",
+                    "line": 13,
+                    "type": "String"
+                },
+                {
+                    "name": "surname",
+                    "line": 16,
+                    "type": "String"
+                },
+                {
+                    "name": "sursurnameeng",
+                    "line": 20,
+                    "type": "String"
+                }
+            ],
             "outputsClass": [
                 {
                     "name": "OnRegister",
@@ -1531,7 +1577,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 35
                 },
                 {
                     "name": "citizens",
@@ -1539,14 +1585,14 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 24
                 },
                 {
                     "name": "personalForm",
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 23
                 }
             ],
             "methodsClass": [
@@ -1556,7 +1602,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36
+                    "line": 46
                 },
                 {
                     "name": "success",
@@ -1564,7 +1610,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16
+                    "line": 26
                 }
             ],
             "hostBindings": [],
@@ -1572,7 +1618,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output, EventEmitter } from '@angular/core';\r\nimport {FormBuilder,FormGroup,Validators} from '@angular/forms';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n@Component({\r\n  selector: 'app-personal',\r\n  templateUrl: './personal.component.html',\r\n  styleUrls: ['./personal.component.css']\r\n})\r\nexport class PersonalComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  personalForm:FormGroup;\r\n  citizens=['Indian','American','African'];\r\n  constructor(private formBuilder:FormBuilder, private GAService: GoogleAnalyticsService) { }\r\n  success(){\r\n    this.GAService.event('Next Button clicked','Personal Details','Next')\r\n    //console.log(this.personalForm.value);\r\n    //console.log(this.personalForm.value,\"vehicle Info\");\r\n    // this.OnToggle.emit(true)\r\n    console.log(23123124);\r\n    \r\n    this.OnRegister.emit(this.personalForm.value);\r\n  }\r\n  change=()=>{\r\n      \r\n    if(this.personalForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.personalForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n      // this.OnRegister.emit(this.personalForm.value);\r\n    }\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.personalForm=this.formBuilder.group({\r\n      lnch:['',[Validators.required,Validators.pattern(\"^[0-9]{10}$\")]],\r\n      fullname:this.formBuilder.group({\r\n        firstname:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]],\r\n        lastname:['',Validators.pattern(\"^[a-zA-Z]*$\")],\r\n        surname:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]]\r\n      }),\r\n      fullnameeng:this.formBuilder.group({\r\n        firstnameeng:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]],\r\n        lastnameeng:['',Validators.pattern(\"^[a-zA-Z]*$\")],\r\n        surnameeng:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]]\r\n      }),\r\n      citizen:['',Validators.required],\r\n      birth:['',Validators.required]\r\n    });\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, Output, EventEmitter,Input } from '@angular/core';\r\nimport {FormBuilder,FormGroup,Validators} from '@angular/forms';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n@Component({\r\n  selector: 'app-personal',\r\n  templateUrl: './personal.component.html',\r\n  styleUrls: ['./personal.component.css']\r\n})\r\nexport class PersonalComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  @Input() lnch:String;\r\n  @Input() firstname:String;\r\n  @Input() lastname:String;\r\n  @Input() surname:String;\r\n\r\n  @Input() firstnameeng:String;\r\n  @Input() lastnameeng:String;\r\n  @Input() sursurnameeng:String;\r\n  @Input() citizen:String;\r\n  @Input() dob:Date;\r\n  personalForm:FormGroup;\r\n  citizens=['Indian','American','African'];\r\n  constructor(private formBuilder:FormBuilder, private GAService: GoogleAnalyticsService) { }\r\n  success(){\r\n    this.GAService.event('Next Button clicked','Personal Details','Next')\r\n    //console.log(this.personalForm.value);\r\n    //console.log(this.personalForm.value,\"vehicle Info\");\r\n    // this.OnToggle.emit(true)\r\n    console.log(23123124);\r\n    \r\n    this.OnRegister.emit(this.personalForm.value);\r\n  }\r\n  change=()=>{\r\n      \r\n    if(this.personalForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.personalForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n      // this.OnRegister.emit(this.personalForm.value);\r\n    }\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.personalForm=this.formBuilder.group({\r\n      lnch:['',[Validators.required,Validators.pattern(\"^[0-9]{10}$\")]],\r\n      fullname:this.formBuilder.group({\r\n        firstname:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]],\r\n        lastname:['',Validators.pattern(\"^[a-zA-Z]*$\")],\r\n        surname:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]]\r\n      }),\r\n      fullnameeng:this.formBuilder.group({\r\n        firstnameeng:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]],\r\n        lastnameeng:['',Validators.pattern(\"^[a-zA-Z]*$\")],\r\n        surnameeng:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]]\r\n      }),\r\n      citizen:['',Validators.required],\r\n      birth:['',Validators.required]\r\n    });\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1594,7 +1640,7 @@
                         "type": "GoogleAnalyticsService"
                     }
                 ],
-                "line": 14,
+                "line": 24,
                 "jsdoctags": [
                     {
                         "name": "formBuilder",
@@ -1615,7 +1661,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container col-12\">\r\n  <h1>Personal Details</h1>\r\n  <form [formGroup]=\"personalForm\" >\r\n    <div class=\"form-group row \">\r\n      <label for=\"lnch\" class=\"col-sm-2 col-form-label\">LNCH</label>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" class=\"form-control\" id=\"lnch\" placeholder=\"Enter LNCH\" formControlName=\"lnch\" name=\"lnch\"\r\n          (change)=\"change()\">\r\n        <div\r\n          *ngIf=\"personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)\"\r\n          class=\"error\">This field is mandatory</div>\r\n        <div\r\n          *ngIf=\"personalForm.controls.lnch.hasError('pattern') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)\"\r\n          class=\"error\">Only 10 digit numerical value allowed</div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div formGroupName=\"fullname\">\r\n      <label class=\"\">Full Name</label><br>\r\n      <div class=\"form-group row\">\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"firstname\" placeholder=\"Enter firstname\"\r\n            formControlName=\"firstname\" name=\"firstname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('required') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('pattern') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('maxlength') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"lastname\" placeholder=\"Enter middlename\" formControlName=\"lastname\"\r\n            name=\"lastname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('lastname').hasError('pattern') &&(personalForm.get('fullname').get('lastname').dirty || personalForm.get('fullname').get('lastname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"surname\" placeholder=\"Enter lastname\" formControlName=\"surname\"\r\n            name=\"suname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('required') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('pattern') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('maxlength') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div formGroupName=\"fullnameeng\">\r\n      <label>Full Name in English</label><br>\r\n      <div class=\"form-group row\">\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"firstnameeng\" placeholder=\"Enter firstname\"\r\n            formControlName=\"firstnameeng\" name=\"firstnameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"lastnameeng\" placeholder=\"Enter middlename\"\r\n            formControlName=\"lastnameeng\" name=\"lastnameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('lastnameeng').dirty || personalForm.get('fullnameeng').get('lastnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"surnameeng\" placeholder=\"Enter lastname\"\r\n            formControlName=\"surnameeng\" name=\"sunameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"panel panel-default\">\r\n      <div class=\"panel-body\">Please compare data in latin with data in vehicle registration certificate\r\n        or identity document.Data will be used for printout of Green Card Certificate.\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group row\">\r\n      <label for=\"citizen\" class=\"col-sm-2 col-form-label\">Citizenship</label>\r\n      <div class=\"col-sm-4\">\r\n        <select class=\"form-control\" id=\"citizen\" formControlName=\"citizen\" name=\"citizen\" (change)=\"change()\">\r\n          <option selected disabled value=\"\">--SELECT--</option>\r\n          <option *ngFor=\"let c of citizens\" [value]=\"c\">{{c}}</option>\r\n        </select>\r\n        <div\r\n          *ngIf=\"personalForm.controls.citizen.hasError('required') &&(personalForm.controls.citizen.dirty || personalForm.controls.citizen.touched)\"\r\n          class=\"error\">Please select your Citizenship</div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div class=\"form-group row\">\r\n      <label for=\"birth\" class=\"col-sm-2 col-form-label\">Birth Date</label>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"date\" class=\"form-control\" id=\"birth\" placeholder=\"Enter Birth date\" formControlName=\"birth\"\r\n          name=\"birth\" (change)=\"change()\">\r\n        <div\r\n          *ngIf=\"personalForm.controls.birth.hasError('required') &&(personalForm.controls.birth.dirty || personalForm.controls.birth.touched)\"\r\n          class=\"error\">Please select your birth date </div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <button type=\"button\" class=\"btn btn-primary btn-lg\" mat-raised-button matStepperNext\r\n      [disabled]=\"!personalForm.valid\" (click)=\"success()\">Next</button>\r\n  </form>\r\n</div>"
+            "templateData": "<div class=\"container col-12\">\r\n  <h1>Personal Details</h1>\r\n  <form [formGroup]=\"personalForm\" >\r\n    <div class=\"form-group row \">\r\n      <label for=\"lnch\" class=\"col-sm-2 col-form-label\">LNCH</label>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" class=\"form-control\" id=\"lnch\" placeholder=\"Enter LNCH\" value={{lnch}} formControlName=\"lnch\" name=\"lnch\"\r\n          (change)=\"change()\">\r\n        <div\r\n          *ngIf=\"personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)\"\r\n          class=\"error\">This field is mandatory</div>\r\n        <div\r\n          *ngIf=\"personalForm.controls.lnch.hasError('pattern') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)\"\r\n          class=\"error\">Only 10 digit numerical value allowed</div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div formGroupName=\"fullname\">\r\n      <label class=\"\">Full Name</label><br>\r\n      <div class=\"form-group row\">\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"firstname\" value={{firstname}} placeholder=\"Enter firstname\"\r\n            formControlName=\"firstname\" name=\"firstname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('required') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('pattern') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('maxlength') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"lastname\" value={{lastname}} placeholder=\"Enter middlename\" formControlName=\"lastname\"\r\n            name=\"lastname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('lastname').hasError('pattern') &&(personalForm.get('fullname').get('lastname').dirty || personalForm.get('fullname').get('lastname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"surname\" value={{surname}} placeholder=\"Enter lastname\" formControlName=\"surname\"\r\n            name=\"suname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('required') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('pattern') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('maxlength') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div formGroupName=\"fullnameeng\">\r\n      <label>Full Name in English</label><br>\r\n      <div class=\"form-group row\">\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"firstnameeng\" value={{firstnameeng}} placeholder=\"Enter firstname\"\r\n            formControlName=\"firstnameeng\" name=\"firstnameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"lastnameeng\" value={{lastnameeng}} placeholder=\"Enter middlename\"\r\n            formControlName=\"lastnameeng\" name=\"lastnameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('lastnameeng').dirty || personalForm.get('fullnameeng').get('lastnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n        </div>\r\n        <div class=\"col-sm-2\">\r\n          <input type=\"text\" class=\"form-control\" id=\"surnameeng\" value={{surnameeng}} placeholder=\"Enter lastname\"\r\n            formControlName=\"surnameeng\" name=\"sunameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"panel panel-default\">\r\n      <div class=\"panel-body\">Please compare data in latin with data in vehicle registration certificate\r\n        or identity document.Data will be used for printout of Green Card Certificate.\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group row\">\r\n      <label for=\"citizen\" class=\"col-sm-2 col-form-label\">Citizenship</label>\r\n      <div class=\"col-sm-4\">\r\n        <select class=\"form-control\" id=\"citizen\" value={{citizen}} formControlName=\"citizen\" name=\"citizen\" (change)=\"change()\">\r\n          <option selected disabled value=\"\">--SELECT--</option>\r\n          <option *ngFor=\"let c of citizens\" [value]=\"c\">{{c}}</option>\r\n        </select>\r\n        <div\r\n          *ngIf=\"personalForm.controls.citizen.hasError('required') &&(personalForm.controls.citizen.dirty || personalForm.controls.citizen.touched)\"\r\n          class=\"error\">Please select your Citizenship</div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div class=\"form-group row\">\r\n      <label for=\"birth\" class=\"col-sm-2 col-form-label\">Birth Date</label>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"date\" class=\"form-control\" value=\"{{dob | date: 'yyyy-MM-dd'}}\" id=\"birth\" placeholder=\"Enter Birth date\" formControlName=\"birth\"\r\n          name=\"birth\" (change)=\"change()\">\r\n        <div\r\n          *ngIf=\"personalForm.controls.birth.hasError('required') &&(personalForm.controls.birth.dirty || personalForm.controls.birth.touched)\"\r\n          class=\"error\">Please select your birth date </div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <button type=\"button\" class=\"btn btn-primary btn-lg\" mat-raised-button matStepperNext\r\n      [disabled]=\"!personalForm.valid\" (click)=\"success()\">Next</button>\r\n  </form>\r\n</div>"
         },
         {
             "name": "PolicyDetailsComponent",
@@ -2663,7 +2709,7 @@
         },
         {
             "name": "VInfoComponent",
-            "id": "component-VInfoComponent-d17cceb2d742278a5ce40e68ccd037a5",
+            "id": "component-VInfoComponent-3efa9b549565ddebec17c80b844f4a42",
             "file": "src/app/components/v-info/v-info.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2686,8 +2732,18 @@
                     "type": "string"
                 },
                 {
+                    "name": "purpose",
+                    "line": 17,
+                    "type": "string"
+                },
+                {
                     "name": "registrationNumber",
                     "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "yesNo",
+                    "line": 18,
                     "type": "string"
                 }
             ],
@@ -2712,7 +2768,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 36
+                    "line": 39
                 },
                 {
                     "name": "submit",
@@ -2720,14 +2776,14 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 30
                 },
                 {
                     "name": "vehicleInfoForm",
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 19
                 }
             ],
             "methodsClass": [
@@ -2737,7 +2793,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20
+                    "line": 22
                 }
             ],
             "hostBindings": [],
@@ -2745,7 +2801,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n\r\n@Component({\r\n  selector: 'app-v-info',\r\n  templateUrl: './v-info.component.html',\r\n  styleUrls: ['./v-info.component.css']\r\n})\r\nexport class VInfoComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  @Input() registrationNumber:string;\r\n  @Input() certificateNumber:string;\r\n vehicleInfoForm:FormGroup;\r\n  constructor(private router: Router, private formBuilder:FormBuilder, private GAService : GoogleAnalyticsService ) { } \r\n\r\n  ngOnInit(): void {\r\n    this.vehicleInfoForm=this.formBuilder.group({\r\n      registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],\r\n      certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],\r\n      purpose:['',Validators.required],\r\n      yesNo:['Yes',Validators.required]\r\n    })}\r\n    submit=() => {\r\n      this.GAService.event('Next Button clicked','Vehicle Infomation','Next')\r\n      //this.router.navigate(['./insuring-party.component']);\r\n      console.log(this.vehicleInfoForm.value,\"vehicle Info\");\r\n      // this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      // setTimeout(this.OnToggle.emit(true),)\r\n\r\n    }\r\n    change=()=>{\r\n      \r\n      if(this.vehicleInfoForm.valid){\r\n        this.OnToggle.emit(true)\r\n        this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }else{\r\n        this.OnToggle.emit(false)\r\n        // this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }\r\n    }\r\n\r\n    get formsControl(){\r\n      return this.vehicleInfoForm.controls;\r\n    }\r\n  }\r\n\r\n\r\n",
+            "sourceCode": "import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n\r\n@Component({\r\n  selector: 'app-v-info',\r\n  templateUrl: './v-info.component.html',\r\n  styleUrls: ['./v-info.component.css']\r\n})\r\nexport class VInfoComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  @Input() registrationNumber:string;\r\n  @Input() certificateNumber:string;\r\n  @Input() purpose:string;\r\n  @Input() yesNo:string;\r\n vehicleInfoForm:FormGroup;\r\n  constructor(private router: Router, private formBuilder:FormBuilder, private GAService : GoogleAnalyticsService ) { } \r\n\r\n  ngOnInit(): void {\r\n    this.vehicleInfoForm=this.formBuilder.group({\r\n      registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],\r\n      certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],\r\n      purpose:['',Validators.required],\r\n      yesNo:['Yes',Validators.required]\r\n    })\r\n  }\r\n    submit=() => {\r\n      this.GAService.event('Next Button clicked','Vehicle Infomation','Next')\r\n      //this.router.navigate(['./insuring-party.component']);\r\n      console.log(this.vehicleInfoForm.value,\"vehicle Info\");\r\n      // this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      // setTimeout(this.OnToggle.emit(true),)\r\n\r\n    }\r\n    change=()=>{\r\n      \r\n      if(this.vehicleInfoForm.valid){\r\n        this.OnToggle.emit(true)\r\n        this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }else{\r\n        this.OnToggle.emit(false)\r\n        // this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }\r\n    }\r\n\r\n    get formsControl(){\r\n      return this.vehicleInfoForm.controls;\r\n    }\r\n  }\r\n\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2771,7 +2827,7 @@
                         "type": "GoogleAnalyticsService"
                     }
                 ],
-                "line": 17,
+                "line": 19,
                 "jsdoctags": [
                     {
                         "name": "router",
@@ -2806,11 +2862,11 @@
                         "name": "formsControl",
                         "type": "",
                         "returnType": "",
-                        "line": 47
+                        "line": 50
                     }
                 }
             },
-            "templateData": "<h1 class=\"display-1\"\r\n    style=\"color:darkblue; font-size: 200%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;\">\r\n    Vehicle Information</h1>\r\n<form [formGroup]=\"vehicleInfoForm\">\r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Vehicle Registration Number\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"XX0000XX\" formControlName=\"registrationNumber\"\r\n                (change)=\"change()\" value={{registrationNumber}}>\r\n            <div class=\"error\"\r\n                *ngIf=\"formsControl.registrationNumber.touched && formsControl.registrationNumber.errors\">\r\n                <div *ngIf=\"formsControl.registrationNumber.errors.required\">Vehicle Registartion Number is required\r\n                </div>\r\n                <div\r\n                    *ngIf=\"formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength\">\r\n                    Vehicle Registartion Number Should be 8 characters </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <hr>\r\n\r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Vehicle Certificate Number <br>\r\n            <a href=\"\"><u>Where can I find this number?</u></a>\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"000000000\" formControlName=\"certificateNumber\"\r\n                (change)=\"change()\" value={{certificateNumber}}>\r\n            <div class=\"error\" *ngIf=\"formsControl.certificateNumber.touched && formsControl.certificateNumber.errors\">\r\n                <div *ngIf=\"formsControl.certificateNumber.errors.required\">Vehicle Certificate Number is required\r\n                </div>\r\n                <div\r\n                    *ngIf=\"formsControl.certificateNumber.errors.minlength || formsControl.certificateNumber.errors.maxlength\">\r\n                    Vehicle Certificate Number Should be 9 characters </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            What purpose does this vehicle serve?\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <select formControlName=\"purpose\" class=\"form-control\" (change)=\"change()\">\r\n                <option selected disabled value=\"\">--SELECT--</option>\r\n                <option value=\"personal\">Personal Use</option>\r\n                <option value=\"public\">Public Use</option>\r\n            </select>\r\n            <div class=\"error\" *ngIf=\"formsControl.purpose.touched && formsControl.purpose.errors\">\r\n                <div *ngIf=\"formsControl.purpose.errors.required\">Please select what purpose does this vehicle serve\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input type=\"radio\" name=\"yesNo\" (change)=\"change()\" formControlName=\"yesNo\" value=\"Yes\">Yes &nbsp;&nbsp;\r\n            <input type=\"radio\" name=\"yesNo\" (change)=\"change()\" formControlName=\"yesNo\" value=\"No\">No\r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n</form><br>\r\n\r\n<button class=\"btn btn-primary rounded-pill\" (click)=\"submit()\" matStepperNext\r\n    [disabled]=\"!vehicleInfoForm.valid\">Next</button>\r\n\r\n<!-- {{vehicleInfoForm.value | json}} -->"
+            "templateData": "<h1 class=\"display-1\"\r\n    style=\"color:darkblue; font-size: 200%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;\">\r\n    Vehicle Information</h1>\r\n<form [formGroup]=\"vehicleInfoForm\">\r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Vehicle Registration Number\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"XX0000XX\" formControlName=\"registrationNumber\"\r\n                (change)=\"change()\" [value]=registrationNumber>\r\n            <div class=\"error\"\r\n                *ngIf=\"formsControl.registrationNumber.touched && formsControl.registrationNumber.errors\">\r\n                <div *ngIf=\"formsControl.registrationNumber.errors.required\">Vehicle Registartion Number is required\r\n                </div>\r\n                <div\r\n                    *ngIf=\"formsControl.registrationNumber.errors.minlength || formsControl.registrationNumber.errors.maxlength\">\r\n                    Vehicle Registartion Number Should be 8 characters </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <hr>\r\n\r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Vehicle Certificate Number <br>\r\n            <a href=\"\"><u>Where can I find this number?</u></a>\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"000000000\" formControlName=\"certificateNumber\"\r\n                (change)=\"change()\" value={{certificateNumber}}>\r\n            <div class=\"error\" *ngIf=\"formsControl.certificateNumber.touched && formsControl.certificateNumber.errors\">\r\n                <div *ngIf=\"formsControl.certificateNumber.errors.required\">Vehicle Certificate Number is required\r\n                </div>\r\n                <div\r\n                    *ngIf=\"formsControl.certificateNumber.errors.minlength || formsControl.certificateNumber.errors.maxlength\">\r\n                    Vehicle Certificate Number Should be 9 characters </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n    <div class=\"form-row\">\r\n        <div class=\"col-8\">\r\n            What purpose does this vehicle serve?\r\n        </div>\r\n        <div class=\"col-4\">\r\n            <select formControlName=\"purpose\" class=\"form-control\" (change)=\"change()\">\r\n                <option [selected]=\"''===purpose\" disabled value=\"\">--SELECT--</option>\r\n                <option value=\"personal\" [selected]=\"'personal'===purpose\">Personal Use</option>\r\n                <option value=\"public\" [selected]=\"'public'===purpose\">Public Use</option>\r\n            </select>\r\n            <div class=\"error\" *ngIf=\"formsControl.purpose.touched && formsControl.purpose.errors\">\r\n                <div *ngIf=\"formsControl.purpose.errors.required\">Please select what purpose does this vehicle serve\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n    <div class=\"form-row\">\r\n        <div class=\"col-9\">\r\n            Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?\r\n        </div>\r\n        <div class=\"col-3\">\r\n            <input type=\"radio\" name=\"yesNo\" (change)=\"change()\" formControlName=\"yesNo\" value=\"Yes\" [checked]=\"yesNo=='Yes'\">Yes &nbsp;&nbsp;\r\n            <input type=\"radio\" name=\"yesNo\" (change)=\"change()\" formControlName=\"yesNo\" value=\"No\" [checked]=\"yesNo=='No'\">No\r\n        </div>\r\n    </div>\r\n    <hr>\r\n\r\n</form><br>\r\n\r\n<button class=\"btn btn-primary rounded-pill\" (click)=\"submit()\" matStepperNext\r\n    [disabled]=\"!vehicleInfoForm.valid\">Next</button>\r\n\r\n<!-- {{vehicleInfoForm.value | json}} -->"
         }
     ],
     "modules": [
@@ -3242,7 +3298,7 @@
                 "linktype": "component",
                 "name": "PersonalComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/18",
                 "status": "low"
             },
             {
@@ -3305,7 +3361,7 @@
                 "linktype": "component",
                 "name": "VInfoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
