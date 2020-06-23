@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
+import { InstallmentService } from './installment.service';
 
 @Component({
   selector: 'app-installment',
@@ -12,13 +13,16 @@ export class InstallmentComponent implements OnInit {
   installmentForm: FormGroup;
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
-  constructor(private formBuilder: FormBuilder,private router: Router, private GAService: GoogleAnalyticsService) { }
+  serviceData
+  constructor(private formBuilder: FormBuilder,private router: Router, private GAService: GoogleAnalyticsService, private installmentService:InstallmentService) { }
 
   ngOnInit()  {
     this.installmentForm=this.formBuilder.group({
-      term: ['',Validators.required]
-      
+      term: ['',Validators.required],
+      installment:['']
     });
+    this.serviceData=this.installmentService.getInstallmentData()
+    console.log(this.serviceData);
     
   }
   submitInstalmentForm(){
@@ -31,6 +35,15 @@ export class InstallmentComponent implements OnInit {
     this.OnRegister.emit(this.installmentForm.value);
   }
   change=()=>{
+    var obj={
+      term:this.installmentForm.value,
+      // installment:this.serviceData[this.installmentForm.value]
+    }
+    for(let element of this.serviceData){
+      if(element.title==this.installmentForm.value.term){
+        
+      }
+    }
     if(this.installmentForm.valid){
       this.OnToggle.emit(true)
       this.OnRegister.emit(this.installmentForm.value);
