@@ -47,9 +47,9 @@
         </div>
         <div class=" col-sm-4 col-md-4 col-lg-4">
             <select formControlName="purpose" class="form-control" (change)="change()">
-                <option selected disabled value="" id="purpose">--SELECT--</option>
-                <option value="personal" id="purpose">Personal Use</option>
-                <option value="public" id="purpose">Public Use</option>
+                <option  [selected]="''===purpose" disabled value="" id="purpose">--SELECT--</option>
+                <option [selected]="'personal'===purpose" value="personal" id="purpose">Personal Use</option>
+                <option [selected]="'public'===purpose" value="public" id="purpose">Public Use</option>
             </select>
             <div class="error" *ngIf="formsControl.purpose.touched && formsControl.purpose.errors">
                 <div *ngIf="formsControl.purpose.errors.required">Please select what purpose does this vehicle serve
@@ -68,8 +68,8 @@
       
         <div class="col-sm-4 col-md-4 col-lg-4"><br>
             
-            <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes">Yes &nbsp;&nbsp;
-            <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="No">No
+            <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes" [checked]="yesNo=='Yes'">Yes &nbsp;&nbsp;
+            <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="No" [checked]="yesNo=='No'">No
         </div>
         
     </div>
