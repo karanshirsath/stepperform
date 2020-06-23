@@ -3,6 +3,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { LoginComponent } from '../app/components/login/login.component';
 import { HttpClientModule } from "@angular/common/http";
 import { moduleMetadata } from "@storybook/angular";
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
 
 <Meta title="MDX/Login" decorators={[
     moduleMetadata({
@@ -52,5 +54,54 @@ appearance of the login component.
       
     },
     }}    
+  </Story>
+</Preview>
+
+
+### Login with wrong credentials
+
+This is the Login with wrong credentials story. In this story the user will give any one or all of the user 
+inputed value wrong or empty in the form of the login component. It will show error message in action tab of storybook.
+
+<Preview>
+  <Story name="Login with wrong credentials">{{
+    component: LoginComponent,
+    template: '<app-login (onLoginError)="errorMessage($event)"></app-login>',
+    props:{
+      errorMessage: action("Error message")
+    },
+    }}
+  </Story>
+</Preview>
+
+### Login with correct credentials
+
+This is the Login with correct credentials story. In this story the user will give correct values in the form of the login component. 
+It will redirect user to MTPL calculator story in storybook.
+
+<Preview>
+  <Story name="Login with correct credentials">{{
+    component: LoginComponent,
+    template: '<app-login (onLoginSuccess)="successMessage($event)"></app-login>',
+    props:{
+      successMessage: linkTo('MDX/MTPL Calculator Component')
+    },
+    }}
+  </Story>
+</Preview>
+
+### Login as a guest
+
+This is the Login as a guest story. In this story the user will click on login as guest user button. 
+It will redirect user to MTPL calculator story in storybook.
+
+<Preview>
+  <Story name="Login as a guest">{{
+    component: LoginComponent,
+    template: '<app-login (asGuestLogin)="successMessage($event)"></app-login>',
+    props:{
+      successMessage: linkTo('MDX/MTPL Calculator Component')
+    },
+    }}
   </Story>
 </Preview>
