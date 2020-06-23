@@ -1,45 +1,41 @@
 /* Style inputs with type="text", select elements and textareas */
 
-input[type=text], select, textarea {
-    /* Full width */
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 8px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    /* margin-top: 6px; Add a top margin */
-    /* margin-bottom: 16px; Bottom margin */
-     resize: vertical ;/*Allow the user to vertically resize the textarea (not horizontally) */
-  }
- 
 
   h1{
-    margin-left: 1px;
-    margin-bottom: 20px;
-    color: darkblue;
+    
+    color:rgb(8,56,95); 
+    font-size: 200%;
+    font-family:Arial, Helvetica, sans-serif
 }
-  label{
-    color: rgb(163, 160, 160);
+label{
+    color:rgb(8,56,95);
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.btn{
+    
+  min-width: 100px;
+}
   /* Style the submit button with a specific background color etc */
-  input[type=submit] {
-    background-color: rgb(0, 204, 255);
-    color: white;
-    padding: 12px 50px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  .border {
-    border: 1px solid rgba(211, 211, 211, 0.507);
-  }
-  .tab{
-    color: darkblue;
-     font-size: 1;
-  }
+  
+  @media screen and (max-width: 1090px){
+    .space{
+        padding: 4px;
+    }
+    
+}
  
-  .overflowAuto {
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
   
   
+  @media screen and (max-width: 800px) {
+    .line{
+        display : none;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .btn{
+        width: 250px;
+        margin: auto;   
+    }
+}
