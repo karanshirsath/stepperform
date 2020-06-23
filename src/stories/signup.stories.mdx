@@ -1,22 +1,21 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import { InsuringPartyComponent } from '../app/components/insuring-party/insuring-party.component';
+import { SignUpComponent } from '../app/components/sign-up/sign-up.component';
 import { moduleMetadata } from "@storybook/angular";
-import { text } from '@storybook/addon-knobs';
 
-<Meta title="MDX/Insuring Party Component" decorators={[
+<Meta title="MDX/Signup Component" decorators={[
     moduleMetadata({
         declarations: [
-            InsuringPartyComponent
+            SignUpComponent
         ],
         provider: [{}]
     }),
 ]} parameters={{
-    component: InsuringPartyComponent
+    component: SignUpComponent
 }}/>
 
-# Insuring Party Component 
+# Proposal Component 
 
-This is the delivery component.
+This is the Signup component.
 
 ## MDX
 
@@ -40,23 +39,13 @@ storiesOf('MDX|Login',module)
 ### Default
 
 This is the default story. In this story the users can take a look at the overall
-appearance of the login component.
+appearance of the signup component.
 
 <Preview>
   <Story name="Default">{{
-    component: InsuringPartyComponent,
+    component: SignUpComponent,
     props:{
       
-    },
-    }}    
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="Knob">{{
-    component: InsuringPartyComponent,
-    props:{
-      egn: text('egn','123456'),
     },
     }}    
   </Story>

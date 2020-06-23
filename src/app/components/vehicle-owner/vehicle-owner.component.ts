@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
@@ -11,6 +11,26 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class VehicleOwnerComponent implements OnInit {
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
+
+  // Input fields
+  @Input() lnch:String;
+  @Input() firstname:String;
+  @Input() lastname:String;
+  @Input() surname:String;
+
+  @Input() firstnameeng:String;
+  @Input() lastnameeng:String;
+  @Input() sursurnameeng:String;
+  @Input() citizen:String;
+  @Input() dob:Date;
+  @Input() city:String;
+  @Input() pincode:String;
+  @Input() street:String;
+  @Input() No:String;
+  @Input() block:String;
+  @Input() entrance:String;
+  @Input() appartment:String;
+
   Details: FormGroup;
   citizens = ['Indian', 'American', 'African'];
   constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
