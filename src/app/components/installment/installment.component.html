@@ -27,7 +27,7 @@
                                             <a href="#">View Instalments</a>
                                         </div>
                                         <div class="row viewhide">
-                                            <div class="col-auto mr-auto pt-2 col-sm offset-1" *ngFor="let installments of element.installments;let indexOfElement=index;" >
+                                            <div class="col-auto mr-auto pt-2 " *ngFor="let installments of element.installments;let indexOfElement=index;" >
                                                 {{indexOfElement + 1 | ordinal}} Installment
                                                 <div style="font-weight: bold;">{{installments}} BGN</div>
                                             </div>
@@ -164,6 +164,6 @@
                             
                         </div>
                         <hr  class="hrline">
-                        <button class="btn btn-primary rounded-pill nextbtn" matStepperNext type="submit" [disabled]="installmentForm.invalid">  Next  </button>
+                        <button class="btn btn-primary rounded-pill  col-sm-12 col-lg-2 col-md-4 nextbtn" matStepperNext type="submit" [disabled]="installmentForm.invalid">  Next  </button>
                     </form>
                 

@@ -140,7 +140,15 @@
         padding-top: 1%;
     }
   }
-
+  @media screen and (max-width: 450px){
+    .nextbtn{
+        width: 250px;
+        margin: auto;
+        display: block;
+     
+        
+    }
+}
 
   
 
