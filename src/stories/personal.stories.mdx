@@ -52,16 +52,16 @@ appearance of the login component.
   </Story>
 </Preview>
 
-### Submit
+### Valid
 
-This is the submit story. In this story we provide the required credentials to all the
+This is the valid story. In this story we provide the valid required credentials to all the
 input fields.
 
 <Preview>
-  <Story name="Submit">{{
+  <Story name="Valid">{{
     component: PersonalComponent,
     props:{
-      lnch: text('LNCH','123456789','General'),
+      lnch: text('LNCH','1234567890','General'),
       firstname: text('First Name','James','General'),
       lastname: text('Last Name','Nicole','General'),
       surname: text('Surname','Turner','General'),
@@ -76,3 +76,29 @@ input fields.
     }}    
   </Story>
 </Preview>
+
+### Invalid
+
+This is the invalid story. In this story we provide the invalid required credentials to all the
+input fields.
+
+<Preview>
+  <Story name="Invalid">{{
+    component: PersonalComponent,
+    props:{
+      lnch: text('LNCH','12345678','General'),
+      firstname: text('First Name','James','General'),
+      lastname: text('Last Name','Nicole','General'),
+      surname: text('Surname','Turner','General'),
+      firstnameeng: text('First Name (ENG)','James','General'),
+      lastnameeng: text('Last Name (ENG)','Nicole','General'),
+      surnameeng: text('Surname (ENG)','Turner','General'),
+      citizen: select('Citizen',{Indian: "Indian",
+                                American:"American",
+                                African: "African"},'Indian','General'),
+      dob: date('DOB', new Date('Jan 20 1996'), 'General')
+    },
+    }}    
+  </Story>
+</Preview>
+

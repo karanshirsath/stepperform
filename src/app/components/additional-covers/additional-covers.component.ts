@@ -1,6 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
+import { InstallmentComponent } from '../installment/installment.component';
+import { CommonDataService } from 'src/app/common-data.service';
 
 
 @Component({
@@ -12,19 +14,28 @@ export class AdditionalCoversComponent implements OnInit {
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
   @Output() NextTab = new EventEmitter()
+  @Input ()installment
   imageUrl="./assets/carlogo.jpeg ";;
   tickimage="./assets/tick.jpg";
   additionalcoverForm: FormGroup;
-
-  constructor( private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
+  installmentData
+  constructor( private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService,private com:CommonDataService ){ }
 
   ngOnInit(): void {
     this.additionalcoverForm = this.formBuilder.group({
       cover: ['', Validators.required],
     });
+    
+  this.com.installmentData.subscribe(data=>{
+    
+    this.installmentData=data
+  })
+  
+    
  }
   
   change=()=>{
+   
     if(this.additionalcoverForm.valid){
       this.OnToggle.emit(true);
       this.OnRegister.emit(this.additionalcoverForm.value);
@@ -38,5 +49,6 @@ export class AdditionalCoversComponent implements OnInit {
     this.OnRegister.emit(this.additionalcoverForm.value);
     this.NextTab.emit(1)
   }
+
 
 }

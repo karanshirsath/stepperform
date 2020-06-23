@@ -49,5 +49,6 @@ lnch: ""}
   constructor() { }
   formData=new BehaviorSubject<any>(this.defaultData);
   policyData=new BehaviorSubject<any>(this.defaultData2);
+  installmentData=new BehaviorSubject<any>('');
 
 }
