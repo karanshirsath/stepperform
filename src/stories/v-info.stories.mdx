@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { VInfoComponent } from '../app/components/v-info/v-info.component';
 import { moduleMetadata } from "@storybook/angular";
+import { text } from "@storybook/addon-knobs";
 
 <Meta title="MDX/Vehicle Info Component" decorators={[
     moduleMetadata({
@@ -46,6 +47,17 @@ appearance of the login component.
     component: VInfoComponent,
     props:{
       
+    },
+    }}    
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Wrong Vehicle Registration Number">{{
+    component: VInfoComponent,
+    props:{
+      registrationNumber: text('Vehicle Registration Number','XX00YY'),
+      certificateNumber: text('Vehicle Certificate Number','123456789')
     },
     }}    
   </Story>

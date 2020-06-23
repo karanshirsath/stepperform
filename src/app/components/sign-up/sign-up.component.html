@@ -1,0 +1,56 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="jumbotron">
+                <h1 style="text-align: center;" class="text-primary">Sign Up</h1>
+            <form [formGroup]='signUpForm'>
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input id="fullName" class="form-control" formControlName='fullName'>
+                </div>
+                <div id='fullNameError' *ngIf='signUpForm.controls.fullName.touched'>
+                    <span class="text-danger" *ngIf='signUpForm.controls.fullName.errors?.required'>Required</span>
+                </div>
+                <div class="form-group">
+                    <label for='email'>Email:</label>
+                    <input id='email' class="form-control" formControlName='email'>
+                </div>
+                <div id='emailError' *ngIf='signUpForm.controls.email.touched'>
+                    <span class="text-danger" *ngIf='signUpForm.controls.email.errors?.required'>Required</span>
+                    <span class="text-danger" *ngIf='signUpForm.controls.email.errors?.pattern'>enter valid email Id</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input id='password' type="password" class="form-control" formControlName='password'>
+
+                </div>
+                <div id='passwordError' *ngIf='signUpForm.controls.password.touched'>
+                    <span class="text-danger" *ngIf='signUpForm.controls.password.errors?.required'>Required</span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input id='confirmPassword' type='password' class="form-control" formControlName='confirmPassword'>
+                </div>
+                <div id='confirmPasswordError' *ngIf='signUpForm.controls.confirmPassword.touched'>
+                    <span class="text-danger" *ngIf='signUpForm.controls.confirmPassword.errors?.required'>Required</span>
+                </div>
+                <div *ngIf="(signUpForm.errors?.misMatch && !signUpForm.controls.confirmPassword.errors?.required) && (signUpForm.controls.confirmPassword.dirty && signUpForm.controls.confirmPassword.touched)" class="error">Password did not match</div>
+                <div class="form-group">
+                    <label for="phoneNo">Phone No:</label>
+                    <input id="phoneNo" class="form-control" formControlName='phoneNo'>
+                </div>
+                <div id='phoneNoError' *ngIf='signUpForm.controls.phoneNo.touched'>
+                    <span class="text-danger" *ngIf='signUpForm.controls.phoneNo.errors?.required'>Required</span>
+                    <span class="text-danger" *ngIf='signUpForm.controls.phoneNo.errors?.minlength || signUpForm.controls.phoneNo.errors?.maxlength'>Enter valid phone No</span>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-block btn-primary" [disabled]='!signUpForm.valid' (click)='register()'>Register</button>
+                </div>
+            </form>
+            <div class="text-center">Already have an account? <a [routerLink]="['/signIn']" >Sign in</a></div>
+        </div>
+
+    </div>
+</div>
+</div>

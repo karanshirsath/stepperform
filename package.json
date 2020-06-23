@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "npm run docs:json && start-storybook -p 6006 -s src/assets",
+    "storybook": "npm run docs:json && start-storybook -p 6006 -s src/",
     "build-storybook": "build-storybook"
   },
   "private": true,
