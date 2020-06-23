@@ -18,13 +18,8 @@
     <div formGroupName="fullname">
       <label class="">Full Name</label><br>
       <div class="form-group row">
-<<<<<<< HEAD
         <div class="col-lg-4">
           <input type="text" class="form-control" id="firstname" value={{firstname}} placeholder="Enter firstname"
-=======
-        <div class="col-sm-2">
-          <input type="text" class="form-control" id="firstname" [(ngModel)]="firstname" placeholder="Enter firstname"
->>>>>>> 9fb3a92521a8d6b81b9344d980416ccfa3e7e26a
             formControlName="firstname" name="firstname" (change)="change()">
           <div
             *ngIf="personalForm.get('fullname').get('firstname').hasError('required') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)"
@@ -36,25 +31,15 @@
             *ngIf="personalForm.get('fullname').get('firstname').hasError('maxlength') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)"
             class="error">Max length can be 20 characters</div>
         </div>
-<<<<<<< HEAD
         <div class="col-lg-4">
           <input type="text" class="form-control" id="lastname" value={{lastname}} placeholder="Enter middlename" formControlName="lastname"
-=======
-        <div class="col-sm-2">
-          <input type="text" class="form-control" id="lastname" [(ngModel)]="lastname" placeholder="Enter middlename" formControlName="lastname"
->>>>>>> 9fb3a92521a8d6b81b9344d980416ccfa3e7e26a
             name="lastname" (change)="change()">
           <div
             *ngIf="personalForm.get('fullname').get('lastname').hasError('pattern') &&(personalForm.get('fullname').get('lastname').dirty || personalForm.get('fullname').get('lastname').touched)"
             class="error">Only alphabets allowed</div>
         </div>
-<<<<<<< HEAD
         <div class="col-lg-4">
           <input type="text" class="form-control" id="surname" value={{surname}} placeholder="Enter lastname" formControlName="surname"
-=======
-        <div class="col-sm-2">
-          <input type="text" class="form-control" id="surname" [(ngModel)]="surname" placeholder="Enter lastname" formControlName="surname"
->>>>>>> 9fb3a92521a8d6b81b9344d980416ccfa3e7e26a
             name="suname" (change)="change()">
           <div
             *ngIf="personalForm.get('fullname').get('surname').hasError('required') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)"
@@ -72,13 +57,8 @@
     <div formGroupName="fullnameeng">
       <label>Full Name in English</label><br>
       <div class="form-group row">
-<<<<<<< HEAD
         <div class="col-lg-4">
           <input type="text" class="form-control" id="firstnameeng" value={{firstnameeng}} placeholder="Enter firstname"
-=======
-        <div class="col-sm-2">
-          <input type="text" class="form-control" id="firstnameeng" [(ngModel)]="firstnameeng" placeholder="Enter firstname"
->>>>>>> 9fb3a92521a8d6b81b9344d980416ccfa3e7e26a
             formControlName="firstnameeng" name="firstnameeng" (change)="change()">
           <div
             *ngIf="personalForm.get('fullnameeng').get('firstnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)"
@@ -90,25 +70,15 @@
             *ngIf="personalForm.get('fullnameeng').get('firstnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)"
             class="error">Max length can be 20 characters</div>
         </div>
-<<<<<<< HEAD
         <div class="col-lg-4">
           <input type="text" class="form-control" id="lastnameeng" value={{lastnameeng}} placeholder="Enter middlename"
-=======
-        <div class="col-sm-2">
-          <input type="text" class="form-control" id="lastnameeng" [(ngModel)]="lastnameeng" placeholder="Enter middlename"
->>>>>>> 9fb3a92521a8d6b81b9344d980416ccfa3e7e26a
             formControlName="lastnameeng" name="lastnameeng" (change)="change()">
           <div
             *ngIf="personalForm.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('lastnameeng').dirty || personalForm.get('fullnameeng').get('lastnameeng').touched)"
             class="error">Only alphabets allowed</div>
         </div>
-<<<<<<< HEAD
         <div class="col-lg-4">
           <input type="text" class="form-control" id="surnameeng" value={{surnameeng}} placeholder="Enter lastname"
-=======
-        <div class="col-sm-2">
-          <input type="text" class="form-control" id="surnameeng" [(ngModel)]="surnameeng" placeholder="Enter lastname"
->>>>>>> 9fb3a92521a8d6b81b9344d980416ccfa3e7e26a
             formControlName="surnameeng" (change)="change()">
           <div
             *ngIf="personalForm.get('fullnameeng').get('surnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)"
@@ -128,15 +98,9 @@
         or identity document.Data will be used for printout of Green Card Certificate.
     </div>
     <div class="form-group row">
-<<<<<<< HEAD
       <label for="citizen" class="col-lg-8">Citizenship</label>
       <div class="col-lg-4">
         <select class="form-control" id="citizen" value={{citizen}} formControlName="citizen" name="citizen" (change)="change()">
-=======
-      <label for="citizen" class="col-sm-2 col-form-label">Citizenship</label>
-      <div class="col-sm-4">
-        <select class="form-control" id="citizen" [(ngModel)]="citizen" formControlName="citizen" name="citizen" (change)="change()">
->>>>>>> 9fb3a92521a8d6b81b9344d980416ccfa3e7e26a
           <option selected disabled value="">--SELECT--</option>
           <option *ngFor="let c of citizens" [value]="c">{{c}}</option>
         </select>
@@ -147,15 +111,9 @@
     </div>
     <hr class="line">
     <div class="form-group row">
-<<<<<<< HEAD
       <label for="birth" class="col-lg-8">Birth Date</label>
       <div class="col-lg-4">
         <input type="date" class="form-control" value="{{dob | date: 'yyyy-MM-dd'}}" id="birth" placeholder="Enter Birth date" formControlName="birth"
-=======
-      <label for="birth" class="col-sm-2 col-form-label">Birth Date</label>
-      <div class="col-sm-4">
-        <input type="date" class="form-control" [(ngModel)]="dob" id="birth" placeholder="Enter Birth date" formControlName="birth"
->>>>>>> 9fb3a92521a8d6b81b9344d980416ccfa3e7e26a
           name="birth" (change)="change()">
         <div
           *ngIf="personalForm.controls.birth.hasError('required') &&(personalForm.controls.birth.dirty || personalForm.controls.birth.touched)"
