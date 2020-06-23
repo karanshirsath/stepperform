@@ -47,9 +47,9 @@
         </div>
         <div class="col-4">
             <select formControlName="purpose" class="form-control" (change)="change()">
-                <option selected disabled value="">--SELECT--</option>
-                <option value="personal">Personal Use</option>
-                <option value="public">Public Use</option>
+                <option [selected]="''===purpose" disabled value="">--SELECT--</option>
+                <option value="personal" [selected]="'personal'===purpose">Personal Use</option>
+                <option value="public" [selected]="'public'===purpose">Public Use</option>
             </select>
             <div class="error" *ngIf="formsControl.purpose.touched && formsControl.purpose.errors">
                 <div *ngIf="formsControl.purpose.errors.required">Please select what purpose does this vehicle serve
@@ -64,8 +64,8 @@
             Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?
         </div>
         <div class="col-3">
-            <input type="radio" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes">Yes &nbsp;&nbsp;
-            <input type="radio" name="yesNo" (change)="change()" formControlName="yesNo" value="No">No
+            <input type="radio" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes" [checked]="yesNo=='Yes'">Yes &nbsp;&nbsp;
+            <input type="radio" name="yesNo" (change)="change()" formControlName="yesNo" value="No" [checked]="yesNo=='No'">No
         </div>
     </div>
     <hr>
