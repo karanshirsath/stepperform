@@ -1,12 +1,12 @@
-<div class="container overflowAuto h-100" style="margin-left: auto !important;">
+
   <div class="container">
     <h1>Contact Details</h1><br>
     <form [formGroup]="registerForm" (submit)="submit()">
       <div class="row">
-        <div class="col-md-4">
-          <label for="city">City</label>
-        </div>
-        <div class="col-md-4">
+       
+          <label for="city" class="col-lg-7">City</label>
+       
+        <div class="col-md-3 space">
           <select id="city" name="city" class="form-control" formControlName="city" (change)="change()">
             <option selected disabled value="">--SELECT--</option>
             <option value="SofiaCity">Sofia City</option>
@@ -18,7 +18,7 @@
             class="error">This field is mandatory</div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-sm-2 space">
           <input type="text" id="num" name="num" value={{pincode}} placeholder="Pin Code" class="form-control" (change)="change()"
             formControlName="pincode">
           <div
@@ -27,50 +27,49 @@
 
         </div>
       </div>
-      <hr class="border" /><br>
+      <hr>
       <div class=" row">
-        <div class="col-md-4">
-          <label for="street">Street and Number</label>
-        </div>
-        <div class="col-md-4">
+        
+          <label for="street" class="col-lg-7">Street and Number</label>
+        
+        <div class="col-md-3 space">
           <input type="text" id="street" value={{street}} name="streetName" class="form-control " placeholder="Street Name"
             (change)="change()" formControlName="street">
         </div>
 
-        <div class="col-md-4">
+        <div class="col-sm-2 space">
           <input type="text" id="streetNumber" value={{No}} name="streetNumber" placeholder="Street  number" class="form-control"
             size="10" (change)="change()" formControlName="No"><br>
         </div>
       </div>
-      <hr class="border" /><br>
+      <hr>
       <div class="row">
-        <div class="col-md-3">
-          <label for="block">Block,Entrance and Apartment</label>
-        </div>
-        <div class="col-md-3 offset-md-1 ">
+        
+          <label for="block" class="col-lg-7">Block,Entrance and Apartment</label>
+      
+        <div class=" col-xs-12 col-sm-1 space">
           <input type="text" id="block" class="form-control" value={{block}} placeholder="Block" name="blockName" (change)="change()"
             formControlName="block">
         </div>
 
-        <label for="entranceName"></label>
-        <div class="col-md-3">
+       
+        <div class=" col-xs-12 col-md-2 space">
           <input type="text" class="form-control" id="entranceName" value={{entrance}} placeholder="Entrance" name="entranceName"
             (change)="change()" formControlName="entrance">
         </div>
         <!-- </div> -->
 
-        <label for="appartmentName"></label>
-        <div class="col-md-2">
+       
+        <div class=" col-xs-12 col-md-2 space">
           <input type="text" class="form-control" id="appartmentName" value={{appartment}} placeholder="Appartment" name="appartmentName"
             (change)="change()" formControlName="appartment"><br>
         </div>
       </div>
-      <hr class="border"><br>
+      <hr>
       <div class="row">
-        <div class="col-md-4">
-          <label for="phoneNo">Phone Number</label>
-        </div>
-        <div class="col-md-4">
+       
+          <label for="phoneNo" class="col-lg-9">Phone Number</label>
+         <div class="col-md-3">
           <input type="text" class="form-control" id="phoneNo" value={{phone}} placeholder="Phone Number" (change)="change()"
             formControlName="phone"><br>
           <div
@@ -85,7 +84,6 @@
         </div>
       </div>
     </form>
-    <button class="btn btn-primary rounded-pill" type="submit" matStepperNext
+    <button class="btn btn-primary rounded-pill" type="button" matStepperNext
       [disabled]="!registerForm.valid">Next</button>
   </div>
-</div>
