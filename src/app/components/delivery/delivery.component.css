@@ -1,5 +1,6 @@
-.container {
+.container-fluid{
     padding-bottom: 200px;
+    /* width: 30cm; */
 }
 
 .display-1 {
@@ -86,10 +87,29 @@
     font-size: medium;
 }
 
-.delivery-1 {
-    padding-left: 20px;
+.delivery-2 {
+    /* padding-left: 20px;
     padding-right: 20px;
-    padding-top: 20px;
+    padding-top: 20px; */
+    margin-left: 0.5cm;
+}
+
+p{
+    text-align: justify;
+}
+
+@media all and (max-width: 767px) {
+    .text-small{
+        font-size:11px;
+    }
+}
+
+.user-key{
+    width: 40px;
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: -17px;
 }
 
 .delivery-1_row-1 {
@@ -107,4 +127,15 @@
     font-size: large;
     width: 80px;
     border-radius: 15px;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(4, 54, 100);
+    font-size: 1cm;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(4, 54, 100);
 }
