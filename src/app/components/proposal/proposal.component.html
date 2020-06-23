@@ -27,7 +27,7 @@
             </div>
         </div>
             <div class="col-lg-3 col-md-3 col-sm-12 ml-auto">
-            <p  class="card-text" style="color:white;font-weight: 100;">four payments</p>
+            <p  class="card-text" style="color:white;font-weight: 100;">{{mtplCalculatorData["installmentsData"].term}}</p>
             </div>
             </div>
         </div>
@@ -51,38 +51,17 @@
                     <button (click)=" moveToCalculator(3)">Edit</button>
                     <div class="row">
 
+          
                 <div class="col-md-3">                    
-                    <div class="form-group">
-                    <label class="font_color sub_label_prop">First Instalment</label>
+                    <div  *ngFor='let ele of installmentData;let indexOfEle=index;'>
+                    <label class="font_color sub_label_prop" >{{indexOfEle+1 |ordinal}} Installment</label>
                     <!-- <input type="text" class="form-control" id="firstInstalment"  value={{first}}> -->
+                    <p>{{ele}}</p>
                     </div>
                     <!-- <span *ngIf="summaryForm.controls.firstInstalment.errors" style="color: red;">Required</span> -->
                 </div>
 
-                <div class="col-md-3">
-                <div class="form-group">
-                <label class="font_color sub_label_prop">Second Instalment</label>
-                <!-- <input type="text" class="form-control input_prop" formControlName="secondInstalment" [value]="secondI"> -->
-                </div>
-                <!-- <span *ngIf="summaryForm.controls.secondInstalment.errors" style="color: red;">Required</span> -->
-                </div>
-
-                <div class="col-md-3">
-                <div class="form-group">
-                <label class="font_color sub_label_prop"> Third Instalment</label>
-                <!-- <input type="text" class="form-control" formControlName="thirdInstalment" [value]="third"> -->
-                </div>
-                <!-- <span *ngIf="summaryForm.controls.thirdInstalment.errors" style="color: red;">Required</span> -->
-                </div>
-
-                <div class="col-md-3">
-                <div class="form-group">
-                <label class="font_color sub_label_prop ">Fourth Instalment</label>
-                <!-- <input type="text"  class="form-control" formControlName="fourthInstalment" [value]="fourth"> -->
-                </div>
-                <!-- <span *ngIf="summaryForm.controls.fourthInstalment.errors" style="color: red;">Required</span> -->
-                </div>
-
+                
             </div>
 
                 </div>
