@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { InsuringPartyComponent } from '../app/components/insuring-party/insuring-party.component';
 import { moduleMetadata } from "@storybook/angular";
+import { text,select } from "@storybook/addon-knobs";
 
 <Meta title="MDX/Insuring Party Component" decorators={[
     moduleMetadata({
@@ -46,6 +47,42 @@ appearance of the login component.
     component: InsuringPartyComponent,
     props:{
       
+    },
+    }}    
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Wrong EGN/EIK/LNCH">{{
+    component: InsuringPartyComponent,
+    props:{
+      egn: text('EGN/EIK/LNCH','123456'),
+      address: select('Address',{'--SELECT--': '','Sofia': 'Sofia', 'Varna': 'Varna','Burgas': 'Burgas'},'Sofia'),
+      email: text('Email','amit@gmail.com')
+    },
+    }}    
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Wrong Email">{{
+    component: InsuringPartyComponent,
+    props:{
+      egn: text('EGN/EIK/LNCH','1234567890'),
+      address: select('Address',{'--SELECT--': '','Sofia': 'Sofia', 'Varna': 'Varna','Burgas': 'Burgas'},'Sofia'),
+      email: text('Email','xyz@g')
+    },
+    }}    
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="All fields are correct">{{
+    component: InsuringPartyComponent,
+    props:{
+      egn: text('EGN/EIK/LNCH','1234567890'),
+      address: select('Address',{'--SELECT--': '','Sofia': 'Sofia', 'Varna': 'Varna','Burgas': 'Burgas'},'Sofia'),
+      email: text('Email','xyz@gmail.com')
     },
     }}    
   </Story>

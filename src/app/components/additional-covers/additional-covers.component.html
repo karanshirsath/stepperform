@@ -1,4 +1,4 @@
-<div class="container col-auto col-lg-8 col-md-10 ">
+
     <h1 class="heading "><b>Additional covers</b></h1><br>
     <form [formGroup]="additionalcoverForm" (submit)="next()">
         <div class="row ">
@@ -14,8 +14,8 @@
                                 </div>
                                 <div class=" col-auto col-md-4 col-12 bgn">
                                     <div>
-                                        <div><strong>324,00BGN</strong></div>
-                                        <h6>Four payments</h6>
+                                        <div><strong>{{installmentData.amount}} BGN</strong></div>
+                                        <h6>{{installmentData.term}}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -159,4 +159,3 @@
                 Next</button>
     </form>
 
-</div>

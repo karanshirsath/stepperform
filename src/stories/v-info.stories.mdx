@@ -1,6 +1,8 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { VInfoComponent } from '../app/components/v-info/v-info.component';
 import { moduleMetadata } from "@storybook/angular";
+import { text,select,radios } from "@storybook/addon-knobs";
+import { linkTo } from "@storybook/addon-links";
 
 <Meta title="MDX/Vehicle Info Component" decorators={[
     moduleMetadata({
@@ -46,6 +48,58 @@ appearance of the login component.
     component: VInfoComponent,
     props:{
       
+    },
+    }}    
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Wrong Vehicle Registration Number">{{
+    component: VInfoComponent,
+    props:{
+      registrationNumber: text('Vehicle Registration Number','XX00YY','General'),
+      certificateNumber: text('Vehicle Certificate Number','123456789','General'),
+      purpose: select('Purpose',{'--SELECT--': '','Personal Use': 'Personal Use', 'Public Use': 'Public Use'},'Personal Use','General'),
+      yesNo: radios('Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?',{Yes:'Yes',No:'No'},'Yes','General')
+    },
+    }}    
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Wrong Vehicle Certificate Number">{{
+    component: VInfoComponent,
+    props:{
+      registrationNumber: text('Vehicle Registration Number','XX0000YY'),
+      certificateNumber: text('Vehicle Certificate Number','1234567'),
+      purpose: select('Purpose',{'--SELECT--': '','Personal Use': 'Personal Use', 'Public Use': 'Public Use'},'Personal Use'),
+      yesNo: radios('Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?',{Yes:'Yes',No:'No'},'Yes')
+    },
+    }}    
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="No information about outside travel">{{
+    component: VInfoComponent,
+    props:{
+      registrationNumber: text('Vehicle Registration Number','XX0000YY'),
+      certificateNumber: text('Vehicle Certificate Number','123456789'),
+      purpose: select('Purpose',{'--SELECT--': '','Personal Use': 'Personal Use', 'Public Use': 'Public Use'},'Personal Use'),
+      yesNo: radios('Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?',{Yes:'Yes',No:'No'})
+    },
+    }}    
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="All information is correct">{{
+    component: VInfoComponent,
+    props:{
+      registrationNumber: text('Vehicle Registration Number','XX0000YY'),
+      certificateNumber: text('Vehicle Certificate Number','123456789'),
+      purpose: select('Purpose',{'--SELECT--': '','Personal Use': 'Personal Use', 'Public Use': 'Public Use'},'Personal Use'),
+      yesNo: radios('Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?',{Yes:'Yes',No:'No'},'Yes')
     },
     }}    
   </Story>

@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { PersonalComponent } from '../app/components/personal/personal.component';
 import { moduleMetadata } from "@storybook/angular";
+import { text, select, date } from "@storybook/addon-knobs";
 
 <Meta title="MDX/Personal Details Component" decorators={[
     moduleMetadata({
@@ -50,3 +51,54 @@ appearance of the login component.
     }}    
   </Story>
 </Preview>
+
+### Valid
+
+This is the valid story. In this story we provide the valid required credentials to all the
+input fields.
+
+<Preview>
+  <Story name="Valid">{{
+    component: PersonalComponent,
+    props:{
+      lnch: text('LNCH','1234567890','General'),
+      firstname: text('First Name','James','General'),
+      lastname: text('Last Name','Nicole','General'),
+      surname: text('Surname','Turner','General'),
+      firstnameeng: text('First Name (ENG)','James','General'),
+      lastnameeng: text('Last Name (ENG)','Nicole','General'),
+      surnameeng: text('Surname (ENG)','Turner','General'),
+      citizen: select('Citizen',{Indian: "Indian",
+                                American:"American",
+                                African: "African"},'Indian','General'),
+      dob: date('DOB', new Date('Jan 20 1996'), 'General')
+    },
+    }}    
+  </Story>
+</Preview>
+
+### Invalid
+
+This is the invalid story. In this story we provide the invalid required credentials to all the
+input fields.
+
+<Preview>
+  <Story name="Invalid">{{
+    component: PersonalComponent,
+    props:{
+      lnch: text('LNCH','12345678','General'),
+      firstname: text('First Name','James','General'),
+      lastname: text('Last Name','Nicole','General'),
+      surname: text('Surname','Turner','General'),
+      firstnameeng: text('First Name (ENG)','James','General'),
+      lastnameeng: text('Last Name (ENG)','Nicole','General'),
+      surnameeng: text('Surname (ENG)','Turner','General'),
+      citizen: select('Citizen',{Indian: "Indian",
+                                American:"American",
+                                African: "African"},'Indian','General'),
+      dob: date('DOB', new Date('Jan 20 1996'), 'General')
+    },
+    }}    
+  </Story>
+</Preview>
+

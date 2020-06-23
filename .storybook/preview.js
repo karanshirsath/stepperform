@@ -38,9 +38,12 @@ import { InstallmentComponent } from '../src/app/components/installment/installm
 import { ProposalComponent } from '../src/app/components/proposal/proposal.component';
 import { ContactComponent } from '../src/app/components/contact/contact.component';
 import { VehicleOwnerComponent } from '../src/app/components/vehicle-owner/vehicle-owner.component';
+import { SignUpComponent } from '../src/app/components/sign-up/sign-up.component'
 import { APP_BASE_HREF } from "@angular/common";
 import { addParameters } from '@storybook/client-api';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { withKnobs } from '@storybook/addon-knobs';
+import { OrdinalPipe } from '../src/app/components/installment/ordinal.pipe';
 setCompodocJson(docJson);
 
 addParameters({
@@ -71,7 +74,9 @@ addDecorator(
             PersonalComponent,
             PaymentComponent,
             InstallmentComponent,
-            ProposalComponent        
+            ProposalComponent,
+            SignUpComponent,
+            OrdinalPipe     
           ],
           imports: [
             BrowserModule,
@@ -95,6 +100,7 @@ addDecorator(
           ],
           providers: [CdkStepper,{ provide: APP_BASE_HREF, useValue: "/" },
         { provide: ChangeDetectorRef },
-        { provide: ElementRef }],
-    })
+        { provide: ElementRef }]
+    }),
+    withKnobs
 )

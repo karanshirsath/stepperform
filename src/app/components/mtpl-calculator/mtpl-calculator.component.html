@@ -1,4 +1,5 @@
-<mat-horizontal-stepper  (selectionChange)="change($event)" labelPosition="bottom" #stepper1 linear  >
+<div class="container">
+<mat-horizontal-stepper  (selectionChange)="change($event)" labelPosition="bottom" #stepper1 linear >
   
       <mat-step completed={{toggle1}}>
         <ng-template matStepLabel>Vehicle </ng-template>
@@ -17,12 +18,12 @@
 
       <mat-step completed={{toggle4}}>
         <ng-template matStepLabel>Installments</ng-template>
-        <app-installment (OnRegister)="installmentsData($event)" (OnToggle)="toggle4=$event"></app-installment>
+        <app-installment (OnRegister)="installmentsData($event)" (OnToggle)="toggle4=$event" ></app-installment>
       </mat-step>
 
       <mat-step completed={{toggle5}}>
         <ng-template matStepLabel>Covers</ng-template>
-        <app-additional-covers (OnRegister)="coversData($event)" (OnToggle)="toggle5=$event" (NextTab)="nextTab($event)"></app-additional-covers>
+        <app-additional-covers (OnRegister)="coversData($event)" [installment]='installments' (OnToggle)="toggle5=$event" (NextTab)="nextTab($event)"></app-additional-covers>
       </mat-step>
 
       <!-- <mat-step completed={{toggle6}}>
@@ -31,3 +32,4 @@
       </mat-step> -->
 
 </mat-horizontal-stepper>
+</div>
