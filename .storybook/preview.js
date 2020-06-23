@@ -43,6 +43,7 @@ import { APP_BASE_HREF } from "@angular/common";
 import { addParameters } from '@storybook/client-api';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withKnobs } from '@storybook/addon-knobs';
+import { OrdinalPipe } from '../src/app/components/installment/ordinal.pipe';
 setCompodocJson(docJson);
 
 addParameters({
@@ -74,7 +75,8 @@ addDecorator(
             PaymentComponent,
             InstallmentComponent,
             ProposalComponent,
-            SignUpComponent      
+            SignUpComponent,
+            OrdinalPipe     
           ],
           imports: [
             BrowserModule,

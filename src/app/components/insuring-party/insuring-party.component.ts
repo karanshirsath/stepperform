@@ -12,7 +12,10 @@ export class InsuringPartyComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
   @Input() egn: string;
+  @Input() address: string;
+  @Input() email: string;
   insuringParty: FormGroup;
+  addressList=['Sofia','Varna','Burgas']
   constructor(private router: Router, private fb: FormBuilder, private GAService: GoogleAnalyticsService) { }
 
   ngOnInit(): void {

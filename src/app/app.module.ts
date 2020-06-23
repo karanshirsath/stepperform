@@ -37,6 +37,7 @@ import { VehicleOwnerComponent } from './components/vehicle-owner/vehicle-owner.
 import { ContactComponent } from './components/contact/contact.component';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { OrdinalPipe } from './components/installment/ordinal.pipe';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     ProposalComponent,
     VehicleOwnerComponent,
     ContactComponent,
-    SignUpComponent
+    SignUpComponent,
+    OrdinalPipe
   ],
   imports: [
     BrowserModule,

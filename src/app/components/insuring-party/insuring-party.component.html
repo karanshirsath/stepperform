@@ -23,9 +23,8 @@
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
                 <select formControlName="address" class="form-control" (change)="change()">
-                    <option selected disabled value="" id="address">--SELECT--</option>
-                    <option value="delhi" id="address">Delhi</option>
-                    <option value="mumbai" id="address">Mumbai</option>
+                    <option [selected]='""===address' disabled value="" id="address">--SELECT--</option>
+                    <option *ngFor="let a of addressList" id="address" value='a' [selected]='a===address'>{{a}}</option>
                 </select>
                 <div class="error" *ngIf="formsControl.address.touched && formsControl.address.errors">
                     <div *ngIf="formsControl.address.errors.required">This field is mandatory</div>
@@ -40,7 +39,7 @@
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
                 <input class="form-control" id="email" type="email" formControlName="email" (change)="change()"
-                    placeholder="Enter you email">
+                    placeholder="Enter you email" value={{email}}>
                 <div class="error" *ngIf="formsControl.email.touched && formsControl.email.errors">
                     <div *ngIf="formsControl.email.errors.required">This field is mandatory</div>
                     <div *ngIf="formsControl.email.errors.pattern">Please enter a valid email</div>
