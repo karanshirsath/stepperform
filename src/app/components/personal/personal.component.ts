@@ -17,7 +17,7 @@ export class PersonalComponent implements OnInit {
 
   @Input() firstnameeng:String;
   @Input() lastnameeng:String;
-  @Input() sursurnameeng:String;
+  @Input() surnameeng:String;
   @Input() citizen:String;
   @Input() dob:Date;
   personalForm:FormGroup;

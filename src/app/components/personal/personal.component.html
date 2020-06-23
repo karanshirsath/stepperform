@@ -79,7 +79,7 @@
         </div>
         <div class="col-sm-2">
           <input type="text" class="form-control" id="surnameeng" value={{surnameeng}} placeholder="Enter lastname"
-            formControlName="surnameeng" name="sunameeng" (change)="change()">
+            formControlName="surnameeng" (change)="change()">
           <div
             *ngIf="personalForm.get('fullnameeng').get('surnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)"
             class="error">This field is mandatory</div>
