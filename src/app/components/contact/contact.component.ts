@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
@@ -10,6 +10,14 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class ContactComponent implements OnInit {
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
+  @Input() city:String;
+  @Input() pincode:String;
+  @Input() street:String;
+  @Input() No:String;
+  @Input() block:String;
+  @Input() entrance:String;
+  @Input() appartment:String;
+  @Input() phone:String;
   registerForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
 
