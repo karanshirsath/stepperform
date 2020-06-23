@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter,Input } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
@@ -10,6 +10,16 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class PersonalComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
+  @Input() lnch:String;
+  @Input() firstname:String;
+  @Input() lastname:String;
+  @Input() surname:String;
+
+  @Input() firstnameeng:String;
+  @Input() lastnameeng:String;
+  @Input() sursurnameeng:String;
+  @Input() citizen:String;
+  @Input() dob:Date;
   personalForm:FormGroup;
   citizens=['Indian','American','African'];
   constructor(private formBuilder:FormBuilder, private GAService: GoogleAnalyticsService) { }
