@@ -53,7 +53,7 @@
                             <div class="row cardrow">
                                 <div class="col-auto mr-auto pt-1">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="none" (change)="change()"><h3 class="sub-head">None</h3></label>
+                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="none" (change)="change()" [checked]="cover==='None'"><h3 class="sub-head">None</h3></label>
                                         <div class="mon">Description of additional cover here</div>
                                 </div>   
                                 
@@ -63,7 +63,7 @@
                             <div class="row cardrow">
                                 <div class="col-auto mr-auto pt-1">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="premium" (change)="change()"><h3 class="sub-head">Premium</h3></label>
+                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="premium" (change)="change()" [checked]="cover==='Premium'"><h3 class="sub-head">Premium</h3></label>
                                         <div><button class="btn btn-success mon">Best Value</button>&nbsp;
                                             <span class="mon">Description of additional cover here</span>
                                         </div>
@@ -86,7 +86,7 @@
                             <div class="row cardrow">
                                 <div class="col-auto mr-auto pt-1">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="vip" (change)="change()"><h3 class="sub-head">VIP</h3></label>
+                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="vip" (change)="change()" [checked]="cover==='VIP'"><h3 class="sub-head">VIP</h3></label>
                                         <div class="mon">Description of additional cover here
                                         </div>
                                         
