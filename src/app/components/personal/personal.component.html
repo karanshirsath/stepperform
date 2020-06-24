@@ -113,7 +113,7 @@
     <div class="form-group row">
       <label for="birth" class="col-lg-8">Birth Date</label>
       <div class="col-lg-4">
-        <input type="date" class="form-control" [(ngModel)]="dob" id="birth" placeholder="Enter Birth date" formControlName="birth"
+        <input type="date" class="form-control" [ngModel]="dob | date: 'yyyy-MM-dd'" id="birth" placeholder="Enter Birth date" formControlName="birth"
           name="birth" (change)="change()">
         <div
           *ngIf="personalForm.controls.birth.hasError('required') &&(personalForm.controls.birth.dirty || personalForm.controls.birth.touched)"
@@ -121,6 +121,6 @@
       </div>
     </div>
     <hr class="line">
-    <button type="button" class="btn btn-primary rounded-pill  col-sm-12 col-lg-2 col-md-4 nextbtn" mat-raised-button matStepperNext
+    <button type="button" class="btn btn-primary rounded-pill col-sm-12 col-lg-2 col-md-4 nextbtn" mat-raised-button matStepperNext
       [disabled]="!personalForm.valid" (click)="success()">Next</button>
   </form> 
