@@ -1,5 +1,4 @@
-<h1 class="display-1"
-    style="color:rgb(8,56,95); font-size: 200%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+<h1 style="color:rgb(8,56,95);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
     <b>Vehicle Information</b></h1>
 <form [formGroup]="vehicleInfoForm"  style="color:rgb(8,56,95)">
     <div class="form-row">
@@ -57,15 +56,15 @@
         </div>
     </div>
     <hr class="line">
-
-    <div class="form-row"><br>
-        <div class=" col-sm-4 col-md-8 col-lg-8"><br>
+    <br>
+    <div class="form-row">
+        <div class=" col-sm-4 col-md-8 col-lg-8">
            <label for="Driving">
                Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?
            </label>
         </div>
       
-        <div class="col-sm-4 col-md-4 col-lg-4"><br>
+        <div class="col-sm-4 col-md-4 col-lg-4">
             
             <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes" [checked]="yesNo=='Yes'">Yes &nbsp;&nbsp;
             <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="No" [checked]="yesNo=='No'">No

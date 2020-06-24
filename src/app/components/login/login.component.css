@@ -21,9 +21,9 @@
   position:center;
 } */
 .login-card-description{
-  font-family: "Lucida Console", Courier, monospace;
+  font-family: 'Trebuchet MS',Arial,sans-serif;
     font-weight: bold;
-    color: midnightblue;
+    color:rgb(8,56,95);
     font-size: 20px;
 }
 .login-btn {
@@ -44,7 +44,7 @@
 }
 .redirect-btn{
   padding: 10px 20px 10px;
-  background-color:rgb(8, 30, 66);
+  background-color:rgb(8,56,95);
   border-radius: 20px;
   font-size: 15px;
   /* font-weight: bold; */
@@ -56,3 +56,25 @@
 .login-card-footer-text{
   color:gray;
 }
+.loginimg{
+  width: 100%;
+
+}
+@media screen and (max-width: 450px){
+  .loginimg{
+    display:none;
+    
+  }
+  
+}
+
+/*@media screen and (max-width: 954px){
+  .card-body{
+    padding-left: 5%;
+  }
+}
+@media screen and (min-width: 1024px){
+  .card-body{
+    padding-left: 5%;
+  }
+}*/
