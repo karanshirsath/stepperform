@@ -40,7 +40,10 @@ import { APP_BASE_HREF } from "@angular/common";
 import { addParameters } from '@storybook/client-api';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withKnobs } from '@storybook/addon-knobs';
-import { OrdinalPipe } from '../src/app/components/installment/ordinal.pipe';
+import { setCompodocJson } from '@storybook/addon-docs/angular';
+import docJson from '../documentation.json';
+import { addDecorator, moduleMetadata } from '@storybook/angular';
+import { ChangeDetectorRef, ElementRef } from '@angular/core';
 setCompodocJson(docJson);
 
 addParameters({
