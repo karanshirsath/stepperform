@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { DeliveryComponent } from '../app/components/delivery/delivery.component';
 import { moduleMetadata } from "@storybook/angular";
+import { text, select, radios } from "@storybook/addon-knobs";
 
 <Meta title="MDX/Delivery Component" decorators={[
     moduleMetadata({
@@ -45,6 +46,40 @@ appearance of the login component.
   <Story name="Default">{{
     component: DeliveryComponent,
     props:{
+      
+    },
+    }}    
+  </Story>
+</Preview>
+
+### Submit
+
+This is the submit story. In this story we provide the required valid credentials for 
+all the input fields.
+
+<Preview>
+  <Story name="Valid Data">{{
+    component: DeliveryComponent,
+    props:{
+      fullName: text('Full Name','Roman Reigns','General'),
+      city: select('City',{Mumbai:"Mumbai",
+                            New_Delhi:"New Delhi",
+                            Chennai:"Chennai",
+                            Bangalore:"Bangalore",
+                            Kolkata:"Kolkata",
+                            Chennai:"Chennai",
+                            Jaipur:"Jaipur"},
+                            'Mumbai','General'),
+      pincode: text('Pincode','570025','General'),
+      street: text('Street','Hebbal electronics','General'),
+      number: text('Number','350','General'),
+      block: text('Block','12','General'),
+      entrance: text('Entrance','12','General'),
+      appt: text('Appartment','Sai Sadan Apartment','General'),
+      contact:text('Contact Number','9618598586','General'),
+      business:radios('Type of Business',{Home:"Home",
+                                Business:"Business"},'Home','General'),
+        notes:text('Additional Notes','Any Additional notes should be written here','General')
       
     },
     }}    
