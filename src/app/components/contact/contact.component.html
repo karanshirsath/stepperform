@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-sm-2 space">
-          <input type="text" id="num" name="num" value={{pincode}} placeholder="Pin Code" class="form-control" (change)="change()"
+          <input type="text" id="num" name="num" [(ngModel)]="pincode" placeholder="Pin Code" class="form-control" (change)="change()"
             formControlName="pincode">
           <div
             *ngIf="registerForm.controls.pincode.hasError('required') &&(registerForm.controls.pincode.dirty || registerForm.controls.pincode.touched)"
@@ -33,7 +33,7 @@
           <label for="street" class="col-lg-7">Street and Number</label>
         
         <div class="col-md-3 space">
-          <input type="text" id="street" value={{street}} name="streetName" class="form-control " placeholder="Street Name"
+          <input type="text" id="street" [(ngModel)]="street" name="streetName" class="form-control " placeholder="Street Name"
             (change)="change()" formControlName="street">
         </div>
 
@@ -48,20 +48,20 @@
           <label for="block" class="col-lg-7">Block,Entrance and Apartment</label>
       
         <div class=" col-xs-12 col-sm-1 space">
-          <input type="text" id="block" class="form-control" value={{block}} placeholder="Block" name="blockName" (change)="change()"
+          <input type="text" id="block" class="form-control" [(ngModel)]="block" placeholder="Block" name="blockName" (change)="change()"
             formControlName="block">
         </div>
 
        
         <div class=" col-xs-12 col-md-2 space">
-          <input type="text" class="form-control" id="entranceName" value={{entrance}} placeholder="Entrance" name="entranceName"
+          <input type="text" class="form-control" id="entranceName" [(ngModel)]="entrance" placeholder="Entrance" name="entranceName"
             (change)="change()" formControlName="entrance">
         </div>
         <!-- </div> -->
 
        
         <div class=" col-xs-12 col-md-2 space">
-          <input type="text" class="form-control" id="appartmentName" value={{appartment}} placeholder="Appartment" name="appartmentName"
+          <input type="text" class="form-control" id="appartmentName" [(ngModel)]="appartment" placeholder="Appartment" name="appartmentName"
             (change)="change()" formControlName="appartment"><br>
         </div>
       </div>
@@ -70,7 +70,7 @@
        
           <label for="phoneNo" class="col-lg-9">Phone Number</label>
          <div class="col-md-3">
-          <input type="text" class="form-control" id="phoneNo" value={{phone}} placeholder="Phone Number" (change)="change()"
+          <input type="text" class="form-control" id="phoneNo" [(ngModel)]="phone" placeholder="Phone Number" (change)="change()"
             formControlName="phone"><br>
           <div
             *ngIf="registerForm.controls.phone.hasError('required') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"

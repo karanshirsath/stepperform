@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
@@ -11,6 +11,8 @@ export class PolicyDetailsComponent implements OnInit {
 
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
+  @Input() policyDate: Date;
+  @Input() policyLength: number;
   registerForm: FormGroup;
   todaydate=new Date()
   day=''

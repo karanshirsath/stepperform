@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { AdditionalCoversComponent } from '../app/components/additional-covers/additional-covers.component';
 import { moduleMetadata } from "@storybook/angular";
+import { radios } from '@storybook/addon-knobs';
 
 <Meta title="MDX/Additional Covers Component" decorators={[
     moduleMetadata({
@@ -19,7 +20,7 @@ This is the additional covers component.
 
 ## MDX
 
-Stotybook Docs allows you to mix stories and documentation in 
+Storybook Docs allows you to mix stories and documentation in 
 [MDX Format](https://mdxjs.com/)
 
 MDX Combines Marksown and JSX.
@@ -29,8 +30,8 @@ MDX Combines Marksown and JSX.
 This is roughly equivalent to SB5's `storiesOf` :
 
 ```
-storiesOf('MDX|Login',module)
-    .addParameter({component: LoginComponent})
+storiesOf('MDX/Additional Covers Component',module)
+    .addParameter({component: AdditionalCoversComponent})
 
 ```
 
@@ -39,13 +40,25 @@ storiesOf('MDX|Login',module)
 ### Default
 
 This is the default story. In this story the users can take a look at the overall
-appearance of the login component.
+appearance of the additional covers component.
 
 <Preview>
   <Story name="Default">{{
     component: AdditionalCoversComponent,
     props:{
       
+    },
+    }}    
+  </Story>
+</Preview>
+
+### Valid
+
+<Preview>
+  <Story name="Valid">{{
+    component: AdditionalCoversComponent,
+    props:{
+      cover: radios('Additional Covers',{None:'None',Premium:'Premium',VIP:'VIP'},'Premium')
     },
     }}    
   </Story>

@@ -34,7 +34,8 @@
                         <div class="row justify-content-around">
                             <div class="col-md-5 radio mb-3 p-0">
                                 <label class="radio-inner d-flex flex-sm-column">
-                                    <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline"><input type="radio" name="optradio" (click)="submit()"></div>
+                                    
+                                    <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline"><input type="radio" value="Card" name="optradio" [checked]="payment==='Card'"></div>
                                     <div class="text-center d-flex flex-sm-column align-items-center">
                                         <div class="radio-img"><img src="../../assets/credit-card.PNG"></div>
                                         <div class="text-color">Credit/debit card</div>
@@ -43,7 +44,7 @@
                             </div>
                             <div class="col-md-5 radio mb-3 p-0">
                                 <label class="radio-inner d-flex flex-sm-column">
-                                    <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline"><input type="radio" name="optradio" (click)="submit()"></div>
+                                    <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline"><input type="radio" value="ePay" [checked]="payment==='ePay'" name="optradio"></div>
                                     <div class="text-center d-flex flex-sm-column align-items-center">
                                         <div class="radio-img"><img src="../../assets/e-pay.PNG"></div>
                                         <div class="text-color">ePay</div>

@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { PaymentComponent } from '../app/components/payment/payment.component';
 import { moduleMetadata } from "@storybook/angular";
+import { radios } from '@storybook/addon-knobs';
 
 <Meta title="MDX/Payment Component" decorators={[
     moduleMetadata({
@@ -29,8 +30,8 @@ MDX Combines Marksown and JSX.
 This is roughly equivalent to SB5's `storiesOf` :
 
 ```
-storiesOf('MDX|Login',module)
-    .addParameter({component: LoginComponent})
+storiesOf('MDX|Payment',module)
+    .addParameter({component: PaymentComponent})
 
 ```
 
@@ -46,6 +47,20 @@ appearance of the login component.
     component: PaymentComponent,
     props:{
       
+    },
+    }}    
+  </Story>
+</Preview>
+
+### Selected
+
+This is the selected story. In this story the users can select the payment type the want.
+
+<Preview>
+  <Story name="Selected Payment Type">{{
+    component: PaymentComponent,
+    props:{
+      payment: radios('Payment Type',{Card: 'Card', EPay:'ePay'},'Card')
     },
     }}    
   </Story>

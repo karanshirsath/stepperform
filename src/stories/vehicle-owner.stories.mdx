@@ -30,8 +30,8 @@ MDX Combines Marksown and JSX.
 This is roughly equivalent to SB5's `storiesOf` :
 
 ```
-storiesOf('MDX|Login',module)
-    .addParameter({component: LoginComponent})
+storiesOf('MDX|Vehicle Owner Component',module)
+    .addParameter({component: VehicleOwnerComponent})
 
 ```
 
@@ -68,7 +68,9 @@ the input fields.
         firstnameeng: text('First Name (ENG)','James','General'),
         lastnameeng: text('Last Name (ENG)','Nicole','General'),
         surnameeng: text('Surname (ENG)','Turner','General'),
-        citizen: text('Citizen','120035','General'),
+        citizen: select('Citizen',{Indian:'Indian',
+                            American:'American',
+                            African:'African',},'Indian','General'),
         dob: date('DOB',new Date('Jan 20 1996'),'General'),
         city: select('City',{Hyderabad:'Hyderabad',
                             Pune:'Pune',

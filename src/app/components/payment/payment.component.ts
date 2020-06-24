@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-payment',
@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class PaymentComponent implements OnInit {
   isSubmitted=false;
   isChecked=false;
+
+  @Input() payment:String;
+
   constructor() { }
 
   ngOnInit(): void {
