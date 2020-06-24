@@ -2,9 +2,10 @@
     margin: 0;
 }
 .heading{
-    color: #003564;
-    padding-top: 20px;
-}
+    color:rgb(8,56,95);
+    font-family: 'Trebuchet MS',Arial,sans-serif;
+    font-weight: bold;
+} 
 .bg-dark-blue{
     background-color:  #003564;
     color: #ffffff;
@@ -45,8 +46,48 @@ input[type="checkbox" i]{
 .text-color{
     color: #003564
 }
+.nearelm{
+    font-size: 20px;
+}
+.num{
+    
+    
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+.text-small{
+    font-size: 20px;
+    padding-left: 0%;
+}
 @media all and (max-width: 767px) {
     .text-small{
         font-size:11px;
+        
     }
 }
+@media screen and (max-width: 450px){
+
+.num{
+    font-size: 20px;
+    
+}
+.nearelm{
+    font-size: 13px;
+ }
+}
+/*@media all and (min-width: 1024px){
+    .text-small{
+        padding-left: 3%;
+        font-size: 12px;
+        
+    }
+    .num{
+        font-size: 15px;
+        padding-left: 5%;
+    }
+    .nearelm{
+        font-size: 10px;
+    }
+   
+}*/

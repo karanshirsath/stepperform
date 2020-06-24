@@ -30,12 +30,12 @@ label{
   }
 }
 
-@media screen and (max-width: 450px){
-.nextbtn{
-  width: 250px;
-  margin: auto;
-  display: block;
-
-  
+@media screen and (max-width: 575px){
+  .nextbtn{
+    width: 250px;
+    margin: auto;
+    display: block;
+ 
+    
 }
 }
