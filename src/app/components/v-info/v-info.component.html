@@ -1,11 +1,11 @@
 <h1 style="color:rgb(8,56,95);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
     <b>Vehicle Information</b></h1>
-<form [formGroup]="vehicleInfoForm"  style="color:rgb(8,56,95)">
+<form [formGroup]="vehicleInfoForm"  style="color:rgb(8,56,95)"><br>
     <div class="form-row">
-        <div class="   col-sm-4 col-md-8 col-lg-8"> <br>
+        <div class=" col-12 col-sm-7 col-md-8 col-lg-8 col-auto"> 
             <label for="registrationNumber">Vehicle Registration Number</label>
         </div>
-        <div class="  col-sm-4 col-md-4 col-lg-4">
+        <div class=" col-12 col-sm-5 col-md-4 col-lg-4 col-auto">
             <input class="form-control" id="registrationNumber" type="text" placeholder="XX0000XX" formControlName="registrationNumber"
                 (change)="change()" value={{registrationNumber}}>
             <div class="error"
@@ -20,13 +20,13 @@
 
     </div>
     <hr class="line">
-
+    <br>
     <div class="form-row">
-        <div class=" col-sm-4 col-md-8 col-lg-8"><br>
+        <div class=" col-12 col-sm-7  col-md-8 col-lg-8">
             <label for="certificateNumber"> Vehicle Certificate Number<br>
             <a href=""><u>Where can I find this number?</u></a></label>
         </div>
-        <div class=" col-sm-4 col-md-4 col-lg-4">
+        <div class=" col-12 col-sm-5 col-md-4 col-lg-4">
             <input class="form-control" id="certificateNumber" type="text" placeholder="000000000" formControlName="certificateNumber"
                 (change)="change()" value={{certificateNumber}}>
             <div class="error" *ngIf="formsControl.certificateNumber.touched && formsControl.certificateNumber.errors">
@@ -39,12 +39,12 @@
         </div>
     </div>
     <hr class="line">
-
+    <br>
     <div class="form-row">
-        <div class=" col-sm-4 col-md-8 col-lg-8"><br>
+        <div class=" col-12 col-sm-7 col-md-8 col-lg-8">
             <label for="purpose"> What purpose does this vehicle serve?</label>
         </div>
-        <div class=" col-sm-4 col-md-4 col-lg-4">
+        <div class=" col-12 col-sm-5 col-md-4 col-lg-4">
             <select formControlName="purpose" class="form-control" (change)="change()">
                 <option  [selected]="''===purpose" disabled value="" id="purpose">--SELECT--</option>
                 <option [selected]="p===purpose" *ngFor="let p of purposeList" value='p'>{{p}}</option>
@@ -58,16 +58,16 @@
     <hr class="line">
     <br>
     <div class="form-row">
-        <div class=" col-sm-4 col-md-8 col-lg-8">
+        <div class=" col-12 col-sm-7 col-md-8 col-lg-8">
            <label for="Driving">
                Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?
            </label>
         </div>
       
-        <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="col-12 col-sm-5 col-md-4 col-lg-4">
             
-            <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes" [checked]="yesNo=='Yes'">Yes &nbsp;&nbsp;
-            <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="No" [checked]="yesNo=='No'">No
+            <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes"  [checked]="yesNo=='Yes'"> &nbsp; Yes &nbsp;&nbsp;
+            <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="No" [checked]="yesNo=='No'"> &nbsp; No
         </div>
         
     </div>
@@ -75,7 +75,7 @@
 
 </form><br>
 
-<button class="btn btn-primary rounded-pill col-sm-12 col-lg-2 col-md-4" (click)="submit()" matStepperNext
+<button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" (click)="submit()" matStepperNext
     [disabled]="!vehicleInfoForm.valid">Next</button>
 
 <!-- {{vehicleInfoForm.value | json}} -->

@@ -1,11 +1,11 @@
 <h1 class="font-weight-bold"  style="color:rgb(8,56,95) ;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" >
     Policy Details</h1>
-<form [formGroup]="registerForm"  style="color:rgb(8,56,95)">
+<form [formGroup]="registerForm"  style="color:rgb(8,56,95)"><br>
 <div class="form-row">
-    <div class=" col-sm-4 col-md-8 col-lg-8 "><br>
+    <div class=" col-12 col-sm-7 col-md-8 col-lg-8 ">
         <label for="policydate">Start Date</label>
     </div>
-    <div class=" col-sm-4 col-md-4 col-lg-4  ">
+    <div class=" col-12 col-sm-5 col-md-4 col-lg-4  ">
         <input class="form-control" id="policydate" type="date" formControlName="policyDate" (change)="change()" [min]="mindate">
         <div class="error" *ngIf="formControls.policyDate.touched && formControls.policyDate.errors">
             <div *ngIf="formControls.policyDate.errors.required">This field is mandatory</div>
@@ -13,11 +13,12 @@
     </div>  
 </div>
 <hr class="line">
+<br>
 <div class="form-row">
-    <div class=" col-sm-4 col-md-8 col-lg-8"><br>
+    <div class=" col-12 col-sm-7 col-md-8 col-lg-8">
         <label for="policyLength"> Policy length</label>
     </div>
-    <div class="col-sm-4 col-md-4 col-lg-4 ">
+    <div class="col-12 col-sm-5 col-md-4 col-lg-4 ">
         <select formControlName="policyLength" class="form-control" (change)="change()">
             <option selected disabled value="">--SELECT--</option>
             <option value="1" id="policyLength">1 Month</option>
@@ -32,20 +33,21 @@
 </div>
 <hr class="line">
 <br><br>
-<div class=" border shadow  col-sm-4 col-md-12 col-lg-12 p-3 mb-3 bg-white rounded">
+<div class=" border shadow  col-12 col-sm-12 col-md-12 col-lg-12 p-3 mb-3 bg-white rounded">
     <input type="checkbox" formControlName="check1" (change)="change()"> I have read and accepted <span class="text-primary">"Personal Data Protection Information"</span>
 
 </div>
 <div class="error" *ngIf="formControls.check1.touched && formControls.check1.errors">
     <div *ngIf="formControls.check1.invalid">Please read and accept </div>
 </div>
-<div class="border shadow  col-sm-4 col-md-12 col-lg-12 p-3 mb-3 bg-white rounded"><br>
+<br>
+<div class="border shadow col-12 col-sm-12 col-md-12 col-lg-12 p-3 mb-3 bg-white rounded">
     <input type="checkbox" formControlName="check2" (change)="change()"> I have read the <span class="text-primary">"Motor Insurance Third Party Liability Insurance Document"</span>
 
 </div>
 <div class="error" *ngIf="formControls.check2.touched && formControls.check2.errors">
     <div *ngIf="formControls.check2.invalid">Please read and accept </div>
 </div>
+</form>
 <br>
-</form><br>
-<button class="btn btn-primary rounded-pill col-sm-12 col-lg-2 col-md-4" (click)="submit()"  matStepperNext [disabled]="!registerForm.valid">Calculate</button>
+<button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" (click)="submit()"  matStepperNext [disabled]="!registerForm.valid">Calculate</button>
