@@ -1011,7 +1011,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "input[type=text],input[type=date],input[type=email]{border-radius: 7px;}\r\nselect{border-radius: 7px;}\r\nh1{color: #003768;}\r\n@media screen and (max-width: 768px){\r\n    .line{\r\n        display : none;\r\n    }\r\n}\r\n@media screen and (max-width: 576px){\r\n    .btn{\r\n        width: 250px;\r\n        margin: auto;\r\n        display: block;\r\n     \r\n        \r\n    }\r\n}\r\n",
+                    "data": "input[type=text],input[type=date],input[type=email]{border-radius: 7px;}\r\nselect{border-radius: 7px;}\r\nh1{color: #003768;}\r\n@media screen and (max-width: 768px){\r\n    .line{\r\n        display : none;\r\n    }\r\n}\r\n@media screen and (max-width: 575px){\r\n    .btn{\r\n        width: 250px;\r\n        margin: auto;\r\n        display: block;\r\n     \r\n        \r\n    }\r\n}\r\n",
                     "styleUrl": "./insuring-party.component.css"
                 }
             ],
@@ -2010,7 +2010,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@media screen and (max-width: 768px){\r\n    .line{\r\n        display : none;\r\n    }\r\n}\r\n@media screen and (max-width: 576px){\r\n    .btn{\r\n        width: 250px;\r\n        margin: auto;\r\n        display: block;\r\n     \r\n        \r\n    }\r\n}\r\n",
+                    "data": "@media screen and (max-width: 768px){\r\n    .line{\r\n        display : none;\r\n    }\r\n}\r\n@media screen and (max-width: 575px){\r\n    .btn{\r\n        width: 250px;\r\n        margin: auto;\r\n        display: block;\r\n     \r\n        \r\n    }\r\n}\r\n",
                     "styleUrl": "./policy-details.component.css"
                 }
             ],
@@ -3054,22 +3054,22 @@
             "inputsClass": [
                 {
                     "name": "certificateNumber",
-                    "line": 17,
-                    "type": "string"
-                },
-                {
-                    "name": "purpose",
-                    "line": 18,
-                    "type": "string"
-                },
-                {
-                    "name": "registrationNumber",
                     "line": 16,
                     "type": "string"
                 },
                 {
+                    "name": "purpose",
+                    "line": 17,
+                    "type": "string"
+                },
+                {
+                    "name": "registrationNumber",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
                     "name": "yesNo",
-                    "line": 19,
+                    "line": 18,
                     "type": "string"
                 }
             ],
@@ -3078,12 +3078,6 @@
                     "name": "OnRegister",
                     "defaultValue": "new EventEmitter()",
                     "line": 13,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "OnStory",
-                    "defaultValue": "new EventEmitter()",
-                    "line": 15,
                     "type": "EventEmitter"
                 },
                 {
@@ -3100,15 +3094,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 42
-                },
-                {
-                    "name": "purposeList",
-                    "defaultValue": "['Personal Use','Public Use']",
-                    "type": "[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 21
+                    "line": 39
                 },
                 {
                     "name": "purposeList",
@@ -3131,7 +3117,7 @@
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 19
                 }
             ],
             "methodsClass": [
@@ -3210,7 +3196,7 @@
                         "name": "formsControl",
                         "type": "",
                         "returnType": "",
-                        "line": 53
+                        "line": 50
                     }
                 }
             },
