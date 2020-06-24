@@ -6,7 +6,7 @@ h1{color: #003768;}
         display : none;
     }
 }
-@media screen and (max-width: 576px){
+@media screen and (max-width: 575px){
     .btn{
         width: 250px;
         margin: auto;

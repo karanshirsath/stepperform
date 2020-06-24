@@ -118,6 +118,31 @@
                 "line": 6
             },
             "type": "injectable"
+        },
+        {
+            "name": "LoggedInServiceService",
+            "id": "injectable-LoggedInServiceService-97f06dea67eadc202e8b2a811742513b",
+            "file": "src/app/logged-in-service.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "isSignedIn",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 10
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class LoggedInServiceService {\r\n\r\n  constructor() { }\r\n\r\n  isSignedIn():boolean\r\n  {\r\n    return true;\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 6
+            },
+            "type": "injectable"
         }
     ],
     "classes": [
@@ -363,7 +388,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<router-outlet></router-outlet>\r\n<!-- <app-delivery></app-delivery> -->\r\n\r\n"
+            "templateData": "<router-outlet></router-outlet>\r\n<!-- <app-delivery></app-delivery> -->\r\n\r\n<!-- <app-tab2></app-tab2> -->\r\n<!-- <app-login></app-login> -->\r\n<!-- <app-tabs></app-tabs> -->"
         },
         {
             "name": "ContactComponent",
@@ -3010,7 +3035,7 @@
         },
         {
             "name": "VInfoComponent",
-            "id": "component-VInfoComponent-1e9df085bc4374ebd54586d9132aae7d",
+            "id": "component-VInfoComponent-a87b1e54b7aa5293e86009677f343034",
             "file": "src/app/components/v-info/v-info.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3086,12 +3111,20 @@
                     "line": 21
                 },
                 {
+                    "name": "purposeList",
+                    "defaultValue": "['Personal Use','Public Use']",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
                     "name": "submit",
                     "defaultValue": "() => {...}",
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 32
+                    "line": 31
                 },
                 {
                     "name": "vehicleInfoForm",
@@ -3108,7 +3141,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24
+                    "line": 23
                 }
             ],
             "hostBindings": [],
@@ -3116,11 +3149,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n\r\n@Component({\r\n  selector: 'app-v-info',\r\n  templateUrl: './v-info.component.html',\r\n  styleUrls: ['./v-info.component.css']\r\n})\r\nexport class VInfoComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  @Output() OnStory=new EventEmitter()\r\n  @Input() registrationNumber:string;\r\n  @Input() certificateNumber:string;\r\n  @Input() purpose:string;\r\n  @Input() yesNo:string;\r\n vehicleInfoForm:FormGroup;\r\n purposeList =['Personal Use','Public Use']\r\n  constructor(private router: Router, private formBuilder:FormBuilder, private GAService : GoogleAnalyticsService ) { } \r\n\r\n  ngOnInit(): void {\r\n    this.vehicleInfoForm=this.formBuilder.group({\r\n      registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],\r\n      certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],\r\n      purpose:['',Validators.required],\r\n      yesNo:['Yes',Validators.required]\r\n    })\r\n  }\r\n    submit=() => {\r\n      this.GAService.event('Next Button clicked','Vehicle Infomation','Next')\r\n      //this.router.navigate(['./insuring-party.component']);\r\n      console.log(this.vehicleInfoForm.value,\"vehicle Info\");\r\n      // this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      this.OnStory.emit(true);\r\n      // setTimeout(this.OnToggle.emit(true),)\r\n\r\n    }\r\n    change=()=>{\r\n      \r\n      if(this.vehicleInfoForm.valid){\r\n        this.OnToggle.emit(true)\r\n        this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }else{\r\n        this.OnToggle.emit(false)\r\n        // this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }\r\n    }\r\n\r\n    get formsControl(){\r\n      return this.vehicleInfoForm.controls;\r\n    }\r\n  }\r\n\r\n\r\n",
+            "sourceCode": "import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n\r\n@Component({\r\n  selector: 'app-v-info',\r\n  templateUrl: './v-info.component.html',\r\n  styleUrls: ['./v-info.component.css']\r\n})\r\nexport class VInfoComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  @Input() registrationNumber:string;\r\n  @Input() certificateNumber:string;\r\n  @Input() purpose:string;\r\n  @Input() yesNo:string;\r\n vehicleInfoForm:FormGroup;\r\n purposeList =['Personal Use','Public Use']\r\n  constructor(private router: Router, private formBuilder:FormBuilder, private GAService : GoogleAnalyticsService ) { } \r\n\r\n  ngOnInit(): void {\r\n    this.vehicleInfoForm=this.formBuilder.group({\r\n      registrationNumber:['',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]],\r\n      certificateNumber:['',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]],\r\n      purpose:['',Validators.required],\r\n      yesNo:['Yes',Validators.required]\r\n    })\r\n  }\r\n    submit=() => {\r\n      this.GAService.event('Next Button clicked','Vehicle Infomation','Next')\r\n      //this.router.navigate(['./insuring-party.component']);\r\n      console.log(this.vehicleInfoForm.value,\"vehicle Info\");\r\n      // this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.vehicleInfoForm.value);\r\n       // setTimeout(this.OnToggle.emit(true),)\r\n    }\r\n    change=()=>{\r\n      \r\n      if(this.vehicleInfoForm.valid){\r\n        this.OnToggle.emit(true)\r\n        this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }else{\r\n        this.OnToggle.emit(false)\r\n        // this.OnRegister.emit(this.vehicleInfoForm.value);\r\n      }\r\n    }\r\n\r\n    get formsControl(){\r\n      return this.vehicleInfoForm.controls;\r\n    }\r\n  }\r\n\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "form { \r\n    margin: 0  auto; \r\n    widows: 500px;;\r\n    }\r\n@media screen and (max-width: 768px){\r\n        .line{\r\n            display : none;\r\n        }\r\n       \r\n        \r\n}\r\n@media screen and (max-width: 576px){\r\n    .btn{\r\n        width: 250px;\r\n        margin: auto;\r\n        display: block;\r\n     \r\n        \r\n    }\r\n}\r\n\r\n\r\n\r\n  ",
+                    "data": "form { \r\n    margin: 0  auto; \r\n    widows: 500px;;\r\n    }\r\n@media screen and (max-width: 768px){\r\n        .line{\r\n            display : none;\r\n        }\r\n       \r\n        \r\n}\r\n@media screen and (max-width: 575px){\r\n    .btn{\r\n        width: 250px;\r\n        margin: auto;\r\n        display: block;\r\n     \r\n        \r\n    }\r\n}\r\n\r\n\r\n\r\n  ",
                     "styleUrl": "./v-info.component.css"
                 }
             ],
@@ -3142,7 +3175,7 @@
                         "type": "GoogleAnalyticsService"
                     }
                 ],
-                "line": 21,
+                "line": 20,
                 "jsdoctags": [
                     {
                         "name": "router",
@@ -3190,7 +3223,11 @@
             "children": [
                 {
                     "type": "providers",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "LoggedInServiceService"
+                        }
+                    ]
                 },
                 {
                     "type": "declarations",
@@ -3478,11 +3515,17 @@
                     },
                     {
                         "path": "tab2",
-                        "component": "TabsComponent"
+                        "component": "TabsComponent",
+                        "canActivate": [
+                            "LoggedInGuardGuard"
+                        ]
                     },
                     {
                         "path": "tab",
-                        "component": "TabComponent"
+                        "component": "TabComponent",
+                        "canActivate": [
+                            "LoggedInGuardGuard"
+                        ]
                     },
                     {
                         "path": "signUp",
@@ -3697,7 +3740,7 @@
                 "linktype": "component",
                 "name": "VInfoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
@@ -3707,6 +3750,24 @@
                 "name": "VehicleOwnerComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/31",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/logged-in-guard.guard.ts",
+                "type": "guard",
+                "linktype": "guard",
+                "name": "LoggedInGuardGuard",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/logged-in-service.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "LoggedInServiceService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
