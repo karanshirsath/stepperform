@@ -1,12 +1,12 @@
 input[type=text],input[type=date],input[type=email]{border-radius: 7px;}
 select{border-radius: 7px;}
 h1{color: #003768;}
-@media screen and (max-width: 800px){
+@media screen and (max-width: 768px){
     .line{
         display : none;
     }
 }
-@media screen and (max-width: 450px){
+@media screen and (max-width: 576px){
     .btn{
         width: 250px;
         margin: auto;

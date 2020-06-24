@@ -12,11 +12,13 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class VInfoComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
+  @Output() OnStory=new EventEmitter()
   @Input() registrationNumber:string;
   @Input() certificateNumber:string;
   @Input() purpose:string;
   @Input() yesNo:string;
  vehicleInfoForm:FormGroup;
+ purposeList =['Personal Use','Public Use']
   constructor(private router: Router, private formBuilder:FormBuilder, private GAService : GoogleAnalyticsService ) { } 
 
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class VInfoComponent implements OnInit {
       console.log(this.vehicleInfoForm.value,"vehicle Info");
       // this.OnToggle.emit(true)
       this.OnRegister.emit(this.vehicleInfoForm.value);
+      this.OnStory.emit(true);
       // setTimeout(this.OnToggle.emit(true),)
 
     }

@@ -1,46 +1,59 @@
-.form-control{
-    width:180px
-}
+
 
 /*.container{
     margin: 200px;
 }*/
 
+.user-key{
+    width: 40px;
+    position: absolute;
+    z-index: 1;
+    top:15px;
+    left: -25px;
+}
 h1{
-    margin-left: 1px;
-    margin-bottom: 20px;
-    color: darkblue;
+    
+    color:rgb(8,56,95); 
+    font-weight: bold;
+    font-family:'Trebuchet MS',Arial,sans-serif;
 }
 label{
-    color: darkgray;
+    color:rgb(8,56,95);
     font-family: Arial, Helvetica, sans-serif;
 }
-.col-sm-4{
-    padding-left: 205px;
-   
-}
-hr{
-    width:50%;
-    text-align:left;
-    margin-left:0;
-}
+
+
 .panel{
+    border-width: thin;
+    border-style: solid;
     border-color:yellow;
-    width: 555px;
+    border-radius:5px;
+    padding:25px;
+    margin-bottom: 20px;
 }
 .error{
     color: red;
 }
-.btn{
-    border-radius: 50px;
-    min-width: 100px;
-  }
-@media screen and (max-width: 800px) {
-    .col-sm-4{
-        padding-left:13px;
 
+@media screen and (max-width: 800px) {
+    .line{
+        display : none;
     }
-    .panel{
-        width: 177px;;
+}
+
+@media screen and (max-width: 450px){
+    .nextbtn{
+        width: 250px;
+        margin: auto;
+        display: block;
+     
+        
     }
+}
+
+@media screen and (max-width: 1090px){
+    .col-lg-4{
+        padding: 4px;
+    }
+    
 }
