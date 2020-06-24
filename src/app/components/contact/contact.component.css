@@ -3,22 +3,19 @@
 
   h1{
     
-    color:rgb(8,56,95); 
-    font-size: 200%;
-    font-family:Arial, Helvetica, sans-serif
+    color:rgb(8,56,95);
+    font-family: 'Trebuchet MS',Arial,sans-serif;
+    font-weight: bold;
 }
 label{
     color:rgb(8,56,95);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.btn{
-    
-  min-width: 100px;
-}
+
   /* Style the submit button with a specific background color etc */
   
-  @media screen and (max-width: 1090px){
+@media screen and (max-width: 1090px){
     .space{
         padding: 4px;
     }
@@ -27,15 +24,18 @@ label{
  
   
   
-  @media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .line{
         display : none;
     }
 }
 
-@media screen and (max-width: 450px){
-    .btn{
-        width: 250px;
-        margin: auto;   
-    }
+@media screen and (max-width: 575px){
+  .nextbtn{
+    width: 250px;
+    margin: auto;
+    display: block;
+ 
+    
+}
 }

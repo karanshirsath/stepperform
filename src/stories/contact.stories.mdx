@@ -30,8 +30,8 @@ MDX Combines Marksown and JSX.
 This is roughly equivalent to SB5's `storiesOf` :
 
 ```
-storiesOf('MDX|Login',module)
-    .addParameter({component: LoginComponent})
+storiesOf('MDX/Contact Component',module)
+    .addParameter({component: ContactComponent})
 
 ```
 
@@ -52,13 +52,37 @@ appearance of the login component.
   </Story>
 </Preview>
 
-### Submit
+### Valid
 
-This is the submit story. In this story we provide the required credentials to all the
+This is the valid credential story. In this story we provide the required and valid credentials to all the
 input fields.
 
 <Preview>
-  <Story name="Submit">{{
+  <Story name="Valid Credentials">{{
+    component: ContactComponent,
+    props:{
+        city: select('City',{SophiaCity: "Sophia City",
+                                TechCity:"Tech City",
+                                ElectronicCity: "Electronic City"},'SophiaCity','General'),
+        pincode: text('Pincode','120035','General'),
+        street: text('Street','Nelson Street','General'),
+        No: text('Street Number','12','General'),
+        block: text('Block','12','General'),
+        entrance: text('Entrance','East Gate','General'),
+        appartment: text('Appartment','Nelson Appartment','General'),
+        phone: text('Phone Number','123456789','General'),
+    },
+    }}    
+  </Story>
+</Preview>
+
+### Invalid
+
+This is the invalid credential story. In this story we provide the required and valid credentials to all the
+input fields.
+
+<Preview>
+  <Story name="Invalid Credentials">{{
     component: ContactComponent,
     props:{
         city: select('City',{SophiaCity: "Sophia City",

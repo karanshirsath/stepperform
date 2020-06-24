@@ -14,6 +14,7 @@ export class AdditionalCoversComponent implements OnInit {
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
   @Output() NextTab = new EventEmitter()
+  @Input() cover: string
   @Input ()installment
   imageUrl="./assets/carlogo.jpeg ";;
   tickimage="./assets/tick.jpg";

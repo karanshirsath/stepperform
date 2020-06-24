@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { InstallmentComponent } from '../app/components/installment/installment.component';
 import { moduleMetadata } from "@storybook/angular";
+import { radios } from "@storybook/addon-knobs";
 
 <Meta title="MDX/Installment Component" decorators={[
     moduleMetadata({
@@ -29,8 +30,8 @@ MDX Combines Marksown and JSX.
 This is roughly equivalent to SB5's `storiesOf` :
 
 ```
-storiesOf('MDX|Login',module)
-    .addParameter({component: LoginComponent})
+storiesOf('MDX/Installment Component',module)
+    .addParameter({component: InstallmentComponent})
 
 ```
 
@@ -46,6 +47,16 @@ appearance of the login component.
     component: InstallmentComponent,
     props:{
       
+    },
+    }}    
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Valid">{{
+    component: InstallmentComponent,
+    props:{
+      term: radios('Instalment Options',{'Single Payment':'Single Payment','Two Payments':'Two Payments','Four Payments':'Four Payments'},'Single Payment')
     },
     }}    
   </Story>

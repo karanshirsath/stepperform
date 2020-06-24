@@ -30,8 +30,8 @@ MDX Combines Marksown and JSX.
 This is roughly equivalent to SB5's `storiesOf` :
 
 ```
-storiesOf('MDX|Login',module)
-    .addParameter({component: LoginComponent})
+storiesOf('MDX|Insuring Party Component',module)
+    .addParameter({component: InsuringPartyComponent})
 
 ```
 
@@ -40,7 +40,7 @@ storiesOf('MDX|Login',module)
 ### Default
 
 This is the default story. In this story the users can take a look at the overall
-appearance of the login component.
+appearance of the Insuring party component.
 
 <Preview>
   <Story name="Default">{{
@@ -51,6 +51,8 @@ appearance of the login component.
     }}    
   </Story>
 </Preview>
+
+### Wrong input for EGN/EIK/LNCH Number
 
 <Preview>
   <Story name="Wrong EGN/EIK/LNCH">{{
@@ -64,6 +66,8 @@ appearance of the login component.
   </Story>
 </Preview>
 
+### Wrong input for email
+
 <Preview>
   <Story name="Wrong Email">{{
     component: InsuringPartyComponent,
@@ -75,6 +79,8 @@ appearance of the login component.
     }}    
   </Story>
 </Preview>
+
+### Valid Story
 
 <Preview>
   <Story name="All fields are correct">{{
