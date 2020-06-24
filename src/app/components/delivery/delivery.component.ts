@@ -10,7 +10,14 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class DeliveryComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
-
+ @Input() fullName:String
+  @Input() city:string
+  @Input() pincode:String
+  @Input() street:String
+  @Input() number :String
+  @Input() block:String
+  @Input() entrance:String
+  @Input() appt:String
   detailsForm: FormGroup;
 
   cities:String[] = ["New Delhi","Mumbai", "Chennai", "Bangalore", "Kolkata", "Mysore", "Pune", "Jaipur"];
