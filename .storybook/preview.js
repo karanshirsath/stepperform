@@ -1,17 +1,12 @@
-import { moduleMetadata, addDecorator } from '@storybook/angular';
-import { setCompodocJson } from '@storybook/addon-docs/angular';
-import docJson from '../documentation.json';
-import { ChangeDetectorRef, ElementRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../src/app/app-routing.module';
 import { AppComponent } from '../src/app/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import{MatStepperModule} from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { MatCardModule} from '@angular/material/card';
 import { MatSelectModule} from '@angular/material/select';
-import { constants } from 'buffer';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
@@ -36,9 +31,11 @@ import { PersonalComponent } from '../src/app/components/personal/personal.compo
 import { PaymentComponent } from '../src/app/components/payment/payment.component';
 import { InstallmentComponent } from '../src/app/components/installment/installment.component';
 import { ProposalComponent } from '../src/app/components/proposal/proposal.component';
-import { ContactComponent } from '../src/app/components/contact/contact.component';
 import { VehicleOwnerComponent } from '../src/app/components/vehicle-owner/vehicle-owner.component';
-import { SignUpComponent } from '../src/app/components/sign-up/sign-up.component'
+import { ContactComponent } from '../src/app/components/contact/contact.component';
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { SignUpComponent } from '../src/app/components/sign-up/sign-up.component';
+import { OrdinalPipe } from '../src/app/components/installment/ordinal.pipe';
 import { APP_BASE_HREF } from "@angular/common";
 import { addParameters } from '@storybook/client-api';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
@@ -93,12 +90,15 @@ addDecorator(
             MatGridListModule,
             MatTabsModule,
             MatCheckboxModule,
-            MatDividerModule
-        
+            MatDividerModule,
+            NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
+            NgxGoogleAnalyticsRouterModule        
           ],
           providers: [CdkStepper,{ provide: APP_BASE_HREF, useValue: "/" },
         { provide: ChangeDetectorRef },
-        { provide: ElementRef }]
+        { provide: ElementRef },
+      MTPLCalculatorComponent,
+    OrdinalPipe]
     }),
     withKnobs
 )
