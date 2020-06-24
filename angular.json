@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "stepperForm"
+  "defaultProject": "stepperForm",
+  "cli": {
+    "analytics": false
+  }
 }
