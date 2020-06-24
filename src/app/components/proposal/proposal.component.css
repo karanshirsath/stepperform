@@ -19,7 +19,7 @@ h6{
 }
 p{
     color: rgb(80, 108, 134); 
-
+    text-align: justify;
 }
 input{
     color: rgb(0, 53, 103); 

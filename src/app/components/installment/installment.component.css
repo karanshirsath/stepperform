@@ -90,7 +90,7 @@
     min-width:100px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 450px) {
     /*.firstcard,.secondcard,.thirdcard,.content,.hrline{
         width: 350px;
         
@@ -151,4 +151,9 @@
 }
 
   
+  @media screen and (max-width: 1024px) {
+    .viewhide{
+        margin-left: 0px;
+    }
 
+  }

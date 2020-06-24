@@ -36,9 +36,9 @@
         <div class="col-lg-8 col-md-12 mx-auto">
             <div class="card" style="border:none">
                 <div class="card-body  border-bottom">
-                    <p><i class="fa fa-check" style="color:green"></i>&#10004; Premium indicated are final and include Contribution to the Gaurantee  and Insurance &nbsp;&nbsp;&nbsp; Fund, stickers and 2% tax on insurance payment.</p>
-                    <p><i class="fa fa-check" style="color:green; text-align: justify;"></i>&#10004; The insurance payment is calculated with included - 5% discount for insurance with &nbsp;&nbsp;&nbsp; "Casco+".</p>
-                    <p><i class="fa fa-check" style="color:green"></i>&#10004;  Annual Technical Inspection Voucher </p>
+                    <p><i class="fa fa-check" style="color:green;"></i><img src="../../assets/tick.jpeg"> Premium indicated are final and include Contribution to the Gaurantee and Insurance Fund, stickers and 2% tax on insurance payment.</p>
+                    <p><i class="fa fa-check" style="color:green;"></i><img src="../../assets/tick.jpeg"> The insurance payment is calculated with included - 5% discount for insurance with "Casco+".</p>
+                    <p><i class="fa fa-check" style="color:green;"></i><img src="../../assets/tick.jpeg">  Annual Technical Inspection Voucher </p>
                 </div>
             </div>
             <br/>
@@ -48,7 +48,7 @@
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Instalments</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)=" moveToCalculator(3)">Edit</button>
+                    <button (click)=" moveToCalculator(3)" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
 
           
@@ -71,7 +71,7 @@
             <div class="card" style="border:none">
                 <div class="card-body  border-bottom">
                     <label class="label_prop">Additional Cover</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)=" moveToCalculator(4)">Edit</button>
+                    <button (click)=" moveToCalculator(4)" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="form-group">
                     <!-- <input type="text" formControlName="additionalCover" class="form-control label_prop" [value]=""> -->
                     {{mtplCalculatorData["coversData"].cover}}
@@ -109,7 +109,7 @@
             <div class="card" style="border:none">
                 <div class="card-body  border-bottom">
                     <label class="label_prop">Vehicle</label>
-                    <button (click)=" moveToCalculator(0)">Edit</button>
+                    <button (click)=" moveToCalculator(0)" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                         <div class="form-group">
@@ -159,7 +159,7 @@
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Insuring Party</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)=" moveToCalculator(1)">Edit</button>
+                    <button (click)=" moveToCalculator(1)" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                         <div class="form-group">
@@ -215,7 +215,7 @@
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Vehicle Owner</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)="edit(2)" class="edit_prop">Edit</button>
+                    <button (click)="edit(2)" class="edit_prop" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -253,7 +253,7 @@
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Delivery</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)="edit(3)" class="edit_prop">Edit</button>
+                    <button (click)="edit(3)" class="edit_prop" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">

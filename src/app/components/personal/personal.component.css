@@ -14,8 +14,8 @@
 h1{
     
     color:rgb(8,56,95); 
-    font-size: 200%;
-    font-family:Arial, Helvetica, sans-serif
+    font-weight: bold;
+    font-family:'Trebuchet MS',Arial,sans-serif;
 }
 label{
     color:rgb(8,56,95);
@@ -34,10 +34,7 @@ label{
 .error{
     color: red;
 }
-.btn{
-    
-    min-width: 100px;
-  }
+
 @media screen and (max-width: 800px) {
     .line{
         display : none;
@@ -45,9 +42,12 @@ label{
 }
 
 @media screen and (max-width: 450px){
-    .btn{
+    .nextbtn{
         width: 250px;
-        margin: auto;   
+        margin: auto;
+        display: block;
+     
+        
     }
 }
 
