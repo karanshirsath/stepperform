@@ -1787,7 +1787,7 @@
         },
         {
             "name": "PersonalComponent",
-            "id": "component-PersonalComponent-9b7bf2bd33889b54ec4cb314a34bf352",
+            "id": "component-PersonalComponent-f5941ee18ca8b3049c4f960c722c397b",
             "file": "src/app/components/personal/personal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1806,47 +1806,47 @@
             "inputsClass": [
                 {
                     "name": "citizen",
-                    "line": 21,
+                    "line": 22,
                     "type": "String"
                 },
                 {
                     "name": "dob",
-                    "line": 22,
+                    "line": 23,
                     "type": "Date"
                 },
                 {
                     "name": "firstname",
-                    "line": 14,
-                    "type": "String"
-                },
-                {
-                    "name": "firstnameeng",
-                    "line": 18,
-                    "type": "String"
-                },
-                {
-                    "name": "lastname",
                     "line": 15,
                     "type": "String"
                 },
                 {
-                    "name": "lastnameeng",
+                    "name": "firstnameeng",
                     "line": 19,
                     "type": "String"
                 },
                 {
-                    "name": "lnch",
-                    "line": 13,
-                    "type": "String"
-                },
-                {
-                    "name": "surname",
+                    "name": "lastname",
                     "line": 16,
                     "type": "String"
                 },
                 {
-                    "name": "surnameeng",
+                    "name": "lastnameeng",
                     "line": 20,
+                    "type": "String"
+                },
+                {
+                    "name": "lnch",
+                    "line": 14,
+                    "type": "String"
+                },
+                {
+                    "name": "surname",
+                    "line": 17,
+                    "type": "String"
+                },
+                {
+                    "name": "surnameeng",
+                    "line": 21,
                     "type": "String"
                 }
             ],
@@ -1862,6 +1862,12 @@
                     "defaultValue": "new EventEmitter()",
                     "line": 12,
                     "type": "EventEmitter"
+                },
+                {
+                    "name": "submit",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 13,
+                    "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [
@@ -1871,7 +1877,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 35
+                    "line": 38
                 },
                 {
                     "name": "citizens",
@@ -1879,14 +1885,14 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 25
                 },
                 {
                     "name": "personalForm",
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 24
                 }
             ],
             "methodsClass": [
@@ -1896,7 +1902,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 46
+                    "line": 49
                 },
                 {
                     "name": "success",
@@ -1904,7 +1910,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26
+                    "line": 27
                 }
             ],
             "hostBindings": [],
@@ -1912,7 +1918,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output, EventEmitter,Input } from '@angular/core';\r\nimport {FormBuilder,FormGroup,Validators} from '@angular/forms';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n@Component({\r\n  selector: 'app-personal',\r\n  templateUrl: './personal.component.html',\r\n  styleUrls: ['./personal.component.css']\r\n})\r\nexport class PersonalComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  @Input() lnch:String;\r\n  @Input() firstname:String;\r\n  @Input() lastname:String;\r\n  @Input() surname:String;\r\n\r\n  @Input() firstnameeng:String;\r\n  @Input() lastnameeng:String;\r\n  @Input() surnameeng:String;\r\n  @Input() citizen:String;\r\n  @Input() dob:Date;\r\n  personalForm:FormGroup;\r\n  citizens=['Indian','American','African'];\r\n  constructor(private formBuilder:FormBuilder, private GAService: GoogleAnalyticsService) { }\r\n  success(){\r\n    this.GAService.event('Next Button clicked','Personal Details','Next')\r\n    //console.log(this.personalForm.value);\r\n    //console.log(this.personalForm.value,\"vehicle Info\");\r\n    // this.OnToggle.emit(true)\r\n    console.log(23123124);\r\n    \r\n    this.OnRegister.emit(this.personalForm.value);\r\n  }\r\n  change=()=>{\r\n      \r\n    if(this.personalForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.personalForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n      // this.OnRegister.emit(this.personalForm.value);\r\n    }\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.personalForm=this.formBuilder.group({\r\n      lnch:['',[Validators.required,Validators.pattern(\"^[0-9]{10}$\")]],\r\n      fullname:this.formBuilder.group({\r\n        firstname:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]],\r\n        lastname:['',Validators.pattern(\"^[a-zA-Z]*$\")],\r\n        surname:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]]\r\n      }),\r\n      fullnameeng:this.formBuilder.group({\r\n        firstnameeng:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]],\r\n        lastnameeng:['',Validators.pattern(\"^[a-zA-Z]*$\")],\r\n        surnameeng:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]]\r\n      }),\r\n      citizen:['',Validators.required],\r\n      birth:['',Validators.required]\r\n    });\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, Output, EventEmitter,Input } from '@angular/core';\r\nimport {FormBuilder,FormGroup,Validators} from '@angular/forms';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n@Component({\r\n  selector: 'app-personal',\r\n  templateUrl: './personal.component.html',\r\n  styleUrls: ['./personal.component.css']\r\n})\r\nexport class PersonalComponent implements OnInit {\r\n  @Output() OnRegister= new EventEmitter()\r\n  @Output() OnToggle=new EventEmitter()\r\n  @Output() submit = new EventEmitter()\r\n  @Input() lnch:String;\r\n  @Input() firstname:String;\r\n  @Input() lastname:String;\r\n  @Input() surname:String;\r\n\r\n  @Input() firstnameeng:String;\r\n  @Input() lastnameeng:String;\r\n  @Input() surnameeng:String;\r\n  @Input() citizen:String;\r\n  @Input() dob:Date;\r\n  personalForm:FormGroup;\r\n  citizens=['Indian','American','African'];\r\n  constructor(private formBuilder:FormBuilder, private GAService: GoogleAnalyticsService) { }\r\n  success(){\r\n    this.GAService.event('Next Button clicked','Personal Details','Next')\r\n    //console.log(this.personalForm.value);\r\n    //console.log(this.personalForm.value,\"vehicle Info\");\r\n    // this.OnToggle.emit(true)\r\n    console.log(23123124);\r\n\r\n    this.submit.emit('Personal Details submitted successfully');\r\n    \r\n    this.OnRegister.emit(this.personalForm.value);\r\n  }\r\n  change=()=>{\r\n      \r\n    if(this.personalForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.personalForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n      // this.OnRegister.emit(this.personalForm.value);\r\n    }\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.personalForm=this.formBuilder.group({\r\n      lnch:['',[Validators.required,Validators.pattern(\"^[0-9]{10}$\")]],\r\n      fullname:this.formBuilder.group({\r\n        firstname:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]],\r\n        lastname:['',Validators.pattern(\"^[a-zA-Z]*$\")],\r\n        surname:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]]\r\n      }),\r\n      fullnameeng:this.formBuilder.group({\r\n        firstnameeng:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]],\r\n        lastnameeng:['',Validators.pattern(\"^[a-zA-Z]*$\")],\r\n        surnameeng:['',[Validators.required,Validators.pattern(\"^[a-zA-Z]*$\"),Validators.maxLength(20)]]\r\n      }),\r\n      citizen:['',Validators.required],\r\n      birth:['',Validators.required]\r\n    });\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1934,7 +1940,7 @@
                         "type": "GoogleAnalyticsService"
                     }
                 ],
-                "line": 24,
+                "line": 25,
                 "jsdoctags": [
                     {
                         "name": "formBuilder",
@@ -1955,11 +1961,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "\r\n  <h1><b>Personal Details</b></h1>\r\n  <form [formGroup]=\"personalForm\" >\r\n    <div class=\"form-group row \">\r\n      <label for=\"lnch\" class=\"col-sm-8 col-form-label\">LNCH</label>\r\n      <div class=\"col-lg-4\">\r\n        <input type=\"text\" class=\"form-control\" id=\"lnch\" placeholder=\"Enter LNCH\" [(ngModel)]=\"lnch\" formControlName=\"lnch\" name=\"lnch\"\r\n          (change)=\"change()\">\r\n        <div\r\n          *ngIf=\"personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)\"\r\n          class=\"error\">This field is mandatory</div>\r\n        <div\r\n          *ngIf=\"personalForm.controls.lnch.hasError('pattern') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)\"\r\n          class=\"error\">Only 10 digit numerical value allowed</div>\r\n      </div>\r\n    </div>\r\n    <hr class=\"line\">\r\n    <div formGroupName=\"fullname\">\r\n      <label class=\"\">Full Name</label><br>\r\n      <div class=\"form-group row\">\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"firstname\" [(ngModel)]=\"firstname\" placeholder=\"Enter firstname\"\r\n            formControlName=\"firstname\" name=\"firstname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('required') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('pattern') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('maxlength') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"lastname\" [(ngModel)]=\"lastname\" placeholder=\"Enter middlename\" formControlName=\"lastname\"\r\n            name=\"lastname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('lastname').hasError('pattern') &&(personalForm.get('fullname').get('lastname').dirty || personalForm.get('fullname').get('lastname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n        </div>\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"surname\" [(ngModel)]=\"surname\" placeholder=\"Enter lastname\" formControlName=\"surname\"\r\n            name=\"suname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('required') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('pattern') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('maxlength') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <hr class=\"line\">\r\n    <div formGroupName=\"fullnameeng\">\r\n      <label>Full Name in English</label><br>\r\n      <div class=\"form-group row\">\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"firstnameeng\" [(ngModel)]=\"firstnameeng\" placeholder=\"Enter firstname\"\r\n            formControlName=\"firstnameeng\" name=\"firstnameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"lastnameeng\" [(ngModel)]=\"lastnameeng\" placeholder=\"Enter middlename\"\r\n            formControlName=\"lastnameeng\" name=\"lastnameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('lastnameeng').dirty || personalForm.get('fullnameeng').get('lastnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n        </div>\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"surnameeng\" [(ngModel)]=\"surnameeng\" placeholder=\"Enter lastname\"\r\n            formControlName=\"surnameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"panel col-lg-12\">\r\n       <img class=\"user-key\" src=\"../../assets/excl.jpg\">\r\n        Please compare data in latin with data in vehicle registration certificate\r\n        or identity document.Data will be used for printout of Green Card Certificate.\r\n    </div>\r\n    <div class=\"form-group row\">\r\n      <label for=\"citizen\" class=\"col-lg-8\">Citizenship</label>\r\n      <div class=\"col-lg-4\">\r\n        <select class=\"form-control\" id=\"citizen\" [(ngModel)]=\"citizen\" formControlName=\"citizen\" name=\"citizen\" (change)=\"change()\">\r\n          <option selected disabled value=\"\">--SELECT--</option>\r\n          <option *ngFor=\"let c of citizens\" [value]=\"c\">{{c}}</option>\r\n        </select>\r\n        <div\r\n          *ngIf=\"personalForm.controls.citizen.hasError('required') &&(personalForm.controls.citizen.dirty || personalForm.controls.citizen.touched)\"\r\n          class=\"error\">Please select your Citizenship</div>\r\n      </div>\r\n    </div>\r\n    <hr class=\"line\">\r\n    <div class=\"form-group row\">\r\n      <label for=\"birth\" class=\"col-lg-8\">Birth Date</label>\r\n      <div class=\"col-lg-4\">\r\n        <input type=\"date\" class=\"form-control\" [(ngModel)]=\"dob\" id=\"birth\" placeholder=\"Enter Birth date\" formControlName=\"birth\"\r\n          name=\"birth\" (change)=\"change()\">\r\n        <div\r\n          *ngIf=\"personalForm.controls.birth.hasError('required') &&(personalForm.controls.birth.dirty || personalForm.controls.birth.touched)\"\r\n          class=\"error\">Please select your birth date </div>\r\n      </div>\r\n    </div>\r\n    <hr class=\"line\">\r\n    <button type=\"button\" class=\"btn btn-primary rounded-pill  col-sm-12 col-lg-2 col-md-4 nextbtn\" mat-raised-button matStepperNext\r\n      [disabled]=\"!personalForm.valid\" (click)=\"success()\">Next</button>\r\n  </form> \r\n"
+            "templateData": "\r\n  <h1><b>Personal Details</b></h1>\r\n  <form [formGroup]=\"personalForm\" >\r\n    <div class=\"form-group row \">\r\n      <label for=\"lnch\" class=\"col-sm-8 col-form-label\">LNCH</label>\r\n      <div class=\"col-lg-4\">\r\n        <input type=\"text\" class=\"form-control\" id=\"lnch\" placeholder=\"Enter LNCH\" [(ngModel)]=\"lnch\" formControlName=\"lnch\" name=\"lnch\"\r\n          (change)=\"change()\">\r\n        <div\r\n          *ngIf=\"personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)\"\r\n          class=\"error\">This field is mandatory</div>\r\n        <div\r\n          *ngIf=\"personalForm.controls.lnch.hasError('pattern') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)\"\r\n          class=\"error\">Only 10 digit numerical value allowed</div>\r\n      </div>\r\n    </div>\r\n    <hr class=\"line\">\r\n    <div formGroupName=\"fullname\">\r\n      <label class=\"\">Full Name</label><br>\r\n      <div class=\"form-group row\">\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"firstname\" [(ngModel)]=\"firstname\" placeholder=\"Enter firstname\"\r\n            formControlName=\"firstname\" name=\"firstname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('required') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('pattern') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('firstname').hasError('maxlength') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"lastname\" [(ngModel)]=\"lastname\" placeholder=\"Enter middlename\" formControlName=\"lastname\"\r\n            name=\"lastname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('lastname').hasError('pattern') &&(personalForm.get('fullname').get('lastname').dirty || personalForm.get('fullname').get('lastname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n        </div>\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"surname\" [(ngModel)]=\"surname\" placeholder=\"Enter lastname\" formControlName=\"surname\"\r\n            name=\"suname\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('required') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('pattern') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullname').get('surname').hasError('maxlength') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <hr class=\"line\">\r\n    <div formGroupName=\"fullnameeng\">\r\n      <label>Full Name in English</label><br>\r\n      <div class=\"form-group row\">\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"firstnameeng\" [(ngModel)]=\"firstnameeng\" placeholder=\"Enter firstname\"\r\n            formControlName=\"firstnameeng\" name=\"firstnameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('firstnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"lastnameeng\" [(ngModel)]=\"lastnameeng\" placeholder=\"Enter middlename\"\r\n            formControlName=\"lastnameeng\" name=\"lastnameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('lastnameeng').dirty || personalForm.get('fullnameeng').get('lastnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n        </div>\r\n        <div class=\"col-lg-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"surnameeng\" [(ngModel)]=\"surnameeng\" placeholder=\"Enter lastname\"\r\n            formControlName=\"surnameeng\" (change)=\"change()\">\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">Only alphabets allowed</div>\r\n          <div\r\n            *ngIf=\"personalForm.get('fullnameeng').get('surnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)\"\r\n            class=\"error\">Max length can be 20 characters</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"panel col-lg-12\">\r\n       <img class=\"user-key\" src=\"../../assets/excl.jpg\">\r\n        Please compare data in latin with data in vehicle registration certificate\r\n        or identity document.Data will be used for printout of Green Card Certificate.\r\n    </div>\r\n    <div class=\"form-group row\">\r\n      <label for=\"citizen\" class=\"col-lg-8\">Citizenship</label>\r\n      <div class=\"col-lg-4\">\r\n        <select class=\"form-control\" id=\"citizen\" [(ngModel)]=\"citizen\" formControlName=\"citizen\" name=\"citizen\" (change)=\"change()\">\r\n          <option selected disabled value=\"\">--SELECT--</option>\r\n          <option *ngFor=\"let c of citizens\" [value]=\"c\">{{c}}</option>\r\n        </select>\r\n        <div\r\n          *ngIf=\"personalForm.controls.citizen.hasError('required') &&(personalForm.controls.citizen.dirty || personalForm.controls.citizen.touched)\"\r\n          class=\"error\">Please select your Citizenship</div>\r\n      </div>\r\n    </div>\r\n    <hr class=\"line\">\r\n    <div class=\"form-group row\">\r\n      <label for=\"birth\" class=\"col-lg-8\">Birth Date</label>\r\n      <div class=\"col-lg-4\">\r\n        <input type=\"date\" class=\"form-control\" [ngModel]=\"dob | date: 'yyyy-MM-dd'\" id=\"birth\" placeholder=\"Enter Birth date\" formControlName=\"birth\"\r\n          name=\"birth\" (change)=\"change()\">\r\n        <div\r\n          *ngIf=\"personalForm.controls.birth.hasError('required') &&(personalForm.controls.birth.dirty || personalForm.controls.birth.touched)\"\r\n          class=\"error\">Please select your birth date </div>\r\n      </div>\r\n    </div>\r\n    <hr class=\"line\">\r\n    <button type=\"button\" class=\"btn btn-primary rounded-pill  col-sm-12 col-lg-2 col-md-4 nextbtn\" mat-raised-button matStepperNext\r\n      [disabled]=\"!personalForm.valid\" (click)=\"success()\">Next</button>\r\n  </form> \r\n"
         },
         {
             "name": "PolicyDetailsComponent",
-            "id": "component-PolicyDetailsComponent-c10abdfb5578dee94b309b1b844e0ef4",
+            "id": "component-PolicyDetailsComponent-8f06b4b1d1fecd772b4f654663399582",
             "file": "src/app/components/policy-details/policy-details.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1975,7 +1981,18 @@
                 "./policy-details.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "policyDate",
+                    "line": 14,
+                    "type": "Date"
+                },
+                {
+                    "name": "policyLength",
+                    "line": 15,
+                    "type": "number"
+                }
+            ],
             "outputsClass": [
                 {
                     "name": "OnRegister",
@@ -1997,7 +2014,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 51
+                    "line": 53
                 },
                 {
                     "name": "day",
@@ -2005,7 +2022,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 18
                 },
                 {
                     "name": "mindate",
@@ -2013,7 +2030,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 20
                 },
                 {
                     "name": "month",
@@ -2021,14 +2038,14 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 19
                 },
                 {
                     "name": "registerForm",
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 16
                 },
                 {
                     "name": "submit",
@@ -2036,7 +2053,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 46
+                    "line": 48
                 },
                 {
                     "name": "todaydate",
@@ -2044,7 +2061,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 17
                 }
             ],
             "methodsClass": [
@@ -2054,7 +2071,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23
+                    "line": 25
                 }
             ],
             "hostBindings": [],
@@ -2062,7 +2079,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, EventEmitter, Output } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n@Component({\r\n  selector: 'app-policy-details',\r\n  templateUrl: './policy-details.component.html',\r\n  styleUrls: ['./policy-details.component.css']\r\n})\r\nexport class PolicyDetailsComponent implements OnInit {\r\n\r\n  @Output() OnRegister = new EventEmitter()\r\n  @Output() OnToggle = new EventEmitter()\r\n  registerForm: FormGroup;\r\n  todaydate=new Date()\r\n  day=''\r\n  month=''\r\n  mindate=\"\"\r\n\r\n\r\n  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }\r\n\r\n  ngOnInit() {\r\n    this.registerForm = this.formBuilder.group({\r\n      policyDate: ['', Validators.required],\r\n      policyLength: ['', Validators.required],\r\n      check1: ['', Validators.requiredTrue],\r\n      check2: ['', Validators.requiredTrue]\r\n    });\r\n    this.todaydate.setDate(this.todaydate.getDate() + 1);\r\n    console.log(this.todaydate);\r\n    if((this.todaydate.getMonth()+1)<10){\r\n      this.month=\"0\"+(this.todaydate.getMonth()+1)\r\n    }else{\r\n      this.month=\"\"+(this.todaydate.getMonth()+1)\r\n    }\r\n    if(this.todaydate.getDate()<10){\r\n      this.day=\"0\"+this.todaydate.getDate()\r\n    }else{\r\n      this.day=\"\"+this.todaydate.getDate()\r\n    }\r\n    this.mindate=\"\"+this.todaydate.getFullYear()+\"-\"+this.month+\"-\"+this.day\r\n    console.log(this.mindate);\r\n    \r\n  }\r\n  submit=()=>{\r\n    this.GAService.event('Calculate Button clicked','Policy Details','Calculate')\r\n    console.log(this.registerForm.value, \"policy details\");\r\n    this.OnRegister.emit(this.registerForm.value);\r\n  }\r\n  change=()=>{\r\n    if(this.registerForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.registerForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n  get formControls(){\r\n    return this.registerForm.controls\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n@Component({\r\n  selector: 'app-policy-details',\r\n  templateUrl: './policy-details.component.html',\r\n  styleUrls: ['./policy-details.component.css']\r\n})\r\nexport class PolicyDetailsComponent implements OnInit {\r\n\r\n  @Output() OnRegister = new EventEmitter()\r\n  @Output() OnToggle = new EventEmitter()\r\n  @Input() policyDate: Date;\r\n  @Input() policyLength: number;\r\n  registerForm: FormGroup;\r\n  todaydate=new Date()\r\n  day=''\r\n  month=''\r\n  mindate=\"\"\r\n\r\n\r\n  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }\r\n\r\n  ngOnInit() {\r\n    this.registerForm = this.formBuilder.group({\r\n      policyDate: ['', Validators.required],\r\n      policyLength: ['', Validators.required],\r\n      check1: ['', Validators.requiredTrue],\r\n      check2: ['', Validators.requiredTrue]\r\n    });\r\n    this.todaydate.setDate(this.todaydate.getDate() + 1);\r\n    console.log(this.todaydate);\r\n    if((this.todaydate.getMonth()+1)<10){\r\n      this.month=\"0\"+(this.todaydate.getMonth()+1)\r\n    }else{\r\n      this.month=\"\"+(this.todaydate.getMonth()+1)\r\n    }\r\n    if(this.todaydate.getDate()<10){\r\n      this.day=\"0\"+this.todaydate.getDate()\r\n    }else{\r\n      this.day=\"\"+this.todaydate.getDate()\r\n    }\r\n    this.mindate=\"\"+this.todaydate.getFullYear()+\"-\"+this.month+\"-\"+this.day\r\n    console.log(this.mindate);\r\n    \r\n  }\r\n  submit=()=>{\r\n    this.GAService.event('Calculate Button clicked','Policy Details','Calculate')\r\n    console.log(this.registerForm.value, \"policy details\");\r\n    this.OnRegister.emit(this.registerForm.value);\r\n  }\r\n  change=()=>{\r\n    if(this.registerForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.registerForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n  get formControls(){\r\n    return this.registerForm.controls\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2084,7 +2101,7 @@
                         "type": "GoogleAnalyticsService"
                     }
                 ],
-                "line": 18,
+                "line": 20,
                 "jsdoctags": [
                     {
                         "name": "formBuilder",
@@ -2112,11 +2129,11 @@
                         "name": "formControls",
                         "type": "",
                         "returnType": "",
-                        "line": 59
+                        "line": 61
                     }
                 }
             },
-            "templateData": "<h1 class=\"font-weight-bold\"  style=\"color:rgb(8,56,95) ;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;\" >\r\n    Policy Details</h1>\r\n<form [formGroup]=\"registerForm\"  style=\"color:rgb(8,56,95)\"><br>\r\n<div class=\"form-row\">\r\n    <div class=\" col-12 col-sm-7 col-md-8 col-lg-8 \">\r\n        <label for=\"policydate\">Start Date</label>\r\n    </div>\r\n    <div class=\" col-12 col-sm-5 col-md-4 col-lg-4  \">\r\n        <input class=\"form-control\" id=\"policydate\" type=\"date\" formControlName=\"policyDate\" (change)=\"change()\" [min]=\"mindate\">\r\n        <div class=\"error\" *ngIf=\"formControls.policyDate.touched && formControls.policyDate.errors\">\r\n            <div *ngIf=\"formControls.policyDate.errors.required\">This field is mandatory</div>\r\n        </div>\r\n    </div>  \r\n</div>\r\n<hr class=\"line\">\r\n<br>\r\n<div class=\"form-row\">\r\n    <div class=\" col-12 col-sm-7 col-md-8 col-lg-8\">\r\n        <label for=\"policyLength\"> Policy length</label>\r\n    </div>\r\n    <div class=\"col-12 col-sm-5 col-md-4 col-lg-4 \">\r\n        <select formControlName=\"policyLength\" class=\"form-control\" (change)=\"change()\">\r\n            <option selected disabled value=\"\">--SELECT--</option>\r\n            <option value=\"1\" id=\"policyLength\">1 Month</option>\r\n            <option value=\"3\" id=\"policyLength\">3 Months</option>\r\n            <option value=\"6\" id=\"policyLength\">6 Months</option>\r\n            <option value=\"12\" id=\"policyLength\">12 Months</option>\r\n        </select>\r\n        <div class=\"error\" *ngIf=\"formControls.policyLength.touched && formControls.policyLength.errors\">\r\n            <div *ngIf=\"formControls.policyLength.errors.required\">Policy Length is required</div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<hr class=\"line\">\r\n<br><br>\r\n<div class=\" border shadow  col-12 col-sm-12 col-md-12 col-lg-12 p-3 mb-3 bg-white rounded\">\r\n    <input type=\"checkbox\" formControlName=\"check1\" (change)=\"change()\"> I have read and accepted <span class=\"text-primary\">\"Personal Data Protection Information\"</span>\r\n\r\n</div>\r\n<div class=\"error\" *ngIf=\"formControls.check1.touched && formControls.check1.errors\">\r\n    <div *ngIf=\"formControls.check1.invalid\">Please read and accept </div>\r\n</div>\r\n<br>\r\n<div class=\"border shadow col-12 col-sm-12 col-md-12 col-lg-12 p-3 mb-3 bg-white rounded\">\r\n    <input type=\"checkbox\" formControlName=\"check2\" (change)=\"change()\"> I have read the <span class=\"text-primary\">\"Motor Insurance Third Party Liability Insurance Document\"</span>\r\n\r\n</div>\r\n<div class=\"error\" *ngIf=\"formControls.check2.touched && formControls.check2.errors\">\r\n    <div *ngIf=\"formControls.check2.invalid\">Please read and accept </div>\r\n</div>\r\n</form>\r\n<br>\r\n<button class=\"btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3\" (click)=\"submit()\"  matStepperNext [disabled]=\"!registerForm.valid\">Calculate</button>\r\n"
+            "templateData": "<h1 class=\"font-weight-bold\"  style=\"color:rgb(8,56,95) ;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;\" >\r\n    Policy Details</h1>\r\n<form [formGroup]=\"registerForm\"  style=\"color:rgb(8,56,95)\"><br>\r\n<div class=\"form-row\">\r\n    <div class=\" col-12 col-sm-7 col-md-8 col-lg-8 \">\r\n        <label for=\"policydate\">Start Date</label>\r\n    </div>\r\n    <div class=\" col-12 col-sm-5 col-md-4 col-lg-4  \">\r\n        <input class=\"form-control\" id=\"policydate\" type=\"date\" formControlName=\"policyDate\" (change)=\"change()\" [min]=\"mindate\" value=\"{{policyDate|date:'yyyy-MM-dd'}}\">\r\n        <div class=\"error\" *ngIf=\"formControls.policyDate.touched && formControls.policyDate.errors\">\r\n            <div *ngIf=\"formControls.policyDate.errors.required\">This field is mandatory</div>\r\n        </div>\r\n    </div>  \r\n</div>\r\n<hr class=\"line\">\r\n<br>\r\n<div class=\"form-row\">\r\n    <div class=\" col-12 col-sm-7 col-md-8 col-lg-8\">\r\n        <label for=\"policyLength\"> Policy length</label>\r\n    </div>\r\n    <div class=\"col-12 col-sm-5 col-md-4 col-lg-4 \">\r\n        <select formControlName=\"policyLength\" class=\"form-control\" (change)=\"change()\">\r\n            <option selected disabled value=\"\" >--SELECT--</option>\r\n            <option value=\"1\" id=\"policyLength\" [selected]=\"1===policyLength\">1 Month</option>\r\n            <option value=\"3\" id=\"policyLength\" [selected]=\"3===policyLength\">3 Months</option>\r\n            <option value=\"6\" id=\"policyLength\" [selected]=\"6===policyLength\">6 Months</option>\r\n            <option value=\"12\" id=\"policyLength\" [selected]=\"12===policyLength\">12 Months</option>\r\n        </select>\r\n        <div class=\"error\" *ngIf=\"formControls.policyLength.touched && formControls.policyLength.errors\">\r\n            <div *ngIf=\"formControls.policyLength.errors.required\">Policy Length is required</div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<hr class=\"line\">\r\n<br><br>\r\n<div class=\" border shadow  col-12 col-sm-12 col-md-12 col-lg-12 p-3 mb-3 bg-white rounded\">\r\n    <input type=\"checkbox\" formControlName=\"check1\" (change)=\"change()\"> I have read and accepted <span class=\"text-primary\">\"Personal Data Protection Information\"</span>\r\n\r\n</div>\r\n<div class=\"error\" *ngIf=\"formControls.check1.touched && formControls.check1.errors\">\r\n    <div *ngIf=\"formControls.check1.invalid\">Please read and accept </div>\r\n</div>\r\n<br>\r\n<div class=\"border shadow col-12 col-sm-12 col-md-12 col-lg-12 p-3 mb-3 bg-white rounded\">\r\n    <input type=\"checkbox\" formControlName=\"check2\" (change)=\"change()\"> I have read the <span class=\"text-primary\">\"Motor Insurance Third Party Liability Insurance Document\"</span>\r\n\r\n</div>\r\n<div class=\"error\" *ngIf=\"formControls.check2.touched && formControls.check2.errors\">\r\n    <div *ngIf=\"formControls.check2.invalid\">Please read and accept </div>\r\n</div>\r\n</form>\r\n<br>\r\n<button class=\"btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3\" (click)=\"submit()\"  matStepperNext [disabled]=\"!registerForm.valid\">Calculate</button>\r\n"
         },
         {
             "name": "ProposalComponent",
@@ -3719,7 +3736,7 @@
                 "linktype": "component",
                 "name": "PersonalComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/18",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {
@@ -3728,7 +3745,7 @@
                 "linktype": "component",
                 "name": "PolicyDetailsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
