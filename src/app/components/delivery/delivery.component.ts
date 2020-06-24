@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
@@ -8,16 +8,19 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
   styleUrls: ['./delivery.component.css']
 })
 export class DeliveryComponent implements OnInit {
-  @Output() OnRegister= new EventEmitter()
-  @Output() OnToggle=new EventEmitter()
- @Input() fullName:String
-  @Input() city:string
-  @Input() pincode:String
-  @Input() street:String
-  @Input() number :String
-  @Input() block:String
-  @Input() entrance:String
-  @Input() appt:String
+  @Output() OnRegister= new EventEmitter();
+  @Output() OnToggle=new EventEmitter();
+ @Input() fullName:String;
+  @Input() city:string;
+  @Input() pincode:String;
+  @Input() street:String;
+  @Input() number :String;
+  @Input() block:String;
+  @Input() entrance:String;
+  @Input() appt:String;
+  @Input() notes:String;
+  @Input() business:String;
+  @Input() contact:String;
   detailsForm: FormGroup;
 
   cities:String[] = ["New Delhi","Mumbai", "Chennai", "Bangalore", "Kolkata", "Mysore", "Pune", "Jaipur"];
