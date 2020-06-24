@@ -1,5 +1,5 @@
 <div class="container">
-<mat-horizontal-stepper labelPosition="bottom" #stepper >
+<mat-horizontal-stepper labelPosition="bottom" #stepper linear >
   <mat-step completed={{toggle1}}>
     <ng-template matStepLabel>Personal details</ng-template>
     <app-personal (OnRegister)="personalData($event)" (OnToggle)="toggle1=$event"></app-personal>
@@ -43,7 +43,3 @@
    
 </mat-horizontal-stepper>
 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> cb4fe5bcffbc7b7cfe8a8315dfe719e5a181d512

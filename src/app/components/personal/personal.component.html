@@ -1,10 +1,10 @@
-<div class="container col-12">
-  <h1>Personal Details</h1>
+
+  <h1><b>Personal Details</b></h1>
   <form [formGroup]="personalForm" >
     <div class="form-group row ">
-      <label for="lnch" class="col-sm-2 col-form-label">LNCH</label>
-      <div class="col-sm-4">
-        <input type="text" class="form-control" id="lnch" placeholder="Enter LNCH" value={{lnch}} formControlName="lnch" name="lnch"
+      <label for="lnch" class="col-sm-8 col-form-label">LNCH</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="lnch" placeholder="Enter LNCH" [(ngModel)]="lnch" formControlName="lnch" name="lnch"
           (change)="change()">
         <div
           *ngIf="personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)"
@@ -14,11 +14,11 @@
           class="error">Only 10 digit numerical value allowed</div>
       </div>
     </div>
-    <hr>
+    <hr class="line">
     <div formGroupName="fullname">
       <label class="">Full Name</label><br>
       <div class="form-group row">
-        <div class="col-sm-2">
+        <div class="col-lg-4">
           <input type="text" class="form-control" id="firstname" value={{firstname}} placeholder="Enter firstname"
             formControlName="firstname" name="firstname" (change)="change()">
           <div
@@ -31,14 +31,14 @@
             *ngIf="personalForm.get('fullname').get('firstname').hasError('maxlength') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)"
             class="error">Max length can be 20 characters</div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-lg-4">
           <input type="text" class="form-control" id="lastname" value={{lastname}} placeholder="Enter middlename" formControlName="lastname"
             name="lastname" (change)="change()">
           <div
             *ngIf="personalForm.get('fullname').get('lastname').hasError('pattern') &&(personalForm.get('fullname').get('lastname').dirty || personalForm.get('fullname').get('lastname').touched)"
             class="error">Only alphabets allowed</div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-lg-4">
           <input type="text" class="form-control" id="surname" value={{surname}} placeholder="Enter lastname" formControlName="surname"
             name="suname" (change)="change()">
           <div
@@ -53,11 +53,11 @@
         </div>
       </div>
     </div>
-    <hr>
+    <hr class="line">
     <div formGroupName="fullnameeng">
       <label>Full Name in English</label><br>
       <div class="form-group row">
-        <div class="col-sm-2">
+        <div class="col-lg-4">
           <input type="text" class="form-control" id="firstnameeng" value={{firstnameeng}} placeholder="Enter firstname"
             formControlName="firstnameeng" name="firstnameeng" (change)="change()">
           <div
@@ -70,14 +70,14 @@
             *ngIf="personalForm.get('fullnameeng').get('firstnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)"
             class="error">Max length can be 20 characters</div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-lg-4">
           <input type="text" class="form-control" id="lastnameeng" value={{lastnameeng}} placeholder="Enter middlename"
             formControlName="lastnameeng" name="lastnameeng" (change)="change()">
           <div
             *ngIf="personalForm.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('lastnameeng').dirty || personalForm.get('fullnameeng').get('lastnameeng').touched)"
             class="error">Only alphabets allowed</div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-lg-4">
           <input type="text" class="form-control" id="surnameeng" value={{surnameeng}} placeholder="Enter lastname"
             formControlName="surnameeng" (change)="change()">
           <div
@@ -92,14 +92,14 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-body">Please compare data in latin with data in vehicle registration certificate
+    <div class="panel col-lg-12">
+       <img class="user-key" src="../../assets/excl.jpg">
+        Please compare data in latin with data in vehicle registration certificate
         or identity document.Data will be used for printout of Green Card Certificate.
-      </div>
     </div>
     <div class="form-group row">
-      <label for="citizen" class="col-sm-2 col-form-label">Citizenship</label>
-      <div class="col-sm-4">
+      <label for="citizen" class="col-lg-8">Citizenship</label>
+      <div class="col-lg-4">
         <select class="form-control" id="citizen" value={{citizen}} formControlName="citizen" name="citizen" (change)="change()">
           <option selected disabled value="">--SELECT--</option>
           <option *ngFor="let c of citizens" [value]="c">{{c}}</option>
@@ -109,10 +109,10 @@
           class="error">Please select your Citizenship</div>
       </div>
     </div>
-    <hr>
+    <hr class="line">
     <div class="form-group row">
-      <label for="birth" class="col-sm-2 col-form-label">Birth Date</label>
-      <div class="col-sm-4">
+      <label for="birth" class="col-lg-8">Birth Date</label>
+      <div class="col-lg-4">
         <input type="date" class="form-control" value="{{dob | date: 'yyyy-MM-dd'}}" id="birth" placeholder="Enter Birth date" formControlName="birth"
           name="birth" (change)="change()">
         <div
@@ -120,8 +120,7 @@
           class="error">Please select your birth date </div>
       </div>
     </div>
-    <hr>
-    <button type="button" class="btn btn-primary btn-lg" mat-raised-button matStepperNext
+    <hr class="line">
+    <button type="button" class="btn btn-primary rounded-pill  col-sm-12 col-lg-2 col-md-4 nextbtn" mat-raised-button matStepperNext
       [disabled]="!personalForm.valid" (click)="success()">Next</button>
-  </form>
-</div>
+  </form> 
