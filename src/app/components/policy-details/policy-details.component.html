@@ -6,7 +6,7 @@
         <label for="policydate">Start Date</label>
     </div>
     <div class=" col-12 col-sm-5 col-md-4 col-lg-4  ">
-        <input class="form-control" id="policydate" type="date" formControlName="policyDate" (change)="change()" [min]="mindate">
+        <input class="form-control" id="policydate" type="date" formControlName="policyDate" (change)="change()" [min]="mindate" value="{{policyDate|date:'yyyy-MM-dd'}}">
         <div class="error" *ngIf="formControls.policyDate.touched && formControls.policyDate.errors">
             <div *ngIf="formControls.policyDate.errors.required">This field is mandatory</div>
         </div>
@@ -20,11 +20,11 @@
     </div>
     <div class="col-12 col-sm-5 col-md-4 col-lg-4 ">
         <select formControlName="policyLength" class="form-control" (change)="change()">
-            <option selected disabled value="">--SELECT--</option>
-            <option value="1" id="policyLength">1 Month</option>
-            <option value="3" id="policyLength">3 Months</option>
-            <option value="6" id="policyLength">6 Months</option>
-            <option value="12" id="policyLength">12 Months</option>
+            <option selected disabled value="" >--SELECT--</option>
+            <option value="1" id="policyLength" [selected]="1===policyLength">1 Month</option>
+            <option value="3" id="policyLength" [selected]="3===policyLength">3 Months</option>
+            <option value="6" id="policyLength" [selected]="6===policyLength">6 Months</option>
+            <option value="12" id="policyLength" [selected]="12===policyLength">12 Months</option>
         </select>
         <div class="error" *ngIf="formControls.policyLength.touched && formControls.policyLength.errors">
             <div *ngIf="formControls.policyLength.errors.required">Policy Length is required</div>
