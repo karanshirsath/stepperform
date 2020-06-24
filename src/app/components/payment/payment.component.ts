@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-
+  isSubmitted=false;
+  isChecked=false;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  submit(){
+    return this.isSubmitted=true;
+  }
+  checked(){
+    return this.isChecked=true;
+  }
 }
