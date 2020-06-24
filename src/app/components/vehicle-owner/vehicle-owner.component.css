@@ -5,9 +5,9 @@
 
 h1{
     
-    color:rgb(8,56,95); 
-    font-size: 200%;
-    font-family:Arial, Helvetica, sans-serif
+    color:rgb(8,56,95);
+    font-family: 'Trebuchet MS',Arial,sans-serif;
+    font-weight: bold;
 }
 h2{
     color:rgb(8,56,95); 
@@ -29,17 +29,9 @@ label{
 .error{
     color: red;
 }
-.btn{
-    
-    min-width: 100px;
-  }
 
-  @media screen and (max-width: 450px){
-    .btn{
-        width: 250px;
-        margin: auto;   
-    }
-}
+  
+
 
 
 @media screen and (max-width: 800px) {
@@ -53,7 +45,14 @@ label{
     }
     
 }
-
+@media screen and (max-width: 575px){
+    .nextbtn{
+        width: 250px;
+        margin: auto;
+        display: block;
+    }
+        
+}
 /* .col-sm-2
 {
     

@@ -26,17 +26,24 @@
                             </div>
                         </div>-->
                     
-                        <div class="col-auto mr-auto pt-1">
-                            <span class="middle-heading text-small" style="padding-left: 0%;">Motor Third party Liability Policy</span>
-                        </div>
-                        <div class="col-sm-6 col-auto col-8">
-                            <div class="num" style="color: whitesmoke;padding-left: 30%;padding-top: 0%;padding-bottom: 0%;">382<span class="nearelm">,00 BGN</span></div>
-                            <div class="bgn" style="padding-left: 30%;padding-top: 1%;">
-                                Four payments
-                            </div> 
+                        <div class="col-md-10 col-9 pr-0 m-auto">
+                            <div class="row">
+                                <div class="col-md-9 col-12 p-0">
+                                    <span class="middle-heading text-small">Motor Third party Liability Policy</span>
+                                </div>
+                                <div class="col-md-3 col-12 p-0">
+                                    <div>
+                                        <div class="num" style="color: whitesmoke;">382<span class="nearelm">,00 BGN</span></div>
+                                        <div class="bgn">
+                                            Four payments
+                                        </div> 
+                                    </div>
+                                </div>
                            
                         </div>
-                   
+                            </div>
+                    
+                   <!---->
                     </div>
                 </div>
             </div>
@@ -53,7 +60,7 @@
                             <div class="row cardrow">
                                 <div class="col-auto mr-auto pt-1">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="none" (change)="change()"><h3 class="sub-head">None</h3></label>
+                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="none" (change)="change()" [checked]="cover==='None'"><h3 class="sub-head">None</h3></label>
                                         <div class="mon">Description of additional cover here</div>
                                 </div>   
                                 
@@ -64,14 +71,19 @@
                                 <div class="col-auto mr-auto pt-1">
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="premium" (change)="change()"><h3 class="sub-head">Premium</h3></label>
-                                        <div><button class="btn btn-success mon">Best Value</button>&nbsp;
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                            <button class="btn btn-success mon">Best Value</button>
+                                        </div>&nbsp;&nbsp;&nbsp;
+                                        <div class="col-md-8.5" style="padding-top: 1.5%;">
                                             <span class="mon">Description of additional cover here</span>
+                                        </div>  
                                         </div>
                                         
                                 </div>   
-                                <div class="col-sm-6 col-auto col-8">
+                                <div class="col-sm-3 whitecard">
                                     <div class="num">+25<span class="nearelm">,00 BGN</span></div>
-                                    <div class="bgn" style="color:rgb(8,56,95);">
+                                    <div class="months">
                                         for 12 months
                                     </div> 
                                         
@@ -81,19 +93,19 @@
                             </div>
                             <br><a href="www.google.com"><u class="spc">See what's more</u></a>
                         </div>
-
+                        <!---->
                         <div class="border shadow p-3 mb-3 bg-white rounded thirdcard">
                             <div class="row cardrow">
                                 <div class="col-auto mr-auto pt-1">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="vip" (change)="change()"><h3 class="sub-head">VIP</h3></label>
+                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="vip" (change)="change()" [checked]="cover==='VIP'"><h3 class="sub-head">VIP</h3></label>
                                         <div class="mon">Description of additional cover here
                                         </div>
                                         
                                 </div>   
-                                <div class="col-sm-6 col-auto col-8">
+                                <div class="col-sm-3 whitecard">
                                     <div class="num">+80<span class="nearelm">,00 BGN</span></div>
-                                    <div class="bgn" style="color:rgb(8,56,95);">
+                                    <div  class="months">
                                         for 12 months
                                     </div> 
                                      
@@ -101,7 +113,7 @@
                             </div>
                             <br/>
                             <br/>
-                            <div class="textcolor">
+                            <div class="textcolor" >
                                 <p><b>Services provded under the "PREMIUM" clause, but with higher
                                         limits when transporting vehicles</b></p>
         
@@ -170,13 +182,13 @@
                                     </div>
                                     
                                 </div>
-                                <br><a href="www.google.com"><u class="spc">Hide what's included</u></a>
+                                <a href="www.google.com"><u class="spc">Hide what's included</u></a>
                         </div>
 
 
         
             <br/>
-            <button type="submit" class="btn btn-primary rounded-pill  col-sm-12 col-lg-2 col-md-4 nextbtn" [disabled]="!additionalcoverForm.valid"
+            <button type="submit" class="btn btn-primary rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn" [disabled]="!additionalcoverForm.valid"
                 matStepperNext>
                 Next</button>
     </form>

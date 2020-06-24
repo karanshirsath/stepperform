@@ -51,6 +51,9 @@ addParameters({
     viewports: INITIAL_VIEWPORTS, // newViewports would be an ViewportMap. (see below for examples)
     defaultViewport: 'ipad10p',
   },
+  knobs: {
+    timestamps: true,
+  }
 });
 
 addDecorator(

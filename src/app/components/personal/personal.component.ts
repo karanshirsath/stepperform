@@ -10,6 +10,7 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class PersonalComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
+  
   @Input() lnch:String;
   @Input() firstname:String;
   @Input() lastname:String;
@@ -29,6 +30,8 @@ export class PersonalComponent implements OnInit {
     //console.log(this.personalForm.value,"vehicle Info");
     // this.OnToggle.emit(true)
     console.log(23123124);
+
+    
     
     this.OnRegister.emit(this.personalForm.value);
   }

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router'
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +39,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { OrdinalPipe } from './components/installment/ordinal.pipe';
+import { LoggedInGuardGuard } from './logged-in-guard.guard';
+import { LoggedInServiceService } from './logged-in-service.service';
+import { routes } from 'src/app/app-routing.module'
 
 @NgModule({
   declarations: [
@@ -65,6 +69,7 @@ import { OrdinalPipe } from './components/installment/ordinal.pipe';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatStepperModule,
@@ -82,9 +87,10 @@ import { OrdinalPipe } from './components/installment/ordinal.pipe';
     MatCheckboxModule,
     MatDividerModule,
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
-    NgxGoogleAnalyticsRouterModule
+    NgxGoogleAnalyticsRouterModule,
+    
   ],
-  providers: [CdkStepper,MTPLCalculatorComponent],
+  providers: [CdkStepper,MTPLCalculatorComponent,LoggedInGuardGuard,LoggedInServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

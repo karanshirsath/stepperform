@@ -90,7 +90,7 @@
     min-width:100px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 450px) {
     /*.firstcard,.secondcard,.thirdcard,.content,.hrline{
         width: 350px;
         
@@ -140,7 +140,7 @@
         padding-top: 1%;
     }
   }
-  @media screen and (max-width: 450px){
+  @media screen and (max-width: 575px){
     .nextbtn{
         width: 250px;
         margin: auto;
@@ -151,4 +151,9 @@
 }
 
   
+  @media screen and (max-width: 1024px) {
+    .viewhide{
+        margin-left: 0px;
+    }
 
+  }
