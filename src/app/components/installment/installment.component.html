@@ -27,7 +27,7 @@
                                             <a href="#">View Instalments</a>
                                         </div>
                                         <div class="row viewhide">
-                                            <div class="col-auto mr-auto pt-2 col-sm offset-1" *ngFor="let installments of element.installments;let indexOfElement=index;" >
+                                            <div class="col-auto mr-auto pt-2 col-sm" *ngFor="let installments of element.installments;let indexOfElement=index;" >
                                                 {{indexOfElement + 1 | ordinal}} Installment
                                                 <div style="font-weight: bold;">{{installments}} BGN</div>
                                             </div>

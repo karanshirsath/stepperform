@@ -48,6 +48,7 @@ label{
     .btn{
         width: 250px;
         margin: auto;   
+        display: block;
     }
 }
 

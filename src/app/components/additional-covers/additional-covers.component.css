@@ -5,6 +5,10 @@
    
       
 }*/
+.mon{
+    text-align: left;
+    font-size: 15px;
+}
 .heading{
     color:rgb(8,56,95);
     font-family: 'Trebuchet MS',Arial,sans-serif;
@@ -15,7 +19,7 @@
     height: 100%;
     align-items: center;
     font-size: 20px;
-    
+    padding-left: 20px;
 }
 .bg-dark-blue{
     background-color:  #003564;
@@ -24,13 +28,13 @@
 .sub-head{
     font-weight:bold;
 }
-.bgn{
+/* .bgn{
     
     text-align: right;
     font-size: 15px;
     padding-top: 5%;
     
-}
+} */
 .cardrow{
     padding-left: 20px;
     color:rgb(8,56,95);
@@ -40,10 +44,12 @@
 }
 .num{
     color:rgb(8,56,95);
-    text-align: end;
+    
     font-size: 30px;
     font-weight: bold;
-    padding-top: 2%;
+    
+    padding: 0%;
+   
 }
 .mon{
     text-align: left;
@@ -70,8 +76,8 @@
 }
 .thirdparty{
     background-color: rgb(8, 56, 95); 
-    height:130px;
-    width:2000px;
+    height:auto;
+   
 }
 .policy {
     color:white;
@@ -81,12 +87,7 @@
    
 }
 .bgn  {
-
-margin-top: -1px;
-
 color:white;
-font-size: 20px;
-
 }
 .card-body{
     padding-top: 2px;
