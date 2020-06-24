@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-
+  optradio:boolean;
+ 
+  enable:boolean=true;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  check(){
+    this.optradio=true;
+  }
+  box(e){
+   if(e.target.checked){
+    this.enable=false;
+   }
+   else{
+     this.enable=true;
+   }
   }
 
 }

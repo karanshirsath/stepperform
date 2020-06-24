@@ -51,10 +51,13 @@
     padding: 0%;
    
 }
-.mon{
-    text-align: left;
-    font-size: 15px;
-    padding-top: 0%;
+.months{
+    color:rgb(8,56,95);
+    padding-left: 25%;
+}
+.whitecard{
+    padding: 0%;
+    margin-top: 20px;
 }
 .firstcard{
     /*width:800px;*/
@@ -77,6 +80,7 @@
 .thirdparty{
     background-color: rgb(8, 56, 95); 
     height:auto;
+    width:800px;
    
 }
 .policy {
@@ -88,6 +92,7 @@
 }
 .bgn  {
 color:white;
+margin-left: 30px;
 }
 .card-body{
     padding-top: 2px;
@@ -160,13 +165,43 @@ color:white;
  .spc{
     padding-left: 2%;
 }
- .overflowAuto {
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
+
  .car{
      margin-left:-5px;
  }
+
+ @media screen and (max-width: 450px){
+     .mon{
+         margin-top: 0px;
+     }
+     .bgn{
+        margin-left: 18px;
+     }
+    .whitecard .months{
+        padding-left:0%;
+        margin-left: 10px;
+    }
+    .whitecard .num{
+        margin-left: 10px;
+    }
+    .num{
+        margin-left: 30px;
+    }
+    .middle-heading{
+        margin-left: 20px;
+    }
+    .col-lg-12{
+       margin-left: 200px;
+    }
+    .spc{
+        margin-top: 0px;
+    }
+ }
+ @media all and (max-width: 767px) {
+    .text-small{
+        font-size:11px;
+    }
+}
  @media all and (max-width: 767px) {
     .num{
         font-size: 20px;

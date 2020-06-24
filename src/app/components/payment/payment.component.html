@@ -34,7 +34,7 @@
                         <div class="row justify-content-around">
                             <div class="col-md-5 radio mb-3 p-0">
                                 <label class="radio-inner d-flex flex-sm-column">
-                                    <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline"><input type="radio" name="optradio" checked></div>
+                                    <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline"><input type="radio" name="optradio" (click)="check()"></div>
                                     <div class="text-center d-flex flex-sm-column align-items-center">
                                         <div class="radio-img"><img src="../../assets/credit-card.PNG"></div>
                                         <div class="text-color">Credit/debit card</div>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="col-md-5 radio mb-3 p-0">
                                 <label class="radio-inner d-flex flex-sm-column">
-                                    <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline"><input type="radio" name="optradio"></div>
+                                    <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline"><input type="radio" name="optradio" (click)="check()"></div>
                                     <div class="text-center d-flex flex-sm-column align-items-center">
                                         <div class="radio-img"><img src="../../assets/e-pay.PNG"></div>
                                         <div class="text-color">ePay</div>
@@ -53,6 +53,7 @@
                         </div>
                     </div>
                 </div>  
+                <div *ngIf="optradio">
                 <div class="row">
                     <div class="col-md-12 p-0 pl-3">
                         <div class="card border-warning mb-4">
@@ -68,16 +69,17 @@
                 </div>
                 <div class="row">
                     <div class="col shadow-lg p-3 mb-5 bg-white rounded d-flex align-items-baseline">
-                        <input type="checkbox" ngModel #chkEnable>
+                        <input type="checkbox" (change)="box($event)">
                         <label class="text-color">I declare I am owner of the card for this payment</label><br>
                     </div>
-                </div>
+                </div></div>
                 <div class="row">
                     <div class="col-md-12 p-0">
-                    <button class="btn btn-info px-5 buy-btn" [disabled]="!chkEnable.checked">Buy Policy</button>
+                    <button class="btn btn-info px-5 buy-btn" [disabled]="enable">Buy Policy</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
   </div>
+ 

@@ -29,8 +29,8 @@
             <h2><b>Vehicle Owner Details</b></h2>
 
             <div class="form-group row">
-                <label for="lnch" class="col-lg-8">Enter your EGN/EIK/LNCH</label>
-                <div class="col-lg-4">
+                <label for="lnch" class="col-lg-7">Enter your EGN/EIK/LNCH</label>
+                <div class="col-md-5">
                     <input type="text" class="form-control" value={{lnch}} id="lnch" placeholder="Enter your Number"
                         formControlName="lnch" name="lnch" (change)="change()">
                     <div *ngIf="Details.controls.lnch.hasError('required') &&(Details.controls.lnch.dirty || Details.controls.lnch.touched)"
