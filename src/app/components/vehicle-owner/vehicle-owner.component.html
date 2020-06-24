@@ -1,5 +1,5 @@
 <div class="container">
-    <h1><b>Vehicle Owner</b></h1>
+    <h1>Vehicle Owner</h1>
 
     <div class="container">
         <div class="row">
@@ -20,7 +20,7 @@
 
     <hr class="line">
     <div *ngIf="isSelected('Yes')">
-        <button type="button" class="btn btn-primary" (click)="gaTrigger()" [disabled]="!button"
+        <button type="button" class="btn btn-primary rounded-pill col-sm-12 col-lg-2 col-md-4 nextbtn" (click)="gaTrigger()" [disabled]="!button"
             matStepperNext>Next</button>
     </div>
 
@@ -213,7 +213,7 @@
                     <label>Optional</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary rounded-pill" [disabled]="!Details.valid"
+            <button type="button" class="btn btn-primary rounded-pill col-sm-12 col-lg-2 col-md-4 nextbtn" [disabled]="!Details.valid"
                 matStepperNext>Next</button>
         </form>
     </div>
