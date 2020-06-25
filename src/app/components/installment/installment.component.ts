@@ -13,6 +13,7 @@ import { CommonDataService } from 'src/app/common-data.service';
 })
 export class InstallmentComponent implements OnInit {
   installmentForm: FormGroup;
+  errorMessage;
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
   @Input() term: string
@@ -32,7 +33,16 @@ export class InstallmentComponent implements OnInit {
       term: ['',Validators.required],
       installment:['']
     });
-    this.serviceData=this.installmentService.getInstallmentData()
+    this.installmentService.getInstallmentData().subscribe((res)=>{
+      this.serviceData=res;
+      console.log(res);
+      
+    },
+    (err)=>{
+      this.errorMessage=err.error.message;
+      console.log(this.errorMessage);
+      
+    })
     console.log(this.serviceData);
     
   }

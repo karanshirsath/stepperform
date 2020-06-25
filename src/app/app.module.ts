@@ -42,6 +42,8 @@ import { OrdinalPipe } from './components/installment/ordinal.pipe';
 import { LoggedInGuardGuard } from './logged-in-guard.guard';
 import { LoggedInServiceService } from './logged-in-service.service';
 import { routes } from 'src/app/app-routing.module'
+import { InstallmentService } from './components/installment/installment.service';
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -88,6 +90,7 @@ import { routes } from 'src/app/app-routing.module'
     MatDividerModule,
     NgxGoogleAnalyticsModule.forRoot('UA-170099069-1'),
     NgxGoogleAnalyticsRouterModule,
+    HttpClientModule
     
   ],
   providers: [CdkStepper,MTPLCalculatorComponent,LoggedInGuardGuard,LoggedInServiceService],

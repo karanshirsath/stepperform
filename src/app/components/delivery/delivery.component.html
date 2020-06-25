@@ -30,8 +30,8 @@
                                 <div class="col-md-4 form-1_row-2">
                                     <label>Full Name</label>
                                 </div>
-                                <div class="col-md-7 col-md-offset-1">
-                                    <input type="text" formControlName="fullName" class="form-control form-1_row-3" (change)="change()">
+                                <div class="col-sm-6 col-sm-offset-2">
+                                    <input type="text" formControlName="fullName" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="fullName" id="firstName">
                                     <div class="error" *ngIf="formControls.fullName.touched && formControls.fullName.errors">
                                         <div *ngIf="formControls.fullName.errors.required">This field is mandatory</div>
                                         <div *ngIf="formControls.fullName.errors.pattern">Only alphabets allowed</div>
@@ -44,8 +44,8 @@
                                 <div class="col-md-4 form-1_row-2">
                                     <label>City & Pincode</label>
                                 </div>
-                                <div class="col-md-4 col-sm-offset-1">
-                                    <select name="city" id="city"  formControlName="city" class="form-control form-1_row-3" (change)="change()">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <select name="city" id="city"  formControlName="city" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="city">
                                         <option selected disabled value="">--SELECT--</option>
                                         <option value="{{city}}" *ngFor="let city of cities">{{city}}</option>
                                     </select>
@@ -55,8 +55,8 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-md-3">
-                                    <input formControlName="pincode" type="text"  class="form-control form-1_row-3" (change)="change()">
+                                <div class="col-sm-2">
+                                    <input formControlName="pincode" type="text"  class="form-control form-1_row-3" (change)="change()" [(ngModel)]="pincode">
                                     <div class="error" *ngIf="formControls.pincode.touched && formControls.pincode.errors">
                                         <div *ngIf="formControls.pincode.errors.required">This field is mandatory</div>
                                         <div *ngIf="formControls.pincode.errors.maxlength">Only 6 characters are allowed</div>
@@ -70,8 +70,8 @@
                                 <div class="col-md-4 form-1_row-2">
                                     <label>Street & Number</label>
                                 </div>
-                                <div class="col-md-4 col-sm-offset-2">
-                                    <input type="text" formControlName="street" class="form-control form-1_row-3" (change)="change()">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <input type="text" formControlName="street" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="street">
                                     <!-- <div class="error" *ngIf="formControls.street.touched && formControls.street.errors">
                                         <div *ngIf="formControls.street.errors.required">Street is required</div>
                                         <div *ngIf="formControls.street.errors.minlength">Street should be atleast 3 characters</div>
@@ -79,8 +79,8 @@
                                     </div> -->
                                 </div>
                                 
-                                <div class="col-md-3">
-                                    <input type="text" formControlName="number" class="form-control form-1_row-3" (change)="change()"> 
+                                <div class="col-sm-2">
+                                    <input type="text" formControlName="number" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="number"> 
                                     <div class="error" *ngIf="formControls.number.touched && formControls.number.errors">
                                         <!-- <div *ngIf="formControls.number.errors.required">Number is required</div> -->
                                                                           
@@ -93,22 +93,22 @@
                                 <div class="col-md-4 form-1_row-2">
                                     <label>Block, Entrance & Appartment</label>
                                 </div>
-                                <div class="col-md-2 col-sm-offset-1">
-                                    <input type="text" formControlName="block" class="form-control form-1_row-3" (change)="change()">
+                                <div class="col-sm-2 col-sm-offset-1">
+                                    <input type="text" formControlName="block" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="block">
                                     <!-- <div class="error" *ngIf="formControls.block.touched && formControls.block.errors">
                                         <div *ngIf="formControls.block.errors.required">Block is required</div>
                                     </div> -->
                                 </div>
                                 
-                                <div class="col-md-2">
-                                    <input type="text" formControlName="entrance" class="form-control form-1_row-3" (change)="change()">
+                                <div class="col-sm-2">
+                                    <input type="text" formControlName="entrance" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="entrance">
                                     <!-- <div class="error" *ngIf="formControls.entrance.touched && formControls.entrance.errors">
                                         <div *ngIf="formControls.entrance.errors.required">Entrance is required</div>
                                     </div> -->
                                 </div>
                                 
-                                <div class="col-md-3">
-                                    <input type="text" formControlName="appt" class="form-control form-1_row-3" (change)="change()">
+                                <div class="col-sm-2">
+                                    <input type="text" formControlName="appt" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="appt">
                                     <!-- <div class="error" *ngIf="formControls.appt.touched && formControls.appt.errors">
                                         <div *ngIf="formControls.appt.errors.required">Appartment is required</div>
                                     </div> -->
@@ -124,8 +124,8 @@
                             <div class="col-md-4" style="font-size: medium;">
                                 Contact Number
                             </div>
-                            <div class="col-md-8 col-md-offset-0">
-                                <input type="number" formControlName="contact" class="form-control form-1_row-3" (change)="change()">
+                            <div class="col-sm-5 col-sm-offset-3">
+                                <input type="number" formControlName="contact" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="contact">
                                 <div class="error" *ngIf="formControls.contact.touched && formControls.contact.errors">
                                     <div *ngIf="formControls.contact.errors.required">This field is mandatory</div>
                                     <div *ngIf="formControls.contact.errors.min">Minimum 8 charaters are required</div>
@@ -145,10 +145,11 @@
                                 </div>
                                 <div class="col-md-7 details_row-3">
                                     <div class="row">
-                                        <div class="col-md-8" style="font-size: medium;">
-                                            <input type="radio" formControlName="business" value="Home" class="radio-2" (change)="change()">&nbsp;Home
-                                            &nbsp;&nbsp;
-                                            <input type="radio" formControlName="business" value="Business" class="radio-2" (change)="change()">&nbsp;Business
+                                        <div class="col-sm-6">
+                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" value="home" [checked]="business==='Home'">&nbsp;Home
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" value="business" [checked]="business==='Business'">&nbsp;Business
                                         </div>
                                         <div class="error" *ngIf="formControls.business.touched && formControls.business.errors">
                                             <div *ngIf="formControls.business.errors.required">This field is mandatory</div>

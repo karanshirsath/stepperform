@@ -61,9 +61,9 @@ input fields.
   <Story name="Valid Credentials">{{
     component: ContactComponent,
     props:{
-        city: select('City',{SophiaCity: "Sophia City",
-                                TechCity:"Tech City",
-                                ElectronicCity: "Electronic City"},'SophiaCity','General'),
+        city: select('City',{'Sophia City': "SophiaCity",
+                                'Tech City':"techCity",
+                                'Electronic City': "electronicCity"},'SophiaCity','General'),
         pincode: text('Pincode','120035','General'),
         street: text('Street','Nelson Street','General'),
         No: text('Street Number','12','General'),

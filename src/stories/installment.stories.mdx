@@ -55,7 +55,7 @@ appearance of the login component.
 </Preview>
 
 <Preview>
-  <Story name="Valid">{{
+  <Story name="Installment Type">{{
     component: InstallmentComponent,
     props:{
       term: radios('Instalment Options',{'Single Payment':'Single Payment','Two Payments':'Two Payments','Four Payments':'Four Payments'},'Single Payment')
@@ -71,10 +71,12 @@ further steps of transaction using next button. A description is also given rega
 user achieve after selecting the option. 
 
 <Preview>
-  <Story name="Single Payment">{{
-    component: InstallmentComponent,
+  <Story name="Single Payment">{{    
     template: '<app-installment (OnSinglePayment)="showDetails($event)"></app-installment>',
     props:{
+        term: radios('Instalment Options',{'Single Payment':'Single Payment',
+                                            'Two Payments':'Two Payments',
+                                            'Four Payments':'Four Payments'},'Single Payment'),
         showDetails: action('Single Payment')
     },
     }}    
@@ -88,10 +90,12 @@ further steps of transaction using next button. A description is also given rega
 user achieve after selecting the option.
 
 <Preview>
-  <Story name="Two Payments">{{
-    component: InstallmentComponent,
+  <Story name="Two Payments">{{    
     template: '<app-installment (OnTwoPayments)="showDetails($event)"></app-installment>',
     props:{
+      term: radios('Instalment Options',{'Single Payment':'Single Payment',
+                                            'Two Payments':'Two Payments',
+                                            'Four Payments':'Four Payments'},'Single Payment'),
         showDetails: action('Two Payments')
     },
     }}    
@@ -105,10 +109,12 @@ further steps of transaction using next button. A description is also given rega
 user achieve after selecting the option.
 
 <Preview>
-  <Story name="Four Payments">{{
-    component: InstallmentComponent,
+  <Story name="Four Payments">{{    
     template: '<app-installment (OnFourPayments)="showDetails($event)"></app-installment>',
     props:{
+      term: radios('Instalment Options',{'Single Payment':'Single Payment',
+                                            'Two Payments':'Two Payments',
+                                            'Four Payments':'Four Payments'},'Single Payment'),
         showDetails: action('Four Payments')
     },
     }}    
@@ -122,10 +128,12 @@ and for completion of transaction click on next button. A description is also gi
 user achieve after selecting the option.
 
 <Preview>
-  <Story name="On Submission">{{
-    component: InstallmentComponent,
+  <Story name="On Submission">{{    
     template: '<app-installment (OnSubmission)="success($event)"></app-installment>',
     props:{
+        term: radios('Instalment Options',{'Single Payment':'Single Payment',
+                                            'Two Payments':'Two Payments',
+                                            'Four Payments':'Four Payments'},'Single Payment'),
         success: action('Success message')
     },
     }}    
