@@ -5,13 +5,13 @@
         <div class="row">
             <label class="col-md-5">Are u the owner of the vehicle</label>
             <label class="radio-inline col-md-3">
-                <input type="radio" name="gender" id="Radios1" value="Yes" (click)="setradio('Yes')"
+                <input type="radio" name="gender" id="Radios1" value="Yes" [(ngModel)]="owner" [checked]="owner==='Yes'" (click)="setradio('Yes')"
                     (change)="toggle(true)">
                 Yes
             </label>
 
             <label class="radio-inline col-md-3">
-                <input type="radio" name="gender" id="Radios2" value="No" (click)="setradio('No')"
+                <input type="radio" name="gender" id="Radios2" value="No" [(ngModel)]="owner" [checked]="owner==='No'" (click)="setradio('No')"
                     (change)="toggle(false)">
                 No
             </label>
@@ -133,7 +133,7 @@
             <div class="form-group row">
                 <label for="birth" class="col-lg-8">Birth Date</label>
                 <div class="col-lg-4">
-                    <input type="date" class="form-control" value="{{dob | date: 'yyyy-MM-dd'}}" id="birth" placeholder="Enter Birth date"
+                    <input type="date" class="form-control" [ngModel]="dob | date: 'yyyy-MM-dd'" id="birth" placeholder="Enter Birth date"
                         formControlName="birth" name="birth" (change)="change()">
                     <div *ngIf="Details.controls.birth.hasError('required') &&(Details.controls.birth.dirty || Details.controls.birth.touched)"
                         class="error">Please select your birth date </div>
@@ -152,16 +152,16 @@
                 <label for="city" class="col-md-5 col-12">City</label>
 
                 <div class="col-md-4 col-8 space">
-                    <select class="form-control" id="sel1" formControlName="city" name="city" (change)="change()">
+                    <select class="form-control" id="sel1" formControlName="city" [(ngModel)]="city" name="city" (change)="change()">
                         <option selected disabled value="">--SELECT--</option>
 
-                        <option value="Hyd">Hyderabad</option>
-                        <option value="Mum">Mumbai</option>
-                        <option value="Pune">Pune</option>
-                        <option value="Chenai">Chennai</option>
-                        <option value="Banglore">Banglore</option>
-                        <option value="Goa">Goa</option>
-                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Hyd" [selected]="city==='Hyd'">Hyderabad</option>
+                        <option value="Mum" [selected]="city==='Mum'">Mumbai</option>
+                        <option value="Pune" [selected]="city==='Pune'">Pune</option>
+                        <option value="Chennai" [selected]="city==='Chennai'">Chennai</option>
+                        <option value="Banglore" [selected]="city==='Bangalore'">Banglore</option>
+                        <option value="Goa" [selected]="city==='Goa'">Goa</option>
+                        <option value="Maharashtra" [selected]="city==='Maharashtra'">Maharashtra</option>
 
                     </select>
                     <div *ngIf="Details.controls.city.hasError('required') &&(Details.controls.city.dirty || Details.controls.city.touched)"

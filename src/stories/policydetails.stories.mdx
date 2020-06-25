@@ -58,27 +58,11 @@ This is the Valid story. In this story the users can take a look at the valid
 appearance of the Policy Details component.
 
 <Preview>
-  <Story name="Valid">{{
+  <Story name="Submit">{{
     component: PolicyDetailsComponent,
     props:{
       policyDate: date('Policy Date',new Date()),
       policyLength: select('Policy Length',{'1 Month': 1, '3 Months': 3, '6 Months': 6, '12 Months': 12},3)
-    },
-    }}    
-  </Story>
-</Preview>
-
-### Invalid
-
-This is the Invalid story. In this story the users can take a look at the invalid
-appearance of the policy details component.
-
-<Preview>
-  <Story name="Invalid">{{
-    component: PolicyDetailsComponent,
-    props:{
-      policyDate: date('Policy Date',new Date()),
-      policyLength: select('Policy Length',{'--SELECT--': 0,'1 Month': 1, '3 Months': 3, '6 Months': 6, '12 Months': 12},0)
     },
     }}    
   </Story>

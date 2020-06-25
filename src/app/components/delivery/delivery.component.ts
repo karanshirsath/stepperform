@@ -20,6 +20,7 @@ export class DeliveryComponent implements OnInit {
   @Input() appt:String;
   @Input() notes:String;
   @Input() business:String;
+  @Input() home:String;
   @Input() contact:String;
   detailsForm: FormGroup;
 

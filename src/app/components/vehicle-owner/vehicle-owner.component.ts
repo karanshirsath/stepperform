@@ -13,6 +13,7 @@ export class VehicleOwnerComponent implements OnInit {
   @Output() OnToggle = new EventEmitter()
 
   // Input fields
+  @Input() owner:String;
   @Input() lnch:String;
   @Input() firstname:String;
   @Input() lastname:String;

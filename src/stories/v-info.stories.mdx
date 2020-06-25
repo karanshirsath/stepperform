@@ -53,10 +53,12 @@ appearance of the Vehicle information component.
   </Story>
 </Preview>
 
-### Wrong input for registration number
+### Invalid Story
+This is the invalid story. In this we provide the invalid details to all 
+the input fields.
 
 <Preview>
-  <Story name="Wrong Vehicle Registration Number">{{
+  <Story name="Invalid Credentials">{{
     component: VInfoComponent,
     props:{
       registrationNumber: text('Vehicle Registration Number','XX00YY','General'),
@@ -68,40 +70,12 @@ appearance of the Vehicle information component.
   </Story>
 </Preview>
 
-### Wrong input for certificate number
-
-<Preview>
-  <Story name="Wrong Vehicle Certificate Number">{{
-    component: VInfoComponent,
-    props:{
-      registrationNumber: text('Vehicle Registration Number','XX0000YY'),
-      certificateNumber: text('Vehicle Certificate Number','1234567'),
-      purpose: select('Purpose',{'--SELECT--': '','Personal Use': 'Personal Use', 'Public Use': 'Public Use'},'Personal Use'),
-      yesNo: radios('Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?',{Yes:'Yes',No:'No'},'Yes')
-    },
-    }}    
-  </Story>
-</Preview>
-
-### No information for outside travel
-
-<Preview>
-  <Story name="No information about outside travel">{{
-    component: VInfoComponent,
-    props:{
-      registrationNumber: text('Vehicle Registration Number','XX0000YY'),
-      certificateNumber: text('Vehicle Certificate Number','123456789'),
-      purpose: select('Purpose',{'--SELECT--': '','Personal Use': 'Personal Use', 'Public Use': 'Public Use'},'Personal Use'),
-      yesNo: radios('Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?',{Yes:'Yes',No:'No'})
-    },
-    }}    
-  </Story>
-</Preview>
-
 ### Valid Story
+This is the valid story. In this we provide the valid details to all 
+the input fields.
 
 <Preview>
-  <Story name="All information is correct">{{
+  <Story name="Valid Credentials">{{
     component: VInfoComponent,
     props:{
       registrationNumber: text('Vehicle Registration Number','XX0000YY'),

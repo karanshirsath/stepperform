@@ -1,7 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { VehicleOwnerComponent } from '../app/components/vehicle-owner/vehicle-owner.component';
 import { moduleMetadata } from "@storybook/angular";
-import { text, select, date } from '@storybook/addon-knobs';
+import { text, select, date, radios } from '@storybook/addon-knobs';
 
 <Meta title="MDX/Vehicle Owner Component" decorators={[
     moduleMetadata({
@@ -52,15 +52,16 @@ appearance of the login component.
   </Story>
 </Preview>
 
-### Submit
+### Invalid
 
-This is the submit story. In this story we provide the required credentials for all
+This is the invalid story. In this story we provide the invalid required credentials for all
 the input fields.
 
 <Preview>
-  <Story name="Submit">{{
+  <Story name="Invalid Credentials">{{
     component: VehicleOwnerComponent,
     props:{
+        owner: radios('Are you the owner of the vehicle',{Yes:'Yes',No:'No'},'Yes','General'),
         lnch: text('LNCH','12345678','General'),
         firstname: text('First Name','James','General'),
         lastname: text('Last Name','Nicole','General'),
@@ -72,10 +73,52 @@ the input fields.
                             American:'American',
                             African:'African',},'Indian','General'),
         dob: date('DOB',new Date('Jan 20 1996'),'General'),
-        city: select('City',{Hyderabad:'Hyderabad',
+        city: select('City',{Hyderabad:'Hyd',
+                            Mumbai:'Mum',
                             Pune:'Pune',
+                            Chennai:'Chennai',
                             Bangalore:'Bangalore',
-                            Goa:'Goa'},'Hyderabad','General'),
+                            Goa:'Goa',
+                            Mahrashtra:'Maharashtra'},'Hyderabad','General'),
+        pincode: text('Pincode','120035','General'),
+        street: text('Street','Nelson Street','General'),
+        No: text('Number','12','General'),
+        block: text('Block','12','General'),
+        entrance: text('Entrance','East Gate','General'),
+        appartment: text('Appartment','Nelson Appartment','General'),
+    },
+    }}    
+  </Story>
+</Preview>
+
+### Valid
+
+This is the valid story. In this story we provide the valid required credentials for all
+the input fields.
+
+<Preview>
+  <Story name="Valid Credentials">{{
+    component: VehicleOwnerComponent,
+    props:{
+        owner: radios('Are you the owner of the vehicle',{Yes:'Yes',No:'No'},'Yes','General'),
+        lnch: text('LNCH','1234567890','General'),
+        firstname: text('First Name','James','General'),
+        lastname: text('Last Name','Nicole','General'),
+        surname: text('Surname','Turner','General'),
+        firstnameeng: text('First Name (ENG)','James','General'),
+        lastnameeng: text('Last Name (ENG)','Nicole','General'),
+        surnameeng: text('Surname (ENG)','Turner','General'),
+        citizen: select('Citizen',{Indian:'Indian',
+                            American:'American',
+                            African:'African',},'Indian','General'),
+        dob: date('DOB',new Date('Jan 20 1996'),'General'),
+        city: select('City',{Hyderabad:'Hyd',
+                            Mumbai:'Mum',
+                            Pune:'Pune',
+                            Chennai:'Chennai',
+                            Bangalore:'Bangalore',
+                            Goa:'Goa',
+                            Mahrashtra:'Maharashtra'},'Hyderabad','General'),
         pincode: text('Pincode','120035','General'),
         street: text('Street','Nelson Street','General'),
         No: text('Number','12','General'),

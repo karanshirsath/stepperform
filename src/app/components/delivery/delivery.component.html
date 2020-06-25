@@ -45,7 +45,7 @@
                                     <label>City & Pincode</label>
                                 </div>
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <select name="city" id="city"  formControlName="city" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="city">
+                                    <select name="city" id="city"  formControlName="city" [(ngModel)]="city" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="city">
                                         <option selected disabled value="">--SELECT--</option>
                                         <option value="{{city}}" *ngFor="let city of cities">{{city}}</option>
                                     </select>
@@ -146,10 +146,10 @@
                                 <div class="col-md-7 details_row-3">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" value="home" [checked]="business==='Home'">&nbsp;Home
+                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" value="Home">&nbsp;Home
                                         </div>
                                         <div class="col-sm-6">
-                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" value="business" [checked]="business==='Business'">&nbsp;Business
+                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" value="Business">&nbsp;Business
                                         </div>
                                         <div class="error" *ngIf="formControls.business.touched && formControls.business.errors">
                                             <div *ngIf="formControls.business.errors.required">This field is mandatory</div>
