@@ -12,7 +12,7 @@ import { LoggedInGuardGuard } from './logged-in-guard.guard';
 export const routes: Routes = [
   { path: 'form', component: Tab2Component },
   { path: 'signIn', component: LoginComponent },
-  { path: 'tab2', component: TabsComponent, canActivate:[LoggedInGuardGuard]},
+  // { path: 'tab2', component: TabsComponent, canActivate:[LoggedInGuardGuard]},
   { path: 'tab', component: TabComponent, canActivate:[LoggedInGuardGuard]},
   {path:'signUp',component:SignUpComponent},
 

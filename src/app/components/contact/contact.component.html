@@ -1,6 +1,6 @@
 
-  <div class="container">
-    <h1>Contact Details</h1><br>
+  
+    <h1><b>Contact Details</b></h1><br>
     <form [formGroup]="registerForm" (submit)="submit()">
       <div class="row">
        
@@ -18,8 +18,8 @@
             class="error">This field is mandatory</div>
         </div>
 
-        <div class="col-sm-2 space">
-          <input type="text" id="num" name="num" [(ngModel)]="pincode" placeholder="Pin Code" class="form-control" (change)="change()"
+        <div class="col-md-4 col-4">
+          <input type="text" id="num" name="num" value={{pincode}} placeholder="Pin Code" class="form-control" (change)="change()"
             formControlName="pincode">
           <div
             *ngIf="registerForm.controls.pincode.hasError('required') &&(registerForm.controls.pincode.dirty || registerForm.controls.pincode.touched)"
@@ -29,48 +29,49 @@
       </div>
       <hr>
       <div class=" row">
-        
-          <label for="street" class="col-lg-7">Street and Number</label>
-        
-        <div class="col-md-3 space">
-          <input type="text" id="street" [(ngModel)]="street" name="streetName" class="form-control " placeholder="Street Name"
+        <div class="col-md-4 col-12">
+          <label for="street">Street and Number</label>
+        </div>
+        <div class="col-md-4 col-8">
+          <input type="text" id="street" value={{street}} name="streetName" class="form-control " placeholder="Street Name"
             (change)="change()" formControlName="street">
         </div>
 
-        <div class="col-sm-2 space">
+        <div class="col-md-4 col-4">
           <input type="text" id="streetNumber" value={{No}} name="streetNumber" placeholder="Street  number" class="form-control"
             size="10" (change)="change()" formControlName="No"><br>
         </div>
       </div>
       <hr>
       <div class="row">
-        
-          <label for="block" class="col-lg-7">Block,Entrance and Apartment</label>
-      
-        <div class=" col-xs-12 col-sm-1 space">
-          <input type="text" id="block" class="form-control" [(ngModel)]="block" placeholder="Block" name="blockName" (change)="change()"
+        <div class="col-md-3 col-12">
+          <label for="block">Block,Entrance and Apartment</label>
+        </div>
+        <div class="col-md-3 offset-md-1 col-4">
+          <input type="text" id="block" class="form-control" value={{block}} placeholder="Block" name="blockName" (change)="change()"
             formControlName="block">
         </div>
 
-       
-        <div class=" col-xs-12 col-md-2 space">
-          <input type="text" class="form-control" id="entranceName" [(ngModel)]="entrance" placeholder="Entrance" name="entranceName"
+        <label for="entranceName"></label>
+        <div class="col-md-3 col-4">
+          <input type="text" class="form-control" id="entranceName" value={{entrance}} placeholder="Entrance" name="entranceName"
             (change)="change()" formControlName="entrance">
         </div>
         <!-- </div> -->
 
-       
-        <div class=" col-xs-12 col-md-2 space">
-          <input type="text" class="form-control" id="appartmentName" [(ngModel)]="appartment" placeholder="Appartment" name="appartmentName"
+        <label for="appartmentName"></label>
+        <div class="col-md-2 col-4">
+          <input type="text" class="form-control" id="appartmentName" value={{appartment}} placeholder="Appartment" name="appartmentName"
             (change)="change()" formControlName="appartment"><br>
         </div>
       </div>
       <hr>
       <div class="row">
-       
-          <label for="phoneNo" class="col-lg-9">Phone Number</label>
-         <div class="col-md-3">
-          <input type="text" class="form-control" id="phoneNo" [(ngModel)]="phone" placeholder="Phone Number" (change)="change()"
+        <div class="col-md-4">
+          <label for="phoneNo">Phone Number</label>
+        </div>
+        <div class="col-md-4 ml-auto">
+          <input type="text" class="form-control" id="phoneNo" value={{phone}} placeholder="Phone Number" (change)="change()"
             formControlName="phone"><br>
           <div
             *ngIf="registerForm.controls.phone.hasError('required') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
@@ -84,6 +85,6 @@
         </div>
       </div>
     </form>
-    <button class="btn btn-primary rounded-pill col-sm-12 col-lg-2 col-md-4 nextbtn" type="button" matStepperNext
+    <button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" type="submit" matStepperNext
       [disabled]="!registerForm.valid">Next</button>
-  </div>
+ 

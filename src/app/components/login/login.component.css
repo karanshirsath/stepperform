@@ -20,6 +20,7 @@
   width: 100%;
   position:center;
 } */
+
 .login-card-description{
   font-family: 'Trebuchet MS',Arial,sans-serif;
     font-weight: bold;
@@ -57,8 +58,13 @@
   color:gray;
 }
 .loginimg{
-  width: 100%;
-
+  width: 500%;
+  
+  padding-right:0%;
+  padding-left: 10%;
+}
+.card-body{
+  padding-top: 25%;
 }
 @media screen and (max-width: 450px){
   .loginimg{
@@ -68,13 +74,23 @@
   
 }
 
-/*@media screen and (max-width: 954px){
+@media all and (min-width: 768px){
   .card-body{
-    padding-left: 5%;
+    
+    padding-left: 25%;
+    
+  }
+  .loginimg{
+    padding-left: 0%;
+    padding-right: 10%;
   }
 }
-@media screen and (min-width: 1024px){
+@media all and (min-width: 1024px){
   .card-body{
-    padding-left: 5%;
+    padding-left: 0%;
+    
   }
-}*/
+  .loginimg{
+    padding-left: 8%;
+  }
+}

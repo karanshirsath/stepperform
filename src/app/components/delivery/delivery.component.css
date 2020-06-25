@@ -141,3 +141,14 @@ p{
     color: rgb(8, 56, 95);
     font-family: 'Trebuchet MS', Arial, sans-serif;
 }
+.nextbtn{
+    min-width:100px;
+}
+@media screen and (max-width: 575px){
+    .nextbtn{
+        width: 250px;
+        margin: auto;
+        display: block;
+    }
+        
+}

@@ -10,7 +10,7 @@ import { MTPLCalculatorComponent } from '../components/mtpl-calculator/mtpl-calc
 export class TabComponent implements OnInit {
   activeTab = 0;
   policyTabToggle=true
-  constructor(private calculator:MTPLCalculatorComponent) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
