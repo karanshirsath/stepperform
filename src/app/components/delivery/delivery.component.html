@@ -146,10 +146,10 @@
                                 <div class="col-md-7 details_row-3">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" value="Home">&nbsp;Home
+                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" [(ngModel)]="type" [checked]="type==='Home'" value="Home">&nbsp;Home
                                         </div>
                                         <div class="col-sm-6">
-                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" value="Business">&nbsp;Business
+                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" [(ngModel)]="type" [checked]="type==='Business'" value="Business">&nbsp;Business
                                         </div>
                                         <div class="error" *ngIf="formControls.business.touched && formControls.business.errors">
                                             <div *ngIf="formControls.business.errors.required">This field is mandatory</div>
