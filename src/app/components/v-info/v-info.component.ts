@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter,Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
@@ -9,7 +9,7 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
   templateUrl: './v-info.component.html',
   styleUrls: ['./v-info.component.css']
 })
-export class VInfoComponent implements OnInit {
+export class VInfoComponent implements OnInit{
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
   @Input() registrationNumber:string;
