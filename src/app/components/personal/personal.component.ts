@@ -10,7 +10,8 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class PersonalComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
-  
+  @Output() OnSubmission = new EventEmitter<any>();
+
   @Input() lnch:String;
   @Input() firstname:String;
   @Input() lastname:String;
@@ -34,6 +35,7 @@ export class PersonalComponent implements OnInit {
     
     
     this.OnRegister.emit(this.personalForm.value);
+    this.OnSubmission.emit('Personal Details form is submitted!')
   }
   change=()=>{
       

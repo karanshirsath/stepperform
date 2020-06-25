@@ -11,9 +11,10 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class VehicleOwnerComponent implements OnInit {
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
+  @Output() OnSubmission = new EventEmitter<any>();
 
   // Input fields
-  @Input() owner:String;
+  @Input() owner:string;
   @Input() lnch:String;
   @Input() firstname:String;
   @Input() lastname:String;
@@ -24,7 +25,7 @@ export class VehicleOwnerComponent implements OnInit {
   @Input() surnameeng:String;
   @Input() citizen:String;
   @Input() dob:Date;
-  @Input() city:String;
+  @Input() city:string;
   @Input() pincode:String;
   @Input() street:String;
   @Input() No:String;
@@ -87,6 +88,7 @@ export class VehicleOwnerComponent implements OnInit {
     this.GAService.event('Next Button clicked','Vehicle Owner','Next')
     console.log(this.Details.value, "vehicle owner");
     this.OnRegister.emit(this.Details.value);
+    this.OnSubmission.emit('Vehicle owner information form is submitted!')
   }
   gaTrigger=()=>{
     this.GAService.event('Next Button clicked','Vehicle Owner','Next')

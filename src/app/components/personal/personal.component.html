@@ -1,6 +1,6 @@
 
   <h1><b>Personal Details</b></h1>
-  <form [formGroup]="personalForm" >
+  <form [formGroup]="personalForm" (submit)="success()">
     <div class="form-group row ">
       <label for="lnch" class="col-sm-8 col-form-label">LNCH</label>
       <div class="col-lg-4">
@@ -121,6 +121,6 @@
       </div>
     </div>
     <hr class="line">
-    <button type="button" class="btn btn-primary rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn" mat-raised-button matStepperNext
-      [disabled]="!personalForm.valid" (click)="success()">Next</button>
+    <button type="submit" class="btn btn-primary rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn" mat-raised-button matStepperNext
+      [disabled]="!personalForm.valid">Next</button>
   </form> 

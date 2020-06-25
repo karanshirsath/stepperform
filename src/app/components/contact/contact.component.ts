@@ -10,7 +10,8 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class ContactComponent implements OnInit {
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
-  @Input() city:String;
+  @Output() OnSubmission = new EventEmitter<any>();
+  @Input() city:string;
   @Input() pincode:String;
   @Input() street:String;
   @Input() No:String;
@@ -36,7 +37,8 @@ export class ContactComponent implements OnInit {
   submit=()=>{
     this.GAService.event('Next Button clicked','Contact Details','Next')
     console.log(this.registerForm.value, "policy details");
-    this.OnRegister.emit(this.registerForm.value);
+    this.OnRegister.emit(this.registerForm.value);  
+    this.OnSubmission.emit('Contact Details form is submitted!')
   }
   change=()=>{
     if(this.registerForm.valid){

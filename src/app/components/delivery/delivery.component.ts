@@ -10,6 +10,7 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class DeliveryComponent implements OnInit {
   @Output() OnRegister= new EventEmitter();
   @Output() OnToggle=new EventEmitter();
+  @Output() OnSubmission = new EventEmitter<any>();
  @Input() fullName:String;
   @Input() city:string;
   @Input() pincode:String;
@@ -67,6 +68,7 @@ export class DeliveryComponent implements OnInit {
   register(){
     this.GAService.event('Next Button clicked','Delivery','Next')
     this.OnRegister.emit(this.detailsForm.value);
+    this.OnSubmission.emit('Delivery form is submitted!')
   }
   get formControls(){
     return this.detailsForm.controls
