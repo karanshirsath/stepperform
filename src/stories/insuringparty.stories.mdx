@@ -52,27 +52,13 @@ appearance of the Insuring party component.
   </Story>
 </Preview>
 
-### Wrong input for EGN/EIK/LNCH Number
+### Invalid Credentials Story
 
 <Preview>
-  <Story name="Wrong EGN/EIK/LNCH">{{
+  <Story name="Invalid Credentials">{{
     component: InsuringPartyComponent,
     props:{
       egn: text('EGN/EIK/LNCH','123456'),
-      address: select('Address',{'--SELECT--': '','Sofia': 'Sofia', 'Varna': 'Varna','Burgas': 'Burgas'},'Sofia'),
-      email: text('Email','amit@gmail.com')
-    },
-    }}    
-  </Story>
-</Preview>
-
-### Wrong input for email
-
-<Preview>
-  <Story name="Wrong Email">{{
-    component: InsuringPartyComponent,
-    props:{
-      egn: text('EGN/EIK/LNCH','1234567890'),
       address: select('Address',{'--SELECT--': '','Sofia': 'Sofia', 'Varna': 'Varna','Burgas': 'Burgas'},'Sofia'),
       email: text('Email','xyz@g')
     },
@@ -80,10 +66,10 @@ appearance of the Insuring party component.
   </Story>
 </Preview>
 
-### Valid Story
+### Valid Credentials Story
 
 <Preview>
-  <Story name="All fields are correct">{{
+  <Story name="Valid Credentials">{{
     component: InsuringPartyComponent,
     props:{
       egn: text('EGN/EIK/LNCH','1234567890'),

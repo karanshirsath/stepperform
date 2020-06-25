@@ -7,11 +7,11 @@
           <label for="city" class="col-lg-7">City</label>
        
         <div class="col-md-3 space">
-          <select id="city" name="city" class="form-control" formControlName="city" (change)="change()">
+          <select id="city" name="city" class="form-control" [(ngModel)]="city" formControlName="city" (change)="change()">
             <option selected disabled value="">--SELECT--</option>
-            <option value="SofiaCity">Sofia City</option>
-            <option value="techCity">Tech City</option>
-            <option value="electronicCity">Electronic City</option>
+            <option value="Sophia City" [selected]="city==='SophiaCity'">Sofia City</option>
+            <option value="techCity" [selected]="city==='techCity'">Tech City</option>
+            <option value="electronicCity" [selected]="city==='electronicCity'">Electronic City</option>
           </select>
           <div
             *ngIf="registerForm.controls.city.hasError('required') &&(registerForm.controls.city.dirty || registerForm.controls.city.touched)"
