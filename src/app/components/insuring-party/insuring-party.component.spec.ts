@@ -1,6 +1,9 @@
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InsuringPartyComponent } from './insuring-party.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('InsuringPartyComponent', () => {
   let component: InsuringPartyComponent;
@@ -8,7 +11,8 @@ describe('InsuringPartyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InsuringPartyComponent ]
+      declarations: [ InsuringPartyComponent ],
+      imports:[RouterTestingModule,ReactiveFormsModule]
     })
     .compileComponents();
   }));
