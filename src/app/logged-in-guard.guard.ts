@@ -19,15 +19,24 @@ export class LoggedInGuardGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
 
-    if(this.loggedInServiceService.isSignedIn())
-    {
-      return true;
-    }
-    else 
-    {
-      alert("You don't have rights view this page. Redirecting to Login");
-      // this.router.navigate(['signIn']);
-    }
-  }
-  
-}
+      if (this.isLoggedIn()) {      
+        return true;      
+        }      
+        // navigate to login page as user is not authenticated      
+        alert("You are not authenticated to view this page. Redirecting to login.")
+     this.router.navigate(['/signIn']);      
+  return false;      
+  }      
+  public isLoggedIn(): boolean {      
+     let status = false;      
+     if (sessionStorage.getItem('isLoggedIn') == "true") {      
+        status = true;      
+     }    
+     else {      
+        status = false;
+              
+        }      
+        
+     return status;      
+     }    
+  } 

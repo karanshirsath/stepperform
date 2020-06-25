@@ -7,8 +7,9 @@ export class LoggedInServiceService {
 
   constructor() { }
 
-  isSignedIn():boolean
-  {
-    return true;
-  }
+  logout() :void 
+  {    
+    sessionStorage.setItem('isLoggedIn','false');    
+    sessionStorage.removeItem('username');    
+  }  
 }
