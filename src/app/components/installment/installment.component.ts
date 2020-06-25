@@ -18,8 +18,13 @@ export class InstallmentComponent implements OnInit {
   @Input() term: string
   serviceData
  obj
- name='karan'
- 
+ name='karan';
+
+ @Output() OnSinglePayment = new EventEmitter<any>();
+ @Output() OnTwoPayments = new EventEmitter<any>();
+ @Output() OnFourPayments = new EventEmitter<any>();
+ @Output() OnSubmission = new EventEmitter<any>();
+
   constructor(private formBuilder: FormBuilder,private router: Router, private GAService: GoogleAnalyticsService, private installmentService:InstallmentService,private com:CommonDataService) { }
 
   ngOnInit()  {
@@ -38,6 +43,7 @@ export class InstallmentComponent implements OnInit {
   submit=()=>{
     this.GAService.event('Next Button clicked','Installment','Next')
     this.OnRegister.emit(this.obj);
+    this.OnSubmission.emit('Installemt form is submitted!')
   }
   change=()=>{
    
@@ -50,9 +56,9 @@ export class InstallmentComponent implements OnInit {
           // installment:this.serviceData[this.installmentForm.value]
         }
         this.obj=obj
-       
         
-        
+
+
       }
     }
     if(this.installmentForm.valid){
@@ -61,8 +67,15 @@ export class InstallmentComponent implements OnInit {
     }else{
       this.OnToggle.emit(false)
     }
-    this.com.installmentData.next(obj)
-    
+    this.com.installmentData.next(obj);
+    // code for storybook START
+    if(this.obj.term == this.serviceData[0].title)
+      this.OnSinglePayment.emit('You have opted Single Payment option');
+    else if(this.obj.term == this.serviceData[1].title)
+      this.OnTwoPayments.emit('You have opted Two Payments option');
+    else
+      this.OnFourPayments.emit('You have opted Four Payments option');
+    // code for storybook START
   }
 
   get formControl(){
