@@ -11,6 +11,7 @@ export class PolicyDetailsComponent implements OnInit {
 
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
+  @Output() OnSubmission = new EventEmitter<any>();
   @Input() policyDate: Date;
   @Input() policyLength: number;
   registerForm: FormGroup;
@@ -49,6 +50,7 @@ export class PolicyDetailsComponent implements OnInit {
     this.GAService.event('Calculate Button clicked','Policy Details','Calculate')
     console.log(this.registerForm.value, "policy details");
     this.OnRegister.emit(this.registerForm.value);
+    this.OnSubmission.emit('Policy Details form is submitted!')
   }
   change=()=>{
     if(this.registerForm.valid){
