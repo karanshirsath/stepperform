@@ -13,6 +13,7 @@ import { CommonDataService } from 'src/app/common-data.service';
 export class AdditionalCoversComponent implements OnInit {
   @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
+  @Output() OnSubmission = new EventEmitter<any>();
   @Output() NextTab = new EventEmitter()
   @Input() cover: string
   @Input ()installment
@@ -49,6 +50,7 @@ export class AdditionalCoversComponent implements OnInit {
     console.log(this.additionalcoverForm.value, "additional covers");
     this.OnRegister.emit(this.additionalcoverForm.value);
     this.NextTab.emit(1)
+    this.OnSubmission.emit('Additional Covers form is submitted!')
   }
 
 

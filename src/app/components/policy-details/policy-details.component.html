@@ -1,6 +1,6 @@
 <h1 class="font-weight-bold"  style="color:rgb(8,56,95) ;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" >
     Policy Details</h1>
-<form [formGroup]="registerForm"  style="color:rgb(8,56,95)"><br>
+<form [formGroup]="registerForm" (submit)="submit()" style="color:rgb(8,56,95)"><br>
 <div class="form-row">
     <div class=" col-12 col-sm-7 col-md-8 col-lg-8 ">
         <label for="policydate">Start Date</label>
@@ -48,6 +48,6 @@
 <div class="error" *ngIf="formControls.check2.touched && formControls.check2.errors">
     <div *ngIf="formControls.check2.invalid">Please read and accept </div>
 </div>
-</form>
 <br>
-<button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" (click)="submit()"  matStepperNext [disabled]="!registerForm.valid">Calculate</button>
+<button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" matStepperNext [disabled]="!registerForm.valid">Calculate</button>
+</form>

@@ -11,6 +11,7 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class InsuringPartyComponent implements OnInit {
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
+  @Output() OnSubmission = new EventEmitter<any>();
   @Input() egn: string;
   @Input() address: string;
   @Input() email: string;
@@ -30,6 +31,7 @@ export class InsuringPartyComponent implements OnInit {
     this.GAService.event('Next Button clicked', 'Insuring Party', 'Next')
     console.log(this.insuringParty.value, "insuring party");
     this.OnRegister.emit(this.insuringParty.value);
+    this.OnSubmission.emit('Insuring Party form is submitted!')
   }
   change = () => {
 

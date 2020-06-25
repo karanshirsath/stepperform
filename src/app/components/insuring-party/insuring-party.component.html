@@ -1,6 +1,6 @@
 <h1  style="color:rgb(8,56,95);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
     <b>Insuring Party</b></h1>
-    <form [formGroup]="insuringParty" style="color:rgb(8,56,95)"><br>
+    <form [formGroup]="insuringParty" (submit)="submit()" style="color:rgb(8,56,95)"><br>
         <div class="form-row">
             <div class="col-12 col-sm-7 col-md-8 col-lg-8">
                 <label for="egn">Enter your EGN/EIK/LNCH<br>
@@ -49,8 +49,9 @@
             </div>
         </div>
         <hr class="line">
+        <br>
+        <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" 
+        matStepperNext [disabled]="insuringParty.invalid">Next</button>
+    
 </form>
-<br>
-<button type="button" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" 
-(click)="submit()" matStepperNext [disabled]="insuringParty.invalid">Next</button>
-  
+
