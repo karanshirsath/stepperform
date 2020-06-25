@@ -149,9 +149,9 @@
 
 
             <div class="form-group row">
-                <label for="city" class="col-lg-7">City</label>
+                <label for="city" class="col-md-5 col-12">City</label>
 
-                <div class="col-md-3 space">
+                <div class="col-md-4 col-8 space">
                     <select class="form-control" id="sel1" formControlName="city" name="city" (change)="change()">
                         <option selected disabled value="">--SELECT--</option>
 
@@ -167,7 +167,7 @@
                     <div *ngIf="Details.controls.city.hasError('required') &&(Details.controls.city.dirty || Details.controls.city.touched)"
                         class="error">This field is mandatory</div>
                 </div>
-                <div class="col-sm-2 space">
+                <div class="col-md-3 col-4 space">
                     <div class="form-group">
                         <input type="text" class="form-control" [(ngModel)]="pincode" placeholder="1000" (change)="change()"
                             formControlName="pincode">
@@ -180,14 +180,14 @@
             <hr class="line">
             <div class="form-group row">
               
-                    <label for="s&n"  class="col-lg-7">Street & Number </label>
+                    <label for="s&n"  class="col-md-5 col-12">Street & Number </label>
                
-                <div class="col-md-3 space">
+                <div class="col-md-4 col-8 space">
                     <input type="text" class="form-control" value={{street}} formControlName="street" (change)="change()">
                     <!-- <div *ngIf="Details.controls.street.hasError('required') &&(Details.controls.street.dirty || Details.controls.street.touched)" class="error">Please select your street</div> -->
 
                 </div>
-                <div class="col-sm-2 space">
+                <div class="col-sm-3 col-4 space">
                     <input type="text" class="form-control" value={{No}} formControlName="No" (change)="change()">
                     <!-- <div *ngIf="Details.controls.No.hasError('required') &&(Details.controls.No.dirty || Details.controls.No.touched)" class="error">Please enter your House NO</div> -->
                 </div>
@@ -196,19 +196,19 @@
             <hr class="line">
             <div class="form-group row">
               
-                    <label for="be&a" class="col-lg-7">Block Entrance & Apartment </label>
+                    <label for="be&a" class="col-md-5 col-12">Block Entrance & Apartment </label>
                
-                <div class=" col-xs-12 col-sm-1">
+                <div class="col-md-2 col-4">
 
                     <input type="text" value={{block}} class="form-control" (change)="change()">
                     <label>Optional</label>
 
                 </div>
-                <div class=" col-xs-12 col-md-2 ">
+                <div class="col-md-2 col-4">
                     <input type="text" value={{entrance}} class="form-control" (change)="change()">
                     <label>Optional</label>
                 </div>
-                <div class=" col-xs-12 col-md-2 ">
+                <div class="col-md-3 col-4">
                     <input type="text" value={{appartment}} class="form-control" (change)="change()">
                     <label>Optional</label>
                 </div>
