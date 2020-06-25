@@ -7,47 +7,71 @@
 </head>
 <body>
     <div class="container">
-        <div class="d-flex justify-content-between col-md-12 mx-auto" style="padding-left: 2cm; padding-right: 2cm;">
+    <div class="row">
+    <h1 class="label_prop">Proposal</h1>
+    <button class="btn btn-outline-primary email_btn_prop ml-auto">Send to email</button>
+    </div>
+    
+        <!-- <div class="d-flex justify-content-between col-md-12 mx-auto">
             <h1 class="p-2 label_prop">Proposal</h1>
             <div class="p-2"><button class="btn btn-outline-primary email_btn_prop">Send to email</button></div>
-        </div>
-       <br/>
+        </div> -->
+        <br/>
 
-       <div class="card  col-lg-9 col-md-12 mx-auto" style="border: none;"> 
-        <div class="card-body card_bg">
+       <div class="row">
+       <div class="card card_bg col-md-12 col-12 mx-auto"> 
+        <div class="card-body">
         <div class="row">
-        <div class="col-md-1">
-            <div><i class="fa fa-car fa-2x" style="color:white"></i></div>
+        <div class="col-md-1 col-2 p-0">
+            <img src="../../../assets/motor_policy.PNG">
         </div>
-           <div class="col-lg-4 col-md-4 col-sm-12">
-                <img src="../../assets/carlogo.jpeg">
-                <p class="card-text" style="color: white;">Motor Third Party Liability Policy</p>
+        
+           <div class="col-md-10 col-9 pr-0 m-auto">
+            <div class="row">
+               <div class="col-md-8 col-12 p-0">
+               <span class="card-text middle-heading text-small" style="color: white;">Motor Third Party Liability Policy</span>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 ml-auto">
-                <p class="card-text" style="color: white;font-weight:600;">324,00 BGN</p>
+            <!-- </div>             -->
+                <div class="col-md-4 col-12 ml-auto p-0">
+                <div class="card-text card-num num" style="color: white;">324<span class="nearelm">,00 BGN</span></div>
+                <div class="bgn" style="color: white;">Four Payments</div>
             </div>
         </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 ml-auto">
+        </div>
+
+        </div>
+            <!-- <div class="col-lg-3 col-md-3 col-sm-12 ml-auto">
             <p  class="card-text" style="color:white;font-weight: 100;">{{mtplCalculatorData["installmentsData"].term}}</p>
-            </div>
+            </div> -->
             </div>
         </div>
-
-
-        <div class="col-lg-8 col-md-12 mx-auto">
-            <div class="card" style="border:none">
-                <div class="card-body  border-bottom">
-                    <p><i class="fa fa-check" style="color:green;"></i><img src="../../assets/tick.jpeg"> Premium indicated are final and include Contribution to the Gaurantee and Insurance Fund, stickers and 2% tax on insurance payment.</p>
-                    <p><i class="fa fa-check" style="color:green;"></i><img src="../../assets/tick.jpeg"> The insurance payment is calculated with included - 5% discount for insurance with "Casco+".</p>
-                    <p><i class="fa fa-check" style="color:green;"></i><img src="../../assets/tick.jpeg">  Annual Technical Inspection Voucher </p>
+    </div>
+<br/>
+        <!-- <div class="col-md-12 col-12 mx-auto"> -->
+            <!-- <div class="card" style="border:none"> -->
+                <!-- <div class="card-body  border-bottom"> -->
+                    <div class="row">
+                   <div class="col-1"><img class="tick" src="../../../assets/tick.jpg"></div>
+                        <span class="col-10 text">Premium indicated are final and include Contribution to the Gaurantee and Insurance Fund, stickers and 2% tax on insurance payment.</span>
+                    </div><br/>
+                <div class="row">
+                    <div class="col-1"><img class="tick" src="../../../assets/tick.jpg"></div>
+                    <span class="col-10 text">The insurance payment is calculated with included - 5% discount for insurance with "Casco+".</span>
+                </div><br/>
+                <div class="row">
+                <div class="col-1"><img class="tick" src="../../../assets/tick.jpg"></div>
+                    <span class="col-10 text">Annual Technical Inspection Voucher</span>
                 </div>
-            </div>
+                <!-- </div> -->
+            <!-- </div> -->
             <br/>
+            
 
             <form [formGroup]="summaryForm">
 
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
+                    
                     <label class="label_prop">Instalments</label>&nbsp;&nbsp;&nbsp;
                     <button (click)=" moveToCalculator(3)" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
@@ -340,7 +364,7 @@
         </form><br/><br/>
 
             <button class="btn btn-primary" style="border-radius: 3rem;" matStepperNext [disabled]="summaryForm.invalid">Continue to payment</button>
-        </div>
+        <!-- </div> -->
         
     </div>
 </body>

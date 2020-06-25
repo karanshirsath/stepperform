@@ -2,6 +2,7 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { InstallmentComponent } from '../app/components/installment/installment.component';
 import { moduleMetadata } from "@storybook/angular";
 import { radios } from "@storybook/addon-knobs";
+import { action } from '@storybook/addon-actions';
 
 <Meta title="MDX/Installment Component" decorators={[
     moduleMetadata({
@@ -57,6 +58,74 @@ appearance of the login component.
     component: InstallmentComponent,
     props:{
       term: radios('Instalment Options',{'Single Payment':'Single Payment','Two Payments':'Two Payments','Four Payments':'Four Payments'},'Single Payment')
+    },
+    }}    
+  </Story>
+</Preview>
+
+### Single Payment
+
+This is the Single Payment story. In this story the users can select Single Payment radio button and proceed to 
+further steps of transaction using next button. A description is also given regarding the installment charge and savings a
+user achieve after selecting the option. 
+
+<Preview>
+  <Story name="Single Payment">{{
+    component: InstallmentComponent,
+    template: '<app-installment (OnSinglePayment)="showDetails($event)"></app-installment>',
+    props:{
+        showDetails: action('Single Payment')
+    },
+    }}    
+  </Story>
+</Preview>
+
+### Two Payments
+
+This is the Two Payments story. In this story the users can select Two Payments radio button and proceed to 
+further steps of transaction using next button. A description is also given regarding the installment charge and savings a
+user achieve after selecting the option.
+
+<Preview>
+  <Story name="Two Payments">{{
+    component: InstallmentComponent,
+    template: '<app-installment (OnTwoPayments)="showDetails($event)"></app-installment>',
+    props:{
+        showDetails: action('Two Payments')
+    },
+    }}    
+  </Story>
+</Preview>
+
+### Four Payments
+
+This is the Four Payments story. In this story the users can select Four Payments radio button and proceed to 
+further steps of transaction using next button. A description is also given regarding the installment charge and savings a
+user achieve after selecting the option.
+
+<Preview>
+  <Story name="Four Payments">{{
+    component: InstallmentComponent,
+    template: '<app-installment (OnFourPayments)="showDetails($event)"></app-installment>',
+    props:{
+        showDetails: action('Four Payments')
+    },
+    }}    
+  </Story>
+</Preview>
+
+### On Submission
+
+This is the On Submission story. In this story the users can select any one of the given installment option by choosing radio button 
+and for completion of transaction click on next button. A description is also given regarding the installment charge and savings a
+user achieve after selecting the option.
+
+<Preview>
+  <Story name="On Submission">{{
+    component: InstallmentComponent,
+    template: '<app-installment (OnSubmission)="success($event)"></app-installment>',
+    props:{
+        success: action('Success message')
     },
     }}    
   </Story>
