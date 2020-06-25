@@ -1,6 +1,6 @@
 <h1 style="color:rgb(8,56,95);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
     <b>Vehicle Information</b></h1>
-<form [formGroup]="vehicleInfoForm" (ngSubmit)="submit()"  style="color:rgb(8,56,95)"><br>
+<form [formGroup]="vehicleInfoForm" (submit)="submit()"  style="color:rgb(8,56,95)"><br>
     <div class="form-row">
         <div class=" col-12 col-sm-7 col-md-8 col-lg-8 col-auto"> 
             <label for="registrationNumber">Vehicle Registration Number</label>
@@ -72,10 +72,11 @@
         
     </div>
     <hr class="line">
+    <br>
 
-</form><br>
-
-<button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" (click)="submit()" matStepperNext
+    <button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" type="submit" matStepperNext
     [disabled]="!vehicleInfoForm.valid">Next</button>
+
+</form>
 
 <!-- {{vehicleInfoForm.value | json}} -->
