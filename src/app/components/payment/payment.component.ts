@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PaymentComponent implements OnInit {
   optradio:boolean;
- 
+  @Input() payment: String;
   enable:boolean=true;
   constructor() { }
 

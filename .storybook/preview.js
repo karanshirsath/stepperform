@@ -15,6 +15,7 @@ import { constants } from 'buffer';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { StepperComponent } from '../src/app/stepper/stepper.component';
 import { TabComponent } from '../src/app/tab/tab.component';
@@ -98,8 +99,8 @@ addDecorator(
             MatGridListModule,
             MatTabsModule,
             MatCheckboxModule,
-            MatDividerModule
-        
+            MatDividerModule,
+            HttpClientModule
           ],
           providers: [CdkStepper,{ provide: APP_BASE_HREF, useValue: "/" },
         { provide: ChangeDetectorRef },

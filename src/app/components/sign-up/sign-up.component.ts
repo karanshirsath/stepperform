@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,6 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+  @Input() fullName:String;
+  @Input() email:String;
+  @Input() password:String;
+  @Input() confirmPassword:String;
+  @Input() phoneNo:Number;
   signUpForm:FormGroup
 
   constructor(private fb:FormBuilder, private router:Router) { }
