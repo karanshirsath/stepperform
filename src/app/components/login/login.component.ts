@@ -44,7 +44,14 @@ errorMessage
     sessionStorage.setItem('id',response.id)
     sessionStorage.setItem('token',response.token)
     sessionStorage.setItem('isLoggedIn', "true"); 
-    alert('logged in successfully')
+    //alert('logged in successfully')
+    this.name=prompt("How do you like to call you!!");
+      console.log(this.name);
+      if(this.name!=null)
+      sessionStorage.setItem('welcomename',this.name);
+      else{
+        sessionStorage.setItem('welcomename',"");
+      }
 setTimeout(()=>{
   this.router.navigate(["tab"]);
 })
