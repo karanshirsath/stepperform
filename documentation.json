@@ -2298,7 +2298,7 @@
         },
         {
             "name": "ProposalComponent",
-            "id": "component-ProposalComponent-9304852e2817887291ca8ee1aa6ce973",
+            "id": "component-ProposalComponent-01e18fc7b60eaf04906b514796f75b34",
             "file": "src/app/components/proposal/proposal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2327,6 +2327,48 @@
                     "defaultValue": "new EventEmitter()",
                     "line": 22,
                     "type": "EventEmitter"
+                },
+                {
+                    "name": "OnAdditionalCovers",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "line": 24,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "OnDelivery",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "line": 28,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "OnInstallment",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "line": 23,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "OnInsuringParty",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "line": 26,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "OnPolicyDates",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "line": 29,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "OnVehicleInfo",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "line": 25,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "OnVehicleOwner",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "line": 27,
+                    "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [
@@ -2336,7 +2378,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 104
+                    "line": 125
                 },
                 {
                     "name": "first",
@@ -2367,7 +2409,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 30
                 },
                 {
                     "name": "mtplCalculatorData",
@@ -2422,7 +2464,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30
+                    "line": 52
                 }
             ],
             "hostBindings": [],
@@ -2430,7 +2472,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output, EventEmitter } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\nimport { CommonDataService } from 'src/app/common-data.service';\r\n\r\n@Component({\r\n  selector: 'app-proposal',\r\n  templateUrl: './proposal.component.html',\r\n  styleUrls: ['./proposal.component.css']\r\n})\r\nexport class ProposalComponent implements OnInit {\r\n\r\n  summaryForm:FormGroup;\r\n  first:string=\"170.27 BGN\";\r\n  secondI:string=\"182.40 BGN\";\r\n  third:string='';\r\n  fourth:string='abcd';\r\n  sdate:string='04-03-54';\r\n  mtplCalculatorData;\r\n  mtplPolicyData;\r\n  installmentData\r\n  @Output() changeStep = new EventEmitter()\r\n  @Output() moveTab = new EventEmitter()\r\n  moveToCalculator=(index)=>{\r\n    this.moveTab.emit(index)\r\n    }\r\n\r\n    \r\n  constructor(private fb: FormBuilder,private _dataService:CommonDataService) { }\r\n\r\n  ngOnInit(): void {\r\n    this._dataService.formData.subscribe(data=>{\r\n      this.mtplCalculatorData=data;\r\n      this.installmentData=data[\"installmentsData\"].installments\r\n      console.log(this.installmentData);\r\n      \r\n     })\r\n     this._dataService.policyData.subscribe(data=>{\r\n       console.log(data);\r\n       \r\n       this.mtplPolicyData=data;\r\n       console.log(this.mtplPolicyData[\"vehicleOwnerInformation\"]);\r\n       \r\n       if(this.mtplPolicyData[\"vehicleOwnerInformation\"]==\"Yes\"){\r\n         var obj={    fullname: {firstname: this.mtplPolicyData[\"personalInformation\"].fullname.firstname,\r\n          lastname: this.mtplPolicyData[\"personalInformation\"].fullname.lastname, \r\n          surname: this.mtplPolicyData[\"personalInformation\"].fullname.surname},\r\n          city: this.mtplPolicyData[\"contactInformation\"].city,\r\n          street:this.mtplPolicyData[\"contactInformation\"].street,\r\n     \r\n       lnch: this.mtplPolicyData[\"personalInformation\"].lnch\r\n     \r\n            \r\n         }\r\n         this.mtplPolicyData[\"vehicleOwnerInformation\"]=obj\r\n         \r\n         \r\n         \r\n       }\r\n       \r\n\r\n     })\r\n//      this._dataService.installmentData.subscribe(data=>{\r\n// this.installmentData=data\r\n// console.log(data);\r\n\r\n//      })\r\n    \r\n    this.summaryForm=this.fb.group({\r\n      firstInstalment:[this.first],\r\n      secondInstalment:[this.secondI],\r\n      thirdInstalment:[this.third],\r\n      fourthInstalment:[this.fourth],\r\n      additionalCover:[''],\r\n      startDate:[this.sdate],\r\n      endDate:[''],\r\n      vehicleRegistration:[''],\r\n      vehiclePurpose:[''],\r\n      certificationNumber:[''],\r\n      days:[''],\r\n      number:[''],\r\n      fullName:[''],\r\n      phoneNumber:[''],\r\n      email:[''],\r\n      cityZipcode:[''],\r\n      streetNumber:[''],\r\n      apartment:[''],\r\n      egnnumber:[''],\r\n      fullnamevehicleowner:[''],\r\n      cityZipcodevehicleOwner:[''],\r\n      streetNumbervehicleowner:[''],\r\n      fullNameDelivery:[''],\r\n      phoneNumDelivery:[''],\r\n      addressType:[''],\r\n      cityZipcodeDelivery:[''],\r\n      streetNumberDelivery:[''],\r\n      block:[''],\r\n      apartmentDelivery:[''],\r\n      AgreeToAll:[false,Validators.requiredTrue],\r\n      receiveNewsletter:[false,Validators.requiredTrue],\r\n      generalTerms:[false,Validators.requiredTrue]\r\n    })\r\n  }\r\n\r\n  edit=(index)=>{\r\n    console.log(\"inside edit\",index);\r\n    \r\n    this.changeStep.emit(index)\r\n  }\r\n\r\n  \r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, Output, EventEmitter } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\nimport { CommonDataService } from 'src/app/common-data.service';\r\n\r\n@Component({\r\n  selector: 'app-proposal',\r\n  templateUrl: './proposal.component.html',\r\n  styleUrls: ['./proposal.component.css']\r\n})\r\nexport class ProposalComponent implements OnInit {\r\n\r\n  summaryForm:FormGroup;\r\n  first:string=\"170.27 BGN\";\r\n  secondI:string=\"182.40 BGN\";\r\n  third:string='';\r\n  fourth:string='abcd';\r\n  sdate:string='04-03-54';\r\n  mtplCalculatorData;\r\n  mtplPolicyData;\r\n  installmentData\r\n  @Output() changeStep = new EventEmitter()\r\n  @Output() moveTab = new EventEmitter()\r\n  @Output() OnInstallment = new EventEmitter<any>();\r\n  @Output() OnAdditionalCovers = new EventEmitter<any>();\r\n  @Output() OnVehicleInfo = new EventEmitter<any>();\r\n  @Output() OnInsuringParty = new EventEmitter<any>();\r\n  @Output() OnVehicleOwner = new EventEmitter<any>();\r\n  @Output() OnDelivery = new EventEmitter<any>();\r\n  @Output() OnPolicyDates = new EventEmitter<any>();\r\n  moveToCalculator=(index)=>{\r\n    this.moveTab.emit(index)\r\n      if(index===0){\r\n        this.OnVehicleInfo.emit('Vehicle edit button clicked')\r\n      }\r\n      if(index===1){\r\n        this.OnInsuringParty.emit('Insuring Party edit button clicked')\r\n      }\r\n      if(index===2){\r\n        this.OnPolicyDates.emit('Policy Dates edit button clicked')\r\n      }\r\n      if(index===3){\r\n        this.OnInstallment.emit('Installment edit button clicked')\r\n      }\r\n      if(index===4){\r\n        this.OnAdditionalCovers.emit('Additional Covers edit button clicked')\r\n      }\r\n    }\r\n\r\n    \r\n  constructor(private fb: FormBuilder,private _dataService:CommonDataService) { }\r\n\r\n  ngOnInit(): void {\r\n    this._dataService.formData.subscribe(data=>{\r\n      this.mtplCalculatorData=data;\r\n      this.installmentData=data[\"installmentsData\"].installments\r\n      console.log(this.installmentData);\r\n      \r\n     })\r\n     this._dataService.policyData.subscribe(data=>{\r\n       console.log(data);\r\n       \r\n       this.mtplPolicyData=data;\r\n       console.log(this.mtplPolicyData[\"vehicleOwnerInformation\"]);\r\n       \r\n       if(this.mtplPolicyData[\"vehicleOwnerInformation\"]==\"Yes\"){\r\n         var obj={    fullname: {firstname: this.mtplPolicyData[\"personalInformation\"].fullname.firstname,\r\n          lastname: this.mtplPolicyData[\"personalInformation\"].fullname.lastname, \r\n          surname: this.mtplPolicyData[\"personalInformation\"].fullname.surname},\r\n          city: this.mtplPolicyData[\"contactInformation\"].city,\r\n          street:this.mtplPolicyData[\"contactInformation\"].street,\r\n     \r\n       lnch: this.mtplPolicyData[\"personalInformation\"].lnch\r\n     \r\n            \r\n         }\r\n         this.mtplPolicyData[\"vehicleOwnerInformation\"]=obj\r\n         \r\n         \r\n         \r\n       }\r\n       \r\n\r\n     })\r\n//      this._dataService.installmentData.subscribe(data=>{\r\n// this.installmentData=data\r\n// console.log(data);\r\n\r\n//      })\r\n    \r\n    this.summaryForm=this.fb.group({\r\n      firstInstalment:[this.first],\r\n      secondInstalment:[this.secondI],\r\n      thirdInstalment:[this.third],\r\n      fourthInstalment:[this.fourth],\r\n      additionalCover:[''],\r\n      startDate:[this.sdate],\r\n      endDate:[''],\r\n      vehicleRegistration:[''],\r\n      vehiclePurpose:[''],\r\n      certificationNumber:[''],\r\n      days:[''],\r\n      number:[''],\r\n      fullName:[''],\r\n      phoneNumber:[''],\r\n      email:[''],\r\n      cityZipcode:[''],\r\n      streetNumber:[''],\r\n      apartment:[''],\r\n      egnnumber:[''],\r\n      fullnamevehicleowner:[''],\r\n      cityZipcodevehicleOwner:[''],\r\n      streetNumbervehicleowner:[''],\r\n      fullNameDelivery:[''],\r\n      phoneNumDelivery:[''],\r\n      addressType:[''],\r\n      cityZipcodeDelivery:[''],\r\n      streetNumberDelivery:[''],\r\n      block:[''],\r\n      apartmentDelivery:[''],\r\n      AgreeToAll:[false,Validators.requiredTrue],\r\n      receiveNewsletter:[false,Validators.requiredTrue],\r\n      generalTerms:[false,Validators.requiredTrue]\r\n    })\r\n  }\r\n  edit=(index)=>{\r\n    console.log(\"inside edit\",index);\r\n    if(index===2){\r\n      this.OnVehicleOwner.emit('Vehicle owner edit button clicked');\r\n    }\r\n    if(index===3){\r\n      this.OnDelivery.emit('Delivery edit button clicked');\r\n    }\r\n    this.changeStep.emit(index)\r\n  }\r\n\r\n  \r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2452,7 +2494,7 @@
                         "type": "CommonDataService"
                     }
                 ],
-                "line": 25,
+                "line": 47,
                 "jsdoctags": [
                     {
                         "name": "fb",
@@ -3937,7 +3979,7 @@
                 "linktype": "component",
                 "name": "ProposalComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/16",
+                "coverageCount": "0/23",
                 "status": "low"
             },
             {
