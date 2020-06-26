@@ -33,10 +33,10 @@ export class ProposalComponent implements OnInit {
         this.OnVehicleInfo.emit('Vehicle edit button clicked')
       }
       if(index===1){
-        this.OnInsuringParty.emit('Vehicle edit button clicked')
+        this.OnInsuringParty.emit('Insuring Party edit button clicked')
       }
       if(index===2){
-        this.OnPolicyDates.emit('Vehicle edit button clicked')
+        this.OnPolicyDates.emit('Policy Dates edit button clicked')
       }
       if(index===3){
         this.OnInstallment.emit('Installment edit button clicked')
