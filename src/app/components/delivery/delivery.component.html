@@ -45,7 +45,8 @@
                                     <label>City & Pincode</label>
                                 </div>
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <select name="city" id="city"  formControlName="city" [(ngModel)]="city" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="city">
+                                    <!-- <select name="city" id="city"  formControlName="city" [(ngModel)]="city" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="city"> -->
+                                    <select name="city" id="city"  formControlName="city" class="form-control form-1_row-3" (change)="change()">
                                         <option selected disabled value="">--SELECT--</option>
                                         <option value="{{city}}" *ngFor="let city of cities">{{city}}</option>
                                     </select>

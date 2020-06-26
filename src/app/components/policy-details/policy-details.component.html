@@ -19,13 +19,16 @@
         <label for="policyLength"> Policy length</label>
     </div>
     <div class="col-12 col-sm-5 col-md-4 col-lg-4 ">
-        <select formControlName="policyLength" [(ngModel)]="policyLength" class="form-control" (change)="change()">
+        <!-- <select formControlName="policyLength" [(ngModel)]="policyLength" class="form-control" (change)="change()"> -->
+
+        <select formControlName="policyLength"  class="form-control" (change)="change()">
             <option selected disabled value="" >--SELECT--</option>
             <option value="1" id="policyLength" [selected]="1===policyLength">1 Month</option>
             <option value="3" id="policyLength" [selected]="3===policyLength">3 Months</option>
             <option value="6" id="policyLength" [selected]="6===policyLength">6 Months</option>
             <option value="12" id="policyLength" [selected]="12===policyLength">12 Months</option>
         </select>
+            
         <div class="error" *ngIf="formControls.policyLength.touched && formControls.policyLength.errors">
             <div *ngIf="formControls.policyLength.errors.required">Policy Length is required</div>
         </div>
