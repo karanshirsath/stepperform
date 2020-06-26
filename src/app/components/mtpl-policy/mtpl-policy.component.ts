@@ -17,7 +17,7 @@ export class MTPLPolicyComponent implements OnInit {
   toggle1=false
   toggle2=false
   toggle3=false
-  toggle4=true
+  toggle4=false
   toggle5=true
   toggle6=true
   personalInformation
