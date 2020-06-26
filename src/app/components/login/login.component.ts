@@ -13,7 +13,7 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
 constructor(private router: Router,private loginService:LoginService) { }
 
-  
+ 
   @Output() onLoginError = new EventEmitter<any>();
   @Output() onLoginSuccess = new EventEmitter<any>();
   @Output() asGuestLogin = new EventEmitter<any>();
