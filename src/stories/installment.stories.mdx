@@ -72,6 +72,7 @@ user achieve after selecting the option.
 
 <Preview>
   <Story name="Single Payment">{{    
+    component: InstallmentComponent,
     template: '<app-installment (OnSinglePayment)="showDetails($event)"></app-installment>',
     props:{
         term: radios('Instalment Options',{'Single Payment':'Single Payment',
@@ -90,7 +91,8 @@ further steps of transaction using next button. A description is also given rega
 user achieve after selecting the option.
 
 <Preview>
-  <Story name="Two Payments">{{    
+  <Story name="Two Payments">{{  
+    component: InstallmentComponent,  
     template: '<app-installment (OnTwoPayments)="showDetails($event)"></app-installment>',
     props:{
       term: radios('Instalment Options',{'Single Payment':'Single Payment',
@@ -109,7 +111,8 @@ further steps of transaction using next button. A description is also given rega
 user achieve after selecting the option.
 
 <Preview>
-  <Story name="Four Payments">{{    
+  <Story name="Four Payments">{{ 
+    component: InstallmentComponent,   
     template: '<app-installment (OnFourPayments)="showDetails($event)"></app-installment>',
     props:{
       term: radios('Instalment Options',{'Single Payment':'Single Payment',
@@ -128,7 +131,8 @@ and for completion of transaction click on next button. A description is also gi
 user achieve after selecting the option.
 
 <Preview>
-  <Story name="On Submission">{{    
+  <Story name="On Submission">{{  
+    component: InstallmentComponent,  
     template: '<app-installment (OnSubmission)="success($event)"></app-installment>',
     props:{
         term: radios('Instalment Options',{'Single Payment':'Single Payment',
