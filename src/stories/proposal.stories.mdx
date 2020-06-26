@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { ProposalComponent } from '../app/components/proposal/proposal.component';
 import { moduleMetadata } from "@storybook/angular";
+import { linkTo } from "@storybook/addon-links";
 
 <Meta title="MDX/Proposal Component" decorators={[
     moduleMetadata({
@@ -46,6 +47,28 @@ appearance of the login component.
     component: ProposalComponent,
     props:{
       
+    },
+    }}    
+  </Story>
+</Preview>
+
+### Linking of stories
+
+This is the linking story. In this story the users can select any one of the given installment option by choosing radio button 
+and for completion of transaction click on next button. On clicking the next button user will be redirected to next story.
+
+<Preview>
+  <Story name="Link to other stories">{{
+    component: ProposalComponent,
+    template: '<app-proposal (OnInstallment)="installment($event)" (OnAdditionalCovers)="additionalcovers($event)" (OnVehicleInfo)="vehicleInfo($event)" (OnInsuringParty)="insuringparty($event)" (OnVehicleOwner)="vehicleOwner($event)" (OnDelivery)="delivery($event)" (OnPolicyDates)="policyDetails($event)"></app-proposal>',
+    props:{
+        installment: linkTo('MDX/Installment Component','Default'),
+        additionalcovers: linkTo('MDX/Additional Covers Component','Default'),
+        vehicleInfo: linkTo('MDX/Vehicle Info Component','Default'),
+        insuringparty: linkTo('MDX/Insuring Party Component','Default'),
+        vehicleOwner: linkTo('MDX/Vehicle Owner Component','Default'),
+        delivery: linkTo('MDX/Delivery Component','Default'),
+        policyDetails: linkTo('MDX/Policy Details Component','Default')
     },
     }}    
   </Story>

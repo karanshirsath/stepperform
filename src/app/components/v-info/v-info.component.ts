@@ -12,6 +12,7 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class VInfoComponent implements OnInit{
   @Output() OnRegister= new EventEmitter()
   @Output() OnToggle=new EventEmitter()
+  @Output() OnSubmission = new EventEmitter<any>();
   @Input() registrationNumber:string;
   @Input() certificateNumber:string;
   @Input() purpose:string;
@@ -35,6 +36,7 @@ export class VInfoComponent implements OnInit{
       // this.OnToggle.emit(true)
       this.OnRegister.emit(this.vehicleInfoForm.value);
        // setTimeout(this.OnToggle.emit(true),)
+       this.OnSubmission.emit('Vehicle Information form is submitted!');
     }
     change=()=>{
       

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-payment',
@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PaymentComponent implements OnInit {
   optradio:boolean;
- 
+  @Input() payment: string;
+  @Output() OnSubmission = new EventEmitter<any>();
   enable:boolean=true;
   constructor() { }
 
@@ -23,6 +24,9 @@ export class PaymentComponent implements OnInit {
    else{
      this.enable=true;
    }
+  }
+  action(){
+    this.OnSubmission.emit('Payment method selected!')
   }
 
 }
