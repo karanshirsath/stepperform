@@ -16,7 +16,7 @@ constructor(private router: Router) { }
   @Output() onLoginError = new EventEmitter<any>();
   @Output() onLoginSuccess = new EventEmitter<any>();
   @Output() asGuestLogin = new EventEmitter<any>();
-
+  name:string;
   email: string;
 password: string;
   ngOnInit() {
@@ -27,7 +27,10 @@ password: string;
       this.onLoginSuccess.emit('form submitted successfully');
       sessionStorage.setItem('isLoggedIn', "true");  
       sessionStorage.setItem('username', this.email );
-      
+      this.name=prompt("How do you like to call you!!");
+      console.log(this.name);
+      if(this.name!=null)
+      sessionStorage.setItem('welcomename',this.name);
       this.router.navigate(["tab"]);
     }else {
       this.onLoginError.emit('Wrong data entered');
