@@ -77,11 +77,15 @@
                   <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" placeholder="***********">
                 </div>
                 <input name="login" id="login" class="btn  login-btn " type="button" (click)="login()" value="Login">
+                <div class="error" >
+                  {{errorMessage}}
+                </div>
     
                   <hr data-content="OR" class="hr-text">
                   <input name="redirect" id="redirect" class="btn redirect-btn btn-block" type="button" (click)="redirect()" value="Continue as a Guest">
               
               </form>
+              
              
               <p class="login-card-footer-text">You can create your account at the end of the process <a href="/signUp" class="text-reset"><u>Register here</u></a></p>
               
