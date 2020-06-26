@@ -5,13 +5,13 @@
             <div class="jumbotron">
                 <h1 style="text-align: center;" class="text-primary">Sign Up</h1>
             <form [formGroup]='signUpForm'>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="fullName">Full Name:</label>
                     <input id="fullName" class="form-control" [(ngModel)]="fullName" formControlName='fullName'>
                 </div>
                 <div id='fullNameError' *ngIf='signUpForm.controls.fullName.touched'>
                     <span class="text-danger" *ngIf='signUpForm.controls.fullName.errors?.required'>Required</span>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for='email'>Email:</label>
                     <input id='email' class="form-control" [(ngModel)]="email" formControlName='email'>
@@ -37,18 +37,22 @@
                 </div>
                 <div *ngIf="(signUpForm.errors?.misMatch && !signUpForm.controls.confirmPassword.errors?.required) && (signUpForm.controls.confirmPassword.dirty && signUpForm.controls.confirmPassword.touched)" class="error">Password did not match</div>
                 <div class="form-group">
-                    <label for="phoneNo">Phone No:</label>
-                    <input id="phoneNo" class="form-control" [(ngModel)]="phoneNo" formControlName='phoneNo'>
+                    <label for="mobile">Phone No:</label>
+                    <input id="mobile" class="form-control" [(ngModel)]="mobile" formControlName='mobile'>
                 </div>
-                <div id='phoneNoError' *ngIf='signUpForm.controls.phoneNo.touched'>
-                    <span class="text-danger" *ngIf='signUpForm.controls.phoneNo.errors?.required'>Required</span>
-                    <span class="text-danger" *ngIf='signUpForm.controls.phoneNo.errors?.minlength || signUpForm.controls.phoneNo.errors?.maxlength'>Enter valid phone No</span>
+                <div id='mobileError' *ngIf='signUpForm.controls.mobile.touched'>
+                    <span class="text-danger" *ngIf='signUpForm.controls.mobile.errors?.required'>Required</span>
+                    <span class="text-danger" *ngIf='signUpForm.controls.mobile.errors?.minlength || signUpForm.controls.mobile.errors?.maxlength'>Enter valid phone No</span>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-block btn-primary" [disabled]='!signUpForm.valid' (click)='register()'>Register</button>
                 </div>
             </form>
+            
             <div class="text-center">Already have an account? <a [routerLink]="['/signIn']" >Sign in</a></div>
+            <div class="error" style="text-align:center">
+                {{errorMessage}}
+            </div>
         </div>
 
     </div>

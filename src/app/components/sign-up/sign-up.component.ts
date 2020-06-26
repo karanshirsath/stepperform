@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SignUpService } from './sign-up.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,20 +13,20 @@ export class SignUpComponent implements OnInit {
   @Input() email:String;
   @Input() password:String;
   @Input() confirmPassword:String;
-  @Input() phoneNo:Number;
+  @Input() mobile:Number;
   signUpForm:FormGroup
-
-  constructor(private fb:FormBuilder, private router:Router) { }
+  errorMessage
+  constructor(private fb:FormBuilder, private router:Router, private signUpService:SignUpService) { }
 
 
 
   ngOnInit(): void {
     this.signUpForm=this.fb.group({
-      fullName:['',[Validators.required]],
+      // fullName:['',[Validators.required]],
       email:['',[Validators.required,Validators.pattern(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/)]],
       password:['',[Validators.required]],
       confirmPassword:['',[Validators.required]],
-      phoneNo:['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]]
+      mobile:['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]]
     },{validator:passwordValidator})
   }
 
@@ -38,12 +39,24 @@ export class SignUpComponent implements OnInit {
     //   alert('password should be same')
     // }
     console.log(this.signUpForm.value);
-    alert("You are registered Succussfully")
-    // this.router.navigate(["/signIn"])
     
-    setTimeout(()=>{
+    // this.router.navigate(["/signIn"])
+    this.signUpService.registerUser(this.signUpForm.value).subscribe((res)=>{
+      console.log(res);
+      var response=JSON.parse(JSON.stringify(res))
+      // sessionStorage.setItem("id",response.id)
+      // sessionStorage.setItem("token",response.token)
+      alert("You are registered Succussfully")
+      setTimeout(()=>{
       this.router.navigate(["/signIn"])
+      })
+    },(err)=>{
+      this.errorMessage=err.error.error.errors[0].message
+      console.log(this.errorMessage);     
+      
+      
     })
+    
   }
 
   
