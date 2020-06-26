@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class InstallmentService {
 
   constructor(private http:HttpClient) { }
-  url='http://3.6.39.44:3000/getInstallmentOptions'
+  url='http://3.6.39.44:4000/mtpl/getInstallmentOptions'
 
   getInstallmentData=()=>{
   //   return [
@@ -48,6 +48,6 @@ export class InstallmentService {
   //         ]
   //     }
   // ]
-  return this.http.post(this.url,{})
+  return this.http.get(this.url)
   }
 }
