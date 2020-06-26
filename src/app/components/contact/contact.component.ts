@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
+import { ProvincesService } from '../provinces.service';
 
 @Component({
   selector: 'app-contact',
@@ -20,7 +21,8 @@ export class ContactComponent implements OnInit {
   @Input() appartment:String;
   @Input() phone:String;
   registerForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
+  provincesArray
+  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService,private provServ:ProvincesService) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -33,12 +35,22 @@ export class ContactComponent implements OnInit {
       appartment:[''],
       phone:['',[Validators.required,Validators.pattern("^[0-9]+$"),Validators.minLength(8),Validators.maxLength(9)]]
     });
+    this.getProvinces()
   }
   submit=()=>{
     this.GAService.event('Next Button clicked','Contact Details','Next')
     console.log(this.registerForm.value, "policy details");
     this.OnRegister.emit(this.registerForm.value);  
     this.OnSubmission.emit('Contact Details form is submitted!')
+  }
+  getProvinces=()=>{
+ this.provServ.getProvinces().subscribe((res)=>{
+   this.provincesArray=res
+   console.log(res[0].pname);
+   
+ })
+
+ 
   }
   change=()=>{
     if(this.registerForm.valid){

@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 
 import { LoggedInServiceService } from 'src/app/logged-in-service.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';  
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-constructor(private router: Router) { }
+constructor(private router: Router,private loginService:LoginService) { }
 
   
   @Output() onLoginError = new EventEmitter<any>();
@@ -19,24 +20,48 @@ constructor(private router: Router) { }
   name:string;
   email: string;
 password: string;
+errorMessage
+
   ngOnInit() {
   }
   login() : void {
   
-    if(this.email == 'admin' && this.password == 'admin'){
-      this.onLoginSuccess.emit('form submitted successfully');
-      sessionStorage.setItem('isLoggedIn', "true");  
-      sessionStorage.setItem('username', this.email );
-      this.name=prompt("How do you like to call you!!");
-      console.log(this.name);
-      if(this.name!=null)
-      sessionStorage.setItem('welcomename',this.name);
-      this.router.navigate(["tab"]);
-    }else {
-      this.onLoginError.emit('Wrong data entered');
-      alert("Invalid credentials");
-    }
-  }
+  //   if(this.email == 'admin' && this.password == 'admin'){
+  //     this.onLoginSuccess.emit('form submitted successfully');
+  //     sessionStorage.setItem('isLoggedIn', "true");  
+  //     sessionStorage.setItem('username', this.email );
+      
+  //     this.router.navigate(["tab"]);
+  //   }else {
+  //     this.onLoginError.emit('Wrong data entered');
+  //     alert("Invalid credentials");
+  //   }
+  this.loginService.getLoginData({
+    email:this.email,
+    password:this.password
+  }).subscribe((res)=>{
+    var response=JSON.parse(JSON.stringify(res))
+    sessionStorage.setItem('id',response.id)
+    sessionStorage.setItem('token',response.token)
+    sessionStorage.setItem('isLoggedIn', "true"); 
+    alert('logged in successfully')
+setTimeout(()=>{
+  this.router.navigate(["tab"]);
+})
+    
+    
+    
+  },
+  (err)=>{
+    console.log(err);
+    
+    this.errorMessage=err.error.error
+    console.log(this.errorMessage);
+    
+  })
+
+
+   }
 
   redirect(){
     this.asGuestLogin.emit('logged in as a guest');
