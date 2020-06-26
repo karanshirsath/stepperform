@@ -66,6 +66,10 @@
 .card-body{
   padding-top: 25%;
 }
+
+.success{
+  color: green;
+}
 @media screen and (max-width: 450px){
   .loginimg{
     display:none;

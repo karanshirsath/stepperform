@@ -20,11 +20,16 @@ constructor(private router: Router,private loginService:LoginService) { }
   name:string;
   email: string;
 password: string;
-errorMessage
+errorMessage:string;
+successmsg:string;
+
 
   ngOnInit() {
   }
+ 
   login() : void {
+    this.errorMessage=null;
+    this.successmsg=null;
   
   //   if(this.email == 'admin' && this.password == 'admin'){
   //     this.onLoginSuccess.emit('form submitted successfully');
@@ -45,6 +50,7 @@ errorMessage
     sessionStorage.setItem('token',response.token)
     sessionStorage.setItem('isLoggedIn', "true"); 
     //alert('logged in successfully')
+    this.successmsg="logged in successfully";
     this.name=prompt("How do you like to call you!!");
       console.log(this.name);
       if(this.name!=null)

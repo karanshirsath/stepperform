@@ -70,15 +70,19 @@
 
                 <div class="form-group">
                   <label for="email" class="sr-only">Email</label>
-                  <input type="email" name="email" id="email" class="form-control" [(ngModel)]="email" placeholder="Email address">
+                  <input type="email" name="email" id="email" class="form-control" [(ngModel)]="email" placeholder="Email address" >
                 </div>
                 <div class="form-group mb-4">
                   <label for="password" class="sr-only">Password</label>
-                  <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" placeholder="***********">
+                  <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" placeholder="***********" >
                 </div>
                 <input name="login" id="login" class="btn  login-btn " type="button" (click)="login()" value="Login">
                 <div class="error" >
                   {{errorMessage}}
+                </div>
+
+                <div class="success" *ngIf="successmsg" >
+                  {{successmsg}}
                 </div>
     
                   <hr data-content="OR" class="hr-text">
