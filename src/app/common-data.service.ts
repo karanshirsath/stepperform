@@ -28,7 +28,7 @@ export class CommonDataService {
       block: "",
       business: "",
       city: "",
-      contact: null,
+      contact: "",
       entrance: "",
       fullName: "",
       notes: "",
