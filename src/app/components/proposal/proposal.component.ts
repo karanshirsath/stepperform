@@ -68,35 +68,6 @@ export class ProposalComponent implements OnInit {
     this.commonDataService.personalinformation.subscribe(data => { console.log(data); this.personalinformation = data })
     this.commonDataService.vehicleownerinformation.subscribe(data => { console.log(data); this.vehicleownerinformation = data })
 
-    this.commonDataService.formData.subscribe(data => {
-      this.mtplCalculatorData = data;
-      this.installmentData = data["installmentsData"].installments
-      console.log(this.installmentData);
-
-    })
-    this.commonDataService.policyData.subscribe(data => {
-      console.log(data);
-
-      this.mtplPolicyData = data;
-      console.log(this.mtplPolicyData["vehicleOwnerInformation"]);
-
-      if (this.mtplPolicyData["vehicleOwnerInformation"] == "Yes") {
-        var obj = {
-          fullname: {
-            firstname: this.mtplPolicyData["personalInformation"].fullname.firstname,
-            lastname: this.mtplPolicyData["personalInformation"].fullname.lastname,
-            surname: this.mtplPolicyData["personalInformation"].fullname.surname
-          },
-          city: this.mtplPolicyData["contactInformation"].city,
-          street: this.mtplPolicyData["contactInformation"].street,
-          lnch: this.mtplPolicyData["personalInformation"].lnch
-        }
-        this.mtplPolicyData["vehicleOwnerInformation"] = obj
-      }
-
-
-    })
-
     this.summaryForm = this.fb.group({
       AgreeToAll: [false, Validators.requiredTrue],
       receiveNewsletter: [false, Validators.requiredTrue],
