@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonDataService } from 'src/app/common-data.service';
+import { MtplCalculatorService } from '../mtpl-calculator/mtpl-calculator.service';
+import { MtplPolicyService } from '../mtpl-policy/mtpl-policy.service';
 
 @Component({
   selector: 'app-proposal',
@@ -55,7 +57,7 @@ export class ProposalComponent implements OnInit {
   deliveryinformation
   personalinformation
   vehicleownerinformation
-  constructor(private fb: FormBuilder, private commonDataService: CommonDataService) { }
+  constructor(private fb: FormBuilder, private commonDataService: CommonDataService, private mtplCalculatorService:MtplCalculatorService, private mtplPolicyService:MtplPolicyService) { }
 
   ngOnInit(): void {
     this.commonDataService.vehicleinfo.subscribe(data => { console.log(data); this.vehicleinfo = data })
@@ -84,5 +86,32 @@ export class ProposalComponent implements OnInit {
     }
     this.changeStep.emit(index)
   }
-
+  saveData=()=>{
+    confirm("You are about to save data and proceed to payment")
+    var mtplCalculator={
+      id:sessionStorage.getItem("id"),
+      vehicleinfo:this.vehicleinfo,
+      insuringparty:this.insuringparty,
+      policy:this.policy,
+      installment:this.installment,
+      additionalcovers:this.additionalcovers
+    }
+    var mtplPolicy={
+      id:sessionStorage.getItem("id"),
+      contactinformation:this.contactinformation,
+      deliveryinformation:this.deliveryinformation,
+      personalinformation:this.personalinformation,
+      vehicleownerinformation:this.vehicleownerinformation
+    }
+    this.mtplCalculatorService.postData(mtplCalculator).subscribe((res)=>{
+      console.log(res);
+    },(err)=>{
+      console.log(err);
+    })
+    this.mtplPolicyService.postData(mtplPolicy).subscribe((res)=>{
+      console.log(res);
+    },(err)=>{
+      console.log(err);
+    })
+  }
 }
