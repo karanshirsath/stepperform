@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
+import { CommonDataService } from 'src/app/common-data.service';
 
 @Component({
   selector: 'app-delivery',
@@ -33,6 +34,7 @@ export class DeliveryComponent implements OnInit {
   change=()=>{
     if(this.detailsForm.valid){
       this.OnToggle.emit(true)
+      this.commonDataService.deliveryinformation.next(this.detailsForm.value)
       this.OnRegister.emit(this.detailsForm.value);
     }else{
       this.OnToggle.emit(false)
@@ -47,7 +49,7 @@ export class DeliveryComponent implements OnInit {
     this.submitted = false;
   }
 
-  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
+  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService, private commonDataService:CommonDataService) { }
 
   ngOnInit() {
     this.detailsForm = this.formBuilder.group({
@@ -67,6 +69,7 @@ export class DeliveryComponent implements OnInit {
 
   register(){
     this.GAService.event('Next Button clicked','Delivery','Next')
+    this.commonDataService.deliveryinformation.next(this.detailsForm.value)
     this.OnRegister.emit(this.detailsForm.value);
     this.OnSubmission.emit('Delivery form is submitted!')
   }

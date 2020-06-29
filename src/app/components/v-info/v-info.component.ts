@@ -2,6 +2,7 @@ import { Component, OnInit, Output,EventEmitter,Input, OnChanges, SimpleChanges 
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
+import { CommonDataService } from 'src/app/common-data.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class VInfoComponent implements OnInit{
   @Input() yesNo:string;
  vehicleInfoForm:FormGroup;
  purposeList =['Personal Use','Public Use']
-  constructor(private router: Router, private formBuilder:FormBuilder, private GAService : GoogleAnalyticsService ) { } 
+  constructor(private router: Router, private formBuilder:FormBuilder, private commonDataService:CommonDataService, private GAService : GoogleAnalyticsService ) { } 
 
   ngOnInit(): void {
     this.vehicleInfoForm=this.formBuilder.group({
@@ -34,14 +35,15 @@ export class VInfoComponent implements OnInit{
       //this.router.navigate(['./insuring-party.component']);
       console.log(this.vehicleInfoForm.value,"vehicle Info");
       // this.OnToggle.emit(true)
+      this.commonDataService.vehicleinfo.next(this.vehicleInfoForm.value)
       this.OnRegister.emit(this.vehicleInfoForm.value);
        // setTimeout(this.OnToggle.emit(true),)
        this.OnSubmission.emit('Vehicle Information form is submitted!');
     }
     change=()=>{
-      
       if(this.vehicleInfoForm.valid){
         this.OnToggle.emit(true)
+        this.commonDataService.vehicleinfo.next(this.vehicleInfoForm.value)
         this.OnRegister.emit(this.vehicleInfoForm.value);
       }else{
         this.OnToggle.emit(false)

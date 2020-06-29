@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { CommonDataService } from 'src/app/common-data.service';
 import { MatStepper } from '@angular/material/stepper';
+import { ProposalComponent } from '../proposal/proposal.component';
 
 @Component({
   selector: 'app-mtpl-policy',
@@ -10,7 +11,7 @@ import { MatStepper } from '@angular/material/stepper';
 export class MTPLPolicyComponent implements OnInit {
   @Output() switchTab = new EventEmitter()
 
-  constructor(private _commonData:CommonDataService) { }
+  constructor(private _commonData:CommonDataService,private proposal:ProposalComponent) { }
   @ViewChild('stepper') stepper: MatStepper;
   ngOnInit(): void {
   }
@@ -58,5 +59,8 @@ move=(index)=> {
       }
     this._commonData.policyData.next(this.formData)
   }
-
+  change=(data)=>{
+    console.log(data);
+    // this.proposal.ngOnInit()
+  }
 }

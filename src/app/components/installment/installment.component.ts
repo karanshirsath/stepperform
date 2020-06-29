@@ -26,7 +26,7 @@ export class InstallmentComponent implements OnInit {
  @Output() OnFourPayments = new EventEmitter<any>();
  @Output() OnSubmission = new EventEmitter<any>();
 
-  constructor(private formBuilder: FormBuilder,private router: Router, private GAService: GoogleAnalyticsService, private installmentService:InstallmentService,private com:CommonDataService) { }
+  constructor(private formBuilder: FormBuilder,private router: Router, private GAService: GoogleAnalyticsService, private installmentService:InstallmentService,private commonDataService:CommonDataService) { }
 
   ngOnInit()  {
     this.installmentForm=this.formBuilder.group({
@@ -52,6 +52,7 @@ export class InstallmentComponent implements OnInit {
   }
   submit=()=>{
     this.GAService.event('Next Button clicked','Installment','Next')
+    this.commonDataService.installment.next(this.obj)
     this.OnRegister.emit(this.obj);
     this.OnSubmission.emit('Installemt form is submitted!')
   }
@@ -66,18 +67,16 @@ export class InstallmentComponent implements OnInit {
           // installment:this.serviceData[this.installmentForm.value]
         }
         this.obj=obj
-        
-
-
       }
     }
     if(this.installmentForm.valid){
       this.OnToggle.emit(true)
       this.OnRegister.emit(obj);
+      this.commonDataService.installment.next(obj)
     }else{
       this.OnToggle.emit(false)
     }
-    this.com.installmentData.next(obj);
+    this.commonDataService.installmentData.next(obj);
     // code for storybook START
     if(this.obj.term == this.serviceData[0].title)
       this.OnSinglePayment.emit('You have opted Single Payment option');

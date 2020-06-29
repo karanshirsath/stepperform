@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
+import { CommonDataService } from 'src/app/common-data.service';
 
 @Component({
   selector: 'app-policy-details',
@@ -21,7 +22,7 @@ export class PolicyDetailsComponent implements OnInit {
   mindate=""
 
 
-  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
+  constructor(private formBuilder: FormBuilder, private commonDataService:CommonDataService, private GAService: GoogleAnalyticsService) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -49,12 +50,14 @@ export class PolicyDetailsComponent implements OnInit {
   submit=()=>{
     this.GAService.event('Calculate Button clicked','Policy Details','Calculate')
     console.log(this.registerForm.value, "policy details");
+    this.commonDataService.policy.next(this.registerForm.value)
     this.OnRegister.emit(this.registerForm.value);
     this.OnSubmission.emit('Policy Details form is submitted!')
   }
   change=()=>{
     if(this.registerForm.valid){
       this.OnToggle.emit(true)
+      this.commonDataService.policy.next(this.registerForm.value)
       this.OnRegister.emit(this.registerForm.value);
     }else{
       this.OnToggle.emit(false)

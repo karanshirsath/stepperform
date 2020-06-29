@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
+import { CommonDataService } from 'src/app/common-data.service';
 
 @Component({
   selector: 'app-insuring-party',
@@ -17,7 +18,7 @@ export class InsuringPartyComponent implements OnInit {
   @Input() email: string;
   insuringParty: FormGroup;
   addressList=['Sofia','Varna','Burgas']
-  constructor(private router: Router, private fb: FormBuilder, private GAService: GoogleAnalyticsService) { }
+  constructor(private router: Router, private fb: FormBuilder, private commonDataService:CommonDataService, private GAService: GoogleAnalyticsService) { }
 
   ngOnInit(): void {
     this.insuringParty = this.fb.group({
@@ -30,6 +31,7 @@ export class InsuringPartyComponent implements OnInit {
   submit = () => {
     this.GAService.event('Next Button clicked', 'Insuring Party', 'Next')
     console.log(this.insuringParty.value, "insuring party");
+    this.commonDataService.insuringparty.next(this.insuringParty.value)
     this.OnRegister.emit(this.insuringParty.value);
     this.OnSubmission.emit('Insuring Party form is submitted!')
   }
@@ -37,6 +39,7 @@ export class InsuringPartyComponent implements OnInit {
 
     if (this.insuringParty.valid) {
       this.OnToggle.emit(true)
+      this.commonDataService.insuringparty.next(this.insuringParty.value)
       this.OnRegister.emit(this.insuringParty.value);
     } else {
       this.OnToggle.emit(false)

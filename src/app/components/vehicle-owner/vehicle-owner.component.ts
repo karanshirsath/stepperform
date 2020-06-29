@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
+import { CommonDataService } from 'src/app/common-data.service';
 
 @Component({
   selector: 'app-vehicle-owner',
@@ -35,7 +36,7 @@ export class VehicleOwnerComponent implements OnInit {
 
   Details: FormGroup;
   citizens = ['Indian', 'American', 'African'];
-  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }
+  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService, private commonDataService:CommonDataService) { }
 
   // success() {
   //   console.log(this.Details.value);
@@ -87,6 +88,7 @@ export class VehicleOwnerComponent implements OnInit {
   submit=()=>{
     this.GAService.event('Next Button clicked','Vehicle Owner','Next')
     console.log(this.Details.value, "vehicle owner");
+    this.commonDataService.vehicleownerinformation.next(this.Details.value)
     this.OnRegister.emit(this.Details.value);
     this.OnSubmission.emit('Vehicle owner information form is submitted!')
   }
@@ -96,6 +98,7 @@ export class VehicleOwnerComponent implements OnInit {
   change=()=>{
     if(this.Details.valid){
       this.OnToggle.emit(true)
+      this.commonDataService.vehicleownerinformation.next(this.Details.value)
       this.OnRegister.emit(this.Details.value);
     }else{
       this.OnToggle.emit(false)
@@ -105,7 +108,34 @@ export class VehicleOwnerComponent implements OnInit {
   toggle=(data)=>{
     if(data){
       this.OnToggle.emit(true)
-      this.OnRegister.emit("Yes");
+      var personalinformation
+      this.commonDataService.personalinformation.subscribe((data)=>personalinformation=data)
+      var contactinformation
+      this.commonDataService.contactinformation.subscribe(data=>contactinformation=data)
+      
+      var vehicleOwnerData={
+        lnch: personalinformation.lnch,
+      fullname: {
+        firstname:personalinformation.fullname.firstname,
+        lastname:personalinformation.fullname.lastname,
+        surname:personalinformation.fullname.surname
+      },
+      fullnameeng: {
+        firstnameeng: personalinformation.fullnameeng.firstnameeng,
+        lastnameeng: personalinformation.fullnameeng.lastnameeng,
+        surnameeng: personalinformation.fullnameeng.surnameeng
+      },
+      citizen: personalinformation.citizen,
+      birth: personalinformation.birth,
+      city: contactinformation.city,
+      pincode: contactinformation.pincode,
+      street: contactinformation.street,
+      No: contactinformation.No,
+      block: contactinformation.block,
+      entrance: contactinformation.entrance,
+      appartment: contactinformation.appartment,
+      }
+      this.OnRegister.emit(vehicleOwnerData);
       this.button=true
     }else{
       this.change()

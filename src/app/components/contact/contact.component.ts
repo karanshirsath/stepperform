@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { ProvincesService } from '../provinces.service';
+import { CommonDataService } from 'src/app/common-data.service';
 
 @Component({
   selector: 'app-contact',
@@ -22,7 +23,7 @@ export class ContactComponent implements OnInit {
   @Input() phone:String;
   registerForm: FormGroup;
   provincesArray
-  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService,private provServ:ProvincesService) { }
+  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService,private provServ:ProvincesService, private commonDataService:CommonDataService) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -40,6 +41,7 @@ export class ContactComponent implements OnInit {
   submit=()=>{
     this.GAService.event('Next Button clicked','Contact Details','Next')
     console.log(this.registerForm.value, "policy details");
+    this.commonDataService.contactinformation.next(this.registerForm.value)
     this.OnRegister.emit(this.registerForm.value);  
     this.OnSubmission.emit('Contact Details form is submitted!')
   }
@@ -47,14 +49,13 @@ export class ContactComponent implements OnInit {
  this.provServ.getProvinces().subscribe((res)=>{
    this.provincesArray=res
    console.log(res[0].pname);
-   
  })
 
- 
   }
   change=()=>{
     if(this.registerForm.valid){
       this.OnToggle.emit(true)
+      this.commonDataService.contactinformation.next(this.registerForm.value)
       this.OnRegister.emit(this.registerForm.value);
     }else{
       this.OnToggle.emit(false)

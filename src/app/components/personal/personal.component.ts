@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter,Input } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
+import { CommonDataService } from 'src/app/common-data.service';
 
 @Component({
   selector: 'app-personal',
@@ -24,16 +25,13 @@ export class PersonalComponent implements OnInit {
   @Input() dob:Date;
   personalForm:FormGroup;
   citizens=['Indian','American','African'];
-  constructor(private formBuilder:FormBuilder, private GAService: GoogleAnalyticsService) { }
+  constructor(private formBuilder:FormBuilder, private GAService: GoogleAnalyticsService,private commonDataService:CommonDataService) { }
   success(){
     this.GAService.event('Next Button clicked','Personal Details','Next')
     //console.log(this.personalForm.value);
     //console.log(this.personalForm.value,"vehicle Info");
     // this.OnToggle.emit(true)
-    console.log(23123124);
-
-    
-    
+    this.commonDataService.personalinformation.next(this.personalForm.value)
     this.OnRegister.emit(this.personalForm.value);
     this.OnSubmission.emit('Personal Details form is submitted!')
   }
@@ -41,6 +39,7 @@ export class PersonalComponent implements OnInit {
       
     if(this.personalForm.valid){
       this.OnToggle.emit(true)
+      this.commonDataService.personalinformation.next(this.personalForm.value)
       this.OnRegister.emit(this.personalForm.value);
     }else{
       this.OnToggle.emit(false)

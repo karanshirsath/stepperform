@@ -21,25 +21,21 @@ export class AdditionalCoversComponent implements OnInit {
   tickimage="./assets/tick.jpg";
   additionalcoverForm: FormGroup;
   installmentData
-  constructor( private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService,private com:CommonDataService ){ }
+  constructor( private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService,private commonDataService:CommonDataService ){ }
 
   ngOnInit(): void {
     this.additionalcoverForm = this.formBuilder.group({
       cover: ['', Validators.required],
     });
-    
-  this.com.installmentData.subscribe(data=>{
-    
+  this.commonDataService.installmentData.subscribe(data=>{
     this.installmentData=data
-  })
-  
-    
+  })  
  }
   
   change=()=>{
-   
     if(this.additionalcoverForm.valid){
       this.OnToggle.emit(true);
+      this.commonDataService.additionalcovers.next(this.additionalcoverForm.value)
       this.OnRegister.emit(this.additionalcoverForm.value);
     }else{
       this.OnToggle.emit(false)
@@ -48,6 +44,7 @@ export class AdditionalCoversComponent implements OnInit {
   next=()=>{
     this.GAService.event('Next Button clicked','Additional Covers','Next')
     console.log(this.additionalcoverForm.value, "additional covers");
+    this.commonDataService.additionalcovers.next(this.additionalcoverForm.value)
     this.OnRegister.emit(this.additionalcoverForm.value);
     this.NextTab.emit(1)
     this.OnSubmission.emit('Additional Covers form is submitted!')
