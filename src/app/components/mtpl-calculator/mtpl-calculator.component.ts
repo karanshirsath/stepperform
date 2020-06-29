@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild, Input } from '@angular/core';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
-import { CommonDataService } from 'src/app/common-data.service';
 import { MatStepper } from '@angular/material/stepper';
 import { MtplCalculatorService } from './mtpl-calculator.service';
 import { ProposalComponent } from '../proposal/proposal.component';
@@ -15,7 +14,7 @@ export class MTPLCalculatorComponent implements OnInit {
   @Output() NextTabSwitch = new EventEmitter()
 
   @ViewChild('stepper1') stepper1: MatStepper;
-  constructor(private _commonData:CommonDataService, private mtplCalculatorService:MtplCalculatorService,private proposal:ProposalComponent) { }
+  constructor(private mtplCalculatorService:MtplCalculatorService,private proposal:ProposalComponent) { }
 
   ngOnInit(): void {
   }
@@ -37,7 +36,6 @@ export class MTPLCalculatorComponent implements OnInit {
 
   move=(index)=> {
     console.log("calculators");
-    
     this.stepper1.selectedIndex = index;
   }
 
@@ -64,52 +62,12 @@ export class MTPLCalculatorComponent implements OnInit {
   coversData=(data)=>{
     this.covers=data
     console.log(this.covers);
-    this.mtplCalculaterData={
-      vehicleData:this.vehicle,
-      insuringPartyData:this.insuringParty,
-      policyDetailsData:this.policyDetails,
-      installmentsData:this.installments,
-      coversData:this.covers
-    }
-
-  // this._commonData.formData.next(this.mtplCalculaterData)
-
-
-  //  this._commonData.formData.subscribe(data=>{
-  //    console.log(data);
-  //    }) 
-
-  // this.mtplCalculator={
-  //   id:sessionStorage.getItem("id"),
-  //   vehicleinfo:this.vehicle,
-  //   insuringparty:this.insuringParty,
-  //   policy:this.policyDetails,
-  //   installment:this.installments,
-  //   additionalcovers:this.covers
-  // }
-  // this.mtplCalculatorService.postData(this.mtplCalculator).subscribe((res)=>{
-  //   console.log(res);
-    
-  // },(err)=>{
-  //   console.log(err);
-    
-  // })
   }
-
 
   nextTab=(data)=>{
     this.NextTabSwitch.emit(data)
   }
   change=(data)=>{
     console.log(data);
-    // this.mtplCalculaterData={
-    //   vehicleData:this.vehicle,
-    //   insuringPartyData:this.insuringParty,
-    //   policyDetailsData:this.policyDetails,
-    //   installmentsData:this.installments,
-    //   coversData:this.covers
-    // }
-    // this._commonData.formData.next(this.mtplCalculaterData)
-    // this.proposal.ngOnInit()
   }
 }

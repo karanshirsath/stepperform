@@ -1,45 +1,34 @@
 <div class="container">
-<mat-horizontal-stepper labelPosition="bottom" #stepper (selectionChange)="change($event)" linear>
-  <mat-step completed={{toggle1}}>
-    <ng-template matStepLabel>Personal details</ng-template>
-    <app-personal (OnRegister)="personalData($event)" (OnToggle)="toggle1=$event"></app-personal>
-  </mat-step>  
-  
-  <mat-step completed={{toggle2}}>
-    <ng-template matStepLabel>Contact details</ng-template>
-    <app-contact (OnRegister)="contactDetailsData($event)" (OnToggle)="toggle2=$event"></app-contact>
-  </mat-step> 
-  
-  <mat-step completed={{toggle3}}>
-    <ng-template matStepLabel>Vehicle Owner</ng-template>
-    <app-vehicle-owner (OnRegister)="vehicleOwnerData($event)" (OnToggle)="toggle3=$event"></app-vehicle-owner>
-  </mat-step>  
+  <mat-horizontal-stepper labelPosition="bottom" #stepper (selectionChange)="change($event)" linear>
+    <mat-step completed={{toggle1}}>
+      <ng-template matStepLabel>Personal details</ng-template>
+      <app-personal (OnRegister)="personalData($event)" (OnToggle)="toggle1=$event"></app-personal>
+    </mat-step>
 
-  <mat-step completed={{toggle4}}>
-    <ng-template matStepLabel>Delivery</ng-template>
-    <app-delivery (OnRegister)="deliveryData($event)" (OnToggle)="toggle4=$event"></app-delivery>
-  </mat-step>  
+    <mat-step completed={{toggle2}}>
+      <ng-template matStepLabel>Contact details</ng-template>
+      <app-contact (OnRegister)="contactDetailsData($event)" (OnToggle)="toggle2=$event"></app-contact>
+    </mat-step>
 
-  <mat-step completed={{toggle5}}>
-    <ng-template matStepLabel >Summary</ng-template>
-    <app-proposal (changeStep)="move($event)" (moveTab)="switch($event)"></app-proposal>
-  </mat-step>  
+    <mat-step completed={{toggle3}}>
+      <ng-template matStepLabel>Vehicle Owner</ng-template>
+      <app-vehicle-owner (OnRegister)="vehicleOwnerData($event)" (OnToggle)="toggle3=$event"></app-vehicle-owner>
+    </mat-step>
 
-  <mat-step completed={{toggle6}}>
-    <ng-template matStepLabel>Payment</ng-template>
-    <app-payment></app-payment>
-  </mat-step> 
+    <mat-step completed={{toggle4}}>
+      <ng-template matStepLabel>Delivery</ng-template>
+      <app-delivery (OnRegister)="deliveryData($event)" (OnToggle)="toggle4=$event"></app-delivery>
+    </mat-step>
 
-  <!-- <mat-step >
-        <ng-template matStepLabel>Policy Details</ng-template>
-        <app-policy-details  ></app-policy-details>
-      </mat-step>
-        
-      <mat-step >
-        <ng-template matStepLabel>Vehicle </ng-template>
-        <app-v-info ></app-v-info>
-       
-      </mat-step> -->
-   
-</mat-horizontal-stepper>
+    <mat-step completed={{toggle5}}>
+      <ng-template matStepLabel>Summary</ng-template>
+      <app-proposal (changeStep)="move($event)" (moveTab)="switch($event)"></app-proposal>
+    </mat-step>
+
+    <mat-step completed={{toggle6}}>
+      <ng-template matStepLabel>Payment</ng-template>
+      <app-payment></app-payment>
+    </mat-step>
+
+  </mat-horizontal-stepper>
 </div>

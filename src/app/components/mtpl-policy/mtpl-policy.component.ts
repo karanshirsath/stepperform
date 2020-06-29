@@ -11,56 +11,47 @@ import { ProposalComponent } from '../proposal/proposal.component';
 export class MTPLPolicyComponent implements OnInit {
   @Output() switchTab = new EventEmitter()
 
-  constructor(private _commonData:CommonDataService,private proposal:ProposalComponent) { }
+  constructor(private _commonData: CommonDataService, private proposal: ProposalComponent) { }
   @ViewChild('stepper') stepper: MatStepper;
   ngOnInit(): void {
   }
-  toggle1=false
-  toggle2=false
-  toggle3=false
-  toggle4=false
-  toggle5=true
-  toggle6=true
+  toggle1 = false
+  toggle2 = false
+  toggle3 = false
+  toggle4 = false
+  toggle5 = true
+  toggle6 = true
   personalInformation
   contactInformation
   vehicleOwnerInformation
   deliveryInformation
-formData
+  formData
 
-switch=(index)=>{
-this.switchTab.emit(index)
-}
-move=(index)=> {
-  this.stepper.selectedIndex = index;
-}
-  personalData=(data)=>{
-    this.personalInformation=data
+  switch = (index) => {
+    this.switchTab.emit(index)
+  }
+  move = (index) => {
+    this.stepper.selectedIndex = index;
+  }
+  personalData = (data) => {
+    this.personalInformation = data
     console.log(this.personalInformation);
   }
 
-  contactDetailsData=(data)=>{
-    this.contactInformation=data
+  contactDetailsData = (data) => {
+    this.contactInformation = data
     console.log(this.contactInformation);
   }
 
-  vehicleOwnerData=(data)=>{
-    this.vehicleOwnerInformation=data
+  vehicleOwnerData = (data) => {
+    this.vehicleOwnerInformation = data
     console.log(this.vehicleOwnerInformation);
   }
-  
-  deliveryData=(data)=>{
-    this.deliveryInformation=data;
-    this.formData={
-      personalInformation:this.personalInformation,
-      contactInformation:this.contactInformation,
-      vehicleOwnerInformation:this.vehicleOwnerInformation,
-      deliveryInformation:this.deliveryInformation
-    
-      }
-    this._commonData.policyData.next(this.formData)
+
+  deliveryData = (data) => {
+    this.deliveryInformation = data;
   }
-  change=(data)=>{
+  change = (data) => {
     console.log(data);
-    // this.proposal.ngOnInit()
   }
 }
