@@ -59,7 +59,7 @@ export class CommonDataService {
   }
   insuringpartyData = {
     egn: "",
-    address: "mumbai",
+    address: "",
     email: ""
   }
   policyData1 = {
