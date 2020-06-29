@@ -32,7 +32,6 @@ export class InstallmentComponent implements OnInit {
     });
     this.installmentService.getInstallmentData().subscribe((res) => {
       this.serviceData = res;
-      console.log(res);
     },
       (err) => {
         this.errorMessage = err.error.message;

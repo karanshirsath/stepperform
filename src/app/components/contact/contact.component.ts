@@ -45,7 +45,6 @@ export class ContactComponent implements OnInit {
   getProvinces = () => {
     this.provServ.getProvinces().subscribe((res) => {
       this.provincesArray = res
-      console.log(res[0].pname);
     })
 
   }

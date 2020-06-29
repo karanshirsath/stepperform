@@ -61,14 +61,14 @@
     <br>
     <div class="form-row">
         <div class=" col-12 col-sm-7 col-md-8 col-lg-8">
-            <label for="Driving">
+            <label>
                 Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?
             </label>
         </div>
         <div class="col-12 col-sm-5 col-md-4 col-lg-4">
-            <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes"
+            <input type="radio" id="DrivingYes" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes"
                 [(ngModel)]="yesNo" [checked]="yesNo=='Yes'"> &nbsp; Yes &nbsp;&nbsp;
-            <input type="radio" id="Driving" name="yesNo" (change)="change()" formControlName="yesNo" value="No"
+            <input type="radio" id="DrivingNo" name="yesNo" (change)="change()" formControlName="yesNo" value="No"
                 [(ngModel)]="yesNo" [checked]="yesNo=='No'"> &nbsp; No
         </div>
     </div>
