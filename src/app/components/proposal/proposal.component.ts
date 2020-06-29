@@ -58,15 +58,15 @@ export class ProposalComponent implements OnInit {
   constructor(private fb: FormBuilder, private commonDataService: CommonDataService) { }
 
   ngOnInit(): void {
-    this.commonDataService.vehicleinfo.subscribe(data=>{console.log(data);this.vehicleinfo=data})
-    this.commonDataService.insuringparty.subscribe(data=>{console.log(data);this.insuringparty=data})
-    this.commonDataService.policy.subscribe(data=>{console.log(data);this.policy=data})
-    this.commonDataService.installment.subscribe(data=>{console.log(data);this.installment=data})
-    this.commonDataService.additionalcovers.subscribe(data=>{console.log(data);this.additionalcovers=data})
-    this.commonDataService.contactinformation.subscribe(data=>{console.log(data);this.contactinformation=data})
-    this.commonDataService.deliveryinformation.subscribe(data=>{console.log(data);this.deliveryinformation=data})
-    this.commonDataService.personalinformation.subscribe(data=>{console.log(data);this.personalinformation=data})
-    this.commonDataService.vehicleownerinformation.subscribe(data=>{console.log(data);this.vehicleownerinformation=data})
+    this.commonDataService.vehicleinfo.subscribe(data => { console.log(data); this.vehicleinfo = data })
+    this.commonDataService.insuringparty.subscribe(data => { console.log(data); this.insuringparty = data })
+    this.commonDataService.policy.subscribe(data => { console.log(data); this.policy = data })
+    this.commonDataService.installment.subscribe(data => { console.log(data); this.installment = data })
+    this.commonDataService.additionalcovers.subscribe(data => { console.log(data); this.additionalcovers = data })
+    this.commonDataService.contactinformation.subscribe(data => { console.log(data); this.contactinformation = data })
+    this.commonDataService.deliveryinformation.subscribe(data => { console.log(data); this.deliveryinformation = data })
+    this.commonDataService.personalinformation.subscribe(data => { console.log(data); this.personalinformation = data })
+    this.commonDataService.vehicleownerinformation.subscribe(data => { console.log(data); this.vehicleownerinformation = data })
 
     this.commonDataService.formData.subscribe(data => {
       this.mtplCalculatorData = data;
@@ -96,42 +96,8 @@ export class ProposalComponent implements OnInit {
 
 
     })
-    //      this.commonDataService.installmentData.subscribe(data=>{
-    // this.installmentData=data
-    // console.log(data);
-
-    //      })
 
     this.summaryForm = this.fb.group({
-      // firstInstalment:[this.first],
-      // secondInstalment:[this.secondI],
-      // thirdInstalment:[this.third],
-      // fourthInstalment:[this.fourth],
-      // additionalCover:[''],
-      // startDate:[this.sdate],
-      // endDate:[''],
-      // vehicleRegistration:[''],
-      // vehiclePurpose:[''],
-      // certificationNumber:[''],
-      // days:[''],
-      // number:[''],
-      // fullName:[''],
-      // phoneNumber:[''],
-      // email:[''],
-      // cityZipcode:[''],
-      // streetNumber:[''],
-      // apartment:[''],
-      // egnnumber:[''],
-      // fullnamevehicleowner:[''],
-      // cityZipcodevehicleOwner:[''],
-      // streetNumbervehicleowner:[''],
-      // fullNameDelivery:[''],
-      // phoneNumDelivery:[''],
-      // addressType:[''],
-      // cityZipcodeDelivery:[''],
-      // streetNumberDelivery:[''],
-      // block:[''],
-      // apartmentDelivery:[''],
       AgreeToAll: [false, Validators.requiredTrue],
       receiveNewsletter: [false, Validators.requiredTrue],
       generalTerms: [false, Validators.requiredTrue]
@@ -146,14 +112,6 @@ export class ProposalComponent implements OnInit {
       this.OnDelivery.emit('Delivery edit button clicked');
     }
     this.changeStep.emit(index)
-  }
-
-  saveData = () => {
-    // alert("Do you want confirm your data and proceed to payment")
-    this.commonDataService.formData.subscribe((mtplCalculatordata) => {
-      console.log(mtplCalculatordata);
-
-    })
   }
 
 }

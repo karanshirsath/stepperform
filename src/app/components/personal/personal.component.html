@@ -1,127 +1,126 @@
-
-  <h1><b>Personal Details</b></h1>
-  <form [formGroup]="personalForm" (submit)="success()">
-    <div class="form-group row ">
-      <label for="lnch" class="col-sm-8 col-form-label">LNCH</label>
+<h1><b>Personal Details</b></h1>
+<form [formGroup]="personalForm" (submit)="success()">
+  <div class="form-group row ">
+    <label for="lnch" class="col-sm-8 col-form-label">LNCH</label>
+    <div class="col-lg-4">
+      <input type="text" class="form-control" id="lnch" placeholder="Enter LNCH" [(ngModel)]="lnch"
+        formControlName="lnch" name="lnch" (change)="change()">
+      <div
+        *ngIf="personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)"
+        class="error">This field is mandatory</div>
+      <div
+        *ngIf="personalForm.controls.lnch.hasError('pattern') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)"
+        class="error">Only 10 digit numerical value allowed</div>
+    </div>
+  </div>
+  <hr class="line">
+  <div formGroupName="fullname">
+    <label class="">Full Name</label><br>
+    <div class="form-group row">
       <div class="col-lg-4">
-        <input type="text" class="form-control" id="lnch" placeholder="Enter LNCH" [(ngModel)]="lnch" formControlName="lnch" name="lnch"
-          (change)="change()">
+        <input type="text" class="form-control" id="firstname" [(ngModel)]="firstname" placeholder="Enter firstname"
+          formControlName="firstname" name="firstname" (change)="change()">
         <div
-          *ngIf="personalForm.controls.lnch.hasError('required') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)"
+          *ngIf="personalForm.get('fullname').get('firstname').hasError('required') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)"
           class="error">This field is mandatory</div>
         <div
-          *ngIf="personalForm.controls.lnch.hasError('pattern') &&(personalForm.controls.lnch.dirty || personalForm.controls.lnch.touched)"
-          class="error">Only 10 digit numerical value allowed</div>
-      </div>
-    </div>
-    <hr class="line">
-    <div formGroupName="fullname">
-      <label class="">Full Name</label><br>
-      <div class="form-group row">
-        <div class="col-lg-4">
-          <input type="text" class="form-control" id="firstname" [(ngModel)]="firstname" placeholder="Enter firstname"
-            formControlName="firstname" name="firstname" (change)="change()">
-          <div
-            *ngIf="personalForm.get('fullname').get('firstname').hasError('required') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)"
-            class="error">This field is mandatory</div>
-          <div
-            *ngIf="personalForm.get('fullname').get('firstname').hasError('pattern') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)"
-            class="error">Only alphabets allowed</div>
-          <div
-            *ngIf="personalForm.get('fullname').get('firstname').hasError('maxlength') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)"
-            class="error">Max length can be 20 characters</div>
-        </div>
-        <div class="col-lg-4">
-          <input type="text" class="form-control" id="lastname" [(ngModel)]="lastname" placeholder="Enter middlename" formControlName="lastname"
-            name="lastname" (change)="change()">
-          <div
-            *ngIf="personalForm.get('fullname').get('lastname').hasError('pattern') &&(personalForm.get('fullname').get('lastname').dirty || personalForm.get('fullname').get('lastname').touched)"
-            class="error">Only alphabets allowed</div>
-        </div>
-        <div class="col-lg-4">
-          <input type="text" class="form-control" id="surname" [(ngModel)]="surname" placeholder="Enter lastname" formControlName="surname"
-            name="suname" (change)="change()">
-          <div
-            *ngIf="personalForm.get('fullname').get('surname').hasError('required') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)"
-            class="error">This field is mandatory</div>
-          <div
-            *ngIf="personalForm.get('fullname').get('surname').hasError('pattern') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)"
-            class="error">Only alphabets allowed</div>
-          <div
-            *ngIf="personalForm.get('fullname').get('surname').hasError('maxlength') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)"
-            class="error">Max length can be 20 characters</div>
-        </div>
-      </div>
-    </div>
-    <hr class="line">
-    <div formGroupName="fullnameeng">
-      <label>Full Name in English</label><br>
-      <div class="form-group row">
-        <div class="col-lg-4">
-          <input type="text" class="form-control" id="firstnameeng" [(ngModel)]="firstnameeng" placeholder="Enter firstname"
-            formControlName="firstnameeng" name="firstnameeng" (change)="change()">
-          <div
-            *ngIf="personalForm.get('fullnameeng').get('firstnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)"
-            class="error">This field is mandatory</div>
-          <div
-            *ngIf="personalForm.get('fullnameeng').get('firstnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)"
-            class="error">Only alphabets allowed</div>
-          <div
-            *ngIf="personalForm.get('fullnameeng').get('firstnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)"
-            class="error">Max length can be 20 characters</div>
-        </div>
-        <div class="col-lg-4">
-          <input type="text" class="form-control" id="lastnameeng" [(ngModel)]="lastnameeng" placeholder="Enter middlename"
-            formControlName="lastnameeng" name="lastnameeng" (change)="change()">
-          <div
-            *ngIf="personalForm.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('lastnameeng').dirty || personalForm.get('fullnameeng').get('lastnameeng').touched)"
-            class="error">Only alphabets allowed</div>
-        </div>
-        <div class="col-lg-4">
-          <input type="text" class="form-control" id="surnameeng" [(ngModel)]="surnameeng" placeholder="Enter lastname"
-            formControlName="surnameeng" (change)="change()">
-          <div
-            *ngIf="personalForm.get('fullnameeng').get('surnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)"
-            class="error">This field is mandatory</div>
-          <div
-            *ngIf="personalForm.get('fullnameeng').get('surnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)"
-            class="error">Only alphabets allowed</div>
-          <div
-            *ngIf="personalForm.get('fullnameeng').get('surnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)"
-            class="error">Max length can be 20 characters</div>
-        </div>
-      </div>
-    </div>
-    <div class="panel col-lg-12">
-       <img class="user-key" src="../../assets/excl.jpg">
-        Please compare data in latin with data in vehicle registration certificate
-        or identity document.Data will be used for printout of Green Card Certificate.
-    </div>
-    <div class="form-group row">
-      <label for="citizen" class="col-lg-8">Citizenship</label>
-      <div class="col-lg-4">
-        <!-- <select class="form-control" id="citizen" [(ngModel)]="citizen" formControlName="citizen" name="citizen" (change)="change()"> -->
-        <select class="form-control" id="citizen" formControlName="citizen" name="citizen" (change)="change()">
-          <option selected disabled value="">--SELECT--</option>
-          <option *ngFor="let c of citizens" [value]="c">{{c}}</option>
-        </select>
+          *ngIf="personalForm.get('fullname').get('firstname').hasError('pattern') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)"
+          class="error">Only alphabets allowed</div>
         <div
-          *ngIf="personalForm.controls.citizen.hasError('required') &&(personalForm.controls.citizen.dirty || personalForm.controls.citizen.touched)"
-          class="error">Please select your Citizenship</div>
+          *ngIf="personalForm.get('fullname').get('firstname').hasError('maxlength') &&(personalForm.get('fullname').get('firstname').dirty || personalForm.get('fullname').get('firstname').touched)"
+          class="error">Max length can be 20 characters</div>
       </div>
-    </div>
-    <hr class="line">
-    <div class="form-group row">
-      <label for="birth" class="col-lg-8">Birth Date</label>
       <div class="col-lg-4">
-        <input type="date" class="form-control" [ngModel]="dob | date: 'yyyy-MM-dd'" id="birth" placeholder="Enter Birth date" formControlName="birth"
-          name="birth" (change)="change()">
+        <input type="text" class="form-control" id="lastname" [(ngModel)]="lastname" placeholder="Enter middlename"
+          formControlName="lastname" name="lastname" (change)="change()">
         <div
-          *ngIf="personalForm.controls.birth.hasError('required') &&(personalForm.controls.birth.dirty || personalForm.controls.birth.touched)"
-          class="error">Please select your birth date </div>
+          *ngIf="personalForm.get('fullname').get('lastname').hasError('pattern') &&(personalForm.get('fullname').get('lastname').dirty || personalForm.get('fullname').get('lastname').touched)"
+          class="error">Only alphabets allowed</div>
+      </div>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="surname" [(ngModel)]="surname" placeholder="Enter lastname"
+          formControlName="surname" name="suname" (change)="change()">
+        <div
+          *ngIf="personalForm.get('fullname').get('surname').hasError('required') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)"
+          class="error">This field is mandatory</div>
+        <div
+          *ngIf="personalForm.get('fullname').get('surname').hasError('pattern') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)"
+          class="error">Only alphabets allowed</div>
+        <div
+          *ngIf="personalForm.get('fullname').get('surname').hasError('maxlength') &&(personalForm.get('fullname').get('surname').dirty || personalForm.get('fullname').get('surname').touched)"
+          class="error">Max length can be 20 characters</div>
       </div>
     </div>
-    <hr class="line">
-    <button type="submit" class="btn btn-primary rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn" mat-raised-button matStepperNext
-      [disabled]="!personalForm.valid">Next</button>
-  </form> 
+  </div>
+  <hr class="line">
+  <div formGroupName="fullnameeng">
+    <label>Full Name in English</label><br>
+    <div class="form-group row">
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="firstnameeng" [(ngModel)]="firstnameeng"
+          placeholder="Enter firstname" formControlName="firstnameeng" name="firstnameeng" (change)="change()">
+        <div
+          *ngIf="personalForm.get('fullnameeng').get('firstnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)"
+          class="error">This field is mandatory</div>
+        <div
+          *ngIf="personalForm.get('fullnameeng').get('firstnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)"
+          class="error">Only alphabets allowed</div>
+        <div
+          *ngIf="personalForm.get('fullnameeng').get('firstnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('firstnameeng').dirty || personalForm.get('fullnameeng').get('firstnameeng').touched)"
+          class="error">Max length can be 20 characters</div>
+      </div>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="lastnameeng" [(ngModel)]="lastnameeng"
+          placeholder="Enter middlename" formControlName="lastnameeng" name="lastnameeng" (change)="change()">
+        <div
+          *ngIf="personalForm.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('lastnameeng').dirty || personalForm.get('fullnameeng').get('lastnameeng').touched)"
+          class="error">Only alphabets allowed</div>
+      </div>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="surnameeng" [(ngModel)]="surnameeng" placeholder="Enter lastname"
+          formControlName="surnameeng" (change)="change()">
+        <div
+          *ngIf="personalForm.get('fullnameeng').get('surnameeng').hasError('required') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)"
+          class="error">This field is mandatory</div>
+        <div
+          *ngIf="personalForm.get('fullnameeng').get('surnameeng').hasError('pattern') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)"
+          class="error">Only alphabets allowed</div>
+        <div
+          *ngIf="personalForm.get('fullnameeng').get('surnameeng').hasError('maxlength') &&(personalForm.get('fullnameeng').get('surnameeng').dirty || personalForm.get('fullnameeng').get('surnameeng').touched)"
+          class="error">Max length can be 20 characters</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel col-lg-12">
+    <img class="user-key" src="../../assets/excl.jpg">
+    Please compare data in latin with data in vehicle registration certificate
+    or identity document.Data will be used for printout of Green Card Certificate.
+  </div>
+  <div class="form-group row">
+    <label for="citizen" class="col-lg-8">Citizenship</label>
+    <div class="col-lg-4">
+      <!-- <select class="form-control" id="citizen" [(ngModel)]="citizen" formControlName="citizen" name="citizen" (change)="change()"> -->
+      <select class="form-control" id="citizen" formControlName="citizen" name="citizen" (change)="change()">
+        <option selected disabled value="">--SELECT--</option>
+        <option *ngFor="let c of citizens" [value]="c">{{c}}</option>
+      </select>
+      <div
+        *ngIf="personalForm.controls.citizen.hasError('required') &&(personalForm.controls.citizen.dirty || personalForm.controls.citizen.touched)"
+        class="error">Please select your Citizenship</div>
+    </div>
+  </div>
+  <hr class="line">
+  <div class="form-group row">
+    <label for="birth" class="col-lg-8">Birth Date</label>
+    <div class="col-lg-4">
+      <input type="date" class="form-control" [ngModel]="dob | date: 'yyyy-MM-dd'" id="birth"
+        placeholder="Enter Birth date" formControlName="birth" name="birth" (change)="change()">
+      <div
+        *ngIf="personalForm.controls.birth.hasError('required') &&(personalForm.controls.birth.dirty || personalForm.controls.birth.touched)"
+        class="error">Please select your birth date </div>
+    </div>
+  </div>
+  <hr class="line">
+  <button type="submit" class="btn btn-primary rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn" mat-raised-button
+    matStepperNext [disabled]="!personalForm.valid">Next</button>
+</form>

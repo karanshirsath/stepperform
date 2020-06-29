@@ -9,7 +9,6 @@ import { CommonDataService } from 'src/app/common-data.service';
   styleUrls: ['./vehicle-owner.component.css']
 })
 export class VehicleOwnerComponent implements OnInit {
-  @Output() OnRegister = new EventEmitter()
   @Output() OnToggle = new EventEmitter()
   @Output() OnSubmission = new EventEmitter<any>();
 
@@ -65,25 +64,19 @@ export class VehicleOwnerComponent implements OnInit {
   private selectedLink: string = "Yes";
 
   setradio(e: string): void {
-
     this.selectedLink = e;
-
   }
 
   isSelected(name: string): boolean {
-
     if (!this.selectedLink) {
       return false;
     }
-
     return (this.selectedLink === name);
   }
 
   submit = () => {
     this.GAService.event('Next Button clicked', 'Vehicle Owner', 'Next')
-    console.log(this.Details.value, "vehicle owner");
     this.commonDataService.vehicleownerinformation.next(this.Details.value)
-    this.OnRegister.emit(this.Details.value);
     this.OnSubmission.emit('Vehicle owner information form is submitted!')
   }
   gaTrigger = () => {
@@ -93,7 +86,6 @@ export class VehicleOwnerComponent implements OnInit {
     if (this.Details.valid) {
       this.OnToggle.emit(true)
       this.commonDataService.vehicleownerinformation.next(this.Details.value)
-      this.OnRegister.emit(this.Details.value);
     } else {
       this.OnToggle.emit(false)
     }
@@ -130,8 +122,6 @@ export class VehicleOwnerComponent implements OnInit {
         appartment: contactinformation.appartment,
       }
       this.commonDataService.vehicleownerinformation.next(vehicleOwnerData)
-
-      this.OnRegister.emit(vehicleOwnerData);
       this.button = true
     } else {
       this.change()

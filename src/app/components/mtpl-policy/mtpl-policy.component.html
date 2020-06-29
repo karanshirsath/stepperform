@@ -1,28 +1,28 @@
 <div class="container">
-  <mat-horizontal-stepper labelPosition="bottom" #stepper (selectionChange)="change($event)" linear>
+  <mat-horizontal-stepper labelPosition="bottom" #stepper (selectionChange)="change($event)">
     <mat-step completed={{toggle1}}>
       <ng-template matStepLabel>Personal details</ng-template>
-      <app-personal (OnRegister)="personalData($event)" (OnToggle)="toggle1=$event"></app-personal>
+      <app-personal (OnToggle)="toggle1=$event"></app-personal>
     </mat-step>
 
     <mat-step completed={{toggle2}}>
       <ng-template matStepLabel>Contact details</ng-template>
-      <app-contact (OnRegister)="contactDetailsData($event)" (OnToggle)="toggle2=$event"></app-contact>
+      <app-contact (OnToggle)="toggle2=$event"></app-contact>
     </mat-step>
 
     <mat-step completed={{toggle3}}>
       <ng-template matStepLabel>Vehicle Owner</ng-template>
-      <app-vehicle-owner (OnRegister)="vehicleOwnerData($event)" (OnToggle)="toggle3=$event"></app-vehicle-owner>
+      <app-vehicle-owner (OnToggle)="toggle3=$event"></app-vehicle-owner>
     </mat-step>
 
     <mat-step completed={{toggle4}}>
       <ng-template matStepLabel>Delivery</ng-template>
-      <app-delivery (OnRegister)="deliveryData($event)" (OnToggle)="toggle4=$event"></app-delivery>
+      <app-delivery (OnToggle)="toggle4=$event"></app-delivery>
     </mat-step>
 
     <mat-step completed={{toggle5}}>
       <ng-template matStepLabel>Summary</ng-template>
-      <app-proposal (changeStep)="move($event)" (moveTab)="switch($event)"></app-proposal>
+      <app-proposal (moveTab)="switch($event)"></app-proposal>
     </mat-step>
 
     <mat-step completed={{toggle6}}>

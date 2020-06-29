@@ -11,7 +11,7 @@ import { ProposalComponent } from '../proposal/proposal.component';
 export class MTPLPolicyComponent implements OnInit {
   @Output() switchTab = new EventEmitter()
 
-  constructor(private _commonData: CommonDataService, private proposal: ProposalComponent) { }
+  constructor() { }
   @ViewChild('stepper') stepper: MatStepper;
   ngOnInit(): void {
   }
@@ -21,11 +21,6 @@ export class MTPLPolicyComponent implements OnInit {
   toggle4 = false
   toggle5 = true
   toggle6 = true
-  personalInformation
-  contactInformation
-  vehicleOwnerInformation
-  deliveryInformation
-  formData
 
   switch = (index) => {
     this.switchTab.emit(index)
@@ -33,24 +28,7 @@ export class MTPLPolicyComponent implements OnInit {
   move = (index) => {
     this.stepper.selectedIndex = index;
   }
-  personalData = (data) => {
-    this.personalInformation = data
-    console.log(this.personalInformation);
-  }
 
-  contactDetailsData = (data) => {
-    this.contactInformation = data
-    console.log(this.contactInformation);
-  }
-
-  vehicleOwnerData = (data) => {
-    this.vehicleOwnerInformation = data
-    console.log(this.vehicleOwnerInformation);
-  }
-
-  deliveryData = (data) => {
-    this.deliveryInformation = data;
-  }
   change = (data) => {
     console.log(data);
   }
