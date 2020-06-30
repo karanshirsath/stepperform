@@ -8,6 +8,7 @@ import { MTPLCalculatorComponent } from '../components/mtpl-calculator/mtpl-calc
   styleUrls: ['./tab.component.css']
 })
 export class TabComponent implements OnInit {
+  welcomeuser=sessionStorage.getItem('welcomename');
   activeTab = 0;
   policyTabToggle=true
   constructor() { }
