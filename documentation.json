@@ -96,7 +96,7 @@
         },
         {
             "name": "InstallmentService",
-            "id": "injectable-InstallmentService-363fbffbcefd6099b9de3970ea5de38d",
+            "id": "injectable-InstallmentService-187597615a1eaaf0256d5d26eefbde51",
             "file": "src/app/components/installment/installment.service.ts",
             "properties": [
                 {
@@ -109,7 +109,7 @@
                 },
                 {
                     "name": "url",
-                    "defaultValue": "'http://3.6.39.44:3000/getInstallmentOptions'",
+                    "defaultValue": "'http://3.6.39.44:4000/mtpl/getInstallmentOptions'",
                     "type": "string",
                     "optional": false,
                     "description": "",
@@ -118,7 +118,7 @@
             ],
             "methods": [],
             "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClientModule, HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class InstallmentService {\r\n\r\n  constructor(private http:HttpClient) { }\r\n  url='http://3.6.39.44:3000/getInstallmentOptions'\r\n\r\n  getInstallmentData=()=>{\r\n  //   return [\r\n  //     {\r\n  //         \"title\": \"Single Payment\",\r\n  //         \"subtitle\": \"Best value\",\r\n  //         \"amount\": 4039999,\r\n  //         \"saving\": 60497,\r\n  //         \"installmentsCount\": 1,\r\n  //         \"discounts\": 0,\r\n  //         \"installments\": []\r\n  //     },\r\n  //     {\r\n  //         \"title\": \"Two Payments\",\r\n  //         \"subtitle\": \"Every 6 months\",\r\n  //         \"amount\": 4060098,\r\n  //         \"saving\": 40398,\r\n  //         \"installmentsCount\": 2,\r\n  //         \"discounts\": 0,\r\n  //         \"installments\": [\r\n  //             2030049,\r\n  //             2030049\r\n  //         ]\r\n  //     },\r\n  //     {\r\n  //         \"title\": \"Four Payments\",\r\n  //         \"subtitle\": \"Every 3 months\",\r\n  //         \"amount\": 4100496,\r\n  //         \"saving\": 0,\r\n  //         \"installmentsCount\": 4,\r\n  //         \"discounts\": 0,\r\n  //         \"installments\": [\r\n  //             1025124,\r\n  //             1025124,\r\n  //             1025124,\r\n  //             1025124\r\n  //         ]\r\n  //     }\r\n  // ]\r\n  return this.http.post(this.url,{})\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClientModule, HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class InstallmentService {\r\n\r\n  constructor(private http:HttpClient) { }\r\n  url='http://3.6.39.44:4000/mtpl/getInstallmentOptions'\r\n\r\n  getInstallmentData=()=>{\r\n  //   return [\r\n  //     {\r\n  //         \"title\": \"Single Payment\",\r\n  //         \"subtitle\": \"Best value\",\r\n  //         \"amount\": 4039999,\r\n  //         \"saving\": 60497,\r\n  //         \"installmentsCount\": 1,\r\n  //         \"discounts\": 0,\r\n  //         \"installments\": []\r\n  //     },\r\n  //     {\r\n  //         \"title\": \"Two Payments\",\r\n  //         \"subtitle\": \"Every 6 months\",\r\n  //         \"amount\": 4060098,\r\n  //         \"saving\": 40398,\r\n  //         \"installmentsCount\": 2,\r\n  //         \"discounts\": 0,\r\n  //         \"installments\": [\r\n  //             2030049,\r\n  //             2030049\r\n  //         ]\r\n  //     },\r\n  //     {\r\n  //         \"title\": \"Four Payments\",\r\n  //         \"subtitle\": \"Every 3 months\",\r\n  //         \"amount\": 4100496,\r\n  //         \"saving\": 0,\r\n  //         \"installmentsCount\": 4,\r\n  //         \"discounts\": 0,\r\n  //         \"installments\": [\r\n  //             1025124,\r\n  //             1025124,\r\n  //             1025124,\r\n  //             1025124\r\n  //         ]\r\n  //     }\r\n  // ]\r\n  return this.http.get(this.url)\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -143,26 +143,158 @@
         },
         {
             "name": "LoggedInServiceService",
-            "id": "injectable-LoggedInServiceService-023d2a2ccc5ad5df5b0efae596baeea5",
+            "id": "injectable-LoggedInServiceService-b928fecfd98a014c7d23e1823d8457bc",
             "file": "src/app/logged-in-service.service.ts",
             "properties": [],
-            "methods": [
-                {
-                    "name": "logout",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 10
-                }
-            ],
+            "methods": [],
             "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class LoggedInServiceService {\r\n\r\n  constructor() { }\r\n\r\n  logout() :void \r\n  {    \r\n    sessionStorage.setItem('isLoggedIn','false');    \r\n    sessionStorage.removeItem('username');    \r\n  }  \r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class LoggedInServiceService {\r\n\r\n  constructor() { }\r\n\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "args": [],
                 "line": 6
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "LoginService",
+            "id": "injectable-LoginService-850011a447d92f24b29f368efe0d269e",
+            "file": "src/app/components/login/login.service.ts",
+            "properties": [
+                {
+                    "name": "getLoginData",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "url",
+                    "defaultValue": "'http://3.6.39.44:4000/user/login'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methods": [],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class LoginService {\r\n\r\n  constructor(private http:HttpClient) { }\r\n  url='http://3.6.39.44:4000/user/login'\r\ngetLoginData=(data)=>{\r\n  return this.http.post(this.url,data)\r\n\r\n}\r\n\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 7,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "ProvincesService",
+            "id": "injectable-ProvincesService-03f7735e590a5cdfa2d82dbf98efc6d9",
+            "file": "src/app/components/provinces.service.ts",
+            "properties": [
+                {
+                    "name": "getProvinces",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "url",
+                    "defaultValue": "'http://3.6.39.44:4000/provinces/getProvincesList'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methods": [],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class ProvincesService {\r\n\r\n  constructor(private http:HttpClient) { }\r\n  url='http://3.6.39.44:4000/provinces/getProvincesList'\r\n\r\ngetProvinces=()=>{\r\nreturn this.http.get(this.url)\r\n}\r\n\r\n\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 7,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "SignUpService",
+            "id": "injectable-SignUpService-81a028d8f3297a0a154250dbe322548c",
+            "file": "src/app/components/sign-up/sign-up.service.ts",
+            "properties": [
+                {
+                    "name": "registerUser",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "url",
+                    "defaultValue": "'http://3.6.39.44:4000/user/signup'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methods": [],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class SignUpService {\r\n\r\n  constructor(private http:HttpClient) { }\r\n  url='http://3.6.39.44:4000/user/signup'\r\n\r\n  registerUser=(userData)=>{\r\n    console.log(userData);\r\n    \r\n    return this.http.post(this.url,userData)\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 7,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "type": "injectable"
         }
@@ -374,7 +506,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "\r\n    <h1 class=\"heading \">Additional covers</h1><br>\r\n    <form [formGroup]=\"additionalcoverForm\" (submit)=\"next()\">\r\n        <div class=\"row \">\r\n            <div class=\"card shadow p-3 mb-5 rounded thirdparty\">\r\n                <div class=\"card-body bg-dark-blue\">\r\n                    <div class=\"row\">\r\n                         <div class=\"col-md-1 col-2 motor-img p-0\">\r\n                            <img src=\"../../assets/motor_policy.PNG\">\r\n                            \r\n                        </div>\r\n                        \r\n                        <!--<div class=\"col-sm-11 col-9 pr-0 m-auto adjust\" style=\"background-color: rgb(6, 112, 20);\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-9 col-12 p-0\">\r\n                                    <span class=\"middle-heading text-small\" style=\"color: yellow;\">Motor Third party Liability Policy</span>\r\n                                </div>\r\n                                <div class=\"col-sm-5 col-auto col-8\">\r\n                                    <div>\r\n                                        <div class=\"num\" style=\"color: whitesmoke;\">382<span class=\"nearelm\">,00 BGN</span></div>\r\n                                        <div class=\"bgn\" >\r\n                                        Four payments\r\n                                        </div> \r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>-->\r\n                    \r\n                        <div class=\"col-md-10 col-9 pr-0 m-auto\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-9 col-12 p-0\">\r\n                                    <span class=\"middle-heading text-small\">Motor Third party Liability Policy</span>\r\n                                </div>\r\n                                <div class=\"col-md-3 col-12 p-0\">\r\n                                    <div>\r\n                                        <div class=\"num\" style=\"color: whitesmoke;\">382<span class=\"nearelm\">,00 BGN</span></div>\r\n                                        <div class=\"bgn\">\r\n                                            Four payments\r\n                                        </div> \r\n                                    </div>\r\n                                </div>\r\n                           \r\n                        </div>\r\n                            </div>\r\n                    \r\n                   <!---->\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n                \r\n                        <!-- <div class=\"col-lg-7 col-md-8 col-4 col-7 policy\">\r\n                         <span>Motor Third Party Liability Policy</span></div>\r\n                        \r\n                        <div class=\"col-lg-5 col-md-4 col-auto col-5 bgn \">\r\n                            382,00BGN<br>\r\n                            <h6>Four payments</h6>\r\n                        </div> -->\r\n                        <div class=\"border shadow p-3 mb-3 bg-white rounded firstcard\">\r\n                            <div class=\"row cardrow\">\r\n                                <div class=\"col-auto mr-auto pt-1\">\r\n                                    <label class=\"form-check-label\">\r\n                                        <input class=\"form-check-input\" type=\"radio\" name=\"cover\" formControlName=\"cover\" [(ngModel)]=\"cover\" (change)=\"change()\" [checked]=\"cover==='None'\"><h3 class=\"sub-head\">None</h3></label>\r\n                                        <div class=\"mon\">Description of additional cover here</div>\r\n                                </div>   \r\n                                \r\n                            </div>\r\n                        </div>\r\n                        <div class=\"border shadow p-3 mb-3 bg-white rounded secondcard\">\r\n                            <div class=\"row cardrow\">\r\n                                <div class=\"col-auto mr-auto pt-1\">\r\n                                    <label class=\"form-check-label\">\r\n                                        <input class=\"form-check-input\" type=\"radio\" name=\"cover\" formControlName=\"cover\" value=\"premium\" (change)=\"change()\"><h3 class=\"sub-head\">Premium</h3></label>\r\n                                        <div class=\"row\">\r\n                                            <div class=\"col-xs-4\">\r\n                                            <button class=\"btn btn-success mon\">Best Value</button>\r\n                                        </div>&nbsp;&nbsp;&nbsp;\r\n                                        <div class=\"col-md-8.5\" style=\"padding-top: 1.5%;\">\r\n                                            <span class=\"mon\">Description of additional cover here</span>\r\n                                        </div>  \r\n                                        </div>\r\n                                        \r\n                                </div>   \r\n                                <div class=\"col-sm-3 whitecard\">\r\n                                    <div class=\"num\">+25<span class=\"nearelm\">,00 BGN</span></div>\r\n                                    <div class=\"months\">\r\n                                        for 12 months\r\n                                    </div> \r\n                                        \r\n                                    \r\n                                </div>\r\n\r\n                            </div>\r\n                            <br><a href=\"www.google.com\"><u class=\"spc\">See what's more</u></a>\r\n                        </div>\r\n                        <!---->\r\n                        <div class=\"border shadow p-3 mb-3 bg-white rounded thirdcard\">\r\n                            <div class=\"row cardrow\">\r\n                                <div class=\"col-auto mr-auto pt-1\">\r\n                                    <label class=\"form-check-label\">\r\n                                        <input class=\"form-check-input\" type=\"radio\" name=\"cover\" formControlName=\"cover\" [(ngModel)]=\"cover\" (change)=\"change()\" [checked]=\"cover==='VIP'\"><h3 class=\"sub-head\">VIP</h3></label>\r\n                                        <div class=\"mon\">Description of additional cover here\r\n                                        </div>\r\n                                        \r\n                                </div>   \r\n                                <div class=\"col-sm-3 whitecard\">\r\n                                    <div class=\"num\">+80<span class=\"nearelm\">,00 BGN</span></div>\r\n                                    <div  class=\"months\">\r\n                                        for 12 months\r\n                                    </div> \r\n                                     \r\n                                </div>\r\n                            </div>\r\n                            <br/>\r\n                            <br/>\r\n                            <div class=\"textcolor\" >\r\n                                <p><b>Services provded under the \"PREMIUM\" clause, but with higher\r\n                                        limits when transporting vehicles</b></p>\r\n        \r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 image\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10\"> In case of an insurance event(no limit in the number of transports\r\n                                        and up to 900 km\r\n                                        mileage)</span>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10 wid\">Technical failure(no mileage limit and up to 2 transports)\r\n                                    </span><br>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10 wid\">Wrong fuet(disposable)\r\n                                    </span><br>\r\n                                </div><br>\r\n        \r\n                                <p><b>And more:</b></p>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                                    </div>\r\n                                    <span class=\"col-10 wid\">\r\n                                        Stay in the parking lot of the damaged car </span><br>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                                    </div>\r\n                                    <span class=\"col-10 wid\">Overview in a hotel of the driver of the vehicle </span><br>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10 wid\">Transportation of persons traveling in vehicles, in case the\r\n                                        vehicle\r\n                                        has suffered damage\r\n                                    </span><br>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10 wid\">Medical transportation in case of an accident</span><br>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10 wid\">Costs of examinations, medical examinations and manipulations in\r\n                                        case of bodily\r\n                                        injuries to the driver and / or persons traveling in the vehicle as a result of the\r\n                                        accident</span><br> \r\n                                    </div>\r\n                                    <div class=\"form-row\">\r\n                                        <div class=\"col-0 off-set-0\">\r\n                                            <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                                        </div>\r\n                                        <span class=\"col-10 wid\">In case of damages covered by Casco + insurance - up to 2\r\n                                            vehicle inspections at\r\n                                            the address indicated by the client</span><br>\r\n                                    </div>\r\n                                    \r\n                                </div>\r\n                                <a href=\"www.google.com\"><u class=\"spc\">Hide what's included</u></a>\r\n                        </div>\r\n\r\n\r\n        \r\n            <br/>\r\n            <button type=\"submit\" class=\"btn btn-primary rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn\" [disabled]=\"!additionalcoverForm.valid\"\r\n                matStepperNext>\r\n                Next</button>\r\n    </form>\r\n\r\n"
+            "templateData": "\r\n    <h1 class=\"heading \">Additional covers</h1><br>\r\n    <form [formGroup]=\"additionalcoverForm\" (submit)=\"next()\">\r\n        <div class=\"row \">\r\n            <div class=\"card shadow p-3 mb-5 rounded thirdparty\">\r\n                <div class=\"card-body bg-dark-blue\">\r\n                    <div class=\"row\">\r\n                         <div class=\"col-md-1 col-2 motor-img p-0\">\r\n                            <img src=\"../../assets/motor_policy.PNG\">\r\n                            \r\n                        </div>\r\n                        \r\n                        <!--<div class=\"col-sm-11 col-9 pr-0 m-auto adjust\" style=\"background-color: rgb(6, 112, 20);\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-9 col-12 p-0\">\r\n                                    <span class=\"middle-heading text-small\" style=\"color: yellow;\">Motor Third party Liability Policy</span>\r\n                                </div>\r\n                                <div class=\"col-sm-5 col-auto col-8\">\r\n                                    <div>\r\n                                        <div class=\"num\" style=\"color: whitesmoke;\">382<span class=\"nearelm\">,00 BGN</span></div>\r\n                                        <div class=\"bgn\" >\r\n                                        Four payments\r\n                                        </div> \r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>-->\r\n                    \r\n                        <div class=\"col-md-10 col-9 pr-0 m-auto\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-9 col-12 p-0\">\r\n                                    <span class=\"middle-heading text-small\">Motor Third party Liability Policy</span>\r\n                                </div>\r\n                                <div class=\"col-md-3 col-12 p-0\">\r\n                                    <div>\r\n                                        <div class=\"num\" style=\"color: whitesmoke;\">382<span class=\"nearelm\">,00 BGN</span></div>\r\n                                        <div class=\"bgn\">\r\n                                            Four payments\r\n                                        </div> \r\n                                    </div>\r\n                                </div>\r\n                           \r\n                        </div>\r\n                            </div>\r\n                    \r\n                   <!---->\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n                \r\n                        <!-- <div class=\"col-lg-7 col-md-8 col-4 col-7 policy\">\r\n                         <span>Motor Third Party Liability Policy</span></div>\r\n                        \r\n                        <div class=\"col-lg-5 col-md-4 col-auto col-5 bgn \">\r\n                            382,00BGN<br>\r\n                            <h6>Four payments</h6>\r\n                        </div> -->\r\n                        <div class=\"border shadow p-3 mb-3 bg-white rounded firstcard\">\r\n                            <div class=\"row cardrow\">\r\n                                <div class=\"col-auto mr-auto pt-1\">\r\n                                    <label class=\"form-check-label\">\r\n                                        <input class=\"form-check-input\" type=\"radio\" name=\"cover\" formControlName=\"cover\" value=\"none\" [(ngModel)]=\"cover\" (change)=\"change()\" [checked]=\"cover==='None'\"><h3 class=\"sub-head\">None</h3></label>\r\n                                        <div class=\"mon\">Description of additional cover here</div>\r\n                                </div>   \r\n                                \r\n                            </div>\r\n                        </div>\r\n                        <div class=\"border shadow p-3 mb-3 bg-white rounded secondcard\">\r\n                            <div class=\"row cardrow\">\r\n                                <div class=\"col-auto mr-auto pt-1\">\r\n                                    <label class=\"form-check-label\">\r\n                                        <input class=\"form-check-input\" type=\"radio\" name=\"cover\" formControlName=\"cover\" value=\"premium\" (change)=\"change()\" [checked]=\"cover==='Premium'\"><h3 class=\"sub-head\">Premium</h3></label>\r\n                                        <div class=\"row\">\r\n                                            <div class=\"col-xs-4\">\r\n                                            <button class=\"btn btn-success mon\">Best Value</button>\r\n                                        </div>&nbsp;&nbsp;&nbsp;\r\n                                        <div class=\"col-md-8.5\" style=\"padding-top: 1.5%;\">\r\n                                            <span class=\"mon\">Description of additional cover here</span>\r\n                                        </div>  \r\n                                        </div>\r\n                                        \r\n                                </div>   \r\n                                <div class=\"col-sm-3 whitecard\">\r\n                                    <div class=\"num\">+25<span class=\"nearelm\">,00 BGN</span></div>\r\n                                    <div class=\"months\">\r\n                                        for 12 months\r\n                                    </div> \r\n                                        \r\n                                    \r\n                                </div>\r\n\r\n                            </div>\r\n                            <br><a href=\"www.google.com\"><u class=\"spc\">See what's more</u></a>\r\n                        </div>\r\n                        <!---->\r\n                        <div class=\"border shadow p-3 mb-3 bg-white rounded thirdcard\">\r\n                            <div class=\"row cardrow\">\r\n                                <div class=\"col-auto mr-auto pt-1\">\r\n                                    <label class=\"form-check-label\">\r\n                                        <input class=\"form-check-input\" type=\"radio\" name=\"cover\" formControlName=\"cover\" [(ngModel)]=\"cover\" (change)=\"change()\" [checked]=\"cover==='VIP'\"><h3 class=\"sub-head\">VIP</h3></label>\r\n                                        <div class=\"mon\">Description of additional cover here\r\n                                        </div>\r\n                                        \r\n                                </div>   \r\n                                <div class=\"col-sm-3 whitecard\">\r\n                                    <div class=\"num\">+80<span class=\"nearelm\">,00 BGN</span></div>\r\n                                    <div  class=\"months\">\r\n                                        for 12 months\r\n                                    </div> \r\n                                     \r\n                                </div>\r\n                            </div>\r\n                            <br/>\r\n                            <br/>\r\n                            <div class=\"textcolor\" >\r\n                                <p><b>Services provded under the \"PREMIUM\" clause, but with higher\r\n                                        limits when transporting vehicles</b></p>\r\n        \r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 image\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10\"> In case of an insurance event(no limit in the number of transports\r\n                                        and up to 900 km\r\n                                        mileage)</span>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10 wid\">Technical failure(no mileage limit and up to 2 transports)\r\n                                    </span><br>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10 wid\">Wrong fuet(disposable)\r\n                                    </span><br>\r\n                                </div><br>\r\n        \r\n                                <p><b>And more:</b></p>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                                    </div>\r\n                                    <span class=\"col-10 wid\">\r\n                                        Stay in the parking lot of the damaged car </span><br>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                                    </div>\r\n                                    <span class=\"col-10 wid\">Overview in a hotel of the driver of the vehicle </span><br>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10 wid\">Transportation of persons traveling in vehicles, in case the\r\n                                        vehicle\r\n                                        has suffered damage\r\n                                    </span><br>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10 wid\">Medical transportation in case of an accident</span><br>\r\n                                </div>\r\n                                <div class=\"form-row\">\r\n                                    <div class=\"col-0 off-set-0\">\r\n                                        <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\"></div>\r\n                                    <span class=\"col-10 wid\">Costs of examinations, medical examinations and manipulations in\r\n                                        case of bodily\r\n                                        injuries to the driver and / or persons traveling in the vehicle as a result of the\r\n                                        accident</span><br> \r\n                                    </div>\r\n                                    <div class=\"form-row\">\r\n                                        <div class=\"col-0 off-set-0\">\r\n                                            <img width=\"30px\" height=\"20px\" src=\"./assets/tick.jpg\">\r\n                                        </div>\r\n                                        <span class=\"col-10 wid\">In case of damages covered by Casco + insurance - up to 2\r\n                                            vehicle inspections at\r\n                                            the address indicated by the client</span><br>\r\n                                    </div>\r\n                                    \r\n                                </div>\r\n                                <a href=\"www.google.com\"><u class=\"spc\">Hide what's included</u></a>\r\n                        </div>\r\n\r\n\r\n        \r\n            <br/>\r\n            <button type=\"submit\" class=\"btn btn-primary rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn\" [disabled]=\"!additionalcoverForm.valid\"\r\n                matStepperNext>\r\n                Next</button>\r\n    </form>\r\n\r\n"
         },
         {
             "name": "AppComponent",
@@ -425,7 +557,7 @@
         },
         {
             "name": "ContactComponent",
-            "id": "component-ContactComponent-ba1ed64a205a3af42ae8075610d24fc7",
+            "id": "component-ContactComponent-268af6e4685c0a3717cc1b6f9fa53da7",
             "file": "src/app/components/contact/contact.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -444,42 +576,42 @@
             "inputsClass": [
                 {
                     "name": "appartment",
-                    "line": 20,
-                    "type": "String"
-                },
-                {
-                    "name": "block",
-                    "line": 18,
-                    "type": "String"
-                },
-                {
-                    "name": "city",
-                    "line": 14,
-                    "type": "string"
-                },
-                {
-                    "name": "entrance",
-                    "line": 19,
-                    "type": "String"
-                },
-                {
-                    "name": "No",
-                    "line": 17,
-                    "type": "String"
-                },
-                {
-                    "name": "phone",
                     "line": 21,
                     "type": "String"
                 },
                 {
-                    "name": "pincode",
+                    "name": "block",
+                    "line": 19,
+                    "type": "String"
+                },
+                {
+                    "name": "city",
                     "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "entrance",
+                    "line": 20,
+                    "type": "String"
+                },
+                {
+                    "name": "No",
+                    "line": 18,
+                    "type": "String"
+                },
+                {
+                    "name": "phone",
+                    "line": 22,
+                    "type": "String"
+                },
+                {
+                    "name": "pincode",
+                    "line": 16,
                     "type": "String"
                 },
                 {
                     "name": "street",
-                    "line": 16,
+                    "line": 17,
                     "type": "String"
                 }
             ],
@@ -487,19 +619,19 @@
                 {
                     "name": "OnRegister",
                     "defaultValue": "new EventEmitter()",
-                    "line": 11,
+                    "line": 12,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "OnSubmission",
                     "defaultValue": "new EventEmitter<any>()",
-                    "line": 13,
+                    "line": 14,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "OnToggle",
                     "defaultValue": "new EventEmitter()",
-                    "line": 12,
+                    "line": 13,
                     "type": "EventEmitter"
                 }
             ],
@@ -510,14 +642,29 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 43
+                    "line": 55
+                },
+                {
+                    "name": "getProvinces",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 46
+                },
+                {
+                    "name": "provincesArray",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
                 },
                 {
                     "name": "registerForm",
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 23
                 },
                 {
                     "name": "submit",
@@ -525,7 +672,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 37
+                    "line": 40
                 }
             ],
             "methodsClass": [
@@ -535,7 +682,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25
+                    "line": 27
                 }
             ],
             "hostBindings": [],
@@ -543,7 +690,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\n\r\n@Component({\r\n  selector: 'app-contact',\r\n  templateUrl: './contact.component.html',\r\n  styleUrls: ['./contact.component.css']\r\n})\r\nexport class ContactComponent implements OnInit {\r\n  @Output() OnRegister = new EventEmitter()\r\n  @Output() OnToggle = new EventEmitter()\r\n  @Output() OnSubmission = new EventEmitter<any>();\r\n  @Input() city:string;\r\n  @Input() pincode:String;\r\n  @Input() street:String;\r\n  @Input() No:String;\r\n  @Input() block:String;\r\n  @Input() entrance:String;\r\n  @Input() appartment:String;\r\n  @Input() phone:String;\r\n  registerForm: FormGroup;\r\n  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService) { }\r\n\r\n  ngOnInit(): void {\r\n    this.registerForm = this.formBuilder.group({\r\n      city: ['', Validators.required],\r\n      pincode: ['', Validators.required],\r\n      street: [''],\r\n      No: [''],\r\n      block:[''],\r\n      entrance:[''],\r\n      appartment:[''],\r\n      phone:['',[Validators.required,Validators.pattern(\"^[0-9]+$\"),Validators.minLength(8),Validators.maxLength(9)]]\r\n    });\r\n  }\r\n  submit=()=>{\r\n    this.GAService.event('Next Button clicked','Contact Details','Next')\r\n    console.log(this.registerForm.value, \"policy details\");\r\n    this.OnRegister.emit(this.registerForm.value);  \r\n    this.OnSubmission.emit('Contact Details form is submitted!')\r\n  }\r\n  change=()=>{\r\n    if(this.registerForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.registerForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\nimport { GoogleAnalyticsService } from 'ngx-google-analytics';\r\nimport { ProvincesService } from '../provinces.service';\r\n\r\n@Component({\r\n  selector: 'app-contact',\r\n  templateUrl: './contact.component.html',\r\n  styleUrls: ['./contact.component.css']\r\n})\r\nexport class ContactComponent implements OnInit {\r\n  @Output() OnRegister = new EventEmitter()\r\n  @Output() OnToggle = new EventEmitter()\r\n  @Output() OnSubmission = new EventEmitter<any>();\r\n  @Input() city:string;\r\n  @Input() pincode:String;\r\n  @Input() street:String;\r\n  @Input() No:String;\r\n  @Input() block:String;\r\n  @Input() entrance:String;\r\n  @Input() appartment:String;\r\n  @Input() phone:String;\r\n  registerForm: FormGroup;\r\n  provincesArray\r\n  constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService,private provServ:ProvincesService) { }\r\n\r\n  ngOnInit(): void {\r\n    this.registerForm = this.formBuilder.group({\r\n      city: ['', Validators.required],\r\n      pincode: ['', Validators.required],\r\n      street: [''],\r\n      No: [''],\r\n      block:[''],\r\n      entrance:[''],\r\n      appartment:[''],\r\n      phone:['',[Validators.required,Validators.pattern(\"^[0-9]+$\"),Validators.minLength(8),Validators.maxLength(9)]]\r\n    });\r\n    this.getProvinces()\r\n  }\r\n  submit=()=>{\r\n    this.GAService.event('Next Button clicked','Contact Details','Next')\r\n    console.log(this.registerForm.value, \"policy details\");\r\n    this.OnRegister.emit(this.registerForm.value);  \r\n    this.OnSubmission.emit('Contact Details form is submitted!')\r\n  }\r\n  getProvinces=()=>{\r\n this.provServ.getProvinces().subscribe((res)=>{\r\n   this.provincesArray=res\r\n   console.log(res[0].pname);\r\n   \r\n })\r\n\r\n \r\n  }\r\n  change=()=>{\r\n    if(this.registerForm.valid){\r\n      this.OnToggle.emit(true)\r\n      this.OnRegister.emit(this.registerForm.value);\r\n    }else{\r\n      this.OnToggle.emit(false)\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -563,9 +710,13 @@
                     {
                         "name": "GAService",
                         "type": "GoogleAnalyticsService"
+                    },
+                    {
+                        "name": "provServ",
+                        "type": "ProvincesService"
                     }
                 ],
-                "line": 22,
+                "line": 24,
                 "jsdoctags": [
                     {
                         "name": "formBuilder",
@@ -580,13 +731,20 @@
                         "tagName": {
                             "text": "param"
                         }
+                    },
+                    {
+                        "name": "provServ",
+                        "type": "ProvincesService",
+                        "tagName": {
+                            "text": "param"
+                        }
                     }
                 ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "\r\n  \r\n    <h1><b>Contact Details</b></h1><br>\r\n    <form [formGroup]=\"registerForm\" (submit)=\"submit()\">\r\n      <div class=\"row\">\r\n       \r\n          <label for=\"city\" class=\"col-lg-7\">City</label>\r\n       \r\n        <div class=\"col-md-3 space\">\r\n          <select id=\"city\" name=\"city\" class=\"form-control\" [(ngModel)]=\"city\" formControlName=\"city\" (change)=\"change()\">\r\n            <option selected disabled value=\"\">--SELECT--</option>\r\n            <option value=\"Sophia City\" [selected]=\"city==='SophiaCity'\">Sofia City</option>\r\n            <option value=\"techCity\" [selected]=\"city==='techCity'\">Tech City</option>\r\n            <option value=\"electronicCity\" [selected]=\"city==='electronicCity'\">Electronic City</option>\r\n          </select>\r\n          <div\r\n            *ngIf=\"registerForm.controls.city.hasError('required') &&(registerForm.controls.city.dirty || registerForm.controls.city.touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n        </div>\r\n\r\n        <div class=\"col-md-4 col-4\">\r\n          <input type=\"text\" id=\"num\" name=\"num\" [(ngModel)]=\"pincode\" placeholder=\"Pin Code\" class=\"form-control\" (change)=\"change()\"\r\n            formControlName=\"pincode\">\r\n          <div\r\n            *ngIf=\"registerForm.controls.pincode.hasError('required') &&(registerForm.controls.pincode.dirty || registerForm.controls.pincode.touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n\r\n        </div>\r\n      </div>\r\n      <hr>\r\n      <div class=\" row\">\r\n        <div class=\"col-md-4 col-12\">\r\n          <label for=\"street\">Street and Number</label>\r\n        </div>\r\n        <div class=\"col-md-4 col-8\">\r\n          <input type=\"text\" id=\"street\" [(ngModel)]=\"street\" name=\"streetName\" class=\"form-control \" placeholder=\"Street Name\"\r\n            (change)=\"change()\" formControlName=\"street\">\r\n        </div>\r\n\r\n        <div class=\"col-md-4 col-4\">\r\n          <input type=\"text\" id=\"streetNumber\" [(ngModel)]=\"No\" name=\"streetNumber\" placeholder=\"Street  number\" class=\"form-control\"\r\n            size=\"10\" (change)=\"change()\" formControlName=\"No\"><br>\r\n        </div>\r\n      </div>\r\n      <hr>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-3 col-12\">\r\n          <label for=\"block\">Block,Entrance and Apartment</label>\r\n        </div>\r\n        <div class=\"col-md-3 offset-md-1 col-4\">\r\n          <input type=\"text\" id=\"block\" class=\"form-control\" [(ngModel)]=\"block\" placeholder=\"Block\" name=\"blockName\" (change)=\"change()\"\r\n            formControlName=\"block\">\r\n        </div>\r\n\r\n        <label for=\"entranceName\"></label>\r\n        <div class=\"col-md-3 col-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"entranceName\" [(ngModel)]=\"entrance\" placeholder=\"Entrance\" name=\"entranceName\"\r\n            (change)=\"change()\" formControlName=\"entrance\">\r\n        </div>\r\n        <!-- </div> -->\r\n\r\n        <label for=\"appartmentName\"></label>\r\n        <div class=\"col-md-2 col-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"appartmentName\" [(ngModel)]=\"appartment\" placeholder=\"Appartment\" name=\"appartmentName\"\r\n            (change)=\"change()\" formControlName=\"appartment\"><br>\r\n        </div>\r\n      </div>\r\n      <hr>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4\">\r\n          <label for=\"phoneNo\">Phone Number</label>\r\n        </div>\r\n        <div class=\"col-md-4 ml-auto\">\r\n          <input type=\"text\" class=\"form-control\" id=\"phoneNo\" [(ngModel)]=\"phone\" placeholder=\"Phone Number\" (change)=\"change()\"\r\n            formControlName=\"phone\"><br>\r\n          <div\r\n            *ngIf=\"registerForm.controls.phone.hasError('required') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"registerForm.controls.phone.hasError('pattern') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)\"\r\n            class=\"error\">Only numbers allowed</div>\r\n          <div\r\n            *ngIf=\"(!registerForm.controls.phone.hasError('pattern') && (registerForm.controls.phone.hasError('minlength') || registerForm.controls.phone.hasError('maxlength'))) &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)\"\r\n            class=\"error\">Enter valid phone number</div>\r\n        </div>\r\n      </div>\r\n      <button class=\"btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3\" type=\"submit\" matStepperNext\r\n      [disabled]=\"!registerForm.valid\">Next</button>\r\n    </form>\r\n    \r\n \r\n"
+            "templateData": "\r\n  \r\n    <h1><b>Contact Details</b></h1><br>\r\n    <form [formGroup]=\"registerForm\" (submit)=\"submit()\">\r\n      <div class=\"row\">\r\n       \r\n          <label for=\"city\" class=\"col-lg-7\">City</label>\r\n       \r\n        <div class=\"col-md-3 space\">\r\n          <select id=\"city\" name=\"city\" class=\"form-control\" [(ngModel)]=\"city\" formControlName=\"city\" (change)=\"change()\">\r\n            <option selected disabled value=\"\">--SELECT--</option>\r\n            <option *ngFor='let obj of provincesArray' value=\"{{obj.pname}}\" [selected]=\"city===obj.pname\">{{obj.pname}}</option>\r\n           \r\n          </select>\r\n          <div\r\n            *ngIf=\"registerForm.controls.city.hasError('required') &&(registerForm.controls.city.dirty || registerForm.controls.city.touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n        </div>\r\n\r\n        <div class=\"col-md-4 col-4\">\r\n          <input type=\"text\" id=\"num\" name=\"num\" [(ngModel)]=\"pincode\" placeholder=\"Pin Code\" class=\"form-control\" (change)=\"change()\"\r\n            formControlName=\"pincode\">\r\n          <div\r\n            *ngIf=\"registerForm.controls.pincode.hasError('required') &&(registerForm.controls.pincode.dirty || registerForm.controls.pincode.touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n\r\n        </div>\r\n      </div>\r\n      <hr>\r\n      <div class=\" row\">\r\n        <div class=\"col-md-4 col-12\">\r\n          <label for=\"street\">Street and Number</label>\r\n        </div>\r\n        <div class=\"col-md-4 col-8\">\r\n          <input type=\"text\" id=\"street\" [(ngModel)]=\"street\" name=\"streetName\" class=\"form-control \" placeholder=\"Street Name\"\r\n            (change)=\"change()\" formControlName=\"street\">\r\n        </div>\r\n\r\n        <div class=\"col-md-4 col-4\">\r\n          <input type=\"text\" id=\"streetNumber\" [(ngModel)]=\"No\" name=\"streetNumber\" placeholder=\"Street  number\" class=\"form-control\"\r\n            size=\"10\" (change)=\"change()\" formControlName=\"No\"><br>\r\n        </div>\r\n      </div>\r\n      <hr>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-3 col-12\">\r\n          <label for=\"block\">Block,Entrance and Apartment</label>\r\n        </div>\r\n        <div class=\"col-md-3 offset-md-1 col-4\">\r\n          <input type=\"text\" id=\"block\" class=\"form-control\" [(ngModel)]=\"block\" placeholder=\"Block\" name=\"blockName\" (change)=\"change()\"\r\n            formControlName=\"block\">\r\n        </div>\r\n\r\n        <label for=\"entranceName\"></label>\r\n        <div class=\"col-md-3 col-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"entranceName\" [(ngModel)]=\"entrance\" placeholder=\"Entrance\" name=\"entranceName\"\r\n            (change)=\"change()\" formControlName=\"entrance\">\r\n        </div>\r\n        <!-- </div> -->\r\n\r\n        <label for=\"appartmentName\"></label>\r\n        <div class=\"col-md-2 col-4\">\r\n          <input type=\"text\" class=\"form-control\" id=\"appartmentName\" [(ngModel)]=\"appartment\" placeholder=\"Appartment\" name=\"appartmentName\"\r\n            (change)=\"change()\" formControlName=\"appartment\"><br>\r\n        </div>\r\n      </div>\r\n      <hr>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4\">\r\n          <label for=\"phoneNo\">Phone Number</label>\r\n        </div>\r\n        <div class=\"col-md-4 ml-auto\">\r\n          <input type=\"text\" class=\"form-control\" id=\"phoneNo\" [(ngModel)]=\"phone\" placeholder=\"Phone Number\" (change)=\"change()\"\r\n            formControlName=\"phone\"><br>\r\n          <div\r\n            *ngIf=\"registerForm.controls.phone.hasError('required') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)\"\r\n            class=\"error\">This field is mandatory</div>\r\n          <div\r\n            *ngIf=\"registerForm.controls.phone.hasError('pattern') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)\"\r\n            class=\"error\">Only numbers allowed</div>\r\n          <div\r\n            *ngIf=\"(!registerForm.controls.phone.hasError('pattern') && (registerForm.controls.phone.hasError('minlength') || registerForm.controls.phone.hasError('maxlength'))) &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)\"\r\n            class=\"error\">Enter valid phone number</div>\r\n        </div>\r\n      </div>\r\n      <button class=\"btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3\" type=\"submit\" matStepperNext\r\n      [disabled]=\"!registerForm.valid\">Next</button>\r\n    </form>\r\n    \r\n \r\n"
         },
         {
             "name": "DeliveryComponent",
@@ -1220,7 +1378,7 @@
         },
         {
             "name": "LoginComponent",
-            "id": "component-LoginComponent-b0b905a269644ffbc32500ce7cc8ab97",
+            "id": "component-LoginComponent-22cab8b081ce35dd6a48dd5264f3188b",
             "file": "src/app/components/login/login.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1241,19 +1399,19 @@
                 {
                     "name": "asGuestLogin",
                     "defaultValue": "new EventEmitter<any>()",
-                    "line": 18,
+                    "line": 19,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onLoginError",
                     "defaultValue": "new EventEmitter<any>()",
-                    "line": 16,
+                    "line": 17,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onLoginSuccess",
                     "defaultValue": "new EventEmitter<any>()",
-                    "line": 17,
+                    "line": 18,
                     "type": "EventEmitter"
                 }
             ],
@@ -1263,14 +1421,21 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 21
+                },
+                {
+                    "name": "errorMessage",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
                 },
                 {
                     "name": "password",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 22
                 }
             ],
             "methodsClass": [
@@ -1280,7 +1445,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24
+                    "line": 27
                 },
                 {
                     "name": "ngOnInit",
@@ -1288,7 +1453,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22
+                    "line": 25
                 },
                 {
                     "name": "redirect",
@@ -1296,7 +1461,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38
+                    "line": 66
                 }
             ],
             "hostBindings": [],
@@ -1304,7 +1469,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output, EventEmitter } from '@angular/core';\r\nimport {Router} from '@angular/router';\r\n\r\nimport { LoggedInServiceService } from 'src/app/logged-in-service.service'\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';  \r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.css']\r\n})\r\nexport class LoginComponent implements OnInit {\r\nconstructor(private router: Router) { }\r\n\r\n  \r\n  @Output() onLoginError = new EventEmitter<any>();\r\n  @Output() onLoginSuccess = new EventEmitter<any>();\r\n  @Output() asGuestLogin = new EventEmitter<any>();\r\n\r\n  email: string;\r\npassword: string;\r\n  ngOnInit() {\r\n  }\r\n  login() : void {\r\n  \r\n    if(this.email == 'admin' && this.password == 'admin'){\r\n      this.onLoginSuccess.emit('form submitted successfully');\r\n      sessionStorage.setItem('isLoggedIn', \"true\");  \r\n      sessionStorage.setItem('username', this.email );\r\n      \r\n      this.router.navigate([\"tab\"]);\r\n    }else {\r\n      this.onLoginError.emit('Wrong data entered');\r\n      alert(\"Invalid credentials\");\r\n    }\r\n  }\r\n\r\n  redirect(){\r\n    this.asGuestLogin.emit('logged in as a guest');\r\n    // this.router.navigate([\"tab\"]);\r\n  }\r\n  }\r\n",
+            "sourceCode": "import { Component, OnInit, Output, EventEmitter } from '@angular/core';\r\nimport {Router} from '@angular/router';\r\n\r\nimport { LoggedInServiceService } from 'src/app/logged-in-service.service'\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';  \r\nimport { LoginService } from './login.service';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.css']\r\n})\r\nexport class LoginComponent implements OnInit {\r\nconstructor(private router: Router,private loginService:LoginService) { }\r\n\r\n  \r\n  @Output() onLoginError = new EventEmitter<any>();\r\n  @Output() onLoginSuccess = new EventEmitter<any>();\r\n  @Output() asGuestLogin = new EventEmitter<any>();\r\n\r\n  email: string;\r\npassword: string;\r\nerrorMessage\r\n\r\n  ngOnInit() {\r\n  }\r\n  login() : void {\r\n  \r\n  //   if(this.email == 'admin' && this.password == 'admin'){\r\n  //     this.onLoginSuccess.emit('form submitted successfully');\r\n  //     sessionStorage.setItem('isLoggedIn', \"true\");  \r\n  //     sessionStorage.setItem('username', this.email );\r\n      \r\n  //     this.router.navigate([\"tab\"]);\r\n  //   }else {\r\n  //     this.onLoginError.emit('Wrong data entered');\r\n  //     alert(\"Invalid credentials\");\r\n  //   }\r\n  this.loginService.getLoginData({\r\n    email:this.email,\r\n    password:this.password\r\n  }).subscribe((res)=>{\r\n    var response=JSON.parse(JSON.stringify(res))\r\n    sessionStorage.setItem('id',response.id)\r\n    sessionStorage.setItem('token',response.token)\r\n    sessionStorage.setItem('isLoggedIn', \"true\"); \r\n    alert('logged in successfully')\r\nsetTimeout(()=>{\r\n  this.router.navigate([\"tab\"]);\r\n})\r\n    \r\n    \r\n    \r\n  },\r\n  (err)=>{\r\n    console.log(err);\r\n    \r\n    this.errorMessage=err.error.error\r\n    console.log(this.errorMessage);\r\n    \r\n  })\r\n\r\n\r\n   }\r\n\r\n  redirect(){\r\n    this.asGuestLogin.emit('logged in as a guest');\r\n    // this.router.navigate([\"tab\"]);\r\n  }\r\n  }\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1320,13 +1485,24 @@
                     {
                         "name": "router",
                         "type": "Router"
+                    },
+                    {
+                        "name": "loginService",
+                        "type": "LoginService"
                     }
                 ],
-                "line": 12,
+                "line": 13,
                 "jsdoctags": [
                     {
                         "name": "router",
                         "type": "Router",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "loginService",
+                        "type": "LoginService",
                         "tagName": {
                             "text": "param"
                         }
@@ -1336,7 +1512,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!-- \r\n<div class=\"container\"> \r\n  <mat-grid-list cols=\"2\" rowHeight=\"1:1\">\r\n    <mat-grid-tile>\r\n      <div class=\"images\"> \r\n        <img src=\"../../../assets/WhatsApp Image 2020-06-15 at 7.54.49 PM.jpeg\"/>\r\n      </div>\r\n    </mat-grid-tile>\r\n    <mat-grid-tile>  \r\n\r\n      <mat-card class=\"example-card\">\r\n        <img src=\"../../../assets/logo.jpeg\"/>\r\n          \r\n            <mat-card-title class=\"monospace\">Sign In</mat-card-title>\r\n         \r\n          \r\n          <div class=\"text-primary\">Forget Password?</div>\r\n          \r\n          <mat-card-content>\r\n            <form class=\"example-form\">\r\n              <table class=\"example-full-width\" cellspacing=\"0\">\r\n                <tr>\r\n                  <td>\r\n                  <mat-label > Email</mat-label><br>\r\n                    <mat-form-field class=\"example-full-width\" appearance=\"outline\">\r\n                    <input matInput placeholder=\"Enter your email\"  [(ngModel)]=\"email\" name=\"email\" required>\r\n                    </mat-form-field>\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                    \r\n                <td>\r\n                  <mat-label > Password</mat-label><br>\r\n                  <mat-form-field class=\"example-full-width\" appearance=\"outline\">\r\n                  <input matInput placeholder=\"Password\" [(ngModel)]=\"password\"type=\"password\" name=\"password\" required>\r\n                </mat-form-field></td>\r\n              </tr></table>\r\n            </form>\r\n          </mat-card-content>\r\n          <mat-card-actions>\r\n            &nbsp;&nbsp;&nbsp;<button mat-raised-button (click)=\"login()\" class=\"btn btn-primary btn\">Login</button>\r\n          </mat-card-actions>\r\n          <mat-divider></mat-divider>\r\n          <mat-card-actions>\r\n            &nbsp;&nbsp;&nbsp;<button mat-raised-button (click)=\"redirect()\" class=\"btn btn-primary\">Continue as as guest</button>\r\n          </mat-card-actions>\r\n        </mat-card>\r\n      </mat-grid-tile>\r\n    \r\n  </mat-grid-list>\r\n  \r\n  \r\n\r\n</div> -->\r\n<main class=\"d-flex align-items-center min-vh-100 py-3 py-md-0\">\r\n  <div class=\"container\">\r\n    <div class=\"card login-card\">\r\n      <div class=\"row no-gutters\">\r\n        <div class=\"col-md-6 loginimg\">\r\n          <img src=\"../../../assets/cardimg.jpeg\" alt=\"login\" class=\"login-card-img\">\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <div class=\"card-body\">\r\n            <div class=\"brand-wrapper\">\r\n              <img src=\"../../../assets/logo.jpeg\" alt=\"logo\" class=\"logo\">\r\n            </div>\r\n            <p class=\"login-card-description\">Sign In</p>\r\n            <a href=\"#!\" class=\"forgot-password-link\">Forgot password?</a>\r\n            <form action=\"#!\">\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"email\" class=\"sr-only\">Email</label>\r\n                  <input type=\"email\" name=\"email\" id=\"email\" class=\"form-control\" [(ngModel)]=\"email\" placeholder=\"Email address\">\r\n                </div>\r\n                <div class=\"form-group mb-4\">\r\n                  <label for=\"password\" class=\"sr-only\">Password</label>\r\n                  <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" [(ngModel)]=\"password\" placeholder=\"***********\">\r\n                </div>\r\n                <input name=\"login\" id=\"login\" class=\"btn  login-btn \" type=\"button\" (click)=\"login()\" value=\"Login\">\r\n    \r\n                  <hr data-content=\"OR\" class=\"hr-text\">\r\n                  <input name=\"redirect\" id=\"redirect\" class=\"btn redirect-btn btn-block\" type=\"button\" (click)=\"redirect()\" value=\"Continue as a Guest\">\r\n              \r\n              </form>\r\n             \r\n              <p class=\"login-card-footer-text\">You can create your account at the end of the process <a href=\"/signUp\" class=\"text-reset\"><u>Register here</u></a></p>\r\n              \r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- <div class=\"card login-card\">\r\n      <img src=\"assets/images/login.jpg\" alt=\"login\" class=\"login-card-img\">\r\n      <div class=\"card-body\">\r\n        <h2 class=\"login-card-title\">Login</h2>\r\n        <p class=\"login-card-description\">Sign in to your account to continue.</p>\r\n        <form action=\"#!\">\r\n          <div class=\"form-group\">\r\n            <label for=\"email\" class=\"sr-only\">Email</label>\r\n            <input type=\"email\" name=\"email\" id=\"email\" class=\"form-control\" placeholder=\"Email\">\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"password\" class=\"sr-only\">Password</label>\r\n            <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" placeholder=\"Password\">\r\n          </div>\r\n          <div class=\"form-prompt-wrapper\">\r\n            <div class=\"custom-control custom-checkbox login-card-check-box\">\r\n              <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck1\">\r\n              <label class=\"custom-control-label\" for=\"customCheck1\">Remember me</label>\r\n            </div>              \r\n            <a href=\"#!\" class=\"text-reset\">Forgot password?</a>\r\n          </div>\r\n          <input name=\"login\" id=\"login\" class=\"btn btn-block login-btn mb-4\" type=\"button\" value=\"Login\">\r\n        </form>\r\n        <p class=\"login-card-footer-text\">Don't have an account? <a href=\"#!\" class=\"text-reset\">Register here</a></p>\r\n      </div>\r\n    </div> -->\r\n  </div>\r\n</main>"
+            "templateData": "<!-- \r\n<div class=\"container\"> \r\n  <mat-grid-list cols=\"2\" rowHeight=\"1:1\">\r\n    <mat-grid-tile>\r\n      <div class=\"images\"> \r\n        <img src=\"../../../assets/WhatsApp Image 2020-06-15 at 7.54.49 PM.jpeg\"/>\r\n      </div>\r\n    </mat-grid-tile>\r\n    <mat-grid-tile>  \r\n\r\n      <mat-card class=\"example-card\">\r\n        <img src=\"../../../assets/logo.jpeg\"/>\r\n          \r\n            <mat-card-title class=\"monospace\">Sign In</mat-card-title>\r\n         \r\n          \r\n          <div class=\"text-primary\">Forget Password?</div>\r\n          \r\n          <mat-card-content>\r\n            <form class=\"example-form\">\r\n              <table class=\"example-full-width\" cellspacing=\"0\">\r\n                <tr>\r\n                  <td>\r\n                  <mat-label > Email</mat-label><br>\r\n                    <mat-form-field class=\"example-full-width\" appearance=\"outline\">\r\n                    <input matInput placeholder=\"Enter your email\"  [(ngModel)]=\"email\" name=\"email\" required>\r\n                    </mat-form-field>\r\n                  </td>\r\n                </tr>\r\n                <tr>\r\n                    \r\n                <td>\r\n                  <mat-label > Password</mat-label><br>\r\n                  <mat-form-field class=\"example-full-width\" appearance=\"outline\">\r\n                  <input matInput placeholder=\"Password\" [(ngModel)]=\"password\"type=\"password\" name=\"password\" required>\r\n                </mat-form-field></td>\r\n              </tr></table>\r\n            </form>\r\n          </mat-card-content>\r\n          <mat-card-actions>\r\n            &nbsp;&nbsp;&nbsp;<button mat-raised-button (click)=\"login()\" class=\"btn btn-primary btn\">Login</button>\r\n          </mat-card-actions>\r\n          <mat-divider></mat-divider>\r\n          <mat-card-actions>\r\n            &nbsp;&nbsp;&nbsp;<button mat-raised-button (click)=\"redirect()\" class=\"btn btn-primary\">Continue as as guest</button>\r\n          </mat-card-actions>\r\n        </mat-card>\r\n      </mat-grid-tile>\r\n    \r\n  </mat-grid-list>\r\n  \r\n  \r\n\r\n</div> -->\r\n<main class=\"d-flex align-items-center min-vh-100 py-3 py-md-0\">\r\n  <div class=\"container\">\r\n    <div class=\"card login-card\">\r\n      <div class=\"row no-gutters\">\r\n        <div class=\"col-md-6 loginimg\">\r\n          <img src=\"../../../assets/cardimg.jpeg\" alt=\"login\" class=\"login-card-img\">\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <div class=\"card-body\">\r\n            <div class=\"brand-wrapper\">\r\n              <img src=\"../../../assets/logo.jpeg\" alt=\"logo\" class=\"logo\">\r\n            </div>\r\n            <p class=\"login-card-description\">Sign In</p>\r\n            <a href=\"#!\" class=\"forgot-password-link\">Forgot password?</a>\r\n            <form action=\"#!\">\r\n\r\n                <div class=\"form-group\">\r\n                  <label for=\"email\" class=\"sr-only\">Email</label>\r\n                  <input type=\"email\" name=\"email\" id=\"email\" class=\"form-control\" [(ngModel)]=\"email\" placeholder=\"Email address\">\r\n                </div>\r\n                <div class=\"form-group mb-4\">\r\n                  <label for=\"password\" class=\"sr-only\">Password</label>\r\n                  <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" [(ngModel)]=\"password\" placeholder=\"***********\">\r\n                </div>\r\n                <input name=\"login\" id=\"login\" class=\"btn  login-btn \" type=\"button\" (click)=\"login()\" value=\"Login\">\r\n                <div class=\"error\" >\r\n                  {{errorMessage}}\r\n                </div>\r\n    \r\n                  <hr data-content=\"OR\" class=\"hr-text\">\r\n                  <input name=\"redirect\" id=\"redirect\" class=\"btn redirect-btn btn-block\" type=\"button\" (click)=\"redirect()\" value=\"Continue as a Guest\">\r\n              \r\n              </form>\r\n              \r\n             \r\n              <p class=\"login-card-footer-text\">You can create your account at the end of the process <a href=\"/signUp\" class=\"text-reset\"><u>Register here</u></a></p>\r\n              \r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- <div class=\"card login-card\">\r\n      <img src=\"assets/images/login.jpg\" alt=\"login\" class=\"login-card-img\">\r\n      <div class=\"card-body\">\r\n        <h2 class=\"login-card-title\">Login</h2>\r\n        <p class=\"login-card-description\">Sign in to your account to continue.</p>\r\n        <form action=\"#!\">\r\n          <div class=\"form-group\">\r\n            <label for=\"email\" class=\"sr-only\">Email</label>\r\n            <input type=\"email\" name=\"email\" id=\"email\" class=\"form-control\" placeholder=\"Email\">\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"password\" class=\"sr-only\">Password</label>\r\n            <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" placeholder=\"Password\">\r\n          </div>\r\n          <div class=\"form-prompt-wrapper\">\r\n            <div class=\"custom-control custom-checkbox login-card-check-box\">\r\n              <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck1\">\r\n              <label class=\"custom-control-label\" for=\"customCheck1\">Remember me</label>\r\n            </div>              \r\n            <a href=\"#!\" class=\"text-reset\">Forgot password?</a>\r\n          </div>\r\n          <input name=\"login\" id=\"login\" class=\"btn btn-block login-btn mb-4\" type=\"button\" value=\"Login\">\r\n        </form>\r\n        <p class=\"login-card-footer-text\">Don't have an account? <a href=\"#!\" class=\"text-reset\">Register here</a></p>\r\n      </div>\r\n    </div> -->\r\n  </div>\r\n</main>"
         },
         {
             "name": "MTPLCalculatorComponent",
@@ -1593,7 +1769,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container\">\r\n<mat-horizontal-stepper  (selectionChange)=\"change($event)\" labelPosition=\"bottom\" #stepper1  linear>\r\n  \r\n      <mat-step completed={{toggle1}}>\r\n        <ng-template matStepLabel>Vehicle </ng-template>\r\n        <app-v-info (OnRegister)=\"vehicleData($event)\" (OnToggle)=\"toggle1=$event\"></app-v-info>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle2}}>\r\n        <ng-template matStepLabel>Insuring Party</ng-template>\r\n        <app-insuring-party (OnRegister)=\"insuringPartyData($event)\" (OnToggle)=\"toggle2=$event\"></app-insuring-party>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle3}}>\r\n        <ng-template matStepLabel>Policy Details</ng-template>\r\n        <app-policy-details (OnRegister)=\"policyDetailsData($event)\" (OnToggle)=\"toggle3=$event\"></app-policy-details>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle4}}>\r\n        <ng-template matStepLabel>Installments</ng-template>\r\n        <app-installment (OnRegister)=\"installmentsData($event)\" (OnToggle)=\"toggle4=$event\" ></app-installment>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle5}}>\r\n        <ng-template matStepLabel>Covers</ng-template>\r\n        <app-additional-covers (OnRegister)=\"coversData($event)\" [installment]='installments' (OnToggle)=\"toggle5=$event\" (NextTab)=\"nextTab($event)\"></app-additional-covers>\r\n      </mat-step>\r\n\r\n      <!-- <mat-step completed={{toggle6}}>\r\n        <ng-template matStepLabel>Summary</ng-template>\r\n        Summary\r\n      </mat-step> -->\r\n\r\n</mat-horizontal-stepper>\r\n</div>\r\n"
+            "templateData": "<div class=\"container\">\r\n<mat-horizontal-stepper  (selectionChange)=\"change($event)\" labelPosition=\"bottom\" #stepper1  >\r\n  \r\n      <mat-step completed={{toggle1}}>\r\n        <ng-template matStepLabel>Vehicle </ng-template>\r\n        <app-v-info (OnRegister)=\"vehicleData($event)\" (OnToggle)=\"toggle1=$event\"></app-v-info>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle2}}>\r\n        <ng-template matStepLabel>Insuring Party</ng-template>\r\n        <app-insuring-party (OnRegister)=\"insuringPartyData($event)\" (OnToggle)=\"toggle2=$event\"></app-insuring-party>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle3}}>\r\n        <ng-template matStepLabel>Policy Details</ng-template>\r\n        <app-policy-details (OnRegister)=\"policyDetailsData($event)\" (OnToggle)=\"toggle3=$event\"></app-policy-details>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle4}}>\r\n        <ng-template matStepLabel>Installments</ng-template>\r\n        <app-installment (OnRegister)=\"installmentsData($event)\" (OnToggle)=\"toggle4=$event\" ></app-installment>\r\n      </mat-step>\r\n\r\n      <mat-step completed={{toggle5}}>\r\n        <ng-template matStepLabel>Covers</ng-template>\r\n        <app-additional-covers (OnRegister)=\"coversData($event)\" [installment]='installments' (OnToggle)=\"toggle5=$event\" (NextTab)=\"nextTab($event)\"></app-additional-covers>\r\n      </mat-step>\r\n\r\n      <!-- <mat-step completed={{toggle6}}>\r\n        <ng-template matStepLabel>Summary</ng-template>\r\n        Summary\r\n      </mat-step> -->\r\n\r\n</mat-horizontal-stepper>\r\n</div>\r\n"
         },
         {
             "name": "MTPLPolicyComponent",
@@ -1815,7 +1991,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container\">\r\n<mat-horizontal-stepper labelPosition=\"bottom\" #stepper linear>\r\n  <mat-step completed={{toggle1}}>\r\n    <ng-template matStepLabel>Personal details</ng-template>\r\n    <app-personal (OnRegister)=\"personalData($event)\" (OnToggle)=\"toggle1=$event\"></app-personal>\r\n  </mat-step>  \r\n  \r\n  <mat-step completed={{toggle2}}>\r\n    <ng-template matStepLabel>Contact details</ng-template>\r\n    <app-contact (OnRegister)=\"contactDetailsData($event)\" (OnToggle)=\"toggle2=$event\"></app-contact>\r\n  </mat-step> \r\n  \r\n  <mat-step completed={{toggle3}}>\r\n    <ng-template matStepLabel>Vehicle Owner</ng-template>\r\n    <app-vehicle-owner (OnRegister)=\"vehicleOwnerData($event)\" (OnToggle)=\"toggle3=$event\"></app-vehicle-owner>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle4}}>\r\n    <ng-template matStepLabel>Delivery</ng-template>\r\n    <app-delivery (OnRegister)=\"deliveryData($event)\" (OnToggle)=\"toggle4=$event\"></app-delivery>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle5}}>\r\n    <ng-template matStepLabel >Summary</ng-template>\r\n    <app-proposal (changeStep)=\"move($event)\" (moveTab)=\"switch($event)\"></app-proposal>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle6}}>\r\n    <ng-template matStepLabel>Payment</ng-template>\r\n    <app-payment></app-payment>\r\n  </mat-step> \r\n\r\n  <!-- <mat-step >\r\n        <ng-template matStepLabel>Policy Details</ng-template>\r\n        <app-policy-details  ></app-policy-details>\r\n      </mat-step>\r\n        \r\n      <mat-step >\r\n        <ng-template matStepLabel>Vehicle </ng-template>\r\n        <app-v-info ></app-v-info>\r\n       \r\n      </mat-step> -->\r\n   \r\n</mat-horizontal-stepper>\r\n</div>\r\n"
+            "templateData": "<div class=\"container\">\r\n<mat-horizontal-stepper labelPosition=\"bottom\" #stepper >\r\n  <mat-step completed={{toggle1}}>\r\n    <ng-template matStepLabel>Personal details</ng-template>\r\n    <app-personal (OnRegister)=\"personalData($event)\" (OnToggle)=\"toggle1=$event\"></app-personal>\r\n  </mat-step>  \r\n  \r\n  <mat-step completed={{toggle2}}>\r\n    <ng-template matStepLabel>Contact details</ng-template>\r\n    <app-contact (OnRegister)=\"contactDetailsData($event)\" (OnToggle)=\"toggle2=$event\"></app-contact>\r\n  </mat-step> \r\n  \r\n  <mat-step completed={{toggle3}}>\r\n    <ng-template matStepLabel>Vehicle Owner</ng-template>\r\n    <app-vehicle-owner (OnRegister)=\"vehicleOwnerData($event)\" (OnToggle)=\"toggle3=$event\"></app-vehicle-owner>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle4}}>\r\n    <ng-template matStepLabel>Delivery</ng-template>\r\n    <app-delivery (OnRegister)=\"deliveryData($event)\" (OnToggle)=\"toggle4=$event\"></app-delivery>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle5}}>\r\n    <ng-template matStepLabel >Summary</ng-template>\r\n    <app-proposal (changeStep)=\"move($event)\" (moveTab)=\"switch($event)\"></app-proposal>\r\n  </mat-step>  \r\n\r\n  <mat-step completed={{toggle6}}>\r\n    <ng-template matStepLabel>Payment</ng-template>\r\n    <app-payment></app-payment>\r\n  </mat-step> \r\n\r\n  <!-- <mat-step >\r\n        <ng-template matStepLabel>Policy Details</ng-template>\r\n        <app-policy-details  ></app-policy-details>\r\n      </mat-step>\r\n        \r\n      <mat-step >\r\n        <ng-template matStepLabel>Vehicle </ng-template>\r\n        <app-v-info ></app-v-info>\r\n       \r\n      </mat-step> -->\r\n   \r\n</mat-horizontal-stepper>\r\n</div>\r\n"
         },
         {
             "name": "PaymentComponent",
@@ -2515,11 +2691,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Document</title>\r\n</head>\r\n<body>\r\n    <div class=\"container\">\r\n    <div class=\"row\">\r\n    <h1 class=\"label_prop\">Proposal</h1>\r\n    <button class=\"btn btn-outline-primary email_btn_prop ml-auto\">Send to email</button>\r\n    </div>\r\n    \r\n        <!-- <div class=\"d-flex justify-content-between col-md-12 mx-auto\">\r\n            <h1 class=\"p-2 label_prop\">Proposal</h1>\r\n            <div class=\"p-2\"><button class=\"btn btn-outline-primary email_btn_prop\">Send to email</button></div>\r\n        </div> -->\r\n        <br/>\r\n\r\n       <div class=\"row\">\r\n       <div class=\"card card_bg col-md-12 col-12 mx-auto\"> \r\n        <div class=\"card-body\">\r\n        <div class=\"row\">\r\n        <div class=\"col-md-1 col-2 p-0\">\r\n            <img src=\"../../../assets/motor_policy.PNG\">\r\n        </div>\r\n        \r\n           <div class=\"col-md-10 col-9 pr-0 m-auto\">\r\n            <div class=\"row\">\r\n               <div class=\"col-md-8 col-12 p-0\">\r\n               <span class=\"card-text middle-heading text-small\" style=\"color: white;\">Motor Third Party Liability Policy</span>\r\n            </div>\r\n            <!-- </div>             -->\r\n                <div class=\"col-md-4 col-12 ml-auto p-0\">\r\n                <div class=\"card-text card-num num\" style=\"color: white;\">324<span class=\"nearelm\">,00 BGN</span></div>\r\n                <div class=\"bgn\" style=\"color: white;\">Four Payments</div>\r\n            </div>\r\n        </div>\r\n        </div>\r\n\r\n        </div>\r\n            <!-- <div class=\"col-lg-3 col-md-3 col-sm-12 ml-auto\">\r\n            <p  class=\"card-text\" style=\"color:white;font-weight: 100;\">{{mtplCalculatorData[\"installmentsData\"].term}}</p>\r\n            </div> -->\r\n            </div>\r\n        </div>\r\n    </div>\r\n<br/>\r\n        <!-- <div class=\"col-md-12 col-12 mx-auto\"> -->\r\n            <!-- <div class=\"card\" style=\"border:none\"> -->\r\n                <!-- <div class=\"card-body  border-bottom\"> -->\r\n                    <div class=\"row\">\r\n                   <div class=\"col-1\"><img class=\"tick\" src=\"../../../assets/tick.jpg\"></div>\r\n                        <span class=\"col-10 text\">Premium indicated are final and include Contribution to the Gaurantee and Insurance Fund, stickers and 2% tax on insurance payment.</span>\r\n                    </div><br/>\r\n                <div class=\"row\">\r\n                    <div class=\"col-1\"><img class=\"tick\" src=\"../../../assets/tick.jpg\"></div>\r\n                    <span class=\"col-10 text\">The insurance payment is calculated with included - 5% discount for insurance with \"Casco+\".</span>\r\n                </div><br/>\r\n                <div class=\"row\">\r\n                <div class=\"col-1\"><img class=\"tick\" src=\"../../../assets/tick.jpg\"></div>\r\n                    <span class=\"col-10 text\">Annual Technical Inspection Voucher</span>\r\n                </div>\r\n                <!-- </div> -->\r\n            <!-- </div> -->\r\n            <br/>\r\n            \r\n\r\n            <form [formGroup]=\"summaryForm\">\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body border-bottom\">\r\n                    \r\n                    <label class=\"label_prop\">Instalments</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\" moveToCalculator(3)\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n\r\n          \r\n                <div class=\"col-md-3\">                    \r\n                    <div  *ngFor='let ele of installmentData;let indexOfEle=index;'>\r\n                    <label class=\"font_color sub_label_prop\" >{{indexOfEle+1 |ordinal}} Installment</label>\r\n                    <!-- <input type=\"text\" class=\"form-control\" id=\"firstInstalment\"  value={{first}}> -->\r\n                    <p>{{ele}}</p>\r\n                    </div>\r\n                    <!-- <span *ngIf=\"summaryForm.controls.firstInstalment.errors\" style=\"color: red;\">Required</span> -->\r\n                </div>\r\n\r\n                \r\n            </div>\r\n\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body  border-bottom\">\r\n                    <label class=\"label_prop\">Additional Cover</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\" moveToCalculator(4)\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"form-group\">\r\n                    <!-- <input type=\"text\" formControlName=\"additionalCover\" class=\"form-control label_prop\" [value]=\"\"> -->\r\n                    {{mtplCalculatorData[\"coversData\"].cover}}\r\n                </div>\r\n                <!-- <span *ngIf=\"summaryForm.controls.additionalCover.errors\" style=\"color: red;\">Required</span> -->\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body  border-bottom\">\r\n                    <label class=\"label_prop\">Policy Dates</label>&nbsp;&nbsp;&nbsp;\r\n                    <a href=\"#\" class=\"edit_prop\">Edit</a>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <div class=\"form-group\">\r\n                           <label class=\"font_color sub_label_prop\">Start Date</label><br>\r\n                            <!-- <input type=\"text\" class=\"form-control\" formControlName=\"startDate\" [value]=\"\"> -->\r\n                            {{mtplCalculatorData[\"policyDetailsData\"].policyDate}}\r\n                            </div>\r\n                            <!-- <span *ngIf=\"summaryForm.controls.startDate.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">End Date</label>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"endDate\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.endDate.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body  border-bottom\">\r\n                    <label class=\"label_prop\">Vehicle</label>\r\n                    <button (click)=\" moveToCalculator(0)\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Vehicle Registration Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"vehicleRegistration\" [value]=\"\" > -->\r\n                       {{mtplCalculatorData[\"vehicleData\"].registrationNumber}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.vehicleRegistration.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Vehicle Purpose</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"vehiclePurpose\" [value]=\"\"> -->\r\n                        {{mtplCalculatorData[\"vehicleData\"].purpose}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.vehiclePurpose.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Vehicle Certification Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"certificationNumber\" [value]=\"\"> -->\r\n                        {{mtplCalculatorData[\"vehicleData\"].certificateNumber}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.certificationNumber.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Driven outside bulgaria for more than 60 days</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"days\" [value]=\"\"> -->\r\n                        {{mtplCalculatorData[\"vehicleData\"].yesNo}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.days.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <!--<div class=\"card border-warning\">\r\n                            <img class=\"edit\" src=\"../../assets/edit.jpg\">\r\n                            <div class=\"card-body font_color\">\r\n                                <i class=\"fa fa-pencil-square-o fa-2x\" style=\"color: orange; text-align: justify;\"></i>\r\n                                <div style=\"text-align: justify; padding-left: 15px; padding-right: 15px; padding-top: 10px; padding-bottom: 15px;\">Casco has an active policy for the same vehicle with different data.The change in the \r\n                                data will be reflacted in an. The ann will be sent to you by courier/ email or will be\r\n                                provided for signing by e-signature.\r\n                                </div>\r\n                                        \r\n                            </div>\r\n                        </div>-->\r\n                        <div class=\"panel col-lg-12\">\r\n                            <img class=\"user-key\" src=\"../../assets/edit.jpg\">\r\n                            Casco has an active policy for the same vehicle with different data.The change in the \r\n                            data will be reflacted in an. The ann will be sent to you by courier/ email or will be\r\n                            provided for signing by e-signature.\r\n                         </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body border-bottom\">\r\n                    <label class=\"label_prop\">Insuring Party</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\" moveToCalculator(1)\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">ENG/ELK/LNCH Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"number\" [value]=\"\"> -->\r\n                        {{mtplCalculatorData[\"insuringPartyData\"].egn}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.number.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Full Name</label><br>\r\n                        {{mtplPolicyData[\"personalInformation\"].fullname.firstname}} {{mtplPolicyData[\"personalInformation\"].fullname.lastname}} {{mtplPolicyData[\"personalInformation\"].fullname.surname}}\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"fullName\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.fullName.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Phone Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"phoneNumber\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"contactInformation\"].phone}} <br>\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.phoneNumber.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Email</label><br>\r\n                        {{mtplCalculatorData[\"insuringPartyData\"].email}}\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"email\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.email.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">City and zipcode</label><br>\r\n                        {{mtplPolicyData[\"contactInformation\"].city}}   {{mtplPolicyData[\"contactInformation\"].pincode}} \r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"cityZipcode\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.cityZipcode.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Street & Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"streetNumber\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"contactInformation\"].street}}   {{mtplPolicyData[\"contactInformation\"].No}} \r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.streetNumberors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Apartment</label><br>\r\n                        {{mtplPolicyData[\"contactInformation\"].appartment}} \r\n                        <!-- <input type=\"number\" class=\"form-control\" formControlName=\"apartment\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.apartment.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body border-bottom\">\r\n                    <label class=\"label_prop\">Vehicle Owner</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\"edit(2)\" class=\"edit_prop\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <div class=\"form-group\">\r\n                            <label class=\"font_color sub_label_prop\">EGN/ELK/LNCH Number</label><br>\r\n                            <!-- <input type=\"text\" class=\"form-control\" formControlName=\"egnnumber\" [value]=\"\"> -->\r\n                            {{mtplPolicyData[\"vehicleOwnerInformation\"].lnch}}\r\n                            </div>\r\n                            <!-- <span *ngIf=\"summaryForm.controls.egnnumber.errors\" style=\"color: red;\">Required</span> -->\r\n                            <div class=\"form-group\">\r\n                            <label class=\"font_color sub_label_prop\">Full Name</label><br>\r\n                            <!-- <input type=\"text\" class=\"form-control\" formControlName=\"fullnamevehicleowner\" [value]=\"\"> -->\r\n                            {{mtplPolicyData[\"vehicleOwnerInformation\"].fullname.firstname}}\r\n                            </div>\r\n                            <!-- <span *ngIf=\"summaryForm.controls.fullnamevehicleowner.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <div class=\"form-group\">\r\n                            <label class=\"font_color sub_label_prop\">city & zipcode</label><br>\r\n                            <!-- <input type=\"text\" class=\"form-control\" formControlName=\"cityZipcodevehicleOwner\" [value]=\"\"> -->\r\n                            {{mtplPolicyData[\"vehicleOwnerInformation\"].city}}      \r\n                            </div>\r\n                            <!-- <span *ngIf=\"summaryForm.controls.cityZipcodevehicleOwner.errors\" style=\"color: red;\">Required</span> -->\r\n                            <div class=\"form-group\">\r\n                            <label class=\"font_color sub_label_prop\">street & Number</label><br>\r\n                            <!-- <input type=\"text\" class=\"form-control\" formControlName=\"streetNumbervehicleowner\" [value]=\"\"> -->\r\n                            {{mtplPolicyData[\"vehicleOwnerInformation\"].street}}      {{mtplPolicyData[\"vehicleOwnerInformation\"].No}}\r\n                            </div>\r\n                            <!-- <span *ngIf=\"summaryForm.controls.streetNumbervehicleowner.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body border-bottom\">\r\n                    <label class=\"label_prop\">Delivery</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\"edit(3)\" class=\"edit_prop\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Full Name</label><br>\r\n                        {{mtplPolicyData[\"deliveryInformation\"].fullName}}\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"fullNameDelivery\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.fullNameDelivery.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Phone Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"phoneNumDelivery\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"deliveryInformation\"].contact}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.phoneNumDelivery.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Address Type</label><br>\r\n                        {{mtplPolicyData[\"deliveryInformation\"].business}}\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"addressType\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.addressType.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">City and zipcode</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"cityZipcodeDelivery\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"deliveryInformation\"].city}} and {{mtplPolicyData[\"deliveryInformation\"].pincode}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.cityZipcodeDelivery.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Street & Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"streetNumberDelivery\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"deliveryInformation\"].street}} and {{mtplPolicyData[\"deliveryInformation\"].number}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.streetNumberDelivery.errors\" style=\"color: red;\">Required</span> -->\r\n                      \r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Block</label><br>\r\n                        <!-- <input type=\"number\" class=\"form-control\" formControlName=\"block\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"deliveryInformation\"].block}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.block.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Apartment</label><br>\r\n                        <!-- <input type=\"number\" class=\"form-control\" formControlName=\"apartmentDelivery\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"deliveryInformation\"].appt}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.apartmentDelivery.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n        \r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"form-group form-check\">\r\n                    <input type=\"checkbox\" class=\"font_color form-check-input\" formControlName=\"AgreeToAll\">\r\n                    <div>  Agree to all</div>\r\n                </div>\r\n                <span *ngIf=\"summaryForm.controls.AgreeToAll.errors && summaryForm.controls.AgreeToAll.touched\" style=\"color: red;\">Required</span>\r\n            </div>\r\n            </div><br/>\r\n            <div class=\"card\" style=\"box-shadow:2px 2px 2px gray;\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"form-group form-check\">\r\n                    <input type=\"checkbox\" class=\"form-check-input\" formControlName=\"receiveNewsletter\" style=\"color: rgb(0, 53, 103)\" > \r\n                    <div>I agree to receive DZI newsletter</div>\r\n                </div>\r\n                <span *ngIf=\"summaryForm.controls.receiveNewsletter.errors && summaryForm.controls.receiveNewsletter.touched\" style=\"color: red;\">Required</span>\r\n            </div>\r\n            </div><br/>\r\n            <div class=\"card\" style=\"box-shadow: 2px 2px 2px gray;\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"form-group form-check\">\r\n                    <input type=\"checkbox\" style=\"color: rgb(0, 53, 103);\" class=\"form-check-input\" formControlName=\"generalTerms\"> \r\n                   <div>I agree to the <a href=\"#\" style=\"color:dodgerblue ;\">general terms and conditions</a></div>\r\n                   <span *ngIf=\"summaryForm.controls.generalTerms.errors && summaryForm.controls.generalTerms.touched\" style=\"color:red\">required</span>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </form><br/><br/>\r\n\r\n            <button class=\"btn btn-primary\" style=\"border-radius: 3rem;\" matStepperNext [disabled]=\"summaryForm.invalid\">Continue to payment</button>\r\n        <!-- </div> -->\r\n        \r\n    </div>\r\n</body>\r\n</html>"
+            "templateData": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Document</title>\r\n</head>\r\n<body>\r\n    <div class=\"container\">\r\n    <div class=\"row\">\r\n    <h1 class=\"label_prop\">Proposal</h1>\r\n    <button class=\"btn btn-outline-primary email_btn_prop ml-auto\">Send to email</button>\r\n    </div>\r\n    \r\n        <!-- <div class=\"d-flex justify-content-between col-md-12 mx-auto\">\r\n            <h1 class=\"p-2 label_prop\">Proposal</h1>\r\n            <div class=\"p-2\"><button class=\"btn btn-outline-primary email_btn_prop\">Send to email</button></div>\r\n        </div> -->\r\n        <br/>\r\n\r\n       <div class=\"row\">\r\n       <div class=\"card card_bg col-md-12 col-12 mx-auto\"> \r\n        <div class=\"card-body\">\r\n        <div class=\"row\">\r\n        <div class=\"col-md-1 col-2 p-0\">\r\n            <img src=\"../../../assets/motor_policy.PNG\">\r\n        </div>\r\n        \r\n           <div class=\"col-md-10 col-9 pr-0 m-auto\">\r\n            <div class=\"row\">\r\n               <div class=\"col-md-8 col-12 p-0\">\r\n               <span class=\"card-text middle-heading text-small\" style=\"color: white;\">Motor Third Party Liability Policy</span>\r\n            </div>\r\n            <!-- </div>             -->\r\n                <div class=\"col-md-4 col-12 ml-auto p-0\">\r\n                <div class=\"card-text card-num num\" style=\"color: white;\">324<span class=\"nearelm\">,00 BGN</span></div>\r\n                <div class=\"bgn\" style=\"color: white;\">Four Payments</div>\r\n            </div>\r\n        </div>\r\n        </div>\r\n\r\n        </div>\r\n            <!-- <div class=\"col-lg-3 col-md-3 col-sm-12 ml-auto\">\r\n            <p  class=\"card-text\" style=\"color:white;font-weight: 100;\">{{mtplCalculatorData[\"installmentsData\"].term}}</p>\r\n            </div> -->\r\n            </div>\r\n        </div>\r\n    </div>\r\n<br/>\r\n        <!-- <div class=\"col-md-12 col-12 mx-auto\"> -->\r\n            <!-- <div class=\"card\" style=\"border:none\"> -->\r\n                <!-- <div class=\"card-body  border-bottom\"> -->\r\n                    <div class=\"row\">\r\n                   <div class=\"col-1\"><img class=\"tick\" src=\"../../../assets/tick.jpg\"></div>\r\n                        <span class=\"col-10 text\">Premium indicated are final and include Contribution to the Gaurantee and Insurance Fund, stickers and 2% tax on insurance payment.</span>\r\n                    </div><br/>\r\n                <div class=\"row\">\r\n                    <div class=\"col-1\"><img class=\"tick\" src=\"../../../assets/tick.jpg\"></div>\r\n                    <span class=\"col-10 text\">The insurance payment is calculated with included - 5% discount for insurance with \"Casco+\".</span>\r\n                </div><br/>\r\n                <div class=\"row\">\r\n                <div class=\"col-1\"><img class=\"tick\" src=\"../../../assets/tick.jpg\"></div>\r\n                    <span class=\"col-10 text\">Annual Technical Inspection Voucher</span>\r\n                </div>\r\n                <!-- </div> -->\r\n            <!-- </div> -->\r\n            <br/>\r\n            \r\n\r\n            <form [formGroup]=\"summaryForm\">\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body border-bottom\">\r\n                    \r\n                    <label class=\"label_prop\">Instalments</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\" moveToCalculator(3)\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n\r\n          \r\n                <div class=\"col-md-3\">                    \r\n                    <div  *ngFor='let ele of installmentData;let indexOfEle=index;'>\r\n                    <label class=\"font_color sub_label_prop\" >{{indexOfEle+1 |ordinal}} Installment</label>\r\n                    <!-- <input type=\"text\" class=\"form-control\" id=\"firstInstalment\"  value={{first}}> -->\r\n                    <p>{{ele}}</p>\r\n                    </div>\r\n                    <!-- <span *ngIf=\"summaryForm.controls.firstInstalment.errors\" style=\"color: red;\">Required</span> -->\r\n                </div>\r\n\r\n                \r\n            </div>\r\n\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body  border-bottom\">\r\n                    <label class=\"label_prop\">Additional Cover</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\" moveToCalculator(4)\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"form-group\">\r\n                    <!-- <input type=\"text\" formControlName=\"additionalCover\" class=\"form-control label_prop\" [value]=\"\"> -->\r\n                    {{mtplCalculatorData[\"coversData\"].cover}}\r\n                </div>\r\n                <!-- <span *ngIf=\"summaryForm.controls.additionalCover.errors\" style=\"color: red;\">Required</span> -->\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body  border-bottom\">\r\n                    <label class=\"label_prop\">Policy Dates</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\" moveToCalculator(2)\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <div class=\"form-group\">\r\n                           <label class=\"font_color sub_label_prop\">Start Date</label><br>\r\n                            <!-- <input type=\"text\" class=\"form-control\" formControlName=\"startDate\" [value]=\"\"> -->\r\n                            {{mtplCalculatorData[\"policyDetailsData\"].policyDate}}\r\n                            </div>\r\n                            <!-- <span *ngIf=\"summaryForm.controls.startDate.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">End Date</label>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"endDate\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.endDate.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body  border-bottom\">\r\n                    <label class=\"label_prop\">Vehicle</label>\r\n                    <button (click)=\" moveToCalculator(0)\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Vehicle Registration Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"vehicleRegistration\" [value]=\"\" > -->\r\n                       {{mtplCalculatorData[\"vehicleData\"].registrationNumber}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.vehicleRegistration.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Vehicle Purpose</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"vehiclePurpose\" [value]=\"\"> -->\r\n                        {{mtplCalculatorData[\"vehicleData\"].purpose}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.vehiclePurpose.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Vehicle Certification Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"certificationNumber\" [value]=\"\"> -->\r\n                        {{mtplCalculatorData[\"vehicleData\"].certificateNumber}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.certificationNumber.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Driven outside bulgaria for more than 60 days</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"days\" [value]=\"\"> -->\r\n                        {{mtplCalculatorData[\"vehicleData\"].yesNo}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.days.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <!--<div class=\"card border-warning\">\r\n                            <img class=\"edit\" src=\"../../assets/edit.jpg\">\r\n                            <div class=\"card-body font_color\">\r\n                                <i class=\"fa fa-pencil-square-o fa-2x\" style=\"color: orange; text-align: justify;\"></i>\r\n                                <div style=\"text-align: justify; padding-left: 15px; padding-right: 15px; padding-top: 10px; padding-bottom: 15px;\">Casco has an active policy for the same vehicle with different data.The change in the \r\n                                data will be reflacted in an. The ann will be sent to you by courier/ email or will be\r\n                                provided for signing by e-signature.\r\n                                </div>\r\n                                        \r\n                            </div>\r\n                        </div>-->\r\n                        <div class=\"panel col-lg-12\">\r\n                            <img class=\"user-key\" src=\"../../assets/edit.jpg\">\r\n                            Casco has an active policy for the same vehicle with different data.The change in the \r\n                            data will be reflacted in an. The ann will be sent to you by courier/ email or will be\r\n                            provided for signing by e-signature.\r\n                         </div>\r\n                    </div>\r\n\r\n\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body border-bottom\">\r\n                    <label class=\"label_prop\">Insuring Party</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\" moveToCalculator(1)\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">ENG/ELK/LNCH Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"number\" [value]=\"\"> -->\r\n                        {{mtplCalculatorData[\"insuringPartyData\"].egn}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.number.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Full Name</label><br>\r\n                        {{mtplPolicyData[\"personalInformation\"].fullname.firstname}} {{mtplPolicyData[\"personalInformation\"].fullname.lastname}} {{mtplPolicyData[\"personalInformation\"].fullname.surname}}\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"fullName\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.fullName.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Phone Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"phoneNumber\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"contactInformation\"].phone}} <br>\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.phoneNumber.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Email</label><br>\r\n                        {{mtplCalculatorData[\"insuringPartyData\"].email}}\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"email\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.email.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">City and zipcode</label><br>\r\n                        {{mtplPolicyData[\"contactInformation\"].city}}   {{mtplPolicyData[\"contactInformation\"].pincode}} \r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"cityZipcode\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.cityZipcode.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Street & Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"streetNumber\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"contactInformation\"].street}}   {{mtplPolicyData[\"contactInformation\"].No}} \r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.streetNumberors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Apartment</label><br>\r\n                        {{mtplPolicyData[\"contactInformation\"].appartment}} \r\n                        <!-- <input type=\"number\" class=\"form-control\" formControlName=\"apartment\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.apartment.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body border-bottom\">\r\n                    <label class=\"label_prop\">Vehicle Owner</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\"edit(2)\" class=\"edit_prop\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-6\">\r\n                            <div class=\"form-group\">\r\n                            <label class=\"font_color sub_label_prop\">EGN/ELK/LNCH Number</label><br>\r\n                            <!-- <input type=\"text\" class=\"form-control\" formControlName=\"egnnumber\" [value]=\"\"> -->\r\n                            {{mtplPolicyData[\"vehicleOwnerInformation\"].lnch}}\r\n                            </div>\r\n                            <!-- <span *ngIf=\"summaryForm.controls.egnnumber.errors\" style=\"color: red;\">Required</span> -->\r\n                            <div class=\"form-group\">\r\n                            <label class=\"font_color sub_label_prop\">Full Name</label><br>\r\n                            <!-- <input type=\"text\" class=\"form-control\" formControlName=\"fullnamevehicleowner\" [value]=\"\"> -->\r\n                            {{mtplPolicyData[\"vehicleOwnerInformation\"].fullname.firstname}}\r\n                            </div>\r\n                            <!-- <span *ngIf=\"summaryForm.controls.fullnamevehicleowner.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                            <div class=\"form-group\">\r\n                            <label class=\"font_color sub_label_prop\">city & zipcode</label><br>\r\n                            <!-- <input type=\"text\" class=\"form-control\" formControlName=\"cityZipcodevehicleOwner\" [value]=\"\"> -->\r\n                            {{mtplPolicyData[\"vehicleOwnerInformation\"].city}}      \r\n                            </div>\r\n                            <!-- <span *ngIf=\"summaryForm.controls.cityZipcodevehicleOwner.errors\" style=\"color: red;\">Required</span> -->\r\n                            <div class=\"form-group\">\r\n                            <label class=\"font_color sub_label_prop\">street & Number</label><br>\r\n                            <!-- <input type=\"text\" class=\"form-control\" formControlName=\"streetNumbervehicleowner\" [value]=\"\"> -->\r\n                            {{mtplPolicyData[\"vehicleOwnerInformation\"].street}}      {{mtplPolicyData[\"vehicleOwnerInformation\"].No}}\r\n                            </div>\r\n                            <!-- <span *ngIf=\"summaryForm.controls.streetNumbervehicleowner.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body border-bottom\">\r\n                    <label class=\"label_prop\">Delivery</label>&nbsp;&nbsp;&nbsp;\r\n                    <button (click)=\"edit(3)\" class=\"edit_prop\" class=\"btn btn-outline-none email_btn_prop\" style=\"text-decoration: underline;color: rgb(43, 168, 226);\">Edit</button>\r\n                    <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Full Name</label><br>\r\n                        {{mtplPolicyData[\"deliveryInformation\"].fullName}}\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"fullNameDelivery\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.fullNameDelivery.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Phone Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"phoneNumDelivery\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"deliveryInformation\"].contact}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.phoneNumDelivery.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Address Type</label><br>\r\n                        {{mtplPolicyData[\"deliveryInformation\"].business}}\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"addressType\" [value]=\"\"> -->\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.addressType.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                        <div class=\"col-md-6\">\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">City and zipcode</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"cityZipcodeDelivery\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"deliveryInformation\"].city}} and {{mtplPolicyData[\"deliveryInformation\"].pincode}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.cityZipcodeDelivery.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Street & Number</label><br>\r\n                        <!-- <input type=\"text\" class=\"form-control\" formControlName=\"streetNumberDelivery\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"deliveryInformation\"].street}} and {{mtplPolicyData[\"deliveryInformation\"].number}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.streetNumberDelivery.errors\" style=\"color: red;\">Required</span> -->\r\n                      \r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Block</label><br>\r\n                        <!-- <input type=\"number\" class=\"form-control\" formControlName=\"block\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"deliveryInformation\"].block}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.block.errors\" style=\"color: red;\">Required</span> -->\r\n                        <div class=\"form-group\">\r\n                        <label class=\"font_color sub_label_prop\">Apartment</label><br>\r\n                        <!-- <input type=\"number\" class=\"form-control\" formControlName=\"apartmentDelivery\" [value]=\"\"> -->\r\n                        {{mtplPolicyData[\"deliveryInformation\"].appt}}\r\n                        </div>\r\n                        <!-- <span *ngIf=\"summaryForm.controls.apartmentDelivery.errors\" style=\"color: red;\">Required</span> -->\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <br/>\r\n\r\n        \r\n            <div class=\"card\" style=\"border:none\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"form-group form-check\">\r\n                    <input type=\"checkbox\" class=\"font_color form-check-input\" formControlName=\"AgreeToAll\">\r\n                    <div>  Agree to all</div>\r\n                </div>\r\n                <span *ngIf=\"summaryForm.controls.AgreeToAll.errors && summaryForm.controls.AgreeToAll.touched\" style=\"color: red;\">Required</span>\r\n            </div>\r\n            </div><br/>\r\n            <div class=\"card\" style=\"box-shadow:2px 2px 2px gray;\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"form-group form-check\">\r\n                    <input type=\"checkbox\" class=\"form-check-input\" formControlName=\"receiveNewsletter\" style=\"color: rgb(0, 53, 103)\" > \r\n                    <div>I agree to receive DZI newsletter</div>\r\n                </div>\r\n                <span *ngIf=\"summaryForm.controls.receiveNewsletter.errors && summaryForm.controls.receiveNewsletter.touched\" style=\"color: red;\">Required</span>\r\n            </div>\r\n            </div><br/>\r\n            <div class=\"card\" style=\"box-shadow: 2px 2px 2px gray;\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"form-group form-check\">\r\n                    <input type=\"checkbox\" style=\"color: rgb(0, 53, 103);\" class=\"form-check-input\" formControlName=\"generalTerms\"> \r\n                   <div>I agree to the <a href=\"#\" style=\"color:dodgerblue ;\">general terms and conditions</a></div>\r\n                   <span *ngIf=\"summaryForm.controls.generalTerms.errors && summaryForm.controls.generalTerms.touched\" style=\"color:red\">required</span>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </form><br/><br/>\r\n\r\n            <button class=\"btn btn-primary\" style=\"border-radius: 3rem;\" matStepperNext [disabled]=\"summaryForm.invalid\">Continue to payment</button>\r\n        <!-- </div> -->\r\n        \r\n    </div>\r\n</body>\r\n</html>"
         },
         {
             "name": "SignUpComponent",
-            "id": "component-SignUpComponent-fe850e107b63366f849577eb6aab1ac5",
+            "id": "component-SignUpComponent-85be7e17fbf90adde36b649f17bb14db",
             "file": "src/app/components/sign-up/sign-up.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2538,46 +2714,53 @@
             "inputsClass": [
                 {
                     "name": "confirmPassword",
-                    "line": 14,
+                    "line": 15,
                     "type": "String"
                 },
                 {
                     "name": "email",
-                    "line": 12,
-                    "type": "String"
-                },
-                {
-                    "name": "fullName",
-                    "line": 11,
-                    "type": "String"
-                },
-                {
-                    "name": "password",
                     "line": 13,
                     "type": "String"
                 },
                 {
-                    "name": "phoneNo",
-                    "line": 15,
+                    "name": "fullName",
+                    "line": 12,
+                    "type": "String"
+                },
+                {
+                    "name": "mobile",
+                    "line": 16,
                     "type": "Number"
+                },
+                {
+                    "name": "password",
+                    "line": 14,
+                    "type": "String"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
+                {
+                    "name": "errorMessage",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
                 {
                     "name": "register",
                     "defaultValue": "() => {...}",
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 32
+                    "line": 33
                 },
                 {
                     "name": "signUpForm",
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 17
                 }
             ],
             "methodsClass": [
@@ -2587,7 +2770,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22
+                    "line": 23
                 }
             ],
             "hostBindings": [],
@@ -2595,7 +2778,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-sign-up',\r\n  templateUrl: './sign-up.component.html',\r\n  styleUrls: ['./sign-up.component.css']\r\n})\r\nexport class SignUpComponent implements OnInit {\r\n  @Input() fullName:String;\r\n  @Input() email:String;\r\n  @Input() password:String;\r\n  @Input() confirmPassword:String;\r\n  @Input() phoneNo:Number;\r\n  signUpForm:FormGroup\r\n\r\n  constructor(private fb:FormBuilder, private router:Router) { }\r\n\r\n\r\n\r\n  ngOnInit(): void {\r\n    this.signUpForm=this.fb.group({\r\n      fullName:['',[Validators.required]],\r\n      email:['',[Validators.required,Validators.pattern(/^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$/)]],\r\n      password:['',[Validators.required]],\r\n      confirmPassword:['',[Validators.required]],\r\n      phoneNo:['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]]\r\n    },{validator:passwordValidator})\r\n  }\r\n\r\n  register=()=>{\r\n    // if(this.signUpForm.value.password==this.signUpForm.value.confirmPassword){\r\n    //   console.log(this.signUpForm.value);\r\n    //   this.router.navigate([\"/signIn\"]);\r\n    // }\r\n    // else{\r\n    //   alert('password should be same')\r\n    // }\r\n    console.log(this.signUpForm.value);\r\n    alert(\"You are registered Succussfully\")\r\n    // this.router.navigate([\"/signIn\"])\r\n    \r\n    setTimeout(()=>{\r\n      this.router.navigate([\"/signIn\"])\r\n    })\r\n  }\r\n\r\n  \r\n\r\n}\r\nfunction passwordValidator(c:AbstractControl) {\r\n  const password=c.get('password')\r\n  const confirmPassword=c.get('confirmPassword')\r\n  if(password.pristine || confirmPassword.pristine){\r\n    return null\r\n  }\r\n  return password.value != confirmPassword.value ? {'misMatch':true} : null\r\n  \r\n  \r\n}",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\r\nimport { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\nimport { SignUpService } from './sign-up.service';\r\n\r\n@Component({\r\n  selector: 'app-sign-up',\r\n  templateUrl: './sign-up.component.html',\r\n  styleUrls: ['./sign-up.component.css']\r\n})\r\nexport class SignUpComponent implements OnInit {\r\n  @Input() fullName:String;\r\n  @Input() email:String;\r\n  @Input() password:String;\r\n  @Input() confirmPassword:String;\r\n  @Input() mobile:Number;\r\n  signUpForm:FormGroup\r\n  errorMessage\r\n  constructor(private fb:FormBuilder, private router:Router, private signUpService:SignUpService) { }\r\n\r\n\r\n\r\n  ngOnInit(): void {\r\n    this.signUpForm=this.fb.group({\r\n      // fullName:['',[Validators.required]],\r\n      email:['',[Validators.required,Validators.pattern(/^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$/)]],\r\n      password:['',[Validators.required]],\r\n      confirmPassword:['',[Validators.required]],\r\n      mobile:['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]]\r\n    },{validator:passwordValidator})\r\n  }\r\n\r\n  register=()=>{\r\n    // if(this.signUpForm.value.password==this.signUpForm.value.confirmPassword){\r\n    //   console.log(this.signUpForm.value);\r\n    //   this.router.navigate([\"/signIn\"]);\r\n    // }\r\n    // else{\r\n    //   alert('password should be same')\r\n    // }\r\n    console.log(this.signUpForm.value);\r\n    \r\n    // this.router.navigate([\"/signIn\"])\r\n    this.signUpService.registerUser(this.signUpForm.value).subscribe((res)=>{\r\n      console.log(res);\r\n      var response=JSON.parse(JSON.stringify(res))\r\n      // sessionStorage.setItem(\"id\",response.id)\r\n      // sessionStorage.setItem(\"token\",response.token)\r\n      alert(\"You are registered Succussfully\")\r\n      setTimeout(()=>{\r\n      this.router.navigate([\"/signIn\"])\r\n      })\r\n    },(err)=>{\r\n      this.errorMessage=err.error.error.errors[0].message\r\n      console.log(this.errorMessage);     \r\n      \r\n      \r\n    })\r\n    \r\n  }\r\n\r\n  \r\n\r\n}\r\nfunction passwordValidator(c:AbstractControl) {\r\n  const password=c.get('password')\r\n  const confirmPassword=c.get('confirmPassword')\r\n  if(password.pristine || confirmPassword.pristine){\r\n    return null\r\n  }\r\n  return password.value != confirmPassword.value ? {'misMatch':true} : null\r\n  \r\n  \r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2615,9 +2798,13 @@
                     {
                         "name": "router",
                         "type": "Router"
+                    },
+                    {
+                        "name": "signUpService",
+                        "type": "SignUpService"
                     }
                 ],
-                "line": 16,
+                "line": 18,
                 "jsdoctags": [
                     {
                         "name": "fb",
@@ -2632,13 +2819,20 @@
                         "tagName": {
                             "text": "param"
                         }
+                    },
+                    {
+                        "name": "signUpService",
+                        "type": "SignUpService",
+                        "tagName": {
+                            "text": "param"
+                        }
                     }
                 ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-12 col-md-6 offset-md-3\">\r\n            <div class=\"jumbotron\">\r\n                <h1 style=\"text-align: center;\" class=\"text-primary\">Sign Up</h1>\r\n            <form [formGroup]='signUpForm'>\r\n                <div class=\"form-group\">\r\n                    <label for=\"fullName\">Full Name:</label>\r\n                    <input id=\"fullName\" class=\"form-control\" [(ngModel)]=\"fullName\" formControlName='fullName'>\r\n                </div>\r\n                <div id='fullNameError' *ngIf='signUpForm.controls.fullName.touched'>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.fullName.errors?.required'>Required</span>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for='email'>Email:</label>\r\n                    <input id='email' class=\"form-control\" [(ngModel)]=\"email\" formControlName='email'>\r\n                </div>\r\n                <div id='emailError' *ngIf='signUpForm.controls.email.touched'>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.email.errors?.required'>Required</span>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.email.errors?.pattern'>enter valid email Id</span>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"password\">Password:</label>\r\n                    <input id='password' type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" formControlName='password'>\r\n\r\n                </div>\r\n                <div id='passwordError' *ngIf='signUpForm.controls.password.touched'>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.password.errors?.required'>Required</span>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"confirmPassword\">Confirm Password:</label>\r\n                    <input id='confirmPassword' type='password' class=\"form-control\" [(ngModel)]=\"confirmPassword\" formControlName='confirmPassword'>\r\n                </div>\r\n                <div id='confirmPasswordError' *ngIf='signUpForm.controls.confirmPassword.touched'>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.confirmPassword.errors?.required'>Required</span>\r\n                </div>\r\n                <div *ngIf=\"(signUpForm.errors?.misMatch && !signUpForm.controls.confirmPassword.errors?.required) && (signUpForm.controls.confirmPassword.dirty && signUpForm.controls.confirmPassword.touched)\" class=\"error\">Password did not match</div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"phoneNo\">Phone No:</label>\r\n                    <input id=\"phoneNo\" class=\"form-control\" [(ngModel)]=\"phoneNo\" formControlName='phoneNo'>\r\n                </div>\r\n                <div id='phoneNoError' *ngIf='signUpForm.controls.phoneNo.touched'>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.phoneNo.errors?.required'>Required</span>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.phoneNo.errors?.minlength || signUpForm.controls.phoneNo.errors?.maxlength'>Enter valid phone No</span>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <button class=\"btn btn-block btn-primary\" [disabled]='!signUpForm.valid' (click)='register()'>Register</button>\r\n                </div>\r\n            </form>\r\n            <div class=\"text-center\">Already have an account? <a [routerLink]=\"['/signIn']\" >Sign in</a></div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n</div>\r\n"
+            "templateData": "\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-12 col-md-6 offset-md-3\">\r\n            <div class=\"jumbotron\">\r\n                <h1 style=\"text-align: center;\" class=\"text-primary\">Sign Up</h1>\r\n            <form [formGroup]='signUpForm'>\r\n                <!-- <div class=\"form-group\">\r\n                    <label for=\"fullName\">Full Name:</label>\r\n                    <input id=\"fullName\" class=\"form-control\" [(ngModel)]=\"fullName\" formControlName='fullName'>\r\n                </div>\r\n                <div id='fullNameError' *ngIf='signUpForm.controls.fullName.touched'>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.fullName.errors?.required'>Required</span>\r\n                </div> -->\r\n                <div class=\"form-group\">\r\n                    <label for='email'>Email:</label>\r\n                    <input id='email' class=\"form-control\" [(ngModel)]=\"email\" formControlName='email'>\r\n                </div>\r\n                <div id='emailError' *ngIf='signUpForm.controls.email.touched'>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.email.errors?.required'>Required</span>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.email.errors?.pattern'>enter valid email Id</span>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"password\">Password:</label>\r\n                    <input id='password' type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" formControlName='password'>\r\n\r\n                </div>\r\n                <div id='passwordError' *ngIf='signUpForm.controls.password.touched'>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.password.errors?.required'>Required</span>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"confirmPassword\">Confirm Password:</label>\r\n                    <input id='confirmPassword' type='password' class=\"form-control\" [(ngModel)]=\"confirmPassword\" formControlName='confirmPassword'>\r\n                </div>\r\n                <div id='confirmPasswordError' *ngIf='signUpForm.controls.confirmPassword.touched'>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.confirmPassword.errors?.required'>Required</span>\r\n                </div>\r\n                <div *ngIf=\"(signUpForm.errors?.misMatch && !signUpForm.controls.confirmPassword.errors?.required) && (signUpForm.controls.confirmPassword.dirty && signUpForm.controls.confirmPassword.touched)\" class=\"error\">Password did not match</div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"mobile\">Phone No:</label>\r\n                    <input id=\"mobile\" class=\"form-control\" [(ngModel)]=\"mobile\" formControlName='mobile'>\r\n                </div>\r\n                <div id='mobileError' *ngIf='signUpForm.controls.mobile.touched'>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.mobile.errors?.required'>Required</span>\r\n                    <span class=\"text-danger\" *ngIf='signUpForm.controls.mobile.errors?.minlength || signUpForm.controls.mobile.errors?.maxlength'>Enter valid phone No</span>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <button class=\"btn btn-block btn-primary\" [disabled]='!signUpForm.valid' (click)='register()'>Register</button>\r\n                </div>\r\n            </form>\r\n            \r\n            <div class=\"text-center\">Already have an account? <a [routerLink]=\"['/signIn']\" >Sign in</a></div>\r\n            <div class=\"error\" style=\"text-align:center\">\r\n                {{errorMessage}}\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n</div>\r\n"
         },
         {
             "name": "StepperComponent",
@@ -3805,6 +3999,13 @@
                         "component": "LoginComponent"
                     },
                     {
+                        "path": "tab2",
+                        "component": "TabsComponent",
+                        "canActivate": [
+                            "LoggedInGuardGuard"
+                        ]
+                    },
+                    {
                         "path": "tab",
                         "component": "TabComponent",
                         "canActivate": [
@@ -3871,7 +4072,7 @@
                 "linktype": "component",
                 "name": "ContactComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/17",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {
@@ -3925,7 +4126,16 @@
                 "linktype": "component",
                 "name": "LoginComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/login/login.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "LoginService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3983,12 +4193,21 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/provinces.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ProvincesService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/sign-up/sign-up.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "SignUpComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -3998,6 +4217,15 @@
                 "name": "passwordValidator",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/sign-up/sign-up.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "SignUpService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -4051,7 +4279,7 @@
                 "linktype": "injectable",
                 "name": "LoggedInServiceService",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
