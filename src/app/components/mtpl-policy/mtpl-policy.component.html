@@ -22,7 +22,7 @@
 
     <mat-step completed={{toggle5}}>
       <ng-template matStepLabel>Summary</ng-template>
-      <app-proposal (moveTab)="switch($event)"></app-proposal>
+      <app-proposal (moveTab)="switch($event)" (changeStep)="move($event)"></app-proposal>
     </mat-step>
 
     <mat-step completed={{toggle6}}>

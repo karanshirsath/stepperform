@@ -7,10 +7,11 @@ import { MTPLCalculatorComponent } from '../components/mtpl-calculator/mtpl-calc
   templateUrl: './tab.component.html',
   styleUrls: ['./tab.component.css']
 })
-export class TabComponent implements OnInit {
+export class TabComponent implements OnInit { 
   welcomeuser=sessionStorage.getItem('welcomename');
   activeTab = 0;
   policyTabToggle=true
+  mtplCalculatorStep
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +23,7 @@ export class TabComponent implements OnInit {
   }
   switch=(index)=>{
     this.activeTab=0
+    this.mtplCalculatorStep=index
    }
 
 }
