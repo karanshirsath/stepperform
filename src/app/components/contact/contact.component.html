@@ -6,7 +6,7 @@
       <!-- <select id="city" name="city" class="form-control" [(ngModel)]="city" formControlName="city" (change)="change()"> -->
       <select id="city" name="city" class="form-control" [(ngModel)]="Ccity" formControlName="city" (change)="change()">
         <option selected disabled value="">--SELECT--</option>
-        <option *ngFor='let obj of provincesArray' value="{{obj.pname}}" [selected]="city===obj.pname">{{obj.pname}}
+        <option *ngFor='let obj of provincesArray' value="{{obj.pname}}" [selected]="Ccity===obj.pname">{{obj.pname}}
         </option>
       </select>
       <div
