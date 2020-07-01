@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { CommonDataService } from 'src/app/common-data.service';
 import { MatStepper } from '@angular/material/stepper';
+import { ProposalComponent } from '../proposal/proposal.component';
 
 @Component({
   selector: 'app-mtpl-policy',
@@ -10,53 +11,25 @@ import { MatStepper } from '@angular/material/stepper';
 export class MTPLPolicyComponent implements OnInit {
   @Output() switchTab = new EventEmitter()
 
-  constructor(private _commonData:CommonDataService) { }
+  constructor() { }
   @ViewChild('stepper') stepper: MatStepper;
   ngOnInit(): void {
   }
-  toggle1=false
-  toggle2=false
-  toggle3=false
-  toggle4=false
-  toggle5=true
-  toggle6=true
-  personalInformation
-  contactInformation
-  vehicleOwnerInformation
-  deliveryInformation
-formData
+  toggle1 = false
+  toggle2 = false
+  toggle3 = false
+  toggle4 = false
+  toggle5 = true
+  toggle6 = true
 
-switch=(index)=>{
-this.switchTab.emit(index)
-}
-move=(index)=> {
-  this.stepper.selectedIndex = index;
-}
-  personalData=(data)=>{
-    this.personalInformation=data
-    console.log(this.personalInformation);
+  switch = (index) => {
+    this.switchTab.emit(index)
+  }
+  move = (index) => {
+    this.stepper.selectedIndex = index;
   }
 
-  contactDetailsData=(data)=>{
-    this.contactInformation=data
-    console.log(this.contactInformation);
+  change = (data) => {
+    console.log(data);
   }
-
-  vehicleOwnerData=(data)=>{
-    this.vehicleOwnerInformation=data
-    console.log(this.vehicleOwnerInformation);
-  }
-  
-  deliveryData=(data)=>{
-    this.deliveryInformation=data;
-    this.formData={
-      personalInformation:this.personalInformation,
-      contactInformation:this.contactInformation,
-      vehicleOwnerInformation:this.vehicleOwnerInformation,
-      deliveryInformation:this.deliveryInformation
-    
-      }
-    this._commonData.policyData.next(this.formData)
-  }
-
 }

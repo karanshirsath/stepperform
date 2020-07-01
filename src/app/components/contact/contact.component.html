@@ -1,91 +1,79 @@
-
-  
-    <h1><b>Contact Details</b></h1><br>
-    <form [formGroup]="registerForm" (submit)="submit()">
-      <div class="row">
-       
-          <label for="city" class="col-lg-7">City</label>
-       
-        <div class="col-md-3 space">
-          <!-- <select id="city" name="city" class="form-control" [(ngModel)]="city" formControlName="city" (change)="change()"> -->
-          <select id="city" name="city" class="form-control" formControlName="city" (change)="change()">
-            <option selected disabled value="">--SELECT--</option>
-            <option *ngFor='let obj of provincesArray' value="{{obj.pname}}" [selected]="city===obj.pname">{{obj.pname}}</option>
-           
-          </select>
-          <div
-            *ngIf="registerForm.controls.city.hasError('required') &&(registerForm.controls.city.dirty || registerForm.controls.city.touched)"
-            class="error">This field is mandatory</div>
-        </div>
-
-        <div class="col-md-4 col-4">
-          <input type="text" id="num" name="num" [(ngModel)]="pincode" placeholder="Pin Code" class="form-control" (change)="change()"
-            formControlName="pincode">
-          <div
-            *ngIf="registerForm.controls.pincode.hasError('required') &&(registerForm.controls.pincode.dirty || registerForm.controls.pincode.touched)"
-            class="error">This field is mandatory</div>
-
-        </div>
-      </div>
-      <hr>
-      <div class=" row">
-        <div class="col-md-4 col-12">
-          <label for="street">Street and Number</label>
-        </div>
-        <div class="col-md-4 col-8">
-          <input type="text" id="street" [(ngModel)]="street" name="streetName" class="form-control " placeholder="Street Name"
-            (change)="change()" formControlName="street">
-        </div>
-
-        <div class="col-md-4 col-4">
-          <input type="text" id="streetNumber" [(ngModel)]="No" name="streetNumber" placeholder="Street  number" class="form-control"
-            size="10" (change)="change()" formControlName="No"><br>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-3 col-12">
-          <label for="block">Block,Entrance and Apartment</label>
-        </div>
-        <div class="col-md-3 offset-md-1 col-4">
-          <input type="text" id="block" class="form-control" [(ngModel)]="block" placeholder="Block" name="blockName" (change)="change()"
-            formControlName="block">
-        </div>
-
-        <label for="entranceName"></label>
-        <div class="col-md-3 col-4">
-          <input type="text" class="form-control" id="entranceName" [(ngModel)]="entrance" placeholder="Entrance" name="entranceName"
-            (change)="change()" formControlName="entrance">
-        </div>
-        <!-- </div> -->
-
-        <label for="appartmentName"></label>
-        <div class="col-md-2 col-4">
-          <input type="text" class="form-control" id="appartmentName" [(ngModel)]="appartment" placeholder="Appartment" name="appartmentName"
-            (change)="change()" formControlName="appartment"><br>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-4">
-          <label for="phoneNo">Phone Number</label>
-        </div>
-        <div class="col-md-4 ml-auto">
-          <input type="text" class="form-control" id="phoneNo" [(ngModel)]="phone" placeholder="Phone Number" (change)="change()"
-            formControlName="phone"><br>
-          <div
-            *ngIf="registerForm.controls.phone.hasError('required') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
-            class="error">This field is mandatory</div>
-          <div
-            *ngIf="registerForm.controls.phone.hasError('pattern') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
-            class="error">Only numbers allowed</div>
-          <div
-            *ngIf="(!registerForm.controls.phone.hasError('pattern') && (registerForm.controls.phone.hasError('minlength') || registerForm.controls.phone.hasError('maxlength'))) &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
-            class="error">Enter valid phone number</div>
-        </div>
-      </div>
-      <button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" type="submit" matStepperNext
-      [disabled]="!registerForm.valid">Next</button>
-    </form>
-    
- 
+<h1><b>Contact Details</b></h1><br>
+<form [formGroup]="registerForm" (submit)="submit()">
+  <div class="row">
+    <label for="city" class="col-lg-7">City</label>
+    <div class="col-md-3 space">
+      <!-- <select id="city" name="city" class="form-control" [(ngModel)]="city" formControlName="city" (change)="change()"> -->
+      <select id="city" name="city" class="form-control" formControlName="city" (change)="change()">
+        <option selected disabled value="">--SELECT--</option>
+        <option *ngFor='let obj of provincesArray' value="{{obj.pname}}" [selected]="city===obj.pname">{{obj.pname}}
+        </option>
+      </select>
+      <div
+        *ngIf="registerForm.controls.city.hasError('required') &&(registerForm.controls.city.dirty || registerForm.controls.city.touched)"
+        class="error">This field is mandatory</div>
+    </div>
+    <div class="col-md-4 col-4">
+      <input type="text" id="num" name="num" [(ngModel)]="pincode" placeholder="Pin Code" class="form-control"
+        (change)="change()" formControlName="pincode">
+      <div
+        *ngIf="registerForm.controls.pincode.hasError('required') &&(registerForm.controls.pincode.dirty || registerForm.controls.pincode.touched)"
+        class="error">This field is mandatory</div>
+    </div>
+  </div>
+  <hr>
+  <div class=" row">
+    <div class="col-md-4 col-12">
+      <label for="street">Street and Number</label>
+    </div>
+    <div class="col-md-4 col-8">
+      <input type="text" id="street" [(ngModel)]="street" name="streetName" class="form-control "
+        placeholder="Street Name" (change)="change()" formControlName="street">
+    </div>
+    <div class="col-md-4 col-4">
+      <input type="text" id="streetNumber" [(ngModel)]="No" name="streetNumber" placeholder="Street  number"
+        class="form-control" size="10" (change)="change()" formControlName="No"><br>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-3 col-12">
+      <label for="block">Block,Entrance and Apartment</label>
+    </div>
+    <div class="col-md-3 offset-md-1 col-4">
+      <input type="text" id="block" class="form-control" [(ngModel)]="block" placeholder="Block" name="blockName"
+        (change)="change()" formControlName="block">
+    </div>
+    <label for="entranceName"></label>
+    <div class="col-md-3 col-4">
+      <input type="text" class="form-control" id="entranceName" [(ngModel)]="entrance" placeholder="Entrance"
+        name="entranceName" (change)="change()" formControlName="entrance">
+    </div>
+    <label for="appartmentName"></label>
+    <div class="col-md-2 col-4">
+      <input type="text" class="form-control" id="appartmentName" [(ngModel)]="appartment" placeholder="Appartment"
+        name="appartmentName" (change)="change()" formControlName="appartment"><br>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <label for="phoneNo">Phone Number</label>
+    </div>
+    <div class="col-md-4 ml-auto">
+      <input type="text" class="form-control" id="phoneNo" [(ngModel)]="phone" placeholder="Phone Number"
+        (change)="change()" formControlName="phone"><br>
+      <div
+        *ngIf="registerForm.controls.phone.hasError('required') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
+        class="error">This field is mandatory</div>
+      <div
+        *ngIf="registerForm.controls.phone.hasError('pattern') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
+        class="error">Only numbers allowed</div>
+      <div
+        *ngIf="(!registerForm.controls.phone.hasError('pattern') && (registerForm.controls.phone.hasError('minlength') || registerForm.controls.phone.hasError('maxlength'))) &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
+        class="error">Enter valid phone number</div>
+    </div>
+  </div>
+  <button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" type="submit" matStepperNext
+    [disabled]="!registerForm.valid">Next</button>
+</form>

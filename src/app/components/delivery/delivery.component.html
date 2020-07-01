@@ -1,178 +1,188 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <title>Delivery</title>
-</head>
-<body>
-    <!--<div class="container overflowAuto h-100" style="margin-left: auto !important;">-->
-    
-        <!-- Heading --><br>
-        <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
-                <h1 class="heading"><b>Delivery Address</b></h1>
-            </div>
-        </div><br>
-        <!-- Heading -->
+<!--<div class="container overflowAuto h-100" style="margin-left: auto !important;">-->
 
-        <!-- Form -->
-        <div class="row">
-            <div class="container-fluid">
-                <form [formGroup]="detailsForm" (ngSubmit)="register()">
-                    <!-- Form -->
-                    <div>
-                        <div class="form-1">
-                            <div class="row form-group form-1_row-1">
-                                <div class="col-md-4 form-1_row-2">
-                                    <label>Full Name</label>
-                                </div>
-                                <div class="col-sm-6 col-sm-offset-2">
-                                    <input type="text" formControlName="fullName" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="fullName" id="firstName">
-                                    <div class="error" *ngIf="formControls.fullName.touched && formControls.fullName.errors">
-                                        <div *ngIf="formControls.fullName.errors.required">This field is mandatory</div>
-                                        <div *ngIf="formControls.fullName.errors.pattern">Only alphabets allowed</div>
-                                    </div>
-                                </div>
-                               
+<!-- Heading --><br>
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+        <h1 class="heading"><b>Delivery Address</b></h1>
+    </div>
+</div><br>
+<!-- Heading -->
+
+<!-- Form -->
+<div class="row">
+    <div class="container-fluid">
+        <form [formGroup]="detailsForm" (ngSubmit)="register()">
+            <!-- Form -->
+            <div>
+                <div class="form-1">
+                    <div class="row form-group form-1_row-1">
+                        <div class="col-md-4 form-1_row-2">
+                            <label>Full Name</label>
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-2">
+                            <input type="text" formControlName="fullName" class="form-control form-1_row-3"
+                                (change)="change()" [(ngModel)]="fullName" id="firstName">
+                            <div class="error" *ngIf="formControls.fullName.touched && formControls.fullName.errors">
+                                <div *ngIf="formControls.fullName.errors.required">This field is mandatory</div>
+                                <div *ngIf="formControls.fullName.errors.pattern">Only alphabets allowed</div>
                             </div>
-                            <div class="form-1_row-4"><hr></div>
-                            <div class="row form-group form-1_row-1">
-                                <div class="col-md-4 form-1_row-2">
-                                    <label>City & Pincode</label>
-                                </div>
-                                <div class="col-sm-4 col-sm-offset-2">
-                                    <!-- <select name="city" id="city"  formControlName="city" [(ngModel)]="city" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="city"> -->
-                                    <select name="city" id="city"  formControlName="city" class="form-control form-1_row-3" (change)="change()">
-                                        <option selected disabled value="">--SELECT--</option>
-                                        <option value="{{city}}" *ngFor="let city of cities">{{city}}</option>
-                                    </select>
-                                    <div class="error" *ngIf="formControls.city.touched && formControls.city.errors">
-                                        <div *ngIf="formControls.city.errors.required">This field is mandatory</div>
-                                       
-                                    </div>
-                                </div>
-                                
-                                <div class="col-sm-2">
-                                    <input formControlName="pincode" type="text"  class="form-control form-1_row-3" (change)="change()" [(ngModel)]="pincode">
-                                    <div class="error" *ngIf="formControls.pincode.touched && formControls.pincode.errors">
-                                        <div *ngIf="formControls.pincode.errors.required">This field is mandatory</div>
-                                        <div *ngIf="formControls.pincode.errors.maxlength">Only 6 characters are allowed</div>
-                                       
-                                    </div><br>
-                                </div>
-                                
+                        </div>
+
+                    </div>
+                    <div class="form-1_row-4">
+                        <hr>
+                    </div>
+                    <div class="row form-group form-1_row-1">
+                        <div class="col-md-4 form-1_row-2">
+                            <label>City & Pincode</label>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <!-- <select name="city" id="city"  formControlName="city" [(ngModel)]="city" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="city"> -->
+                            <select name="city" id="city" formControlName="city" class="form-control form-1_row-3"
+                                (change)="change()">
+                                <option selected disabled value="">--SELECT--</option>
+                                <option value="{{city}}" *ngFor="let city of cities">{{city}}</option>
+                            </select>
+                            <div class="error" *ngIf="formControls.city.touched && formControls.city.errors">
+                                <div *ngIf="formControls.city.errors.required">This field is mandatory</div>
+
                             </div>
-                            <div class="form-1_row-4"><hr></div>
-                            <div class="row form-group form-1_row-1">
-                                <div class="col-md-4 form-1_row-2">
-                                    <label>Street & Number</label>
-                                </div>
-                                <div class="col-sm-4 col-sm-offset-2">
-                                    <input type="text" formControlName="street" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="street">
-                                    <!-- <div class="error" *ngIf="formControls.street.touched && formControls.street.errors">
+                        </div>
+
+                        <div class="col-sm-2">
+                            <input formControlName="pincode" type="text" class="form-control form-1_row-3"
+                                (change)="change()" [(ngModel)]="pincode">
+                            <div class="error" *ngIf="formControls.pincode.touched && formControls.pincode.errors">
+                                <div *ngIf="formControls.pincode.errors.required">This field is mandatory</div>
+                                <div *ngIf="formControls.pincode.errors.maxlength">Only 6 characters are allowed</div>
+
+                            </div><br>
+                        </div>
+
+                    </div>
+                    <div class="form-1_row-4">
+                        <hr>
+                    </div>
+                    <div class="row form-group form-1_row-1">
+                        <div class="col-md-4 form-1_row-2">
+                            <label>Street & Number</label>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <input type="text" formControlName="street" class="form-control form-1_row-3"
+                                (change)="change()" [(ngModel)]="street">
+                            <!-- <div class="error" *ngIf="formControls.street.touched && formControls.street.errors">
                                         <div *ngIf="formControls.street.errors.required">Street is required</div>
                                         <div *ngIf="formControls.street.errors.minlength">Street should be atleast 3 characters</div>
                                        
                                     </div> -->
-                                </div>
-                                
-                                <div class="col-sm-2">
-                                    <input type="text" formControlName="number" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="number"> 
-                                    <div class="error" *ngIf="formControls.number.touched && formControls.number.errors">
-                                        <!-- <div *ngIf="formControls.number.errors.required">Number is required</div> -->
-                                                                          
-                                    </div><br>
-                                </div>
-                                
-                            </div>
-                            <div class="form-1_row-4"><hr></div>
-                            <div class="row form-group form-1_row-5">
-                                <div class="col-md-4 form-1_row-2">
-                                    <label>Block, Entrance & Appartment</label>
-                                </div>
-                                <div class="col-sm-2 col-sm-offset-1">
-                                    <input type="text" formControlName="block" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="block">
-                                    <!-- <div class="error" *ngIf="formControls.block.touched && formControls.block.errors">
+                        </div>
+
+                        <div class="col-sm-2">
+                            <input type="text" formControlName="number" class="form-control form-1_row-3"
+                                (change)="change()" [(ngModel)]="number">
+                            <div class="error" *ngIf="formControls.number.touched && formControls.number.errors">
+                                <!-- <div *ngIf="formControls.number.errors.required">Number is required</div> -->
+
+                            </div><br>
+                        </div>
+                    </div>
+                    <div class="form-1_row-4">
+                        <hr>
+                    </div>
+                    <div class="row form-group form-1_row-5">
+                        <div class="col-md-4 form-1_row-2">
+                            <label>Block, Entrance & Appartment</label>
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-1">
+                            <input type="text" formControlName="block" class="form-control form-1_row-3"
+                                (change)="change()" [(ngModel)]="block">
+                            <!-- <div class="error" *ngIf="formControls.block.touched && formControls.block.errors">
                                         <div *ngIf="formControls.block.errors.required">Block is required</div>
                                     </div> -->
-                                </div>
-                                
-                                <div class="col-sm-2">
-                                    <input type="text" formControlName="entrance" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="entrance">
-                                    <!-- <div class="error" *ngIf="formControls.entrance.touched && formControls.entrance.errors">
+                        </div>
+
+                        <div class="col-sm-2">
+                            <input type="text" formControlName="entrance" class="form-control form-1_row-3"
+                                (change)="change()" [(ngModel)]="entrance">
+                            <!-- <div class="error" *ngIf="formControls.entrance.touched && formControls.entrance.errors">
                                         <div *ngIf="formControls.entrance.errors.required">Entrance is required</div>
                                     </div> -->
-                                </div>
-                                
-                                <div class="col-sm-2">
-                                    <input type="text" formControlName="appt" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="appt">
-                                    <!-- <div class="error" *ngIf="formControls.appt.touched && formControls.appt.errors">
+                        </div>
+
+                        <div class="col-sm-2">
+                            <input type="text" formControlName="appt" class="form-control form-1_row-3"
+                                (change)="change()" [(ngModel)]="appt">
+                            <!-- <div class="error" *ngIf="formControls.appt.touched && formControls.appt.errors">
                                         <div *ngIf="formControls.appt.errors.required">Appartment is required</div>
                                     </div> -->
-                                </div>
-                                
-                            </div>
-                        </div><br>
-                        <!-- Form -->
-                        <!-- Additional Details -->
-                        <h2 class="sub-head"><b>Additonal Details</b></h2>
-                        <br>
-                        <div class="row form-group details_row-1">
-                            <div class="col-md-4" style="font-size: medium;">
-                                Contact Number
-                            </div>
-                            <div class="col-sm-5 col-sm-offset-3">
-                                <input type="number" formControlName="contact" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="contact">
-                                <div class="error" *ngIf="formControls.contact.touched && formControls.contact.errors">
-                                    <div *ngIf="formControls.contact.errors.required">This field is mandatory</div>
-                                    <div *ngIf="formControls.contact.errors.min">Minimum 8 charaters are required</div>
-                                    <div *ngIf="formControls.contact.errors.max">Maximum 9 charaters are allowed</div>
-                                </div>
-                            </div>
-                            
                         </div>
-                        <hr>
-                        <div class="details_row-2">
-                            <div class="row form-group">
-                                <div class="col-md-5">
-                                    <span style="font-size: medium;">Type of Business</span>
-                                    <p style="font-size: small; text-align: justify;">For Business address your package will be delivered only during
-                                        normal work days from 9:00 to 17:00
-                                    </p>
+
+                    </div>
+                </div><br>
+                <!-- Form -->
+                <!-- Additional Details -->
+                <h2 class="sub-head"><b>Additonal Details</b></h2>
+                <br>
+                <div class="row form-group details_row-1">
+                    <div class="col-md-4" style="font-size: medium;">
+                        Contact Number
+                    </div>
+                    <div class="col-sm-5 col-sm-offset-3">
+                        <input type="number" formControlName="contact" class="form-control form-1_row-3"
+                            (change)="change()" [(ngModel)]="contact">
+                        <div class="error" *ngIf="formControls.contact.touched && formControls.contact.errors">
+                            <div *ngIf="formControls.contact.errors.required">This field is mandatory</div>
+                            <div *ngIf="formControls.contact.errors.min">Minimum 8 charaters are required</div>
+                            <div *ngIf="formControls.contact.errors.max">Maximum 9 charaters are allowed</div>
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="details_row-2">
+                    <div class="row form-group">
+                        <div class="col-md-5">
+                            <span style="font-size: medium;">Type of Business</span>
+                            <p style="font-size: small; text-align: justify;">For Business address your package will be
+                                delivered only during
+                                normal work days from 9:00 to 17:00
+                            </p>
+                        </div>
+                        <div class="col-md-7 details_row-3">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="radio" formControlName="business" name="business" class="radio-1"
+                                        (change)="change()" [(ngModel)]="type" [checked]="type==='Home'"
+                                        value="Home">&nbsp;Home
                                 </div>
-                                <div class="col-md-7 details_row-3">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" [(ngModel)]="type" [checked]="type==='Home'" value="Home">&nbsp;Home
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input type="radio" formControlName="business" name="business" class="radio-1" (change)="change()" [(ngModel)]="type" [checked]="type==='Business'" value="Business">&nbsp;Business
-                                        </div>
-                                        <div class="error" *ngIf="formControls.business.touched && formControls.business.errors">
-                                            <div *ngIf="formControls.business.errors.required">This field is mandatory</div>
-                                        </div>
-                                    </div>                            
+                                <div class="col-sm-6">
+                                    <input type="radio" formControlName="business" name="business" class="radio-1"
+                                        (change)="change()" [(ngModel)]="type" [checked]="type==='Business'"
+                                        value="Business">&nbsp;Business
+                                </div>
+                                <div class="error"
+                                    *ngIf="formControls.business.touched && formControls.business.errors">
+                                    <div *ngIf="formControls.business.errors.required">This field is mandatory</div>
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="row form-group details_row-1">
-                            <div class="col-sm-4" style="font-size: medium;">
-                                Additional Notes
-                            </div>
-                            <div class="col-sm-8 col-sm-offset-1">
-                                <textarea name="notes" id="notes" cols="30" rows="5" formControlName="notes" class="form-control details_row-4" (change)="change()"></textarea>
-                            </div>
-                            <div class="col-sm-12" style="text-align: right; font-size: small;">Optional</div>
-                        </div>
-                        <!-- Additional Details -->
-                    </div>                    
-                    <!-- Delivery Estimate -->
-                    <!-- <div class="delivery-2">
+                    </div>
+                </div>
+                <hr>
+                <div class="row form-group details_row-1">
+                    <div class="col-sm-4" style="font-size: medium;">
+                        Additional Notes
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <textarea name="notes" id="notes" cols="30" rows="5" formControlName="notes"
+                            class="form-control details_row-4" (change)="change()"></textarea>
+                    </div>
+                    <div class="col-sm-12" style="text-align: right; font-size: small;">Optional</div>
+                </div>
+                <!-- Additional Details -->
+            </div>
+            <!-- Delivery Estimate -->
+            <!-- <div class="delivery-2">
                         <div class="delivery-1_row-1">
                             <div class="delivery-1_row-2">
                                 <img class="delivery-icon" src="../../assets/delivery.jpeg">
@@ -183,31 +193,28 @@
                         </div>
                     </div><br><br> -->
 
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div style="margin-left: 0.5cm;width: 26.2cm;">
-                                <div class="card border mb-4">
-                                    <img class="user-key" src="../../assets/delivery.jpeg">
-                                    <div class="card-body">
-                                        <p class="card-text pl-3 text-color">
-                                            <b style="color: grey;">Estimated delivery in your area is 2 days</b>
-                                            <br>
-                                            <a href="">More info here</a>
-                                        </p>
-                                    </div>
-                                </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div style="margin-left: 0.5cm;width: 26.2cm;">
+                        <div class="card border mb-4">
+                            <img class="user-key" src="../../assets/delivery.jpeg">
+                            <div class="card-body">
+                                <p class="card-text pl-3 text-color">
+                                    <b style="color: grey;">Estimated delivery in your area is 2 days</b>
+                                    <br>
+                                    <a href="">More info here</a>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <!-- Delivery Estimate -->
-                    <!-- Button -->
-                    <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn" mat-raised-button  matStepperNext [disabled]="detailsForm.invalid">Next</button>
-                    <!-- Button -->
-                </form>               
+                </div>
             </div>
-        </div><br><br>
-        <!-- Form -->        
-    
-    
-</body>
-</html>
+            <!-- Delivery Estimate -->
+            <!-- Button -->
+            <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn"
+                mat-raised-button matStepperNext [disabled]="detailsForm.invalid">Next</button>
+            <!-- Button -->
+        </form>
+    </div>
+</div><br><br>
+<!-- Form -->

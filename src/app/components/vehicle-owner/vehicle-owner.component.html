@@ -1,221 +1,197 @@
-
-    <h1>Vehicle Owner</h1>
-
-    <div class="container">
-        <div class="row">
-            <label class="col-md-5">Are u the owner of the vehicle</label>
-            <label class="radio-inline col-md-3">
-                <input type="radio" name="gender" id="Radios1" value="Yes" [(ngModel)]="owner" [checked]="owner==='Yes'" (click)="setradio('Yes')"
-                    (change)="toggle(true)">
-                Yes
-            </label>
-
-            <label class="radio-inline col-md-3">
-                <input type="radio" name="gender" id="Radios2" value="No" [(ngModel)]="owner" [checked]="owner==='No'" (click)="setradio('No')"
-                    (change)="toggle(false)">
-                No
-            </label>
+<h1>Vehicle Owner</h1>
+<div class="container">
+    <div class="row">
+        <label class="col-md-5">Are u the owner of the vehicle</label>
+        <label class="radio-inline col-md-3">
+            <input type="radio" name="gender" id="Radios1" value="Yes" [(ngModel)]="owner" [checked]="owner==='Yes'"
+                (click)="setradio('Yes')" (change)="toggle(true)">
+            Yes
+        </label>
+        <label class="radio-inline col-md-3">
+            <input type="radio" name="gender" id="Radios2" value="No" [(ngModel)]="owner" [checked]="owner==='No'"
+                (click)="setradio('No')" (change)="toggle(false)">
+            No
+        </label>
+    </div>
+</div>
+<hr class="line">
+<div *ngIf="isSelected('Yes')">
+    <button type="button" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn" (click)="gaTrigger()"
+        [disabled]="!button" matStepperNext>Next</button>
+</div>
+<div *ngIf="isSelected('No')">
+    <form [formGroup]="Details" (ngSubmit)="submit()">
+        <h2><b>Vehicle Owner Details</b></h2>
+        <div class="form-group row">
+            <label for="lnch" class="col-lg-8">Enter your EGN/EIK/LNCH</label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" [(ngModel)]="lnch" id="lnch" placeholder="Enter your Number"
+                    formControlName="lnch" name="lnch" (change)="change()">
+                <div *ngIf="Details.controls.lnch.hasError('required') &&(Details.controls.lnch.dirty || Details.controls.lnch.touched)"
+                    class="error">This field is mandatory</div>
+                <div *ngIf="Details.controls.lnch.hasError('pattern') &&(Details.controls.lnch.dirty || Details.controls.lnch.touched)"
+                    class="error">Only 10 digit numerical value allowed</div>
+            </div>
         </div>
-    </div>
-
-    <hr class="line">
-    <div *ngIf="isSelected('Yes')">
-        <button type="button" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn" (click)="gaTrigger()" [disabled]="!button"
-            matStepperNext>Next</button>
-    </div>
-
-    <div *ngIf="isSelected('No')">
-        <form [formGroup]="Details" (ngSubmit)="submit()">
-            <h2><b>Vehicle Owner Details</b></h2>
-
+        <hr class="line">
+        <div formGroupName="fullname">
+            <label class="">Full Name</label><br>
             <div class="form-group row">
-                <label for="lnch" class="col-lg-8">Enter your EGN/EIK/LNCH</label>
-                <div class="col-lg-4">
-                    <input type="text" class="form-control" [(ngModel)]="lnch" id="lnch" placeholder="Enter your Number"
-                        formControlName="lnch" name="lnch" (change)="change()">
-                    <div *ngIf="Details.controls.lnch.hasError('required') &&(Details.controls.lnch.dirty || Details.controls.lnch.touched)"
+                <div class="col-md-4 space">
+                    <input type="text" class="form-control" [(ngModel)]="firstname" id="firstname"
+                        placeholder="Enter firstname" formControlName="firstname" name="firstname" (change)="change()">
+                    <div *ngIf="Details.get('fullname').get('firstname').hasError('required') &&(Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)"
                         class="error">This field is mandatory</div>
-                    <div *ngIf="Details.controls.lnch.hasError('pattern') &&(Details.controls.lnch.dirty || Details.controls.lnch.touched)"
-                        class="error">Only 10 digit numerical value allowed</div>
+                    <div *ngIf="Details.get('fullname').get('firstname').hasError('pattern') &&(Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)"
+                        class="error">Only alphabets allowed</div>
+                    <div *ngIf="Details.get('fullname').get('firstname').hasError('maxlength') &&(Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)"
+                        class="error">Max length can be 20 characters</div>
+                </div>
+                <div class="col-md-4 space">
+                    <input type="text" class="form-control" [(ngModel)]="lastname" id="lastname"
+                        placeholder="Enter middlename" formControlName="lastname" name="lastname" (change)="change()">
+                    <div *ngIf="Details.get('fullname').get('lastname').hasError('pattern') &&(Details.get('fullname').get('lastname').dirty || Details.get('fullname').get('lastname').touched)"
+                        class="error">Only alphabets allowed</div>
+                </div>
+                <div class="col-md-4 space">
+                    <input type="text" class="form-control" [(ngModel)]="surname" id="surname"
+                        placeholder="Enter lastname" formControlName="surname" name="suname" (change)="change()">
+                    <div *ngIf="Details.get('fullname').get('surname').hasError('required') &&(Details.get('fullname').get('surname').dirty || Details.get('fullname').get('surname').touched)"
+                        class="error">This field is mandatory</div>
+                    <div *ngIf="Details.get('fullname').get('surname').hasError('pattern') &&(Details.get('fullname').get('surname').dirty || Details.get('fullname').get('surname').touched)"
+                        class="error">Only alphabets allowed</div>
+                    <div *ngIf="Details.get('fullname').get('surname').hasError('maxlength') &&(Details.get('fullname').get('surname').dirty || Details.get('fullname').get('surname').touched)"
+                        class="error">Max length can be 20 characters</div>
                 </div>
             </div>
-            <hr class="line">
-            <div formGroupName="fullname">
-                <label class="">Full Name</label><br>
-                <div class="form-group row">
-
-                    <div class="col-md-4 space">
-                        <input type="text" class="form-control" [(ngModel)]="firstname" id="firstname" placeholder="Enter firstname"
-                            formControlName="firstname" name="firstname" (change)="change()">
-                        <div *ngIf="Details.get('fullname').get('firstname').hasError('required') &&(Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)"
-                            class="error">This field is mandatory</div>
-                        <div *ngIf="Details.get('fullname').get('firstname').hasError('pattern') &&(Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)"
-                            class="error">Only alphabets allowed</div>
-                        <div *ngIf="Details.get('fullname').get('firstname').hasError('maxlength') &&(Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)"
-                            class="error">Max length can be 20 characters</div>
-                    </div>
-                    <div class="col-md-4 space">
-                        <input type="text" class="form-control" [(ngModel)]="lastname" id="lastname" placeholder="Enter middlename"
-                            formControlName="lastname" name="lastname" (change)="change()">
-                        <div *ngIf="Details.get('fullname').get('lastname').hasError('pattern') &&(Details.get('fullname').get('lastname').dirty || Details.get('fullname').get('lastname').touched)"
-                            class="error">Only alphabets allowed</div>
-                    </div>
-                    <div class="col-md-4 space">
-                        <input type="text" class="form-control" [(ngModel)]="surname" id="surname" placeholder="Enter lastname"
-                            formControlName="surname" name="suname" (change)="change()">
-                        <div *ngIf="Details.get('fullname').get('surname').hasError('required') &&(Details.get('fullname').get('surname').dirty || Details.get('fullname').get('surname').touched)"
-                            class="error">This field is mandatory</div>
-                        <div *ngIf="Details.get('fullname').get('surname').hasError('pattern') &&(Details.get('fullname').get('surname').dirty || Details.get('fullname').get('surname').touched)"
-                            class="error">Only alphabets allowed</div>
-                        <div *ngIf="Details.get('fullname').get('surname').hasError('maxlength') &&(Details.get('fullname').get('surname').dirty || Details.get('fullname').get('surname').touched)"
-                            class="error">Max length can be 20 characters</div>
-                    </div>
-                </div>
-            </div>
-            <hr class="line">
-            <div formGroupName="fullnameeng">
-                <label>Full Name in English</label><br>
-                <div class="form-group row">
-                    <div class="col-md-4 space">
-                        <input type="text" class="form-control" [(ngModel)]="firstnameeng" id="firstnameeng" placeholder="Enter firstname"
-                            formControlName="firstnameeng" name="firstnameeng" (change)="change()">
-                        <div *ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('required') &&(Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)"
-                            class="error">This field is mandatory</div>
-                        <div *ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('pattern') &&(Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)"
-                            class="error">Only alphabets allowed</div>
-                        <div *ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('maxlength') &&(Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)"
-                            class="error">Max length can be 20 characters</div>
-                    </div>
-                    <div class="col-md-4 space">
-                        <input type="text" class="form-control" value={{lastnameeng}} id="lastnameeng" placeholder="Enter lastname"
-                            formControlName="lastnameeng" name="lastnameeng" (change)="change()">
-                        <div *ngIf="Details.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(Details.get('fullnameeng').get('lastnameeng').dirty || Details.get('fullnameeng').get('lastnameeng').touched)"
-                            class="error">Only alphabets allowed</div>
-                    </div>
-                    <div class="col-md-4 space">
-                        <input type="text" class="form-control" [(ngModel)]="surnameeng" id="surnameeng" placeholder="Enter surname"
-                            formControlName="surnameeng" name="sunameeng" (change)="change()">
-                        <div *ngIf="Details.get('fullnameeng').get('surnameeng').hasError('required') &&(Details.get('fullnameeng').get('surnameeng').dirty || Details.get('fullnameeng').get('surnameeng').touched)"
-                            class="error">This field is mandatory</div>
-                        <div *ngIf="Details.get('fullnameeng').get('surnameeng').hasError('pattern') &&(Details.get('fullnameeng').get('surnameeng').dirty || Details.get('fullnameeng').get('surnameeng').touched)"
-                            class="error">Only alphabets allowed</div>
-                        <div *ngIf="Details.get('fullnameeng').get('surnameeng').hasError('maxlength') &&(Details.get('fullnameeng').get('surnameeng').dirty || Details.get('fullnameeng').get('surnameeng').touched)"
-                            class="error">Max length can be 20 characters</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card border-warning mb-4  " style="width: inherit;">
-                <img class="user-key" src="../../assets/excl.jpg">
-                <div class="card-body">
-                    <p class="card-text pl-3 text-color">
-                        Please compare data in Latin with data in the vehicle registration certificate
-                        or identity document.Data will be used for printout of Green Card
-                        Certificate.
-                    </p>
-                </div>
-            </div>
-
+        </div>
+        <hr class="line">
+        <div formGroupName="fullnameeng">
+            <label>Full Name in English</label><br>
             <div class="form-group row">
-                <label for="citizen" class="col-lg-8">Citizenship</label>
-                <div class="col-lg-4">
-                    <!-- <select class="form-control" id="citizen" [(ngModel)]="citizen" formControlName="citizen" name="citizen" (change)="change()"> -->
-                    <select class="form-control" id="citizen" formControlName="citizen" name="citizen" (change)="change()">
-                        <option selected disabled value="">--SELECT--</option>
-                        <option *ngFor="let c of citizens" [value]="c">{{c}}</option>
-                    </select>
-                    <div *ngIf="Details.controls.citizen.hasError('required') &&(Details.controls.citizen.dirty || Details.controls.citizen.touched)"
-                        class="error">Please select your Citizenship</div>
-
+                <div class="col-md-4 space">
+                    <input type="text" class="form-control" [(ngModel)]="firstnameeng" id="firstnameeng"
+                        placeholder="Enter firstname" formControlName="firstnameeng" name="firstnameeng"
+                        (change)="change()">
+                    <div *ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('required') &&(Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)"
+                        class="error">This field is mandatory</div>
+                    <div *ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('pattern') &&(Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)"
+                        class="error">Only alphabets allowed</div>
+                    <div *ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('maxlength') &&(Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)"
+                        class="error">Max length can be 20 characters</div>
+                </div>
+                <div class="col-md-4 space">
+                    <input type="text" class="form-control" value={{lastnameeng}} id="lastnameeng"
+                        placeholder="Enter lastname" formControlName="lastnameeng" name="lastnameeng"
+                        (change)="change()">
+                    <div *ngIf="Details.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(Details.get('fullnameeng').get('lastnameeng').dirty || Details.get('fullnameeng').get('lastnameeng').touched)"
+                        class="error">Only alphabets allowed</div>
+                </div>
+                <div class="col-md-4 space">
+                    <input type="text" class="form-control" [(ngModel)]="surnameeng" id="surnameeng"
+                        placeholder="Enter surname" formControlName="surnameeng" name="sunameeng" (change)="change()">
+                    <div *ngIf="Details.get('fullnameeng').get('surnameeng').hasError('required') &&(Details.get('fullnameeng').get('surnameeng').dirty || Details.get('fullnameeng').get('surnameeng').touched)"
+                        class="error">This field is mandatory</div>
+                    <div *ngIf="Details.get('fullnameeng').get('surnameeng').hasError('pattern') &&(Details.get('fullnameeng').get('surnameeng').dirty || Details.get('fullnameeng').get('surnameeng').touched)"
+                        class="error">Only alphabets allowed</div>
+                    <div *ngIf="Details.get('fullnameeng').get('surnameeng').hasError('maxlength') &&(Details.get('fullnameeng').get('surnameeng').dirty || Details.get('fullnameeng').get('surnameeng').touched)"
+                        class="error">Max length can be 20 characters</div>
                 </div>
             </div>
-            <hr class="line">
-            <div class="form-group row">
-                <label for="birth" class="col-lg-8">Birth Date</label>
-                <div class="col-lg-4">
-                    <input type="date" class="form-control" [ngModel]="dob | date: 'yyyy-MM-dd'" id="birth" placeholder="Enter Birth date"
-                        formControlName="birth" name="birth" (change)="change()">
-                    <div *ngIf="Details.controls.birth.hasError('required') &&(Details.controls.birth.dirty || Details.controls.birth.touched)"
-                        class="error">Please select your birth date </div>
-                </div>
+        </div>
+        <div class="card border-warning mb-4  " style="width: inherit;">
+            <img class="user-key" src="../../assets/excl.jpg">
+            <div class="card-body">
+                <p class="card-text pl-3 text-color">
+                    Please compare data in Latin with data in the vehicle registration certificate
+                    or identity document.Data will be used for printout of Green Card
+                    Certificate.
+                </p>
             </div>
-
-            <div class="h-divider">
+        </div>
+        <div class="form-group row">
+            <label for="citizen" class="col-lg-8">Citizenship</label>
+            <div class="col-lg-4">
+                <!-- <select class="form-control" id="citizen" [(ngModel)]="citizen" formControlName="citizen" name="citizen" (change)="change()"> -->
+                <select class="form-control" id="citizen" formControlName="citizen" name="citizen" (change)="change()">
+                    <option selected disabled value="">--SELECT--</option>
+                    <option *ngFor="let c of citizens" [value]="c">{{c}}</option>
+                </select>
+                <div *ngIf="Details.controls.citizen.hasError('required') &&(Details.controls.citizen.dirty || Details.controls.citizen.touched)"
+                    class="error">Please select your Citizenship</div>
             </div>
-
-            <h2>
-                <b>Contact Information</b>
-            </h2>
-
-
-            <div class="form-group row">
-                <label for="city" class="col-md-5 col-12">City</label>
-
-                <div class="col-md-4 col-8 space">
-                    <!-- <select class="form-control" id="sel1" formControlName="city" [(ngModel)]="city" name="city" (change)="change()"> -->
-                    <select class="form-control" id="sel1" formControlName="city" name="city" (change)="change()">
-                    
-                        <option selected disabled value="">--SELECT--</option>
-
-                        <option value="Hyd" [selected]="city==='Hyd'">Hyderabad</option>
-                        <option value="Mum" [selected]="city==='Mum'">Mumbai</option>
-                        <option value="Pune" [selected]="city==='Pune'">Pune</option>
-                        <option value="Chennai" [selected]="city==='Chennai'">Chennai</option>
-                        <option value="Banglore" [selected]="city==='Bangalore'">Banglore</option>
-                        <option value="Goa" [selected]="city==='Goa'">Goa</option>
-                        <option value="Maharashtra" [selected]="city==='Maharashtra'">Maharashtra</option>
-
-                    </select>
-                    <div *ngIf="Details.controls.city.hasError('required') &&(Details.controls.city.dirty || Details.controls.city.touched)"
+        </div>
+        <hr class="line">
+        <div class="form-group row">
+            <label for="birth" class="col-lg-8">Birth Date</label>
+            <div class="col-lg-4">
+                <input type="date" class="form-control" [ngModel]="dob | date: 'yyyy-MM-dd'" id="birth"
+                    placeholder="Enter Birth date" formControlName="birth" name="birth" (change)="change()">
+                <div *ngIf="Details.controls.birth.hasError('required') &&(Details.controls.birth.dirty || Details.controls.birth.touched)"
+                    class="error">Please select your birth date </div>
+            </div>
+        </div>
+        <div class="h-divider">
+        </div>
+        <h2>
+            <b>Contact Information</b>
+        </h2>
+        <div class="form-group row">
+            <label for="city" class="col-md-5 col-12">City</label>
+            <div class="col-md-4 col-8 space">
+                <!-- <select class="form-control" id="sel1" formControlName="city" [(ngModel)]="city" name="city" (change)="change()"> -->
+                <select class="form-control" id="sel1" formControlName="city" name="city" (change)="change()">
+                    <option selected disabled value="">--SELECT--</option>
+                    <option value="Hyd" [selected]="city==='Hyd'">Hyderabad</option>
+                    <option value="Mum" [selected]="city==='Mum'">Mumbai</option>
+                    <option value="Pune" [selected]="city==='Pune'">Pune</option>
+                    <option value="Chennai" [selected]="city==='Chennai'">Chennai</option>
+                    <option value="Banglore" [selected]="city==='Bangalore'">Banglore</option>
+                    <option value="Goa" [selected]="city==='Goa'">Goa</option>
+                    <option value="Maharashtra" [selected]="city==='Maharashtra'">Maharashtra</option>
+                </select>
+                <div *ngIf="Details.controls.city.hasError('required') &&(Details.controls.city.dirty || Details.controls.city.touched)"
+                    class="error">This field is mandatory</div>
+            </div>
+            <div class="col-md-3 col-4 space">
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="pincode" placeholder="1000" (change)="change()"
+                        formControlName="pincode">
+                    <div *ngIf="Details.controls.pincode.hasError('required') &&(Details.controls.pincode.dirty || Details.controls.pincode.touched)"
                         class="error">This field is mandatory</div>
                 </div>
-                <div class="col-md-3 col-4 space">
-                    <div class="form-group">
-                        <input type="text" class="form-control" [(ngModel)]="pincode" placeholder="1000" (change)="change()"
-                            formControlName="pincode">
-                        <div *ngIf="Details.controls.pincode.hasError('required') &&(Details.controls.pincode.dirty || Details.controls.pincode.touched)"
-                            class="error">This field is mandatory</div>
-                    </div>
-                </div>
             </div>
-
-            <hr class="line">
-            <div class="form-group row">
-              
-                    <label for="s&n"  class="col-md-5 col-12">Street & Number </label>
-               
-                <div class="col-md-4 col-8 space">
-                    <input type="text" class="form-control" value={{street}} formControlName="street" (change)="change()">
-                    <!-- <div *ngIf="Details.controls.street.hasError('required') &&(Details.controls.street.dirty || Details.controls.street.touched)" class="error">Please select your street</div> -->
-
-                </div>
-                <div class="col-sm-3 col-4 space">
-                    <input type="text" class="form-control" value={{No}} formControlName="No" (change)="change()">
-                    <!-- <div *ngIf="Details.controls.No.hasError('required') &&(Details.controls.No.dirty || Details.controls.No.touched)" class="error">Please enter your House NO</div> -->
-                </div>
+        </div>
+        <hr class="line">
+        <div class="form-group row">
+            <label for="s&n" class="col-md-5 col-12">Street & Number </label>
+            <div class="col-md-4 col-8 space">
+                <input type="text" class="form-control" value={{street}} formControlName="street" (change)="change()">
+                <!-- <div *ngIf="Details.controls.street.hasError('required') &&(Details.controls.street.dirty || Details.controls.street.touched)" class="error">Please select your street</div> -->
 
             </div>
-            <hr class="line">
-            <div class="form-group row">
-              
-                    <label for="be&a" class="col-md-5 col-12">Block Entrance & Apartment </label>
-               
-                <div class="col-md-2 col-4">
-
-                    <input type="text" value={{block}} class="form-control" (change)="change()">
-                    <label>Optional</label>
-
-                </div>
-                <div class="col-md-2 col-4">
-                    <input type="text" value={{entrance}} class="form-control" (change)="change()">
-                    <label>Optional</label>
-                </div>
-                <div class="col-md-3 col-4">
-                    <input type="text" value={{appartment}} class="form-control" (change)="change()">
-                    <label>Optional</label>
-                </div>
+            <div class="col-sm-3 col-4 space">
+                <input type="text" class="form-control" value={{No}} formControlName="No" (change)="change()">
+                <!-- <div *ngIf="Details.controls.No.hasError('required') &&(Details.controls.No.dirty || Details.controls.No.touched)" class="error">Please enter your House NO</div> -->
             </div>
-            <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn" [disabled]="!Details.valid"
-                matStepperNext>Next</button>
-        </form>
-    
+        </div>
+        <hr class="line">
+        <div class="form-group row">
+            <label for="be&a" class="col-md-5 col-12">Block Entrance & Apartment </label>
+            <div class="col-md-2 col-4">
+                <input type="text" value={{block}} class="form-control" (change)="change()">
+                <label>Optional</label>
+            </div>
+            <div class="col-md-2 col-4">
+                <input type="text" value={{entrance}} class="form-control" (change)="change()">
+                <label>Optional</label>
+            </div>
+            <div class="col-md-3 col-4">
+                <input type="text" value={{appartment}} class="form-control" (change)="change()">
+                <label>Optional</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn"
+            [disabled]="!Details.valid" matStepperNext>Next</button>
+    </form>
+</div>

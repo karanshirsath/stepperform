@@ -1,377 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
-    <div class="row">
-    <h1 class="label_prop">Proposal</h1>
-    <button class="btn btn-outline-primary email_btn_prop ml-auto">Send to email</button>
-    </div>
-    
-        <!-- <div class="d-flex justify-content-between col-md-12 mx-auto">
-            <h1 class="p-2 label_prop">Proposal</h1>
-            <div class="p-2"><button class="btn btn-outline-primary email_btn_prop">Send to email</button></div>
-        </div> -->
-        <br/>
-
-       <div class="row">
-       <div class="card card_bg col-md-12 col-12 mx-auto"> 
-        <div class="card-body">
         <div class="row">
-        <div class="col-md-1 col-2 p-0">
-            <img src="../../../assets/motor_policy.PNG">
+            <h1 class="label_prop">Proposal</h1>
+            <button class="btn btn-outline-primary email_btn_prop ml-auto">Send to email</button>
         </div>
-        
-           <div class="col-md-10 col-9 pr-0 m-auto">
-            <div class="row">
-               <div class="col-md-8 col-12 p-0">
-               <span class="card-text middle-heading text-small" style="color: white;">Motor Third Party Liability Policy</span>
-            </div>
-            <!-- </div>             -->
-                <div class="col-md-4 col-12 ml-auto p-0">
-                <div class="card-text card-num num" style="color: white;">324<span class="nearelm">,00 BGN</span></div>
-                <div class="bgn" style="color: white;">Four Payments</div>
-            </div>
-        </div>
-        </div>
-
-        </div>
-            <!-- <div class="col-lg-3 col-md-3 col-sm-12 ml-auto">
-            <p  class="card-text" style="color:white;font-weight: 100;">{{mtplCalculatorData["installmentsData"].term}}</p>
-            </div> -->
-            </div>
-        </div>
-    </div>
-<br/>
-        <!-- <div class="col-md-12 col-12 mx-auto"> -->
-            <!-- <div class="card" style="border:none"> -->
-                <!-- <div class="card-body  border-bottom"> -->
+        <br />
+        <div class="row">
+            <div class="card card_bg col-md-12 col-12 mx-auto">
+                <div class="card-body">
                     <div class="row">
-                   <div class="col-1"><img class="tick" src="../../../assets/tick.jpg"></div>
-                        <span class="col-10 text">Premium indicated are final and include Contribution to the Gaurantee and Insurance Fund, stickers and 2% tax on insurance payment.</span>
-                    </div><br/>
-                <div class="row">
-                    <div class="col-1"><img class="tick" src="../../../assets/tick.jpg"></div>
-                    <span class="col-10 text">The insurance payment is calculated with included - 5% discount for insurance with "Casco+".</span>
-                </div><br/>
-                <div class="row">
-                <div class="col-1"><img class="tick" src="../../../assets/tick.jpg"></div>
-                    <span class="col-10 text">Annual Technical Inspection Voucher</span>
+                        <div class="col-md-1 col-2 p-0">
+                            <img src="../../../assets/motor_policy.PNG">
+                        </div>
+                        <div class="col-md-10 col-9 pr-0 m-auto">
+                            <div class="row">
+                                <div class="col-md-8 col-12 p-0">
+                                    <span class="card-text middle-heading text-small" style="color: white;">Motor Third
+                                        Party Liability Policy</span>
+                                </div>
+                                <div class="col-md-4 col-12 ml-auto p-0">
+                                    <div class="card-text card-num num" style="color: white;">324<span
+                                            class="nearelm">,00 BGN</span></div>
+                                    <div class="bgn" style="color: white;">Four Payments</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- </div> -->
-            <!-- </div> -->
-            <br/>
-            
-
-            <form [formGroup]="summaryForm">
-
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-1"><img class="tick" src="../../../assets/tick.jpg"></div>
+            <span class="col-10 text">Premium indicated are final and include Contribution to the Gaurantee and
+                Insurance Fund, stickers and 2% tax on insurance payment.</span>
+        </div><br />
+        <div class="row">
+            <div class="col-1"><img class="tick" src="../../../assets/tick.jpg"></div>
+            <span class="col-10 text">The insurance payment is calculated with included - 5% discount for insurance with
+                "Casco+".</span>
+        </div><br />
+        <div class="row">
+            <div class="col-1"><img class="tick" src="../../../assets/tick.jpg"></div>
+            <span class="col-10 text">Annual Technical Inspection Voucher</span>
+        </div>
+        <br />
+        <form [formGroup]="summaryForm">
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
-                    
                     <label class="label_prop">Instalments</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)=" moveToCalculator(3)" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                    <button (click)="moveToCalculator(3)" class="btn btn-outline-none email_btn_prop"
+                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
-
-          
-                <div class="col-md-3">                    
-                    <div  *ngFor='let ele of installmentData;let indexOfEle=index;'>
-                    <label class="font_color sub_label_prop" >{{indexOfEle+1 |ordinal}} Installment</label>
-                    <!-- <input type="text" class="form-control" id="firstInstalment"  value={{first}}> -->
-                    <p>{{ele}}</p>
+                        <div class="col-md-3">
+                            <div *ngFor='let ele of installment.installments;let indexOfEle=index;'>
+                                <label class="font_color sub_label_prop">{{indexOfEle+1 |ordinal}} Installment</label>
+                                <p>{{ele}}</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- <span *ngIf="summaryForm.controls.firstInstalment.errors" style="color: red;">Required</span> -->
-                </div>
-
-                
-            </div>
-
                 </div>
             </div>
-            <br/>
-
+            <br />
             <div class="card" style="border:none">
                 <div class="card-body  border-bottom">
                     <label class="label_prop">Additional Cover</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)=" moveToCalculator(4)" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                    <button (click)=" moveToCalculator(4)" class="btn btn-outline-none email_btn_prop"
+                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="form-group">
-                    <!-- <input type="text" formControlName="additionalCover" class="form-control label_prop" [value]=""> -->
-                    {{mtplCalculatorData["coversData"].cover}}
-                </div>
-                <!-- <span *ngIf="summaryForm.controls.additionalCover.errors" style="color: red;">Required</span> -->
+                        {{additionalcovers.cover}}
+                    </div>
                 </div>
             </div>
-            <br/>
-
+            <br />
             <div class="card" style="border:none">
                 <div class="card-body  border-bottom">
                     <label class="label_prop">Policy Dates</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)=" moveToCalculator(2)" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                    <button (click)=" moveToCalculator(2)" class="btn btn-outline-none email_btn_prop"
+                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                           <label class="font_color sub_label_prop">Start Date</label><br>
-                            <!-- <input type="text" class="form-control" formControlName="startDate" [value]=""> -->
-                            {{mtplCalculatorData["policyDetailsData"].policyDate}}
+                                <label class="font_color sub_label_prop">Start Date</label><br>
+                                {{policy.policyDate}}
                             </div>
-                            <!-- <span *ngIf="summaryForm.controls.startDate.errors" style="color: red;">Required</span> -->
                         </div>
                         <div class="col-md-6">
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">End Date</label>
-                        <!-- <input type="text" class="form-control" formControlName="endDate" [value]=""> -->
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.endDate.errors" style="color: red;">Required</span> -->
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">End Date</label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <br/>
-
+            <br />
             <div class="card" style="border:none">
                 <div class="card-body  border-bottom">
                     <label class="label_prop">Vehicle</label>
-                    <button (click)=" moveToCalculator(0)" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                    <button (click)=" moveToCalculator(0)" class="btn btn-outline-none email_btn_prop"
+                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Vehicle Registration Number</label><br>
-                        <!-- <input type="text" class="form-control" formControlName="vehicleRegistration" [value]="" > -->
-                       {{mtplCalculatorData["vehicleData"].registrationNumber}}
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.vehicleRegistration.errors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Vehicle Purpose</label><br>
-                        <!-- <input type="text" class="form-control" formControlName="vehiclePurpose" [value]=""> -->
-                        {{mtplCalculatorData["vehicleData"].purpose}}
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.vehiclePurpose.errors" style="color: red;">Required</span> -->
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Vehicle Registration Number</label><br>
+                                {{vehicleinfo.registrationNumber}}
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Vehicle Purpose</label><br>
+                                {{vehicleinfo.purpose}}
+                            </div>
                         </div>
                         <div class="col-md-6">
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Vehicle Certification Number</label><br>
-                        <!-- <input type="text" class="form-control" formControlName="certificationNumber" [value]=""> -->
-                        {{mtplCalculatorData["vehicleData"].certificateNumber}}
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.certificationNumber.errors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Driven outside bulgaria for more than 60 days</label><br>
-                        <!-- <input type="text" class="form-control" formControlName="days" [value]=""> -->
-                        {{mtplCalculatorData["vehicleData"].yesNo}}
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.days.errors" style="color: red;">Required</span> -->
-                        </div>
-                        <!--<div class="card border-warning">
-                            <img class="edit" src="../../assets/edit.jpg">
-                            <div class="card-body font_color">
-                                <i class="fa fa-pencil-square-o fa-2x" style="color: orange; text-align: justify;"></i>
-                                <div style="text-align: justify; padding-left: 15px; padding-right: 15px; padding-top: 10px; padding-bottom: 15px;">Casco has an active policy for the same vehicle with different data.The change in the 
-                                data will be reflacted in an. The ann will be sent to you by courier/ email or will be
-                                provided for signing by e-signature.
-                                </div>
-                                        
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Vehicle Certification Number</label><br>
+                                {{vehicleinfo.certificateNumber}}
                             </div>
-                        </div>-->
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Driven outside bulgaria for more than 60
+                                    days</label><br>
+                                {{vehicleinfo.yesNo}}
+                            </div>
+                        </div>
                         <div class="panel col-lg-12">
                             <img class="user-key" src="../../assets/edit.jpg">
-                            Casco has an active policy for the same vehicle with different data.The change in the 
+                            Casco has an active policy for the same vehicle with different data.The change in the
                             data will be reflacted in an. The ann will be sent to you by courier/ email or will be
                             provided for signing by e-signature.
-                         </div>
+                        </div>
                     </div>
-
-
                 </div>
             </div>
-            <br/>
-
+            <br />
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Insuring Party</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)=" moveToCalculator(1)" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                    <button (click)=" moveToCalculator(1)" class="btn btn-outline-none email_btn_prop"
+                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">ENG/ELK/LNCH Number</label><br>
-                        <!-- <input type="text" class="form-control" formControlName="number" [value]=""> -->
-                        {{mtplCalculatorData["insuringPartyData"].egn}}
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.number.errors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Full Name</label><br>
-                        {{mtplPolicyData["personalInformation"].fullname.firstname}} {{mtplPolicyData["personalInformation"].fullname.lastname}} {{mtplPolicyData["personalInformation"].fullname.surname}}
-                        <!-- <input type="text" class="form-control" formControlName="fullName" [value]=""> -->
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.fullName.errors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Phone Number</label><br>
-                        <!-- <input type="text" class="form-control" formControlName="phoneNumber" [value]=""> -->
-                        {{mtplPolicyData["contactInformation"].phone}} <br>
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.phoneNumber.errors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Email</label><br>
-                        {{mtplCalculatorData["insuringPartyData"].email}}
-                        <!-- <input type="text" class="form-control" formControlName="email" [value]=""> -->
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.email.errors" style="color: red;">Required</span> -->
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">ENG/ELK/LNCH Number</label><br>
+                                {{insuringparty.egn}}
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Full Name</label><br>
+                                {{personalinformation.fullname.firstname}} {{personalinformation.fullname.lastname}}
+                                {{personalinformation.fullname.surname}}
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Phone Number</label><br>
+                                {{contactinformation.phone}} <br>
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Email</label><br>
+                                {{insuringparty.email}}
+                            </div>
                         </div>
                         <div class="col-md-6">
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">City and zipcode</label><br>
-                        {{mtplPolicyData["contactInformation"].city}}   {{mtplPolicyData["contactInformation"].pincode}} 
-                        <!-- <input type="text" class="form-control" formControlName="cityZipcode" [value]=""> -->
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.cityZipcode.errors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Street & Number</label><br>
-                        <!-- <input type="text" class="form-control" formControlName="streetNumber" [value]=""> -->
-                        {{mtplPolicyData["contactInformation"].street}}   {{mtplPolicyData["contactInformation"].No}} 
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.streetNumberors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Apartment</label><br>
-                        {{mtplPolicyData["contactInformation"].appartment}} 
-                        <!-- <input type="number" class="form-control" formControlName="apartment" [value]=""> -->
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.apartment.errors" style="color: red;">Required</span> -->
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">City and zipcode</label><br>
+                                {{contactinformation.city}} {{contactinformation.pincode}}
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Street & Number</label><br>
+                                {{contactinformation.street}} {{contactinformation.No}}
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Apartment</label><br>
+                                {{contactinformation.appartment}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <br/>
-
+            <br />
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Vehicle Owner</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)="edit(2)" class="edit_prop" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                    <button (click)="edit(2)" class="edit_prop" class="btn btn-outline-none email_btn_prop"
+                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                            <label class="font_color sub_label_prop">EGN/ELK/LNCH Number</label><br>
-                            <!-- <input type="text" class="form-control" formControlName="egnnumber" [value]=""> -->
-                            {{mtplPolicyData["vehicleOwnerInformation"].lnch}}
+                                <label class="font_color sub_label_prop">EGN/ELK/LNCH Number</label><br>
+                                {{vehicleownerinformation.lnch}}
                             </div>
-                            <!-- <span *ngIf="summaryForm.controls.egnnumber.errors" style="color: red;">Required</span> -->
                             <div class="form-group">
-                            <label class="font_color sub_label_prop">Full Name</label><br>
-                            <!-- <input type="text" class="form-control" formControlName="fullnamevehicleowner" [value]=""> -->
-                            {{mtplPolicyData["vehicleOwnerInformation"].fullname.firstname}}
+                                <label class="font_color sub_label_prop">Full Name</label><br>
+                                {{vehicleownerinformation.fullname.firstname}}
                             </div>
-                            <!-- <span *ngIf="summaryForm.controls.fullnamevehicleowner.errors" style="color: red;">Required</span> -->
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                            <label class="font_color sub_label_prop">city & zipcode</label><br>
-                            <!-- <input type="text" class="form-control" formControlName="cityZipcodevehicleOwner" [value]=""> -->
-                            {{mtplPolicyData["vehicleOwnerInformation"].city}}      
+                                <label class="font_color sub_label_prop">city & zipcode</label><br>
+                                {{vehicleownerinformation.city}}
                             </div>
-                            <!-- <span *ngIf="summaryForm.controls.cityZipcodevehicleOwner.errors" style="color: red;">Required</span> -->
                             <div class="form-group">
-                            <label class="font_color sub_label_prop">street & Number</label><br>
-                            <!-- <input type="text" class="form-control" formControlName="streetNumbervehicleowner" [value]=""> -->
-                            {{mtplPolicyData["vehicleOwnerInformation"].street}}      {{mtplPolicyData["vehicleOwnerInformation"].No}}
+                                <label class="font_color sub_label_prop">street & Number</label><br>
+                                {{vehicleownerinformation.street}} {{vehicleownerinformation.No}}
                             </div>
-                            <!-- <span *ngIf="summaryForm.controls.streetNumbervehicleowner.errors" style="color: red;">Required</span> -->
                         </div>
                     </div>
                 </div>
             </div>
-            <br/>
+            <br />
 
             <div class="card" style="border:none">
                 <div class="card-body border-bottom">
                     <label class="label_prop">Delivery</label>&nbsp;&nbsp;&nbsp;
-                    <button (click)="edit(3)" class="edit_prop" class="btn btn-outline-none email_btn_prop" style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                    <button (click)="edit(3)" class="edit_prop" class="btn btn-outline-none email_btn_prop"
+                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
                     <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Full Name</label><br>
-                        {{mtplPolicyData["deliveryInformation"].fullName}}
-                        <!-- <input type="text" class="form-control" formControlName="fullNameDelivery" [value]=""> -->
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.fullNameDelivery.errors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Phone Number</label><br>
-                        <!-- <input type="text" class="form-control" formControlName="phoneNumDelivery" [value]=""> -->
-                        {{mtplPolicyData["deliveryInformation"].contact}}
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.phoneNumDelivery.errors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Address Type</label><br>
-                        {{mtplPolicyData["deliveryInformation"].business}}
-                        <!-- <input type="text" class="form-control" formControlName="addressType" [value]=""> -->
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.addressType.errors" style="color: red;">Required</span> -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Full Name</label><br>
+                                {{deliveryinformation.fullName}}
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Phone Number</label><br>
+                                {{deliveryinformation.contact}}
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Address Type</label><br>
+                                {{deliveryinformation.business}}
+                            </div>
                         </div>
                         <div class="col-md-6">
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">City and zipcode</label><br>
-                        <!-- <input type="text" class="form-control" formControlName="cityZipcodeDelivery" [value]=""> -->
-                        {{mtplPolicyData["deliveryInformation"].city}} and {{mtplPolicyData["deliveryInformation"].pincode}}
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.cityZipcodeDelivery.errors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Street & Number</label><br>
-                        <!-- <input type="text" class="form-control" formControlName="streetNumberDelivery" [value]=""> -->
-                        {{mtplPolicyData["deliveryInformation"].street}} and {{mtplPolicyData["deliveryInformation"].number}}
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.streetNumberDelivery.errors" style="color: red;">Required</span> -->
-                      
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Block</label><br>
-                        <!-- <input type="number" class="form-control" formControlName="block" [value]=""> -->
-                        {{mtplPolicyData["deliveryInformation"].block}}
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.block.errors" style="color: red;">Required</span> -->
-                        <div class="form-group">
-                        <label class="font_color sub_label_prop">Apartment</label><br>
-                        <!-- <input type="number" class="form-control" formControlName="apartmentDelivery" [value]=""> -->
-                        {{mtplPolicyData["deliveryInformation"].appt}}
-                        </div>
-                        <!-- <span *ngIf="summaryForm.controls.apartmentDelivery.errors" style="color: red;">Required</span> -->
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">City and zipcode</label><br>
+                                {{deliveryinformation.city}} and {{deliveryinformation.pincode}}
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Street & Number</label><br>
+                                {{deliveryinformation.street}} and {{deliveryinformation.number}}
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Block</label><br>
+                                {{deliveryinformation.block}}
+                            </div>
+                            <div class="form-group">
+                                <label class="font_color sub_label_prop">Apartment</label><br>
+                                {{deliveryinformation.appt}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <br/>
-
-        
+            <br />
             <div class="card" style="border:none">
                 <div class="card-body">
                     <div class="form-group form-check">
-                    <input type="checkbox" class="font_color form-check-input" formControlName="AgreeToAll">
-                    <div>  Agree to all</div>
+                        <input type="checkbox" class="font_color form-check-input" formControlName="AgreeToAll">
+                        <div> Agree to all</div>
+                    </div>
+                    <span *ngIf="summaryForm.controls.AgreeToAll.errors && summaryForm.controls.AgreeToAll.touched"
+                        style="color: red;">Required</span>
                 </div>
-                <span *ngIf="summaryForm.controls.AgreeToAll.errors && summaryForm.controls.AgreeToAll.touched" style="color: red;">Required</span>
-            </div>
-            </div><br/>
+            </div><br />
             <div class="card" style="box-shadow:2px 2px 2px gray;">
                 <div class="card-body">
                     <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" formControlName="receiveNewsletter" style="color: rgb(0, 53, 103)" > 
-                    <div>I agree to receive DZI newsletter</div>
+                        <input type="checkbox" class="form-check-input" formControlName="receiveNewsletter"
+                            style="color: rgb(0, 53, 103)">
+                        <div>I agree to receive DZI newsletter</div>
+                    </div>
+                    <span
+                        *ngIf="summaryForm.controls.receiveNewsletter.errors && summaryForm.controls.receiveNewsletter.touched"
+                        style="color: red;">Required</span>
                 </div>
-                <span *ngIf="summaryForm.controls.receiveNewsletter.errors && summaryForm.controls.receiveNewsletter.touched" style="color: red;">Required</span>
-            </div>
-            </div><br/>
+            </div><br />
             <div class="card" style="box-shadow: 2px 2px 2px gray;">
                 <div class="card-body">
                     <div class="form-group form-check">
-                    <input type="checkbox" style="color: rgb(0, 53, 103);" class="form-check-input" formControlName="generalTerms"> 
-                   <div>I agree to the <a href="#" style="color:dodgerblue ;">general terms and conditions</a></div>
-                   <span *ngIf="summaryForm.controls.generalTerms.errors && summaryForm.controls.generalTerms.touched" style="color:red">required</span>
+                        <input type="checkbox" style="color: rgb(0, 53, 103);" class="form-check-input"
+                            formControlName="generalTerms">
+                        <div>I agree to the <a href="#" style="color:dodgerblue ;">general terms and conditions</a>
+                        </div>
+                        <span
+                            *ngIf="summaryForm.controls.generalTerms.errors && summaryForm.controls.generalTerms.touched"
+                            style="color:red">required</span>
+                    </div>
                 </div>
             </div>
-            </div>
-        </form><br/><br/>
-
-            <button class="btn btn-primary" style="border-radius: 3rem;" matStepperNext [disabled]="summaryForm.invalid">Continue to payment</button>
-        <!-- </div> -->
-        
+        </form><br /><br />
+        <button class="btn btn-primary" style="border-radius: 3rem;" matStepperNext (click)="saveData()"
+            [disabled]="summaryForm.invalid">Continue to payment</button>
     </div>
 </body>
+
 </html>

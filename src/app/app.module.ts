@@ -93,7 +93,7 @@ import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http'
     HttpClientModule
     
   ],
-  providers: [CdkStepper,MTPLCalculatorComponent,LoggedInGuardGuard,LoggedInServiceService],
+  providers: [CdkStepper,MTPLCalculatorComponent,LoggedInGuardGuard,LoggedInServiceService,ProposalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

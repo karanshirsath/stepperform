@@ -1,201 +1,167 @@
-
-    <h1 class="heading ">Additional covers</h1><br>
-    <form [formGroup]="additionalcoverForm" (submit)="next()">
-        <div class="row ">
-            <div class="card shadow p-3 mb-5 rounded thirdparty">
-                <div class="card-body bg-dark-blue">
-                    <div class="row">
-                         <div class="col-md-1 col-2 motor-img p-0">
-                            <img src="../../assets/motor_policy.PNG">
-                            
-                        </div>
-                        
-                        <!--<div class="col-sm-11 col-9 pr-0 m-auto adjust" style="background-color: rgb(6, 112, 20);">
-                            <div class="row">
-                                <div class="col-md-9 col-12 p-0">
-                                    <span class="middle-heading text-small" style="color: yellow;">Motor Third party Liability Policy</span>
-                                </div>
-                                <div class="col-sm-5 col-auto col-8">
-                                    <div>
-                                        <div class="num" style="color: whitesmoke;">382<span class="nearelm">,00 BGN</span></div>
-                                        <div class="bgn" >
+<h1 class="heading ">Additional covers</h1><br>
+<form [formGroup]="additionalcoverForm" (submit)="next()">
+    <div class="row ">
+        <div class="card shadow p-3 mb-5 rounded thirdparty">
+            <div class="card-body bg-dark-blue">
+                <div class="row">
+                    <div class="col-md-1 col-2 motor-img p-0">
+                        <img src="../../assets/motor_policy.PNG">
+                    </div>
+                    <div class="col-md-10 col-9 pr-0 m-auto">
+                        <div class="row">
+                            <div class="col-md-9 col-12 p-0">
+                                <span class="middle-heading text-small">Motor Third party Liability Policy</span>
+                            </div>
+                            <div class="col-md-3 col-12 p-0">
+                                <div>
+                                    <div class="num" style="color: whitesmoke;">382<span class="nearelm">,00 BGN</span>
+                                    </div>
+                                    <div class="bgn">
                                         Four payments
-                                        </div> 
                                     </div>
                                 </div>
                             </div>
-                        </div>-->
-                    
-                        <div class="col-md-10 col-9 pr-0 m-auto">
-                            <div class="row">
-                                <div class="col-md-9 col-12 p-0">
-                                    <span class="middle-heading text-small">Motor Third party Liability Policy</span>
-                                </div>
-                                <div class="col-md-3 col-12 p-0">
-                                    <div>
-                                        <div class="num" style="color: whitesmoke;">382<span class="nearelm">,00 BGN</span></div>
-                                        <div class="bgn">
-                                            Four payments
-                                        </div> 
-                                    </div>
-                                </div>
-                           
                         </div>
-                            </div>
-                    
-                   <!---->
                     </div>
                 </div>
             </div>
         </div>
-                
-                        <!-- <div class="col-lg-7 col-md-8 col-4 col-7 policy">
-                         <span>Motor Third Party Liability Policy</span></div>
-                        
-                        <div class="col-lg-5 col-md-4 col-auto col-5 bgn ">
-                            382,00BGN<br>
-                            <h6>Four payments</h6>
-                        </div> -->
-                        <div class="border shadow p-3 mb-3 bg-white rounded firstcard">
-                            <div class="row cardrow">
-                                <div class="col-auto mr-auto pt-1">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="none" (change)="change()" [checked]="cover==='None'"><h3 class="sub-head">None</h3></label>
-                                        <!-- <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="none" [(ngModel)]="cover" (change)="change()" [checked]="cover==='None'"><h3 class="sub-head">None</h3></label> -->
-                                        
-                                        <div class="mon">Description of additional cover here</div>
-                                </div>   
-                                
-                            </div>
-                        </div>
-                        <div class="border shadow p-3 mb-3 bg-white rounded secondcard">
-                            <div class="row cardrow">
-                                <div class="col-auto mr-auto pt-1">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="premium" (change)="change()" [checked]="cover==='Premium'"><h3 class="sub-head">Premium</h3></label>
-                                        <!-- <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="premium" (change)="change()" [checked]="cover==='Premium'"><h3 class="sub-head">Premium</h3></label> -->
-                                        
-                                        <div class="row">
-                                            <div class="col-xs-4">
-                                            <button class="btn btn-success mon">Best Value</button>
-                                        </div>&nbsp;&nbsp;&nbsp;
-                                        <div class="col-md-8.5" style="padding-top: 1.5%;">
-                                            <span class="mon">Description of additional cover here</span>
-                                        </div>  
-                                        </div>
-                                        
-                                </div>   
-                                <div class="col-sm-3 whitecard">
-                                    <div class="num">+25<span class="nearelm">,00 BGN</span></div>
-                                    <div class="months">
-                                        for 12 months
-                                    </div> 
-                                        
-                                    
-                                </div>
+    </div>
+    <div class="border shadow p-3 mb-3 bg-white rounded firstcard">
+        <div class="row cardrow">
+            <div class="col-auto mr-auto pt-1">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="none"
+                        (change)="change()" [checked]="cover==='None'">
+                    <h3 class="sub-head">None</h3>
+                </label>
+                <!-- <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="none" [(ngModel)]="cover" (change)="change()" [checked]="cover==='None'"><h3 class="sub-head">None</h3></label> -->
 
-                            </div>
-                            <br><a href="www.google.com"><u class="spc">See what's more</u></a>
-                        </div>
-                        <!---->
-                        <div class="border shadow p-3 mb-3 bg-white rounded thirdcard">
-                            <div class="row cardrow">
-                                <div class="col-auto mr-auto pt-1">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="vip" (change)="change()" [checked]="cover==='VIP'"><h3 class="sub-head">VIP</h3></label>
-                                        <!-- <input class="form-check-input" type="radio" name="cover" formControlName="cover" [(ngModel)]="cover" (change)="change()" [checked]="cover==='VIP'"><h3 class="sub-head">VIP</h3></label> -->
-                                        
-                                        <div class="mon">Description of additional cover here
-                                        </div>
-                                        
-                                </div>   
-                                <div class="col-sm-3 whitecard">
-                                    <div class="num">+80<span class="nearelm">,00 BGN</span></div>
-                                    <div  class="months">
-                                        for 12 months
-                                    </div> 
-                                     
-                                </div>
-                            </div>
-                            <br/>
-                            <br/>
-                            <div class="textcolor" >
-                                <p><b>Services provded under the "PREMIUM" clause, but with higher
-                                        limits when transporting vehicles</b></p>
-        
-                                <div class="form-row">
-                                    <div class="col-0 image">
-                                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                                    <span class="col-10"> In case of an insurance event(no limit in the number of transports
-                                        and up to 900 km
-                                        mileage)</span>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-0 off-set-0">
-                                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                                    <span class="col-10 wid">Technical failure(no mileage limit and up to 2 transports)
-                                    </span><br>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-0 off-set-0">
-                                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                                    <span class="col-10 wid">Wrong fuet(disposable)
-                                    </span><br>
-                                </div><br>
-        
-                                <p><b>And more:</b></p>
-                                <div class="form-row">
-                                    <div class="col-0 off-set-0">
-                                        <img width="30px" height="20px" src="./assets/tick.jpg">
-                                    </div>
-                                    <span class="col-10 wid">
-                                        Stay in the parking lot of the damaged car </span><br>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-0 off-set-0">
-                                        <img width="30px" height="20px" src="./assets/tick.jpg">
-                                    </div>
-                                    <span class="col-10 wid">Overview in a hotel of the driver of the vehicle </span><br>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-0 off-set-0">
-                                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                                    <span class="col-10 wid">Transportation of persons traveling in vehicles, in case the
-                                        vehicle
-                                        has suffered damage
-                                    </span><br>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-0 off-set-0">
-                                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                                    <span class="col-10 wid">Medical transportation in case of an accident</span><br>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-0 off-set-0">
-                                        <img width="30px" height="20px" src="./assets/tick.jpg"></div>
-                                    <span class="col-10 wid">Costs of examinations, medical examinations and manipulations in
-                                        case of bodily
-                                        injuries to the driver and / or persons traveling in the vehicle as a result of the
-                                        accident</span><br> 
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-0 off-set-0">
-                                            <img width="30px" height="20px" src="./assets/tick.jpg">
-                                        </div>
-                                        <span class="col-10 wid">In case of damages covered by Casco + insurance - up to 2
-                                            vehicle inspections at
-                                            the address indicated by the client</span><br>
-                                    </div>
-                                    
-                                </div>
-                                <a href="www.google.com"><u class="spc">Hide what's included</u></a>
-                        </div>
+                <div class="mon">Description of additional cover here</div>
+            </div>
+        </div>
+    </div>
+    <div class="border shadow p-3 mb-3 bg-white rounded secondcard">
+        <div class="row cardrow">
+            <div class="col-auto mr-auto pt-1">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="premium"
+                        (change)="change()" [checked]="cover==='Premium'">
+                    <h3 class="sub-head">Premium</h3>
+                </label>
+                <!-- <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="premium" (change)="change()" [checked]="cover==='Premium'"><h3 class="sub-head">Premium</h3></label> -->
 
+                <div class="row">
+                    <div class="col-xs-4">
+                        <button class="btn btn-success mon">Best Value</button>
+                    </div>&nbsp;&nbsp;&nbsp;
+                    <div class="col-md-8.5" style="padding-top: 1.5%;">
+                        <span class="mon">Description of additional cover here</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 whitecard">
+                <div class="num">+25<span class="nearelm">,00 BGN</span></div>
+                <div class="months">
+                    for 12 months
+                </div>
+            </div>
+        </div>
+        <br><a href="www.google.com"><u class="spc">See what's more</u></a>
+    </div>
+    <div class="border shadow p-3 mb-3 bg-white rounded thirdcard">
+        <div class="row cardrow">
+            <div class="col-auto mr-auto pt-1">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="vip"
+                        (change)="change()" [checked]="cover==='VIP'">
+                    <h3 class="sub-head">VIP</h3>
+                </label>
+                <!-- <input class="form-check-input" type="radio" name="cover" formControlName="cover" [(ngModel)]="cover" (change)="change()" [checked]="cover==='VIP'"><h3 class="sub-head">VIP</h3></label> -->
 
-        
-            <br/>
-            <button type="submit" class="btn btn-primary rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn" [disabled]="!additionalcoverForm.valid"
-                matStepperNext>
-                Next</button>
-    </form>
+                <div class="mon">Description of additional cover here
+                </div>
+            </div>
+            <div class="col-sm-3 whitecard">
+                <div class="num">+80<span class="nearelm">,00 BGN</span></div>
+                <div class="months">
+                    for 12 months
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="textcolor">
+            <p><b>Services provded under the "PREMIUM" clause, but with higher
+                    limits when transporting vehicles</b></p>
+            <div class="form-row">
+                <div class="col-0 image">
+                    <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                <span class="col-10"> In case of an insurance event(no limit in the number of transports
+                    and up to 900 km
+                    mileage)</span>
+            </div>
+            <div class="form-row">
+                <div class="col-0 off-set-0">
+                    <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                <span class="col-10 wid">Technical failure(no mileage limit and up to 2 transports)
+                </span><br>
+            </div>
+            <div class="form-row">
+                <div class="col-0 off-set-0">
+                    <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                <span class="col-10 wid">Wrong fuet(disposable)
+                </span><br>
+            </div><br>
+            <p><b>And more:</b></p>
+            <div class="form-row">
+                <div class="col-0 off-set-0">
+                    <img width="30px" height="20px" src="./assets/tick.jpg">
+                </div>
+                <span class="col-10 wid">
+                    Stay in the parking lot of the damaged car </span><br>
+            </div>
+            <div class="form-row">
+                <div class="col-0 off-set-0">
+                    <img width="30px" height="20px" src="./assets/tick.jpg">
+                </div>
+                <span class="col-10 wid">Overview in a hotel of the driver of the vehicle </span><br>
+            </div>
+            <div class="form-row">
+                <div class="col-0 off-set-0">
+                    <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                <span class="col-10 wid">Transportation of persons traveling in vehicles, in case the
+                    vehicle
+                    has suffered damage
+                </span><br>
+            </div>
+            <div class="form-row">
+                <div class="col-0 off-set-0">
+                    <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                <span class="col-10 wid">Medical transportation in case of an accident</span><br>
+            </div>
+            <div class="form-row">
+                <div class="col-0 off-set-0">
+                    <img width="30px" height="20px" src="./assets/tick.jpg"></div>
+                <span class="col-10 wid">Costs of examinations, medical examinations and manipulations in
+                    case of bodily
+                    injuries to the driver and / or persons traveling in the vehicle as a result of the
+                    accident</span><br>
+            </div>
+            <div class="form-row">
+                <div class="col-0 off-set-0">
+                    <img width="30px" height="20px" src="./assets/tick.jpg">
+                </div>
+                <span class="col-10 wid">In case of damages covered by Casco + insurance - up to 2
+                    vehicle inspections at
+                    the address indicated by the client</span><br>
+            </div>
 
+        </div>
+        <a href="www.google.com"><u class="spc">Hide what's included</u></a>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary rounded-pill  col-sm-4 col-lg-2 col-md-3 nextbtn"
+        [disabled]="!additionalcoverForm.valid" matStepperNext>
+        Next</button>
+</form>
