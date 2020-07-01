@@ -32,7 +32,7 @@
             <div class="col-auto mr-auto pt-1">
                 <label class="form-check-label">
                     <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="none"
-                        (change)="change()" [checked]="cover==='None'">
+                        (change)="change()" [checked]="coverSelected==='None'">
                     <h3 class="sub-head">None</h3>
                 </label>
                 <!-- <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="none" [(ngModel)]="cover" (change)="change()" [checked]="cover==='None'"><h3 class="sub-head">None</h3></label> -->
@@ -46,7 +46,7 @@
             <div class="col-auto mr-auto pt-1">
                 <label class="form-check-label">
                     <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="premium"
-                        (change)="change()" [checked]="cover==='Premium'">
+                        (change)="change()" [checked]="coverSelected==='Premium'">
                     <h3 class="sub-head">Premium</h3>
                 </label>
                 <!-- <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="premium" (change)="change()" [checked]="cover==='Premium'"><h3 class="sub-head">Premium</h3></label> -->
@@ -74,7 +74,7 @@
             <div class="col-auto mr-auto pt-1">
                 <label class="form-check-label">
                     <input class="form-check-input" type="radio" name="cover" formControlName="cover" value="vip"
-                        (change)="change()" [checked]="cover==='VIP'">
+                        (change)="change()" [checked]="coverSelected==='VIP'">
                     <h3 class="sub-head">VIP</h3>
                 </label>
                 <!-- <input class="form-check-input" type="radio" name="cover" formControlName="cover" [(ngModel)]="cover" (change)="change()" [checked]="cover==='VIP'"><h3 class="sub-head">VIP</h3></label> -->
