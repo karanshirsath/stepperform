@@ -8,7 +8,7 @@
         </div>
         <div class=" col-12 col-sm-5 col-md-4 col-lg-4 col-auto">
             <input class="form-control" id="registrationNumber" type="text" placeholder="XX0000XX"
-                formControlName="registrationNumber" (change)="change()" [(ngModel)]="registrationNumber">
+                formControlName="registrationNumber" (change)="change()" [(ngModel)]="registrationNo">
             <div class="error"
                 *ngIf="formsControl.registrationNumber.touched && formsControl.registrationNumber.errors">
                 <div *ngIf="formsControl.registrationNumber.errors.required">Vehicle Registartion Number is required
@@ -28,7 +28,7 @@
         </div>
         <div class=" col-12 col-sm-5 col-md-4 col-lg-4">
             <input class="form-control" id="certificateNumber" type="text" placeholder="000000000"
-                formControlName="certificateNumber" (change)="change()" [(ngModel)]="certificateNumber">
+                formControlName="certificateNumber" (change)="change()" [(ngModel)]="certificateNo">
             <div class="error" *ngIf="formsControl.certificateNumber.touched && formsControl.certificateNumber.errors">
                 <div *ngIf="formsControl.certificateNumber.errors.required">Vehicle Certificate Number is required
                 </div>
@@ -48,8 +48,8 @@
             <!-- <select formControlName="purpose" [(ngModel)]="purpose" class="form-control" (change)="change()"> -->
 
             <select formControlName="purpose" class="form-control" (change)="change()">
-                <option [selected]="''===purpose" disabled value="" id="purpose">--SELECT--</option>
-                <option [selected]="p===purpose" *ngFor="let p of purposeList" value='p'>{{p}}</option>
+                <option [selected]="''===purposeSelected" disabled value="" id="purpose">--SELECT--</option>
+                <option [selected]="p===purposeSelected" *ngFor="let p of purposeList" value='p'>{{p}}</option>
             </select>
             <div class="error" *ngIf="formsControl.purpose.touched && formsControl.purpose.errors">
                 <div *ngIf="formsControl.purpose.errors.required">Please select what purpose does this vehicle serve
@@ -67,9 +67,9 @@
         </div>
         <div class="col-12 col-sm-5 col-md-4 col-lg-4">
             <input type="radio" id="DrivingYes" name="yesNo" (change)="change()" formControlName="yesNo" value="Yes"
-                [(ngModel)]="yesNo" [checked]="yesNo=='Yes'"> &nbsp; Yes &nbsp;&nbsp;
+                [(ngModel)]="drivingOutsideYesNo" [checked]="drivingOutsideYesNo=='Yes'"> &nbsp; Yes &nbsp;&nbsp;
             <input type="radio" id="DrivingNo" name="yesNo" (change)="change()" formControlName="yesNo" value="No"
-                [(ngModel)]="yesNo" [checked]="yesNo=='No'"> &nbsp; No
+                [(ngModel)]="drivingOutsideYesNo" [checked]="drivingOutsideYesNo=='No'"> &nbsp; No
         </div>
     </div>
     <hr class="line">
