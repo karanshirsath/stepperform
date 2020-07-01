@@ -12,14 +12,14 @@ import { CommonDataService } from 'src/app/common-data.service';
 export class ContactComponent implements OnInit {
   @Output() OnToggle = new EventEmitter()
   @Output() OnSubmission = new EventEmitter<any>();
-  @Input() city: string;
-  @Input() pincode: String;
-  @Input() street: String;
-  @Input() No: String;
-  @Input() block: String;
-  @Input() entrance: String;
-  @Input() appartment: String;
-  @Input() phone: String;
+  @Input() Ccity: string;
+  @Input() Cpincode: String;
+  @Input() Cstreet: String;
+  @Input() CNo: String;
+  @Input() Cblock: String;
+  @Input() Centrance: String;
+  @Input() Cappartment: String;
+  @Input() Cphone: String;
   registerForm: FormGroup;
   provincesArray
   constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService, private provServ: ProvincesService, private commonDataService: CommonDataService) { }

@@ -12,16 +12,16 @@ export class PersonalComponent implements OnInit {
   @Output() OnToggle = new EventEmitter()
   @Output() OnSubmission = new EventEmitter<any>();
 
-  @Input() lnch: String;
-  @Input() firstname: String;
-  @Input() lastname: String;
-  @Input() surname: String;
+  @Input() plnch: String;
+  @Input() pfirstname: String;
+  @Input() plastname: String;
+  @Input() psurname: String;
 
-  @Input() firstnameeng: String;
-  @Input() lastnameeng: String;
-  @Input() surnameeng: String;
-  @Input() citizen: String;
-  @Input() dob: Date;
+  @Input() pfirstnameeng: String;
+  @Input() plastnameeng: String;
+  @Input() psurnameeng: String;
+  @Input() pcitizen: String;
+  @Input() pdob: Date;
   personalForm: FormGroup;
   citizens = ['Indian', 'American', 'African'];
   constructor(private formBuilder: FormBuilder, private GAService: GoogleAnalyticsService, private commonDataService: CommonDataService) { }

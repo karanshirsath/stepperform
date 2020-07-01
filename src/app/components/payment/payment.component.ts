@@ -9,7 +9,7 @@ import { MtplPolicyService } from '../mtpl-policy/mtpl-policy.service';
 })
 export class PaymentComponent implements OnInit {
   optradio: boolean;
-  @Input() payment: string;
+  @Input() Ppayment: string;
   @Output() OnSubmission = new EventEmitter<any>();
   enable: boolean = true;
   constructor(private mtplCalculatorService:MtplCalculatorService, private mtplPolicyService:MtplPolicyService) { }

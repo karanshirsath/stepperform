@@ -32,7 +32,7 @@
                 <div class="col-md-5 radio mb-3 p-0">
                     <label class="radio-inner d-flex flex-sm-column">
                         <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline">
-                            <input type="radio" [checked]="payment==='Card'" name="optradio" (click)="check()"></div>
+                            <input type="radio" [ngModel]="Ppayment" [checked]="Ppayment==='Card'" name="optradio" (click)="check()"></div>
                         <!-- <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline"><input type="radio" [(ngModel)]="payment" [checked]="payment==='Card'" name="optradio" (click)="check()" ></div> -->
                         <div class="text-center d-flex flex-sm-column align-items-center">
                             <div class="radio-img"><img src="../../assets/credit-card.PNG"></div>
@@ -43,7 +43,7 @@
                 <div class="col-md-5 radio mb-3 p-0">
                     <label class="radio-inner d-flex flex-sm-column">
                         <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline">
-                            <input type="radio" [checked]="payment==='EPay'" name="optradio" (click)="check()"></div>
+                            <input type="radio" [ngModel]="Ppayment" [checked]="Ppayment==='EPay'" name="optradio" (click)="check()"></div>
                         <!-- <div class="radio-action d-flex flex-sm-column align-items-center align-items-sm-baseline"><input type="radio" [(ngModel)]="payment" [checked]="payment==='EPay'" name="optradio" (click)="check()"></div> -->
                         <div class="text-center d-flex flex-sm-column align-items-center">
                             <div class="radio-img"><img src="../../assets/e-pay.PNG"></div>
