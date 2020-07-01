@@ -27,7 +27,7 @@ export class MTPLCalculatorComponent implements OnInit,OnChanges {
   toggle6=true
 
   ngOnChanges(){
-    if(this.stepChange){
+    if(this.stepChange!=undefined){
       this.move(this.stepChange)
     }
   }
