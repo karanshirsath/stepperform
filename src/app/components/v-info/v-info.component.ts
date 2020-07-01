@@ -12,10 +12,10 @@ import { CommonDataService } from 'src/app/common-data.service';
 export class VInfoComponent implements OnInit {
   @Output() OnToggle = new EventEmitter()
   @Output() OnSubmission = new EventEmitter<any>();
-  @Input() registrationNumber: string;
-  @Input() certificateNumber: string;
-  @Input() purpose: string;
-  @Input() yesNo: string;
+  @Input() registrationNo: string;
+  @Input() certificateNo: string;
+  @Input() purposeSelected: string;
+  @Input() drivingOutsideYesNo: string;
   vehicleInfoForm: FormGroup;
   purposeList = ['Personal Use', 'Public Use']
   constructor(private formBuilder: FormBuilder, private commonDataService: CommonDataService, private GAService: GoogleAnalyticsService) { }

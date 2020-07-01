@@ -14,7 +14,7 @@ export class InstallmentComponent implements OnInit {
   installmentForm: FormGroup;
   errorMessage;
   @Output() OnToggle = new EventEmitter()
-  @Input() term: string
+  @Input() termSelected: string
   serviceData
   obj
 

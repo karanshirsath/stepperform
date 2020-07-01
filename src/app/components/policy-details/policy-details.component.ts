@@ -11,8 +11,8 @@ import { CommonDataService } from 'src/app/common-data.service';
 export class PolicyDetailsComponent implements OnInit {
   @Output() OnToggle = new EventEmitter()
   @Output() OnSubmission = new EventEmitter<any>();
-  @Input() policyDate: Date;
-  @Input() policyLength: number;
+  @Input() policyDateSelected: Date;
+  @Input() policyLengthEntered: number;
   registerForm: FormGroup;
   todaydate = new Date()
   day = ''
