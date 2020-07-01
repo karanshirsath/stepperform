@@ -62,10 +62,10 @@ the input fields.
   <Story name="Invalid Credentials">{{
     component: VInfoComponent,
     props:{
-      registrationNumber: text('Vehicle Registration Number','XX00YY','General'),
-      certificateNumber: text('Vehicle Certificate Number','123456789','General'),
-      purpose: select('Purpose',{'--SELECT--': '','Personal Use': 'Personal Use', 'Public Use': 'Public Use'},'Personal Use','General'),
-      yesNo: radios('Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?',{Yes:'Yes',No:'No'},'Yes','General')
+      registrationNo: text('Vehicle Registration Number','XX00YY','General'),
+      certificateNo: text('Vehicle Certificate Number','123456789','General'),
+      purposeSelected: select('Purpose',{'--SELECT--': '','Personal Use': 'Personal Use', 'Public Use': 'Public Use'},'Personal Use','General'),
+      drivingOutsideYesNo: radios('Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?',{Yes:'Yes',No:'No'},'Yes','General')
     },
     }}    
   </Story>
@@ -79,10 +79,10 @@ the input fields.
   <Story name="Valid Credentials">{{
     component: VInfoComponent,
     props:{
-      registrationNumber: text('Vehicle Registration Number','XX0000YY'),
-      certificateNumber: text('Vehicle Certificate Number','123456789'),
-      purpose: select('Purpose',{'--SELECT--': '','Personal Use': 'Personal Use', 'Public Use': 'Public Use'},'Personal Use'),
-      yesNo: radios('Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?',{Yes:'Yes',No:'No'},'Yes')
+      registrationNo: text('Vehicle Registration Number','XX0000YY'),
+      certificateNo: text('Vehicle Certificate Number','123456789'),
+      purposeSelected: select('Purpose',{'--SELECT--': '','Personal Use': 'Personal Use', 'Public Use': 'Public Use'},'Personal Use'),
+      drivingOutsideYesNo: radios('Are you Driving outside Bulgarian territory with this vehicle for more than 60 days?',{Yes:'Yes',No:'No'},'Yes')
     },
     }}    
   </Story>

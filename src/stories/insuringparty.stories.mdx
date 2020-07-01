@@ -60,9 +60,9 @@ appearance of the Insuring party component.
   <Story name="Invalid Credentials">{{
     component: InsuringPartyComponent,
     props:{
-      egn: text('EGN/EIK/LNCH','123456'),
-      address: select('Address',{'--SELECT--': '','Sofia': 'Sofia', 'Varna': 'Varna','Burgas': 'Burgas'},'Sofia'),
-      email: text('Email','xyz@g')
+      egnLnch: text('EGN/EIK/LNCH','123456'),
+      pAddress: select('Address',{'--SELECT--': '','Sofia': 'Sofia', 'Varna': 'Varna','Burgas': 'Burgas'},'Sofia'),
+      emailId: text('Email','xyz@g')
     },
     }}    
   </Story>
@@ -74,9 +74,9 @@ appearance of the Insuring party component.
   <Story name="Valid Credentials">{{
     component: InsuringPartyComponent,
     props:{
-      egn: text('EGN/EIK/LNCH','1234567890'),
-      address: select('Address',{'--SELECT--': '','Sofia': 'Sofia', 'Varna': 'Varna','Burgas': 'Burgas'},'Sofia'),
-      email: text('Email','xyz@gmail.com')
+      egnLnch: text('EGN/EIK/LNCH','1234567890'),
+      pAddress: select('Address',{'--SELECT--': '','Sofia': 'Sofia', 'Varna': 'Varna','Burgas': 'Burgas'},'Sofia'),
+      emailId: text('Email','xyz@gmail.com')
     },
     }}    
   </Story>

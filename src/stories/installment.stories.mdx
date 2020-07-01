@@ -58,7 +58,7 @@ appearance of the login component.
   <Story name="Installment Type">{{
     component: InstallmentComponent,
     props:{
-      term: radios('Instalment Options',{'Single Payment':'Single Payment','Two Payments':'Two Payments','Four Payments':'Four Payments'},'Single Payment')
+      termSelected: radios('Instalment Options',{'Single Payment':'Single Payment','Two Payments':'Two Payments','Four Payments':'Four Payments'},'Single Payment')
     },
     }}    
   </Story>
@@ -75,7 +75,7 @@ user achieve after selecting the option.
     component: InstallmentComponent,
     template: '<app-installment (OnSinglePayment)="showDetails($event)"></app-installment>',
     props:{
-        term: radios('Instalment Options',{'Single Payment':'Single Payment',
+        termSelected: radios('Instalment Options',{'Single Payment':'Single Payment',
                                             'Two Payments':'Two Payments',
                                             'Four Payments':'Four Payments'},'Single Payment'),
         showDetails: action('Single Payment')
@@ -95,7 +95,7 @@ user achieve after selecting the option.
     component: InstallmentComponent,  
     template: '<app-installment (OnTwoPayments)="showDetails($event)"></app-installment>',
     props:{
-      term: radios('Instalment Options',{'Single Payment':'Single Payment',
+      termSelected: radios('Instalment Options',{'Single Payment':'Single Payment',
                                             'Two Payments':'Two Payments',
                                             'Four Payments':'Four Payments'},'Single Payment'),
         showDetails: action('Two Payments')
@@ -115,7 +115,7 @@ user achieve after selecting the option.
     component: InstallmentComponent,   
     template: '<app-installment (OnFourPayments)="showDetails($event)"></app-installment>',
     props:{
-      term: radios('Instalment Options',{'Single Payment':'Single Payment',
+      termSelected: radios('Instalment Options',{'Single Payment':'Single Payment',
                                             'Two Payments':'Two Payments',
                                             'Four Payments':'Four Payments'},'Single Payment'),
         showDetails: action('Four Payments')
@@ -135,7 +135,7 @@ user achieve after selecting the option.
     component: InstallmentComponent,  
     template: '<app-installment (OnSubmission)="success($event)"></app-installment>',
     props:{
-        term: radios('Instalment Options',{'Single Payment':'Single Payment',
+        termSelected: radios('Instalment Options',{'Single Payment':'Single Payment',
                                             'Two Payments':'Two Payments',
                                             'Four Payments':'Four Payments'},'Single Payment'),
         success: action('Success message')
