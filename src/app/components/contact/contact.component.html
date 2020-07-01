@@ -4,7 +4,7 @@
     <label for="city" class="col-lg-7">City</label>
     <div class="col-md-3 space">
       <!-- <select id="city" name="city" class="form-control" [(ngModel)]="city" formControlName="city" (change)="change()"> -->
-      <select id="city" name="city" class="form-control" formControlName="city" (change)="change()">
+      <select id="city" name="city" class="form-control" [(ngModel)]="Ccity" formControlName="city" (change)="change()">
         <option selected disabled value="">--SELECT--</option>
         <option *ngFor='let obj of provincesArray' value="{{obj.pname}}" [selected]="city===obj.pname">{{obj.pname}}
         </option>
@@ -14,7 +14,7 @@
         class="error">This field is mandatory</div>
     </div>
     <div class="col-md-4 col-4">
-      <input type="text" id="num" name="num" [(ngModel)]="pincode" placeholder="Pin Code" class="form-control"
+      <input type="text" id="num" name="num" [(ngModel)]="Cpincode" placeholder="Pin Code" class="form-control"
         (change)="change()" formControlName="pincode">
       <div
         *ngIf="registerForm.controls.pincode.hasError('required') &&(registerForm.controls.pincode.dirty || registerForm.controls.pincode.touched)"
@@ -27,11 +27,11 @@
       <label for="street">Street and Number</label>
     </div>
     <div class="col-md-4 col-8">
-      <input type="text" id="street" [(ngModel)]="street" name="streetName" class="form-control "
+      <input type="text" id="street" [(ngModel)]="Cstreet" name="streetName" class="form-control "
         placeholder="Street Name" (change)="change()" formControlName="street">
     </div>
     <div class="col-md-4 col-4">
-      <input type="text" id="streetNumber" [(ngModel)]="No" name="streetNumber" placeholder="Street  number"
+      <input type="text" id="streetNumber" [(ngModel)]="CNo" name="streetNumber" placeholder="Street  number"
         class="form-control" size="10" (change)="change()" formControlName="No"><br>
     </div>
   </div>
@@ -41,17 +41,17 @@
       <label for="block">Block,Entrance and Apartment</label>
     </div>
     <div class="col-md-3 offset-md-1 col-4">
-      <input type="text" id="block" class="form-control" [(ngModel)]="block" placeholder="Block" name="blockName"
+      <input type="text" id="block" class="form-control" [(ngModel)]="Cblock" placeholder="Block" name="blockName"
         (change)="change()" formControlName="block">
     </div>
     <label for="entranceName"></label>
     <div class="col-md-3 col-4">
-      <input type="text" class="form-control" id="entranceName" [(ngModel)]="entrance" placeholder="Entrance"
+      <input type="text" class="form-control" id="entranceName" [(ngModel)]="Centrance" placeholder="Entrance"
         name="entranceName" (change)="change()" formControlName="entrance">
     </div>
     <label for="appartmentName"></label>
     <div class="col-md-2 col-4">
-      <input type="text" class="form-control" id="appartmentName" [(ngModel)]="appartment" placeholder="Appartment"
+      <input type="text" class="form-control" id="appartmentName" [(ngModel)]="Cappartment" placeholder="Appartment"
         name="appartmentName" (change)="change()" formControlName="appartment"><br>
     </div>
   </div>
@@ -61,7 +61,7 @@
       <label for="phoneNo">Phone Number</label>
     </div>
     <div class="col-md-4 ml-auto">
-      <input type="text" class="form-control" id="phoneNo" [(ngModel)]="phone" placeholder="Phone Number"
+      <input type="text" class="form-control" id="phoneNo" [(ngModel)]="Cphone" placeholder="Phone Number"
         (change)="change()" formControlName="phone"><br>
       <div
         *ngIf="registerForm.controls.phone.hasError('required') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"

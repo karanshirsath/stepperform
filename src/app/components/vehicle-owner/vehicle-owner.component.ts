@@ -13,24 +13,24 @@ export class VehicleOwnerComponent implements OnInit {
   @Output() OnSubmission = new EventEmitter<any>();
 
   // Input fields
-  @Input() owner: string;
-  @Input() lnch: String;
-  @Input() firstname: String;
-  @Input() lastname: String;
-  @Input() surname: String;
+  @Input() Vowner: string;
+  @Input() Vlnch: String;
+  @Input() Vfirstname: String;
+  @Input() Vlastname: String;
+  @Input() Vsurname: String;
 
-  @Input() firstnameeng: String;
-  @Input() lastnameeng: String;
-  @Input() surnameeng: String;
-  @Input() citizen: String;
-  @Input() dob: Date;
-  @Input() city: string;
-  @Input() pincode: String;
-  @Input() street: String;
-  @Input() No: String;
-  @Input() block: String;
-  @Input() entrance: String;
-  @Input() appartment: String;
+  @Input() Vfirstnameeng: String;
+  @Input() Vlastnameeng: String;
+  @Input() Vsurnameeng: String;
+  @Input() Vcitizen: String;
+  @Input() Vdob: Date;
+  @Input() Vcity: string;
+  @Input() Vpincode: String;
+  @Input() Vstreet: String;
+  @Input() VNo: String;
+  @Input() Vblock: String;
+  @Input() Ventrance: String;
+  @Input() Vappartment: String;
 
   Details: FormGroup;
   citizens = ['Indian', 'American', 'African'];

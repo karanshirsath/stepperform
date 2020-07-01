@@ -11,17 +11,17 @@ import { CommonDataService } from 'src/app/common-data.service';
 export class DeliveryComponent implements OnInit {
   @Output() OnToggle = new EventEmitter();
   @Output() OnSubmission = new EventEmitter<any>();
-  @Input() fullName: String;
-  @Input() city: string;
-  @Input() pincode: String;
-  @Input() street: String;
-  @Input() number: String;
-  @Input() block: String;
-  @Input() entrance: String;
-  @Input() appt: String;
-  @Input() notes: String;
-  @Input() type: String;
-  @Input() contact: String;
+  @Input() DfullName: String;
+  @Input() Dcity: string;
+  @Input() Dpincode: String;
+  @Input() Dstreet: String;
+  @Input() Dnumber: String;
+  @Input() Dblock: String;
+  @Input() Dentrance: String;
+  @Input() Dappt: String;
+  @Input() Dnotes: String;
+  @Input() Dtype: String;
+  @Input() Dcontact: String;
   detailsForm: FormGroup;
 
   cities: String[] = ["New Delhi", "Mumbai", "Chennai", "Bangalore", "Kolkata", "Mysore", "Pune", "Jaipur"];

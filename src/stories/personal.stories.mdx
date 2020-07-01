@@ -63,17 +63,17 @@ input fields.
   <Story name="Valid">{{
     component: PersonalComponent,
     props:{
-      lnch: text('LNCH','1234567890','General'),
-      firstname: text('First Name','James','General'),
-      lastname: text('Last Name','Nicole','General'),
-      surname: text('Surname','Turner','General'),
-      firstnameeng: text('First Name (ENG)','James','General'),
-      lastnameeng: text('Last Name (ENG)','Nicole','General'),
-      surnameeng: text('Surname (ENG)','Turner','General'),
-      citizen: select('Citizen',{Indian: "Indian",
+      plnch: text('LNCH','1234567890','General'),
+      pfirstname: text('First Name','James','General'),
+      plastname: text('Last Name','Nicole','General'),
+      psurname: text('Surname','Turner','General'),
+      pfirstnameeng: text('First Name (ENG)','James','General'),
+      plastnameeng: text('Last Name (ENG)','Nicole','General'),
+      psurnameeng: text('Surname (ENG)','Turner','General'),
+      pcitizen: select('Citizen',{Indian: "Indian",
                                 American:"American",
                                 African: "African"},'Indian','General'),
-      dob: date('DOB', new Date('Jan 20 1996'), 'General'),
+      pdob: date('DOB', new Date('Jan 20 1996'), 'General'),
     },
     }}    
   </Story>
@@ -88,17 +88,17 @@ input fields.
   <Story name="Invalid">{{
     component: PersonalComponent,
     props:{
-      lnch: text('LNCH','12345678','General'),
-      firstname: text('First Name','James','General'),
-      lastname: text('Last Name','Nicole','General'),
-      surname: text('Surname','Turner','General'),
-      firstnameeng: text('First Name (ENG)','James','General'),
-      lastnameeng: text('Last Name (ENG)','Nicole','General'),
-      surnameeng: text('Surname (ENG)','Turner','General'),
-      citizen: select('Citizen',{Indian: "Indian",
+      plnch: text('LNCH','12345678','General'),
+      pfirstname: text('First Name','James','General'),
+      plastname: text('Last Name','Nicole','General'),
+      psurname: text('Surname','Turner','General'),
+      pfirstnameeng: text('First Name (ENG)','James','General'),
+      plastnameeng: text('Last Name (ENG)','Nicole','General'),
+      psurnameeng: text('Surname (ENG)','Turner','General'),
+      pcitizen: select('Citizen',{Indian: "Indian",
                                 American:"American",
                                 African: "African"},'Indian','General'),
-      dob: date('DOB', new Date('Jan 20 1996'), 'General')
+      pdob: date('DOB', new Date('Jan 20 1996'), 'General')
     },
     }}    
   </Story>
