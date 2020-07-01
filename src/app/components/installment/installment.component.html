@@ -8,7 +8,7 @@
             <div class="row cardrow">
                 <div class="col-auto mr-auto pt-1">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="term" formControlName="term"
+                        <input class="form-check-input" type="radio" name="term" formControlName="term" [(ngModel)]="termSelected"
                             value={{element.title}} (change)="change()" [checked]="termSelected===element.title">
                         <h3 class="sub-head">{{element.title}}</h3>
                     </label>

@@ -47,7 +47,7 @@
         <div class=" col-12 col-sm-5 col-md-4 col-lg-4">
             <!-- <select formControlName="purpose" [(ngModel)]="purpose" class="form-control" (change)="change()"> -->
 
-            <select formControlName="purpose" class="form-control" (change)="change()">
+            <select formControlName="purpose" class="form-control" (change)="change()" [(ngModel)]="purposeSelected">
                 <option [selected]="''===purposeSelected" disabled value="" id="purpose">--SELECT--</option>
                 <option [selected]="p===purposeSelected" *ngFor="let p of purposeList" value='p'>{{p}}</option>
             </select>
