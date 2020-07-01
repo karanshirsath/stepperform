@@ -11,9 +11,9 @@ import { CommonDataService } from 'src/app/common-data.service';
 export class InsuringPartyComponent implements OnInit {
   @Output() OnToggle = new EventEmitter()
   @Output() OnSubmission = new EventEmitter<any>();
-  @Input() egn: string;
-  @Input() address: string;
-  @Input() email: string;
+  @Input() egnLnch: string;
+  @Input() pAddress: string;
+  @Input() emailId: string;
   insuringParty: FormGroup;
   addressList = ['Sofia', 'Varna', 'Burgas']
   constructor(private fb: FormBuilder, private commonDataService: CommonDataService, private GAService: GoogleAnalyticsService) { }
