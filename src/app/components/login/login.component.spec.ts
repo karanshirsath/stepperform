@@ -10,12 +10,14 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
-      imports:[ReactiveFormsModule, FormsModule, RouterTestingModule]
+      declarations: [LoginComponent],
+      imports: [ReactiveFormsModule, FormsModule, RouterTestingModule]
     })
-    .compileComponents().then(() => {
-             fixture = TestBed.createComponent(LoginComponent);
-             component = fixture.componentInstance;;})
+      .compileComponents()
+      .then(() => {
+        fixture = TestBed.createComponent(LoginComponent);
+        component = fixture.componentInstance;
+      });
   }));
 
   beforeEach(() => {
@@ -29,8 +31,8 @@ describe('LoginComponent', () => {
   });
 });
 
-//import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-//import { ReactiveFormsModule } from '@angular/forms';
+// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ReactiveFormsModule } from '@angular/forms';
 // import { DebugElement } from '@angular/core';
 // import { BrowserModule, By } from '@angular/platform-browser';
 // import { RouterTestingModule } from '@angular/router/testing';
@@ -117,14 +119,13 @@ describe('LoginComponent', () => {
 
 // //     el = fixture.debugElement.query(By.css('button')).nativeElement;
 // //     el.click();
- 
+
 // //     fixture.detectChanges();
- 
+
 // //     expect(component.userInfo.emit).toHaveBeenCalledWith(component.loginForm.value);
 // //  });
 
 // });
-
 
 // import { LoginComponent } from './login.component';
 // import { RouterTestingModule } from '@angular/router/testing';

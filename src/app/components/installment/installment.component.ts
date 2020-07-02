@@ -1,9 +1,9 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
-import { InstallmentService } from './installment.service';
 import { CommonDataService } from 'src/app/common-data.service';
+import { InstallmentService } from './installment.service';
 
 @Component({
   selector: 'app-installment',
@@ -13,17 +13,18 @@ import { CommonDataService } from 'src/app/common-data.service';
 export class InstallmentComponent implements OnInit {
   installmentForm: FormGroup;
   errorMessage;
-  @Output() OnToggle = new EventEmitter()
-  @Input() termSelected: string
-  serviceData
-  obj
+  @Output() OnToggle = new EventEmitter();
+  @Input() termSelected: string;
+  serviceData;
+  obj;
 
   @Output() OnSinglePayment = new EventEmitter<any>();
   @Output() OnTwoPayments = new EventEmitter<any>();
   @Output() OnFourPayments = new EventEmitter<any>();
   @Output() OnSubmission = new EventEmitter<any>();
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private GAService: GoogleAnalyticsService, private installmentService: InstallmentService, private commonDataService: CommonDataService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private GAService: GoogleAnalyticsService,
+              private installmentService: InstallmentService, private commonDataService: CommonDataService) { }
 
   ngOnInit() {
     this.installmentForm = this.formBuilder.group({
@@ -36,48 +37,51 @@ export class InstallmentComponent implements OnInit {
       (err) => {
         this.errorMessage = err.error.message;
         console.log(this.errorMessage);
-      })
+      });
   }
   submitInstalmentForm() {
 
     this.router.navigate(['/']);
   }
   submit = () => {
-    this.GAService.event('Next Button clicked', 'Installment', 'Next')
-    this.commonDataService.installment.next(this.obj)
-    this.OnSubmission.emit('Installemt form is submitted!')
+    this.GAService.event('Next Button clicked', 'Installment', 'Next');
+    this.commonDataService.installment.next(this.obj);
+    this.OnSubmission.emit('Installemt form is submitted!');
   }
   change = () => {
 
-    for (let element of this.serviceData) {
+    for (const element of this.serviceData) {
       if (element.title == this.installmentForm.value.term) {
         var obj = {
           term: this.installmentForm.value.term,
           installments: element.installments,
           amount: element.amount
-        }
-        this.obj = obj
+        };
+        this.obj = obj;
       }
     }
     if (this.installmentForm.valid) {
-      this.OnToggle.emit(true)
-      this.commonDataService.installment.next(obj)
+      this.OnToggle.emit(true);
+      this.commonDataService.installment.next(obj);
     } else {
-      this.OnToggle.emit(false)
+      this.OnToggle.emit(false);
     }
     this.commonDataService.installmentData.next(obj);
     // code for storybook START
-    if (this.obj.term == this.serviceData[0].title)
+    if (this.obj.term == this.serviceData[0].title) {
       this.OnSinglePayment.emit('You have opted Single Payment option');
-    else if (this.obj.term == this.serviceData[1].title)
+    }
+    else if (this.obj.term == this.serviceData[1].title) {
       this.OnTwoPayments.emit('You have opted Two Payments option');
-    else
+ }
+    else {
       this.OnFourPayments.emit('You have opted Four Payments option');
+ }
     // code for storybook START
   }
 
   get formControl() {
-    return this.installmentForm.controls
+    return this.installmentForm.controls;
   }
 
 }

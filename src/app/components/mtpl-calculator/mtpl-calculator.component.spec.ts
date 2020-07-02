@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MTPLCalculatorComponent } from './mtpl-calculator.component';
 
 describe('MTPLCalculatorComponent', () => {
@@ -8,9 +7,8 @@ describe('MTPLCalculatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MTPLCalculatorComponent ]
-    })
-    .compileComponents();
+      declarations: [MTPLCalculatorComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

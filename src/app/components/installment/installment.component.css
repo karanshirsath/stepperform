@@ -8,152 +8,144 @@
     overflow-x: hidden;
     overflow-y: auto;
   }*/
-.heading{
-    color:rgb(8,56,95);
-    font-family: 'Trebuchet MS',Arial,sans-serif;
-    font-weight: bold;
-} 
-.sub-head{
-    font-weight:bold;
+.heading {
+  color: rgb(8, 56, 95);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
 }
-.bgn{
-    color:rgb(8,56,95);
-    text-align: right;
-    font-size: 15px;
-    padding-top: 5%;
+.sub-head {
+  font-weight: bold;
 }
-.cardrow{
-    padding-left: 20px;
-    color:rgb(8,56,95);
+.bgn {
+  color: rgb(8, 56, 95);
+  text-align: right;
+  font-size: 15px;
+  padding-top: 5%;
 }
-.nearelm{
-    font-size: 20px;
+.cardrow {
+  padding-left: 20px;
+  color: rgb(8, 56, 95);
 }
-.num{
-    color:rgb(8,56,95);
-    text-align: end;
-    font-size: 30px;
-    font-weight: bold;
-    padding-top: 2%;
+.nearelm {
+  font-size: 20px;
 }
-.mon{
-    text-align: left;
-    font-size: 15px;
+.num {
+  color: rgb(8, 56, 95);
+  text-align: end;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 2%;
 }
-.viewhide{
-    padding-left: 2%;
-    color:rgb(8,56,95);
+.mon {
+  text-align: left;
+  font-size: 15px;
 }
-.border{
-      padding: 0%;
-      /*width: 800px;*/
-      height: auto;
+.viewhide {
+  padding-left: 2%;
+  color: rgb(8, 56, 95);
 }
-.viewins{
-    display:none;
+.border {
+  padding: 0%;
+  /*width: 800px;*/
+  height: auto;
 }
-.firstcard{
-    /*width:800px;*/
-     height: auto;
-    /*min-width:100px;*/
- }
- .secondcard{
-       
-    /*width:800px;*/
-    height: auto;
-   
-    
- }
- .thirdcard{
-           
-    /*width:800px;*/
-    height:auto;
-   
+.viewins {
+  display: none;
 }
-.content{
-    height:auto;
-    width: auto;
-    color:rgb(8,56,95);
-    /*width:1000px;*/
+.firstcard {
+  /*width:800px;*/
+  height: auto;
+  /*min-width:100px;*/
+}
+.secondcard {
+  /*width:800px;*/
+  height: auto;
+}
+.thirdcard {
+  /*width:800px;*/
+  height: auto;
+}
+.content {
+  height: auto;
+  width: auto;
+  color: rgb(8, 56, 95);
+  /*width:1000px;*/
 }
 
-.hrline{
-    /*width:800px;*/
-    margin-left: 30px;
+.hrline {
+  /*width:800px;*/
+  margin-left: 30px;
 }
-.wid{
-    /*padding-top: 2%;*/
-    
-    font-size: 18px;
+.wid {
+  /*padding-top: 2%;*/
+
+  font-size: 18px;
 }
-.nextbtn{
-    min-width:100px;
+.nextbtn {
+  min-width: 100px;
 }
 
 @media screen and (max-width: 450px) {
-    /*.firstcard,.secondcard,.thirdcard,.content,.hrline{
+  /*.firstcard,.secondcard,.thirdcard,.content,.hrline{
         width: 350px;
         
     }*/
-    .num{
-        font-size: 20px;
-        padding-left: 10%;
-        text-align: left;
-        padding-left: 0%;
-        padding-top: 5%;
-    }
-    .nearelm{
-        font-size: 13px;
-    }
-    .bgn{
-        font-size: 12px;
-        padding-left: 10%;
-        text-align: left;
-        padding-left: 0%;
-    }
-    .col-md-5 col-auto col-7{
-        padding-left: 0%;
-    }
-    .viewins{
-        display:block;
-        padding-left: 7%;
-        padding-top: 5%;
-    }
-    .viewhide, .cardhr{
-        display:none;
-    }
-    /*h1{
+  .num {
+    font-size: 20px;
+    padding-left: 10%;
+    text-align: left;
+    padding-left: 0%;
+    padding-top: 5%;
+  }
+  .nearelm {
+    font-size: 13px;
+  }
+  .bgn {
+    font-size: 12px;
+    padding-left: 10%;
+    text-align: left;
+    padding-left: 0%;
+  }
+  .col-md-5 col-auto col-7 {
+    padding-left: 0%;
+  }
+  .viewins {
+    display: block;
+    padding-left: 7%;
+    padding-top: 5%;
+  }
+  .viewhide,
+  .cardhr {
+    display: none;
+  }
+  /*h1{
         font-size: 150%;
     }*/
-    .wid{
-        width:80%;
-        padding-top: 2%;
-        font-size: 15px;
-        width: auto;
-    }
-    .nextbtn{
-        width: 250px;
-        margin: auto;
-    }
-    
-    .imgsz{
-        padding-top: 1%;
-    }
+  .wid {
+    width: 80%;
+    padding-top: 2%;
+    font-size: 15px;
+    width: auto;
   }
-  @media screen and (max-width: 575px){
-    .nextbtn{
-        width: 250px;
-        margin: auto;
-        display: block;
-     
-        
-    }
+  .nextbtn {
+    width: 250px;
+    margin: auto;
+  }
+
+  .imgsz {
+    padding-top: 1%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .nextbtn {
+    width: 250px;
+    margin: auto;
+    display: block;
+  }
 }
 
-  
-  @media screen and (max-width: 1024px) {
-    .viewhide{
-        margin-left: 0px;
-    }
-
+@media screen and (max-width: 1024px) {
+  .viewhide {
+    margin-left: 0px;
   }
+}

@@ -9,10 +9,9 @@ describe('PersonalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PersonalComponent ],
-      imports:[ReactiveFormsModule]
-    })
-    .compileComponents();
+      declarations: [PersonalComponent],
+      imports: [ReactiveFormsModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,12 +1,10 @@
-
 <div class="intro"><b>welcome</b> {{welcomeuser}}</div>
 <button (click)="policyTabToggle=!policyTabToggle">toggle</button>
 <mat-tab-group mat-align-tabs="center" [(selectedIndex)]="activeTab">
     <mat-tab label="MTPL Calculator">
         <app-mtpl-calculator [stepChange]="mtplCalculatorStep" (NextTabSwitch)="changeTab($event)"></app-mtpl-calculator>
     </mat-tab>
-    <mat-tab label="Purchase MTPL Policy" [disabled]="policyTabToggle"> 
+    <mat-tab label="Purchase MTPL Policy" [disabled]="policyTabToggle">
         <app-mtpl-policy (switchTab)="switch($event)"></app-mtpl-policy>
     </mat-tab>
-    
 </mat-tab-group>

@@ -113,7 +113,8 @@
             <label for="citizen" class="col-lg-8">Citizenship</label>
             <div class="col-lg-4">
                 <!-- <select class="form-control" id="citizen" [(ngModel)]="citizen" formControlName="citizen" name="citizen" (change)="change()"> -->
-                <select class="form-control" id="citizen" formControlName="citizen" [(ngModel)]="Vcitizen" name="citizen" (change)="change()">
+                <select class="form-control" id="citizen" formControlName="citizen" [(ngModel)]="Vcitizen"
+                    name="citizen" (change)="change()">
                     <option selected disabled value="">--SELECT--</option>
                     <option *ngFor="let c of citizens" [value]="c">{{c}}</option>
                 </select>
@@ -140,7 +141,8 @@
             <label for="city" class="col-md-5 col-12">City</label>
             <div class="col-md-4 col-8 space">
                 <!-- <select class="form-control" id="sel1" formControlName="city" [(ngModel)]="city" name="city" (change)="change()"> -->
-                <select class="form-control" id="sel1" [(ngModel)]="Vcity" formControlName="city" name="city" (change)="change()">
+                <select class="form-control" id="sel1" [(ngModel)]="Vcity" formControlName="city" name="city"
+                    (change)="change()">
                     <option selected disabled value="">--SELECT--</option>
                     <option value="Hyd" [selected]="Vcity==='Hyd'">Hyderabad</option>
                     <option value="Mum" [selected]="Vcity==='Mum'">Mumbai</option>
@@ -155,8 +157,8 @@
             </div>
             <div class="col-md-3 col-4 space">
                 <div class="form-group">
-                    <input type="text" class="form-control" [(ngModel)]="Vpincode" placeholder="1000" (change)="change()"
-                        formControlName="pincode">
+                    <input type="text" class="form-control" [(ngModel)]="Vpincode" placeholder="1000"
+                        (change)="change()" formControlName="pincode">
                     <div *ngIf="Details.controls.pincode.hasError('required') &&(Details.controls.pincode.dirty || Details.controls.pincode.touched)"
                         class="error">This field is mandatory</div>
                 </div>
@@ -166,7 +168,8 @@
         <div class="form-group row">
             <label for="s&n" class="col-md-5 col-12">Street & Number </label>
             <div class="col-md-4 col-8 space">
-                <input type="text" class="form-control" [(ngModel)]="Vstreet" formControlName="street" (change)="change()">
+                <input type="text" class="form-control" [(ngModel)]="Vstreet" formControlName="street"
+                    (change)="change()">
                 <!-- <div *ngIf="Details.controls.street.hasError('required') &&(Details.controls.street.dirty || Details.controls.street.touched)" class="error">Please select your street</div> -->
 
             </div>
@@ -179,15 +182,15 @@
         <div class="form-group row">
             <label for="be&a" class="col-md-5 col-12">Block Entrance & Apartment </label>
             <div class="col-md-2 col-4">
-                <input type="text" [(ngModel)]="Vblock" class="form-control" (change)="change()">
+                <input type="text" [(ngModel)]="Vblock" class="form-control" (change)="change()" formControlName="block">
                 <label>Optional</label>
             </div>
             <div class="col-md-2 col-4">
-                <input type="text" [(ngModel)]="Ventrance" class="form-control" (change)="change()">
+                <input type="text" [(ngModel)]="Ventrance" class="form-control" (change)="change()" formControlName="entrance">
                 <label>Optional</label>
             </div>
             <div class="col-md-3 col-4">
-                <input type="text" [(ngModel)]="Vappartment" class="form-control" (change)="change()">
+                <input type="text" [(ngModel)]="Vappartment" class="form-control" (change)="change()" formControlName="appartment">
                 <label>Optional</label>
             </div>
         </div>

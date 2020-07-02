@@ -100,7 +100,8 @@
     <label for="citizen" class="col-lg-8">Citizenship</label>
     <div class="col-lg-4">
       <!-- <select class="form-control" id="citizen" [(ngModel)]="citizen" formControlName="citizen" name="citizen" (change)="change()"> -->
-      <select class="form-control" id="citizen" [(ngModel)]="pcitizen" formControlName="citizen" name="citizen" (change)="change()">
+      <select class="form-control" id="citizen" [(ngModel)]="pcitizen" formControlName="citizen" name="citizen"
+        (change)="change()">
         <option selected disabled value="">--SELECT--</option>
         <option *ngFor="let c of citizens" [value]="c">{{c}}</option>
       </select>

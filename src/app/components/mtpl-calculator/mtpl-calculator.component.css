@@ -1,9 +1,8 @@
-.container{
-    width: 50%;
+.container {
+  width: 50%;
 }
-@media screen and (max-width: 800px){
-    .container{
-        
-        width: auto;
-    }
+@media screen and (max-width: 800px) {
+  .container {
+    width: auto;
+  }
 }

@@ -5,12 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoginService {
-
-  constructor(private http:HttpClient) { }
-  url='http://3.6.39.44:4000/user/login'
-getLoginData=(data)=>{
-  return this.http.post(this.url,data)
-
-}
-
+  constructor(private http: HttpClient) {}
+  url = 'http://3.6.39.44:4000/user/login';
+  getLoginData = data => {
+    return this.http.post(this.url, data);
+  }
 }

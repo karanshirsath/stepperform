@@ -23,7 +23,8 @@
         <div class="col-12 col-sm-5 col-md-4 col-lg-4 ">
             <!-- <select formControlName="policyLength" [(ngModel)]="policyLength" class="form-control" (change)="change()"> -->
 
-            <select formControlName="policyLength" class="form-control" (change)="change()" [(ngModel)]="policyLengthEntered">
+            <select formControlName="policyLength" class="form-control" (change)="change()"
+                [(ngModel)]="policyLengthEntered">
                 <option selected disabled value="">--SELECT--</option>
                 <option value="1" id="policyLength" [selected]="1===policyLengthEntered">1 Month</option>
                 <option value="3" id="policyLength" [selected]="3===policyLengthEntered">3 Months</option>

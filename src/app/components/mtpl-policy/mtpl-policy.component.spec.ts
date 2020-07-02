@@ -8,9 +8,8 @@ describe('MTPLPolicyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MTPLPolicyComponent ]
-    })
-    .compileComponents();
+      declarations: [MTPLPolicyComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

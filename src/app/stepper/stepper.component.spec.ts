@@ -15,7 +15,7 @@ describe('StepperComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ StepperComponent ],
-      imports:[ReactiveFormsModule, MatSelectModule, MatFormFieldModule,
+      imports: [ReactiveFormsModule, MatSelectModule, MatFormFieldModule,
         MatInputModule, BrowserAnimationsModule],
       providers: [CommonDataService]
     })
