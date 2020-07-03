@@ -59,7 +59,7 @@
                 <div class="card-body border-bottom">
                     <label class="label_prop">Instalments</label>&nbsp;&nbsp;&nbsp;
                     <button (click)="moveToCalculator(3)" class="btn btn-outline-none email_btn_prop"
-                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                        style="text-decoration: underline;color: rgb(43, 168, 226);" id="edit" name="edit">Edit</button>
                     <div class="row">
                         <div class="col-md-3">
                             <div *ngFor='let ele of installment.installments;let indexOfEle=index;'>
@@ -75,7 +75,7 @@
                 <div class="card-body  border-bottom">
                     <label class="label_prop">Additional Cover</label>&nbsp;&nbsp;&nbsp;
                     <button (click)=" moveToCalculator(4)" class="btn btn-outline-none email_btn_prop"
-                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                        style="text-decoration: underline;color: rgb(43, 168, 226);" id="coveredit" name="coveredit">Edit</button>
                     <div class="form-group">
                         {{additionalcovers.cover}}
                     </div>
@@ -86,7 +86,7 @@
                 <div class="card-body  border-bottom">
                     <label class="label_prop">Policy Dates</label>&nbsp;&nbsp;&nbsp;
                     <button (click)=" moveToCalculator(2)" class="btn btn-outline-none email_btn_prop"
-                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                        style="text-decoration: underline;color: rgb(43, 168, 226);" id="dateedit" name="dateedit">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -107,7 +107,7 @@
                 <div class="card-body  border-bottom">
                     <label class="label_prop">Vehicle</label>
                     <button (click)=" moveToCalculator(0)" class="btn btn-outline-none email_btn_prop"
-                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                        style="text-decoration: underline;color: rgb(43, 168, 226);" id="vehicledit" name="vehicledit">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -144,7 +144,7 @@
                 <div class="card-body border-bottom">
                     <label class="label_prop">Insuring Party</label>&nbsp;&nbsp;&nbsp;
                     <button (click)=" moveToCalculator(1)" class="btn btn-outline-none email_btn_prop"
-                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                        style="text-decoration: underline;color: rgb(43, 168, 226);" id="partyedit" name="partyedit">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -187,7 +187,7 @@
                 <div class="card-body border-bottom">
                     <label class="label_prop">Vehicle Owner</label>&nbsp;&nbsp;&nbsp;
                     <button (click)="edit(2)" class="edit_prop" class="btn btn-outline-none email_btn_prop"
-                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                        style="text-decoration: underline;color: rgb(43, 168, 226);"  id="owneredit" name="owneredit">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -218,7 +218,7 @@
                 <div class="card-body border-bottom">
                     <label class="label_prop">Delivery</label>&nbsp;&nbsp;&nbsp;
                     <button (click)="edit(3)" class="edit_prop" class="btn btn-outline-none email_btn_prop"
-                        style="text-decoration: underline;color: rgb(43, 168, 226);">Edit</button>
+                        style="text-decoration: underline;color: rgb(43, 168, 226);" id="deliveryedit" name="deliveryedit">Edit</button>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -259,7 +259,7 @@
             <div class="card" style="border:none">
                 <div class="card-body">
                     <div class="form-group form-check">
-                        <input type="checkbox" class="font_color form-check-input" formControlName="AgreeToAll">
+                        <input type="checkbox" class="font_color form-check-input" formControlName="AgreeToAll" id="AgreeToAll" name="AgreeToAll">
                         <div> Agree to all</div>
                     </div>
                     <span *ngIf="summaryForm.controls.AgreeToAll.errors && summaryForm.controls.AgreeToAll.touched"
@@ -270,7 +270,7 @@
                 <div class="card-body">
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" formControlName="receiveNewsletter"
-                            style="color: rgb(0, 53, 103)">
+                            style="color: rgb(0, 53, 103)" id="receiveNewsletter" name="receiveNewsletter">
                         <div>I agree to receive DZI newsletter</div>
                     </div>
                     <span
@@ -282,7 +282,7 @@
                 <div class="card-body">
                     <div class="form-group form-check">
                         <input type="checkbox" style="color: rgb(0, 53, 103);" class="form-check-input"
-                            formControlName="generalTerms">
+                            formControlName="generalTerms" id="generalTerms" name="generalTerms">
                         <div>I agree to the <a href="#" style="color:dodgerblue ;">general terms and conditions</a>
                         </div>
                         <span
@@ -293,7 +293,7 @@
             </div>
         </form><br /><br />
         <button class="btn btn-primary" style="border-radius: 3rem;" matStepperNext (click)="saveData()"
-            [disabled]="summaryForm.invalid">Continue to payment</button>
+            [disabled]="summaryForm.invalid" id="proposalbtn" name="proposalbtn">Continue to payment</button>
     </div>
 </body>
 

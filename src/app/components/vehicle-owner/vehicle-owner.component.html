@@ -16,7 +16,7 @@
 </div>
 <hr class="line">
 <div *ngIf="isSelected('Yes')">
-    <button type="button" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn" (click)="gaTrigger()"
+    <button type="button" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn" id="ownerbtn1" name="ownerbtn1"  (click)="gaTrigger()"
         [disabled]="!button" matStepperNext>Next</button>
 </div>
 <div *ngIf="isSelected('No')">
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-md-4 space">
                     <input type="text" class="form-control" [(ngModel)]="Vlastname" id="lastname"
-                        placeholder="Enter middlename" formControlName="lastname" name="lastname" (change)="change()">
+                        placeholder="Enter lastname" formControlName="lastname" name="lastname" (change)="change()">
                     <div *ngIf="Details.get('fullname').get('lastname').hasError('pattern') &&(Details.get('fullname').get('lastname').dirty || Details.get('fullname').get('lastname').touched)"
                         class="error">Only alphabets allowed</div>
                 </div>
@@ -158,7 +158,7 @@
             <div class="col-md-3 col-4 space">
                 <div class="form-group">
                     <input type="text" class="form-control" [(ngModel)]="Vpincode" placeholder="1000"
-                        (change)="change()" formControlName="pincode">
+                        (change)="change()" formControlName="pincode" id="pincode" name="pincode">
                     <div *ngIf="Details.controls.pincode.hasError('required') &&(Details.controls.pincode.dirty || Details.controls.pincode.touched)"
                         class="error">This field is mandatory</div>
                 </div>
@@ -169,32 +169,32 @@
             <label for="s&n" class="col-md-5 col-12">Street & Number </label>
             <div class="col-md-4 col-8 space">
                 <input type="text" class="form-control" [(ngModel)]="Vstreet" formControlName="street"
-                    (change)="change()">
-                <!-- <div *ngIf="Details.controls.street.hasError('required') &&(Details.controls.street.dirty || Details.controls.street.touched)" class="error">Please select your street</div> -->
+                    (change)="change()" id="street" name="street">
+                <div *ngIf="Details.controls.street.hasError('required') &&(Details.controls.street.dirty || Details.controls.street.touched)" class="error">Please select your street</div>
 
             </div>
             <div class="col-sm-3 col-4 space">
-                <input type="text" class="form-control" [(ngModel)]="VNo" formControlName="No" (change)="change()">
-                <!-- <div *ngIf="Details.controls.No.hasError('required') &&(Details.controls.No.dirty || Details.controls.No.touched)" class="error">Please enter your House NO</div> -->
+                <input type="text" class="form-control" [(ngModel)]="VNo" formControlName="No" (change)="change()" id="No" name="No">
+                <div *ngIf="Details.controls.No.hasError('required') &&(Details.controls.No.dirty || Details.controls.No.touched)" class="error">Please enter your House NO</div>
             </div>
         </div>
         <hr class="line">
         <div class="form-group row">
             <label for="be&a" class="col-md-5 col-12">Block Entrance & Apartment </label>
             <div class="col-md-2 col-4">
-                <input type="text" [(ngModel)]="Vblock" class="form-control" (change)="change()" formControlName="block">
+                <input type="text" [(ngModel)]="Vblock" class="form-control" (change)="change()" formControlName="block" id="block" name="block">
                 <label>Optional</label>
             </div>
             <div class="col-md-2 col-4">
-                <input type="text" [(ngModel)]="Ventrance" class="form-control" (change)="change()" formControlName="entrance">
+                <input type="text" [(ngModel)]="Ventrance" class="form-control" (change)="change()" formControlName="entrance" id="entrance" name="entrance">
                 <label>Optional</label>
             </div>
             <div class="col-md-3 col-4">
-                <input type="text" [(ngModel)]="Vappartment" class="form-control" (change)="change()" formControlName="appartment">
+                <input type="text" [(ngModel)]="Vappartment" class="form-control" (change)="change()" formControlName="appartment" id="appartment" name="appartment">
                 <label>Optional</label>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn"
+        <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn" id="ownerbtn2" name="ownerbtn2"
             [disabled]="!Details.valid" matStepperNext>Next</button>
     </form>
 </div>

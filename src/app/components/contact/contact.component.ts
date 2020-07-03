@@ -29,8 +29,8 @@ export class ContactComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       city: ['', Validators.required],
       pincode: ['', Validators.required],
-      street: [''],
-      No: [''],
+      street: ['', Validators.required],
+      No: ['', Validators.required],
       block: [''],
       entrance: [''],
       appartment: [''],

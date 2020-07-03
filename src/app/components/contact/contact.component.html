@@ -1,8 +1,8 @@
 <h1><b>Contact Details</b></h1><br>
 <form [formGroup]="registerForm" (submit)="submit()">
   <div class="row">
-    <label for="city" class="col-lg-7">City</label>
-    <div class="col-md-3 space">
+    <label for="city" class="col-lg-4">City</label>
+    <div class="col-md-4 col-8">
       <!-- <select id="city" name="city" class="form-control" [(ngModel)]="city" formControlName="city" (change)="change()"> -->
       <select id="city" name="city" class="form-control" [(ngModel)]="Ccity" formControlName="city" (change)="change()">
         <option selected disabled value="">--SELECT--</option>
@@ -14,7 +14,7 @@
         class="error">This field is mandatory</div>
     </div>
     <div class="col-md-4 col-4">
-      <input type="text" id="num" name="num" [(ngModel)]="Cpincode" placeholder="Pin Code" class="form-control"
+      <input type="text" id="num" name="num" [(ngModel)]="Cpincode" placeholder="PinCode" class="form-control"
         (change)="change()" formControlName="pincode">
       <div
         *ngIf="registerForm.controls.pincode.hasError('required') &&(registerForm.controls.pincode.dirty || registerForm.controls.pincode.touched)"
@@ -29,10 +29,17 @@
     <div class="col-md-4 col-8">
       <input type="text" id="street" [(ngModel)]="Cstreet" name="streetName" class="form-control "
         placeholder="Street Name" (change)="change()" formControlName="street">
+        <div
+        *ngIf="registerForm.controls.street.hasError('required') &&(registerForm.controls.street.dirty || registerForm.controls.street.touched)"
+        class="error">This field is mandatory</div>
+    
     </div>
     <div class="col-md-4 col-4">
       <input type="text" id="streetNumber" [(ngModel)]="CNo" name="streetNumber" placeholder="Street  number"
-        class="form-control" size="10" (change)="change()" formControlName="No"><br>
+        class="form-control" size="10" (change)="change()" formControlName="No">
+        <div
+        *ngIf="registerForm.controls.No.hasError('required') &&(registerForm.controls.No.dirty || registerForm.controls.No.touched)"
+        class="error">This field is mandatory</div>
     </div>
   </div>
   <hr>
@@ -43,16 +50,19 @@
     <div class="col-md-3 offset-md-1 col-4">
       <input type="text" id="block" class="form-control" [(ngModel)]="Cblock" placeholder="Block" name="blockName"
         (change)="change()" formControlName="block">
+        <label>Optional</label>
     </div>
     <label for="entranceName"></label>
     <div class="col-md-3 col-4">
       <input type="text" class="form-control" id="entranceName" [(ngModel)]="Centrance" placeholder="Entrance"
         name="entranceName" (change)="change()" formControlName="entrance">
+        <label>Optional</label>
     </div>
     <label for="appartmentName"></label>
     <div class="col-md-2 col-4">
       <input type="text" class="form-control" id="appartmentName" [(ngModel)]="Cappartment" placeholder="Appartment"
-        name="appartmentName" (change)="change()" formControlName="appartment"><br>
+        name="appartmentName" (change)="change()" formControlName="appartment">
+        <label>Optional</label>
     </div>
   </div>
   <hr>
@@ -61,7 +71,7 @@
       <label for="phoneNo">Phone Number</label>
     </div>
     <div class="col-md-4 ml-auto">
-      <input type="text" class="form-control" id="phoneNo" [(ngModel)]="Cphone" placeholder="Phone Number"
+      <input type="text" class="form-control" id="phoneNo" name="phoneNo" [(ngModel)]="Cphone" placeholder="Phone Number"
         (change)="change()" formControlName="phone"><br>
       <div
         *ngIf="registerForm.controls.phone.hasError('required') &&(registerForm.controls.phone.dirty || registerForm.controls.phone.touched)"
@@ -74,6 +84,6 @@
         class="error">Enter valid phone number</div>
     </div>
   </div>
-  <button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" type="submit" matStepperNext
+  <button class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3" id="contactbtn" name="contactbtn" type="submit" matStepperNext
     [disabled]="!registerForm.valid">Next</button>
 </form>
