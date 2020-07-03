@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
   login(): void {
+    this.errorMessage=null;
     this.loginService
       .getLoginData({
         email: this.email,
