@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-sm-6 col-sm-offset-2">
                             <input type="text" formControlName="fullName" class="form-control form-1_row-3"
-                                (change)="change()" [(ngModel)]="fullName" id="firstName">
+                                (change)="change()" [(ngModel)]="DfullName" id="firstName" name="firstName">
                             <div class="error" *ngIf="formControls.fullName.touched && formControls.fullName.errors">
                                 <div *ngIf="formControls.fullName.errors.required">This field is mandatory</div>
                                 <div *ngIf="formControls.fullName.errors.pattern">Only alphabets allowed</div>
@@ -38,8 +38,8 @@
                         </div>
                         <div class="col-sm-4 col-sm-offset-2">
                             <!-- <select name="city" id="city"  formControlName="city" [(ngModel)]="city" class="form-control form-1_row-3" (change)="change()" [(ngModel)]="city"> -->
-                            <select name="city" id="city" formControlName="city" class="form-control form-1_row-3"
-                                (change)="change()">
+                            <select name="city" id="city" [(ngModel)]="Dcity" formControlName="city"
+                                class="form-control form-1_row-3" (change)="change()">
                                 <option selected disabled value="">--SELECT--</option>
                                 <option value="{{city}}" *ngFor="let city of cities">{{city}}</option>
                             </select>
@@ -51,7 +51,7 @@
 
                         <div class="col-sm-2">
                             <input formControlName="pincode" type="text" class="form-control form-1_row-3"
-                                (change)="change()" [(ngModel)]="pincode">
+                                (change)="change()" [(ngModel)]="Dpincode" id="pincode" name="pincode">
                             <div class="error" *ngIf="formControls.pincode.touched && formControls.pincode.errors">
                                 <div *ngIf="formControls.pincode.errors.required">This field is mandatory</div>
                                 <div *ngIf="formControls.pincode.errors.maxlength">Only 6 characters are allowed</div>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="col-sm-4 col-sm-offset-2">
                             <input type="text" formControlName="street" class="form-control form-1_row-3"
-                                (change)="change()" [(ngModel)]="street">
+                                (change)="change()" [(ngModel)]="Dstreet" id="street" name="street">
                             <!-- <div class="error" *ngIf="formControls.street.touched && formControls.street.errors">
                                         <div *ngIf="formControls.street.errors.required">Street is required</div>
                                         <div *ngIf="formControls.street.errors.minlength">Street should be atleast 3 characters</div>
@@ -79,7 +79,7 @@
 
                         <div class="col-sm-2">
                             <input type="text" formControlName="number" class="form-control form-1_row-3"
-                                (change)="change()" [(ngModel)]="number">
+                                (change)="change()" [(ngModel)]="Dnumber" id="number" name="number">
                             <div class="error" *ngIf="formControls.number.touched && formControls.number.errors">
                                 <!-- <div *ngIf="formControls.number.errors.required">Number is required</div> -->
 
@@ -95,7 +95,7 @@
                         </div>
                         <div class="col-sm-2 col-sm-offset-1">
                             <input type="text" formControlName="block" class="form-control form-1_row-3"
-                                (change)="change()" [(ngModel)]="block">
+                                (change)="change()" [(ngModel)]="Dblock" id="block" name="block">
                             <!-- <div class="error" *ngIf="formControls.block.touched && formControls.block.errors">
                                         <div *ngIf="formControls.block.errors.required">Block is required</div>
                                     </div> -->
@@ -103,7 +103,7 @@
 
                         <div class="col-sm-2">
                             <input type="text" formControlName="entrance" class="form-control form-1_row-3"
-                                (change)="change()" [(ngModel)]="entrance">
+                                (change)="change()" [(ngModel)]="Dentrance" id="entrance" name="entrance">
                             <!-- <div class="error" *ngIf="formControls.entrance.touched && formControls.entrance.errors">
                                         <div *ngIf="formControls.entrance.errors.required">Entrance is required</div>
                                     </div> -->
@@ -111,7 +111,7 @@
 
                         <div class="col-sm-2">
                             <input type="text" formControlName="appt" class="form-control form-1_row-3"
-                                (change)="change()" [(ngModel)]="appt">
+                                (change)="change()" [(ngModel)]="Dappt" id="appt" name="appt">
                             <!-- <div class="error" *ngIf="formControls.appt.touched && formControls.appt.errors">
                                         <div *ngIf="formControls.appt.errors.required">Appartment is required</div>
                                     </div> -->
@@ -129,7 +129,7 @@
                     </div>
                     <div class="col-sm-5 col-sm-offset-3">
                         <input type="number" formControlName="contact" class="form-control form-1_row-3"
-                            (change)="change()" [(ngModel)]="contact">
+                            (change)="change()" [(ngModel)]="Dcontact" id="contact" name="contact">
                         <div class="error" *ngIf="formControls.contact.touched && formControls.contact.errors">
                             <div *ngIf="formControls.contact.errors.required">This field is mandatory</div>
                             <div *ngIf="formControls.contact.errors.min">Minimum 8 charaters are required</div>
@@ -151,13 +151,13 @@
                         <div class="col-md-7 details_row-3">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <input type="radio" formControlName="business" name="business" class="radio-1"
-                                        (change)="change()" [(ngModel)]="type" [checked]="type==='Home'"
+                                    <input type="radio" formControlName="business" name="business" id="business1" class="radio-1"
+                                        (change)="change()" [(ngModel)]="Dtype" [checked]="Dtype==='Home'"
                                         value="Home">&nbsp;Home
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="radio" formControlName="business" name="business" class="radio-1"
-                                        (change)="change()" [(ngModel)]="type" [checked]="type==='Business'"
+                                    <input type="radio" formControlName="business" name="business" id="business2" class="radio-1"
+                                        (change)="change()" [(ngModel)]="Dtype" [checked]="Dtype==='Business'"
                                         value="Business">&nbsp;Business
                                 </div>
                                 <div class="error"
@@ -174,8 +174,8 @@
                         Additional Notes
                     </div>
                     <div class="col-sm-8 col-sm-offset-1">
-                        <textarea name="notes" id="notes" cols="30" rows="5" formControlName="notes"
-                            class="form-control details_row-4" (change)="change()"></textarea>
+                        <textarea name="notes" id="notes" cols="30" rows="5" [(ngModel)]="Dnotes"
+                            formControlName="notes" class="form-control details_row-4" (change)="change()" id="notes" name="notes"></textarea>
                     </div>
                     <div class="col-sm-12" style="text-align: right; font-size: small;">Optional</div>
                 </div>
@@ -212,7 +212,7 @@
             <!-- Delivery Estimate -->
             <!-- Button -->
             <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn"
-                mat-raised-button matStepperNext [disabled]="detailsForm.invalid">Next</button>
+                mat-raised-button matStepperNext [disabled]="detailsForm.invalid" id="deliverybtn" name="deliverybtn">Next</button>
             <!-- Button -->
         </form>
     </div>

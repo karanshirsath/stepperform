@@ -1,24 +1,16 @@
-form { 
-    margin: 0  auto; 
-    widows: 500px;;
-    }
-@media screen and (max-width: 768px){
-        .line{
-            display : none;
-        }
-       
-        
+form {
+  margin: 0 auto;
+  widows: 500px;
 }
-@media screen and (max-width: 575px){
-    .btn{
-        width: 250px;
-        margin: auto;
-        display: block;
-     
-        
-    }
+@media screen and (max-width: 768px) {
+  .line {
+    display: none;
+  }
 }
-
-
-
-  
+@media screen and (max-width: 575px) {
+  .btn {
+    width: 250px;
+    margin: auto;
+    display: block;
+  }
+}

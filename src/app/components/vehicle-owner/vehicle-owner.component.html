@@ -3,12 +3,12 @@
     <div class="row">
         <label class="col-md-5">Are u the owner of the vehicle</label>
         <label class="radio-inline col-md-3">
-            <input type="radio" name="gender" id="Radios1" value="Yes" [(ngModel)]="owner" [checked]="owner==='Yes'"
+            <input type="radio" name="gender" id="Radios1" value="Yes" [(ngModel)]="Vowner" [checked]="Vowner==='Yes'"
                 (click)="setradio('Yes')" (change)="toggle(true)">
             Yes
         </label>
         <label class="radio-inline col-md-3">
-            <input type="radio" name="gender" id="Radios2" value="No" [(ngModel)]="owner" [checked]="owner==='No'"
+            <input type="radio" name="gender" id="Radios2" value="No" [(ngModel)]="Vowner" [checked]="Vowner==='No'"
                 (click)="setradio('No')" (change)="toggle(false)">
             No
         </label>
@@ -16,7 +16,7 @@
 </div>
 <hr class="line">
 <div *ngIf="isSelected('Yes')">
-    <button type="button" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn" (click)="gaTrigger()"
+    <button type="button" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn" id="ownerbtn1" name="ownerbtn1"  (click)="gaTrigger()"
         [disabled]="!button" matStepperNext>Next</button>
 </div>
 <div *ngIf="isSelected('No')">
@@ -25,7 +25,7 @@
         <div class="form-group row">
             <label for="lnch" class="col-lg-8">Enter your EGN/EIK/LNCH</label>
             <div class="col-lg-4">
-                <input type="text" class="form-control" [(ngModel)]="lnch" id="lnch" placeholder="Enter your Number"
+                <input type="text" class="form-control" [(ngModel)]="Vlnch" id="lnch" placeholder="Enter your Number"
                     formControlName="lnch" name="lnch" (change)="change()">
                 <div *ngIf="Details.controls.lnch.hasError('required') &&(Details.controls.lnch.dirty || Details.controls.lnch.touched)"
                     class="error">This field is mandatory</div>
@@ -38,7 +38,7 @@
             <label class="">Full Name</label><br>
             <div class="form-group row">
                 <div class="col-md-4 space">
-                    <input type="text" class="form-control" [(ngModel)]="firstname" id="firstname"
+                    <input type="text" class="form-control" [(ngModel)]="Vfirstname" id="firstname"
                         placeholder="Enter firstname" formControlName="firstname" name="firstname" (change)="change()">
                     <div *ngIf="Details.get('fullname').get('firstname').hasError('required') &&(Details.get('fullname').get('firstname').dirty || Details.get('fullname').get('firstname').touched)"
                         class="error">This field is mandatory</div>
@@ -48,13 +48,13 @@
                         class="error">Max length can be 20 characters</div>
                 </div>
                 <div class="col-md-4 space">
-                    <input type="text" class="form-control" [(ngModel)]="lastname" id="lastname"
-                        placeholder="Enter middlename" formControlName="lastname" name="lastname" (change)="change()">
+                    <input type="text" class="form-control" [(ngModel)]="Vlastname" id="lastname"
+                        placeholder="Enter lastname" formControlName="lastname" name="lastname" (change)="change()">
                     <div *ngIf="Details.get('fullname').get('lastname').hasError('pattern') &&(Details.get('fullname').get('lastname').dirty || Details.get('fullname').get('lastname').touched)"
                         class="error">Only alphabets allowed</div>
                 </div>
                 <div class="col-md-4 space">
-                    <input type="text" class="form-control" [(ngModel)]="surname" id="surname"
+                    <input type="text" class="form-control" [(ngModel)]="Vsurname" id="surname"
                         placeholder="Enter lastname" formControlName="surname" name="suname" (change)="change()">
                     <div *ngIf="Details.get('fullname').get('surname').hasError('required') &&(Details.get('fullname').get('surname').dirty || Details.get('fullname').get('surname').touched)"
                         class="error">This field is mandatory</div>
@@ -70,7 +70,7 @@
             <label>Full Name in English</label><br>
             <div class="form-group row">
                 <div class="col-md-4 space">
-                    <input type="text" class="form-control" [(ngModel)]="firstnameeng" id="firstnameeng"
+                    <input type="text" class="form-control" [(ngModel)]="Vfirstnameeng" id="firstnameeng"
                         placeholder="Enter firstname" formControlName="firstnameeng" name="firstnameeng"
                         (change)="change()">
                     <div *ngIf="Details.get('fullnameeng').get('firstnameeng').hasError('required') &&(Details.get('fullnameeng').get('firstnameeng').dirty || Details.get('fullnameeng').get('firstnameeng').touched)"
@@ -81,14 +81,14 @@
                         class="error">Max length can be 20 characters</div>
                 </div>
                 <div class="col-md-4 space">
-                    <input type="text" class="form-control" value={{lastnameeng}} id="lastnameeng"
+                    <input type="text" class="form-control" [(ngModel)]="Vlastnameeng" id="lastnameeng"
                         placeholder="Enter lastname" formControlName="lastnameeng" name="lastnameeng"
                         (change)="change()">
                     <div *ngIf="Details.get('fullnameeng').get('lastnameeng').hasError('pattern') &&(Details.get('fullnameeng').get('lastnameeng').dirty || Details.get('fullnameeng').get('lastnameeng').touched)"
                         class="error">Only alphabets allowed</div>
                 </div>
                 <div class="col-md-4 space">
-                    <input type="text" class="form-control" [(ngModel)]="surnameeng" id="surnameeng"
+                    <input type="text" class="form-control" [(ngModel)]="Vsurnameeng" id="surnameeng"
                         placeholder="Enter surname" formControlName="surnameeng" name="sunameeng" (change)="change()">
                     <div *ngIf="Details.get('fullnameeng').get('surnameeng').hasError('required') &&(Details.get('fullnameeng').get('surnameeng').dirty || Details.get('fullnameeng').get('surnameeng').touched)"
                         class="error">This field is mandatory</div>
@@ -113,7 +113,8 @@
             <label for="citizen" class="col-lg-8">Citizenship</label>
             <div class="col-lg-4">
                 <!-- <select class="form-control" id="citizen" [(ngModel)]="citizen" formControlName="citizen" name="citizen" (change)="change()"> -->
-                <select class="form-control" id="citizen" formControlName="citizen" name="citizen" (change)="change()">
+                <select class="form-control" id="citizen" formControlName="citizen" [(ngModel)]="Vcitizen"
+                    name="citizen" (change)="change()">
                     <option selected disabled value="">--SELECT--</option>
                     <option *ngFor="let c of citizens" [value]="c">{{c}}</option>
                 </select>
@@ -125,7 +126,7 @@
         <div class="form-group row">
             <label for="birth" class="col-lg-8">Birth Date</label>
             <div class="col-lg-4">
-                <input type="date" class="form-control" [ngModel]="dob | date: 'yyyy-MM-dd'" id="birth"
+                <input type="date" class="form-control" [ngModel]="Vdob | date: 'yyyy-MM-dd'" id="birth"
                     placeholder="Enter Birth date" formControlName="birth" name="birth" (change)="change()">
                 <div *ngIf="Details.controls.birth.hasError('required') &&(Details.controls.birth.dirty || Details.controls.birth.touched)"
                     class="error">Please select your birth date </div>
@@ -140,23 +141,24 @@
             <label for="city" class="col-md-5 col-12">City</label>
             <div class="col-md-4 col-8 space">
                 <!-- <select class="form-control" id="sel1" formControlName="city" [(ngModel)]="city" name="city" (change)="change()"> -->
-                <select class="form-control" id="sel1" formControlName="city" name="city" (change)="change()">
+                <select class="form-control" id="sel1" [(ngModel)]="Vcity" formControlName="city" name="city"
+                    (change)="change()">
                     <option selected disabled value="">--SELECT--</option>
-                    <option value="Hyd" [selected]="city==='Hyd'">Hyderabad</option>
-                    <option value="Mum" [selected]="city==='Mum'">Mumbai</option>
-                    <option value="Pune" [selected]="city==='Pune'">Pune</option>
-                    <option value="Chennai" [selected]="city==='Chennai'">Chennai</option>
-                    <option value="Banglore" [selected]="city==='Bangalore'">Banglore</option>
-                    <option value="Goa" [selected]="city==='Goa'">Goa</option>
-                    <option value="Maharashtra" [selected]="city==='Maharashtra'">Maharashtra</option>
+                    <option value="Hyd" [selected]="Vcity==='Hyd'">Hyderabad</option>
+                    <option value="Mum" [selected]="Vcity==='Mum'">Mumbai</option>
+                    <option value="Pune" [selected]="Vcity==='Pune'">Pune</option>
+                    <option value="Chennai" [selected]="Vcity==='Chennai'">Chennai</option>
+                    <option value="Banglore" [selected]="Vcity==='Bangalore'">Banglore</option>
+                    <option value="Goa" [selected]="Vcity==='Goa'">Goa</option>
+                    <option value="Maharashtra" [selected]="Vcity==='Maharashtra'">Maharashtra</option>
                 </select>
                 <div *ngIf="Details.controls.city.hasError('required') &&(Details.controls.city.dirty || Details.controls.city.touched)"
                     class="error">This field is mandatory</div>
             </div>
             <div class="col-md-3 col-4 space">
                 <div class="form-group">
-                    <input type="text" class="form-control" [(ngModel)]="pincode" placeholder="1000" (change)="change()"
-                        formControlName="pincode">
+                    <input type="text" class="form-control" [(ngModel)]="Vpincode" placeholder="1000"
+                        (change)="change()" formControlName="pincode" id="pincode" name="pincode">
                     <div *ngIf="Details.controls.pincode.hasError('required') &&(Details.controls.pincode.dirty || Details.controls.pincode.touched)"
                         class="error">This field is mandatory</div>
                 </div>
@@ -166,32 +168,33 @@
         <div class="form-group row">
             <label for="s&n" class="col-md-5 col-12">Street & Number </label>
             <div class="col-md-4 col-8 space">
-                <input type="text" class="form-control" value={{street}} formControlName="street" (change)="change()">
-                <!-- <div *ngIf="Details.controls.street.hasError('required') &&(Details.controls.street.dirty || Details.controls.street.touched)" class="error">Please select your street</div> -->
+                <input type="text" class="form-control" [(ngModel)]="Vstreet" formControlName="street"
+                    (change)="change()" id="street" name="street">
+                <div *ngIf="Details.controls.street.hasError('required') &&(Details.controls.street.dirty || Details.controls.street.touched)" class="error">Please select your street</div>
 
             </div>
             <div class="col-sm-3 col-4 space">
-                <input type="text" class="form-control" value={{No}} formControlName="No" (change)="change()">
-                <!-- <div *ngIf="Details.controls.No.hasError('required') &&(Details.controls.No.dirty || Details.controls.No.touched)" class="error">Please enter your House NO</div> -->
+                <input type="text" class="form-control" [(ngModel)]="VNo" formControlName="No" (change)="change()" id="No" name="No">
+                <div *ngIf="Details.controls.No.hasError('required') &&(Details.controls.No.dirty || Details.controls.No.touched)" class="error">Please enter your House NO</div>
             </div>
         </div>
         <hr class="line">
         <div class="form-group row">
             <label for="be&a" class="col-md-5 col-12">Block Entrance & Apartment </label>
             <div class="col-md-2 col-4">
-                <input type="text" value={{block}} class="form-control" (change)="change()">
+                <input type="text" [(ngModel)]="Vblock" class="form-control" (change)="change()" formControlName="block" id="block" name="block">
                 <label>Optional</label>
             </div>
             <div class="col-md-2 col-4">
-                <input type="text" value={{entrance}} class="form-control" (change)="change()">
+                <input type="text" [(ngModel)]="Ventrance" class="form-control" (change)="change()" formControlName="entrance" id="entrance" name="entrance">
                 <label>Optional</label>
             </div>
             <div class="col-md-3 col-4">
-                <input type="text" value={{appartment}} class="form-control" (change)="change()">
+                <input type="text" [(ngModel)]="Vappartment" class="form-control" (change)="change()" formControlName="appartment" id="appartment" name="appartment">
                 <label>Optional</label>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn"
+        <button type="submit" class="btn btn-primary rounded-pill col-sm-4 col-lg-2 col-md-3 nextbtn" id="ownerbtn2" name="ownerbtn2"
             [disabled]="!Details.valid" matStepperNext>Next</button>
     </form>
 </div>

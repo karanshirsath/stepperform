@@ -1,80 +1,74 @@
-.row{
-    margin: 0;
+.row {
+  margin: 0;
 }
-.heading{
-    color:rgb(8,56,95);
-    font-family: 'Trebuchet MS',Arial,sans-serif;
-    font-weight: bold;
-} 
-.bg-dark-blue{
-    background-color:  #003564;
-    color: #ffffff;
+.heading {
+  color: rgb(8, 56, 95);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
 }
-.middle-heading{
-    display: flex;
-    height: 100%;
-    align-items: center;
+.bg-dark-blue {
+  background-color: #003564;
+  color: #ffffff;
 }
-.radio{
-    border-radius: 10px;
-    -webkit-box-shadow: 0 0 10px #ccc;
-    box-shadow: 0 0 10px #ccc;
+.middle-heading {
+  display: flex;
+  height: 100%;
+  align-items: center;
 }
-.radio-inner{
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    margin: 0;
-    cursor: pointer;
+.radio {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
 }
-.radio-action{
-    width: 25px;
+.radio-inner {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  margin: 0;
+  cursor: pointer;
 }
-input[type="checkbox" i]{
-    margin: 0px 8px 0px 0px;
+.radio-action {
+  width: 25px;
 }
-.buy-btn{
-    border-radius:20px;
+input[type="checkbox" i] {
+  margin: 0px 8px 0px 0px;
 }
-.user-key{
-    width: 40px;
-    position: absolute;
-    z-index: 1;
-    top: 15px;
-    left: -17px;
+.buy-btn {
+  border-radius: 20px;
 }
-.text-color{
-    color: #003564
+.user-key {
+  width: 40px;
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  left: -17px;
 }
-.nearelm{
-    font-size: 20px;
+.text-color {
+  color: #003564;
 }
-.num{
-    
-    
-    font-size: 30px;
-    font-weight: bold;
-    
+.nearelm {
+  font-size: 20px;
 }
-.text-small{
-    font-size: 20px;
-    padding-left: 0%;
+.num {
+  font-size: 30px;
+  font-weight: bold;
+}
+.text-small {
+  font-size: 20px;
+  padding-left: 0%;
 }
 @media all and (max-width: 767px) {
-    .text-small{
-        font-size:11px;
-        
-    }
+  .text-small {
+    font-size: 11px;
+  }
 }
-@media screen and (max-width: 450px){
-
-.num{
+@media screen and (max-width: 450px) {
+  .num {
     font-size: 20px;
-    
-}
-.nearelm{
+  }
+  .nearelm {
     font-size: 13px;
- }
+  }
 }
 /*@media all and (min-width: 1024px){
     .text-small{

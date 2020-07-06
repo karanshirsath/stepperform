@@ -9,10 +9,9 @@ describe('PolicyDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PolicyDetailsComponent ],
-      imports:[ReactiveFormsModule]
-    })
-    .compileComponents();
+      declarations: [PolicyDetailsComponent],
+      imports: [ReactiveFormsModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

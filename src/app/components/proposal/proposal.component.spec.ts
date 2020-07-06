@@ -9,10 +9,9 @@ describe('ProposalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProposalComponent ],
-      imports:[ReactiveFormsModule]
-    })
-    .compileComponents();
+      declarations: [ProposalComponent],
+      imports: [ReactiveFormsModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

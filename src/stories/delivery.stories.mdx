@@ -63,8 +63,8 @@ all the input fields.
   <Story name="Valid Credentials">{{
     component: DeliveryComponent,
     props:{
-      fullName: text('Full Name','Roman Reigns','General'),
-      city: select('City',{Mumbai:"Mumbai",
+      DfullName: text('Full Name','Roman Reigns','General'),
+      Dcity: select('City',{Mumbai:"Mumbai",
                             New_Delhi:"New Delhi",
                             Chennai:"Chennai",
                             Bangalore:"Bangalore",
@@ -72,16 +72,16 @@ all the input fields.
                             Chennai:"Chennai",
                             Jaipur:"Jaipur"},
                             'Mumbai','General'),
-      pincode: text('Pincode','570025','General'),
-      street: text('Street','Hebbal electronics','General'),
-      number: text('Number','350','General'),
-      block: text('Block','12','General'),
-      entrance: text('Entrance','12','General'),
-      appt: text('Appartment','Sai Sadan Apartment','General'),
-      contact:text('Contact Number','961859858','General'),
-      type:radios('Type of Business',{Home:"Home",
+      Dpincode: text('Pincode','570025','General'),
+      Dstreet: text('Street','Hebbal electronics','General'),
+      Dnumber: text('Number','350','General'),
+      Dblock: text('Block','12','General'),
+      Dentrance: text('Entrance','12','General'),
+      Dappt: text('Appartment','Sai Sadan Apartment','General'),
+      Dcontact:text('Contact Number','961859858','General'),
+      Dtype:radios('Type of Business',{Home:"Home",
                                 Business:"Business"},'Home','General'),
-        notes:text('Additional Notes','Any Additional notes should be written here','General')
+        Dnotes:text('Additional Notes','Any Additional notes should be written here','General')
       
     },
     }}    
@@ -97,8 +97,8 @@ all the input fields.
   <Story name="Invalid Credentials">{{
     component: DeliveryComponent,
     props:{
-      fullName: text('Full Name','Roman Reigns','General'),
-      city: select('City',{Mumbai:"Mumbai",
+      DfullName: text('Full Name','Roman Reigns','General'),
+      Dcity: select('City',{Mumbai:"Mumbai",
                             New_Delhi:"New Delhi",
                             Chennai:"Chennai",
                             Bangalore:"Bangalore",
@@ -106,16 +106,16 @@ all the input fields.
                             Chennai:"Chennai",
                             Jaipur:"Jaipur"},
                             'Mumbai','General'),
-      pincode: text('Pincode','570025','General'),
-      street: text('Street','Hebbal electronics','General'),
-      number: text('Number','350','General'),
-      block: text('Block','12','General'),
-      entrance: text('Entrance','12','General'),
-      appt: text('Appartment','Sai Sadan Apartment','General'),
-      contact:text('Contact Number','1234657890','General'),
-      type:radios('Type of Business',{Home:"Home",
+      Dpincode: text('Pincode','570025','General'),
+      Dstreet: text('Street','Hebbal electronics','General'),
+      Dnumber: text('Number','350','General'),
+      Dblock: text('Block','12','General'),
+      Dentrance: text('Entrance','12','General'),
+      Dappt: text('Appartment','Sai Sadan Apartment','General'),
+      Dcontact:text('Contact Number','1234657890','General'),
+      Dtype:radios('Type of Business',{Home:"Home",
                                 Business:"Business"},'Home','General'),
-        notes:text('Additional Notes','Any Additional notes should be written here','General')
+        Dnotes:text('Additional Notes','Any Additional notes should be written here','General')
       
     },
     }}    

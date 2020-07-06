@@ -11,7 +11,7 @@ describe('InstallmentComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ InstallmentComponent ],
-      imports:[ReactiveFormsModule,RouterTestingModule]
+      imports: [ReactiveFormsModule, RouterTestingModule]
     })
     .compileComponents();
   }));

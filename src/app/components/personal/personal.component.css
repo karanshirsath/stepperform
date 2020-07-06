@@ -1,59 +1,52 @@
-
-
 /*.container{
     margin: 200px;
 }*/
 
-.user-key{
-    width: 40px;
-    position: absolute;
-    z-index: 1;
-    top:15px;
-    left: -25px;
+.user-key {
+  width: 40px;
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  left: -25px;
 }
-h1{
-    
-    color:rgb(8,56,95); 
-    font-weight: bold;
-    font-family:'Trebuchet MS',Arial,sans-serif;
+h1 {
+  color: rgb(8, 56, 95);
+  font-weight: bold;
+  font-family: "Trebuchet MS", Arial, sans-serif;
 }
-label{
-    color:rgb(8,56,95);
-    font-family: Arial, Helvetica, sans-serif;
+label {
+  color: rgb(8, 56, 95);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
-.panel{
-    border-width: thin;
-    border-style: solid;
-    border-color:yellow;
-    border-radius:5px;
-    padding:25px;
-    margin-bottom: 20px;
+.panel {
+  border-width: thin;
+  border-style: solid;
+  border-color: yellow;
+  border-radius: 5px;
+  padding: 25px;
+  margin-bottom: 20px;
 }
-.error{
-    color: red;
+.error {
+  color: red;
 }
 
 @media screen and (max-width: 800px) {
-    .line{
-        display : none;
-    }
+  .line {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 575px){
-    .nextbtn{
-        width: 250px;
-        margin: auto;
-        display: block;
-     
-        
-    }
+@media screen and (max-width: 575px) {
+  .nextbtn {
+    width: 250px;
+    margin: auto;
+    display: block;
+  }
 }
 
-@media screen and (max-width: 1090px){
-    .col-lg-4{
-        padding: 4px;
-    }
-    
+@media screen and (max-width: 1090px) {
+  .col-lg-4 {
+    padding: 4px;
+  }
 }

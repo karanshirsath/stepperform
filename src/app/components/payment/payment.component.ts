@@ -9,39 +9,46 @@ import { MtplPolicyService } from '../mtpl-policy/mtpl-policy.service';
 })
 export class PaymentComponent implements OnInit {
   optradio: boolean;
-  @Input() payment: string;
+  @Input() Ppayment: string;
   @Output() OnSubmission = new EventEmitter<any>();
-  enable: boolean = true;
-  constructor(private mtplCalculatorService:MtplCalculatorService, private mtplPolicyService:MtplPolicyService) { }
+  enable = true;
+  constructor(
+    private mtplCalculatorService: MtplCalculatorService,
+    private mtplPolicyService: MtplPolicyService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   check() {
     this.optradio = true;
   }
   box(e) {
     if (e.target.checked) {
       this.enable = false;
-    }
-    else {
+    } else {
       this.enable = true;
     }
   }
   action() {
-    this.OnSubmission.emit('Payment method selected!')
+    this.OnSubmission.emit('Payment method selected!');
   }
-  getData=()=>{
-    alert("Check console for see data saved at Backend")
-    let idObj={id:sessionStorage.getItem("id")}
-    this.mtplCalculatorService.getData(idObj).subscribe((res)=>{
-      console.log(res);
-    },(err)=>{
-      console.log(err);
-    })
-    this.mtplPolicyService.getData(idObj).subscribe((res)=>{
-      console.log(res);
-    },(err)=>{
-      console.log(err);
-    })
+  getData = () => {
+    alert('Check console for see data saved at Backend');
+    const idObj = { id: sessionStorage.getItem('id') };
+    this.mtplCalculatorService.getData(idObj).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+    this.mtplPolicyService.getData(idObj).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 }

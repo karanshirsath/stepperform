@@ -7,13 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./tab2.component.css']
 })
 export class Tab2Component implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  navigate() {
+    this.router.navigate(['tab2']);
   }
-  navigate(){
-    this.router.navigate(["tab2"]);
-  }
-
 }

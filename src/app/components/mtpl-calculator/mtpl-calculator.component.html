@@ -1,35 +1,30 @@
 <div class="container">
-<mat-horizontal-stepper (selectionChange)="change($event)" labelPosition="bottom" #stepper linear>
-  
-      <mat-step completed={{toggle1}}>
-        <ng-template matStepLabel>Vehicle </ng-template>
-        <app-v-info (OnToggle)="toggle1=$event"></app-v-info>
-      </mat-step>
+  <mat-horizontal-stepper (selectionChange)="change($event)" labelPosition="bottom" #stepper linear>
 
-      <mat-step completed={{toggle2}}>
-        <ng-template matStepLabel>Insuring Party</ng-template>
-        <app-insuring-party (OnToggle)="toggle2=$event"></app-insuring-party>
-      </mat-step>
+    <mat-step completed={{toggle1}}>
+      <ng-template matStepLabel>Vehicle </ng-template>
+      <app-v-info (OnToggle)="toggle1=$event"></app-v-info>
+    </mat-step>
 
-      <mat-step completed={{toggle3}}>
-        <ng-template matStepLabel>Policy Details</ng-template>
-        <app-policy-details (OnToggle)="toggle3=$event"></app-policy-details>
-      </mat-step>
+    <mat-step completed={{toggle2}}>
+      <ng-template matStepLabel>Insuring Party</ng-template>
+      <app-insuring-party (OnToggle)="toggle2=$event"></app-insuring-party>
+    </mat-step>
 
-      <mat-step completed={{toggle4}}>
-        <ng-template matStepLabel>Installments</ng-template>
-        <app-installment (OnToggle)="toggle4=$event" ></app-installment>
-      </mat-step>
+    <mat-step completed={{toggle3}}>
+      <ng-template matStepLabel>Policy Details</ng-template>
+      <app-policy-details (OnToggle)="toggle3=$event"></app-policy-details>
+    </mat-step>
 
-      <mat-step completed={{toggle5}}>
-        <ng-template matStepLabel>Covers</ng-template>
-        <app-additional-covers (OnToggle)="toggle5=$event" (NextTab)="nextTab($event)"></app-additional-covers>
-      </mat-step>
+    <mat-step completed={{toggle4}}>
+      <ng-template matStepLabel>Installments</ng-template>
+      <app-installment (OnToggle)="toggle4=$event"></app-installment>
+    </mat-step>
 
-      <!-- <mat-step completed={{toggle6}}>
-        <ng-template matStepLabel>Summary</ng-template>
-        Summary
-      </mat-step> -->
+    <mat-step completed={{toggle5}}>
+      <ng-template matStepLabel>Covers</ng-template>
+      <app-additional-covers (OnToggle)="toggle5=$event" (NextTab)="nextTab($event)"></app-additional-covers>
+    </mat-step>
 
-</mat-horizontal-stepper>
+  </mat-horizontal-stepper>
 </div>

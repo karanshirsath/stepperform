@@ -9,10 +9,9 @@ describe('Tab2Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Tab2Component ],
-      imports:[RouterTestingModule]
-    })
-    .compileComponents();
+      declarations: [Tab2Component],
+      imports: [RouterTestingModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

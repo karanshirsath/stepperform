@@ -2,67 +2,57 @@
     width:180px
 } */
 
-
-h1{
-    
-    color:rgb(8,56,95);
-    font-family: 'Trebuchet MS',Arial,sans-serif;
-    font-weight: bold;
+h1 {
+  color: rgb(8, 56, 95);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
 }
-h2{
-    color:rgb(8,56,95); 
-    font-family:Arial, Helvetica, sans-serif
+h2 {
+  color: rgb(8, 56, 95);
+  font-family: Arial, Helvetica, sans-serif;
 }
-label{
-    color:rgb(8,56,95);
-    font-family: Arial, Helvetica, sans-serif;
+label {
+  color: rgb(8, 56, 95);
+  font-family: Arial, Helvetica, sans-serif;
 }
 /* .col-sm-4{
     padding-left: 205px;
    
 } */
 
-.panel{
-    border-color:yellow;
-    /* width: 555px; */
+.panel {
+  border-color: yellow;
+  /* width: 555px; */
 }
-.error{
-    color: red;
+.error {
+  color: red;
 }
-
-  
-
-
 
 @media screen and (max-width: 800px) {
-    .line{
-        display : none;
-    }
+  .line {
+    display: none;
+  }
 }
-@media screen and (max-width: 1090px){
-    .space{
-        padding: 4px;
-    }
-    
+@media screen and (max-width: 1090px) {
+  .space {
+    padding: 4px;
+  }
 }
-@media screen and (max-width: 575px){
-    .nextbtn{
-        width: 250px;
-        margin: auto;
-        display: block;
-    }
-        
+@media screen and (max-width: 575px) {
+  .nextbtn {
+    width: 250px;
+    margin: auto;
+    display: block;
+  }
 }
 /* .col-sm-2
 {
     
    /* width:200px;  
 } */
-.user-key{
-    width: 40px;
-    position: absolute;
-  
-    top: 10px;
-    left: -17px;
+.user-key {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  left: -17px;
 }
-

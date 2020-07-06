@@ -1,29 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { MTPLCalculatorComponent } from '../components/mtpl-calculator/mtpl-calculator.component';
-
 
 @Component({
   selector: 'app-tab',
   templateUrl: './tab.component.html',
   styleUrls: ['./tab.component.css']
 })
-export class TabComponent implements OnInit { 
-  welcomeuser=sessionStorage.getItem('welcomename');
+export class TabComponent implements OnInit {
+  welcomeuser = sessionStorage.getItem('welcomename');
   activeTab = 0;
-  policyTabToggle=true
-  mtplCalculatorStep
-  constructor() { }
+  policyTabToggle = true;
+  mtplCalculatorStep;
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  changeTab = data => {
+    this.policyTabToggle = false;
+    this.activeTab = data;
   }
-
-  changeTab=(data)=>{
-    this.policyTabToggle=false
-    this.activeTab=data
+  switch = index => {
+    this.activeTab = 0;
+    this.mtplCalculatorStep = index;
   }
-  switch=(index)=>{
-    this.activeTab=0
-    this.mtplCalculatorStep=index
-   }
-
 }

@@ -63,16 +63,16 @@ input fields.
   <Story name="Valid Credentials">{{
     component: ContactComponent,
     props:{
-        city: select('City',{'Sophia City': "SophiaCity",
+        Ccity: select('City',{'Sophia City': "SophiaCity",
                                 'Tech City':"techCity",
                                 'Electronic City': "electronicCity"},'SophiaCity','General'),
-        pincode: text('Pincode','120035','General'),
-        street: text('Street','Nelson Street','General'),
-        No: text('Street Number','12','General'),
-        block: text('Block','12','General'),
-        entrance: text('Entrance','East Gate','General'),
-        appartment: text('Appartment','Nelson Appartment','General'),
-        phone: text('Phone Number','123456789','General'),
+        Cpincode: text('Pincode','120035','General'),
+        Cstreet: text('Street','Nelson Street','General'),
+        CNo: text('Street Number','12','General'),
+        Cblock: text('Block','12','General'),
+        Centrance: text('Entrance','East Gate','General'),
+        Cappartment: text('Appartment','Nelson Appartment','General'),
+        Cphone: text('Phone Number','123456789','General'),
     },
     }}    
   </Story>
@@ -87,16 +87,16 @@ input fields.
   <Story name="Invalid Credentials">{{
     component: ContactComponent,
     props:{
-        city: select('City',{SophiaCity: "Sophia City",
+        Ccity: select('City',{SophiaCity: "Sophia City",
                                 TechCity:"Tech City",
                                 ElectronicCity: "Electronic City"},'SophiaCity','General'),
-        pincode: text('Pincode','120035','General'),
-        street: text('Street','Nelson Street','General'),
-        No: text('Street Number','12','General'),
-        block: text('Block','12','General'),
-        entrance: text('Entrance','East Gate','General'),
-        appartment: text('Appartment','Nelson Appartment','General'),
-        phone: text('Phone Number','1234567890','General'),
+        Cpincode: text('Pincode','120035','General'),
+        Cstreet: text('Street','Nelson Street','General'),
+        CNo: text('Street Number','12','General'),
+        Cblock: text('Block','12','General'),
+        Centrance: text('Entrance','East Gate','General'),
+        Cappartment: text('Appartment','Nelson Appartment','General'),
+        Cphone: text('Phone Number','1234567890','General'),
     },
     }}    
   </Story>
