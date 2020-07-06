@@ -29,7 +29,9 @@ export class DeliveryComponent implements OnInit {
   codes: number[] = [55, 86, 33, 49, 91];
 
   submitted = false;
-
+  trackByFn(index, city){
+    return city.id;
+  }
   change = () => {
     if (this.detailsForm.valid) {
       this.OnToggle.emit(true);

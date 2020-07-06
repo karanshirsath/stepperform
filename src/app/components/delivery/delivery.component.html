@@ -41,7 +41,7 @@
                             <select name="city" id="city" [(ngModel)]="Dcity" formControlName="city"
                                 class="form-control form-1_row-3" (change)="change()">
                                 <option selected disabled value="">--SELECT--</option>
-                                <option value="{{city}}" *ngFor="let city of cities">{{city}}</option>
+                                <option value="{{city}}" *ngFor="let city of cities; trackBy: trackByFn">{{city}}</option>
                             </select>
                             <div class="error" *ngIf="formControls.city.touched && formControls.city.errors">
                                 <div *ngIf="formControls.city.errors.required">This field is mandatory</div>
